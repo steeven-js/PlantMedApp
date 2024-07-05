@@ -12,9 +12,9 @@ const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
   const user = hooks.useAppSelector(state => state.userSlice.user);
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+  // const isPrenium = hooks.useAppSelector(
+  //   state => state.userSlice.user?.isPrenium,
+  // );
 
   const renderUserInfo = (): JSX.Element => {
     return (
@@ -47,7 +47,7 @@ const Profile: React.FC = () => {
   const renderMenu = (): JSX.Element => {
     return (
       <View style={{paddingLeft: 20}}>
-        <items.ProfileItem
+        {/* <items.ProfileItem
           title={isPrenium ? 'Compte premium' : 'Compte gratuit'}
           onPress={() => {
             navigation.navigate('MemberAccount');
@@ -55,7 +55,7 @@ const Profile: React.FC = () => {
           icon={<svg.UserSvg />}
           goNavigation={true}
           containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-        />
+        /> */}
         <items.ProfileItem
           title={'Informations personnelles'}
           onPress={() => {

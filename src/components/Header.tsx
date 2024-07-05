@@ -220,18 +220,18 @@ const Header: React.FC<HeaderType> = ({
                     }}
                     numberOfLines={1}
                   >
-                    {user?.isPrenium ? 'Membre Premium' : 'Membre Standard'}
+                    {/* {user?.isPrenium ? 'Membre Premium' : 'Membre Standard'} */}
                   </Text>
                 </View>
               </TouchableOpacity>
               {/* MENU */}
-              <items.BurgerMenuItem
+              {/* <items.BurgerMenuItem
                 title={'>  Prenium'}
                 onPress={() => {
                   setShowModal(false);
                   navigation.navigate('Prenium');
                 }}
-              />
+              /> */}
               <items.BurgerMenuItem
                 title='>  Usages thérapeutiques'
                 onPress={() => {

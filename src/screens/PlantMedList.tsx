@@ -32,7 +32,7 @@ const PlantMedList: React.FC<PlantMedListScreenProps> = ({route}) => {
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
-        title={title ?? 'Shop'}
+        title={title ?? 'Plantes médicinales'}
         onGoBack={() => {
           dispatch(actions.resetFilters());
           navigation.goBack();

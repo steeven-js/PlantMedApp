@@ -4,7 +4,6 @@ import React from 'react';
 import {hooks} from '../hooks';
 import {utils} from '../utils';
 import {custom} from '../custom';
-import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {PlantMedType} from '../types';
@@ -17,18 +16,19 @@ const PlantmedCard: React.FC<Props> = ({
   isLast,
 }): JSX.Element | null => {
   const navigation = hooks.useAppNavigation();
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+  // const isPrenium = hooks.useAppSelector(
+  //   state => state.userSlice.user?.isPrenium,
+  // );
 
   const onPress = () => {
-    if (isPrenium) {
-      navigation.navigate('PlantMed', {item});
-    } else if (!isPrenium && item.is_prenium == false) {
-      navigation.navigate('PlantMed', {item});
-    } else {
-      navigation.navigate('Prenium');
-    }
+    navigation.navigate('PlantMed', {item});
+    // if (isPrenium) {
+    //   navigation.navigate('PlantMed', {item});
+    // } else if (!isPrenium && item.is_prenium == false) {
+    //   navigation.navigate('PlantMed', {item});
+    // } else {
+    //   navigation.navigate('Prenium');
+    // }
   };
 
   // ############ SHOP > PLANTS ############ //
@@ -57,10 +57,10 @@ const PlantmedCard: React.FC<Props> = ({
           }}
           resizeMode='cover'
         >
-          <plantmed.PlantPrenium
+          {/* <plantmed.PlantPrenium
             item={item}
             containerStyle={{marginBottom: 'auto', padding: 10}}
-          />
+          /> */}
           <plantmed.PlantmedInWishlist
             item={item}
             version={1}

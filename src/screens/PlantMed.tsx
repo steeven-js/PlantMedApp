@@ -55,6 +55,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
+        title={item.name}
         logoIcon={true}
         goBackIcon={true}
         basketIcon={true}

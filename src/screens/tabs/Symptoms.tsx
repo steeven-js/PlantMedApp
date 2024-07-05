@@ -19,9 +19,9 @@ import PreniumSvg from '../../assets/svg/PreniumSvg';
 
 const Symptoms: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+  // const isPrenium = hooks.useAppSelector(
+  //   state => state.userSlice.user?.isPrenium,
+  // );
 
   const {
     data: plantsData,
@@ -41,9 +41,6 @@ const Symptoms: React.FC = () => {
 
   let categories = categoriesData?.symptoms ?? [];
   let plants = plantsData?.plantmed ?? [];
-
-  // plants = [];
-  // categories = [];
 
   const isError = categoriesError || plantsError;
   const isLoading = categoriesLoading || plantsLoading;
@@ -92,19 +89,23 @@ const Symptoms: React.FC = () => {
                 }}
                 onPress={() => {
                   if (qty > 0) {
-                    if (isPrenium) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
-                    } else if (!isPrenium && item.is_prenium == false) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
-                    } else {
-                      navigation.navigate('Prenium');
-                    }
+                    navigation.navigate('PlantMedList', {
+                      title: item.name,
+                      products: dataFilter ?? [],
+                    });
+                    // if (isPrenium) {
+                    //   navigation.navigate('PlantMedList', {
+                    //     title: item.name,
+                    //     products: dataFilter ?? [],
+                    //   });
+                    // } else if (!isPrenium && item.is_prenium == false) {
+                    //   navigation.navigate('PlantMedList', {
+                    //     title: item.name,
+                    //     products: dataFilter ?? [],
+                    //   });
+                    // } else {
+                    //   navigation.navigate('Prenium');
+                    // }
                   }
                   if (qty === 0) {
                     Alert.alert(
@@ -161,7 +162,7 @@ const Symptoms: React.FC = () => {
                       </Text>
                     </View>
 
-                    <View
+                    {/* <View
                       style={{
                         backgroundColor: '#CFF5CE',
                         alignSelf: 'flex-start',
@@ -186,7 +187,7 @@ const Symptoms: React.FC = () => {
                             : theme.colors.steelTeal
                         }
                       />
-                    </View>
+                    </View> */}
                   </View>
                   <Text
                     numberOfLines={2}

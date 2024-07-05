@@ -94,3 +94,7 @@ npm start
 # ou
 yarn start
 ```
+
+```shell
+npm install && npx react-native eject && npx pod-install npx react-native-asset && npx react-native run-ios --simulator='iphone 15'
+```
