@@ -9,7 +9,6 @@ import StackNavigator from './src/navigation/StackNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {StripeProvider} from '@stripe/stripe-react-native';
-import {withIAPContext} from 'react-native-iap';
 
 enableScreens();
 
@@ -39,4 +38,4 @@ const App = () => {
   );
 };
 
-export default withIAPContext(App);
+export default App;

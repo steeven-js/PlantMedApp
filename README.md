@@ -48,7 +48,7 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
 - **Lancer l'émulateur Android**
 
   ```shell
-  emulator -avd Pixel_8_API_34 -dns-server 8.8.8.8,8.8.4.4
+  emulator -avd Pixel_8_PRO_API_35 -dns-server 8.8.8.8,8.8.4.4
   ```
 
 - **Exécuter l'application sur Android**
