@@ -6,6 +6,7 @@ import {utils} from '../utils';
 import {custom} from '../custom';
 import {components} from '../components';
 import {SourceScreenProps} from '../types/ScreenProps';
+import {theme} from '../constants';
 
 const Source: React.FC<SourceScreenProps> = ({route}) => {
   const {source, title} = route.params;
@@ -69,10 +70,19 @@ const Source: React.FC<SourceScreenProps> = ({route}) => {
   };
 
   return (
-    <custom.SafeAreaView insets={['top', 'bottom']}>
-      {renderHeader()}
-      {renderContent()}
-    </custom.SafeAreaView>
+    <custom.ImageBackground
+      style={{flex: 1}}
+      resizeMode='stretch'
+      source={require('../assets/bg/02.png')}
+    >
+      <custom.SafeAreaView
+        insets={['top', 'bottom']}
+        containerStyle={{backgroundColor: theme.colors.transparent}}
+      >
+        {renderHeader()}
+        {renderContent()}
+      </custom.SafeAreaView>
+    </custom.ImageBackground>
   );
 };
 

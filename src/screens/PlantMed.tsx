@@ -477,10 +477,19 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   };
 
   return (
-    <custom.SafeAreaView insets={['top', 'bottom']}>
-      {renderHeader()}
-      {renderContent()}
-    </custom.SafeAreaView>
+    <custom.ImageBackground
+      style={{flex: 1}}
+      resizeMode='stretch'
+      source={require('../assets/bg/02.png')}
+    >
+      <custom.SafeAreaView
+        insets={['top', 'bottom']}
+        containerStyle={{backgroundColor: theme.colors.transparent}}
+      >
+        {renderHeader()}
+        {renderContent()}
+      </custom.SafeAreaView>
+    </custom.ImageBackground>
   );
 };
 
