@@ -2,6 +2,17 @@
 
 [PlantMed GitHub](https://github.com/steeven-js/PlantMedApp)
 
+## Change.logn
+
+- **Version 1.5.1**
+  - Ajout du contenu Prenium
+  - Amélioration des performances de l'application
+  - Correction de divers bugs et optimisations
+- **Version 1.5**
+  - Refonte complète de l'interface utilisateur
+  - Amélioration des performances de l'application
+  - Correction de divers bugs et optimisations
+
 ## Instructions de Configuration
 
 ### Prérequis
@@ -11,22 +22,6 @@ Assurez-vous d'avoir les éléments suivants installés sur votre machine :
 - Node.js (v14.x ou supérieur)
 - npm (v6.x ou supérieur) ou Yarn (v1.22.x ou supérieur)
 - React Native CLI (v0.64.x ou supérieur)
-
-### Étapes d'installation
-
-1. Clonez ce dépôt sur votre machine :
-
-   ```shell
-   git clone <lien-du-repo>
-   cd <nom-du-repo>
-   ```
-
-2. Installez les dépendances du projet en exécutant la commande suivante :
-   ```shell
-   npm install
-   # ou
-   yarn install
-   ```
 
 ### Scripts Disponibles
 
@@ -59,7 +54,7 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
   ```
 
-### Vérifier le contenu de la clé
+### Vérification du contenu de la clé
 
 Pour vérifier le contenu de la clé dans votre fichier keystore, suivez ces étapes :
 
@@ -106,16 +101,10 @@ Ces commandes vous permettront de vérifier le contenu de votre fichier keystore
   npx eslint --init
   ```
 
-### Pour commencer
+### Installation et Exécution
 
-Pour commencer à travailler sur le projet, vous pouvez exécuter les commandes suivantes :
-
-```shell
-npm start
-# ou
-yarn start
-```
+Pour une installation rapide et une exécution complète, utilisez la commande suivante :
 
 ```shell
-npm install && npx react-native eject && npx pod-install npx react-native-asset && npx react-native run-ios --simulator='iphone 15'
+npm install && npx react-native eject && npx pod-install && npx react-native-asset && npx react-native run-ios --simulator='iPhone 15'
 ```
