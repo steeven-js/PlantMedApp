@@ -72,6 +72,40 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
   ```
 
+### Vérifier le contenu de la clé
+
+Pour vérifier le contenu de la clé dans votre fichier keystore, suivez ces étapes :
+
+#### Option 1: Utilisation du chemin absolu
+
+Utilisez le chemin absolu pour accéder directement au fichier keystore :
+
+```shell
+keytool -list -v -keystore /Users/steevenjacques/www/PlantMedApp_v2/PlantMedApp/android/app/com.jsprod.android.plantmed.keystore -alias my-key-alias
+```
+
+#### Option 2: Naviguer vers le répertoire et utiliser le chemin relatif
+
+1. Naviguez vers le répertoire contenant le fichier keystore :
+
+   ```shell
+   cd /Users/steevenjacques/www/PlantMedApp_v2/PlantMedApp/android/app/
+   ```
+
+2. Vérifiez que le fichier `my-upload-key.keystore` existe :
+
+   ```shell
+   ls
+   ```
+
+3. Utilisez la commande `keytool` avec le chemin relatif :
+
+   ```shell
+   keytool -list -v -keystore com.jsprod.android.plantmed.keystore -alias my-key-alias
+   ```
+
+Ces commandes vous permettront de vérifier le contenu de votre fichier keystore et d'afficher les détails de la clé spécifiée par l'alias `my-key-alias`.
+
 - **Construire une version de production pour Android**
 
   ```shell

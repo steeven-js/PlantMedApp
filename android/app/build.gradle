@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.jsprod.plantmed"
+    namespace "com.jsprod.android.plantmed"
     defaultConfig {
-        applicationId "com.jsprod.plantmed"
+        applicationId "com.jsprod.android.plantmed"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 6
