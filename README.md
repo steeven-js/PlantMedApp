@@ -1,19 +1,6 @@
 # PlantMedApp
 
-Nouveautés de la version 1.5
-Refonte de l'application :
-Nous avons repensé l'interface de PlantMed pour vous offrir une expérience plus intuitive et agréable.
-
-Amélioration de l'ergonomie :
-Naviguez plus facilement grâce à une ergonomie améliorée et des interactions simplifiées.
-
-Amélioration des performances :
-PlantMed est désormais plus rapide et réactif pour vous permettre de trouver les informations dont vous avez besoin sans attendre.
-
-Correction de bugs :
-Nous avons résolu divers bugs pour améliorer la stabilité et la fiabilité de l'application.
-
-Mettez à jour dès maintenant pour profiter de ces améliorations et optimisations. Merci de votre soutien et de vos retours qui nous aident à améliorer PlantMed continuellement !
+[PlantMed GitHub](https://github.com/steeven-js/PlantMedApp)
 
 ## Instructions de Configuration
 
