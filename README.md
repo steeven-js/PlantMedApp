@@ -45,7 +45,7 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   cd ios/
   pod install --repo-update
   cd ..
-  npx react-native run-ios --simulator="iPhone 15"
+  npx react-native run-ios --simulator="iPhone 15 pro"
   ```
 
 - **Générer une clé de signature pour la publication sur Google Play**

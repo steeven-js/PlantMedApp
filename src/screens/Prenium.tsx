@@ -1,6 +1,16 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {View, Text, ScrollView, TouchableOpacity, Platform} from 'react-native';
-import Purchases from 'react-native-purchases';
+import {View, Text, ScrollView, TouchableOpacity, Alert} from 'react-native';
+import RNIap, {
+  Product,
+  PurchaseError,
+  SubscriptionPurchase,
+  initConnection,
+  //getSubscriptions,
+  getAvailablePurchases,
+  Subscription,
+  useIAP,
+  withIAPContext
+} from 'react-native-iap';
 
 import {custom} from '../custom';
 import {theme} from '../constants';
@@ -8,11 +18,66 @@ import {components} from '../components';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
 
+const SUBSCRIPTION_SKU = 'P_199_1m';
+
 const Prenium: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const navigation = hooks.useAppNavigation();
+  const {connected, subscriptions, getSubscriptions, initConnectionError} = useIAP();
+  console.log("subscriptions", subscriptions)
 
-  const productIds = ['P_199_1m'];
+  const [subscriptionInfo, setSubscriptionInfo] = useState<Subscription | null>(
+    null,
+  );
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const initializeIAP = useCallback(async () => {
+    try {
+      await getSubscriptionInfo();
+      await checkSubscriptionStatus();
+    } catch (error) {
+      console.error('Error initializing IAP:', error);
+      Alert.alert('Erreur', "Impossible d'initialiser le système d'achat.");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  const getSubscriptionInfo = async () => {
+    try {
+      await getSubscriptions({skus: [SUBSCRIPTION_SKU]});
+      console.log(subscriptions);
+    } catch (error) {
+      console.error('Error getting subscription info:', error);
+    }
+  };
+
+  const checkSubscriptionStatus = async () => {
+    try {
+      const purchases = await getAvailablePurchases();
+      const validSubscription = purchases.find(
+        (purchase: SubscriptionPurchase) =>
+          purchase.productId === SUBSCRIPTION_SKU &&
+          purchase.transactionReceipt,
+      );
+      setIsSubscribed(!!validSubscription);
+    } catch (error) {
+      console.error('Error checking subscription status:', error);
+    }
+  };
+
+  useEffect(() => {
+    initializeIAP();
+
+    // Nettoyage à la fin
+    return () => {
+      //RNIap.endConnection();
+    };
+  }, [initializeIAP]);
+
+  if (loading) {
+    return <Text>Chargement...</Text>;
+  }
 
   const openPrivacyPolicy = () => {
     navigation.navigate('PrivacyPolicy');
