@@ -225,13 +225,13 @@ const Header: React.FC<HeaderType> = ({
                 </View>
               </TouchableOpacity>
               {/* MENU */}
-              <items.BurgerMenuItem
+              {/* <items.BurgerMenuItem
                 title={'>  Prenium'}
                 onPress={() => {
                   setShowModal(false);
                   navigation.navigate('Prenium');
                 }}
-              />
+              /> */}
               <items.BurgerMenuItem
                 title='>  Usages thérapeutiques'
                 onPress={() => {
