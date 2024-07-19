@@ -57,14 +57,7 @@ const SignUp: React.FC = () => {
         data: {name, email, password},
       });
 
-      const responseStripe = await axios({
-        method: 'post',
-        headers: CONFIG.headers,
-        url: ENDPOINTS.CREATE_STRIPE_USER,
-        data: {name, email},
-      });
-
-      if (response.status && responseStripe.status === 200) {
+      if (response.status === 200) {
         navigation.replace('SignUpAccountCreated', {email, password});
         return;
       }

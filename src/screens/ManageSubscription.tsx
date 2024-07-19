@@ -20,37 +20,6 @@ const ManageSubscription: React.FC = () => {
     state => state.userSlice.user?.cancelAtPeriodEnd,
   );
 
-  const cancelSubscription = async () => {
-    setLoading(true);
-    try {
-      // Appel à votre backend pour annuler l'abonnement
-      const cancelResponse = await axios({
-        method: 'delete',
-        headers: CONFIG.headers,
-        url: ENDPOINTS.CANCEL_STRIPE_SUBSCRIBE,
-        data: {
-          email: user?.email,
-        },
-      });
-
-      if (cancelResponse.status === 200) {
-        navigation.reset({
-          index: 0,
-          routes: [{name: 'TabNavigator'}],
-        });
-      }
-      Alert.alert('Succès', 'Votre abonnement a été annulé avec succès !');
-    } catch (error) {
-      console.error("Erreur lors de l'annulation de l'abonnement:", error);
-      Alert.alert(
-        'Erreur',
-        "Une erreur est survenue lors de l'annulation de l'abonnement",
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const AlertCancelPrenium = () => {
     return Alert.alert(
       'Annulation',
@@ -59,7 +28,7 @@ const ManageSubscription: React.FC = () => {
         {
           text: 'Oui',
           onPress: () => {
-            cancelSubscription();
+            // cancelSubscription();
           },
         },
         {

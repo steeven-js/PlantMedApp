@@ -81,8 +81,7 @@ const MemberAccount: React.FC = () => {
           />
           <text.T14 style={{color: 'gray'}}>
             En activant le compte Premium, vous acceptez nos Conditions
-            d'utilisation et notre Politique de confidentialité. Le paiement
-            sera traité via Stripe, notre partenaire de paiement sécurisé.
+            d'utilisation et notre Politique de confidentialité.
           </text.T14>
         </ScrollView>
       </custom.ImageBackground>

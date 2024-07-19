@@ -41,12 +41,6 @@ export const SEND_PHONE_OTP = `${BASE_URL}api/send/otp/phone`;
 export const VERIFY_PHONE_OTP = `${BASE_URL}api/verify/otp/phone`;
 export const VERIFY_EMAIL_OTP = `${BASE_URL}api/verify/otp/email`;
 
-// ############ STRIPE ############ //
-export const USER_STRIPE_SUBSCRIPTION = `${BASE_URL}api/user-stripe-subscription`;
-export const CREATE_STRIPE_USER = `${BASE_URL}api/create-stripe-customer`;
-export const CREATE_STRIPE_SUBSCRIBE = `${BASE_URL}api/create-checkout-session`;
-export const CANCEL_STRIPE_SUBSCRIBE = `${BASE_URL}api/cancel-checkout-session`;
-
 // ############ AUTHORIZATION_TOKEN ############ //
 export const AUTHORIZATION_TOKEN = 'aH3KCew1YsWhWqW0tqNU3ndzHb3RdblI';
 
@@ -84,9 +78,5 @@ export const ENDPOINTS = {
   CHANGE_PASSWORD,
   VERIFY_PHONE_OTP,
   VERIFY_EMAIL_OTP,
-  CREATE_STRIPE_USER,
   UPDATE_SUBSCRIBE_USER,
-  CREATE_STRIPE_SUBSCRIBE,
-  CANCEL_STRIPE_SUBSCRIBE,
-  USER_STRIPE_SUBSCRIPTION,
 };

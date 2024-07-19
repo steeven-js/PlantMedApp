@@ -11,23 +11,5 @@ export type UserType = {
   emailVerified?: boolean;
   isPrenium?: boolean;
   premiumExpiresAt?: string;
-  stripeCustomerId?: string;
-  stripeSubscriptionId?: string;
   cancelAtPeriodEnd?: boolean;
-  stripe?: {
-    id?: string;
-    status?: string;
-    current_period_start?: string;
-    current_period_end?: string;
-    cancel_at_period_end?: boolean;
-    cancel_at?: string;
-    canceled_at?: string;
-    plan?: {
-      id?: string;
-      amount?: number;
-      currency?: string;
-      interval?: string;
-      interval_count?: number;
-    };
-  };
 };
