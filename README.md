@@ -4,8 +4,11 @@
 
 ## Change.logn
 
+- **Version 1.5.2**
+  - Correction d'un problème empêchant la création de compte 
+  - Amélioration des performances de l'application
+  - Correction de divers bugs et optimisations
 - **Version 1.5.1**
-  - Ajout du contenu Prenium
   - Amélioration des performances de l'application
   - Correction de divers bugs et optimisations
 - **Version 1.5**
