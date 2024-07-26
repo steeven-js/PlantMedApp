@@ -64,6 +64,7 @@ const Prenium: React.FC = () => {
 
   const checkSubscriptionStatus = (purchases: any[]) => {
     const subscription = purchases.find((purchase: { productId: string; }) => purchase.productId === SUBSCRIPTION_SKU);
+    // console.log('Abonnement trouvé:', subscription);
     if (subscription) {
       setSubscriptionInfo(subscription);
     }

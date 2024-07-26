@@ -1,21 +1,24 @@
-import React, {useEffect} from 'react';
-import {Provider} from 'react-redux';
-import {components} from './src/components';
-import {persistor, store} from './src/store';
-import {enableScreens} from 'react-native-screens';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { components } from './src/components';
+import { persistor, store } from './src/store';
+import { enableScreens } from 'react-native-screens';
 import Orientation from 'react-native-orientation-locker';
-import {PersistGate} from 'redux-persist/integration/react';
+import { PersistGate } from 'redux-persist/integration/react';
 import StackNavigator from './src/navigation/StackNavigator';
-import {NavigationContainer} from '@react-navigation/native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {withIAPContext} from 'react-native-iap';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { withIAPContext } from 'react-native-iap';
+import useIAP from './src/hooks/iap';
+
 
 enableScreens();
 
 const App = () => {
+  useIAP();
+
   useEffect(() => {
     Orientation.lockToPortrait();
-    
   }, []);
 
   return (
