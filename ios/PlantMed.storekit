@@ -1,5 +1,5 @@
 {
-  "identifier" : "1E0DB32D",
+  "identifier" : "966B49E9",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -8,15 +8,11 @@
   ],
   "settings" : {
     "_applicationInternalID" : "6503098172",
-    "_askToBuyEnabled" : true,
-    "_billingGracePeriodEnabled" : true,
-    "_billingIssuesEnabled" : true,
     "_developerTeamID" : "7Q6MN7W987",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 743042221.60225797,
-    "_locale" : "fr",
-    "_renewalBillingIssuesEnabled" : true,
-    "_storefront" : "FRA",
+    "_lastSynchronizedDate" : 743707172.72639203,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : null,
@@ -67,11 +63,11 @@
   },
   "subscriptionGroups" : [
     {
-      "id" : "21506043",
+      "id" : "21517444",
       "localizations" : [
 
       ],
-      "name" : "Prenium",
+      "name" : "Pro",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -82,25 +78,29 @@
           ],
           "displayPrice" : "1.99",
           "familyShareable" : false,
-          "groupNumber" : 1,
-          "internalID" : "6505093996",
+          "groupNumber" : 2,
+          "internalID" : "6578458121",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Acces au contenu prenium",
-              "displayName" : "Abonnement Plantmed",
+              "description" : "Un mois",
+              "displayName" : "Un mois",
               "locale" : "fr"
             }
           ],
-          "productID" : "P_199_1m",
+          "productID" : "plm_199_m",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Prenium Plantmed",
-          "subscriptionGroupID" : "21506043",
+          "referenceName" : "Sub 1 mois",
+          "subscriptionGroupID" : "21517444",
           "type" : "RecurringSubscription"
         }
       ]
     }
   ],
+  "subscriptionOffersKeyPair" : {
+    "id" : "70797A52",
+    "privateKey" : "MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgkPDaAt0jv91uxrljSx1Jv/ixtTxrJNp8G+34Vl402UKgCgYIKoZIzj0DAQehRANCAAQ1OxDS/MnR3goFV4+pVVhe9gLGLZtBSDZaXNFU38XEGxeDcKjjgXlMMLW7HjrvYEEgw0sXh+P8PAQQ/5TmCi38"
+  },
   "version" : {
     "major" : 3,
     "minor" : 0

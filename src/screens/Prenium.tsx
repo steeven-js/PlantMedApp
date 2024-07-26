@@ -1,48 +1,74 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {View, Text, ScrollView, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Alert, ActivityIndicator} from 'react-native';
 
 import {custom} from '../custom';
 import {theme} from '../constants';
 import {components} from '../components';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
-import { endConnection, getSubscriptions, initConnection } from 'react-native-iap';
+import { endConnection, getSubscriptions, initConnection, requestSubscription, getPurchaseHistory, getAvailablePurchases } from 'react-native-iap';
 
-const SUBSCRIPTION_SKU = 'com.sub.test';
+const SUBSCRIPTION_SKU = 'plm_199_m';
+interface SubscriptionInfo {
+  productId: string;
+}
 
 const Prenium: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [subscriptionInfo, setSubscriptionInfo] = useState<any>(null);
+  const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
   const navigation = hooks.useAppNavigation();
 
   useEffect(() => {
     const init = async () => {
+      setLoading(true);
       try {
         console.log("Début de l'initialisation");
         await initConnection();
         console.log("Connexion initialisée");
-        const subscriptions = await getSubscriptions({skus: [SUBSCRIPTION_SKU]})
-        console.log("Subscriptions récupérées:", subscriptions);
+        const subscriptions = await getSubscriptions({skus: [SUBSCRIPTION_SKU]});
+        // console.log("Subscriptions récupérées:", subscriptions);
         if (subscriptions.length === 0) {
           console.log("Aucun abonnement trouvé pour le SKU:", SUBSCRIPTION_SKU);
         }
+        const purchases = await getAvailablePurchases();
+        checkSubscriptionStatus(purchases);
       } catch (error) {
         console.error('Erreur complète:', error);
-        const errorMessage = (error as Error).message;
+        const errorMessage = error instanceof Error ? error.message : 'Une erreur inconnue est survenue';
         Alert.alert('Erreur', `Une erreur est survenue: ${errorMessage}`);
+      } finally {
+        setLoading(false);
       }
     };
-  
+
     init();
-  
+
     return () => {
       endConnection();
     }
-  }, [])
+  }, []);
 
-  if (loading) {
-    return <Text>Chargement...</Text>;
-  }
+  const checkSubscriptionStatus = (purchases: any[]) => {
+    const subscription = purchases.find((purchase: { productId: string; }) => purchase.productId === SUBSCRIPTION_SKU);
+    if (subscription) {
+      setSubscriptionInfo(subscription);
+    }
+  };
+
+  const handleSubscription = async () => {
+    setLoading(true);
+    try {
+      await requestSubscription({ sku: SUBSCRIPTION_SKU });
+      const purchases = await getPurchaseHistory();
+      checkSubscriptionStatus(purchases);
+    } catch (error) {
+      console.error('Erreur lors de l\'abonnement:', error);
+      const errorMessage = (error as Error).message;
+      Alert.alert('Erreur', `Une erreur est survenue lors de l'abonnement: ${errorMessage}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const openPrivacyPolicy = () => {
     navigation.navigate('PrivacyPolicy');
@@ -57,6 +83,14 @@ const Prenium: React.FC = () => {
   };
 
   const renderContent = (): JSX.Element => {
+    if (loading) {
+      return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <ActivityIndicator size="large" color={theme.colors.steelTeal} />
+        </View>
+      );
+    }
+  
     return (
       <ScrollView
         contentContainerStyle={{
@@ -102,7 +136,7 @@ const Prenium: React.FC = () => {
             loading={loading}
             title="S'abonner maintenant"
             containerStyle={{margin: 20}}
-            onPress={() => {}}
+            onPress={handleSubscription}
           />
           <View
             style={{

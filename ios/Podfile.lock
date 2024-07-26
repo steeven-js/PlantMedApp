@@ -85,8 +85,8 @@ PODS:
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
   - OpenSSL-Universal (1.1.1100)
-  - PurchasesHybridCommon (10.9.0):
-    - RevenueCat (= 4.43.0)
+  - PurchasesHybridCommon (11.1.1):
+    - RevenueCat (= 4.43.2)
   - RCT-Folly (2022.05.16.00):
     - boost
     - DoubleConversion
@@ -1135,7 +1135,7 @@ PODS:
     - React-jsi (= 0.73.2)
     - React-logger (= 0.73.2)
     - React-perflogger (= 0.73.2)
-  - RevenueCat (4.43.0)
+  - RevenueCat (4.43.2)
   - RNCAsyncStorage (1.23.1):
     - React-Core
   - RNCClipboard (1.14.1):
@@ -1146,8 +1146,8 @@ PODS:
     - SDWebImageWebPCoder (~> 0.8.4)
   - RNIap (12.15.1):
     - React-Core
-  - RNPurchases (7.27.4):
-    - PurchasesHybridCommon (= 10.9.0)
+  - RNPurchases (7.28.1):
+    - PurchasesHybridCommon (= 11.1.1)
     - React-Core
   - RNScreens (3.32.0):
     - glog
@@ -1413,7 +1413,7 @@ SPEC CHECKSUMS:
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
-  PurchasesHybridCommon: 0e157d11d04fdfdd434b5c6d05acb58fd1cc9db8
+  PurchasesHybridCommon: 73f4f2c6e4ec3487b4219bf60e1661100fb85da3
   RCT-Folly: 7169b2b1c44399c76a47b5deaaba715eeeb476c0
   RCTRequired: 9b1e7e262745fb671e33c51c1078d093bd30e322
   RCTTypeSafety: a759e3b086eccf3e2cbf2493d22f28e082f958e6
@@ -1459,12 +1459,12 @@ SPEC CHECKSUMS:
   React-runtimescheduler: df8945a656356ff10f58f65a70820478bfcf33ad
   React-utils: f5bc61e7ea3325c0732ae2d755f4441940163b85
   ReactCommon: 45b5d4f784e869c44a6f5a8fad5b114ca8f78c53
-  RevenueCat: f7b90c52f4b7e322bc9e7adaf734030523534b06
+  RevenueCat: 3d934653b7e8b09af88fd47e9e84cfaf5d0a89ba
   RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
   RNCClipboard: 0a720adef5ec193aa0e3de24c3977222c7e52a37
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNIap: 17583f958d35788a87948e94072ff6edd3580497
-  RNPurchases: 40b7425b17d29546bd380f8d9f630196cfa02825
+  RNPurchases: 4305de02b902d3c1e56a50295dc0a6e758b73095
   RNScreens: f0edd01b3ab160acc31fb056622a1d7c2909a0a5
   RNSVG: 963a95f1f5d512a13d11ffd50d351c87fb5c6890
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d

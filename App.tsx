@@ -1,5 +1,5 @@
-import {Provider} from 'react-redux';
 import React, {useEffect} from 'react';
+import {Provider} from 'react-redux';
 import {components} from './src/components';
 import {persistor, store} from './src/store';
 import {enableScreens} from 'react-native-screens';
@@ -9,12 +9,16 @@ import StackNavigator from './src/navigation/StackNavigator';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {withIAPContext} from 'react-native-iap';
+import Purchases from 'react-native-purchases';
 
 enableScreens();
 
 const App = () => {
   useEffect(() => {
     Orientation.lockToPortrait();
+    
+    // Configuration de RevenueCat
+    Purchases.configure({apiKey: 'appl_AWOSjMlZGtVNqcEplEenAiuKKDJ'});
   }, []);
 
   return (

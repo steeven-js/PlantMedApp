@@ -2404,10 +2404,10 @@
     redux-thunk "^3.1.0"
     reselect "^5.1.0"
 
-"@revenuecat/purchases-typescript-internal@10.9.0":
-  version "10.9.0"
-  resolved "https://registry.npmjs.org/@revenuecat/purchases-typescript-internal/-/purchases-typescript-internal-10.9.0.tgz"
-  integrity sha512-cHODQiU/3s1d0/+Weuwt3zsGhF7e7zVWYfog0A/FAt4OkKqX2YRY1VDlTq6eA0FE1nif3/xwrhvfQVlMvUKe3g==
+"@revenuecat/purchases-typescript-internal@11.1.1":
+  version "11.1.1"
+  resolved "https://registry.npmjs.org/@revenuecat/purchases-typescript-internal/-/purchases-typescript-internal-11.1.1.tgz"
+  integrity sha512-xYxv+vZJRPc//XqMAjxtu0fiN66WRmBORap37zA3DQymB9vKAJuTYqv9xMP2xSMglUYsA42M5DgdW2PMBCxfHA==
 
 "@sideway/address@^4.1.5":
   version "4.1.5"
@@ -6862,12 +6862,12 @@ react-native-orientation-locker@^1.6.0:
   resolved "https://registry.npmjs.org/react-native-orientation-locker/-/react-native-orientation-locker-1.7.0.tgz"
   integrity sha512-2PhG4UyRJktb3KCTISStuu8/q+Q3q3oPesGg9DhdY0b6Cu/ZzxkCvkbJte2TPWRYkS0JpClimvqVaonulGvDrA==
 
-react-native-purchases@^7.27.4:
-  version "7.27.4"
-  resolved "https://registry.npmjs.org/react-native-purchases/-/react-native-purchases-7.27.4.tgz"
-  integrity sha512-EEMO+ltPVPrRe+v/VkdvDZ9TFJ2Wz4+KYJcPggyEPhlh3Ld+bkNfrtbiri/Hczu0PI76DzggON9xAcnv3OCPHw==
+react-native-purchases@^7.28.1:
+  version "7.28.1"
+  resolved "https://registry.npmjs.org/react-native-purchases/-/react-native-purchases-7.28.1.tgz"
+  integrity sha512-5nd8s79dq+O9O+B0Gn9QNrKHn63kMNm5NQx1mnN8awBaDe95YpjqBaAgmVI/K66BSEDAkzTR0ep2BzUMawNmtQ==
   dependencies:
-    "@revenuecat/purchases-typescript-internal" "10.9.0"
+    "@revenuecat/purchases-typescript-internal" "11.1.1"
 
 react-native-responsive-dimensions@^3.1.1:
   version "3.1.1"
