@@ -1,22 +1,37 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import axios from 'axios';
+import {useSelector} from 'react-redux';
+import React, {useEffect, useState} from 'react';
 import {View, Text, ScrollView, TouchableOpacity, Alert, ActivityIndicator} from 'react-native';
 
+import {alert} from '../alert';
 import {custom} from '../custom';
 import {theme} from '../constants';
+import {UserType} from '../types';
+import {RootState} from '../store';
+import {actions} from '../store/actions';
 import {components} from '../components';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
+import {ENDPOINTS, CONFIG} from '../config';
 import { endConnection, getSubscriptions, initConnection, requestSubscription, getPurchaseHistory, getAvailablePurchases } from 'react-native-iap';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
 interface SubscriptionInfo {
+  transactionDate: string;
+  transactionId: string;
+  transactionReceipt: string;
   productId: string;
 }
 
 const Prenium: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
+  const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
+  
+  const user: UserType | null = useSelector(
+    (state: RootState) => state.userSlice.user,
+  );
 
   useEffect(() => {
     const init = async () => {
@@ -26,7 +41,6 @@ const Prenium: React.FC = () => {
         await initConnection();
         console.log("Connexion initialisée");
         const subscriptions = await getSubscriptions({skus: [SUBSCRIPTION_SKU]});
-        // console.log("Subscriptions récupérées:", subscriptions);
         if (subscriptions.length === 0) {
           console.log("Aucun abonnement trouvé pour le SKU:", SUBSCRIPTION_SKU);
         }
@@ -61,10 +75,50 @@ const Prenium: React.FC = () => {
       await requestSubscription({ sku: SUBSCRIPTION_SKU });
       const purchases = await getPurchaseHistory();
       checkSubscriptionStatus(purchases);
+
+      if (purchases.some((purchase: { productId: string; }) => purchase.productId === SUBSCRIPTION_SKU)) {
+        await handleUpdate();
+      }
     } catch (error) {
       console.error('Erreur lors de l\'abonnement:', error);
       const errorMessage = (error as Error).message;
       Alert.alert('Erreur', `Une erreur est survenue lors de l'abonnement: ${errorMessage}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUpdate = async () => {
+    try {
+      setLoading(true);
+  
+      const updatedUserData = {
+        is_premium: true, 
+        subscription_info: {
+          transactionDate: subscriptionInfo?.transactionDate,
+          transactionId: subscriptionInfo?.transactionId,
+          transactionReceipt: subscriptionInfo?.transactionReceipt,
+          productId: subscriptionInfo?.productId
+        }
+      };
+  
+      const response = await axios({
+        method: 'put',
+        url: ENDPOINTS.UPDATE_SUBSCRIBE_USER + `/${user?.id}`,
+        headers: CONFIG.headers,
+        data: updatedUserData
+      });
+  
+      if (response.status === 200) {
+        dispatch(actions.setUser(response.data.user));
+        navigation.navigate('InfoSaved');
+        return;
+      }
+  
+      alert.somethingWentWrong();
+    } catch (error: any) {
+      console.error('Erreur lors de la mise à jour de l\'utilisateur:', error);
+      alert.somethingWentWrong();
     } finally {
       setLoading(false);
     }

@@ -31,7 +31,7 @@ export const CHANGE_PASSWORD = `${BASE_URL}api/change/password`;
 
 // ############ PUT REQUESTS ############ //
 export const UPDATE_USER = `${BASE_URL}api/user/update`;
-export const UPDATE_SUBSCRIBE_USER = `${BASE_URL}api/update-user-subscription`;
+export const UPDATE_SUBSCRIBE_USER = `${BASE_URL}api/update-user-is-prenium`;
 
 // ############ SEND OTP ############ //
 export const SEND_EMAIL_OTP = `${BASE_URL}api/send/otp/email`;
