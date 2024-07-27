@@ -4,7 +4,6 @@ import {
     endConnection,
     getSubscriptions,
     initConnection,
-    getAvailablePurchases,
 } from 'react-native-iap';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
@@ -25,8 +24,7 @@ const useIAP = () => {
                 } else {
                     console.log('Abonnements trouvés:', subscriptions);
                 }
-                const purchases = await getAvailablePurchases();
-                // console.log('Achats disponibles:', purchases);
+
             } catch (error) {
                 console.error('Erreur complète:', error);
                 const errorMessage =

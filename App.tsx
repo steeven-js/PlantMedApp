@@ -9,16 +9,21 @@ import StackNavigator from './src/navigation/StackNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { withIAPContext } from 'react-native-iap';
-import useIAP from './src/hooks/iap';
+import Purchases from 'react-native-purchases';
+
+
 
 
 enableScreens();
 
 const App = () => {
-  useIAP();
 
   useEffect(() => {
     Orientation.lockToPortrait();
+
+    Purchases.configure({
+      apiKey: 'appl_AWOSjMlZGtVNqcEplEenAiuKKDJ',
+    });
   }, []);
 
   return (

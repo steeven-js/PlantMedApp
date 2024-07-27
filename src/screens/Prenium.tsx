@@ -1,127 +1,107 @@
 import axios from 'axios';
-import {useSelector} from 'react-redux';
-import React, {useEffect, useState} from 'react';
-import {View, Text, ScrollView, TouchableOpacity, Alert, ActivityIndicator} from 'react-native';
+import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Alert,
+  ActivityIndicator,
+} from 'react-native';
 
-import {alert} from '../alert';
-import {custom} from '../custom';
-import {theme} from '../constants';
-import {UserType} from '../types';
-import {RootState} from '../store';
-import {actions} from '../store/actions';
-import {components} from '../components';
-import {utils} from '../utils';
-import {hooks} from '../hooks';
-import {ENDPOINTS, CONFIG} from '../config';
-import { endConnection, getSubscriptions, initConnection, requestSubscription, getPurchaseHistory, getAvailablePurchases } from 'react-native-iap';
+import { alert } from '../alert';
+import { custom } from '../custom';
+import { theme } from '../constants';
+import { UserType } from '../types';
+import { RootState } from '../store';
+import { actions } from '../store/actions';
+import { components } from '../components';
+import { utils } from '../utils';
+import { hooks } from '../hooks';
+import { useSubscription } from '../hooks/revenueCat';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
-interface SubscriptionInfo {
-  transactionDate: string;
-  transactionId: string;
-  transactionReceipt: string;
-  productId: string;
-}
+const PREMIUM_ENTITLEMENT = 'pro';
 
 const Prenium: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
   const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
-  
+
   const user: UserType | null = useSelector(
     (state: RootState) => state.userSlice.user,
   );
 
+  const { isSubscribed, offerings, purchaseSubscription, restorePurchases } =
+    useSubscription();
+
   useEffect(() => {
-    const init = async () => {
-      setLoading(true);
-      try {
-        console.log("Début de l'initialisation");
-        await initConnection();
-        console.log("Connexion initialisée");
-        const subscriptions = await getSubscriptions({skus: [SUBSCRIPTION_SKU]});
-        if (subscriptions.length === 0) {
-          console.log("Aucun abonnement trouvé pour le SKU:", SUBSCRIPTION_SKU);
-        }
-        const purchases = await getAvailablePurchases();
-        checkSubscriptionStatus(purchases);
-      } catch (error) {
-        console.error('Erreur complète:', error);
-        const errorMessage = error instanceof Error ? error.message : 'Une erreur inconnue est survenue';
-        Alert.alert('Erreur', `Une erreur est survenue: ${errorMessage}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    init();
-
-    return () => {
-      endConnection();
+    if (isSubscribed) {
+      console.log(`L'utilisateur a accès à l'entitlement ${PREMIUM_ENTITLEMENT}`);
+      // Ici, vous pouvez déclencher des actions spécifiques pour les utilisateurs premium
     }
-  }, []);
+  }, [isSubscribed]);
 
-  const checkSubscriptionStatus = (purchases: any[]) => {
-    const subscription = purchases.find((purchase: { productId: string; }) => purchase.productId === SUBSCRIPTION_SKU);
-    // console.log('Abonnement trouvé:', subscription);
-    if (subscription) {
-      setSubscriptionInfo(subscription);
-    }
-  };
-
-  const handleSubscription = async () => {
+  const handleSubscribe = async () => {
     setLoading(true);
     try {
-      await requestSubscription({ sku: SUBSCRIPTION_SKU });
-      const purchases = await getPurchaseHistory();
-      checkSubscriptionStatus(purchases);
-
-      if (purchases.some((purchase: { productId: string; }) => purchase.productId === SUBSCRIPTION_SKU)) {
-        await handleUpdate();
+      const packageToPurchase = offerings.find(
+        offer => offer.product.identifier === SUBSCRIPTION_SKU,
+      );
+      if (packageToPurchase) {
+        await purchaseSubscription(packageToPurchase);
+        // Après l'achat, nous devons vérifier à nouveau l'état de l'abonnement
+        const isNowSubscribed = await checkSubscriptionStatus();
+        if (isNowSubscribed) {
+          Alert.alert("Succès", "Vous avez maintenant accès au contenu premium !");
+        } else {
+          Alert.alert("Information", "L'achat a été effectué, mais l'accès premium n'est pas encore activé.");
+        }
+      } else {
+        Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
       }
     } catch (error) {
-      console.error('Erreur lors de l\'abonnement:', error);
-      const errorMessage = (error as Error).message;
-      Alert.alert('Erreur', `Une erreur est survenue lors de l'abonnement: ${errorMessage}`);
+      console.error("Erreur lors de l'abonnement:", error);
+      Alert.alert(
+        'Erreur',
+        "Une erreur est survenue lors de l'abonnement. Veuillez réessayer.",
+      );
     } finally {
       setLoading(false);
     }
   };
-
-  const handleUpdate = async () => {
+  
+  const handleRestorePurchases = async () => {
+    setLoading(true);
     try {
-      setLoading(true);
-  
-      const updatedUserData = {
-        is_premium: true, 
-        subscription_info: {
-          transactionDate: subscriptionInfo?.transactionDate,
-          transactionId: subscriptionInfo?.transactionId,
-          transactionReceipt: subscriptionInfo?.transactionReceipt,
-          productId: subscriptionInfo?.productId
-        }
-      };
-  
-      const response = await axios({
-        method: 'put',
-        url: ENDPOINTS.UPDATE_SUBSCRIBE_USER + `/${user?.id}`,
-        headers: CONFIG.headers,
-        data: updatedUserData
-      });
-  
-      if (response.status === 200) {
-        dispatch(actions.setUser(response.data.user));
-        navigation.navigate('InfoSaved');
-        return;
+      await restorePurchases();
+      // Après la restauration, nous devons vérifier à nouveau l'état de l'abonnement
+      const isNowSubscribed = await checkSubscriptionStatus();
+      if (isNowSubscribed) {
+        Alert.alert('Succès', 'Votre abonnement premium a été restauré !');
+      } else {
+        Alert.alert('Information', "Aucun abonnement premium actif n'a été trouvé.");
       }
-  
-      alert.somethingWentWrong();
-    } catch (error: any) {
-      console.error('Erreur lors de la mise à jour de l\'utilisateur:', error);
-      alert.somethingWentWrong();
+    } catch (error) {
+      console.error('Erreur lors de la restauration des achats:', error);
+      Alert.alert(
+        'Erreur',
+        'Une erreur est survenue lors de la restauration. Veuillez réessayer.',
+      );
     } finally {
       setLoading(false);
+    }
+  };
+  
+  // Ajoutez cette fonction pour vérifier l'état de l'abonnement
+  const checkSubscriptionStatus = async (): Promise<boolean> => {
+    try {
+      const { isSubscribed } = await useSubscription();
+      return isSubscribed;
+    } catch (error) {
+      console.error("Erreur lors de la vérification du statut de l'abonnement:", error);
+      return false;
     }
   };
 
@@ -141,11 +121,11 @@ const Prenium: React.FC = () => {
     if (loading) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <ActivityIndicator size="large" color={theme.colors.steelTeal} />
+          <ActivityIndicator size='large' color={theme.colors.steelTeal} />
         </View>
       );
     }
-  
+
     return (
       <ScrollView
         contentContainerStyle={{
@@ -155,43 +135,48 @@ const Prenium: React.FC = () => {
           paddingBottom: utils.responsiveHeight(20),
         }}
       >
-        <View style={{marginBottom: 20}}>
-          <Text style={{fontSize: 24, fontWeight: 'bold', marginBottom: 10}}>
+        <View style={{ marginBottom: 20 }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>
             Devenez Membre Premium!
           </Text>
-          <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 10}}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
             Abonnement Premium Plantes Médicinales
           </Text>
-          <Text style={{fontSize: 16, marginBottom: 20}}>
+          <Text style={{ fontSize: 16, marginBottom: 20 }}>
             Pour seulement 1,99 € par mois, profitez d'un accès exclusif à des
             contenus premium sur les plantes médicinales. Voici ce que vous
             obtenez avec l'abonnement Premium :
           </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
+          <Text style={{ fontSize: 16, marginBottom: 10 }}>
             - Accès à des fiches détaillées sur plus de 100 plantes médicinales.
           </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
+          <Text style={{ fontSize: 16, marginBottom: 10 }}>
             - Recettes exclusives pour préparer des remèdes maison.
           </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
+          <Text style={{ fontSize: 16, marginBottom: 10 }}>
             - Conseils personnalisés pour utiliser les plantes selon vos
             besoins.
           </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
+          <Text style={{ fontSize: 16, marginBottom: 10 }}>
             - Mises à jour régulières avec de nouvelles informations et plantes
             ajoutées chaque mois.
           </Text>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>
+          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>
             Durée de l'abonnement : 1 mois
           </Text>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 20}}>
+          <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 20 }}>
             Prix : 1,99 € par mois (renouvellement automatique)
           </Text>
           <components.Button
             loading={loading}
-            title="S'abonner maintenant"
-            containerStyle={{margin: 20}}
-            onPress={handleSubscription}
+            title={isSubscribed ? 'Vous êtes abonné' : "S'abonner maintenant"}
+            containerStyle={{ margin: 20 }}
+            onPress={isSubscribed ? undefined : handleSubscribe}
+          />
+          <components.Button
+            title='Restaurer les achats'
+            containerStyle={{ margin: 20 }}
+            onPress={handleRestorePurchases}
           />
           <View
             style={{
@@ -246,13 +231,13 @@ const Prenium: React.FC = () => {
 
   return (
     <custom.ImageBackground
-      style={{flex: 1}}
+      style={{ flex: 1 }}
       resizeMode='stretch'
       source={require('../assets/bg/02.png')}
     >
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}
+        containerStyle={{ backgroundColor: theme.colors.transparent }}
       >
         {renderHeader()}
         {renderContent()}
