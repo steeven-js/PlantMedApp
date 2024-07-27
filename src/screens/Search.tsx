@@ -24,9 +24,9 @@ const Search: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const user = hooks.useAppSelector(state => state.userSlice.user);
-  // const isPrenium = hooks.useAppSelector(
-  //   state => state.userSlice.user?.isPrenium,
-  // );
+  const isPrenium = hooks.useAppSelector(
+    state => state.userSlice.user?.isPrenium,
+  );
 
   const {
     data: userData,
@@ -119,13 +119,13 @@ const Search: React.FC = () => {
         }}
         onPress={() => {
           navigation.navigate('PlantMed', {item});
-          // if (isPrenium) {
-          //   navigation.navigate('PlantMed', {item});
-          // } else if (!isPrenium && item.is_prenium == false) {
-          //   navigation.navigate('PlantMed', {item});
-          // } else {
-          //   navigation.navigate('Prenium');
-          // }
+          if (isPrenium) {
+            navigation.navigate('PlantMed', {item});
+          } else if (!isPrenium && item.is_prenium == false) {
+            navigation.navigate('PlantMed', {item});
+          } else {
+            navigation.navigate('Prenium');
+          }
         }}
       >
         <svg.SearchSmallSvg />
@@ -148,7 +148,7 @@ const Search: React.FC = () => {
             {item.name}
           </Text>
 
-          {/* <View
+          <View
             style={{
               alignSelf: 'flex-start',
               justifyContent: 'center',
@@ -169,7 +169,7 @@ const Search: React.FC = () => {
                   : theme.colors.steelTeal
               }
             />
-          </View> */}
+          </View>
         </View>
       </TouchableOpacity>
     );

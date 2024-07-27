@@ -17,9 +17,9 @@ type Props = {
 
 const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
   const navigation = hooks.useAppNavigation();
-  // const isPrenium = hooks.useAppSelector(
-  //   state => state.userSlice.user?.isPrenium,
-  // );
+  const isPrenium = hooks.useAppSelector(
+    state => state.userSlice.user?.isPrenium,
+  );
 
   const onPress = () => {
     if (qty > 0) {
@@ -27,19 +27,19 @@ const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
         title: item.name,
         products: dataFilter ?? [],
       });
-      // if (isPrenium) {
-      //   navigation.navigate('PlantMedList', {
-      //     title: item.name,
-      //     products: dataFilter ?? [],
-      //   });
-      // } else if (!isPrenium && item.is_prenium == false) {
-      //   navigation.navigate('PlantMedList', {
-      //     title: item.name,
-      //     products: dataFilter ?? [],
-      //   });
-      // } else {
-      //   navigation.navigate('Prenium');
-      // }
+      if (isPrenium) {
+        navigation.navigate('PlantMedList', {
+          title: item.name,
+          products: dataFilter ?? [],
+        });
+      } else if (!isPrenium && item.is_prenium == false) {
+        navigation.navigate('PlantMedList', {
+          title: item.name,
+          products: dataFilter ?? [],
+        });
+      } else {
+        navigation.navigate('Prenium');
+      }
     }
     if (qty === 0) {
       Alert.alert('No data', 'No data available for this category');
@@ -101,7 +101,7 @@ const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
             </Text>
           </View>
 
-          {/* <View
+          <View
             style={{
               backgroundColor: '#CFF5CE',
               alignSelf: 'flex-start',
@@ -126,7 +126,7 @@ const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
                   : theme.colors.steelTeal
               }
             />
-          </View> */}
+          </View>
         </View>
 
         <Text
