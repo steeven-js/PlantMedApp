@@ -86,6 +86,10 @@ const Home: React.FC = () => {
 
   let categories = categoriesData?.symptoms || [];
 
+  let freeCategories = categoriesData?.symptoms.filter(
+    e => e.is_prenium == false,
+  );
+
   let banner = bannersData?.banners || [];
 
   const isData =
@@ -117,15 +121,15 @@ const Home: React.FC = () => {
   }, []);
 
   // Fonction pour sélectionner aléatoirement 10 catégories
-  const getRandomCategories = (categories: any[], count: number) => {
-    const shuffled = [...categories].sort(() => 0.5 - Math.random());
+  const getRandomCategories = (freeCategories: any[], count: number) => {
+    const shuffled = [...freeCategories].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
   };
 
   // Utilisez useMemo pour ne pas recalculer à chaque rendu
   const randomCategories = useMemo(() => {
-    return getRandomCategories(categories, 10);
-  }, [categories]);
+    return freeCategories ? getRandomCategories(freeCategories, 10) : [];
+  }, [freeCategories]);
 
   const renderCarouselItem = ({item}) => {
     const products = plantsData?.plantmed.filter(plant => {
