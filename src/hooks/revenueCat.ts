@@ -59,6 +59,8 @@ export function useSubscription() {
         }
     }
 
+    console.log('isSubscribed:', isSubscribed);
+
     return {
         isSubscribed,
         offerings,
