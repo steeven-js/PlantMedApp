@@ -21,7 +21,6 @@ const PlantmedCard: React.FC<Props> = ({
   );
 
   const onPress = () => {
-    navigation.navigate('PlantMed', {item});
     if (isPrenium) {
       navigation.navigate('PlantMed', {item});
     } else if (!isPrenium && item.is_prenium == false) {

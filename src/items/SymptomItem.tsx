@@ -23,10 +23,6 @@ const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
 
   const onPress = () => {
     if (qty > 0) {
-      navigation.navigate('PlantMedList', {
-        title: item.name,
-        products: dataFilter ?? [],
-      });
       if (isPrenium) {
         navigation.navigate('PlantMedList', {
           title: item.name,

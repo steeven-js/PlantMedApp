@@ -22,7 +22,7 @@ const userSlice = createSlice({
     setRememberMe: (state, action: PayloadAction<boolean>) => {
       state.rememberMe = action.payload;
     },
-    setPremium: (state, action: PayloadAction<boolean>) => {
+    setPrenium: (state, action: PayloadAction<boolean>) => {
       if (state.user) {
         state.user.isPrenium = action.payload;
       }
@@ -36,23 +36,11 @@ const userSlice = createSlice({
 });
 
 export const {
-  setUser,
   logOut,
+  setUser,
+  setPrenium,
   setRememberMe,
-  setPremium,
   setCancelAtPeriodEnd,
 } = userSlice.actions;
 
 export { userSlice };
-
-// Créez un hook personnalisé pour gérer la mise à jour de l'abonnement
-export function useUpdateSubscription() {
-  const { isSubscribed, checkSubscriptionStatus } = useSubscription();
-  const dispatch = useAppDispatch(); // Assurez-vous d'importer useAppDispatch de vos hooks
-
-  useEffect(() => {
-    dispatch(setPremium(isSubscribed));
-  }, [isSubscribed, dispatch]);
-
-  return { checkSubscriptionStatus };
-}

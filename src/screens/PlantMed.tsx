@@ -10,37 +10,25 @@ import {
 } from 'react-native';
 
 import {text} from '../text';
-import {alert} from '../alert';
 import {hooks} from '../hooks';
-import {items} from '../items';
 import {utils} from '../utils';
 import {custom} from '../custom';
-import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {components} from '../components';
-import {queryHooks} from '../store/slices/apiSlice';
-import {addToCart} from '../store/slices/cartSlice';
 import {PlantMedScreenProps} from '../types/ScreenProps';
 import {PlantMedType, ViewableItemsChanged} from '../types';
 
 const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const {item} = route.params;
-
-  const {responsiveHeight} = utils;
-
-  const user = hooks.useAppSelector(state => state.userSlice.user);
-
+  const [tab, setTab] = useState(0);
   const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
-
-  const [tab, setTab] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const viewabilityConfig = useRef({
     viewAreaCoveragePercentThreshold: 50,
   }).current;
-
-  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const onViewableItemsChanged = useRef((info: ViewableItemsChanged) => {
     const index = info.viewableItems[0]?.index ?? 0;
@@ -49,6 +37,22 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
 
   const cart = hooks.useAppSelector(state => state.cartSlice.list);
   const exist = (item: PlantMedType) => cart.find(i => i.id === item.id);
+
+  // ############ Vérification isPrenium ############ //
+  // Appeler hook isPremium pour vérifier si l'utilisateur est abonné
+  // const isPrenium = hooks.useAppSelector(
+  //   state => state.userSlice.user?.isPrenium,
+  // );
+
+  // useEffect(() => {
+  //   if (!isPrenium) {
+  //     // Redirection vers la page d'abonnement avec navigation.navigate('Subscription')
+  //     navigation.reset({
+  //       index: 0,
+  //       routes: [{name: 'Prenium'}],
+  //     });
+  //   }
+  // }, [isPrenium]);
 
   // ############ COMPONENTS ############ //
 
@@ -469,7 +473,6 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
         showsVerticalScrollIndicator={false}
       >
         {renderCarousel()}
-        {/* {renderDescription()} */}
         {renderTabs()}
         {renderTabContent()}
       </ScrollView>
