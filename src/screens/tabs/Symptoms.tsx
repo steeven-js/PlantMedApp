@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -14,16 +14,18 @@ import {hooks} from '../../hooks';
 import {custom} from '../../custom';
 import {theme} from '../../constants';
 import {components} from '../../components';
-import {queryHooks} from '../../store/slices/apiSlice';
 import PreniumSvg from '../../assets/svg/PreniumSvg';
+import {queryHooks} from '../../store/slices/apiSlice';
+import { useSubscription } from '../../hooks/revenueCat';
 
 const Symptoms: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
 
-  // console.log('isPrenium', isPrenium);
+  const {isSubscribed, checkSubscriptionStatus} = useSubscription();
+
+  useEffect(() => {
+    checkSubscriptionStatus();
+  }, []);
 
   const {
     data: plantsData,
@@ -91,12 +93,12 @@ const Symptoms: React.FC = () => {
                 }}
                 onPress={() => {
                   if (qty > 0) {
-                    if (isPrenium) {
+                    if (isSubscribed) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
                         products: dataFilter ?? [],
                       });
-                    } else if (!isPrenium && item.is_prenium == false) {
+                    } else if (!isSubscribed && item.is_prenium == false) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
                         products: dataFilter ?? [],

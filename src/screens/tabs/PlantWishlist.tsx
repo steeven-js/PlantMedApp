@@ -1,17 +1,22 @@
-import React, {useState} from 'react';
-import {ScrollView, RefreshControl} from 'react-native';
+import React, {useEffect} from 'react';
+import {ScrollView} from 'react-native';
 
 import {text} from '../../text';
 import {items} from '../../items';
 import {hooks} from '../../hooks';
 import {utils} from '../../utils';
 import {custom} from '../../custom';
-import {theme} from '../../constants';
 import {components} from '../../components';
 import {queryHooks} from '../../store/slices/apiSlice';
+import { useSubscription } from '../../hooks/revenueCat';
 
 const PlantWishlist: React.FC = () => {
-  const navigation = hooks.useAppNavigation();
+
+  const {checkSubscriptionStatus} = useSubscription();
+
+  useEffect(() => {
+    checkSubscriptionStatus();
+  }, []);
 
   const wishlist = hooks.useAppSelector(
     state => state.plantmedWishlistSlice.list,

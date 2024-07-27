@@ -4,54 +4,78 @@ import { UserType } from '../types';
 import { RootState } from '../store';
 import { Platform } from 'react-native';
 import { useSelector } from 'react-redux';
-import { actions } from '../store/actions';
 import { useEffect, useState } from 'react';
 import { ENDPOINTS, CONFIG } from '../config';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
 import { userSlice } from '../store/slices/userSlice';
 
-// Configurez vos clés API RevenueCat
+// Configuration des clés API RevenueCat
 const API_KEYS = {
     apple: 'appl_AWOSjMlZGtVNqcEplEenAiuKKDJ',
     google: 'votre_cle_api_google'
 };
 
-// Initialisez RevenueCat
+// Initialisation de RevenueCat
 Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
 Purchases.configure({ apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google });
 
 export function useSubscription() {
     const dispatch = hooks.useAppDispatch();
+    // États locaux pour gérer l'abonnement et les offres
     const [isSubscribed, setIsSubscribed] = useState(false);
     const [expirationDate, setExpirationDate] = useState<Date | null>(null);
     const [offerings, setOfferings] = useState<PurchasesPackage[]>([]);
 
+    // Récupération de l'utilisateur depuis le state global
     const user: UserType | null = useSelector(
         (state: RootState) => state.userSlice.user,
     );
 
+    // Effet pour vérifier le statut de l'abonnement et récupérer les offres au montage du composant
     useEffect(() => {
         checkSubscriptionStatus();
         fetchOfferings();
     }, []);
 
+    // Fonction pour vérifier le statut de l'abonnement
     async function checkSubscriptionStatus() {
         try {
             const customerInfo = await Purchases.getCustomerInfo();
             const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
+    
+            console.log('Informations client:', customerInfo);
+            // console.log('Nouveau statut de l\'abonnement:', newSubscriptionStatus);
+    
+            // Mise à jour de l'état local
             setIsSubscribed(newSubscriptionStatus);
     
-            await new Promise(resolve => setTimeout(resolve, 0));
+            // Mise à jour du store Redux
+            dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
 
-            console.log('Informations client:', customerInfo);
-            console.log('Statut de l\'abonnement:', newSubscriptionStatus);
+            // Mise à jour du backend
+            if (user?.id) {
+                try {
+                    const updatedUser = {
+                        is_premium: newSubscriptionStatus
+                    };
     
-            if (newSubscriptionStatus) {
-                dispatch(userSlice.actions.setPrenium(true));
-            } else {
-                dispatch(userSlice.actions.setPrenium(false));
+                    const response = await axios.put(
+                        `${ENDPOINTS.UPDATE_SUBSCRIBE_USER}/${user.id}`,
+                        updatedUser,
+                        { headers: CONFIG.headers }
+                    );
+    
+                    if (response.status === 200) {
+                        console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
+                    } else {
+                        console.error('Erreur lors de la mise à jour de l\'abonnement sur le backend');
+                    }
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour de l\'abonnement sur le backend:', error);
+                }
             }
     
+            // Gestion de la date d'expiration
             const latestExpirationDate = customerInfo.latestExpirationDate;
             if (latestExpirationDate) {
                 const expirationDateObj = new Date(latestExpirationDate);
@@ -65,6 +89,7 @@ export function useSubscription() {
         }
     }
 
+    // Fonction pour récupérer les offres disponibles
     async function fetchOfferings() {
         try {
             const offerings = await Purchases.getOfferings();
@@ -76,11 +101,12 @@ export function useSubscription() {
         }
     }
 
+    // Fonction pour effectuer un achat d'abonnement
     async function purchaseSubscription(packageToPurchase: PurchasesPackage) {
         try {
             const { customerInfo } = await Purchases.purchasePackage(packageToPurchase);
-            setIsSubscribed(customerInfo.entitlements.active['pro'] !== undefined);
             const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
+            setIsSubscribed(newSubscriptionStatus);
 
             if (user?.id) {
                 const updatedUser = {
@@ -94,7 +120,7 @@ export function useSubscription() {
                 );
 
                 if (response.status === 200) {
-                    dispatch(userSlice.actions.setPrenium(true));
+                    dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
                     console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
                 } else {
                     dispatch(userSlice.actions.setPrenium(false));
@@ -106,15 +132,20 @@ export function useSubscription() {
         }
     }
 
+    // Fonction pour restaurer les achats
     async function restorePurchases() {
         try {
             const customerInfo = await Purchases.restorePurchases();
-            setIsSubscribed(customerInfo.entitlements.active['pro'] !== undefined);
+            const restoredSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
+            setIsSubscribed(restoredSubscriptionStatus);
+            // Mise à jour du backend et du Redux store si nécessaire
+            // TODO: Ajouter la logique de mise à jour similaire à celle de purchaseSubscription
         } catch (error) {
             console.error('Erreur lors de la restauration des achats:', error);
         }
     }
 
+    // Fonction pour convertir un timestamp en date formatée
     function convertTimestampToDate(date: Date | null): string {
         if (!date) return 'Pas de date d\'expiration';
         
@@ -124,13 +155,14 @@ export function useSubscription() {
         
         const formattedDate = `${day}/${month}/${year}`;
 
-        console.log('Date d\'expiration:', formattedDate);
+        // console.log('Date d\'expiration:', formattedDate);
 
         setExpirationDate(date);
-        
+
         return formattedDate;
     }   
 
+    // Retourne les valeurs et fonctions nécessaires pour gérer l'abonnement
     return {
         offerings,
         isSubscribed,

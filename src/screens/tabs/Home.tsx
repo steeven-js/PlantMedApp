@@ -16,13 +16,10 @@ import {items} from '../../items';
 import {hooks} from '../../hooks';
 import {utils} from '../../utils';
 import {custom} from '../../custom';
-import {svg} from '../../assets/svg';
 import {theme} from '../../constants';
-import { useDispatch } from 'react-redux';
 import {components} from '../../components';
 import {queryHooks} from '../../store/slices/apiSlice';
 import {useSubscription} from '../../hooks/revenueCat';
-import { setPrenium } from '../../store/slices/userSlice';
 
 type ViewableItemsChanged = {
   viewableItems: Array<ViewToken>;

@@ -2,11 +2,8 @@ import {View} from 'react-native';
 import React, {useEffect} from 'react';
 
 import Home from '../screens/tabs/Home';
-import Order from '../screens/tabs/Order';
 import Profile from '../screens/tabs/Profile';
-import Wishlist from '../screens/tabs/Wishlist';
 import Symptoms from '../screens/tabs/Symptoms';
-import Categories from '../screens/tabs/Categories';
 import PlantWishlist from '../screens/tabs/PlantWishlist';
 
 import {hooks} from '../hooks';
@@ -16,16 +13,20 @@ import {actions} from '../store/actions';
 import {components} from '../components';
 import BottomTabBar from './BottomTabBar';
 import {queryHooks} from '../store/slices/apiSlice';
+import { useSubscription } from '../hooks/revenueCat';
 
 const TabNavigator: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
   const user = hooks.useAppSelector(state => state.userSlice.user);
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
   const currentTabScreen = hooks.useAppSelector(state => state.tabSlice.screen);
 
   const tabs = getTabs();
+
+  const {checkSubscriptionStatus} = useSubscription();
+
+  useEffect(() => {
+    checkSubscriptionStatus();
+  }, []);
 
   console.log('user', JSON.stringify(user, null, 2));
   const {

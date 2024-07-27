@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {View, Alert, ScrollView} from 'react-native';
 
 import {hooks} from '../../hooks';
@@ -7,14 +7,18 @@ import {items} from '../../items';
 import {custom} from '../../custom';
 import {svg} from '../../assets/svg';
 import {components} from '../../components';
+import { useSubscription } from '../../hooks/revenueCat';
 
 const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
   const user = hooks.useAppSelector(state => state.userSlice.user);
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+
+  const {isSubscribed, checkSubscriptionStatus} = useSubscription();
+
+  useEffect(() => {
+    checkSubscriptionStatus();
+  }, []);
 
   const renderUserInfo = (): JSX.Element => {
     return (
@@ -48,7 +52,7 @@ const Profile: React.FC = () => {
     return (
       <View style={{paddingLeft: 20}}>
         <items.ProfileItem
-          title={isPrenium ? 'Compte premium' : 'Compte gratuit'}
+          title={isSubscribed ? 'Compte premium' : 'Compte gratuit'}
           onPress={() => {
             navigation.navigate('MemberAccount');
           }}
