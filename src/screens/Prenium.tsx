@@ -17,6 +17,7 @@ import {components} from '../components';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
+import { userSlice } from '../store/slices/userSlice';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
 
@@ -40,6 +41,8 @@ const Prenium: React.FC = () => {
       if (packageToPurchase) {
         await purchaseSubscription(packageToPurchase);
         // Après l'achat, nous devons vérifier à nouveau l'état de l'abonnement
+
+        dispatch(userSlice.actions.setPrenium(true));
       } else {
         Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
       }

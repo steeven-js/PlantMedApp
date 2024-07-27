@@ -8,6 +8,7 @@ import { actions } from '../store/actions';
 import { useEffect, useState } from 'react';
 import { ENDPOINTS, CONFIG } from '../config';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
+import { userSlice } from '../store/slices/userSlice';
 
 // Configurez vos clés API RevenueCat
 const API_KEYS = {
@@ -54,7 +55,7 @@ export function useSubscription() {
                 );
     
                 if (response.status === 200) {
-                    dispatch(actions.setUser(response.data.user));
+                    dispatch(userSlice.actions.setPrenium(true));
                     console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
                 }
             } else {

@@ -18,9 +18,11 @@ import {utils} from '../../utils';
 import {custom} from '../../custom';
 import {svg} from '../../assets/svg';
 import {theme} from '../../constants';
+import { useDispatch } from 'react-redux';
 import {components} from '../../components';
 import {queryHooks} from '../../store/slices/apiSlice';
-import { useSubscription } from '../../hooks/revenueCat';
+import {useSubscription} from '../../hooks/revenueCat';
+import { setPrenium } from '../../store/slices/userSlice';
 
 type ViewableItemsChanged = {
   viewableItems: Array<ViewToken>;
@@ -34,8 +36,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     checkSubscriptionStatus();
-  }
-  , []);
+  }, []);
 
   const {
     data: plantsData,
@@ -86,10 +87,6 @@ const Home: React.FC = () => {
 
   let categories = categoriesData?.symptoms || [];
 
-  let freeCategories = categoriesData?.symptoms.filter(
-    e => e.is_prenium == false,
-  );
-
   let banner = bannersData?.banners || [];
 
   const isData =
@@ -119,17 +116,6 @@ const Home: React.FC = () => {
         setRefreshing(false);
       });
   }, []);
-
-  // Fonction pour sélectionner aléatoirement 10 catégories
-  const getRandomCategories = (freeCategories: any[], count: number) => {
-    const shuffled = [...freeCategories].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  };
-
-  // Utilisez useMemo pour ne pas recalculer à chaque rendu
-  const randomCategories = useMemo(() => {
-    return freeCategories ? getRandomCategories(freeCategories, 10) : [];
-  }, [freeCategories]);
 
   const renderCarouselItem = ({item}) => {
     const products = plantsData?.plantmed.filter(plant => {
@@ -313,42 +299,6 @@ const Home: React.FC = () => {
     return null;
   };
 
-  const renderCategories = (): JSX.Element => {
-    return (
-      <ScrollView
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingLeft: 20,
-        }}
-        style={{
-          marginBottom: utils.responsiveHeight(50),
-          marginTop: carouselData?.carousel.length
-            ? 0
-            : utils.responsiveHeight(20),
-          flexGrow: 0,
-        }}
-      >
-        {randomCategories.map((item, index, array) => {
-          const isLast = index === array.length - 1;
-          const dataFilter = plantsData?.plantmed.filter(
-            e => e && e.symptoms.includes(item.name),
-          );
-          const qty = dataFilter?.length ?? 0;
-          return (
-            <items.SymptomItem
-              item={item}
-              isLast={isLast}
-              qty={qty}
-              key={item.id.toString()}
-              dataFilter={dataFilter}
-            />
-          );
-        })}
-      </ScrollView>
-    );
-  };
-
   const renderBestSellers = (): JSX.Element | null => {
     if (bestSellers?.length === 0) return null;
 
@@ -498,7 +448,6 @@ const Home: React.FC = () => {
           showsVerticalScrollIndicator={false}
         >
           {renderCarousel()}
-          {renderCategories()}
           {renderBestSellers()}
           {renderBanner()}
           {renderFeatured()}
