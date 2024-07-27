@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {useSelector} from 'react-redux';
 import React, {useEffect, useState} from 'react';
 import {
@@ -10,19 +9,16 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-import {alert} from '../alert';
 import {custom} from '../custom';
 import {theme} from '../constants';
 import {UserType} from '../types';
 import {RootState} from '../store';
-import {actions} from '../store/actions';
 import {components} from '../components';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
-const PREMIUM_ENTITLEMENT = 'pro';
 
 const Prenium: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -33,17 +29,7 @@ const Prenium: React.FC = () => {
     (state: RootState) => state.userSlice.user,
   );
 
-  const {isSubscribed, offerings, purchaseSubscription, restorePurchases} =
-    useSubscription();
-
-  useEffect(() => {
-    if (isSubscribed) {
-      console.log(
-        `L'utilisateur a accès à l'entitlement ${PREMIUM_ENTITLEMENT}`,
-      );
-      // Ici, vous pouvez déclencher des actions spécifiques pour les utilisateurs premium
-    }
-  }, [isSubscribed]);
+  const {isSubscribed, offerings, purchaseSubscription} = useSubscription();
 
   const handleSubscribe = async () => {
     setLoading(true);

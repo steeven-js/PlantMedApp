@@ -36,24 +36,29 @@ export function useSubscription() {
     async function checkSubscriptionStatus() {
         try {
             const customerInfo = await Purchases.getCustomerInfo();
-            setIsSubscribed(customerInfo.entitlements.active['pro'] !== undefined);
-
-            // console.log('Statut de l\'abonnement:', isSubscribed);
-
-            const updatedUser = {
-                is_premium: isSubscribed 
-            };
-
-            const response = await axios({
-                method: 'put',
-                url: ENDPOINTS.UPDATE_SUBSCRIBE_USER + `/${user?.id}`,
-                headers: CONFIG.headers,
-                data: updatedUser,
-            });
-
-            if (response.status === 200) {
-                dispatch(actions.setUser(response.data.user));
-                // console.log('Mise à jour de l\'abonnement de l\'utilisateur:', isSubscribed);
+            const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
+            setIsSubscribed(newSubscriptionStatus);
+    
+            console.log('Informations client:', customerInfo);
+            console.log('Statut de l\'abonnement:', newSubscriptionStatus);
+    
+            if (user?.id) {
+                const updatedUser = {
+                    is_premium: newSubscriptionStatus
+                };
+    
+                const response = await axios.put(
+                    `${ENDPOINTS.UPDATE_SUBSCRIBE_USER}/${user.id}`,
+                    updatedUser,
+                    { headers: CONFIG.headers }
+                );
+    
+                if (response.status === 200) {
+                    dispatch(actions.setUser(response.data.user));
+                    console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
+                }
+            } else {
+                console.warn('Impossible de mettre à jour l\'utilisateur : ID utilisateur non disponible');
             }
         } catch (error) {
             console.error('Erreur lors de la vérification du statut de l\'abonnement:', error);
@@ -89,12 +94,11 @@ export function useSubscription() {
         }
     }
 
-    console.log('isSubscribed:', isSubscribed);
-
     return {
-        isSubscribed,
         offerings,
+        isSubscribed,
+        restorePurchases,
         purchaseSubscription,
-        restorePurchases
+        checkSubscriptionStatus,
     };
 }

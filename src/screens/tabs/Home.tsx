@@ -1,4 +1,4 @@
-import React, {useMemo, useRef, useState} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -20,6 +20,7 @@ import {svg} from '../../assets/svg';
 import {theme} from '../../constants';
 import {components} from '../../components';
 import {queryHooks} from '../../store/slices/apiSlice';
+import { useSubscription } from '../../hooks/revenueCat';
 
 type ViewableItemsChanged = {
   viewableItems: Array<ViewToken>;
@@ -28,6 +29,13 @@ type ViewableItemsChanged = {
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
+
+  const {checkSubscriptionStatus} = useSubscription();
+
+  useEffect(() => {
+    checkSubscriptionStatus();
+  }
+  , []);
 
   const {
     data: plantsData,

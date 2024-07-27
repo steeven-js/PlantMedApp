@@ -1,9 +1,12 @@
-import {createSlice, PayloadAction, CaseReducerActions} from '@reduxjs/toolkit';
-import {UserType} from '../../types/UserType';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { UserType } from '../../types/UserType';
+import { useSubscription } from '../../hooks/revenueCat';
+import { useAppDispatch } from '../../hooks';
+import { useEffect } from 'react';
 
-type UserState = {user: UserType | null; rememberMe: boolean};
+type UserState = { user: UserType | null; rememberMe: boolean };
 
-const initialState: UserState = {user: null, rememberMe: false};
+const initialState: UserState = { user: null, rememberMe: false };
 
 const userSlice = createSlice({
   name: 'user',
@@ -19,11 +22,15 @@ const userSlice = createSlice({
     setRememberMe: (state, action: PayloadAction<boolean>) => {
       state.rememberMe = action.payload;
     },
-    setPrenium: (state, action: PayloadAction<boolean>) => {
-      state.user!.isPrenium = action.payload;
+    setPremium: (state, action: PayloadAction<boolean>) => {
+      if (state.user) {
+        state.user.isPrenium = action.payload;
+      }
     },
     setCancelAtPeriodEnd: (state, action: PayloadAction<boolean>) => {
-      state.user!.cancelAtPeriodEnd = action.payload;
+      if (state.user) {
+        state.user.cancelAtPeriodEnd = action.payload;
+      }
     },
   },
 });
@@ -32,8 +39,20 @@ export const {
   setUser,
   logOut,
   setRememberMe,
-  setPrenium,
+  setPremium,
   setCancelAtPeriodEnd,
 } = userSlice.actions;
 
-export {userSlice};
+export { userSlice };
+
+// Créez un hook personnalisé pour gérer la mise à jour de l'abonnement
+export function useUpdateSubscription() {
+  const { isSubscribed, checkSubscriptionStatus } = useSubscription();
+  const dispatch = useAppDispatch(); // Assurez-vous d'importer useAppDispatch de vos hooks
+
+  useEffect(() => {
+    dispatch(setPremium(isSubscribed));
+  }, [isSubscribed, dispatch]);
+
+  return { checkSubscriptionStatus };
+}
