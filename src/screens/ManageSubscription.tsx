@@ -8,6 +8,7 @@ import {CONFIG, ENDPOINTS} from '../config';
 import axios from 'axios';
 import {text} from '../text';
 import {getFormatDate} from '../utils/getFormatDate';
+import { useSubscription } from '../hooks/revenueCat';
 
 const ManageSubscription: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -16,45 +17,8 @@ const ManageSubscription: React.FC = () => {
   const isPrenium = hooks.useAppSelector(
     state => state.userSlice.user?.isPrenium,
   );
-  const cancelAtPeriodEnd = hooks.useAppSelector(
-    state => state.userSlice.user?.cancelAtPeriodEnd,
-  );
 
-  const AlertCancelPrenium = () => {
-    return Alert.alert(
-      'Annulation',
-      'Voulez vous vraiment annuler votre abonnement?',
-      [
-        {
-          text: 'Oui',
-          onPress: () => {
-            // cancelSubscription();
-          },
-        },
-        {
-          text: 'non',
-          onPress: () => {
-            navigation.goBack();
-          },
-        },
-      ],
-    );
-  };
-
-  const AlertAlreadyPrenium = () => {
-    return Alert.alert(
-      'Prenium actif',
-      'Vous avez déjà un abonnement prenium actif',
-      [
-        {
-          text: 'ok',
-          onPress: () => {
-            navigation.reset({index: 0, routes: [{name: 'TabNavigator'}]});
-          },
-        },
-      ],
-    );
-  };
+  const {expirationDate} = useSubscription();
 
   const renderHeader = (): JSX.Element => {
     return (
@@ -65,32 +29,23 @@ const ManageSubscription: React.FC = () => {
     );
   };
 
+  const alreadyPrenium = () => {
+    return Alert.alert('Success', 'Vous êtes déjà Prenium', [
+      {
+        text: 'OK',
+        onPress: () => {
+          console.log('OK Pressed');
+        },
+      },
+    ]);
+  };
+
   const renderContent = (): JSX.Element => {
     return (
       <View style={{flex: 1, justifyContent: 'center'}}>
         <text.T16 style={{marginBottom: 20, textAlign: 'center'}}>
-          {isPrenium && cancelAtPeriodEnd == false
-            ? 'Voulez-vous annuler votre abonnement Premium ?'
-            : `Membre Premium jusqu'au ${getFormatDate(
-                user?.premiumExpiresAt,
-              )}`}
+        {`Membre Premium jusqu'au ${expirationDate}`}
         </text.T16>
-        <components.Button
-          loading={loading}
-          title={
-            isPrenium && cancelAtPeriodEnd == false
-              ? "Annuler l'abonnement"
-              : 'Premium actif'
-          }
-          containerStyle={{margin: 20}}
-          onPress={() => {
-            if (isPrenium && cancelAtPeriodEnd == false) {
-              AlertCancelPrenium();
-            } else {
-              AlertAlreadyPrenium();
-            }
-          }}
-        />
       </View>
     );
   };

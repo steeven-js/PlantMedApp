@@ -45,6 +45,7 @@ const Prenium: React.FC = () => {
         dispatch(userSlice.actions.setPrenium(true));
       } else {
         Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
+        dispatch(userSlice.actions.setPrenium(false));
       }
     } catch (error) {
       console.error("Erreur lors de l'abonnement:", error);

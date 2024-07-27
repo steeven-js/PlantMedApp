@@ -23,6 +23,7 @@ Purchases.configure({ apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.
 export function useSubscription() {
     const dispatch = hooks.useAppDispatch();
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const [expirationDate, setExpirationDate] = useState<Date | null>(null);
     const [offerings, setOfferings] = useState<PurchasesPackage[]>([]);
 
     const user: UserType | null = useSelector(
@@ -40,27 +41,25 @@ export function useSubscription() {
             const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
             setIsSubscribed(newSubscriptionStatus);
     
+            await new Promise(resolve => setTimeout(resolve, 0));
+
             console.log('Informations client:', customerInfo);
             console.log('Statut de l\'abonnement:', newSubscriptionStatus);
     
-            if (user?.id) {
-                const updatedUser = {
-                    is_premium: newSubscriptionStatus
-                };
-    
-                const response = await axios.put(
-                    `${ENDPOINTS.UPDATE_SUBSCRIBE_USER}/${user.id}`,
-                    updatedUser,
-                    { headers: CONFIG.headers }
-                );
-    
-                if (response.status === 200) {
-                    dispatch(userSlice.actions.setPrenium(true));
-                    console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
-                }
+            if (newSubscriptionStatus) {
+                dispatch(userSlice.actions.setPrenium(true));
             } else {
-                console.warn('Impossible de mettre à jour l\'utilisateur : ID utilisateur non disponible');
+                dispatch(userSlice.actions.setPrenium(false));
             }
+    
+            const latestExpirationDate = customerInfo.latestExpirationDate;
+            if (latestExpirationDate) {
+                const expirationDateObj = new Date(latestExpirationDate);
+                convertTimestampToDate(expirationDateObj);
+            } else {
+                setExpirationDate(null);
+            }
+    
         } catch (error) {
             console.error('Erreur lors de la vérification du statut de l\'abonnement:', error);
         }
@@ -81,6 +80,27 @@ export function useSubscription() {
         try {
             const { customerInfo } = await Purchases.purchasePackage(packageToPurchase);
             setIsSubscribed(customerInfo.entitlements.active['pro'] !== undefined);
+            const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
+
+            if (user?.id) {
+                const updatedUser = {
+                    is_premium: newSubscriptionStatus
+                };
+
+                const response = await axios.put(
+                    `${ENDPOINTS.UPDATE_SUBSCRIBE_USER}/${user.id}`,
+                    updatedUser,
+                    { headers: CONFIG.headers }
+                );
+
+                if (response.status === 200) {
+                    dispatch(userSlice.actions.setPrenium(true));
+                    console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
+                } else {
+                    dispatch(userSlice.actions.setPrenium(false));
+                }
+            }
+
         } catch (error) {
             console.error('Erreur lors de l\'achat de l\'abonnement:', error);
         }
@@ -95,9 +115,26 @@ export function useSubscription() {
         }
     }
 
+    function convertTimestampToDate(date: Date | null): string {
+        if (!date) return 'Pas de date d\'expiration';
+        
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        
+        const formattedDate = `${day}/${month}/${year}`;
+
+        console.log('Date d\'expiration:', formattedDate);
+
+        setExpirationDate(date);
+        
+        return formattedDate;
+    }   
+
     return {
         offerings,
         isSubscribed,
+        expirationDate,
         restorePurchases,
         purchaseSubscription,
         checkSubscriptionStatus,
