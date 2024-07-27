@@ -91,10 +91,6 @@ const Symptoms: React.FC = () => {
                 }}
                 onPress={() => {
                   if (qty > 0) {
-                    navigation.navigate('PlantMedList', {
-                      title: item.name,
-                      products: dataFilter ?? [],
-                    });
                     if (isPrenium) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
