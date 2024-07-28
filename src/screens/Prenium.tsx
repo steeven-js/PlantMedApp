@@ -1,14 +1,14 @@
 import {useSelector} from 'react-redux';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   View,
-  Text,
   ScrollView,
   TouchableOpacity,
   Alert,
   ActivityIndicator,
 } from 'react-native';
 
+import {text} from '../text';
 import {custom} from '../custom';
 import {theme} from '../constants';
 import {UserType} from '../types';
@@ -17,7 +17,7 @@ import {components} from '../components';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
-import { userSlice } from '../store/slices/userSlice';
+import {userSlice} from '../store/slices/userSlice';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
 
@@ -97,92 +97,98 @@ const Prenium: React.FC = () => {
           flexGrow: 1,
           paddingTop: utils.responsiveHeight(40),
           paddingBottom: utils.responsiveHeight(20),
+          alignItems: 'center',
         }}
       >
         <View style={{marginBottom: 20}}>
-          <Text style={{fontSize: 24, fontWeight: 'bold', marginBottom: 10}}>
-            Devenez Membre Premium!
-          </Text>
-          <Text style={{fontSize: 18, fontWeight: 'bold', marginBottom: 10}}>
-            Abonnement Premium Plantes Médicinales
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 20}}>
-            Pour seulement 1,99 € par mois, profitez d'un accès exclusif à des
-            contenus premium sur les plantes médicinales. Voici ce que vous
-            obtenez avec l'abonnement Premium :
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
-            - Accès à des fiches détaillées sur plus de 100 plantes médicinales.
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
-            - Recettes exclusives pour préparer des remèdes maison.
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
-            - Conseils personnalisés pour utiliser les plantes selon vos
+          {/* <text.H3 style={{marginBottom: 10}}>
+              Votre compte est actuellement gratuit
+            </text.H3> */}
+          <text.H2 style={{marginBottom: 20}}>
+            Pour accéder à plus de fonctionnalités, passez à un compte Premium
+          </text.H2>
+          <text.H4 style={{marginBottom: 10}}>
+            Avantages du compte Premium :
+          </text.H4>
+          <text.T16>
+            • Accès à des fiches détaillées sur plus de 100 plantes médicinales.
+          </text.T16>
+          <text.T16>
+            • Recettes exclusives pour préparer des remèdes maison.
+          </text.T16>
+          <text.T16>
+            • Conseils personnalisés pour utiliser les plantes selon vos
             besoins.
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
-            - Mises à jour régulières avec de nouvelles informations et plantes
+          </text.T16>
+          <text.T16>
+            • Mises à jour régulières avec de nouvelles informations et plantes
             ajoutées chaque mois.
-          </Text>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>
-            Durée de l'abonnement : 1 mois
-          </Text>
-          <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 20}}>
-            Prix : 1,99 € par mois (renouvellement automatique)
-          </Text>
-          <components.Button
-            loading={loading}
-            title={isSubscribed ? 'Vous êtes abonné' : "S'abonner maintenant"}
-            containerStyle={{margin: 20}}
-            onPress={isSubscribed ? alreadyPrenium : handleSubscribe}
-          />
-          <View
+          </text.T16>
+        </View>
+        <text.T16 style={{marginBottom: 20}}>
+          L'abonnement se renouvelle automatiquement chaque mois. Vous pouvez le
+          résilier à tout moment depuis votre compte.
+        </text.T16>
+
+        <TouchableOpacity
+          style={{
+            backgroundColor: theme.colors.steelTeal,
+            padding: 15,
+            borderRadius: 10,
+            alignItems: 'center',
+            marginBottom: utils.responsiveHeight(20),
+            width: '100%',
+          }}
+          onPress={isSubscribed ? alreadyPrenium : handleSubscribe}
+        >
+          <text.T18 style={{color: 'white', fontWeight: 'bold'}}>
+            {isSubscribed
+              ? 'Vous êtes déjà Premium'
+              : 'Devenir Premium - 1,99 €/mois'}
+          </text.T18>
+        </TouchableOpacity>
+
+        <text.T14 style={{color: 'gray'}}>
+          En activant le compte Premium, vous acceptez nos Conditions
+          d'utilisation et notre Politique de confidentialité.
+        </text.T14>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            width: '100%',
+            justifyContent: 'space-around',
+            marginTop: 20,
+          }}
+        >
+          <TouchableOpacity
             style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 20,
+              paddingHorizontal: 10,
+              borderWidth: 1,
+              paddingVertical: 20,
+              borderRadius: 10,
+              borderColor: theme.colors.steelTeal,
             }}
+            onPress={openPrivacyPolicy}
           >
-            <TouchableOpacity
-              style={{
-                paddingHorizontal: 10,
-                borderWidth: 1,
-                paddingVertical: 20,
-                borderRadius: 10,
-                borderColor: theme.colors.steelTeal,
-              }}
-              onPress={openPrivacyPolicy}
-            >
-              <Text
-                style={{
-                  fontSize: 12,
-                  color: 'gray',
-                }}
-              >
-                Politique de confidentialité
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                paddingHorizontal: 10,
-                borderWidth: 1,
-                paddingVertical: 20,
-                borderRadius: 10,
-                borderColor: theme.colors.steelTeal,
-              }}
-              onPress={openTermsOfUse}
-            >
-              <Text
-                style={{
-                  fontSize: 12,
-                  color: 'gray',
-                }}
-              >
-                Conditions d'utilisation
-              </Text>
-            </TouchableOpacity>
-          </View>
+            <text.T14 style={{color: theme.colors.steelTeal}}>
+              Confidentialité
+            </text.T14>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              paddingHorizontal: 10,
+              borderWidth: 1,
+              paddingVertical: 20,
+              borderRadius: 10,
+              borderColor: theme.colors.steelTeal,
+            }}
+            onPress={openTermsOfUse}
+          >
+            <text.T14 style={{color: theme.colors.steelTeal}}>
+              Conditions
+            </text.T14>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     );
