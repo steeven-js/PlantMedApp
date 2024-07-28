@@ -26,6 +26,8 @@ export function useSubscription() {
     const [expirationDate, setExpirationDate] = useState<Date | null>(null);
     const [offerings, setOfferings] = useState<PurchasesPackage[]>([]);
 
+    const navigation = hooks.useAppNavigation();
+
     // Récupération de l'utilisateur depuis le state global
     const user: UserType | null = useSelector(
         (state: RootState) => state.userSlice.user,
@@ -122,6 +124,8 @@ export function useSubscription() {
                 if (response.status === 200) {
                     dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
                     console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
+
+                    navigation.navigate('PremiumActivated');
                 } else {
                     dispatch(userSlice.actions.setPrenium(false));
                 }

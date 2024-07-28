@@ -39,15 +39,14 @@ const Prenium: React.FC = () => {
         offer => offer.product.identifier === SUBSCRIPTION_SKU,
       );
       if (packageToPurchase) {
+
         await purchaseSubscription(packageToPurchase);
-        // Après l'achat, nous devons vérifier à nouveau l'état de l'abonnement
 
-        dispatch(userSlice.actions.setPrenium(true));
-
-        navigation.navigate('PremiumActivated');
       } else {
+
         Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
         dispatch(userSlice.actions.setPrenium(false));
+        
       }
     } catch (error) {
       console.error("Erreur lors de l'abonnement:", error);
