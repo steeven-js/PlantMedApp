@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateCardHolderName = (cardHolder: string) => {
   if (!cardHolder.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill card holder name field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ du nom du titulaire de la carte',
       type: 'danger',
       icon: 'danger',
     });
@@ -13,8 +13,8 @@ export const validateCardHolderName = (cardHolder: string) => {
 
   if (cardHolder.trim().length < 2) {
     showMessage({
-      message: 'Error',
-      description: 'Card holder name must be at least 3 characters',
+      message: 'Erreur',
+      description: 'Le nom du titulaire de la carte doit comporter au moins 3 caractères',
       type: 'danger',
       icon: 'danger',
     });
@@ -24,8 +24,8 @@ export const validateCardHolderName = (cardHolder: string) => {
   const regex = /^[a-zA-Zа-яА-Я\s]*$/;
   if (!regex.test(cardHolder)) {
     showMessage({
-      message: 'Error',
-      description: 'Card holder name can contain only letters',
+      message: 'Erreur',
+      description: 'Le nom du titulaire de la carte ne peut contenir que des lettres',
       type: 'danger',
       icon: 'danger',
     });

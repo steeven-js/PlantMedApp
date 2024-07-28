@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validatePassword = (password: string, iconValidation = false) => {
   if (!password.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill password field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ mot de passe',
       type: 'danger',
       icon: 'danger',
     });
@@ -13,8 +13,8 @@ export const validatePassword = (password: string, iconValidation = false) => {
 
   if (password.trim().length < 6) {
     showMessage({
-      message: 'Error',
-      description: 'Password must be at least 6 characters',
+      message: 'Erreur',
+      description: 'Le mot de passe doit comporter au moins 6 caractères',
       type: 'danger',
       icon: 'danger',
     });

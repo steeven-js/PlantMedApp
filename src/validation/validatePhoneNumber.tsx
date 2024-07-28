@@ -1,4 +1,4 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validatePhoneNumber = (
   phoneNumber: string,
@@ -7,8 +7,8 @@ export const validatePhoneNumber = (
   if (!phoneNumber.trim()) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
-        description: 'Please fill phone number field',
+        message: 'Erreur',
+        description: 'Veuillez remplir le champ du numéro de téléphone',
         type: 'danger',
         icon: 'danger',
       });
@@ -16,13 +16,13 @@ export const validatePhoneNumber = (
     return false;
   }
 
-  const regex = /^\+\d{10,}$/; // Удален знак вопроса после "+"
+  const regex = /^\+\d{10,}$/; // Suppression du signe "?" après "+"
   if (!regex.test(phoneNumber)) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
+        message: 'Erreur',
         description:
-          'Phone number must start with "+" and be at least 10 digits',
+          'Le numéro de téléphone doit commencer par "+" et comporter au moins 10 chiffres',
         type: 'danger',
         icon: 'danger',
       });

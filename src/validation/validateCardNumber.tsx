@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateCardNumber = (cardNumber: string) => {
   if (!cardNumber.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill card number field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ du numéro de carte',
       type: 'danger',
       icon: 'danger',
     });
@@ -15,8 +15,8 @@ export const validateCardNumber = (cardNumber: string) => {
   const regex = /^\d{16}$/;
   if (!regex.test(cleanCardNumber)) {
     showMessage({
-      message: 'Error',
-      description: 'Card number must be 16 digits',
+      message: 'Erreur',
+      description: 'Le numéro de carte doit comporter 16 chiffres',
       type: 'danger',
       icon: 'danger',
     });

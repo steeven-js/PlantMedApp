@@ -1,13 +1,13 @@
-import {Alert} from 'react-native';
+import { Alert } from 'react-native';
 
 const alreadyAdded = () => {
-  return Alert.alert('Already Added', 'Product already in cart.', [
-    {text: 'Cancel', style: 'cancel'},
+  return Alert.alert('Déjà ajouté', 'Produit déjà dans le panier.', [
+    { text: 'Annuler', style: 'cancel' },
   ]);
 };
 
 const userDeleted = () => {
-  return Alert.alert('Success', 'Account deleted successfully', [
+  return Alert.alert('Succès', 'Compte supprimé avec succès', [
     {
       text: 'OK',
       onPress: () => {
@@ -18,15 +18,15 @@ const userDeleted = () => {
 };
 
 const somethingWentWrong = () => {
-  return Alert.alert('Something went wrong, please try again later');
+  return Alert.alert('Une erreur s\'est produite, veuillez réessayer plus tard');
 };
 
 const invalidOtp = () => {
-  return Alert.alert('Invalid OTP', 'Please enter valid OTP');
+  return Alert.alert('OTP invalide', 'Veuillez entrer un OTP valide');
 };
 
 const invalidUsernameOrPassword = () => {
-  return Alert.alert('Error', 'Invalid username or password', [
+  return Alert.alert('Erreur', 'Nom d\'utilisateur ou mot de passe invalide', [
     {
       text: 'OK',
       onPress: () => {
@@ -38,8 +38,8 @@ const invalidUsernameOrPassword = () => {
 
 const userWithThisNameOrEmailAlreadyExists = () => {
   return Alert.alert(
-    'Error',
-    'User with this name or email already exists',
+    'Erreur',
+    'Un utilisateur avec ce nom ou cet email existe déjà',
     [
       {
         text: 'OK',
@@ -48,7 +48,7 @@ const userWithThisNameOrEmailAlreadyExists = () => {
         },
       },
     ],
-    {cancelable: false},
+    { cancelable: false },
   );
 };
 

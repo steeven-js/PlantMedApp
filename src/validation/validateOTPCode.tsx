@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateOTPCode = (otpCode: string) => {
   if (!otpCode.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill OTP field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ OTP',
       type: 'danger',
       icon: 'danger',
     });
@@ -14,8 +14,8 @@ export const validateOTPCode = (otpCode: string) => {
   const regex = /^\d{5}$/;
   if (!regex.test(otpCode)) {
     showMessage({
-      message: 'Error',
-      description: 'OTP code must be 5 digits',
+      message: 'Erreur',
+      description: 'Le code OTP doit comporter 5 chiffres',
       type: 'danger',
       icon: 'danger',
     });

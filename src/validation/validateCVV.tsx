@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateCVV = (cvv: string) => {
   if (!cvv.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill CVV field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ CVV',
       type: 'danger',
       icon: 'danger',
     });
@@ -14,8 +14,8 @@ export const validateCVV = (cvv: string) => {
   const regex = /^\d{3,4}$/;
   if (!regex.test(cvv)) {
     showMessage({
-      message: 'Error',
-      description: 'CVV must be 3 or 4 digits',
+      message: 'Erreur',
+      description: 'Le CVV doit comporter 3 ou 4 chiffres',
       type: 'danger',
       icon: 'danger',
     });

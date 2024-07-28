@@ -1,11 +1,11 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateName = (name: string, iconValidation = false) => {
   if (!name.trim()) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
-        description: 'Please fill name field',
+        message: 'Erreur',
+        description: 'Veuillez remplir le champ nom',
         type: 'danger',
         icon: 'danger',
       });
@@ -17,8 +17,8 @@ export const validateName = (name: string, iconValidation = false) => {
   if (name.trim().length < 2) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
-        description: 'Name must be at least 3 characters',
+        message: 'Erreur',
+        description: 'Le nom doit comporter au moins 3 caractères',
         type: 'danger',
         icon: 'danger',
       });
@@ -31,8 +31,8 @@ export const validateName = (name: string, iconValidation = false) => {
   if (!regex.test(name)) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
-        description: 'Name can contain only letters',
+        message: 'Erreur',
+        description: 'Le nom ne peut contenir que des lettres',
         type: 'danger',
         icon: 'danger',
       });

@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validatePromoCode = (promoCode: string) => {
   if (!promoCode.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill promo code field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ du code promo',
       type: 'danger',
       icon: 'danger',
     });
@@ -13,8 +13,8 @@ export const validatePromoCode = (promoCode: string) => {
 
   if (promoCode.length < 3) {
     showMessage({
-      message: 'Error',
-      description: 'Promo code must be at least 3 characters',
+      message: 'Erreur',
+      description: 'Le code promo doit comporter au moins 3 caractères',
       type: 'danger',
       icon: 'danger',
     });

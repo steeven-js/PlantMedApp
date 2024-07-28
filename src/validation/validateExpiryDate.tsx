@@ -1,10 +1,10 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateExpiryDate = (expiryDate: string) => {
   if (!expiryDate.trim()) {
     showMessage({
-      message: 'Error',
-      description: 'Please fill expiry date field',
+      message: 'Erreur',
+      description: 'Veuillez remplir le champ de la date d\'expiration',
       type: 'danger',
       icon: 'danger',
     });
@@ -14,8 +14,8 @@ export const validateExpiryDate = (expiryDate: string) => {
   // const regex = /^(0[1-9]|1[0-2])([0-9]{2})$/;
   // if (!regex.test(expiryDate)) {
   //   showMessage({
-  //     message: 'Error',
-  //     description: 'Expiry date must be in the format MM/YY',
+  //     message: 'Erreur',
+  //     description: 'La date d\'expiration doit être au format MM/AA',
   //     type: 'danger',
   //     icon: 'danger',
   //   });
@@ -31,8 +31,8 @@ export const validateExpiryDate = (expiryDate: string) => {
     (Number(year) === currentYear && Number(month) < currentMonth)
   ) {
     showMessage({
-      message: 'Error',
-      description: 'The card has already expired',
+      message: 'Erreur',
+      description: 'La carte est déjà expirée',
       type: 'danger',
       icon: 'danger',
     });

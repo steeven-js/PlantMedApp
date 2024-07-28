@@ -1,11 +1,11 @@
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 export const validateEmail = (email: string, iconValidation = false) => {
   if (!email.trim()) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
-        description: 'Please fill email field',
+        message: 'Erreur',
+        description: 'Veuillez remplir le champ de l\'email',
         type: 'danger',
         icon: 'danger',
       });
@@ -17,8 +17,8 @@ export const validateEmail = (email: string, iconValidation = false) => {
   if (!regex.test(email)) {
     if (!iconValidation) {
       showMessage({
-        message: 'Error',
-        description: 'Invalid email format',
+        message: 'Erreur',
+        description: 'Format de l\'email invalide',
         type: 'danger',
         icon: 'danger',
       });
