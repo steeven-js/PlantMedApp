@@ -1,23 +1,34 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-const SearchSmallSvg: React.FC = () => {
+type Props = {
+  fillColor?: string;
+  strokeColor?: string;
+  width?: string;
+  height?: string;
+};
+
+const SearchLargeSvg: React.FC<Props> = ({
+  fillColor = '#4A6973',
+  width = 28,
+  height = 28,
+}) => {
   return (
-    <Svg width={14} height={14} fill='none'>
+    <Svg width={width} height={height} fill='none'>
       <Path
-        fill='#DBE3F5'
+        fill={fillColor}
         fillRule='evenodd'
-        d='M6.417 2.188a4.23 4.23 0 1 0 0 8.458 4.23 4.23 0 0 0 0-8.459ZM1.313 6.417a5.104 5.104 0 1 1 10.208 0 5.104 5.104 0 0 1-10.209 0Z'
+        d='M12.834 4.376a8.46 8.46 0 1 0 0 16.916 8.46 8.46 0 0 0 0-16.916ZM2.626 12.834a10.208 10.208 0 1 1 20.417 0 10.208 10.208 0 0 1-20.417 0Z'
         clipRule='evenodd'
       />
       <Path
-        fill='#DBE3F5'
+        fill={fillColor}
         fillRule='evenodd'
-        d='M9.3 9.3a.583.583 0 0 1 .825 0l2.537 2.537a.583.583 0 0 1-.825.825L9.3 10.125a.583.583 0 0 1 0-.825Z'
+        d='M18.6 18.6a1.166 1.166 0 0 1 1.65 0l5.074 5.074a1.166 1.166 0 0 1-1.65 1.65L18.6 20.25a1.166 1.166 0 0 1 0-1.65Z'
         clipRule='evenodd'
       />
     </Svg>
   );
 };
 
-export default SearchSmallSvg;
+export default SearchLargeSvg;

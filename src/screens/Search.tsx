@@ -12,6 +12,7 @@ import {hooks} from '../hooks';
 import {custom} from '../custom';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
+import {plantmed} from '../plantmed';
 import {PlantMedType} from '../types';
 import {components} from '../components';
 import {queryHooks} from '../store/slices/apiSlice';
@@ -79,6 +80,7 @@ const Search: React.FC = () => {
               padding: 0,
               borderRadius: 4,
               paddingHorizontal: 20,
+              fontSize: Platform.OS === 'ios' ? 18 : 16,
               backgroundColor: `${theme.colors.antiFlashWhite}50`,
               color: theme.colors.textColor,
               ...theme.fonts.DM_Sans_400Regular,
@@ -96,7 +98,7 @@ const Search: React.FC = () => {
             style={{
               color: theme.colors.textColor,
               ...theme.fonts.DM_Sans_400Regular,
-              fontSize: Platform.OS === 'ios' ? 14 : 12,
+              fontSize: Platform.OS === 'ios' ? 18 : 16,
             }}
           >
             Annuler
@@ -115,6 +117,7 @@ const Search: React.FC = () => {
           borderBottomWidth: 1,
           borderBottomColor: `${theme.colors.antiFlashWhite}80`,
           flexDirection: 'row',
+          justifyContent: 'flex-start',
           alignItems: 'center',
         }}
         onPress={() => {
@@ -128,24 +131,54 @@ const Search: React.FC = () => {
         }}
       >
         <svg.SearchSmallSvg />
+
         <View
           style={{
+            flex: 1,
             flexDirection: 'row',
             justifyContent: 'space-between',
+            alignItems: 'center',
             width: '100%',
-            paddingHorizontal: 10,
           }}
         >
-          <Text
+          <View
             style={{
-              marginLeft: 10,
-              color: theme.colors.textColor,
-              ...theme.fonts.DM_Sans_400Regular,
-              fontSize: Platform.OS === 'ios' ? 14 : 12,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingHorizontal: 10,
             }}
           >
-            {item.name}
-          </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+              }}
+            >
+              {/* IMAGE */}
+              <custom.ImageBackground
+                source={{uri: item.image}}
+                style={{width: 50, height: 50}}
+                imageStyle={{
+                  borderTopLeftRadius: 10,
+                  borderBottomLeftRadius: 10,
+                  backgroundColor: theme.colors.imageBackground,
+                }}
+                resizeMode='contain'
+              ></custom.ImageBackground>
+
+              <Text
+                style={{
+                  marginLeft: 10,
+                  color: theme.colors.textColor,
+                  ...theme.fonts.DM_Sans_400Regular,
+                  fontSize: Platform.OS === 'ios' ? 20 : 18,
+                }}
+              >
+                {item.name}
+              </Text>
+            </View>
+          </View>
 
           <View
             style={{
@@ -156,8 +189,8 @@ const Search: React.FC = () => {
           >
             {item.is_prenium ? (
               <PreniumSvg
-                width='20px'
-                height='20px'
+                width='40px'
+                height='40px'
                 fillColor={theme.colors.yellowStar}
                 strokeColor={theme.colors.yellowStar}
               />
@@ -223,9 +256,18 @@ const Search: React.FC = () => {
   };
 
   return (
-    <custom.SafeAreaView insets={['top', 'bottom']}>
-      {renderContent()}
-    </custom.SafeAreaView>
+    <custom.ImageBackground
+      style={{flex: 1}}
+      resizeMode='stretch'
+      source={require('../assets/bg/02.png')}
+    >
+      <custom.SafeAreaView
+        insets={['top', 'bottom']}
+        containerStyle={{backgroundColor: theme.colors.transparent}}
+      >
+        {renderContent()}
+      </custom.SafeAreaView>
+    </custom.ImageBackground>
   );
 };
 

@@ -349,7 +349,7 @@ const Header: React.FC<HeaderType> = ({
           <Text
             style={{
               ...theme.fonts.DM_Sans_400Regular,
-              fontSize: Platform.OS === 'ios' ? 14 : 12,
+              fontSize: Platform.OS === 'ios' ? 18 : 16,
               color: theme.colors.textColor,
               textTransform: 'capitalize',
             }}
