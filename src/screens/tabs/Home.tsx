@@ -184,7 +184,7 @@ const Home: React.FC = () => {
           }
 
           navigation.navigate('PlantMedList', {
-            title: 'Plante du jour',
+            title: item.promotion || 'Plante du jour',
             products: products || [],
           });
         }}
@@ -357,7 +357,7 @@ const Home: React.FC = () => {
             }
 
             navigation.navigate('PlantMedList', {
-              title: 'PlantMedList',
+              title: bannerPromotion || 'Promotion',
               products: products,
             });
           }}
