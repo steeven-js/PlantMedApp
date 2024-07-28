@@ -154,20 +154,14 @@ const Search: React.FC = () => {
               alignItems: 'center',
             }}
           >
-            <PreniumSvg
-              width='20px'
-              height='20px'
-              fillColor={
-                item.is_prenium
-                  ? theme.colors.yellowStar
-                  : theme.colors.steelTeal
-              }
-              strokeColor={
-                item.is_prenium
-                  ? theme.colors.yellowStar
-                  : theme.colors.steelTeal
-              }
-            />
+            {item.is_prenium ? (
+              <PreniumSvg
+                width='20px'
+                height='20px'
+                fillColor={theme.colors.yellowStar}
+                strokeColor={theme.colors.yellowStar}
+              />
+            ) : null}
           </View>
         </View>
       </TouchableOpacity>
