@@ -12,6 +12,7 @@ interface Props {
 
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
+import { colors } from '../constants/colors';
 
 const ProfileItem: React.FC<Props> = ({
   icon,
@@ -34,6 +35,11 @@ const ProfileItem: React.FC<Props> = ({
         borderBottomWidth: 1,
         paddingHorizontal: 20,
         ...containerStyle,
+        ...(title === 'Supprimer le compte' && { 
+          borderRadius: 10,
+          borderColor: 'red',
+          backgroundColor: colors.lightRed 
+        }),
       }}
       onPress={onPress}
     >
