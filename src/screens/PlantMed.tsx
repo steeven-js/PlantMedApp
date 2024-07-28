@@ -13,6 +13,7 @@ import {text} from '../text';
 import {hooks} from '../hooks';
 import {utils} from '../utils';
 import {custom} from '../custom';
+import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {components} from '../components';
@@ -159,8 +160,12 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   };
 
   const renderTabs = (): JSX.Element => {
-    const tabs = ['Description', 'Propriétés', 'Usages', 'Précautions'];
-
+    const tabs = [
+      {name: 'Description', svg: <svg.infoSquareSvg />},
+      {name: 'Propriétés', svg: <svg.clipboardListSvg />},
+      {name: 'Usages', svg: <svg.handHeartSvg />},
+      {name: 'Précautions', svg: <svg.dangerTriangleSvg />},
+    ];
     return (
       <View
         style={{
@@ -169,43 +174,28 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(20),
         }}
       >
-        {tabs.map((item, index) => {
-          return (
-            <TouchableOpacity
-              key={index}
-              style={{
-                paddingHorizontal: 10,
-                borderWidth: 1,
-                paddingVertical: 20,
-                borderRadius: 10,
-                borderColor:
-                  tab === index
-                    ? theme.colors.steelTeal
-                    : theme.colors.transparent,
-                backgroundColor:
-                  tab === index
-                    ? `${theme.colors.white}50`
-                    : theme.colors.transparent,
-              }}
-              onPress={() => setTab(index)}
-            >
-              <Text
-                style={{
-                  ...theme.fonts.DM_Sans_500Medium,
-                  fontSize: Platform.OS === 'ios' ? 14 : 14,
-                  textTransform: 'uppercase',
-                  color:
-                    tab === index
-                      ? theme.colors.mainColor
-                      : theme.colors.textColor,
-                }}
-                numberOfLines={1}
-              >
-                {item}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
+        {tabs.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={{
+              paddingHorizontal: 10,
+              borderWidth: 1,
+              paddingVertical: 20,
+              borderRadius: 10,
+              borderColor:
+                tab === index
+                  ? theme.colors.steelTeal
+                  : theme.colors.transparent,
+              backgroundColor:
+                tab === index
+                  ? `${theme.colors.white}50`
+                  : theme.colors.transparent,
+            }}
+            onPress={() => setTab(index)}
+          >
+            {item.svg}
+          </TouchableOpacity>
+        ))}
       </View>
     );
   };

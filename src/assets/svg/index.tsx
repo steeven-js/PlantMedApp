@@ -38,11 +38,13 @@ import DownloadSvg from './DownloadSvg';
 import NtfcBellSvg from './NtfcBellSvg';
 import FacebookSvg from './FacebookSvg';
 import CalendarSvg from './CalendarSvg';
+import handHeartSvg from './hand-heart';
 import ConfirmedSvg from './ConfirmedSvg';
 import SortingBySvg from './SortingBySvg';
 import ArrowOpenSvg from './ArrowOpenSvg';
 import NtfcCHeckSvg from './NtfcCHeckSvg';
 import BloodDropSvg from './BloodDropSvg';
+import infoSquareSvg from './info-square';
 import MarkAsReadSvg from './MarkAsReadSvg';
 import SmartphoneSvg from './SmartphoneSvg';
 import ClockModalSvg from './ClockModalSvg';
@@ -61,6 +63,8 @@ import MedicalCaseSvg from './MedicalCaseSvg';
 import PeopleSearchSvg from './PeopleSearchSvg';
 import ShoppingCartSvg from './ShoppingCartSvg';
 import LeaveAReviewSvg from './LeaveAReviewSvg';
+import clipboardListSvg from './clipboard-list';
+import dangerTriangleSvg from './danger-triangle';
 import CalendarModalSvg from './CalendarModalSvg';
 import RememberCheckSvg from './RememberCheckSvg';
 import DoctorStarBigSvg from './DoctorStarBigSvg';
@@ -113,6 +117,8 @@ export const svg = {
   ArrowOpenSvg,
   SortingBySvg,
   BloodDropSvg,
+  handHeartSvg,
+  infoSquareSvg,
   SmartphoneSvg,
   ClockModalSvg,
   DoctorChatSvg,
@@ -131,9 +137,11 @@ export const svg = {
   LeaveAReviewSvg,
   PeopleSearchSvg,
   ShoppingCartSvg,
+  clipboardListSvg,
   DoctorStarBigSvg,
   CalendarModalSvg,
   RememberCheckSvg,
   NtfcBellYellowSvg,
+  dangerTriangleSvg,
   CreditCardModalSvg,
 };
