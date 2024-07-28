@@ -45,6 +45,7 @@ import ArrowOpenSvg from './ArrowOpenSvg';
 import NtfcCHeckSvg from './NtfcCHeckSvg';
 import BloodDropSvg from './BloodDropSvg';
 import infoSquareSvg from './info-square';
+import TabPreniumSvg from './TabPreniumSvg';
 import MarkAsReadSvg from './MarkAsReadSvg';
 import SmartphoneSvg from './SmartphoneSvg';
 import ClockModalSvg from './ClockModalSvg';
@@ -118,6 +119,7 @@ export const svg = {
   SortingBySvg,
   BloodDropSvg,
   handHeartSvg,
+  TabPreniumSvg,
   infoSquareSvg,
   SmartphoneSvg,
   ClockModalSvg,

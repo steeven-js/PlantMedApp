@@ -161,11 +161,12 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
 
   const renderTabs = (): JSX.Element => {
     const tabs = [
-      {name: 'Description', svg: <svg.infoSquareSvg />},
-      {name: 'Propriétés', svg: <svg.clipboardListSvg />},
-      {name: 'Usages', svg: <svg.handHeartSvg />},
-      {name: 'Précautions', svg: <svg.dangerTriangleSvg />},
+      {name: 'Description', svg: <svg.infoSquareSvg />, isPremium: false},
+      {name: 'Propriétés', svg: <svg.clipboardListSvg />, isPremium: true},
+      {name: 'Usages', svg: <svg.handHeartSvg />, isPremium: true},
+      {name: 'Précautions', svg: <svg.dangerTriangleSvg />, isPremium: false},
     ];
+
     return (
       <View
         style={{
@@ -190,10 +191,22 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
                 tab === index
                   ? `${theme.colors.white}50`
                   : theme.colors.transparent,
+              position: 'relative',
             }}
             onPress={() => setTab(index)}
           >
             {item.svg}
+            {item.isPremium && (
+              <View
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                }}
+              >
+                <svg.TabPreniumSvg />
+              </View>
+            )}
           </TouchableOpacity>
         ))}
       </View>
