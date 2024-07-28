@@ -191,7 +191,7 @@ const Header: React.FC<HeaderType> = ({
                     style={{
                       color: theme.colors.mainColor,
                       ...theme.fonts.Inter_600SemiBold,
-                      fontSize: Platform.OS === 'ios' ? 14 : 12,
+                      fontSize: Platform.OS === 'ios' ? 18 : 16,
                       textTransform: 'capitalize',
                       marginBottom: 4,
                     }}
@@ -203,7 +203,7 @@ const Header: React.FC<HeaderType> = ({
                     style={{
                       ...theme.fonts.DM_Sans_400Regular,
                       color: theme.colors.textColor,
-                      fontSize: Platform.OS === 'ios' ? 14 : 12,
+                      fontSize: Platform.OS === 'ios' ? 18 : 16,
                       marginBottom: 4,
                     }}
                     numberOfLines={1}
