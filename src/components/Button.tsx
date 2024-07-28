@@ -56,7 +56,7 @@ const Button: React.FC<Props> = ({
           <Text
             style={{
               // textTransform: 'capitalize',
-              fontSize: Platform.OS === 'ios' ? 14 : 12,
+              fontSize: Platform.OS === 'ios' ? 18 : 16,
               color: transparent ? theme.colors.white : theme.colors.white,
               ...textStyle,
               ...theme.fonts.DM_Sans_700Bold,

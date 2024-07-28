@@ -105,11 +105,11 @@ const SignIn: React.FC = () => {
 
   const renderDescription = (): JSX.Element => {
     return (
-      <text.T16
+      <text.T18
         style={{marginBottom: utils.responsiveHeight(40)}}
         numberOfLines={1}>
         Connectez-vous à votre compte
-      </text.T16>
+      </text.T18>
     );
   };
 
@@ -167,17 +167,17 @@ const SignIn: React.FC = () => {
             }}>
             {rememberMe && <svg.RememberCheckSvg />}
           </View>
-          <text.T14 style={{marginLeft: 10}} numberOfLines={1}>
+          <text.T18 style={{marginLeft: 10}} numberOfLines={1}>
             Se souvenir de moi
-          </text.T14>
+          </text.T18>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('SendEmailOtpForgot');
           }}>
-          <text.T16 numberOfLines={1} style={{color: theme.colors.mainColor}}>
+          <text.T18 numberOfLines={1} style={{color: theme.colors.mainColor}}>
             Mot de passe oublié?
-          </text.T16>
+          </text.T18>
         </TouchableOpacity>
       </View>
     );
@@ -198,11 +198,11 @@ const SignIn: React.FC = () => {
   const renderIfYouDontHaveAnAccount = (): JSX.Element => {
     return (
       <View style={{flexDirection: 'row', padding: 20}}>
-        <text.T16 numberOfLines={1}>Vous n'avez pas de compte? </text.T16>
+        <text.T18 numberOfLines={1}>Vous n'avez pas de compte? </text.T18>
         <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-          <text.T16 style={{color: theme.colors.mainColor}} numberOfLines={1}>
+          <text.T18 style={{color: theme.colors.mainColor}} numberOfLines={1}>
             Inscrivez-vous
-          </text.T16>
+          </text.T18>
         </TouchableOpacity>
       </View>
     );

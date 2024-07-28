@@ -79,7 +79,7 @@ const InputField: React.FC<Props> = ({
           padding: 0,
           flexDirection: 'row',
           justifyContent: 'space-between',
-          fontSize: Platform.OS === 'ios' ? 16 : 14,
+          fontSize: Platform.OS === 'ios' ? 20 : 18,
           marginLeft: 20,
           marginRight: eyeOffIcon ? 0 : checkIcon ? 0 : 30,
           color: editable ? theme.colors.mainColor : '#A7AFB7',
@@ -141,7 +141,7 @@ const InputField: React.FC<Props> = ({
           <Text
             style={{
               // ...theme.fonts.DMSans_500Medium,
-              fontSize: Platform.OS === 'ios' ? 12 : 10,
+              fontSize: Platform.OS === 'ios' ? 16 : 14,
               textTransform: 'uppercase',
               color: theme.colors.textColor,
               lineHeight: 12 * 1.7,

@@ -160,11 +160,11 @@ const SignUp: React.FC = () => {
   const renderIfYouHaveAccount = (): JSX.Element => {
     return (
       <View style={{flexDirection: 'row', alignItems: 'center', padding: 20}}>
-        <text.T16 numberOfLines={1}>Vous avez déjà un compte? </text.T16>
+        <text.T18 numberOfLines={1}>Vous avez déjà un compte? </text.T18>
         <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-          <text.T16 style={{color: theme.colors.mainColor}} numberOfLines={1}>
+          <text.T18 style={{color: theme.colors.mainColor}} numberOfLines={1}>
             Connectez-vous.
-          </text.T16>
+          </text.T18>
         </TouchableOpacity>
       </View>
     );
