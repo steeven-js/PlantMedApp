@@ -8,7 +8,7 @@ import {CONFIG, ENDPOINTS} from '../config';
 import axios from 'axios';
 import {text} from '../text';
 import {getFormatDate} from '../utils/getFormatDate';
-import { useSubscription } from '../hooks/revenueCat';
+import {useSubscription} from '../hooks/revenueCat';
 
 const ManageSubscription: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -41,11 +41,18 @@ const ManageSubscription: React.FC = () => {
   };
 
   const renderContent = (): JSX.Element => {
+    const formattedDate = expirationDate 
+      ? getFormatDate(expirationDate) 
+      : 'Date non disponible';
+
     return (
       <View style={{flex: 1, justifyContent: 'center'}}>
-        <text.T16 style={{marginBottom: 20, textAlign: 'center'}}>
-        {`Membre Premium jusqu'au ${expirationDate}`}
-        </text.T16>
+        <text.T18 style={{marginBottom: 20, textAlign: 'center'}}>
+          Membre Premium jusqu'au
+        </text.T18>
+        <text.T18 style={{marginBottom: 20, textAlign: 'center'}}>
+          {formattedDate}
+        </text.T18>
       </View>
     );
   };
