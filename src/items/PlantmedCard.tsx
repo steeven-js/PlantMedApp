@@ -56,14 +56,26 @@ const PlantmedCard: React.FC<Props> = ({
           }}
           resizeMode='cover'
         >
-          <plantmed.PlantPrenium
-            item={item}
-            containerStyle={{marginBottom: 'auto', padding: 10}}
-          />
+          {item.is_prenium ? (
+            <plantmed.PlantPrenium
+              item={item}
+              containerStyle={{
+                position: 'absolute',
+                padding: 14,
+                top: -10,
+                left: -10,
+              }}
+            />
+          ) : null}
+
           <plantmed.PlantmedInWishlist
             item={item}
-            version={1}
-            containerStyle={{marginBottom: 'auto', padding: 10}}
+            containerStyle={{
+              position: 'absolute',
+              padding: 14,
+              top: 0,
+              right: 0,
+            }}
           />
         </custom.ImageBackground>
         <View
@@ -77,7 +89,7 @@ const PlantmedCard: React.FC<Props> = ({
     );
   }
 
-  // ############ HOME > FEATURED PLANTS ############ //
+  // ############ HOME > PLANTES EN VEDETTES ############ //
   if (version === 2) {
     const width = utils.responsiveWidth(200, true);
 
@@ -96,19 +108,18 @@ const PlantmedCard: React.FC<Props> = ({
             backgroundColor: theme.colors.imageBackground,
           }}
         >
-
           {item.is_prenium ? (
-          <plantmed.PlantPrenium
-            item={item}
-            containerStyle={{
-              position: 'absolute',
-              padding: 14,
-              top: -10,
-              left: -10,
-            }}
-          />
-        ) : null }
-          
+            <plantmed.PlantPrenium
+              item={item}
+              containerStyle={{
+                position: 'absolute',
+                padding: 14,
+                top: -10,
+                left: -10,
+              }}
+            />
+          ) : null}
+
           <plantmed.PlantmedInWishlist
             item={item}
             containerStyle={{
@@ -126,7 +137,7 @@ const PlantmedCard: React.FC<Props> = ({
     );
   }
 
-  // ############ HOME > BEST SELLER ############ //
+  // ############ HOME > LES PLUS CONSULTEES ############ //
   if (version === 3) {
     const width = utils.responsiveWidth(200, true);
 
@@ -145,19 +156,18 @@ const PlantmedCard: React.FC<Props> = ({
             backgroundColor: theme.colors.imageBackground,
           }}
         >
-
           {item.is_prenium ? (
-          <plantmed.PlantPrenium
-            item={item}
-            containerStyle={{
-              position: 'absolute',
-              padding: 14,
-              top: -10,
-              left: -10,
-            }}
-          />
-        ) : null }
-          
+            <plantmed.PlantPrenium
+              item={item}
+              containerStyle={{
+                position: 'absolute',
+                padding: 14,
+                top: -10,
+                left: -10,
+              }}
+            />
+          ) : null}
+
           <plantmed.PlantmedInWishlist
             item={item}
             containerStyle={{
