@@ -370,8 +370,8 @@ const Header: React.FC<HeaderType> = ({
           style={{
             color: theme.colors.mainColor,
             textTransform: title === 'FAQ' ? 'uppercase' : 'none',
-            ...theme.fonts.DM_Sans_400Regular,
-            fontSize: Platform.OS === 'ios' ? 16 : 14,
+            ...theme.fonts.DM_Sans_500Medium,
+            fontSize: Platform.OS === 'ios' ? 20 : 18,
           }}
           numberOfLines={1}
         >

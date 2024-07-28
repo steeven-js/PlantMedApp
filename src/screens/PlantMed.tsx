@@ -38,24 +38,6 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const cart = hooks.useAppSelector(state => state.cartSlice.list);
   const exist = (item: PlantMedType) => cart.find(i => i.id === item.id);
 
-  // ############ Vérification isPrenium ############ //
-  // Appeler hook isPremium pour vérifier si l'utilisateur est abonné
-  // const isPrenium = hooks.useAppSelector(
-  //   state => state.userSlice.user?.isPrenium,
-  // );
-
-  // useEffect(() => {
-  //   if (!isPrenium) {
-  //     // Redirection vers la page d'abonnement avec navigation.navigate('Subscription')
-  //     navigation.reset({
-  //       index: 0,
-  //       routes: [{name: 'Prenium'}],
-  //     });
-  //   }
-  // }, [isPrenium]);
-
-  // ############ COMPONENTS ############ //
-
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
@@ -210,7 +192,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
               <Text
                 style={{
                   ...theme.fonts.DM_Sans_500Medium,
-                  fontSize: Platform.OS === 'ios' ? 11 : 10,
+                  fontSize: Platform.OS === 'ios' ? 14 : 14,
                   textTransform: 'uppercase',
                   color:
                     tab === index
@@ -236,7 +218,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        <text.H5
+        <text.H2
           style={{
             textTransform: 'capitalize',
             color: theme.colors.mainColor,
@@ -244,7 +226,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           }}
         >
           Description
-        </text.H5>
+        </text.H2>
         <View
           style={{
             flexDirection: 'row',
@@ -252,17 +234,17 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             marginBottom: utils.responsiveHeight(6),
           }}
         >
-          <text.T16
+          <text.T18
             style={{
               paddingBottom: 20,
               color: theme.colors.textColor,
             }}
           >
             {item.description}
-          </text.T16>
+          </text.T18>
         </View>
 
-        <text.H5
+        <text.H2
           style={{
             textTransform: 'capitalize',
             color: theme.colors.mainColor,
@@ -270,7 +252,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           }}
         >
           Habitat
-        </text.H5>
+        </text.H2>
         <View
           style={{
             flexDirection: 'row',
@@ -278,14 +260,14 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             marginBottom: utils.responsiveHeight(6),
           }}
         >
-          <text.T16
+          <text.T18
             style={{
               paddingBottom: 20,
               color: theme.colors.textColor,
             }}
           >
             {item.habitat}
-          </text.T16>
+          </text.T18>
         </View>
 
         <TouchableOpacity
@@ -304,7 +286,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             });
           }}
         >
-          <text.H5
+          <text.H2
             style={{
               textAlign: 'center',
               textTransform: 'capitalize',
@@ -313,7 +295,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             }}
           >
             {'Sources >'}
-          </text.H5>
+          </text.H2>
         </TouchableOpacity>
       </View>
     );
@@ -327,7 +309,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        <text.H5
+        <text.H2
           style={{
             textTransform: 'capitalize',
             color: theme.colors.mainColor,
@@ -335,7 +317,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           }}
         >
           Propriétés
-        </text.H5>
+        </text.H2>
         <View
           style={{
             flexDirection: 'row',
@@ -343,13 +325,13 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             marginBottom: utils.responsiveHeight(6),
           }}
         >
-          <text.T16
+          <text.T18
             style={{
               color: theme.colors.textColor,
             }}
           >
             {item.propriete}
-          </text.T16>
+          </text.T18>
         </View>
       </View>
     );
@@ -363,7 +345,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        <text.H5
+        <text.H2
           style={{
             textTransform: 'capitalize',
             color: theme.colors.mainColor,
@@ -371,7 +353,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           }}
         >
           Usages internes
-        </text.H5>
+        </text.H2>
         <View
           style={{
             flexDirection: 'row',
@@ -379,17 +361,17 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             marginBottom: utils.responsiveHeight(6),
           }}
         >
-          <text.T16
+          <text.T18
             style={{
               paddingBottom: 20,
               color: theme.colors.textColor,
             }}
           >
             {item.usageInterne}
-          </text.T16>
+          </text.T18>
         </View>
 
-        <text.H5
+        <text.H2
           style={{
             textTransform: 'capitalize',
             color: theme.colors.mainColor,
@@ -397,7 +379,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           }}
         >
           Usages externes
-        </text.H5>
+        </text.H2>
         <View
           style={{
             flexDirection: 'row',
@@ -405,14 +387,14 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             marginBottom: utils.responsiveHeight(6),
           }}
         >
-          <text.T16
+          <text.T18
             style={{
               paddingBottom: 20,
               color: theme.colors.textColor,
             }}
           >
             {item.usageExterne}
-          </text.T16>
+          </text.T18>
         </View>
       </View>
     );
@@ -426,7 +408,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        <text.H5
+        <text.H2
           style={{
             textTransform: 'capitalize',
             color: theme.colors.mainColor,
@@ -434,7 +416,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           }}
         >
           Précautions
-        </text.H5>
+        </text.H2>
         <View
           style={{
             flexDirection: 'row',
@@ -442,13 +424,13 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             marginBottom: utils.responsiveHeight(6),
           }}
         >
-          <text.T16
+          <text.T18
             style={{
               color: theme.colors.textColor,
             }}
           >
             {item.precaution}
-          </text.T16>
+          </text.T18>
         </View>
       </View>
     );
