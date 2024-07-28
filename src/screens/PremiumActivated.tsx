@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, {useState} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 
@@ -8,11 +7,7 @@ import {hooks} from '../hooks';
 import {utils} from '../utils';
 import {custom} from '../custom';
 import {components} from '../components';
-import {actions} from '../store/actions';
-import {CONFIG, ENDPOINTS} from '../config';
-import {SignUpAccountCreatedScreenProps} from '../types/ScreenProps';
 import {theme} from '../constants';
-import Button from '../components/Button';
 
 const PremiumActivated: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
@@ -46,32 +41,25 @@ const PremiumActivated: React.FC = () => {
         }}
       >
         <View style={{marginBottom: 20}}>
-          <Text style={{fontSize: 24, fontWeight: 'bold', marginBottom: 10}}>
-            Félicitations !
-          </Text>
-          <Text style={{fontSize: 18, marginBottom: 20}}>
+          <text.H2 style={{marginBottom: 20}}>Félicitations !</text.H2>
+          <text.H4 style={{marginBottom: 10}}>
             Vous êtes maintenant un membre Premium !
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 20}}>
+          </text.H4>
+          <text.T16>
             Votre abonnement a été activé avec succès. Voici ce qui vous attend
             :
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
-            • Accès immédiat à plus de 100 fiches détaillées sur les plantes
+          </text.T16>
+          <text.T16>
+            • Accès immédiat à plus de 150 fiches détaillées sur les plantes
             médicinales
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
+          </text.T16>
+          <text.T16>
             • Recettes exclusives pour préparer vos remèdes maison
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
+          </text.T16>
+          <text.T16>
             • Conseils personnalisés pour l'utilisation des plantes
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 10}}>
-            • Vidéos et tutoriels exclusifs
-          </Text>
-          <Text style={{fontSize: 16, marginBottom: 20}}>
-            • Mises à jour mensuelles avec de nouvelles informations
-          </Text>
+          </text.T16>
+          {/* <text.T16>• Vidéos et tutoriels exclusifs</text.T16> */}
         </View>
       </ScrollView>
     );

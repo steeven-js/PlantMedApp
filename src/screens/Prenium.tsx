@@ -44,7 +44,7 @@ const Prenium: React.FC = () => {
 
         dispatch(userSlice.actions.setPrenium(true));
 
-        navigation.navigate('TabNavigator');
+        navigation.navigate('PremiumActivated');
       } else {
         Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
         dispatch(userSlice.actions.setPrenium(false));

@@ -158,37 +158,6 @@ const StackNavigator: React.FC = () => {
             component={screens.PlantMedList}
             options={{headerShown: false}}
           />
-          {/* VERIFICATION */}
-          <RootStack.Screen
-            name='SendEmailOtp'
-            component={screens.SendEmailOtp}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name='SendPhoneOtp'
-            component={screens.SendPhoneOtp}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name='VerifyEmail'
-            component={screens.VerifyEmail}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name='VerifyPhone'
-            component={screens.VerifyPhone}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name='PhoneVerified'
-            component={screens.PhoneVerified}
-            options={{headerShown: false}}
-          />
-          <RootStack.Screen
-            name='EmailVerified'
-            component={screens.EmailVerified}
-            options={{headerShown: false}}
-          />
           <RootStack.Screen
             name='Product'
             component={screens.Product}
@@ -247,6 +216,37 @@ const StackNavigator: React.FC = () => {
           <RootStack.Screen
             name='IsPreniumContent'
             component={screens.IsPreniumContent}
+            options={{headerShown: false}}
+          />
+          {/* VERIFICATION */}
+          <RootStack.Screen
+            name='SendEmailOtp'
+            component={screens.SendEmailOtp}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name='SendPhoneOtp'
+            component={screens.SendPhoneOtp}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name='VerifyEmail'
+            component={screens.VerifyEmail}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name='VerifyPhone'
+            component={screens.VerifyPhone}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name='PhoneVerified'
+            component={screens.PhoneVerified}
+            options={{headerShown: false}}
+          />
+          <RootStack.Screen
+            name='EmailVerified'
+            component={screens.EmailVerified}
             options={{headerShown: false}}
           />
         </RootStack.Group>
