@@ -88,6 +88,102 @@ const MemberAccount: React.FC = () => {
     );
   };
 
+  const isPreniumContent = () => {
+    return (
+      <>
+        <View style={{marginBottom: 20}}>
+          <text.H3 style={{marginBottom: 10}}>
+            Votre compte est actuellement Premium
+          </text.H3>
+          <text.T16 style={{marginBottom: 20}}>
+            Membre Premium jusqu'au {getFormatDate(user?.premiumExpiresAt)}
+          </text.T16>
+          <text.T16 style={{marginBottom: 10}}>
+            Vous bénéficiez de tous les avantages Premium :
+          </text.T16>
+          <text.T16>
+            • Accès à des fiches détaillées sur plus de 100 plantes médicinales.
+          </text.T16>
+          <text.T16>
+            • Recettes exclusives pour préparer des remèdes maison.
+          </text.T16>
+          <text.T16>
+            • Conseils personnalisés pour utiliser les plantes selon vos besoins.
+          </text.T16>
+          <text.T16>
+            • Mises à jour régulières avec de nouvelles informations et plantes
+            ajoutées chaque mois.
+          </text.T16>
+        </View>
+        <text.T16 style={{marginBottom: 20}}>
+          Votre abonnement se renouvellera automatiquement le{' '}
+          {getFormatDate(user?.premiumExpiresAt)} pour 1,99 €.
+        </text.T16>
+        <components.Button
+          title="Gérer l'abonnement"
+          onPress={() => {
+            navigation.navigate('ManageSubscription');
+          }}
+          containerStyle={{marginBottom: 20}}
+        />
+        <text.T14 style={{color: 'gray'}}>
+          Vous pouvez gérer ou annuler votre abonnement à tout moment depuis votre
+          compte. L'annulation prendra effet à la fin de la période de facturation
+          en cours.
+        </text.T14>
+      </>
+    );
+  };
+  
+  const isNotPreniumContent = () => {
+    return (
+      <>
+        <View style={{marginBottom: 20}}>
+          <text.H3 style={{marginBottom: 10}}>
+            Votre compte est actuellement gratuit
+          </text.H3>
+          <text.T16 style={{marginBottom: 20}}>
+            Pour accéder à plus de fonctionnalités, passez à un compte Premium
+          </text.T16>
+          <text.H4 style={{marginBottom: 10}}>
+            Avantages du compte Premium :
+          </text.H4>
+          <text.T16>
+            • Accès à des fiches détaillées sur plus de 100 plantes médicinales.
+          </text.T16>
+          <text.T16>
+            • Recettes exclusives pour préparer des remèdes maison.
+          </text.T16>
+          <text.T16>
+            • Conseils personnalisés pour utiliser les plantes selon vos besoins.
+          </text.T16>
+          <text.T16>
+            • Mises à jour régulières avec de nouvelles informations et plantes
+            ajoutées chaque mois.
+          </text.T16>
+        </View>
+        <text.T16 style={{marginBottom: 20}}>
+          Prix de l'abonnement Premium : 1,99 € / mois
+        </text.T16>
+        <text.T16 style={{marginBottom: 20}}>
+          L'abonnement se renouvelle automatiquement chaque mois. Vous pouvez le
+          résilier à tout moment depuis votre compte.
+        </text.T16>
+        <components.Button
+          title='Activer le compte Premium'
+          onPress={() => {
+            navigation.navigate('Prenium');
+          }}
+          containerStyle={{marginBottom: 20}}
+        />
+        <text.T14 style={{color: 'gray'}}>
+          En activant le compte Premium, vous acceptez nos Conditions
+          d'utilisation et notre Politique de confidentialité.
+        </text.T14>
+      </>
+    );
+  };
+
   const renderContentPremium = (): JSX.Element => {
     return (
       <custom.ImageBackground
@@ -103,50 +199,7 @@ const MemberAccount: React.FC = () => {
           }}
           showsVerticalScrollIndicator={false}
         >
-          <View style={{marginBottom: 20}}>
-            <text.H3 style={{marginBottom: 10}}>
-              Votre compte est actuellement Premium
-            </text.H3>
-            <text.T16 style={{marginBottom: 20}}>
-              Membre Premium jusqu'au {getFormatDate(user?.premiumExpiresAt)}
-            </text.T16>
-            <text.T16 style={{marginBottom: 10}}>
-              Vous bénéficiez de tous les avantages Premium :
-            </text.T16>
-            <text.T16>
-              • Accès à des fiches détaillées sur plus de 100 plantes
-              médicinales.
-            </text.T16>
-            <text.T16>
-              • Recettes exclusives pour préparer des remèdes maison.
-            </text.T16>
-            <text.T16>
-              • Conseils personnalisés pour utiliser les plantes selon vos
-              besoins.
-            </text.T16>
-            <text.T16>
-              • Mises à jour régulières avec de nouvelles informations et
-              plantes ajoutées chaque mois.
-            </text.T16>
-          </View>
-          {user?.cancelAtPeriodEnd == false && (
-            <text.T16 style={{marginBottom: 20}}>
-              Votre abonnement se renouvellera automatiquement le{' '}
-              {getFormatDate(user?.premiumExpiresAt)} pour 1,99 €.
-            </text.T16>
-          )}
-          <components.Button
-            title="Gérer l'abonnement"
-            onPress={() => {
-              navigation.navigate('ManageSubscription');
-            }}
-            containerStyle={{marginBottom: 20}}
-          />
-          <text.T14 style={{color: 'gray'}}>
-            Vous pouvez gérer ou annuler votre abonnement à tout moment depuis
-            votre compte. L'annulation prendra effet à la fin de la période de
-            facturation en cours.
-          </text.T14>
+          {isPrenium ? isPreniumContent() : isNotPreniumContent()}
         </ScrollView>
       </custom.ImageBackground>
     );
