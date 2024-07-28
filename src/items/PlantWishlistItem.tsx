@@ -48,7 +48,19 @@ const PlantWishlistItem: React.FC<Props> = ({
           backgroundColor: theme.colors.imageBackground,
         }}
         resizeMode='contain'
-      ></custom.ImageBackground>
+      >
+        {item.is_prenium ? (
+          <plantmed.PlantPrenium
+            item={item}
+            containerStyle={{
+              position: 'absolute',
+              padding: 14,
+              top: -10,
+              left: -10,
+            }}
+          />
+        ) : null}
+      </custom.ImageBackground>
       {/* BLOCK INFO */}
       <View
         style={{
