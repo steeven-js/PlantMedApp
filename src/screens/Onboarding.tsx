@@ -57,7 +57,7 @@ const Onboarding: React.FC = () => {
   const renderButton = (): JSX.Element => {
     return (
       <components.Button
-        title='Get Started'
+        title='Commencer'
         onPress={() => {
           dispatch(actions.setStart(false));
         }}
@@ -100,9 +100,9 @@ const Onboarding: React.FC = () => {
             >
               {item.title}
             </text.H1>
-            <text.T16 style={{marginBottom: utils.responsiveHeight(40)}}>
+            <text.T18 style={{marginBottom: utils.responsiveHeight(40)}}>
               {item.description}
-            </text.T16>
+            </text.T18>
             <View
               style={{
                 gap: 6,
