@@ -8,7 +8,7 @@ import {PlantMedType} from '../types';
 type Props = {item: PlantMedType; style?: TextStyle};
 
 const PlantmedName: React.FC<Props> = ({item, style}) => {
-  return <text.T16 style={style}>{item.name}</text.T16>;
+  return <text.T20 style={style}>{item.name}</text.T20>;
 };
 
 export default PlantmedName;
