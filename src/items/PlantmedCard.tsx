@@ -1,4 +1,4 @@
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 import {hooks} from '../hooks';
@@ -79,13 +79,15 @@ const PlantmedCard: React.FC<Props> = ({
 
   // ############ HOME > FEATURED PLANTS ############ //
   if (version === 2) {
+    const width = utils.responsiveWidth(200, true);
+
     return (
       <TouchableOpacity onPress={onPress}>
         <custom.ImageBackground
           source={{uri: item.image}}
           style={{
-            width: utils.responsiveWidth(138, true),
-            aspectRatio: 138 / 138,
+            width: width,
+            aspectRatio: 150 / 150,
             marginRight: isLast ? 20 : 14,
             marginBottom: utils.responsiveHeight(14),
           }}
@@ -94,6 +96,19 @@ const PlantmedCard: React.FC<Props> = ({
             backgroundColor: theme.colors.imageBackground,
           }}
         >
+
+          {item.is_prenium ? (
+          <plantmed.PlantPrenium
+            item={item}
+            containerStyle={{
+              position: 'absolute',
+              padding: 14,
+              top: -10,
+              left: -10,
+            }}
+          />
+        ) : null }
+          
           <plantmed.PlantmedInWishlist
             item={item}
             containerStyle={{
@@ -104,7 +119,7 @@ const PlantmedCard: React.FC<Props> = ({
             }}
           />
         </custom.ImageBackground>
-        <View style={{width: utils.rsHeight(138, true)}}>
+        <View style={{width: width}}>
           <plantmed.PlantmedName item={item} style={{marginBottom: 3}} />
         </View>
       </TouchableOpacity>
@@ -130,6 +145,19 @@ const PlantmedCard: React.FC<Props> = ({
             backgroundColor: theme.colors.imageBackground,
           }}
         >
+
+          {item.is_prenium ? (
+          <plantmed.PlantPrenium
+            item={item}
+            containerStyle={{
+              position: 'absolute',
+              padding: 14,
+              top: -10,
+              left: -10,
+            }}
+          />
+        ) : null }
+          
           <plantmed.PlantmedInWishlist
             item={item}
             containerStyle={{

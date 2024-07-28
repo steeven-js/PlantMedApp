@@ -14,21 +14,23 @@ type Props = {
 const PlantPrenium: React.FC<Props> = ({containerStyle, item}) => {
   return (
     <View style={containerStyle}>
-      {item.is_prenium ? (
+      <View
+        style={{
+          backgroundColor: theme.colors.white,
+          borderRadius: 5,
+          padding: 10,
+          position: 'absolute',
+          top: 10,
+          left: 10,
+        }}
+      >
         <svg.PreniumSvg
           fillColor={theme.colors.yellowStar}
           strokeColor={theme.colors.yellowStar}
           width='30px'
           height='30px'
         />
-      ) : (
-        <svg.PreniumSvg
-          fillColor={theme.colors.white}
-          strokeColor={theme.colors.white}
-          width='30px'
-          height='30px'
-        />
-      )}
+      </View>
     </View>
   );
 };

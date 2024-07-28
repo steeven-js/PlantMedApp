@@ -12,11 +12,14 @@ import {
 import {utils} from '../../utils';
 import {hooks} from '../../hooks';
 import {custom} from '../../custom';
+import {svg} from '../../assets/svg';
 import {theme} from '../../constants';
+import {plantmed} from '../../plantmed';
 import {components} from '../../components';
 import PreniumSvg from '../../assets/svg/PreniumSvg';
 import {queryHooks} from '../../store/slices/apiSlice';
-import { useSubscription } from '../../hooks/revenueCat';
+import {useSubscription} from '../../hooks/revenueCat';
+import { PlantMedType } from '../../types';
 
 const Symptoms: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -121,7 +124,6 @@ const Symptoms: React.FC = () => {
                     flex: 1,
                     width: '100%',
                     height: '100%',
-                    justifyContent: 'space-between',
                     paddingTop: 14,
                     paddingBottom: 12,
                   }}
@@ -131,70 +133,28 @@ const Symptoms: React.FC = () => {
                   }}
                   resizeMode='cover'
                 >
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      paddingHorizontal: 10,
-                    }}
-                  >
-                    <View
-                      style={{
-                        backgroundColor: '#CFF5CE',
-                        alignSelf: 'flex-start',
-                        width: 40,
-                        height: 40,
-                        borderRadius: 40 / 2,
-                        justifyContent: 'center',
-                        alignItems: 'center',
+                  {item.is_prenium ? (
+                    <plantmed.PlantPrenium
+                      item={item as PlantMedType}
+                      containerStyle={{
+                        position: 'absolute',
+                        padding: 14,
+                        top: -10,
+                        left: -10,
                       }}
-                    >
-                      <Text
-                        numberOfLines={1}
-                        style={{
-                          fontSize: Platform.OS === 'ios' ? 20 : 18,
-                          color: '#50858B',
-                          // textTransform: 'capitalize',
-                          ...theme.fonts.DM_Sans_500Medium,
-                        }}
-                      >
-                        {qty}
-                      </Text>
-                    </View>
+                    />
+                  ) : null}
 
-                    <View
-                      style={{
-                        backgroundColor: '#CFF5CE',
-                        alignSelf: 'flex-start',
-                        width: 40,
-                        height: 40,
-                        borderRadius: 40 / 2,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <PreniumSvg
-                        width='20px'
-                        height='20px'
-                        fillColor={
-                          item.is_prenium
-                            ? theme.colors.yellowStar
-                            : theme.colors.steelTeal
-                        }
-                        strokeColor={
-                          item.is_prenium
-                            ? theme.colors.yellowStar
-                            : theme.colors.steelTeal
-                        }
-                      />
-                    </View>
-                  </View>
                   <Text
                     numberOfLines={2}
                     style={{
                       fontSize: Platform.OS === 'ios' ? 20 : 18,
-                      // textTransform: 'capitalize',
-                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      textAlign: 'center',
+                      backgroundColor: 'rgba(255, 255, 255, 1)',
                       color: theme.colors.mainColor,
                       ...theme.fonts.DM_Sans_400Regular,
                       padding: 5,
