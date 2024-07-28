@@ -14,7 +14,7 @@ const T18: React.FC<Props> = ({children, style, numberOfLines}) => {
     <Text
       style={{
         color: theme.colors.textColor,
-        ...theme.fonts.DM_Sans_400Regular,
+        ...theme.fonts.Inter_500Medium,
         lineHeight: Platform.OS === 'ios' ? 18 * 1.7 : 14 * 1.7,
         fontSize: Platform.OS === 'ios' ? 18 : 14,
         ...style,
