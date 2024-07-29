@@ -62,6 +62,25 @@ const terms = [
     description:
       "Pour toute question concernant ces CGU ou l'utilisation de l'application, veuillez nous contacter à contact@jsprod.com.",
   },
+  {
+    id: 10,
+    title: "Abonnement Premium",
+    description:
+      "Notre application offre un abonnement Premium au prix de 1,99 € par mois. Cet abonnement se renouvelle automatiquement à la fin de chaque période mensuelle, sauf annulation de votre part. L'abonnement Premium donne accès à des fiches détaillées sur plus de 100 plantes médicinales, des recettes exclusives, des conseils personnalisés, et des mises à jour régulières. Le paiement sera prélevé sur votre compte iTunes à la confirmation de l'achat.",
+  },
+  {
+    id: 11,
+    title: "Gestion de l'abonnement",
+    description:
+      "Vous pouvez gérer votre abonnement et désactiver le renouvellement automatique en accédant aux paramètres de votre compte après l'achat. L'annulation de l'abonnement en cours prendra effet à la fin de la période d'abonnement en cours. Vous continuerez à avoir accès aux fonctionnalités Premium jusqu'à la fin de la période payée.",
+  },
+  {
+    id: 12,
+    title: "Modifications et utilisation de l'abonnement",
+    description:
+      "Nous nous réservons le droit de modifier le prix de l'abonnement. Toute modification de prix prendra effet au début du prochain cycle de facturation. L'abonnement Premium est réservé à un usage personnel et non commercial. Il ne peut être partagé ou transféré.",
+  },
+
 ];
 
 const TermsOfUse: React.FC = () => {

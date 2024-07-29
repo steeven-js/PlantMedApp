@@ -1,11 +1,13 @@
-import {useSelector} from 'react-redux';
 import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
 import {
   View,
   ScrollView,
   TouchableOpacity,
   Alert,
   ActivityIndicator,
+  StyleSheet,
+  Linking,
 } from 'react-native';
 
 import {text} from '../text';
@@ -21,7 +23,7 @@ import {userSlice} from '../store/slices/userSlice';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
 
-const Prenium: React.FC = () => {
+const Premium: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
@@ -39,14 +41,10 @@ const Prenium: React.FC = () => {
         offer => offer.product.identifier === SUBSCRIPTION_SKU,
       );
       if (packageToPurchase) {
-
         await purchaseSubscription(packageToPurchase);
-
       } else {
-
         Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
         dispatch(userSlice.actions.setPrenium(false));
-        
       }
     } catch (error) {
       console.error("Erreur lors de l'abonnement:", error);
@@ -59,8 +57,8 @@ const Prenium: React.FC = () => {
     }
   };
 
-  const alreadyPrenium = () => {
-    return Alert.alert('Success', 'Vous êtes déjà Prenium', [
+  const alreadyPremium = () => {
+    Alert.alert('Success', 'Vous êtes déjà Premium', [
       {
         text: 'OK',
         onPress: () => {
@@ -78,6 +76,14 @@ const Prenium: React.FC = () => {
     navigation.navigate('TermsOfUse');
   };
 
+  const openAppleEULA = () => {
+    // Ouvrir le lien vers le CLUF d'Apple
+    // Vous pouvez utiliser Linking.openURL() de React Native pour ouvrir un lien web
+    Linking.openURL(
+      'https://www.apple.com/legal/internet-services/itunes/chfr/terms.html',
+    );
+  };
+
   const renderHeader = (): JSX.Element => {
     return <components.Header goBackIcon={true} title='Premium' />;
   };
@@ -85,30 +91,19 @@ const Prenium: React.FC = () => {
   const renderContent = (): JSX.Element => {
     if (loading) {
       return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <View style={styles.loadingContainer}>
           <ActivityIndicator size='large' color={theme.colors.steelTeal} />
         </View>
       );
     }
 
     return (
-      <ScrollView
-        contentContainerStyle={{
-          paddingHorizontal: 20,
-          flexGrow: 1,
-          paddingTop: utils.responsiveHeight(40),
-          paddingBottom: utils.responsiveHeight(20),
-          alignItems: 'center',
-        }}
-      >
-        <View style={{marginBottom: 20}}>
-          {/* <text.H3 style={{marginBottom: 10}}>
-              Votre compte est actuellement gratuit
-            </text.H3> */}
-          <text.H2 style={{marginBottom: 20}}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+        <View style={styles.contentContainer}>
+          <text.H2 style={styles.title}>
             Pour accéder à plus de fonctionnalités, passez à un compte Premium
           </text.H2>
-          <text.H4 style={{marginBottom: 10}}>
+          <text.H4 style={styles.subtitle}>
             Avantages du compte Premium :
           </text.H4>
           <text.T16>
@@ -126,69 +121,39 @@ const Prenium: React.FC = () => {
             ajoutées chaque mois.
           </text.T16>
         </View>
-        <text.T16 style={{marginBottom: 20}}>
+        <text.T16 style={styles.disclaimer}>
           L'abonnement se renouvelle automatiquement chaque mois. Vous pouvez le
           résilier à tout moment depuis votre compte.
         </text.T16>
 
         <TouchableOpacity
-          style={{
-            backgroundColor: theme.colors.steelTeal,
-            padding: 15,
-            borderRadius: 10,
-            alignItems: 'center',
-            marginBottom: utils.responsiveHeight(20),
-            width: '100%',
-          }}
-          onPress={isSubscribed ? alreadyPrenium : handleSubscribe}
+          style={styles.subscribeButton}
+          onPress={isSubscribed ? alreadyPremium : handleSubscribe}
         >
-          <text.T18 style={{color: 'white', fontWeight: 'bold'}}>
+          <text.T18 style={styles.buttonText}>
             {isSubscribed
               ? 'Vous êtes déjà Premium'
               : 'Devenir Premium - 1,99 €/mois'}
           </text.T18>
         </TouchableOpacity>
 
-        <text.T14 style={{color: 'gray'}}>
+        <text.T14 style={styles.termsText}>
           En activant le compte Premium, vous acceptez nos Conditions
           d'utilisation et notre Politique de confidentialité.
         </text.T14>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '100%',
-            justifyContent: 'space-around',
-            marginTop: 20,
-          }}
-        >
+        <View style={styles.linksContainer}>
           <TouchableOpacity
-            style={{
-              paddingHorizontal: 10,
-              borderWidth: 1,
-              paddingVertical: 20,
-              borderRadius: 10,
-              borderColor: theme.colors.steelTeal,
-            }}
+            style={styles.linkButton}
             onPress={openPrivacyPolicy}
           >
-            <text.T14 style={{color: theme.colors.steelTeal}}>
-              Confidentialité
-            </text.T14>
+            <text.T12 style={styles.linkText}>Confidentialité</text.T12>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              paddingHorizontal: 10,
-              borderWidth: 1,
-              paddingVertical: 20,
-              borderRadius: 10,
-              borderColor: theme.colors.steelTeal,
-            }}
-            onPress={openTermsOfUse}
-          >
-            <text.T14 style={{color: theme.colors.steelTeal}}>
-              Conditions
-            </text.T14>
+          <TouchableOpacity style={styles.linkButton} onPress={openTermsOfUse}>
+            <text.T12 style={styles.linkText}>Conditions</text.T12>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.linkButton} onPress={openAppleEULA}>
+            <text.T12 style={styles.linkText}>CLUF Apple</text.T12>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -197,13 +162,13 @@ const Prenium: React.FC = () => {
 
   return (
     <custom.ImageBackground
-      style={{flex: 1}}
+      style={styles.background}
       resizeMode='stretch'
       source={require('../assets/bg/02.png')}
     >
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}
+        containerStyle={styles.safeArea}
       >
         {renderHeader()}
         {renderContent()}
@@ -212,4 +177,71 @@ const Prenium: React.FC = () => {
   );
 };
 
-export default Prenium;
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
+  safeArea: {
+    backgroundColor: theme.colors.transparent,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  scrollViewContent: {
+    paddingHorizontal: 20,
+    flexGrow: 1,
+    paddingTop: utils.responsiveHeight(40),
+    paddingBottom: utils.responsiveHeight(20),
+    alignItems: 'center',
+  },
+  contentContainer: {
+    marginBottom: 20,
+  },
+  title: {
+    marginBottom: 20,
+  },
+  subtitle: {
+    marginBottom: 10,
+  },
+  disclaimer: {
+    marginBottom: 20,
+  },
+  subscribeButton: {
+    backgroundColor: theme.colors.steelTeal,
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginBottom: utils.responsiveHeight(20),
+    width: '100%',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  termsText: {
+    color: 'gray',
+  },
+  linksContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between', // Changé de 'space-around' à 'space-between'
+    marginTop: 20,
+  },
+  linkButton: {
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    paddingVertical: 20,
+    borderRadius: 10,
+    borderColor: theme.colors.steelTeal,
+    flex: 1, // Ajouté pour que les boutons prennent une largeur égale
+    marginHorizontal: 5, // Ajouté pour un peu d'espace entre les boutons
+    alignItems: 'center', // Pour centrer le texte horizontalement
+  },
+  linkText: {
+    color: theme.colors.steelTeal,
+  },
+});
+
+export default Premium;

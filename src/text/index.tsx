@@ -4,6 +4,7 @@ import H3 from './H3';
 import H4 from './H4';
 import H5 from './H5';
 
+import T12 from './T12';
 import T14 from './T14';
 import T16 from './T16';
 import T18 from './T18';
@@ -15,6 +16,7 @@ export const text = {
   H3,
   H4,
   H5,
+  T12,
   T14,
   T16,
   T18,

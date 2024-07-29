@@ -44,6 +44,18 @@ const policy = [
     description:
       "Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité, veuillez nous contacter à contact@jsprod.fr. En utilisant l'Application, vous consentez à cette Politique de Confidentialité.",
   },
+  {
+    id: 7,
+    title: "Informations relatives aux abonnements",
+    description:
+      "Lorsque vous souscrivez à notre abonnement Premium, nous collectons des informations de paiement. Ces informations sont traitées de manière sécurisée par Apple via l'App Store et ne sont pas stockées directement sur nos serveurs. Nous utilisons les informations relatives à votre abonnement pour gérer votre accès aux fonctionnalités Premium, traiter les paiements et renouvellements, et vous contacter concernant votre abonnement si nécessaire.",
+  },
+  {
+    id: 8,
+    title: "Utilisation des données d'abonnement",
+    description:
+      "Nous pouvons utiliser des données agrégées et anonymisées sur les abonnements à des fins d'analyse pour améliorer notre service. Ces données ne permettent pas d'identifier personnellement les utilisateurs et sont utilisées uniquement pour améliorer l'expérience globale de l'application.",
+  },
 ];
 
 const PrivacyPolicy: React.FC = () => {
