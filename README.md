@@ -4,6 +4,12 @@
 
 ## Change.logn
 
+- **Version 1.5.3**
+  - Amélioration des annonces
+  - Amélioration des police pour une meilleure lisibilité
+  - Ajout du contenu Prenium 1.99€ par mois
+  - Amélioration des performances de l'application
+  - Correction de divers bugs et optimisations
 - **Version 1.5.2**
   - Correction d'un problème empêchant la création de compte 
   - Amélioration des performances de l'application
