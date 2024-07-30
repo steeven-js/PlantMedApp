@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {View, Alert, ScrollView} from 'react-native';
 
 import {hooks} from '../../hooks';
@@ -7,7 +7,7 @@ import {items} from '../../items';
 import {custom} from '../../custom';
 import {svg} from '../../assets/svg';
 import {components} from '../../components';
-import { useSubscription } from '../../hooks/revenueCat';
+import {useSubscription} from '../../hooks/revenueCat';
 
 const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -50,58 +50,69 @@ const Profile: React.FC = () => {
 
   const renderMenu = (): JSX.Element => {
     return (
-      <View style={{paddingLeft: 20}}>
-        <items.ProfileItem
-          title={isSubscribed ? 'Compte premium' : 'Compte gratuit'}
-          onPress={() => {
-            navigation.navigate('MemberAccount');
-          }}
-          icon={<svg.UserSvg />}
-          goNavigation={true}
-          containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-        />
-        <items.ProfileItem
-          title={'Informations personnelles'}
-          onPress={() => {
-            navigation.navigate('EditProfile');
-          }}
-          icon={<svg.UserSvg />}
-          goNavigation={true}
-          containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-        />
-        <items.ProfileItem
-          title="Conditions d'utilisation"
-          onPress={() => {
-            navigation.navigate('TermsOfUse');
-          }}
-          icon={<svg.FileTextSvg />}
-          goNavigation={true}
-          containerStyle={{marginBottom: utils.responsiveHeight(6)}}
-        />
-        <items.ProfileItem
-          title='Politique de confidentialité'
-          onPress={() => {
-            navigation.navigate('PrivacyPolicy');
-          }}
-          icon={<svg.FileTextSvg />}
-          goNavigation={true}
-          containerStyle={{marginBottom: utils.responsiveHeight(6)}}
-        />
-        <items.ProfileItem
-          title='Déconnexion'
-          onPress={() => {
-            navigation.navigate('LogOut');
-          }}
-          icon={<svg.SignOutSvg />}
-          containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-        />
-        <items.ProfileItem
-          title='Supprimer le compte'
-          onPress={() => {
-            navigation.navigate('DeleteAccount');
-          }}
-          icon={<svg.DeleteSvg />}
-        />
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'space-between',
+          paddingLeft: 20,
+        }}
+      >
+        <View>
+          <items.ProfileItem
+            title={isSubscribed ? 'Compte premium' : 'Compte gratuit'}
+            onPress={() => {
+              navigation.navigate('MemberAccount');
+            }}
+            icon={<svg.UserSvg />}
+            goNavigation={true}
+            containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+          />
+          <items.ProfileItem
+            title={'Informations personnelles'}
+            onPress={() => {
+              navigation.navigate('EditProfile');
+            }}
+            icon={<svg.UserSvg />}
+            goNavigation={true}
+            containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+          />
+          <items.ProfileItem
+            title="Conditions d'utilisation"
+            onPress={() => {
+              navigation.navigate('TermsOfUse');
+            }}
+            icon={<svg.FileTextSvg />}
+            goNavigation={true}
+            containerStyle={{marginBottom: utils.responsiveHeight(6)}}
+          />
+          <items.ProfileItem
+            title='Politique de confidentialité'
+            onPress={() => {
+              navigation.navigate('PrivacyPolicy');
+            }}
+            icon={<svg.FileTextSvg />}
+            goNavigation={true}
+            containerStyle={{marginBottom: utils.responsiveHeight(6)}}
+          />
+          <items.ProfileItem
+            title='Déconnexion'
+            onPress={() => {
+              navigation.navigate('LogOut');
+            }}
+            icon={<svg.SignOutSvg />}
+            containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+          />
+        </View>
+
+        <View>
+          <items.ProfileItem
+            title='Supprimer le compte'
+            onPress={() => {
+              navigation.navigate('DeleteAccount');
+            }}
+            icon={<svg.DeleteSvg />}
+          />
+        </View>
       </View>
     );
   };
