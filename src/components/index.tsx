@@ -10,6 +10,7 @@ import RatingStars from './RatingStars';
 import FlashMessage from './FlashMessage';
 import BlockHeading from './BlockHeading';
 import BottomTabBar from '../navigation/BottomTabBar';
+import GoogleSignInButton from './GoogleSignInButton';
 
 export const components = {
   Error,
@@ -24,4 +25,5 @@ export const components = {
   BottomTabBar,
   FlashMessage,
   BlockHeading,
+  GoogleSignInButton,
 };

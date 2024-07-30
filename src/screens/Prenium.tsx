@@ -8,6 +8,7 @@ import {
   ActivityIndicator,
   StyleSheet,
   Linking,
+  Platform,
 } from 'react-native';
 
 import {text} from '../text';
@@ -21,7 +22,7 @@ import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
 import {userSlice} from '../store/slices/userSlice';
 
-const SUBSCRIPTION_SKU = 'plm_199_m';
+const SUBSCRIPTION_SKU = Platform.OS === 'ios' ? 'pro' : 'pro_android';
 
 const Premium: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -77,11 +78,15 @@ const Premium: React.FC = () => {
   };
 
   const openAppleEULA = () => {
-    // Ouvrir le lien vers le CLUF d'Apple
-    // Vous pouvez utiliser Linking.openURL() de React Native pour ouvrir un lien web
-    Linking.openURL(
-      'https://www.apple.com/legal/internet-services/itunes/chfr/terms.html',
-    );
+    if (Platform.OS === 'ios') {
+      Linking.openURL(
+        'https://www.apple.com/legal/internet-services/itunes/chfr/terms.html',
+      );
+    } else {
+      Linking.openURL(
+        'https://play.google.com/intl/fr_be/about/play-terms',
+      );
+    }
   };
 
   const renderHeader = (): JSX.Element => {
@@ -153,7 +158,9 @@ const Premium: React.FC = () => {
             <text.T12 style={styles.linkText}>Conditions</text.T12>
           </TouchableOpacity>
           <TouchableOpacity style={styles.linkButton} onPress={openAppleEULA}>
-            <text.T12 style={styles.linkText}>CLUF Apple</text.T12>
+            <text.T12 style={styles.linkText}>
+              {Platform.OS === 'ios' ? 'CLUF Apple' : 'CLUF Google'}
+            </text.T12>
           </TouchableOpacity>
         </View>
       </ScrollView>

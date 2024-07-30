@@ -52,11 +52,28 @@ const userWithThisNameOrEmailAlreadyExists = () => {
   );
 };
 
+const userWithThisEmailAlreadyExists = () => {
+  return Alert.alert(
+    'Erreur',
+    'Un utilisateur avec cet email existe déjà',
+    [
+      {
+        text: 'OK',
+        onPress: () => {
+          console.log('OK Pressed');
+        },
+      },
+    ],
+    { cancelable: false },
+  );
+};
+
 export const alert = {
   invalidOtp,
   userDeleted,
   alreadyAdded,
   somethingWentWrong,
   invalidUsernameOrPassword,
+  userWithThisEmailAlreadyExists,
   userWithThisNameOrEmailAlreadyExists,
 };

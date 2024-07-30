@@ -19,6 +19,7 @@ export const GET_POT_TYPES = `${BASE_URL}api/pot/types`;
 export const GET_PROMOCODES = `${BASE_URL}api/promocodes`;
 export const GET_CATEGORIES = `${BASE_URL}api/categories`;
 export const GET_PLANT_TYPES = `${BASE_URL}api/plant/types`;
+export const GET_USER_BY_EMAIL = `${BASE_URL}api/user-by-email`;
 
 // ############ POST REQUESTS ############ //
 export const LOGIN_USER = `${BASE_URL}api/user/login`;
@@ -76,6 +77,7 @@ export const ENDPOINTS = {
   GET_CATEGORIES,
   GET_PLANT_TYPES,
   CHANGE_PASSWORD,
+  GET_USER_BY_EMAIL,
   VERIFY_PHONE_OTP,
   VERIFY_EMAIL_OTP,
   UPDATE_SUBSCRIBE_USER,

@@ -24,11 +24,6 @@ const userSlice = createSlice({
         state.user.isPrenium = action.payload;
       }
     },
-    setCancelAtPeriodEnd: (state, action: PayloadAction<boolean>) => {
-      if (state.user) {
-        state.user.cancelAtPeriodEnd = action.payload;
-      }
-    },
   },
 });
 
@@ -37,7 +32,6 @@ export const {
   setUser,
   setPrenium,
   setRememberMe,
-  setCancelAtPeriodEnd,
 } = userSlice.actions;
 
 export { userSlice };
