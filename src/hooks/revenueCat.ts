@@ -15,6 +15,9 @@ const API_KEYS = {
     google: 'goog_sjHUEfOPYLjhdPZKOtuujZhLtdi'
 };
 
+// SKU de l'abonnement en fonction de la plateforme
+const SUBSCRIPTION_SKU = Platform.OS === 'ios' ? 'pro' : 'pro_android';
+
 // Initialisation de RevenueCat
 Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
 Purchases.configure({ apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google });
@@ -105,16 +108,33 @@ export function useSubscription() {
     }
 
     // Fonction pour effectuer un achat d'abonnement
-    async function purchaseSubscription(packageToPurchase: PurchasesPackage) {
+    async function purchaseSubscription() {
         try {
+            const offerings = await Purchases.getOfferings();
+            if (!offerings.current) {
+                console.error('Aucune offre disponible');
+                return;
+            }
+
+            setOfferings(offerings.current.availablePackages);
+
+            const packageToPurchase = offerings.current.monthly;
+
+            if (!packageToPurchase) {
+                console.error('Package mensuel non trouvé');
+                return;
+            }
+
             const { customerInfo } = await Purchases.purchasePackage(packageToPurchase);
-            const SubscriptionStatus = Platform.OS === 'ios' ? customerInfo.entitlements.active['pro'] !== undefined : customerInfo.entitlements.active['pro_android'] !== undefined;
-            const newSubscriptionStatus = SubscriptionStatus;
-            setIsSubscribed(newSubscriptionStatus);
+            const subscriptionStatus = Platform.OS === 'ios'
+                ? customerInfo.entitlements.active['pro'] !== undefined
+                : customerInfo.entitlements.active['pro_android'] !== undefined;
+
+            setIsSubscribed(subscriptionStatus);
 
             if (user?.id) {
                 const updatedUser = {
-                    is_premium: newSubscriptionStatus
+                    is_premium: subscriptionStatus
                 };
 
                 const response = await axios.put(
@@ -124,9 +144,7 @@ export function useSubscription() {
                 );
 
                 if (response.status === 200) {
-                    dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
-                    // console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
-
+                    dispatch(userSlice.actions.setPrenium(subscriptionStatus));
                     navigation.navigate('PremiumActivated');
                 } else {
                     dispatch(userSlice.actions.setPrenium(false));

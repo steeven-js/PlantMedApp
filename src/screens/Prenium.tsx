@@ -21,6 +21,7 @@ import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
 import {userSlice} from '../store/slices/userSlice';
+import Purchases from 'react-native-purchases';
 
 const SUBSCRIPTION_SKU = Platform.OS === 'ios' ? 'pro' : 'pro_android';
 
@@ -33,20 +34,12 @@ const Premium: React.FC = () => {
     (state: RootState) => state.userSlice.user,
   );
 
-  const {isSubscribed, offerings, purchaseSubscription} = useSubscription();
+  const {isSubscribed, purchaseSubscription} = useSubscription();
 
   const handleSubscribe = async () => {
     setLoading(true);
     try {
-      const packageToPurchase = offerings.find(
-        offer => offer.product.identifier === SUBSCRIPTION_SKU,
-      );
-      if (packageToPurchase) {
-        await purchaseSubscription(packageToPurchase);
-      } else {
-        Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
-        dispatch(userSlice.actions.setPrenium(false));
-      }
+      await purchaseSubscription();
     } catch (error) {
       console.error("Erreur lors de l'abonnement:", error);
       Alert.alert(
@@ -83,9 +76,7 @@ const Premium: React.FC = () => {
         'https://www.apple.com/legal/internet-services/itunes/chfr/terms.html',
       );
     } else {
-      Linking.openURL(
-        'https://play.google.com/intl/fr_be/about/play-terms',
-      );
+      Linking.openURL('https://play.google.com/intl/fr_be/about/play-terms');
     }
   };
 
