@@ -13,7 +13,6 @@ import {actions} from '../store/actions';
 import {components} from '../components';
 import BottomTabBar from './BottomTabBar';
 import {queryHooks} from '../store/slices/apiSlice';
-import { useSubscription } from '../hooks/revenueCat';
 
 const TabNavigator: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
@@ -21,12 +20,6 @@ const TabNavigator: React.FC = () => {
   const currentTabScreen = hooks.useAppSelector(state => state.tabSlice.screen);
 
   const tabs = getTabs();
-
-  const {checkSubscriptionStatus} = useSubscription();
-
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, []);
 
   console.log('user', JSON.stringify(user, null, 2));
   const {

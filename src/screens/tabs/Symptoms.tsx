@@ -24,11 +24,7 @@ import { PlantMedType } from '../../types';
 const Symptoms: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
-  const {isSubscribed, checkSubscriptionStatus} = useSubscription();
-
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, []);
+  const {isSubscribed} = useSubscription();
 
   const {
     data: plantsData,

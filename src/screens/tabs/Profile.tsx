@@ -14,11 +14,7 @@ const Profile: React.FC = () => {
 
   const user = hooks.useAppSelector(state => state.userSlice.user);
 
-  const {isSubscribed, checkSubscriptionStatus} = useSubscription();
-
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, []);
+  const {isSubscribed} = useSubscription();
 
   const renderUserInfo = (): JSX.Element => {
     return (

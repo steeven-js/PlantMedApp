@@ -8,15 +8,8 @@ import {utils} from '../../utils';
 import {custom} from '../../custom';
 import {components} from '../../components';
 import {queryHooks} from '../../store/slices/apiSlice';
-import { useSubscription } from '../../hooks/revenueCat';
 
 const PlantWishlist: React.FC = () => {
-
-  const {checkSubscriptionStatus} = useSubscription();
-
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, []);
 
   const wishlist = hooks.useAppSelector(
     state => state.plantmedWishlistSlice.list,

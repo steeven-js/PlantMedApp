@@ -35,25 +35,3 @@ export const {
 } = userSlice.actions;
 
 export { userSlice };
-
-// Créez un hook personnalisé pour gérer la logique de l'abonnement
-import { useEffect } from 'react';
-import { useSubscription } from '../../hooks/revenueCat';
-import { useAppDispatch } from '../../hooks';
-
-export const useSubscriptionEffect = () => {
-  const dispatch = useAppDispatch();
-  const { isSubscribed, checkSubscriptionStatus } = useSubscription();
-
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, []);
-
-  useEffect(() => {
-    if (isSubscribed) {
-      dispatch(setPrenium(true));
-    } else {
-      dispatch(setPrenium(false));
-    }
-  }, [isSubscribed, dispatch]);
-};

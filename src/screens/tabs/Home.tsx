@@ -19,7 +19,6 @@ import {custom} from '../../custom';
 import {theme} from '../../constants';
 import {components} from '../../components';
 import {queryHooks} from '../../store/slices/apiSlice';
-import {useSubscription} from '../../hooks/revenueCat';
 
 type ViewableItemsChanged = {
   viewableItems: Array<ViewToken>;
@@ -28,12 +27,6 @@ type ViewableItemsChanged = {
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-
-  const {checkSubscriptionStatus} = useSubscription();
-
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, []);
 
   const {
     data: plantsData,

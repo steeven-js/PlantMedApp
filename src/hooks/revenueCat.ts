@@ -37,10 +37,10 @@ export function useSubscription() {
     );
 
     // Effet pour vérifier le statut de l'abonnement et récupérer les offres au montage du composant
-    useEffect(() => {
-        checkSubscriptionStatus();
-        fetchOfferings();
-    }, []);
+    // useEffect(() => {
+    //     checkSubscriptionStatus();
+    //     fetchOfferings();
+    // }, []);
 
     // Fonction pour vérifier le statut de l'abonnement
     async function checkSubscriptionStatus() {
@@ -51,12 +51,6 @@ export function useSubscription() {
 
             // console.log('Informations client:', customerInfo);
             // console.log('Nouveau statut de l\'abonnement:', newSubscriptionStatus);
-
-            // Mise à jour de l'état local
-            setIsSubscribed(newSubscriptionStatus);
-
-            // Mise à jour du store Redux
-            dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
 
             // Mise à jour du backend
             if (user?.id) {
@@ -144,10 +138,10 @@ export function useSubscription() {
                 );
 
                 if (response.status === 200) {
-                    dispatch(userSlice.actions.setPrenium(subscriptionStatus));
+                    // dispatch(userSlice.actions.setPrenium(true));
                     navigation.navigate('PremiumActivated');
                 } else {
-                    dispatch(userSlice.actions.setPrenium(false));
+                    // dispatch(userSlice.actions.setPrenium(false));
                 }
             }
 
