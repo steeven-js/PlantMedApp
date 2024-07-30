@@ -1,9 +1,14 @@
 import axios from 'axios';
+import {StyleSheet} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, TouchableOpacity, TextInput} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {
+  appleAuth,
+  AppleButton,
+} from '@invertase/react-native-apple-authentication';
 
 import {text} from '../text';
 import {alert} from '../alert';
@@ -16,10 +21,9 @@ import {components} from '../components';
 import {actions} from '../store/actions';
 import {validation} from '../validation';
 import {ENDPOINTS, CONFIG} from '../config';
+import {useUsers} from '../hooks/userUsers';
 import {validateEmail} from '../validation/validateEmail';
 import {handleTextChange} from '../utils/handleTextChange';
-import {useUsers} from '../hooks/userUsers';
-import {StyleSheet} from 'react-native';
 
 const SignIn: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
@@ -38,7 +42,7 @@ const SignIn: React.FC = () => {
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  const {userExists, ifUserExists} = useUsers();
+  const {handleOAuthSignIn} = useUsers();
 
   const user = {email, password};
 
@@ -89,89 +93,65 @@ const SignIn: React.FC = () => {
   // Fonction pour gérer la connexion Google
   const handleGoogleSignIn = async () => {
     setLoading(true);
-
     try {
-      setLoading(true);
-      // Début de la connexion Google
-
-      // Google Play Services disponible
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-
-      // Connexion Google réussie, idToken obtenu
       const {idToken} = await GoogleSignin.signIn();
-
-      // Credential Google créé
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
       const userCredential = await auth().signInWithCredential(
         googleCredential,
       );
 
-      console.log(userCredential.user.email);
+      if (userCredential.user.email) {
+        const email = userCredential.user.email;
+        const password = userCredential.user.uid;
+        const name = userCredential.user.displayName || 'Utilisateur Google';
 
-      // Verificar si el email no es null
-      if (userCredential.user.email && userExists) {
-        await ifUserExists({email: userCredential.user.email});
-
-        if (userExists) {
-          const email = userCredential.user.email;
-          const password = userCredential.user.uid;
-
-          const _user = {email, password};
-
-          const response = await axios({
-            data: _user,
-            method: 'post',
-            headers: CONFIG.headers,
-            url: ENDPOINTS.LOGIN_USER,
-          });
-
-          if (response.status === 200) {
-            dispatch(actions.setUser(response.data.user));
-            console.log(
-              'Utilisateur connecté :',
-              userCredential.user.displayName,
-            );
-            navigation.reset({
-              index: 0,
-              routes: [{name: 'TabNavigator'}],
-            });
-            return;
-          }
-        } else {
-          const name = userCredential.user.displayName;
-          const email = userCredential.user.email;
-          const password = userCredential.user.uid;
-
-          const _user = {name, email, password};
-
-          const response = await axios({
-            data: _user,
-            method: 'post',
-            headers: CONFIG.headers,
-            url: ENDPOINTS.CREATE_USER,
-          });
-
-          if (response.status === 200) {
-            dispatch(actions.setUser(response.data.user));
-            console.log('Utilisateur créé :', userCredential.user.displayName);
-            navigation.reset({
-              index: 0,
-              routes: [{name: 'TabNavigator'}],
-            });
-            return;
-          }
-        }
+        await handleOAuthSignIn(email, password, name);
       } else {
-        alert.userWithThisEmailAlreadyExists();
-        console.error('Email is null');
+        throw new Error('User email not found');
       }
-    } catch (error: any) {
-      console.error('Erreur détaillée lors de la connexion Google :', error);
-      if (error.response && error.response.status === 401) {
-        alert.userWithThisEmailAlreadyExists();
-        return;
+    } catch (error) {
+      console.error('Erreur lors de la connexion Google :', error);
+      alert.somethingWentWrong();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Fonction pour gérer la connexion Apple
+  const handleAppleSignIn = async () => {
+    setLoading(true);
+    try {
+      const appleAuthRequestResponse = await appleAuth.performRequest({
+        requestedOperation: appleAuth.Operation.LOGIN,
+        requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
+      });
+
+      if (!appleAuthRequestResponse.identityToken) {
+        throw new Error('Apple Sign-In failed - no identity token returned');
       }
+
+      const {identityToken, nonce} = appleAuthRequestResponse;
+      const appleCredential = auth.AppleAuthProvider.credential(
+        identityToken,
+        nonce,
+      );
+      const userCredential = await auth().signInWithCredential(appleCredential);
+
+      if (userCredential.user.email) {
+        const email = userCredential.user.email;
+        const password = userCredential.user.uid;
+        const name =
+          userCredential.user.displayName ||
+          `Utilisateur ${Math.random().toString(36).substring(7)}`;
+
+        await handleOAuthSignIn(email, password, name);
+      } else {
+        throw new Error('User email not found');
+      }
+    } catch (error) {
+      console.error('Erreur lors de la connexion Apple :', error);
+      alert.somethingWentWrong();
     } finally {
       setLoading(false);
     }
@@ -285,7 +265,7 @@ const SignIn: React.FC = () => {
     );
   };
 
-  // Fonction pour afficher le bout
+  // Fonction pour afficher le bouton de connexion
   const renderButton = (): JSX.Element => {
     return (
       <components.Button
@@ -302,24 +282,26 @@ const SignIn: React.FC = () => {
   const renderOauthButtons = (): JSX.Element => {
     return (
       <>
-        <text.T14 style={styles.buttonChoices}>
-          Se connecté avec :
-        </text.T14>
+        <text.T14 style={styles.buttonChoices}>Se connecter avec :</text.T14>
 
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={styles.linkButton}
             onPress={handleGoogleSignIn}
           >
+            <svg.Google2Svg />
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
-          
-          <TouchableOpacity
-            style={styles.linkButton}
-            onPress={handleGoogleSignIn}
-          >
-            <text.T12 style={styles.linkText}>Apple</text.T12>
-          </TouchableOpacity>
+
+          <AppleButton
+            buttonStyle={AppleButton.Style.WHITE}
+            buttonType={AppleButton.Type.SIGN_IN}
+            style={{
+              width: 160,
+              height: 45,
+            }}
+            onPress={handleAppleSignIn}
+          />
         </View>
       </>
     );
@@ -393,37 +375,8 @@ const SignIn: React.FC = () => {
 
 export default SignIn;
 
+// Styles
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-  },
-  safeArea: {
-    backgroundColor: theme.colors.transparent,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  scrollViewContent: {
-    paddingHorizontal: 20,
-    flexGrow: 1,
-    paddingTop: utils.responsiveHeight(40),
-    paddingBottom: utils.responsiveHeight(20),
-    alignItems: 'center',
-  },
-  contentContainer: {
-    marginBottom: 20,
-  },
-  title: {
-    marginBottom: 20,
-  },
-  subtitle: {
-    marginBottom: 10,
-  },
-  disclaimer: {
-    marginBottom: 20,
-  },
   subscribeButton: {
     backgroundColor: theme.colors.steelTeal,
     padding: 15,
@@ -444,20 +397,21 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-between', // Changé de 'space-around' à 'space-between'
+    justifyContent: 'space-between',
     marginTop: 20,
   },
   linkButton: {
-    paddingHorizontal: 10,
-    borderWidth: 1,
-    paddingVertical: 20,
     borderRadius: 10,
-    borderColor: theme.colors.steelTeal,
-    flex: 1, // Ajouté pour que les boutons prennent une largeur égale
-    marginHorizontal: 5, // Ajouté pour un peu d'espace entre les boutons
-    alignItems: 'center', // Pour centrer le texte horizontalement
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginHorizontal: 5,
+    alignItems: 'center',
+    width: 160,
+    height: 45,
+    backgroundColor: theme.colors.white,
   },
   linkText: {
-    color: theme.colors.steelTeal,
+    color: theme.colors.black,
   },
 });

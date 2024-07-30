@@ -71,6 +71,7 @@ import RememberCheckSvg from './RememberCheckSvg';
 import DoctorStarBigSvg from './DoctorStarBigSvg';
 import NtfcBellYellowSvg from './NtfcBellYellowSvg';
 import CreditCardModalSvg from './CreditCardModalSvg';
+import Google2Svg from './Google2Svg';
 
 export const svg = {
   TagSvg,
@@ -106,6 +107,7 @@ export const svg = {
   ViewAllSvg,
   FiltersSvg,
   TwitterSvg,
+  Google2Svg,
   FileTextSvg,
   DownloadSvg,
   ReadMoreSvg,

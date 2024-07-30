@@ -11,6 +11,7 @@ export const colors = {
   yellowStar: '#FFD700',
 
   red: '#FF0000',
+  black: '#000000',
   lightRed: '#FFC0CB',
 };
 
