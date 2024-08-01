@@ -21,7 +21,7 @@ const TabNavigator: React.FC = () => {
 
   const tabs = getTabs();
 
-  console.log('user', JSON.stringify(user, null, 2));
+  // console.log('user', JSON.stringify(user, null, 2));
   const {
     data: userData,
     error: userError,
@@ -37,10 +37,6 @@ const TabNavigator: React.FC = () => {
   const getTitle = (): string | null => {
     if (currentTabScreen === 'Profile') {
       return 'Mon profil';
-    }
-
-    if (currentTabScreen === 'Order') {
-      return 'Order';
     }
 
     if (currentTabScreen === 'Wishlist') {

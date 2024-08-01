@@ -1,76 +1,71 @@
-import axios from 'axios';
-import {useSelector} from 'react-redux';
-import {View, ScrollView, TextInput} from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
+import {View, ScrollView} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import firestore from '@react-native-firebase/firestore';
 
 import {alert} from '../alert';
 import {hooks} from '../hooks';
 import {utils} from '../utils';
 import {custom} from '../custom';
-import {UserType} from '../types';
-import {RootState} from '../store';
 import {validation} from '../validation';
-import {actions} from '../store/actions';
 import {components} from '../components';
-import {ENDPOINTS, CONFIG} from '../config';
-import {handleTextChange} from '../utils/handleTextChange';
+import {useAuth} from '../hooks/useAuth';
 
 const EditProfile: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
 
-  const user: UserType | null = useSelector(
-    (state: RootState) => state.userSlice.user,
-  );
+  const {user, getAuthService} = useAuth();
 
   const [loading, setLoading] = useState<boolean>(false);
-  const [name, setName] = useState<string>(user?.name || '');
+  const [name, setName] = useState<string>(user?.displayName || '');
   const [email, setEmail] = useState<string>(user?.email || '');
-  const [phoneNumber, setPhoneNumber] = useState<string>(
-    user?.phoneNumber || '',
-  );
-  const [location, setLocation] = useState<string>(user?.location || '');
-
-  const handleNameChange = handleTextChange(setName);
-  const handleEmailChange = handleTextChange(setEmail);
-  const handleLocationChange = handleTextChange(setLocation);
-  const handlePhoneNumberChange = handleTextChange(setPhoneNumber);
-
-  const updatedUser = {name, location};
-
-  const nameInputRef = useRef<TextInput>(null);
-  const emailInputRef = useRef<TextInput>(null);
-  const locationInputRef = useRef<TextInput>(null);
-  const phoneNumberInputRef = useRef<TextInput>(null);
+  const [location, setLocation] = useState<string>('');
+  const [isEmailEditable, setIsEmailEditable] = useState<boolean>(true);
 
   useEffect(() => {
-    if (loading) {
-      nameInputRef.current?.blur();
-      emailInputRef.current?.blur();
-      locationInputRef.current?.blur();
-      phoneNumberInputRef.current?.blur();
-    }
-  }, [loading]);
+    const fetchUserProfile = async () => {
+      if (user) {
+        const userDoc = await firestore()
+          .collection('UserProfiles')
+          .doc(user.uid)
+          .get();
+        if (userDoc.exists) {
+          const userData = userDoc.data();
+          setName(userData?.displayName || user.displayName || '');
+          setEmail(userData?.email || user.email || '');
+          setLocation(userData?.location || '');
+        }
+
+        const service = await getAuthService();
+        setIsEmailEditable(service !== 'google' && service !== 'apple');
+      }
+    };
+
+    fetchUserProfile();
+  }, [user, getAuthService]);
 
   const handleUpdate = async () => {
+    if (!user) return;
+
     try {
       setLoading(true);
+      await firestore().collection('UserProfiles').doc(user.uid).set(
+        {
+          displayName: name,
+          email: email,
+          location: location,
+          updatedAt: firestore.FieldValue.serverTimestamp(),
+        },
+        {merge: true},
+      );
 
-      const response = await axios({
-        method: 'put',
-        url: ENDPOINTS.UPDATE_USER + `/${user?.id}`,
-        headers: CONFIG.headers,
-        data: updatedUser,
-      });
-
-      if (response.status === 200) {
-        dispatch(actions.setUser(response.data.user));
-        navigation.navigate('InfoSaved');
-        return;
+      if (user.displayName !== name) {
+        await user.updateProfile({displayName: name});
       }
 
-      alert.somethingWentWrong();
+      console.log('Profile updated successfully');
     } catch (error: any) {
+      console.error('Error updating profile:', error);
       alert.somethingWentWrong();
     } finally {
       setLoading(false);
@@ -80,7 +75,7 @@ const EditProfile: React.FC = () => {
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
-        title='Modifier les informations personnelles'
+        title="Modifier les informations personnelles"
         goBackIcon={true}
       />
     );
@@ -98,31 +93,25 @@ const EditProfile: React.FC = () => {
     return (
       <View style={{paddingHorizontal: 20}}>
         <custom.InputField
-          label='Nom'
+          label="Nom"
           value={name}
-          keyboardType='default'
-          innerRef={nameInputRef}
-          placeholder={'entrez votre nom'}
-          onChangeText={handleNameChange}
+          onChangeText={setName}
+          placeholder="Name"
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
+          label="Email"
           value={email}
-          label='Email'
-          innerRef={emailInputRef}
-          placeholder={'entrez votre email'}
-          keyboardType='email-address'
-          onChangeText={handleEmailChange}
-          editable={user?.email ? false : true}
+          onChangeText={setEmail}
+          placeholder="Email"
+          editable={isEmailEditable}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label='Localisation'
+          label="Localisation"
           value={location}
-          keyboardType='default'
-          innerRef={locationInputRef}
-          placeholder={'entrez votre localisation'}
-          onChangeText={handleLocationChange}
+          onChangeText={setLocation}
+          placeholder="Localisation"
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
       </View>
@@ -132,11 +121,9 @@ const EditProfile: React.FC = () => {
   const renderButton = (): JSX.Element => {
     return (
       <components.Button
-        title='Enregistrer les modifications'
+        title="Enregistrer les modifications"
         loading={loading}
-        onPress={() => {
-          validation(updatedUser) ? handleUpdate() : null;
-        }}
+        onPress={handleUpdate}
         containerStyle={{paddingHorizontal: 20}}
       />
     );
@@ -146,16 +133,14 @@ const EditProfile: React.FC = () => {
     return (
       <custom.ImageBackground
         style={{flex: 1}}
-        resizeMode='stretch'
-        source={require('../assets/bg/02.png')}
-      >
+        resizeMode="stretch"
+        source={require('../assets/bg/02.png')}>
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
             paddingTop: utils.responsiveHeight(40),
           }}
-          showsVerticalScrollIndicator={false}
-        >
+          showsVerticalScrollIndicator={false}>
           {renderUserInfo()}
           {renderInputFields()}
           {renderButton()}

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import { useEffect } from 'react';
 import {View, Alert, ScrollView} from 'react-native';
 
 import {hooks} from '../../hooks';
@@ -7,14 +7,19 @@ import {items} from '../../items';
 import {custom} from '../../custom';
 import {svg} from '../../assets/svg';
 import {components} from '../../components';
+import {useAuth} from '../../hooks/useAuth';
 import {useSubscription} from '../../hooks/revenueCat';
 
 const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
-  const user = hooks.useAppSelector(state => state.userSlice.user);
+  const {user} = useAuth();
 
-  const {isSubscribed} = useSubscription();
+  const {isSubscribed, checkSubscriptionStatus} = useSubscription();
+
+  useEffect(() => {
+    checkSubscriptionStatus();
+  }, [user]);
 
   const renderUserInfo = (): JSX.Element => {
     return (
@@ -51,8 +56,7 @@ const Profile: React.FC = () => {
           flex: 1,
           justifyContent: 'space-between',
           paddingLeft: 20,
-        }}
-      >
+        }}>
         <View>
           <items.ProfileItem
             title={isSubscribed ? 'Compte premium' : 'Compte gratuit'}
@@ -82,7 +86,7 @@ const Profile: React.FC = () => {
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
           <items.ProfileItem
-            title='Politique de confidentialité'
+            title="Politique de confidentialité"
             onPress={() => {
               navigation.navigate('PrivacyPolicy');
             }}
@@ -91,7 +95,7 @@ const Profile: React.FC = () => {
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
           <items.ProfileItem
-            title='Déconnexion'
+            title="Déconnexion"
             onPress={() => {
               navigation.navigate('LogOut');
             }}
@@ -102,7 +106,7 @@ const Profile: React.FC = () => {
 
         <View>
           <items.ProfileItem
-            title='Supprimer le compte'
+            title="Supprimer le compte"
             onPress={() => {
               navigation.navigate('DeleteAccount');
             }}
@@ -117,17 +121,15 @@ const Profile: React.FC = () => {
     return (
       <custom.ImageBackground
         style={{flex: 1}}
-        resizeMode='stretch'
-        source={require('../../assets/bg/02.png')}
-      >
+        resizeMode="stretch"
+        source={require('../../assets/bg/02.png')}>
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
             paddingTop: utils.responsiveHeight(50),
             paddingBottom: utils.responsiveHeight(20),
           }}
-          showsVerticalScrollIndicator={false}
-        >
+          showsVerticalScrollIndicator={false}>
           {renderUserInfo()}
           {renderMenu()}
         </ScrollView>

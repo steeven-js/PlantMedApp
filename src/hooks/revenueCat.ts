@@ -1,13 +1,9 @@
-import axios from 'axios';
 import { hooks } from '../hooks';
-import { UserType } from '../types';
-import { RootState } from '../store';
+import { useAuth } from './useAuth';
 import { Platform } from 'react-native';
-import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { ENDPOINTS, CONFIG } from '../config';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
-import { userSlice } from '../store/slices/userSlice';
+import firestore, { FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
 
 // Configuration des clés API RevenueCat
 const API_KEYS = {
@@ -19,80 +15,106 @@ const API_KEYS = {
 Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
 Purchases.configure({ apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google });
 
+// Déclarez le type pour l'objet userProfile
+type UserProfile = {
+    displayName: string;
+    email: string;
+    location: string;
+    premium: boolean;
+    premiumUpdatedAt?: FirebaseFirestoreTypes.Timestamp;
+    createdAt: FirebaseFirestoreTypes.Timestamp;
+    updatedAt?: FirebaseFirestoreTypes.Timestamp;
+};
+
 export function useSubscription() {
     const dispatch = hooks.useAppDispatch();
-    // États locaux pour gérer l'abonnement et les offres
     const [isSubscribed, setIsSubscribed] = useState(false);
-    const [expirationDate, setExpirationDate] = useState<Date | null>(null);
     const [offerings, setOfferings] = useState<PurchasesPackage[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+    const [formattedPremiumDate, setFormattedPremiumDate] = useState<string>('');
+
 
     const navigation = hooks.useAppNavigation();
+    const { user } = useAuth();
 
-    // Récupération de l'utilisateur depuis le state global
-    const user: UserType | null = useSelector(
-        (state: RootState) => state.userSlice.user,
-    );
-
-    // Effet pour vérifier le statut de l'abonnement et récupérer les offres au montage du composant
     useEffect(() => {
-        checkSubscriptionStatus();
-        fetchOfferings();
-    }, []);
+        if (user) {
+            checkSubscriptionStatus();
+            fetchOfferings();
+            fetchUserProfile();
+        }
+    }, [user]);
 
-    // Fonction pour vérifier le statut de l'abonnement
-    async function checkSubscriptionStatus() {
+    const fetchUserProfile = async () => {
+        try {
+            const userProfileRef = firestore().collection('UserProfiles').doc(user?.uid);
+            const docSnapshot = await userProfileRef.get();
+
+            if (docSnapshot.exists) {
+                setUserProfile(docSnapshot.data() as UserProfile);
+            } else {
+                setUserProfile(null);
+            }
+        } catch (error) {
+            console.error("Erreur lors de la récupération du profil utilisateur:", error);
+            setError("Impossible de récupérer les informations de l'utilisateur");
+        }
+    };
+
+    const checkSubscriptionStatus = async () => {
+        if (!user) return;
         try {
             const customerInfo = await Purchases.getCustomerInfo();
-            const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
-    
-            console.log('Informations client:', customerInfo);
-            // console.log('Nouveau statut de l\'abonnement:', newSubscriptionStatus);
-    
-            // Mise à jour de l'état local
-            setIsSubscribed(newSubscriptionStatus);
-    
-            // Mise à jour du store Redux
-            dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
+            const isPro = customerInfo.entitlements.active['pro'] !== undefined;
+            setIsSubscribed(isPro);
 
-            // Mise à jour du backend
-            if (user?.id) {
-                try {
-                    const updatedUser = {
-                        is_premium: newSubscriptionStatus
-                    };
-    
-                    const response = await axios.put(
-                        `${ENDPOINTS.UPDATE_SUBSCRIBE_USER}/${user.id}`,
-                        updatedUser,
-                        { headers: CONFIG.headers }
-                    );
-    
-                    if (response.status === 200) {
-                        console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
-                    } else {
-                        console.error('Erreur lors de la mise à jour de l\'abonnement sur le backend');
+            const userProfileRef = firestore().collection('UserProfiles').doc(user.uid);
+            const docSnapshot = await userProfileRef.get();
+
+            if (docSnapshot.exists) {
+                if (isPro) {
+                    const expirationDate = customerInfo.entitlements.active['pro']?.expirationDate;
+                    await userProfileRef.update({
+                        premium: true,
+                        premiumUpdatedAt: firestore.FieldValue.serverTimestamp(),
+                        premiumExpiresAt: expirationDate,
+                    });
+                    setIsSubscribed(true);
+                    if (expirationDate) {
+                        setFormattedPremiumDate(formatDate(expirationDate));
                     }
-                } catch (error) {
-                    console.error('Erreur lors de la mise à jour de l\'abonnement sur le backend:', error);
+                } else {
+                    await userProfileRef.update({
+                        premium: false,
+                        premiumUpdatedAt: null,
+                        premiumExpiresAt: null,
+                    });
+                    setIsSubscribed(false);
+                    setFormattedPremiumDate('');
+                }
+            } else {
+                await userProfileRef.set({
+                    premium: isPro,
+                    premiumUpdatedAt: isPro ? firestore.FieldValue.serverTimestamp() : null,
+                    premiumExpiresAt: isPro ? customerInfo.entitlements.active['pro']?.expirationDate : null,
+                    createdAt: firestore.FieldValue.serverTimestamp(),
+                    // Ajoutez d'autres champs par défaut ici
+                });
+                if (isPro) {
+                    const expirationDate = customerInfo.entitlements.active['pro']?.expirationDate;
+                    if (expirationDate) {
+                        setFormattedPremiumDate(formatDate(expirationDate));
+                    }
                 }
             }
-    
-            // Gestion de la date d'expiration
-            const latestExpirationDate = customerInfo.latestExpirationDate;
-            if (latestExpirationDate) {
-                const expirationDateObj = new Date(latestExpirationDate);
-                convertTimestampToDate(expirationDateObj);
-            } else {
-                setExpirationDate(null);
-            }
-    
         } catch (error) {
-            console.error('Erreur lors de la vérification du statut de l\'abonnement:', error);
+            console.error("Erreur lors de la vérification du statut d'abonnement:", error);
         }
-    }
+    };
 
-    // Fonction pour récupérer les offres disponibles
-    async function fetchOfferings() {
+    const fetchOfferings = async () => {
         try {
             const offerings = await Purchases.getOfferings();
             if (offerings.current !== null) {
@@ -100,79 +122,75 @@ export function useSubscription() {
             }
         } catch (error) {
             console.error('Erreur lors de la récupération des offres:', error);
+            setError('Impossible de récupérer les offres');
         }
-    }
+    };
 
-    // Fonction pour effectuer un achat d'abonnement
-    async function purchaseSubscription(packageToPurchase: PurchasesPackage) {
+    const purchaseSubscription = async (packageToPurchase: PurchasesPackage) => {
+        if (!user) {
+            setError("Utilisateur non connecté");
+            return;
+        }
+        setLoading(true);
+        setError(null);
         try {
             const { customerInfo } = await Purchases.purchasePackage(packageToPurchase);
             const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
-            setIsSubscribed(newSubscriptionStatus);
 
-            if (user?.id) {
-                const updatedUser = {
-                    is_premium: newSubscriptionStatus
-                };
-
-                const response = await axios.put(
-                    `${ENDPOINTS.UPDATE_SUBSCRIBE_USER}/${user.id}`,
-                    updatedUser,
-                    { headers: CONFIG.headers }
-                );
-
-                if (response.status === 200) {
-                    dispatch(userSlice.actions.setPrenium(newSubscriptionStatus));
-                    console.log('Mise à jour de l\'abonnement de l\'utilisateur:', newSubscriptionStatus);
-
-                    navigation.navigate('PremiumActivated');
-                } else {
-                    dispatch(userSlice.actions.setPrenium(false));
-                }
+            const userProfileRef = firestore().collection('UserProfiles').doc(user.uid);
+            if (newSubscriptionStatus) {
+                await userProfileRef.update({
+                    premium: true,
+                    premiumUpdatedAt: firestore.FieldValue.serverTimestamp(),
+                    premiumExpiresAt: customerInfo.entitlements.active['pro'].expirationDate,
+                });
+                setFormattedPremiumDate(formatDate(customerInfo.entitlements.active['pro'].expirationDate));
+                setIsSubscribed(true);
+                navigation.navigate('PremiumActivated');
+            } else {
+                await userProfileRef.update({
+                    premium: false,
+                    premiumUpdatedAt: null,
+                    premiumExpiresAt: null,
+                });
+                setFormattedPremiumDate(formatDate(customerInfo.entitlements.active['pro'].expirationDate));
+                setIsSubscribed(false);
             }
-
         } catch (error) {
-            console.error('Erreur lors de l\'achat de l\'abonnement:', error);
+            console.error("Erreur lors de l'achat de l'abonnement:", error);
+            setError("Échec de l'achat de l'abonnement");
+        } finally {
+            setLoading(false);
         }
-    }
+    };
 
-    // Fonction pour restaurer les achats
-    async function restorePurchases() {
-        try {
-            const customerInfo = await Purchases.restorePurchases();
-            const restoredSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
-            setIsSubscribed(restoredSubscriptionStatus);
-            // Mise à jour du backend et du Redux store si nécessaire
-            // TODO: Ajouter la logique de mise à jour similaire à celle de purchaseSubscription
-        } catch (error) {
-            console.error('Erreur lors de la restauration des achats:', error);
+    const formatDate = (date: FirebaseFirestoreTypes.Timestamp | string | null): string => {
+        if (!date) return 'Date inconnue';
+
+        let d: Date;
+        if (typeof date === 'string') {
+            d = new Date(date);
+        } else {
+            d = date.toDate();
         }
-    }
 
-    // Fonction pour convertir un timestamp en date formatée
-    function convertTimestampToDate(date: Date | null): string {
-        if (!date) return 'Pas de date d\'expiration';
-        
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-        
-        const formattedDate = `${day}/${month}/${year}`;
+        const day = d.getDate().toString().padStart(2, '0');
+        const month = new Intl.DateTimeFormat('fr-FR', { month: 'long' }).format(d);
+        const year = d.getFullYear();
 
-        // console.log('Date d\'expiration:', formattedDate);
+        return `${day} ${month} ${year}`;
+    };
 
-        setExpirationDate(date);
-
-        return formattedDate;
-    }   
-
-    // Retourne les valeurs et fonctions nécessaires pour gérer l'abonnement
     return {
+        error,
+        loading,
         offerings,
         isSubscribed,
-        expirationDate,
-        restorePurchases,
+        userProfile,
+        formattedPremiumDate,
+        fetchOfferings,
         purchaseSubscription,
         checkSubscriptionStatus,
+
     };
 }

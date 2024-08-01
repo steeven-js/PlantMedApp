@@ -22,6 +22,7 @@ import {HeaderType} from '../types';
 import {actions} from '../store/actions';
 import {queryHooks} from '../store/slices/apiSlice';
 import {useAppSelector, useAppDispatch} from '../store';
+import {useAuth} from '../hooks/useAuth';
 
 const Header: React.FC<HeaderType> = ({
   title,
@@ -36,7 +37,7 @@ const Header: React.FC<HeaderType> = ({
   const dispatch = useAppDispatch();
   const navigation = hooks.useAppNavigation();
 
-  const user = useAppSelector(state => state.userSlice.user);
+  const {user} = useAuth();
   const cart = useAppSelector(state => state.cartSlice.list);
 
   const subtotal = useAppSelector(state => state.cartSlice.subtotal);
@@ -49,12 +50,8 @@ const Header: React.FC<HeaderType> = ({
     isLoading: plantsLoading,
   } = queryHooks.useGetPlantmedQuery();
 
-  const newQuantity = plantsData?.plantmed.filter(item => item.isNew).length;
   const featuredQuantity = plantsData?.plantmed.filter(
     item => item.is_featured,
-  ).length;
-  const saleQuantity = plantsData?.plantmed.filter(
-    item => item.oldPrice,
   ).length;
   const bestQuantity = plantsData?.plantmed.filter(
     item => item.is_best_seller,
@@ -89,8 +86,7 @@ const Header: React.FC<HeaderType> = ({
               paddingVertical: 12,
               paddingHorizontal: 20,
             }}
-            onPress={() => navigation.goBack()}
-          >
+            onPress={() => navigation.goBack()}>
             <svg.GoBackSvg />
           </TouchableOpacity>
         </View>
@@ -105,8 +101,7 @@ const Header: React.FC<HeaderType> = ({
               paddingVertical: 12,
               paddingHorizontal: 20,
             }}
-            onPress={onGoBack}
-          >
+            onPress={onGoBack}>
             <svg.GoBackSvg />
           </TouchableOpacity>
         </View>
@@ -124,8 +119,8 @@ const Header: React.FC<HeaderType> = ({
         hideModalContentWhileAnimating={true}
         backdropTransitionOutTiming={0}
         style={{margin: 0, padding: 0}}
-        animationIn='slideInLeft'
-        animationOut='slideOutLeft'
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
         animationInTiming={500}
         animationOutTiming={500}
         deviceWidth={theme.sizes.deviceWidth}
@@ -139,13 +134,11 @@ const Header: React.FC<HeaderType> = ({
             backgroundColor: theme.colors.white,
             paddingTop: utils.statusBarHeight(),
             paddingBottom: utils.homeIndicatorHeight(),
-          }}
-        >
+          }}>
           <custom.ImageBackground
             style={{flex: 1}}
-            resizeMode='stretch'
-            source={require('../assets/bg/02.png')}
-          >
+            resizeMode="stretch"
+            source={require('../assets/bg/02.png')}>
             {/* CLOSE BUTTON */}
             <TouchableOpacity
               style={{
@@ -155,8 +148,7 @@ const Header: React.FC<HeaderType> = ({
               }}
               onPress={() => {
                 setShowModal(false);
-              }}
-            >
+              }}>
               <svg.CloseSvg />
             </TouchableOpacity>
             <ScrollView
@@ -165,8 +157,7 @@ const Header: React.FC<HeaderType> = ({
                 paddingTop: utils.responsiveHeight(40),
                 paddingBottom: utils.responsiveHeight(20),
               }}
-              showsVerticalScrollIndicator={false}
-            >
+              showsVerticalScrollIndicator={false}>
               {/* USER INFO */}
               {/* <UserData /> */}
 
@@ -183,8 +174,7 @@ const Header: React.FC<HeaderType> = ({
                 onPress={() => {
                   setShowModal(false);
                   navigation.navigate('EditProfile');
-                }}
-              >
+                }}>
                 {/* <Gravatar email={user?.email || ''} size={40 * 2} /> */}
                 <View>
                   <Text
@@ -195,9 +185,8 @@ const Header: React.FC<HeaderType> = ({
                       textTransform: 'capitalize',
                       marginBottom: 4,
                     }}
-                    numberOfLines={1}
-                  >
-                    {user?.name || ''}
+                    numberOfLines={1}>
+                    {user?.displayName || ''}
                   </Text>
                   <Text
                     style={{
@@ -206,8 +195,7 @@ const Header: React.FC<HeaderType> = ({
                       fontSize: Platform.OS === 'ios' ? 18 : 16,
                       marginBottom: 4,
                     }}
-                    numberOfLines={1}
-                  >
+                    numberOfLines={1}>
                     {user?.email || ''}
                   </Text>
                   <Text
@@ -218,8 +206,7 @@ const Header: React.FC<HeaderType> = ({
                       textTransform: 'capitalize',
                       marginBottom: 4,
                     }}
-                    numberOfLines={1}
-                  >
+                    numberOfLines={1}>
                     {/* {user?.isPrenium ? 'Membre Premium' : 'Membre Standard'} */}
                   </Text>
                 </View>
@@ -233,7 +220,7 @@ const Header: React.FC<HeaderType> = ({
                 }}
               />
               <items.BurgerMenuItem
-                title='>  Usages thérapeutiques'
+                title=">  Usages thérapeutiques"
                 onPress={() => {
                   setShowModal(false);
                   dispatch(actions.setScreen('Category'));
@@ -321,8 +308,7 @@ const Header: React.FC<HeaderType> = ({
           }}
           onPress={() => {
             setShowModal(true);
-          }}
-        >
+          }}>
           <svg.BurgerSvg />
         </TouchableOpacity>
       );
@@ -341,8 +327,7 @@ const Header: React.FC<HeaderType> = ({
             width: theme.sizes.deviceWidth - 210,
             marginRight: 60,
           }}
-          onPress={() => navigation.navigate('Search')}
-        >
+          onPress={() => navigation.navigate('Search')}>
           <View style={{marginRight: 7}}>
             <svg.SearchSvg />
           </View>
@@ -352,8 +337,7 @@ const Header: React.FC<HeaderType> = ({
               fontSize: Platform.OS === 'ios' ? 18 : 16,
               color: theme.colors.textColor,
               textTransform: 'capitalize',
-            }}
-          >
+            }}>
             Recherche
           </Text>
         </TouchableOpacity>
@@ -373,8 +357,7 @@ const Header: React.FC<HeaderType> = ({
             ...theme.fonts.DM_Sans_500Medium,
             fontSize: Platform.OS === 'ios' ? 20 : 18,
           }}
-          numberOfLines={1}
-        >
+          numberOfLines={1}>
           {title}
         </Text>
       );
@@ -394,8 +377,7 @@ const Header: React.FC<HeaderType> = ({
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 20,
-          }}
-        >
+          }}>
           <View
             style={{
               height: 22,
@@ -405,16 +387,14 @@ const Header: React.FC<HeaderType> = ({
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: theme.colors.mainColor,
-            }}
-          >
+            }}>
             <Text
               style={{
                 color: theme.colors.white,
                 ...theme.fonts.DM_Sans_700Bold,
                 fontSize: Platform.OS === 'ios' ? 10 : 8,
               }}
-              numberOfLines={1}
-            >
+              numberOfLines={1}>
               {cart.length > 0 ? `$${subtotal.toFixed(2)}` : '$0'}
             </Text>
           </View>
@@ -443,9 +423,8 @@ const Header: React.FC<HeaderType> = ({
 
     return (
       <custom.ImageBackground
-        resizeMode='stretch'
-        source={require('../assets/bg/02.png')}
-      >
+        resizeMode="stretch"
+        source={require('../assets/bg/02.png')}>
         <View style={{...containerStyle}}>
           {renderGoBack()}
           {renderBurgerIcon()}

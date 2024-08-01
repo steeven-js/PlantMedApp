@@ -7,6 +7,7 @@ import {custom} from '../custom';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {PlantMedType} from '../types';
+import {useSubscription} from '../hooks/revenueCat';
 
 type Props = {version: 1 | 2 | 3; item: PlantMedType; isLast?: boolean};
 
@@ -16,14 +17,13 @@ const PlantmedCard: React.FC<Props> = ({
   isLast,
 }): JSX.Element | null => {
   const navigation = hooks.useAppNavigation();
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+
+  const {isSubscribed} = useSubscription();
 
   const onPress = () => {
-    if (isPrenium) {
+    if (isSubscribed) {
       navigation.navigate('PlantMed', {item});
-    } else if (!isPrenium && item.is_prenium == false) {
+    } else if (!isSubscribed && item.is_prenium == false) {
       navigation.navigate('PlantMed', {item});
     } else {
       navigation.navigate('Prenium');
@@ -39,8 +39,7 @@ const PlantmedCard: React.FC<Props> = ({
           marginBottom: 20,
           borderRadius: 5,
         }}
-        onPress={onPress}
-      >
+        onPress={onPress}>
         <custom.ImageBackground
           source={{uri: item.image}}
           style={{
@@ -54,8 +53,7 @@ const PlantmedCard: React.FC<Props> = ({
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
           }}
-          resizeMode='cover'
-        >
+          resizeMode="cover">
           {item.is_prenium ? (
             <plantmed.PlantPrenium
               item={item}
@@ -81,8 +79,7 @@ const PlantmedCard: React.FC<Props> = ({
         <View
           style={{
             width: utils.responsiveWidth(160, true),
-          }}
-        >
+          }}>
           <plantmed.PlantmedName item={item} style={{marginBottom: 3}} />
         </View>
       </TouchableOpacity>
@@ -106,8 +103,7 @@ const PlantmedCard: React.FC<Props> = ({
           imageStyle={{
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
-          }}
-        >
+          }}>
           {item.is_prenium ? (
             <plantmed.PlantPrenium
               item={item}
@@ -154,8 +150,7 @@ const PlantmedCard: React.FC<Props> = ({
           imageStyle={{
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
-          }}
-        >
+          }}>
           {item.is_prenium ? (
             <plantmed.PlantPrenium
               item={item}

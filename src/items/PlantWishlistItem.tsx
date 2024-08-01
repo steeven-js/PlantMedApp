@@ -7,6 +7,7 @@ import {custom} from '../custom';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {PlantMedType} from '../types';
+import { useSubscription } from '../hooks/revenueCat';
 
 type Props = {item: PlantMedType; containerStyle?: ViewStyle; isLast?: boolean};
 
@@ -17,9 +18,7 @@ const PlantWishlistItem: React.FC<Props> = ({
 }): JSX.Element => {
   const navigation = hooks.useAppNavigation();
 
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+  const {isSubscribed} = useSubscription();
 
   return (
     <TouchableOpacity
@@ -29,9 +28,9 @@ const PlantWishlistItem: React.FC<Props> = ({
         marginBottom: isLast ? 0 : utils.responsiveHeight(14),
       }}
       onPress={() => {
-        if (isPrenium) {
+        if (isSubscribed) {
           navigation.navigate('PlantMed', {item});
-        } else if (!isPrenium && item.is_prenium == false) {
+        } else if (!isSubscribed && item.is_prenium == false) {
           navigation.navigate('PlantMed', {item});
         } else {
           navigation.navigate('Prenium');

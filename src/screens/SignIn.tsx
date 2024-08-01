@@ -9,6 +9,7 @@ import {
   appleAuth,
   AppleButton,
 } from '@invertase/react-native-apple-authentication';
+import firestore from '@react-native-firebase/firestore';
 
 import {text} from '../text';
 import {alert} from '../alert';
@@ -21,15 +22,15 @@ import {components} from '../components';
 import {actions} from '../store/actions';
 import {validation} from '../validation';
 import {ENDPOINTS, CONFIG} from '../config';
-import {useUsers} from '../hooks/userUsers';
+import {useAppSelector, useAppDispatch} from '../store';
 import {validateEmail} from '../validation/validateEmail';
 import {handleTextChange} from '../utils/handleTextChange';
 
 const SignIn: React.FC = () => {
-  const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
+  const dispatch = useAppDispatch();
 
-  const rememberMe = hooks.useAppSelector(state => state.userSlice.rememberMe);
+  // const rememberMe = hooks.useAppSelector(state => state.userSlice.rememberMe);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -42,8 +43,6 @@ const SignIn: React.FC = () => {
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  const {handleOAuthSignIn} = useUsers();
-
   const user = {email, password};
 
   useEffect(() => {
@@ -54,36 +53,46 @@ const SignIn: React.FC = () => {
 
     GoogleSignin.configure({
       webClientId:
-        '453782988338-p1fn125tgm3ilpvibk846mjgise2qt36.apps.googleusercontent.com',
+        '453782988338-bjrced2v0tqohg68j6dljju0qp1tqrgm.apps.googleusercontent.com',
     });
   }, [loading]);
 
   // Fonction pour gérer la connexion de l'utilisateur
   const handleSignIn = async () => {
+    setLoading(true);
     try {
-      const response = await axios({
-        data: user,
-        method: 'post',
-        headers: CONFIG.headers,
-        url: ENDPOINTS.LOGIN_USER,
-      });
+      const userCredential = await auth().signInWithEmailAndPassword(
+        email,
+        password,
+      );
 
-      if (response.status === 200) {
-        dispatch(actions.setUser(response.data.user));
-        navigation.reset({
-          index: 0,
-          routes: [{name: 'TabNavigator'}],
-        });
-        return;
+      const user = {
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        displayName: userCredential.user.displayName,
+        photoURL: userCredential.user.photoURL,
+        emailVerified: userCredential.user.emailVerified,
+      };
+
+      if (user) {
+        // Créer un document Firestore dans la collection 'UserProfiles' avec l'uid de l'utilisateur
+        await firestore()
+          .collection('UserProfiles')
+          .doc(user.uid)
+          .set({
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName || '',
+            photoURL: user.photoURL || '',
+            createdAt: firestore.FieldValue.serverTimestamp(),
+            updatedAt: firestore.FieldValue.serverTimestamp(),
+            // Ajoutez d'autres champs nécessaires ici
+          });
+
+        console.log('UserProfile login successfully');
       }
-
-      alert.somethingWentWrong();
     } catch (error: any) {
-      if (error.response.status === 401) {
-        alert.invalidUsernameOrPassword();
-        return;
-      }
-
+      console.error('Error:', error);
       alert.somethingWentWrong();
     } finally {
       setLoading(false);
@@ -94,22 +103,45 @@ const SignIn: React.FC = () => {
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
+      // Check if your device supports Google Play
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+
+      // Get the user's ID token
       const {idToken} = await GoogleSignin.signIn();
+
+      // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      // Sign-in the user with the credential
       const userCredential = await auth().signInWithCredential(
         googleCredential,
       );
 
-      if (userCredential.user.email) {
-        const email = userCredential.user.email;
-        const password = userCredential.user.uid;
-        const name = userCredential.user.displayName || 'Utilisateur Google';
+      // Get the authenticated user
+      const authenticatedUser = userCredential.user;
 
-        await handleOAuthSignIn(email, password, name);
-      } else {
-        throw new Error('User email not found');
+      if (authenticatedUser) {
+        const userProfileRef = firestore()
+          .collection('UserProfiles')
+          .doc(authenticatedUser.uid);
+
+        const userProfileData = {
+          uid: authenticatedUser.uid,
+          email: authenticatedUser.email,
+          displayName: authenticatedUser.displayName || '',
+          photoURL: authenticatedUser.photoURL || '',
+          updatedAt: firestore.FieldValue.serverTimestamp(),
+          service: 'google',
+          // Ajoutez d'autres champs nécessaires ici
+        };
+
+        // Utilisation de set avec merge: true pour créer ou mettre à jour le document
+        await userProfileRef.set(userProfileData, {merge: true});
+
+        console.log('UserProfile created/updated successfully');
       }
+
+      return userCredential;
     } catch (error) {
       console.error('Erreur lors de la connexion Google :', error);
       alert.somethingWentWrong();
@@ -122,33 +154,49 @@ const SignIn: React.FC = () => {
   const handleAppleSignIn = async () => {
     setLoading(true);
     try {
+      // Start the sign-in request
       const appleAuthRequestResponse = await appleAuth.performRequest({
         requestedOperation: appleAuth.Operation.LOGIN,
         requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
       });
 
+      // Ensure Apple returned a user identityToken
       if (!appleAuthRequestResponse.identityToken) {
         throw new Error('Apple Sign-In failed - no identity token returned');
       }
 
+      // Create a Firebase credential from the response
       const {identityToken, nonce} = appleAuthRequestResponse;
       const appleCredential = auth.AppleAuthProvider.credential(
         identityToken,
         nonce,
       );
+
+      // Sign the user in with the credential
       const userCredential = await auth().signInWithCredential(appleCredential);
+      const authenticatedUser = userCredential.user;
 
-      if (userCredential.user.email) {
-        const email = userCredential.user.email;
-        const password = userCredential.user.uid;
-        const name =
-          userCredential.user.displayName ||
-          `Utilisateur ${Math.random().toString(36).substring(7)}`;
+      if (authenticatedUser) {
+        const userProfileRef = firestore()
+          .collection('UserProfiles')
+          .doc(authenticatedUser.uid);
 
-        await handleOAuthSignIn(email, password, name);
-      } else {
-        throw new Error('User email not found');
+        const userProfileData = {
+          uid: authenticatedUser.uid,
+          email: authenticatedUser.email || 'identifiant apple',
+          displayName: authenticatedUser.displayName || 'Utilisateur Apple',
+          photoURL: authenticatedUser.photoURL || '',
+          updatedAt: firestore.FieldValue.serverTimestamp(),
+          service: 'apple',
+          // Ajoutez d'autres champs nécessaires ici
+        };
+
+        await userProfileRef.set(userProfileData, {merge: true});
+
+        console.log('UserProfile created/updated successfully');
       }
+
+      return userCredential;
     } catch (error) {
       console.error('Erreur lors de la connexion Apple :', error);
       alert.somethingWentWrong();
@@ -170,8 +218,7 @@ const SignIn: React.FC = () => {
         style={{
           textTransform: 'capitalize',
           marginBottom: utils.responsiveHeight(14),
-        }}
-      >
+        }}>
         Bienvenue
       </text.H1>
     );
@@ -182,8 +229,7 @@ const SignIn: React.FC = () => {
     return (
       <text.T18
         style={{marginBottom: utils.responsiveHeight(40)}}
-        numberOfLines={1}
-      >
+        numberOfLines={1}>
         Connectez-vous à votre compte
       </text.T18>
     );
@@ -194,22 +240,22 @@ const SignIn: React.FC = () => {
     return (
       <React.Fragment>
         <custom.InputField
-          label='email'
+          label="email"
           value={email}
           innerRef={emailInputRef}
-          placeholder='entrez votre email'
-          keyboardType='email-address'
+          placeholder="entrez votre email"
+          keyboardType="email-address"
           onChangeText={handleEmailChange}
           checkIcon={validateEmail(email, true)}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label='mot de passe'
+          label="mot de passe"
           value={password}
           eyeOffIcon={true}
-          keyboardType='default'
+          keyboardType="default"
           innerRef={passwordInputRef}
-          placeholder='entrez votre mot de passe'
+          placeholder="entrez votre mot de passe"
           secureTextEntry={secureTextEntry}
           onChangeText={handlePasswordChange}
           setSecureTextEntry={setSecureTextEntry}
@@ -226,14 +272,8 @@ const SignIn: React.FC = () => {
         style={{
           ...theme.flex.rowCenterSpaceBetween,
           marginBottom: utils.responsiveHeight(30),
-        }}
-      >
-        <TouchableOpacity
-          style={{...theme.flex.rowCenter}}
-          onPress={() => {
-            dispatch(actions.setRememberMe(!rememberMe));
-          }}
-        >
+        }}>
+        <TouchableOpacity style={{...theme.flex.rowCenter}} onPress={() => {}}>
           <View
             style={{
               width: 18,
@@ -244,9 +284,9 @@ const SignIn: React.FC = () => {
               justifyContent: 'center',
               backgroundColor: theme.colors.white,
               borderColor: theme.colors.antiFlashWhite,
-            }}
-          >
-            {rememberMe && <svg.RememberCheckSvg />}
+            }}>
+            {/* {rememberMe && <svg.RememberCheckSvg />} */}
+            <svg.RememberCheckSvg />
           </View>
           <text.T14 style={{marginLeft: 10}} numberOfLines={1}>
             Se souvenir de moi
@@ -255,8 +295,7 @@ const SignIn: React.FC = () => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('SendEmailOtpForgot');
-          }}
-        >
+          }}>
           <text.T14 numberOfLines={1} style={{color: theme.colors.mainColor}}>
             Mot de passe oublié?
           </text.T14>
@@ -269,7 +308,7 @@ const SignIn: React.FC = () => {
   const renderButton = (): JSX.Element => {
     return (
       <components.Button
-        title='Connexion'
+        title="Connexion"
         onPress={() => {
           validation(user) ? handleSignIn() : null;
         }}
@@ -287,8 +326,7 @@ const SignIn: React.FC = () => {
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={styles.linkButton}
-            onPress={handleGoogleSignIn}
-          >
+            onPress={handleGoogleSignIn}>
             <svg.Google2Svg />
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
@@ -341,8 +379,7 @@ const SignIn: React.FC = () => {
           flexGrow: 1,
           padding: 20,
           justifyContent: 'center',
-        }}
-      >
+        }}>
         {renderTitle()}
         {renderDescription()}
         {renderInputFields()}
@@ -358,13 +395,11 @@ const SignIn: React.FC = () => {
   return (
     <custom.ImageBackground
       style={{flex: 1}}
-      resizeMode='stretch'
-      source={require('../assets/bg/02.png')}
-    >
+      resizeMode="stretch"
+      source={require('../assets/bg/02.png')}>
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}
-      >
+        containerStyle={{backgroundColor: theme.colors.transparent}}>
         {renderHeader()}
         {renderContent()}
         {renderIfYouDontHaveAnAccount()}

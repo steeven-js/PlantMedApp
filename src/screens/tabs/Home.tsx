@@ -107,7 +107,7 @@ const Home: React.FC = () => {
       });
   }, []);
 
-  const renderCarouselItem = ({item}) => {
+  const renderCarouselItem = ({item}: {item: any}) => {
     const products = plantsData?.plantmed.filter(plant => {
       return plant.promotion === item.promotion;
     });

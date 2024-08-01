@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
+import React from 'react';
 import {
   View,
   ScrollView,
@@ -13,86 +12,66 @@ import {
 import {text} from '../text';
 import {custom} from '../custom';
 import {theme} from '../constants';
-import {UserType} from '../types';
-import {RootState} from '../store';
 import {components} from '../components';
-import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
-import {userSlice} from '../store/slices/userSlice';
+import {utils} from '../utils';
 
 const SUBSCRIPTION_SKU = 'plm_199_m';
 
 const Premium: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
 
-  const user: UserType | null = useSelector(
-    (state: RootState) => state.userSlice.user,
-  );
-
-  const {isSubscribed, offerings, purchaseSubscription} = useSubscription();
+  const {isSubscribed, offerings, purchaseSubscription, fetchOfferings, loading, error} =
+    useSubscription();
 
   const handleSubscribe = async () => {
-    setLoading(true);
+    if (isSubscribed) {
+      alreadyPremium();
+      return;
+    }
+
+    fetchOfferings();
+
+    if (offerings.length === 0) {
+      Alert.alert('Erreur', 'Aucune offre disponible pour le moment.');
+      return;
+    }
+
     try {
-      const packageToPurchase = offerings.find(
-        offer => offer.product.identifier === SUBSCRIPTION_SKU,
-      );
-      if (packageToPurchase) {
-        await purchaseSubscription(packageToPurchase);
-      } else {
-        Alert.alert('Erreur', "Le package d'abonnement n'a pas été trouvé.");
-        dispatch(userSlice.actions.setPrenium(false));
-      }
-    } catch (error) {
-      console.error("Erreur lors de l'abonnement:", error);
+      await purchaseSubscription(offerings[0]); // Assuming the first package is the one we want
+    } catch (err) {
+      console.error("Erreur lors de l'abonnement:", err);
       Alert.alert(
         'Erreur',
-        "Une erreur est survenue lors de l'abonnement. Veuillez réessayer.",
+        error ||
+          "Une erreur est survenue lors de l'abonnement. Veuillez réessayer.",
       );
-    } finally {
-      setLoading(false);
     }
   };
 
   const alreadyPremium = () => {
-    Alert.alert('Success', 'Vous êtes déjà Premium', [
-      {
-        text: 'OK',
-        onPress: () => {
-          console.log('OK Pressed');
-        },
-      },
+    Alert.alert('Succès', 'Vous êtes déjà Premium', [
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
     ]);
   };
 
-  const openPrivacyPolicy = () => {
-    navigation.navigate('PrivacyPolicy');
-  };
-
-  const openTermsOfUse = () => {
-    navigation.navigate('TermsOfUse');
-  };
-
+  const openPrivacyPolicy = () => navigation.navigate('PrivacyPolicy');
+  const openTermsOfUse = () => navigation.navigate('TermsOfUse');
   const openAppleEULA = () => {
-    // Ouvrir le lien vers le CLUF d'Apple
-    // Vous pouvez utiliser Linking.openURL() de React Native pour ouvrir un lien web
     Linking.openURL(
       'https://www.apple.com/legal/internet-services/itunes/chfr/terms.html',
     );
   };
-
   const renderHeader = (): JSX.Element => {
-    return <components.Header goBackIcon={true} title='Premium' />;
+    return <components.Header goBackIcon={true} title="Premium" />;
   };
 
   const renderContent = (): JSX.Element => {
     if (loading) {
       return (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size='large' color={theme.colors.steelTeal} />
+          <ActivityIndicator size="large" color={theme.colors.steelTeal} />
         </View>
       );
     }
@@ -145,8 +124,7 @@ const Premium: React.FC = () => {
         <View style={styles.linksContainer}>
           <TouchableOpacity
             style={styles.linkButton}
-            onPress={openPrivacyPolicy}
-          >
+            onPress={openPrivacyPolicy}>
             <text.T12 style={styles.linkText}>Confidentialité</text.T12>
           </TouchableOpacity>
           <TouchableOpacity style={styles.linkButton} onPress={openTermsOfUse}>
@@ -163,13 +141,11 @@ const Premium: React.FC = () => {
   return (
     <custom.ImageBackground
       style={styles.background}
-      resizeMode='stretch'
-      source={require('../assets/bg/02.png')}
-    >
+      resizeMode="stretch"
+      source={require('../assets/bg/02.png')}>
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={styles.safeArea}
-      >
+        containerStyle={styles.safeArea}>
         {renderHeader()}
         {renderContent()}
       </custom.SafeAreaView>

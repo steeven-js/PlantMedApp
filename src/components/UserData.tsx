@@ -4,6 +4,7 @@ import {View, Text, TouchableOpacity, Platform, ViewStyle} from 'react-native';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {theme} from '../constants';
+import { useAuth } from '../hooks/useAuth';
 
 type Props = {
   onPress?: () => void;
@@ -12,7 +13,7 @@ type Props = {
 
 const UserData: React.FC<Props> = ({containerStyle, onPress}) => {
   const navigation = hooks.useAppNavigation();
-  const user = hooks.useAppSelector(state => state.userSlice.user);
+  const {user} = useAuth();
   return (
     <TouchableOpacity
       style={{
@@ -38,7 +39,7 @@ const UserData: React.FC<Props> = ({containerStyle, onPress}) => {
           }}
           numberOfLines={1}
         >
-          {user?.name}
+          {user?.displayName}
         </Text>
         <Text
           style={{

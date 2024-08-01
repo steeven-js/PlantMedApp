@@ -18,22 +18,16 @@ import {components} from '../components';
 import {queryHooks} from '../store/slices/apiSlice';
 import {handleTextChange} from '../utils/handleTextChange';
 import PreniumSvg from '../assets/svg/PreniumSvg';
+import { useSubscription } from '../hooks/revenueCat';
+import { useAuth } from '../hooks/useAuth';
 
 const Search: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
   const [searchQuery, setSearchQuery] = useState('');
 
-  const user = hooks.useAppSelector(state => state.userSlice.user);
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
-
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userLoading,
-  } = queryHooks.useGetUserQuery(user?.id || 0);
+  const {loading} = useAuth();
+  const {isSubscribed} = useSubscription();
 
   const {
     data: plantsData,
@@ -47,7 +41,7 @@ const Search: React.FC = () => {
     ref.current?.focus();
   }, []);
 
-  const isLoading = userLoading || plantsLoading;
+  const isLoading = loading || plantsLoading;
 
   const handleSearch = handleTextChange(setSearchQuery);
 
@@ -121,9 +115,9 @@ const Search: React.FC = () => {
           alignItems: 'center',
         }}
         onPress={() => {
-          if (isPrenium) {
+          if (isSubscribed) {
             navigation.navigate('PlantMed', {item});
-          } else if (!isPrenium && item.is_prenium == false) {
+          } else if (!isSubscribed && item.is_prenium == false) {
             navigation.navigate('PlantMed', {item});
           } else {
             navigation.navigate('Prenium');

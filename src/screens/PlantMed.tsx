@@ -19,6 +19,7 @@ import {plantmed} from '../plantmed';
 import {components} from '../components';
 import {PlantMedScreenProps} from '../types/ScreenProps';
 import {PlantMedType, ViewableItemsChanged} from '../types';
+import { useSubscription } from '../hooks/revenueCat';
 
 const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const {item} = route.params;
@@ -27,9 +28,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const navigation = hooks.useAppNavigation();
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+  const {isSubscribed} = useSubscription();
 
   const viewabilityConfig = useRef({
     viewAreaCoveragePercentThreshold: 50,
@@ -373,7 +372,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        {isPrenium ? (
+        {isSubscribed ? (
           <>
             <text.H2
               style={{
@@ -415,7 +414,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        {isPrenium ? (
+        {isSubscribed ? (
           <>
             <text.H2
               style={{

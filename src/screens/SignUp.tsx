@@ -8,6 +8,7 @@ import {
   appleAuth,
   AppleButton,
 } from '@invertase/react-native-apple-authentication';
+import firestore from '@react-native-firebase/firestore';
 
 import {text} from '../text';
 import {alert} from '../alert';
@@ -18,7 +19,6 @@ import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {components} from '../components';
 import {validation} from '../validation';
-import {useUsers} from '../hooks/userUsers';
 import {ENDPOINTS, CONFIG} from '../config';
 import {validateName} from '../validation/validateName';
 import {validateEmail} from '../validation/validateEmail';
@@ -46,8 +46,6 @@ const SignUp: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null);
   const confirmPasswordInputRef = useRef<TextInput>(null);
 
-  const {handleOAuthSignIn} = useUsers();
-
   useEffect(() => {
     if (loading) {
       nameInputRef.current?.blur();
@@ -62,30 +60,50 @@ const SignUp: React.FC = () => {
     });
   }, [loading]);
 
-  // Fonction pour créer un utilisateur
   const handleCreateUser = async () => {
     try {
       setLoading(true);
-      const response = await axios({
-        method: 'post',
-        headers: CONFIG.headers,
-        url: ENDPOINTS.CREATE_USER,
-        data: {name, email, password},
-      });
+      // Créer l'utilisateur avec Firebase Auth
+      const userCredential = await auth().createUserWithEmailAndPassword(
+        email,
+        password,
+      );
 
-      if (response.status === 200) {
-        navigation.replace('SignUpAccountCreated', {email, password});
-        return;
+      const user = userCredential.user;
+
+      if (user) {
+        // Créer un document Firestore dans la collection 'UserProfiles' avec l'uid de l'utilisateur
+        await firestore()
+          .collection('UserProfiles')
+          .doc(user.uid)
+          .set({
+            uid: user.uid,
+            email: user.email,
+            displayName: name, // Utilisez directement 'name' ici
+            photoURL: user.photoURL || '',
+            createdAt: firestore.FieldValue.serverTimestamp(),
+            updatedAt: firestore.FieldValue.serverTimestamp(),
+            isPremium: false,
+            // Ajoutez d'autres champs nécessaires ici
+          });
+
+        // Mettre à jour le nom de l'utilisateur
+        await user.updateProfile({
+          displayName: name,
+        });
+
+        console.log('UserProfile created successfully');
+
+        // Optionnel : Recharger l'utilisateur pour s'assurer que les changements sont reflétés
+        await user.reload();
       }
-
-      alert.somethingWentWrong();
     } catch (error: any) {
-      if (error.response.status === 409) {
+      if (error.code === 'auth/email-already-in-use') {
         alert.userWithThisNameOrEmailAlreadyExists();
-        return;
+      } else {
+        console.error('Error creating user:', error);
+        alert.somethingWentWrong();
       }
-
-      alert.somethingWentWrong();
     } finally {
       setLoading(false);
     }
@@ -95,22 +113,59 @@ const SignUp: React.FC = () => {
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
+      // Check if your device supports Google Play
       await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-      const {idToken} = await GoogleSignin.signIn();
+      // Get the users ID token
+      const {idToken, user} = await GoogleSignin.signIn();
+
+      // Create a Google credential with the token
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      // Sign-in the user with the credential
       const userCredential = await auth().signInWithCredential(
         googleCredential,
       );
 
-      if (userCredential.user.email) {
-        const email = userCredential.user.email;
-        const password = userCredential.user.uid;
-        const name = userCredential.user.displayName || 'Utilisateur Google';
+      // Get the authenticated user
+      const authenticatedUser = userCredential.user;
 
-        await handleOAuthSignIn(email, password, name);
-      } else {
-        throw new Error('User email not found');
+      if (authenticatedUser) {
+        const userProfileRef = firestore()
+          .collection('UserProfiles')
+          .doc(authenticatedUser.uid);
+
+        const docSnapshot = await userProfileRef.get();
+
+        if (docSnapshot.exists) {
+          // Si le document existe, nous le mettons à jour
+          await userProfileRef.update({
+            uid: authenticatedUser.uid,
+            email: authenticatedUser.email,
+            displayName: authenticatedUser.displayName || '',
+            photoURL: authenticatedUser.photoURL || '',
+            createdAt: firestore.FieldValue.serverTimestamp(),
+            updatedAt: firestore.FieldValue.serverTimestamp(),
+            service: 'google',
+            // Ajoutez d'autres champs nécessaires ici
+          });
+        } else {
+          // Si le document n'existe pas, nous le créons
+          await userProfileRef.set({
+            uid: authenticatedUser.uid,
+            email: authenticatedUser.email,
+            displayName: authenticatedUser.displayName || '',
+            photoURL: authenticatedUser.photoURL || '',
+            createdAt: firestore.FieldValue.serverTimestamp(),
+            updatedAt: firestore.FieldValue.serverTimestamp(),
+            service: 'google',
+            // Ajoutez d'autres champs nécessaires ici
+          });
+        }
+
+        console.log('UserProfile created successfully');
       }
+
+      return userCredential;
     } catch (error) {
       console.error('Erreur lors de la connexion Google :', error);
       alert.somethingWentWrong();
@@ -123,33 +178,49 @@ const SignUp: React.FC = () => {
   const handleAppleSignIn = async () => {
     setLoading(true);
     try {
+      // Start the sign-in request
       const appleAuthRequestResponse = await appleAuth.performRequest({
         requestedOperation: appleAuth.Operation.LOGIN,
         requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
       });
 
+      // Ensure Apple returned a user identityToken
       if (!appleAuthRequestResponse.identityToken) {
         throw new Error('Apple Sign-In failed - no identity token returned');
       }
 
+      // Create a Firebase credential from the response
       const {identityToken, nonce} = appleAuthRequestResponse;
       const appleCredential = auth.AppleAuthProvider.credential(
         identityToken,
         nonce,
       );
+
+      // Sign the user in with the credential
       const userCredential = await auth().signInWithCredential(appleCredential);
+      const authenticatedUser = userCredential.user;
 
-      if (userCredential.user.email) {
-        const email = userCredential.user.email;
-        const password = userCredential.user.uid;
-        const name =
-          userCredential.user.displayName ||
-          `Utilisateur ${Math.random().toString(36).substring(7)}`;
+      if (authenticatedUser) {
+        const userProfileRef = firestore()
+          .collection('UserProfiles')
+          .doc(authenticatedUser.uid);
 
-        await handleOAuthSignIn(email, password, name);
-      } else {
-        throw new Error('User email not found');
+        const userProfileData = {
+          uid: authenticatedUser.uid,
+          email: authenticatedUser.email || 'identifiant apple',
+          displayName: authenticatedUser.displayName || 'Utilisateur Apple',
+          photoURL: authenticatedUser.photoURL || '',
+          updatedAt: firestore.FieldValue.serverTimestamp(),
+          service: 'apple',
+          // Ajoutez d'autres champs nécessaires ici
+        };
+
+        await userProfileRef.set(userProfileData, {merge: true});
+
+        console.log('UserProfile created/updated successfully');
       }
+
+      return userCredential;
     } catch (error) {
       console.error('Erreur lors de la connexion Apple :', error);
       alert.somethingWentWrong();
@@ -170,8 +241,7 @@ const SignUp: React.FC = () => {
         style={{
           textTransform: 'capitalize',
           marginBottom: utils.responsiveHeight(40),
-        }}
-      >
+        }}>
         Inscription
       </text.H1>
     );
@@ -182,32 +252,32 @@ const SignUp: React.FC = () => {
     return (
       <React.Fragment>
         <custom.InputField
-          label='nom'
+          label="nom"
           value={name}
-          keyboardType='default'
+          keyboardType="default"
           innerRef={nameInputRef}
-          placeholder='entrez votre nom'
+          placeholder="entrez votre nom"
           onChangeText={handleNameChange}
           checkIcon={validateName(name, true)}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label='email'
+          label="email"
           value={email}
           innerRef={emailInputRef}
-          placeholder='entrez votre email'
-          keyboardType='email-address'
+          placeholder="entrez votre email"
+          keyboardType="email-address"
           onChangeText={handleEmailChange}
           checkIcon={validateEmail(email, true)}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label='mot de passe'
+          label="mot de passe"
           value={password}
           eyeOffIcon={true}
-          keyboardType='default'
+          keyboardType="default"
           innerRef={passwordInputRef}
-          placeholder='entrez votre mot de passe'
+          placeholder="entrez votre mot de passe"
           secureTextEntry={secureTextEntry}
           onChangeText={handlePasswordChange}
           setSecureTextEntry={setSecureTextEntry}
@@ -215,11 +285,11 @@ const SignUp: React.FC = () => {
         />
         <custom.InputField
           eyeOffIcon={true}
-          keyboardType='default'
+          keyboardType="default"
           value={confirmPassword}
-          label='confirmer mot de passe'
+          label="confirmer mot de passe"
           innerRef={confirmPasswordInputRef}
-          placeholder='confirmez votre mot de passe'
+          placeholder="confirmez votre mot de passe"
           secureTextEntry={confirmSecureTextEntry}
           onChangeText={handleConfirmPasswordChange}
           setSecureTextEntry={setConfirmSecureTextEntry}
@@ -253,8 +323,7 @@ const SignUp: React.FC = () => {
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={styles.linkButton}
-            onPress={handleGoogleSignIn}
-          >
+            onPress={handleGoogleSignIn}>
             <svg.Google2Svg />
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
@@ -301,8 +370,7 @@ const SignUp: React.FC = () => {
           flexGrow: 1,
           padding: 20,
           justifyContent: 'center',
-        }}
-      >
+        }}>
         {renderTitle()}
         {renderInputFields()}
         {renderButton()}
@@ -316,13 +384,11 @@ const SignUp: React.FC = () => {
   return (
     <custom.ImageBackground
       style={{flex: 1}}
-      resizeMode='stretch'
-      source={require('../assets/bg/02.png')}
-    >
+      resizeMode="stretch"
+      source={require('../assets/bg/02.png')}>
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}
-      >
+        containerStyle={{backgroundColor: theme.colors.transparent}}>
         {renderHeader()}
         {renderContent()}
         {renderIfYouHaveAccount()}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { firebase } from '@react-native-firebase/auth';
 import {View, Text, ScrollView, Platform} from 'react-native';
 
 import {text} from '../text';
@@ -38,28 +39,34 @@ const LogOut: React.FC = () => {
     );
   };
 
-  const renderButtons = (): JSX.Element => {
-    return (
-      <View style={{padding: 20}}>
-        <components.Button
-          title='annuler'
-          containerStyle={{marginBottom: utils.responsiveHeight(14)}}
-          touchableOpacityStyle={{backgroundColor: theme.colors.steelTeal}}
-          onPress={() => {
-            navigation.goBack();
-          }}
-        />
-        <components.Button
-          title='Oui'
-          touchableOpacityStyle={{backgroundColor: theme.colors.pastelMint}}
-          onPress={() => {
-            dispatch(actions.logOut());
-          }}
-          textStyle={{color: theme.colors.steelTeal}}
-        />
-      </View>
-    );
-  };
+const renderButtons = (): JSX.Element => {
+  return (
+    <View style={{ padding: 20 }}>
+      <components.Button
+        title='Annuler'
+        containerStyle={{ marginBottom: utils.responsiveHeight(14) }}
+        touchableOpacityStyle={{ backgroundColor: theme.colors.steelTeal }}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      />
+      <components.Button
+        title='Oui'
+        touchableOpacityStyle={{ backgroundColor: theme.colors.pastelMint }}
+        onPress={async () => {
+          try {
+            await firebase.auth().signOut();
+            console.log('User signed out!');
+          } catch (error) {
+            console.error('Error signing out: ', error);
+            // Gérer l'erreur de déconnexion si nécessaire
+          }
+        }}
+        textStyle={{ color: theme.colors.steelTeal }}
+      />
+    </View>
+  );
+};
 
   return (
     <custom.ImageBackground

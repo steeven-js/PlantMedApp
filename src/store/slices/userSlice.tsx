@@ -1,37 +1,50 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { UserType } from '../../types/UserType';
 
-type UserState = { user: UserType | null; rememberMe: boolean };
+type SerializableUser = {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL: string | null;
+  emailVerified: boolean;
+  // isPrenium: boolean;
+};
 
-const initialState: UserState = { user: null, rememberMe: false };
+type UserState = {
+  user: SerializableUser | null;
+  rememberMe: boolean;
+  isPrenium: boolean;
+};
+
+const initialState: UserState = {
+  user: null,
+  rememberMe: false,
+  isPrenium: false,
+};
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<UserType>) => {
+    setUser(state, action: PayloadAction<SerializableUser | null>) {
       state.user = action.payload;
     },
-    logOut: state => {
+    logOut(state) {
       state.user = null;
       state.rememberMe = false;
+      state.isPrenium = false;
     },
-    setRememberMe: (state, action: PayloadAction<boolean>) => {
+    setRememberMe(state, action: PayloadAction<boolean>) {
       state.rememberMe = action.payload;
     },
-    setPrenium: (state, action: PayloadAction<boolean>) => {
-      if (state.user) {
-        state.user.isPrenium = action.payload;
-      }
-    },
+    // setPrenium(state, action: PayloadAction<boolean>) {
+    //   if (state.user) {
+    //     state.user.isPrenium = action.payload;
+    //     state.isPrenium = action.payload;
+    //   }
+    // },
   },
 });
 
-export const {
-  logOut,
-  setUser,
-  setPrenium,
-  setRememberMe,
-} = userSlice.actions;
+export const { setUser, logOut, setRememberMe } = userSlice.actions;
 
-export { userSlice };
+export {userSlice};

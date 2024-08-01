@@ -1,24 +1,25 @@
 import React from 'react';
 import {View, ScrollView} from 'react-native';
+
 import {custom} from '../custom';
 import {text} from '../text';
 import {utils} from '../utils';
 import {hooks} from '../hooks';
 import {theme} from '../constants';
 import {components} from '../components';
-import {getFormatDate} from '../utils/getFormatDate';
+import {useSubscription} from '../hooks/revenueCat';
 
 const MemberAccount: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const user = hooks.useAppSelector(state => state.userSlice.user);
-  const isPrenium = hooks.useAppSelector(
-    state => state.userSlice.user?.isPrenium,
-  );
+
+  const {isSubscribed, formattedPremiumDate} =
+    useSubscription();
 
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
-        title={isPrenium ? 'Compte Premium' : 'Compte Gratuit'}
+        title={isSubscribed ? 'Compte Premium' : 'Compte Gratuit'}
         goBackIcon={true}
       />
     );
@@ -28,20 +29,18 @@ const MemberAccount: React.FC = () => {
     return (
       <custom.ImageBackground
         style={{flex: 1}}
-        resizeMode='stretch'
-        source={require('../assets/bg/02.png')}
-      >
+        resizeMode="stretch"
+        source={require('../assets/bg/02.png')}>
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
             paddingTop: utils.responsiveHeight(40),
             paddingHorizontal: 20,
           }}
-          showsVerticalScrollIndicator={false}
-        >
+          showsVerticalScrollIndicator={false}>
           <View style={{marginBottom: 20}}>
             <text.H3 style={{marginBottom: 10}}>
-              Votre compte est actuellement gratuit
+              Votre compte est actuellement {isSubscribed ? 'Premium' : 'gratuit'}.
             </text.H3>
             <text.T16 style={{marginBottom: 20}}>
               Pour accéder à plus de fonctionnalités, passez à un compte Premium
@@ -73,7 +72,7 @@ const MemberAccount: React.FC = () => {
             le résilier à tout moment depuis votre compte.
           </text.T16>
           <components.Button
-            title='Activer le compte Premium'
+            title="Activer le compte Premium"
             onPress={() => {
               navigation.navigate('Prenium');
             }}
@@ -88,7 +87,7 @@ const MemberAccount: React.FC = () => {
     );
   };
 
-  const isPreniumContent = () => {
+  const isSubscribedContent = () => {
     return (
       <>
         <View style={{marginBottom: 20}}>
@@ -96,7 +95,7 @@ const MemberAccount: React.FC = () => {
             Votre compte est actuellement Premium
           </text.H3>
           <text.T16 style={{marginBottom: 20}}>
-            Membre Premium jusqu'au {getFormatDate(user?.premiumExpiresAt)}
+          Membre Premium jusqu'au {formattedPremiumDate}
           </text.T16>
           <text.T16 style={{marginBottom: 10}}>
             Vous bénéficiez de tous les avantages Premium :
@@ -108,7 +107,8 @@ const MemberAccount: React.FC = () => {
             • Recettes exclusives pour préparer des remèdes maison.
           </text.T16>
           <text.T16>
-            • Conseils personnalisés pour utiliser les plantes selon vos besoins.
+            • Conseils personnalisés pour utiliser les plantes selon vos
+            besoins.
           </text.T16>
           <text.T16>
             • Mises à jour régulières avec de nouvelles informations et plantes
@@ -117,24 +117,17 @@ const MemberAccount: React.FC = () => {
         </View>
         <text.T16 style={{marginBottom: 20}}>
           Votre abonnement se renouvellera automatiquement le{' '}
-          {getFormatDate(user?.premiumExpiresAt)} pour 1,99 €.
+          {formattedPremiumDate} pour 1,99 €.
         </text.T16>
-        <components.Button
-          title="Gérer l'abonnement"
-          onPress={() => {
-            navigation.navigate('ManageSubscription');
-          }}
-          containerStyle={{marginBottom: 20}}
-        />
         <text.T14 style={{color: 'gray'}}>
-          Vous pouvez gérer ou annuler votre abonnement à tout moment depuis votre
-          compte. L'annulation prendra effet à la fin de la période de facturation
-          en cours.
+          Vous pouvez gérer ou annuler votre abonnement à tout moment depuis
+          votre compte. L'annulation prendra effet à la fin de la période de
+          facturation en cours.
         </text.T14>
       </>
     );
   };
-  
+
   const isNotPreniumContent = () => {
     return (
       <>
@@ -155,7 +148,8 @@ const MemberAccount: React.FC = () => {
             • Recettes exclusives pour préparer des remèdes maison.
           </text.T16>
           <text.T16>
-            • Conseils personnalisés pour utiliser les plantes selon vos besoins.
+            • Conseils personnalisés pour utiliser les plantes selon vos
+            besoins.
           </text.T16>
           <text.T16>
             • Mises à jour régulières avec de nouvelles informations et plantes
@@ -170,7 +164,7 @@ const MemberAccount: React.FC = () => {
           résilier à tout moment depuis votre compte.
         </text.T16>
         <components.Button
-          title='Activer le compte Premium'
+          title="Activer le compte Premium"
           onPress={() => {
             navigation.navigate('Prenium');
           }}
@@ -188,18 +182,16 @@ const MemberAccount: React.FC = () => {
     return (
       <custom.ImageBackground
         style={{flex: 1}}
-        resizeMode='stretch'
-        source={require('../assets/bg/02.png')}
-      >
+        resizeMode="stretch"
+        source={require('../assets/bg/02.png')}>
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
             paddingTop: utils.responsiveHeight(40),
             paddingHorizontal: 20,
           }}
-          showsVerticalScrollIndicator={false}
-        >
-          {isPrenium ? isPreniumContent() : isNotPreniumContent()}
+          showsVerticalScrollIndicator={false}>
+          {isSubscribed ? isSubscribedContent() : isNotPreniumContent()}
         </ScrollView>
       </custom.ImageBackground>
     );
@@ -208,15 +200,13 @@ const MemberAccount: React.FC = () => {
   return (
     <custom.ImageBackground
       style={{flex: 1}}
-      resizeMode='stretch'
-      source={require('../assets/bg/02.png')}
-    >
+      resizeMode="stretch"
+      source={require('../assets/bg/02.png')}>
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}
-      >
+        containerStyle={{backgroundColor: theme.colors.transparent}}>
         {renderHeader()}
-        {isPrenium ? renderContentPremium() : renderContentFree()}
+        {isSubscribed ? renderContentPremium() : renderContentFree()}
       </custom.SafeAreaView>
     </custom.ImageBackground>
   );

@@ -14,6 +14,7 @@ type Props = {
   setSecureTextEntry?: (value: boolean) => void;
   autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
   blurOnSubmit?: boolean;
+  defaultValue?: (text: string) => void;
   placeholder?: string;
   secureTextEntry?: boolean;
   keyboardType?:
@@ -43,6 +44,7 @@ const InputField: React.FC<Props> = ({
   eyeOffIcon = false,
   onChangeText,
   blurOnSubmit,
+  defaultValue,
   label,
   value,
   icon,

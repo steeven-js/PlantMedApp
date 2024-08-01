@@ -1,64 +1,42 @@
-// src/hooks/useAuth.ts
+// useAuth.ts
+import { useState, useEffect, useCallback } from 'react';
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { appleAuth } from '@invertase/react-native-apple-authentication';
 
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import auth from '@react-native-firebase/auth';
-import { setUser, setLoading, setError } from '../store/slices/firebaseAuthSlice';
+type AuthService = 'google' | 'apple' | 'email' | 'unknown';
 
 export const useAuth = () => {
-    const dispatch = useDispatch();
-    const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-    const onAuthStateChanged = (user: any) => {
-        dispatch(setUser(user));
-        if (initializing) setInitializing(false);
-    };
+  useEffect(() => {
+    const unsubscribe = auth().onAuthStateChanged((user) => {
+      setUser(user);
+      setLoading(false);
+    });
 
-    const signIn = async (email: string, password: string) => {
-        try {
-            dispatch(setLoading(true));
-            const userCredential = await auth().signInWithEmailAndPassword(email, password);
-            dispatch(setUser(userCredential.user));
-        } catch (error: any) {
-            dispatch(setError(error.message));
-        }
-    };
+    // Clean up subscription on unmount
+    return unsubscribe;
+  }, []);
 
-    const signUp = async (email: string, password: string) => {
-        try {
-            dispatch(setLoading(true));
-            const userCredential = await auth().createUserWithEmailAndPassword(email, password);
-            dispatch(setUser(userCredential.user));
-        } catch (error: any) {
-            dispatch(setError(error.message));
-        }
-    };
+  const getAuthService = useCallback(async (): Promise<AuthService> => {
+    if (!user) return 'unknown';
 
-    const logOut = async () => {
-        try {
-            await auth().signOut();
-            dispatch(clearUser());
-        } catch (error: any) {
-            dispatch(setError(error.message));
-        }
-    };
+    const providers = await user.getIdTokenResult().then(idTokenResult => 
+      idTokenResult.signInProvider ? [idTokenResult.signInProvider] : []
+    );
 
-    const resetPassword = async (email: string) => {
-        try {
-            dispatch(setLoading(true));
-            await auth().sendPasswordResetEmail(email);
-            dispatch(setLoading(false));
-        } catch (error: any) {
-            dispatch(setError(error.message));
-        }
-    };
+    if (providers.includes('google.com')) {
+      return 'google';
+    } else if (providers.includes('apple.com')) {
+      return 'apple';
+    } else if (providers.includes('password')) {
+      return 'email';
+    } else {
+      return 'unknown';
+    }
+  }, [user]);
 
-    return {
-        initializing,
-        onAuthStateChanged,
-        signIn,
-        signUp,
-        logOut,
-        resetPassword,
-    };
+  return { user, loading, getAuthService };
 };
