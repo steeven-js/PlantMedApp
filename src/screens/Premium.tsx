@@ -17,8 +17,6 @@ import {hooks} from '../hooks';
 import {useSubscription} from '../hooks/revenueCat';
 import {utils} from '../utils';
 
-const SUBSCRIPTION_SKU = 'plm_199_m';
-
 const Premium: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 

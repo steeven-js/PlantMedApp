@@ -5,7 +5,7 @@ import Search from './Search';
 import Source from './Source';
 import Filter from './Filter';
 import Sources from './Sources';
-import Prenium from './Prenium';
+import Premium from './Premium';
 import Product from './Product';
 import PlantMed from './PlantMed';
 import InfoSaved from './InfoSaved';
@@ -41,7 +41,7 @@ export const screens = {
   Filter,
   Sources,
   Product,
-  Prenium,
+  Premium,
   PlantMed,
   InfoSaved,
   TermsOfUse,

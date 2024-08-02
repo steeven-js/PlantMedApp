@@ -188,6 +188,7 @@ export function useSubscription() {
         isSubscribed,
         userProfile,
         formattedPremiumDate,
+        formatDate,
         fetchOfferings,
         purchaseSubscription,
         checkSubscriptionStatus,
