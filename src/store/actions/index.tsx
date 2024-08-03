@@ -7,7 +7,6 @@ import {resetCart} from '../slices/cartSlice';
 import {setStart} from '../slices/startSlice';
 import {setCvv} from '../slices/paymentSlice';
 import {modifyItem} from '../slices/cartSlice';
-import {setPrenium} from '../slices/userSlice';
 import {setName} from '../slices/paymentSlice';
 import {setDiscount} from '../slices/cartSlice';
 import {setPromoCode} from '../slices/cartSlice';
@@ -15,6 +14,7 @@ import {setAddress} from '../slices/paymentSlice';
 import {resetFilters} from '../slices/filterSlice';
 import {setRememberMe} from '../slices/userSlice';
 import {removeFromCart} from '../slices/cartSlice';
+import {setPremium} from '../slices/preniumSlice';
 import {setCardNumber} from '../slices/paymentSlice';
 import {setExpiryDate} from '../slices/paymentSlice';
 import {addToWishlist} from '../slices/wishlistSlice';
@@ -43,7 +43,7 @@ export const actions = {
   addToCart,
   modifyItem,
   setAddress,
-  setPrenium,
+  setPremium,
   setDiscount,
   resetFilters,
   setPromoCode,

@@ -4,17 +4,8 @@
 
 ## Change.logn
 
-- **Version 1.5.3**
-  - Amélioration des annonces
-  - Amélioration des police pour une meilleure lisibilité
-  - Ajout du contenu Prenium 1.99€ par mois
-  - Amélioration des performances de l'application
-  - Correction de divers bugs et optimisations
-- **Version 1.5.2**
-  - Correction d'un problème empêchant la création de compte 
-  - Amélioration des performances de l'application
-  - Correction de divers bugs et optimisations
 - **Version 1.5.1**
+  - Ajout du contenu Prenium
   - Amélioration des performances de l'application
   - Correction de divers bugs et optimisations
 - **Version 1.5**
@@ -54,16 +45,7 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   cd ios/
   pod install --repo-update
   cd ..
-  npx react-native run-ios --simulator="iPhone 15 pro"
-  ```
-
-- **Installer les dépendances iOS et exécuter l'application sur un iphone**
-
-  ```shell
-  cd ios/
-  pod install --repo-update
-  cd ..
-  npx react-native run-ios --device="iphone11"
+  npx react-native run-ios --simulator="iPhone 15"
   ```
 
 - **Générer une clé de signature pour la publication sur Google Play**

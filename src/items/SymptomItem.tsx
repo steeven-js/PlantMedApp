@@ -8,6 +8,7 @@ import {theme} from '../constants';
 import {PlantMedType, SymptomType} from '../types';
 import PreniumSvg from '../assets/svg/PreniumSvg';
 import { useSubscription } from '../hooks/revenueCat';
+import { useAppSelector } from '../store';
 
 type Props = {
   qty: number;
@@ -18,22 +19,22 @@ type Props = {
 
 const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
   const navigation = hooks.useAppNavigation();
-  const {isSubscribed} = useSubscription();
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const onPress = () => {
     if (qty > 0) {
-      if (isSubscribed) {
+      if (isPremium) {
         navigation.navigate('PlantMedList', {
           title: item.name,
           products: dataFilter ?? [],
         });
-      } else if (!isSubscribed && item.is_prenium == false) {
+      } else if (!isPremium && item.is_prenium == false) {
         navigation.navigate('PlantMedList', {
           title: item.name,
           products: dataFilter ?? [],
         });
       } else {
-        navigation.navigate('Prenium');
+        navigation.navigate('Premium');
       }
     }
     if (qty === 0) {

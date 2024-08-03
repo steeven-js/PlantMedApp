@@ -1,6 +1,7 @@
 import { hooks } from '../hooks';
 import { useAuth } from './useAuth';
 import { Platform } from 'react-native';
+import { actions } from '../store/actions';
 import { useEffect, useState } from 'react';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
 import firestore, { FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
@@ -82,6 +83,7 @@ export function useSubscription() {
                         premiumExpiresAt: expirationDate,
                     });
                     setIsSubscribed(true);
+                    dispatch(actions.setPremium(true));
                     if (expirationDate) {
                         setFormattedPremiumDate(formatDate(expirationDate));
                     }
@@ -92,6 +94,7 @@ export function useSubscription() {
                         premiumExpiresAt: null,
                     });
                     setIsSubscribed(false);
+                    dispatch(actions.setPremium(false));
                     setFormattedPremiumDate('');
                 }
             } else {
@@ -146,6 +149,7 @@ export function useSubscription() {
                 });
                 setFormattedPremiumDate(formatDate(customerInfo.entitlements.active['pro'].expirationDate));
                 setIsSubscribed(true);
+                dispatch(actions.setPremium(true));
                 navigation.navigate('PremiumActivated');
             } else {
                 await userProfileRef.update({
@@ -192,6 +196,5 @@ export function useSubscription() {
         fetchOfferings,
         purchaseSubscription,
         checkSubscriptionStatus,
-
     };
 }

@@ -10,21 +10,24 @@ import {
 } from 'react-native';
 
 import {text} from '../text';
+import {hooks} from '../hooks';
+import {utils} from '../utils';
 import {custom} from '../custom';
 import {theme} from '../constants';
 import {components} from '../components';
-import {hooks} from '../hooks';
+import { useAppSelector } from '../store';
 import {useSubscription} from '../hooks/revenueCat';
-import {utils} from '../utils';
 
 const Premium: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
-  const {isSubscribed, offerings, purchaseSubscription, fetchOfferings, loading, error} =
+  const {offerings, purchaseSubscription, fetchOfferings, loading, error} =
     useSubscription();
 
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+
   const handleSubscribe = async () => {
-    if (isSubscribed) {
+    if (isPremium) {
       alreadyPremium();
       return;
     }
@@ -105,10 +108,10 @@ const Premium: React.FC = () => {
 
         <TouchableOpacity
           style={styles.subscribeButton}
-          onPress={isSubscribed ? alreadyPremium : handleSubscribe}
+          onPress={isPremium ? alreadyPremium : handleSubscribe}
         >
           <text.T18 style={styles.buttonText}>
-            {isSubscribed
+            {isPremium
               ? 'Vous êtes déjà Premium'
               : 'Devenir Premium - 1,99 €/mois'}
           </text.T18>

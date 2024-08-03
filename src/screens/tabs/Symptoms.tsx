@@ -12,19 +12,17 @@ import {
 import {utils} from '../../utils';
 import {hooks} from '../../hooks';
 import {custom} from '../../custom';
-import {svg} from '../../assets/svg';
 import {theme} from '../../constants';
 import {plantmed} from '../../plantmed';
-import {components} from '../../components';
-import PreniumSvg from '../../assets/svg/PreniumSvg';
-import {queryHooks} from '../../store/slices/apiSlice';
-import {useSubscription} from '../../hooks/revenueCat';
 import { PlantMedType } from '../../types';
+import {components} from '../../components';
+import { useAppSelector } from '../../store';
+import {queryHooks} from '../../store/slices/apiSlice';
 
 const Symptoms: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
-  const {isSubscribed} = useSubscription();
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const {
     data: plantsData,
@@ -92,18 +90,18 @@ const Symptoms: React.FC = () => {
                 }}
                 onPress={() => {
                   if (qty > 0) {
-                    if (isSubscribed) {
+                    if (isPremium) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
                         products: dataFilter ?? [],
                       });
-                    } else if (!isSubscribed && item.is_prenium == false) {
+                    } else if (!isPremium && item.is_prenium == false) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
                         products: dataFilter ?? [],
                       });
                     } else {
-                      navigation.navigate('Prenium');
+                      navigation.navigate('Premium');
                     }
                   }
                   if (qty === 0) {

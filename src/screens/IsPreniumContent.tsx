@@ -62,7 +62,7 @@ const IsPreniumContent: React.FC = () => {
           <components.Button
             title="S'abonner maintenant"
             containerStyle={{margin: 20}}
-            onPress={() => navigation.navigate('Prenium')}
+            onPress={() => navigation.navigate('Premium')}
           />
           <View
             style={{

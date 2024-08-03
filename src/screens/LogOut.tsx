@@ -56,6 +56,8 @@ const renderButtons = (): JSX.Element => {
         onPress={async () => {
           try {
             await firebase.auth().signOut();
+            // dispatch currentTabScreen to 'Home'
+            dispatch(actions.setScreen('Home'));
             console.log('User signed out!');
           } catch (error) {
             console.error('Error signing out: ', error);

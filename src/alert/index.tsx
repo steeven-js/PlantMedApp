@@ -68,10 +68,22 @@ const userWithThisEmailAlreadyExists = () => {
   );
 };
 
+const profileUpdated = () => {
+  return Alert.alert('Succès', 'Profil mis à jour avec succès', [
+    {
+      text: 'OK',
+      onPress: () => {
+        console.log('OK Pressed');
+      },
+    },
+  ]);
+}
+
 export const alert = {
   invalidOtp,
   userDeleted,
   alreadyAdded,
+  profileUpdated,
   somethingWentWrong,
   invalidUsernameOrPassword,
   userWithThisEmailAlreadyExists,

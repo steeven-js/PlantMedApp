@@ -1,5 +1,5 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import {configureStore, combineReducers} from '@reduxjs/toolkit';
+import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   persistStore,
@@ -12,18 +12,19 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-import { apiSlice } from './slices/apiSlice';
-import { tabSlice } from './slices/tabSlice';
-import { tagSlice } from './slices/tagSlice';
-import { userSlice } from './slices/userSlice';
-import { cartSlice } from './slices/cartSlice';
-import { startSlice } from './slices/startSlice';
-import { filterSlice } from './slices/filterSlice';
-import { paymentSlice } from './slices/paymentSlice';
-import { versionSlice } from './slices/versionSlice';
-import { wishlistSlice } from './slices/wishlistSlice';
-import { promocodeSlice } from './slices/promocodeSlice';
-import { plantmedWishlistSlice } from './slices/plantmedWishlistSlice';
+import {apiSlice} from './slices/apiSlice';
+import {tabSlice} from './slices/tabSlice';
+import {tagSlice} from './slices/tagSlice';
+import {userSlice} from './slices/userSlice';
+import {cartSlice} from './slices/cartSlice';
+import {startSlice} from './slices/startSlice';
+import {filterSlice} from './slices/filterSlice';
+import {premiumSlice} from './slices/preniumSlice';
+import {paymentSlice} from './slices/paymentSlice';
+import {versionSlice} from './slices/versionSlice';
+import {wishlistSlice} from './slices/wishlistSlice';
+import {promocodeSlice} from './slices/promocodeSlice';
+import {plantmedWishlistSlice} from './slices/plantmedWishlistSlice';
 
 // Combine all the slices into a root reducer
 const rootReducer = combineReducers({
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
   cartSlice: cartSlice.reducer,
   startSlice: startSlice.reducer,
   filterSlice: filterSlice.reducer,
+  premiumSlice: premiumSlice.reducer,
   versionSlice: versionSlice.reducer,
   paymentSlice: paymentSlice.reducer,
   wishlistSlice: wishlistSlice.reducer,
@@ -50,6 +52,7 @@ const persistConfig = {
     'userSlice',
     'cartSlice',
     'startSlice',
+    'premiumSlice',
     'versionSlice',
     'paymentSlice',
     'wishlistSlice',
@@ -64,7 +67,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Configure the store with the persisted reducer and middlewares
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],

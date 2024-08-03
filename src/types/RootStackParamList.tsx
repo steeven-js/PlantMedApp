@@ -47,7 +47,7 @@ export type RootStackParamList = {
   AccountCreatedFailed: undefined;
   Source: {source: string[]; title: string};
   Sources: undefined;
-  Prenium: undefined;
+  Premium: undefined;
   TermsOfUse: undefined;
   PremiumActivated: undefined;
   MemberAccount: undefined;

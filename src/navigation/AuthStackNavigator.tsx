@@ -71,7 +71,7 @@ const AuthStackNavigator: React.FC = () => {
         options={{headerShown: false}}
       />
       <RootStack.Screen
-        name="Prenium"
+        name="Premium"
         component={screens.Premium}
         options={{headerShown: false}}
       />

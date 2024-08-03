@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
-import {View, Alert, ScrollView} from 'react-native';
+import {useEffect} from 'react';
+import {View, Alert, ScrollView, Linking, Platform} from 'react-native';
 
 import {hooks} from '../../hooks';
 import {utils} from '../../utils';
 import {items} from '../../items';
 import {custom} from '../../custom';
 import {svg} from '../../assets/svg';
+import {RootState} from '../../store';
+import {useSelector} from 'react-redux';
 import {components} from '../../components';
 import {useAuth} from '../../hooks/useAuth';
 import {useSubscription} from '../../hooks/revenueCat';
@@ -15,7 +17,11 @@ const Profile: React.FC = () => {
 
   const {user} = useAuth();
 
-  const {isSubscribed, checkSubscriptionStatus} = useSubscription();
+  const {checkSubscriptionStatus} = useSubscription();
+
+  const isPremium = useSelector(
+    (state: RootState) => state.premiumSlice.prenium,
+  );
 
   useEffect(() => {
     checkSubscriptionStatus();
@@ -49,17 +55,24 @@ const Profile: React.FC = () => {
     );
   };
 
+  const openAppleEULA = () => {
+    Linking.openURL(
+      'https://www.apple.com/legal/internet-services/itunes/chfr/terms.html',
+    );
+  };
+
   const renderMenu = (): JSX.Element => {
     return (
-      <View
+      <ScrollView
         style={{
           flex: 1,
-          justifyContent: 'space-between',
+          // justifyContent: 'space-between',
           paddingLeft: 20,
-        }}>
+        }}
+      >
         <View>
           <items.ProfileItem
-            title={isSubscribed ? 'Compte premium' : 'Compte gratuit'}
+            title={isPremium ? 'Compte premium' : 'Compte gratuit'}
             onPress={() => {
               navigation.navigate('MemberAccount');
             }}
@@ -86,7 +99,7 @@ const Profile: React.FC = () => {
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
           <items.ProfileItem
-            title="Politique de confidentialité"
+            title='Politique de confidentialité'
             onPress={() => {
               navigation.navigate('PrivacyPolicy');
             }}
@@ -95,7 +108,14 @@ const Profile: React.FC = () => {
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
           <items.ProfileItem
-            title="Déconnexion"
+            title= {Platform.OS === 'ios' ? 'Conditions d\'utilisation Apple' : 'Conditions d\'utilisation Google'}
+            onPress={Platform.OS === 'ios' ? openAppleEULA : () => {}}
+            icon={<svg.FileTextSvg />}
+            goNavigation={true}
+            containerStyle={{marginBottom: utils.responsiveHeight(6)}}
+          />
+          <items.ProfileItem
+            title='Déconnexion'
             onPress={() => {
               navigation.navigate('LogOut');
             }}
@@ -104,16 +124,20 @@ const Profile: React.FC = () => {
           />
         </View>
 
-        <View>
+        <View
+          style={{
+            marginTop: utils.responsiveHeight(20) * 2,
+          }}
+        >
           <items.ProfileItem
-            title="Supprimer le compte"
+            title='Supprimer le compte'
             onPress={() => {
               navigation.navigate('DeleteAccount');
             }}
             icon={<svg.DeleteSvg />}
           />
         </View>
-      </View>
+      </ScrollView>
     );
   };
 
@@ -121,15 +145,17 @@ const Profile: React.FC = () => {
     return (
       <custom.ImageBackground
         style={{flex: 1}}
-        resizeMode="stretch"
-        source={require('../../assets/bg/02.png')}>
+        resizeMode='stretch'
+        source={require('../../assets/bg/02.png')}
+      >
         <ScrollView
           contentContainerStyle={{
             flexGrow: 1,
             paddingTop: utils.responsiveHeight(50),
             paddingBottom: utils.responsiveHeight(20),
           }}
-          showsVerticalScrollIndicator={false}>
+          showsVerticalScrollIndicator={false}
+        >
           {renderUserInfo()}
           {renderMenu()}
         </ScrollView>

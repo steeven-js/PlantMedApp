@@ -20,6 +20,7 @@ import {handleTextChange} from '../utils/handleTextChange';
 import PreniumSvg from '../assets/svg/PreniumSvg';
 import { useSubscription } from '../hooks/revenueCat';
 import { useAuth } from '../hooks/useAuth';
+import { useAppSelector } from '../store';
 
 const Search: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -27,7 +28,7 @@ const Search: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const {loading} = useAuth();
-  const {isSubscribed} = useSubscription();
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const {
     data: plantsData,
@@ -115,12 +116,12 @@ const Search: React.FC = () => {
           alignItems: 'center',
         }}
         onPress={() => {
-          if (isSubscribed) {
+          if (isPremium) {
             navigation.navigate('PlantMed', {item});
-          } else if (!isSubscribed && item.is_prenium == false) {
+          } else if (!isPremium && item.is_prenium == false) {
             navigation.navigate('PlantMed', {item});
           } else {
-            navigation.navigate('Prenium');
+            navigation.navigate('Premium');
           }
         }}
       >

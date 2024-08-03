@@ -8,6 +8,7 @@ import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {PlantMedType} from '../types';
 import {useSubscription} from '../hooks/revenueCat';
+import { useAppSelector } from '../store';
 
 type Props = {version: 1 | 2 | 3; item: PlantMedType; isLast?: boolean};
 
@@ -18,15 +19,15 @@ const PlantmedCard: React.FC<Props> = ({
 }): JSX.Element | null => {
   const navigation = hooks.useAppNavigation();
 
-  const {isSubscribed} = useSubscription();
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const onPress = () => {
-    if (isSubscribed) {
+    if (isPremium) {
       navigation.navigate('PlantMed', {item});
-    } else if (!isSubscribed && item.is_prenium == false) {
+    } else if (!isPremium && item.is_prenium == false) {
       navigation.navigate('PlantMed', {item});
     } else {
-      navigation.navigate('Prenium');
+      navigation.navigate('Premium');
     }
   };
 

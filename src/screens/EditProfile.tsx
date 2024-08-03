@@ -6,7 +6,6 @@ import {alert} from '../alert';
 import {hooks} from '../hooks';
 import {utils} from '../utils';
 import {custom} from '../custom';
-import {validation} from '../validation';
 import {components} from '../components';
 import {useAuth} from '../hooks/useAuth';
 
@@ -63,7 +62,9 @@ const EditProfile: React.FC = () => {
         await user.updateProfile({displayName: name});
       }
 
-      console.log('Profile updated successfully');
+      // Notification
+      alert.profileUpdated();
+
     } catch (error: any) {
       console.error('Error updating profile:', error);
       alert.somethingWentWrong();
@@ -75,7 +76,7 @@ const EditProfile: React.FC = () => {
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
-        title="Modifier les informations personnelles"
+        title="Editer mon profil"
         goBackIcon={true}
       />
     );

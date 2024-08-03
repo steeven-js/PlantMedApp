@@ -12,26 +12,15 @@ import getTabs from '../utils/getTabs';
 import {actions} from '../store/actions';
 import {components} from '../components';
 import BottomTabBar from './BottomTabBar';
-import {queryHooks} from '../store/slices/apiSlice';
 
 const TabNavigator: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
-  const user = hooks.useAppSelector(state => state.userSlice.user);
   const currentTabScreen = hooks.useAppSelector(state => state.tabSlice.screen);
 
   const tabs = getTabs();
 
-  // console.log('user', JSON.stringify(user, null, 2));
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userLoading,
-    refetch: refetchUser,
-  } = queryHooks.useGetUserQuery(user?.id || 0);
-
   useEffect(() => {
     dispatch(actions.resetFilters());
-    refetchUser();
   }, [currentTabScreen]);
 
   const getTitle = (): string | null => {
@@ -71,7 +60,6 @@ const TabNavigator: React.FC = () => {
     return (
       <View style={{flex: 1}}>
         {currentTabScreen === tabs[0].name && <Home />}
-        {/* {currentTabScreen === tabs[1].name && <Categories />} */}
         {currentTabScreen === tabs[1].name && <Symptoms />}
         {currentTabScreen === tabs[2].name && <PlantWishlist />}
         {currentTabScreen === tabs[3].name && <Profile />}

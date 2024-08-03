@@ -36,12 +36,6 @@ const userSlice = createSlice({
     setRememberMe(state, action: PayloadAction<boolean>) {
       state.rememberMe = action.payload;
     },
-    // setPrenium(state, action: PayloadAction<boolean>) {
-    //   if (state.user) {
-    //     state.user.isPrenium = action.payload;
-    //     state.isPrenium = action.payload;
-    //   }
-    // },
   },
 });
 

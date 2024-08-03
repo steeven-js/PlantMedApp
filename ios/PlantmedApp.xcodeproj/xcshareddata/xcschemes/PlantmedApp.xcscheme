@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "PlantmedApp.app"
-               BlueprintName = "PlantmedApp"
-               ReferencedContainer = "container:PlantmedApp.xcodeproj">
+               BuildableName = "plantmedapp.app"
+               BlueprintName = "plantmedapp"
+               ReferencedContainer = "container:plantmedapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "PlantmedAppTests.xctest"
-               BlueprintName = "PlantmedAppTests"
-               ReferencedContainer = "container:PlantmedApp.xcodeproj">
+               BuildableName = "plantmedappTests.xctest"
+               BlueprintName = "plantmedappTests"
+               ReferencedContainer = "container:plantmedapp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PlantmedApp.app"
-            BlueprintName = "PlantmedApp"
-            ReferencedContainer = "container:PlantmedApp.xcodeproj">
+            BuildableName = "plantmedapp.app"
+            BlueprintName = "plantmedapp"
+            ReferencedContainer = "container:plantmedapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PlantmedApp.app"
-            BlueprintName = "PlantmedApp"
-            ReferencedContainer = "container:PlantmedApp.xcodeproj">
+            BuildableName = "plantmedapp.app"
+            BlueprintName = "plantmedapp"
+            ReferencedContainer = "container:plantmedapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

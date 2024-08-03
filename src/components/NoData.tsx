@@ -1,9 +1,26 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text } from 'react-native';
 
-import {theme} from '../constants';
+import { theme } from '../constants';
+import {components} from '../components';
 
 const NoData: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <components.Loader />
+    );
+  }
+
   return (
     <View
       style={{

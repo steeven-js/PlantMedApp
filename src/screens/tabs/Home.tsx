@@ -1,14 +1,13 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   View,
-  Text,
   Alert,
   FlatList,
-  Platform,
   ViewToken,
   ScrollView,
   RefreshControl,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 
 import {text} from '../../text';
@@ -118,7 +117,7 @@ const Home: React.FC = () => {
     //     <TouchableOpacity
     //       activeOpacity={0.5}
     //       onPress={() => {
-    //         navigation.navigate('Prenium');
+    //         navigation.navigate('Premium');
     //       }}
     //     >
     //       <custom.ImageBackground
@@ -172,14 +171,17 @@ const Home: React.FC = () => {
                 },
               ],
             );
-            // console.log('products', products);
             return;
           }
 
-          navigation.navigate('PlantMedList', {
-            title: item.promotion || 'Plante du jour',
-            products: products || [],
-          });
+          if (Platform.OS === 'ios') {
+            navigation.navigate('Premium');
+          } else {
+            navigation.navigate('PlantMedList', {
+              title: item.promotion || 'Plante du jour',
+              products: products || [],
+            });
+          }
         }}
       >
         <custom.ImageBackground

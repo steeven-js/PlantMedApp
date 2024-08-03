@@ -19,10 +19,11 @@ import {custom} from '../custom';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {HeaderType} from '../types';
+import {useAuth} from '../hooks/useAuth';
 import {actions} from '../store/actions';
+import packageJson from '../../package.json';
 import {queryHooks} from '../store/slices/apiSlice';
 import {useAppSelector, useAppDispatch} from '../store';
-import {useAuth} from '../hooks/useAuth';
 
 const Header: React.FC<HeaderType> = ({
   title,
@@ -38,8 +39,9 @@ const Header: React.FC<HeaderType> = ({
   const navigation = hooks.useAppNavigation();
 
   const {user} = useAuth();
-  const cart = useAppSelector(state => state.cartSlice.list);
 
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const cart = useAppSelector(state => state.cartSlice.list);
   const subtotal = useAppSelector(state => state.cartSlice.subtotal);
 
   const [showModal, setShowModal] = useState(false);
@@ -207,16 +209,16 @@ const Header: React.FC<HeaderType> = ({
                       marginBottom: 4,
                     }}
                     numberOfLines={1}>
-                    {/* {user?.isPrenium ? 'Membre Premium' : 'Membre Standard'} */}
+                    {isPremium ? 'Membre Premium' : 'Membre Standard'}
                   </Text>
                 </View>
               </TouchableOpacity>
               {/* MENU */}
               <items.BurgerMenuItem
-                title={'>  Prenium'}
+                title={'>  Plantmed Premium'}
                 onPress={() => {
                   setShowModal(false);
-                  navigation.navigate('Prenium');
+                  navigation.navigate('Premium');
                 }}
               />
               <items.BurgerMenuItem
@@ -290,6 +292,19 @@ const Header: React.FC<HeaderType> = ({
                 }}
               />
             </ScrollView>
+            <View
+              style={{
+                position: 'absolute',
+                bottom: utils.homeIndicatorHeight(),
+                left: 0,
+                right: 0,
+                padding: 20,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Text>Version : {packageJson.version} - Août 2024</Text>
+            </View>
           </custom.ImageBackground>
         </View>
       </Modal>

@@ -8,18 +8,20 @@ import {hooks} from '../hooks';
 import {theme} from '../constants';
 import {components} from '../components';
 import {useSubscription} from '../hooks/revenueCat';
+import { useAppSelector } from '../store';
 
 const MemberAccount: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const user = hooks.useAppSelector(state => state.userSlice.user);
 
-  const {isSubscribed, formattedPremiumDate} =
-    useSubscription();
+  const {formattedPremiumDate} = useSubscription();
+
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const renderHeader = (): JSX.Element => {
     return (
       <components.Header
-        title={isSubscribed ? 'Compte Premium' : 'Compte Gratuit'}
+        title={isPremium ? 'Compte Premium' : 'Compte Gratuit'}
         goBackIcon={true}
       />
     );
@@ -40,7 +42,7 @@ const MemberAccount: React.FC = () => {
           showsVerticalScrollIndicator={false}>
           <View style={{marginBottom: 20}}>
             <text.H3 style={{marginBottom: 10}}>
-              Votre compte est actuellement {isSubscribed ? 'Premium' : 'gratuit'}.
+              Votre compte est actuellement {isPremium ? 'Premium' : 'gratuit'}.
             </text.H3>
             <text.T16 style={{marginBottom: 20}}>
               Pour accéder à plus de fonctionnalités, passez à un compte Premium
@@ -74,7 +76,7 @@ const MemberAccount: React.FC = () => {
           <components.Button
             title="Activer le compte Premium"
             onPress={() => {
-              navigation.navigate('Prenium');
+              navigation.navigate('Premium');
             }}
             containerStyle={{marginBottom: 20}}
           />
@@ -166,7 +168,7 @@ const MemberAccount: React.FC = () => {
         <components.Button
           title="Activer le compte Premium"
           onPress={() => {
-            navigation.navigate('Prenium');
+            navigation.navigate('Premium');
           }}
           containerStyle={{marginBottom: 20}}
         />
@@ -191,7 +193,7 @@ const MemberAccount: React.FC = () => {
             paddingHorizontal: 20,
           }}
           showsVerticalScrollIndicator={false}>
-          {isSubscribed ? isSubscribedContent() : isNotPreniumContent()}
+          {isPremium ? isSubscribedContent() : isNotPreniumContent()}
         </ScrollView>
       </custom.ImageBackground>
     );
@@ -206,7 +208,7 @@ const MemberAccount: React.FC = () => {
         insets={['top', 'bottom']}
         containerStyle={{backgroundColor: theme.colors.transparent}}>
         {renderHeader()}
-        {isSubscribed ? renderContentPremium() : renderContentFree()}
+        {isPremium ? renderContentPremium() : renderContentFree()}
       </custom.SafeAreaView>
     </custom.ImageBackground>
   );

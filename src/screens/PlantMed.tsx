@@ -17,18 +17,17 @@ import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {components} from '../components';
+import { useAppSelector } from '../store';
 import {PlantMedScreenProps} from '../types/ScreenProps';
 import {PlantMedType, ViewableItemsChanged} from '../types';
-import { useSubscription } from '../hooks/revenueCat';
 
 const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const {item} = route.params;
   const [tab, setTab] = useState(0);
-  const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const {isSubscribed} = useSubscription();
+  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const viewabilityConfig = useRef({
     viewAreaCoveragePercentThreshold: 50,
@@ -261,7 +260,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
         <components.Button
           title='Activer le compte Premium'
           onPress={() => {
-            navigation.navigate('Prenium');
+            navigation.navigate('Premium');
           }}
           containerStyle={{marginBottom: 20}}
         />
@@ -372,7 +371,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        {isSubscribed ? (
+        {isPremium ? (
           <>
             <text.H2
               style={{
@@ -414,7 +413,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        {isSubscribed ? (
+        {isPremium ? (
           <>
             <text.H2
               style={{

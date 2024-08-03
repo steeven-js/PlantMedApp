@@ -57,6 +57,11 @@ const SignIn: React.FC = () => {
     });
   }, [loading]);
 
+  // Générer une chaine de caractères aléatoire de 7 caractères
+  const generateRandomString = () => {
+    return Math.random().toString(36).substring(2, 9);
+  };
+
   // Fonction pour gérer la connexion de l'utilisateur
   const handleSignIn = async () => {
     setLoading(true);
@@ -128,7 +133,7 @@ const SignIn: React.FC = () => {
         const userProfileData = {
           uid: authenticatedUser.uid,
           email: authenticatedUser.email,
-          displayName: authenticatedUser.displayName || '',
+          displayName: authenticatedUser.displayName || `Utilisateur - ${generateRandomString()}`,
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'google',
@@ -184,7 +189,7 @@ const SignIn: React.FC = () => {
         const userProfileData = {
           uid: authenticatedUser.uid,
           email: authenticatedUser.email || 'identifiant apple',
-          displayName: authenticatedUser.displayName || 'Utilisateur Apple',
+          displayName: authenticatedUser.displayName || `Utilisateur - ${generateRandomString()}`,
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'apple',

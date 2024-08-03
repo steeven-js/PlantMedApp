@@ -1,5 +1,5 @@
-#import <Firebase.h>
 #import "AppDelegate.h"
+#import <Firebase.h>
 
 #import <React/RCTBundleURLProvider.h>
 
@@ -11,7 +11,7 @@
   [FIRApp configure];
   // Add me --- /\
 
-  self.moduleName = @"PlantmedApp";
+  self.moduleName = @"plantmedapp";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
@@ -21,10 +21,10 @@
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-  return [self bundleURL];
+  return [self getBundleURL];
 }
 
-- (NSURL *)bundleURL
+- (NSURL *)getBundleURL
 {
 #if DEBUG
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
