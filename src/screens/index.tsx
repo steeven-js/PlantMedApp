@@ -27,7 +27,6 @@ import SendEmailOtp from './verification/SendEmailOtp';
 import SendPhoneOtp from './verification/SendPhoneOtp';
 import PhoneVerified from './verification/PhoneVerified';
 import EmailVerified from './verification/EmailVerified';
-import SignUpAccountCreated from './SignUpAccountCreated';
 import ForgotPasswordSentEmail from './ForgotPasswordSentEmail';
 import VerifyEmailForgot from './verification/VerifyEmailForgot';
 import SendEmailOtpForgot from './verification/SendEmailOtpForgot';
@@ -64,6 +63,5 @@ export const screens = {
   PremiumActivated,
   VerifyEmailForgot,
   SendEmailOtpForgot,
-  SignUpAccountCreated,
   ForgotPasswordSentEmail,
 };

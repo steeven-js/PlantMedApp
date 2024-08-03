@@ -7,7 +7,6 @@ import {
   ScrollView,
   RefreshControl,
   TouchableOpacity,
-  Platform,
 } from 'react-native';
 
 import {text} from '../../text';
@@ -174,14 +173,10 @@ const Home: React.FC = () => {
             return;
           }
 
-          if (Platform.OS === 'ios') {
-            navigation.navigate('Premium');
-          } else {
-            navigation.navigate('PlantMedList', {
-              title: item.promotion || 'Plante du jour',
-              products: products || [],
-            });
-          }
+          navigation.navigate('PlantMedList', {
+            title: item.promotion || 'Plante du jour',
+            products: products || [],
+          });
         }}
       >
         <custom.ImageBackground

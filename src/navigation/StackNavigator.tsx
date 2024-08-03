@@ -26,11 +26,6 @@ const StackNavigator: React.FC = () => {
         options={{headerShown: false}}
       />
       <RootStack.Screen
-        name="SignUpAccountCreated"
-        component={screens.SignUpAccountCreated}
-        options={{headerShown: false}}
-      />
-      <RootStack.Screen
         name="NewPassword"
         component={screens.NewPassword}
         options={{headerShown: false}}
