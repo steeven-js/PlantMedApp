@@ -1,36 +1,37 @@
-import axios from 'axios';
-import React, {useState} from 'react';
-import {View, ScrollView} from 'react-native';
+import React, { useState } from 'react';
+import { View, ScrollView } from 'react-native';
+import firestore from '@react-native-firebase/firestore';
 
-import {text} from '../text';
-import {alert} from '../alert';
-import {hooks} from '../hooks';
-import {utils} from '../utils';
-import {custom} from '../custom';
-import {theme} from '../constants';
-import {components} from '../components';
-import {actions} from '../store/actions';
-import {CONFIG, ENDPOINTS} from '../config';
+import { text } from '../text';
+import { alert } from '../alert';
+import { hooks } from '../hooks';
+import { utils } from '../utils';
+import { custom } from '../custom';
+import { theme } from '../constants';
+import { components } from '../components';
+import { actions } from '../store/actions';
+import { useAuth } from '../hooks/useAuth';
 
 const DeleteAccount: React.FC = () => {
   const dispatch = hooks.useAppDispatch();
   const navigation = hooks.useAppNavigation();
 
   const [loading, setLoading] = useState<boolean>(false);
-
-  const user = hooks.useAppSelector(state => state.userSlice.user);
+  const { user, deleteAccount } = useAuth();
 
   const handleDeleteAccount = async () => {
     try {
       setLoading(true);
 
-      const response = await axios({
-        method: 'delete',
-        headers: CONFIG.headers,
-        url: `${ENDPOINTS.DELETE_ACCOUNT}/${user?.id}`,
-      });
+      if (user) {
+        const uid = user.uid;
 
-      if (response.status === 200) {
+        // Supprimer le document userProfile
+        await firestore().collection('UserProfiles').doc(uid).delete();
+
+        // Supprimer l'utilisateur
+        await deleteAccount();
+
         dispatch(actions.logOut());
         alert.userDeleted();
         return;
@@ -38,6 +39,7 @@ const DeleteAccount: React.FC = () => {
 
       alert.somethingWentWrong();
     } catch (error: any) {
+      console.error("Erreur lors de la suppression du compte:", error);
       navigation.goBack();
       alert.somethingWentWrong();
     } finally {

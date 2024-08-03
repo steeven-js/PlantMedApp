@@ -79,7 +79,7 @@ const SignUp: React.FC = () => {
           .set({
             uid: user.uid,
             email: user.email,
-            displayName: name, // Utilisez directement 'name' ici
+            displayName: name,
             photoURL: user.photoURL || '',
             createdAt: firestore.FieldValue.serverTimestamp(),
             updatedAt: firestore.FieldValue.serverTimestamp(),
@@ -92,17 +92,40 @@ const SignUp: React.FC = () => {
           displayName: name,
         });
 
+        alert.userSuccessCreated();
+
         console.log('UserProfile created successfully');
 
         // Optionnel : Recharger l'utilisateur pour s'assurer que les changements sont reflétés
         await user.reload();
       }
     } catch (error: any) {
-      if (error.code === 'auth/email-already-in-use') {
-        alert.userWithThisNameOrEmailAlreadyExists();
-      } else {
-        console.error('Error creating user:', error);
-        alert.somethingWentWrong();
+      console.error('Error creating user:', error);
+
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          alert.userWithThisNameOrEmailAlreadyExists();
+          break;
+        case 'auth/invalid-email':
+          alert.invalidEmail();
+          break;
+        case 'auth/operation-not-allowed':
+          alert.operationNotAllowed();
+          break;
+        case 'auth/weak-password':
+          alert.weakPassword();
+          break;
+        case 'auth/network-request-failed':
+          alert.networkError();
+          break;
+        case 'auth/too-many-requests':
+          alert.tooManyRequests();
+          break;
+        case 'auth/invalid-credential':
+          alert.invalidCredential();
+          break;
+        default:
+          alert.somethingWentWrong();
       }
     } finally {
       setLoading(false);
@@ -160,6 +183,7 @@ const SignUp: React.FC = () => {
             service: 'google',
             // Ajoutez d'autres champs nécessaires ici
           });
+          alert.userSuccessCreated();
         }
 
         console.log('UserProfile created successfully');
@@ -218,6 +242,8 @@ const SignUp: React.FC = () => {
         await userProfileRef.set(userProfileData, {merge: true});
 
         console.log('UserProfile created/updated successfully');
+      } else {
+        alert.userSuccessCreated();
       }
 
       return userCredential;
@@ -241,7 +267,8 @@ const SignUp: React.FC = () => {
         style={{
           textTransform: 'capitalize',
           marginBottom: utils.responsiveHeight(40),
-        }}>
+        }}
+      >
         Inscription
       </text.H1>
     );
@@ -252,32 +279,32 @@ const SignUp: React.FC = () => {
     return (
       <React.Fragment>
         <custom.InputField
-          label="nom"
+          label='nom'
           value={name}
-          keyboardType="default"
+          keyboardType='default'
           innerRef={nameInputRef}
-          placeholder="entrez votre nom"
+          placeholder='entrez votre nom'
           onChangeText={handleNameChange}
           checkIcon={validateName(name, true)}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label="email"
+          label='email'
           value={email}
           innerRef={emailInputRef}
-          placeholder="entrez votre email"
-          keyboardType="email-address"
+          placeholder='entrez votre email'
+          keyboardType='email-address'
           onChangeText={handleEmailChange}
           checkIcon={validateEmail(email, true)}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label="mot de passe"
+          label='mot de passe'
           value={password}
           eyeOffIcon={true}
-          keyboardType="default"
+          keyboardType='default'
           innerRef={passwordInputRef}
-          placeholder="entrez votre mot de passe"
+          placeholder='entrez votre mot de passe'
           secureTextEntry={secureTextEntry}
           onChangeText={handlePasswordChange}
           setSecureTextEntry={setSecureTextEntry}
@@ -285,11 +312,11 @@ const SignUp: React.FC = () => {
         />
         <custom.InputField
           eyeOffIcon={true}
-          keyboardType="default"
+          keyboardType='default'
           value={confirmPassword}
-          label="confirmer mot de passe"
+          label='confirmer mot de passe'
           innerRef={confirmPasswordInputRef}
-          placeholder="confirmez votre mot de passe"
+          placeholder='confirmez votre mot de passe'
           secureTextEntry={confirmSecureTextEntry}
           onChangeText={handleConfirmPasswordChange}
           setSecureTextEntry={setConfirmSecureTextEntry}
@@ -323,7 +350,8 @@ const SignUp: React.FC = () => {
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={styles.linkButton}
-            onPress={handleGoogleSignIn}>
+            onPress={handleGoogleSignIn}
+          >
             <svg.Google2Svg />
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
@@ -370,7 +398,8 @@ const SignUp: React.FC = () => {
           flexGrow: 1,
           padding: 20,
           justifyContent: 'center',
-        }}>
+        }}
+      >
         {renderTitle()}
         {renderInputFields()}
         {renderButton()}
@@ -384,11 +413,13 @@ const SignUp: React.FC = () => {
   return (
     <custom.ImageBackground
       style={{flex: 1}}
-      resizeMode="stretch"
-      source={require('../assets/bg/02.png')}>
+      resizeMode='stretch'
+      source={require('../assets/bg/02.png')}
+    >
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}>
+        containerStyle={{backgroundColor: theme.colors.transparent}}
+      >
         {renderHeader()}
         {renderContent()}
         {renderIfYouHaveAccount()}

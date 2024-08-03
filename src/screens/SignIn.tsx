@@ -30,7 +30,7 @@ const SignIn: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const dispatch = useAppDispatch();
 
-  // const rememberMe = hooks.useAppSelector(state => state.userSlice.rememberMe);
+  const rememberMe = hooks.useAppSelector(state => state.userSlice.rememberMe);
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -80,25 +80,51 @@ const SignIn: React.FC = () => {
       };
 
       if (user) {
-        // Créer un document Firestore dans la collection 'UserProfiles' avec l'uid de l'utilisateur
+        // Créer ou mettre à jour un document Firestore dans la collection 'UserProfiles' avec l'uid de l'utilisateur
         await firestore()
           .collection('UserProfiles')
           .doc(user.uid)
-          .set({
-            uid: user.uid,
-            email: user.email,
-            displayName: user.displayName || '',
-            photoURL: user.photoURL || '',
-            createdAt: firestore.FieldValue.serverTimestamp(),
-            updatedAt: firestore.FieldValue.serverTimestamp(),
-            // Ajoutez d'autres champs nécessaires ici
-          });
+          .set(
+            {
+              uid: user.uid,
+              email: user.email,
+              displayName: user.displayName || '',
+              photoURL: user.photoURL || '',
+              updatedAt: firestore.FieldValue.serverTimestamp(),
+            },
+            {merge: true},
+          ); // Utiliser merge: true pour mettre à jour sans écraser les champs existants
 
         console.log('UserProfile login successfully');
       }
     } catch (error: any) {
       console.error('Error:', error);
-      alert.somethingWentWrong();
+
+      switch (error.code) {
+        case 'auth/invalid-email':
+          alert.invalidEmail();
+          break;
+        case 'auth/user-disabled':
+          alert.userDisabled();
+          break;
+        case 'auth/user-not-found':
+          alert.userNotFound();
+          break;
+        case 'auth/wrong-password':
+          alert.wrongPassword();
+          break;
+        case 'auth/too-many-requests':
+          alert.tooManyRequests();
+          break;
+        case 'auth/network-request-failed':
+          alert.networkError();
+          break;
+        case 'auth/invalid-credential':
+          alert.invalidCredential();
+          break;
+        default:
+          alert.somethingWentWrong();
+      }
     } finally {
       setLoading(false);
     }
@@ -133,7 +159,9 @@ const SignIn: React.FC = () => {
         const userProfileData = {
           uid: authenticatedUser.uid,
           email: authenticatedUser.email,
-          displayName: authenticatedUser.displayName || `Utilisateur - ${generateRandomString()}`,
+          displayName:
+            authenticatedUser.displayName ||
+            `Utilisateur - ${generateRandomString()}`,
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'google',
@@ -189,7 +217,9 @@ const SignIn: React.FC = () => {
         const userProfileData = {
           uid: authenticatedUser.uid,
           email: authenticatedUser.email || 'identifiant apple',
-          displayName: authenticatedUser.displayName || `Utilisateur - ${generateRandomString()}`,
+          displayName:
+            authenticatedUser.displayName ||
+            `Utilisateur - ${generateRandomString()}`,
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'apple',
@@ -223,7 +253,8 @@ const SignIn: React.FC = () => {
         style={{
           textTransform: 'capitalize',
           marginBottom: utils.responsiveHeight(14),
-        }}>
+        }}
+      >
         Bienvenue
       </text.H1>
     );
@@ -234,7 +265,8 @@ const SignIn: React.FC = () => {
     return (
       <text.T18
         style={{marginBottom: utils.responsiveHeight(40)}}
-        numberOfLines={1}>
+        numberOfLines={1}
+      >
         Connectez-vous à votre compte
       </text.T18>
     );
@@ -245,22 +277,22 @@ const SignIn: React.FC = () => {
     return (
       <React.Fragment>
         <custom.InputField
-          label="email"
+          label='email'
           value={email}
           innerRef={emailInputRef}
-          placeholder="entrez votre email"
-          keyboardType="email-address"
+          placeholder='entrez votre email'
+          keyboardType='email-address'
           onChangeText={handleEmailChange}
           checkIcon={validateEmail(email, true)}
           containerStyle={{marginBottom: utils.responsiveHeight(20)}}
         />
         <custom.InputField
-          label="mot de passe"
+          label='mot de passe'
           value={password}
           eyeOffIcon={true}
-          keyboardType="default"
+          keyboardType='default'
           innerRef={passwordInputRef}
-          placeholder="entrez votre mot de passe"
+          placeholder='entrez votre mot de passe'
           secureTextEntry={secureTextEntry}
           onChangeText={handlePasswordChange}
           setSecureTextEntry={setSecureTextEntry}
@@ -277,8 +309,14 @@ const SignIn: React.FC = () => {
         style={{
           ...theme.flex.rowCenterSpaceBetween,
           marginBottom: utils.responsiveHeight(30),
-        }}>
-        <TouchableOpacity style={{...theme.flex.rowCenter}} onPress={() => {}}>
+        }}
+      >
+        <TouchableOpacity
+          style={{...theme.flex.rowCenter}}
+          onPress={() => {
+            dispatch(actions.setRememberMe(!rememberMe));
+          }}
+        >
           <View
             style={{
               width: 18,
@@ -289,9 +327,9 @@ const SignIn: React.FC = () => {
               justifyContent: 'center',
               backgroundColor: theme.colors.white,
               borderColor: theme.colors.antiFlashWhite,
-            }}>
-            {/* {rememberMe && <svg.RememberCheckSvg />} */}
-            <svg.RememberCheckSvg />
+            }}
+          >
+            {rememberMe && <svg.RememberCheckSvg />}
           </View>
           <text.T14 style={{marginLeft: 10}} numberOfLines={1}>
             Se souvenir de moi
@@ -300,7 +338,8 @@ const SignIn: React.FC = () => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('SendEmailOtpForgot');
-          }}>
+          }}
+        >
           <text.T14 numberOfLines={1} style={{color: theme.colors.mainColor}}>
             Mot de passe oublié?
           </text.T14>
@@ -313,7 +352,7 @@ const SignIn: React.FC = () => {
   const renderButton = (): JSX.Element => {
     return (
       <components.Button
-        title="Connexion"
+        title='Connexion'
         onPress={() => {
           validation(user) ? handleSignIn() : null;
         }}
@@ -331,7 +370,8 @@ const SignIn: React.FC = () => {
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={styles.linkButton}
-            onPress={handleGoogleSignIn}>
+            onPress={handleGoogleSignIn}
+          >
             <svg.Google2Svg />
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
@@ -384,7 +424,8 @@ const SignIn: React.FC = () => {
           flexGrow: 1,
           padding: 20,
           justifyContent: 'center',
-        }}>
+        }}
+      >
         {renderTitle()}
         {renderDescription()}
         {renderInputFields()}
@@ -400,11 +441,13 @@ const SignIn: React.FC = () => {
   return (
     <custom.ImageBackground
       style={{flex: 1}}
-      resizeMode="stretch"
-      source={require('../assets/bg/02.png')}>
+      resizeMode='stretch'
+      source={require('../assets/bg/02.png')}
+    >
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={{backgroundColor: theme.colors.transparent}}>
+        containerStyle={{backgroundColor: theme.colors.transparent}}
+      >
         {renderHeader()}
         {renderContent()}
         {renderIfYouDontHaveAnAccount()}

@@ -73,14 +73,14 @@ export function useSubscription() {
 
             const userProfileRef = firestore().collection('UserProfiles').doc(user.uid);
             const docSnapshot = await userProfileRef.get();
-
+            
+            const expirationDate = customerInfo.entitlements.active['pro']?.expirationDate;
             if (docSnapshot.exists) {
                 if (isPro) {
-                    const expirationDate = customerInfo.entitlements.active['pro']?.expirationDate;
                     await userProfileRef.update({
                         premium: true,
                         premiumUpdatedAt: firestore.FieldValue.serverTimestamp(),
-                        premiumExpiresAt: expirationDate,
+                        premiumExpiresAt: formatDate(expirationDate),
                     });
                     setIsSubscribed(true);
                     dispatch(actions.setPremium(true));
@@ -101,7 +101,7 @@ export function useSubscription() {
                 await userProfileRef.set({
                     premium: isPro,
                     premiumUpdatedAt: isPro ? firestore.FieldValue.serverTimestamp() : null,
-                    premiumExpiresAt: isPro ? customerInfo.entitlements.active['pro']?.expirationDate : null,
+                    premiumExpiresAt: isPro ? formatDate(expirationDate) : null,
                     createdAt: firestore.FieldValue.serverTimestamp(),
                     // Ajoutez d'autres champs par défaut ici
                 });
@@ -141,11 +141,13 @@ export function useSubscription() {
             const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
 
             const userProfileRef = firestore().collection('UserProfiles').doc(user.uid);
+            const expirationDate = customerInfo.entitlements.active['pro']?.expirationDate;
+
             if (newSubscriptionStatus) {
                 await userProfileRef.update({
                     premium: true,
                     premiumUpdatedAt: firestore.FieldValue.serverTimestamp(),
-                    premiumExpiresAt: customerInfo.entitlements.active['pro'].expirationDate,
+                    premiumExpiresAt: formatDate(expirationDate),
                 });
                 setFormattedPremiumDate(formatDate(customerInfo.entitlements.active['pro'].expirationDate));
                 setIsSubscribed(true);

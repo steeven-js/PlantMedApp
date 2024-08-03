@@ -38,5 +38,19 @@ export const useAuth = () => {
     }
   }, [user]);
 
-  return { user, loading, getAuthService };
+  // delete account
+  const deleteAccount = async () => {
+    if (!user) return;
+
+    try {
+      const currentUser = auth().currentUser;
+      if (currentUser) {
+        await currentUser.delete();
+      }
+    } catch (error: any) {
+      console.error('Erreur lors de la suppression du compte:', error);
+    }
+  };
+
+  return { user, loading, deleteAccount, getAuthService };
 };
