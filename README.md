@@ -48,6 +48,24 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   npx react-native run-ios --simulator="iPhone 15"
   ```
 
+- **Reset bundle**
+
+  ```shell
+  rm Gemfile.lock                                                              
+  bundle install
+  brew install ruby                                                                     
+  brew install cocoapods  
+  ```
+
+- **Reset pod**
+
+  ```shell
+  cd ios/                                                                               
+  rm -rf Pods Podfile.lock   
+  pod install
+  cd .. 
+  ```
+
 - **Générer une clé de signature pour la publication sur Google Play**
 
   ```shell
