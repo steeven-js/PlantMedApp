@@ -19,16 +19,17 @@ const PlantmedCard: React.FC<Props> = ({
 }): JSX.Element | null => {
   const navigation = hooks.useAppNavigation();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  // const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const onPress = () => {
-    if (isPremium) {
-      navigation.navigate('PlantMed', {item});
-    } else if (!isPremium && item.is_prenium == false) {
-      navigation.navigate('PlantMed', {item});
-    } else {
-      navigation.navigate('Premium');
-    }
+    // if (isPremium) {
+    //   navigation.navigate('PlantMed', {item});
+    // } else if (!isPremium && item.is_prenium == false) {
+    //   navigation.navigate('PlantMed', {item});
+    // } else {
+    //   navigation.navigate('Premium');
+    // }
+    navigation.navigate('PlantMed', {item});
   };
 
   // ############ SHOP > PLANTS ############ //
@@ -55,7 +56,7 @@ const PlantmedCard: React.FC<Props> = ({
             backgroundColor: theme.colors.imageBackground,
           }}
           resizeMode="cover">
-          {item.is_prenium ? (
+          {/* {item.is_prenium ? (
             <plantmed.PlantPrenium
               item={item}
               containerStyle={{
@@ -65,7 +66,7 @@ const PlantmedCard: React.FC<Props> = ({
                 left: -10,
               }}
             />
-          ) : null}
+          ) : null} */}
 
           <plantmed.PlantmedInWishlist
             item={item}
@@ -105,7 +106,7 @@ const PlantmedCard: React.FC<Props> = ({
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
           }}>
-          {item.is_prenium ? (
+          {/* {item.is_prenium ? (
             <plantmed.PlantPrenium
               item={item}
               containerStyle={{
@@ -115,7 +116,7 @@ const PlantmedCard: React.FC<Props> = ({
                 left: -10,
               }}
             />
-          ) : null}
+          ) : null} */}
 
           <plantmed.PlantmedInWishlist
             item={item}
@@ -152,7 +153,7 @@ const PlantmedCard: React.FC<Props> = ({
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
           }}>
-          {item.is_prenium ? (
+          {/* {item.is_prenium ? (
             <plantmed.PlantPrenium
               item={item}
               containerStyle={{
@@ -162,7 +163,7 @@ const PlantmedCard: React.FC<Props> = ({
                 left: -10,
               }}
             />
-          ) : null}
+          ) : null} */}
 
           <plantmed.PlantmedInWishlist
             item={item}

@@ -40,7 +40,7 @@ const Header: React.FC<HeaderType> = ({
 
   const {user} = useAuth();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  // const isPremium = useAppSelector(state => state.premiumSlice.prenium);
   const cart = useAppSelector(state => state.cartSlice.list);
   const subtotal = useAppSelector(state => state.cartSlice.subtotal);
 
@@ -209,7 +209,7 @@ const Header: React.FC<HeaderType> = ({
                       marginBottom: 4,
                     }}
                     numberOfLines={1}>
-                    {isPremium ? 'Membre Premium' : 'Membre Standard'}
+                    {/* {isPremium ? 'Membre Premium' : 'Membre Standard'} */}
                   </Text>
                 </View>
               </TouchableOpacity>

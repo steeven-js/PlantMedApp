@@ -17,7 +17,7 @@ import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {components} from '../components';
-import { useAppSelector } from '../store';
+import {useAppSelector} from '../store';
 import {PlantMedScreenProps} from '../types/ScreenProps';
 import {PlantMedType, ViewableItemsChanged} from '../types';
 
@@ -27,7 +27,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const navigation = hooks.useAppNavigation();
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  // const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const viewabilityConfig = useRef({
     viewAreaCoveragePercentThreshold: 50,
@@ -371,36 +371,30 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        {isPremium ? (
-          <>
-            <text.H2
-              style={{
-                textTransform: 'capitalize',
-                color: theme.colors.mainColor,
-                marginBottom: utils.responsiveHeight(10),
-              }}
-            >
-              Propriétés
-            </text.H2>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginBottom: utils.responsiveHeight(6),
-              }}
-            >
-              <text.T18
-                style={{
-                  color: theme.colors.textColor,
-                }}
-              >
-                {item.propriete}
-              </text.T18>
-            </View>
-          </>
-        ) : (
-          renderPreniumOnly()
-        )}
+        <text.H2
+          style={{
+            textTransform: 'capitalize',
+            color: theme.colors.mainColor,
+            marginBottom: utils.responsiveHeight(10),
+          }}
+        >
+          Propriétés
+        </text.H2>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginBottom: utils.responsiveHeight(6),
+          }}
+        >
+          <text.T18
+            style={{
+              color: theme.colors.textColor,
+            }}
+          >
+            {item.propriete}
+          </text.T18>
+        </View>
       </View>
     );
   };
@@ -413,63 +407,57 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
           marginBottom: utils.responsiveHeight(24),
         }}
       >
-        {isPremium ? (
-          <>
-            <text.H2
-              style={{
-                textTransform: 'capitalize',
-                color: theme.colors.mainColor,
-                marginBottom: utils.responsiveHeight(10),
-              }}
-            >
-              Usages internes
-            </text.H2>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginBottom: utils.responsiveHeight(6),
-              }}
-            >
-              <text.T18
-                style={{
-                  paddingBottom: 20,
-                  color: theme.colors.textColor,
-                }}
-              >
-                {item.usageInterne}
-              </text.T18>
-            </View>
+        <text.H2
+          style={{
+            textTransform: 'capitalize',
+            color: theme.colors.mainColor,
+            marginBottom: utils.responsiveHeight(10),
+          }}
+        >
+          Usages internes
+        </text.H2>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginBottom: utils.responsiveHeight(6),
+          }}
+        >
+          <text.T18
+            style={{
+              paddingBottom: 20,
+              color: theme.colors.textColor,
+            }}
+          >
+            {item.usageInterne}
+          </text.T18>
+        </View>
 
-            <text.H2
-              style={{
-                textTransform: 'capitalize',
-                color: theme.colors.mainColor,
-                marginBottom: utils.responsiveHeight(10),
-              }}
-            >
-              Usages externes
-            </text.H2>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginBottom: utils.responsiveHeight(6),
-              }}
-            >
-              <text.T18
-                style={{
-                  paddingBottom: 20,
-                  color: theme.colors.textColor,
-                }}
-              >
-                {item.usageExterne}
-              </text.T18>
-            </View>
-          </>
-        ) : (
-          renderPreniumOnly()
-        )}
+        <text.H2
+          style={{
+            textTransform: 'capitalize',
+            color: theme.colors.mainColor,
+            marginBottom: utils.responsiveHeight(10),
+          }}
+        >
+          Usages externes
+        </text.H2>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginBottom: utils.responsiveHeight(6),
+          }}
+        >
+          <text.T18
+            style={{
+              paddingBottom: 20,
+              color: theme.colors.textColor,
+            }}
+          >
+            {item.usageExterne}
+          </text.T18>
+        </View>
       </View>
     );
   };

@@ -22,7 +22,7 @@ import {queryHooks} from '../../store/slices/apiSlice';
 const Symptoms: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  // const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const {
     data: plantsData,
@@ -90,19 +90,23 @@ const Symptoms: React.FC = () => {
                 }}
                 onPress={() => {
                   if (qty > 0) {
-                    if (isPremium) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
-                    } else if (!isPremium && item.is_prenium == false) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
-                    } else {
-                      navigation.navigate('Premium');
-                    }
+                    // if (isPremium) {
+                    //   navigation.navigate('PlantMedList', {
+                    //     title: item.name,
+                    //     products: dataFilter ?? [],
+                    //   });
+                    // } else if (!isPremium && item.is_prenium == false) {
+                    //   navigation.navigate('PlantMedList', {
+                    //     title: item.name,
+                    //     products: dataFilter ?? [],
+                    //   });
+                    // } else {
+                    //   navigation.navigate('Premium');
+                    // }
+                    navigation.navigate('PlantMedList', {
+                      title: item.name,
+                      products: dataFilter ?? [],
+                    });
                   }
                   if (qty === 0) {
                     Alert.alert(

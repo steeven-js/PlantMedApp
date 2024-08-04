@@ -7,8 +7,8 @@ import {custom} from '../custom';
 import {theme} from '../constants';
 import {PlantMedType, SymptomType} from '../types';
 import PreniumSvg from '../assets/svg/PreniumSvg';
-import { useSubscription } from '../hooks/revenueCat';
-import { useAppSelector } from '../store';
+import {useSubscription} from '../hooks/revenueCat';
+import {useAppSelector} from '../store';
 
 type Props = {
   qty: number;
@@ -19,23 +19,27 @@ type Props = {
 
 const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
   const navigation = hooks.useAppNavigation();
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  // const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const onPress = () => {
     if (qty > 0) {
-      if (isPremium) {
-        navigation.navigate('PlantMedList', {
-          title: item.name,
-          products: dataFilter ?? [],
-        });
-      } else if (!isPremium && item.is_prenium == false) {
-        navigation.navigate('PlantMedList', {
-          title: item.name,
-          products: dataFilter ?? [],
-        });
-      } else {
-        navigation.navigate('Premium');
-      }
+      // if (isPremium) {
+      //   navigation.navigate('PlantMedList', {
+      //     title: item.name,
+      //     products: dataFilter ?? [],
+      //   });
+      // } else if (!isPremium && item.is_prenium == false) {
+      //   navigation.navigate('PlantMedList', {
+      //     title: item.name,
+      //     products: dataFilter ?? [],
+      //   });
+      // } else {
+      //   navigation.navigate('Premium');
+      // }
+      navigation.navigate('PlantMedList', {
+        title: item.name,
+        products: dataFilter ?? [],
+      });
     }
     if (qty === 0) {
       Alert.alert('No data', 'No data available for this category');

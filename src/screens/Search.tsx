@@ -28,7 +28,7 @@ const Search: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const {loading} = useAuth();
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  // const isPremium = useAppSelector(state => state.premiumSlice.prenium);
 
   const {
     data: plantsData,
@@ -116,13 +116,14 @@ const Search: React.FC = () => {
           alignItems: 'center',
         }}
         onPress={() => {
-          if (isPremium) {
-            navigation.navigate('PlantMed', {item});
-          } else if (!isPremium && item.is_prenium == false) {
-            navigation.navigate('PlantMed', {item});
-          } else {
-            navigation.navigate('Premium');
-          }
+          // if (isPremium) {
+          //   navigation.navigate('PlantMed', {item});
+          // } else if (!isPremium && item.is_prenium == false) {
+          //   navigation.navigate('PlantMed', {item});
+          // } else {
+          //   navigation.navigate('Premium');
+          // }
+          navigation.navigate('PlantMed', {item});
         }}
       >
         <svg.SearchSmallSvg />
@@ -175,7 +176,7 @@ const Search: React.FC = () => {
             </View>
           </View>
 
-          <View
+          {/* <View
             style={{
               alignSelf: 'flex-start',
               justifyContent: 'center',
@@ -190,7 +191,7 @@ const Search: React.FC = () => {
                 strokeColor={theme.colors.yellowStar}
               />
             ) : null}
-          </View>
+          </View> */}
         </View>
       </TouchableOpacity>
     );
