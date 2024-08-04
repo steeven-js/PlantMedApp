@@ -66,6 +66,12 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   cd .. 
   ```
 
+- **Xcode**
+
+  ```shell
+  xed -b ios 
+  ```
+
 - **Générer une clé de signature pour la publication sur Google Play**
 
   ```shell
