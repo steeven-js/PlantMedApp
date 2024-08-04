@@ -48,6 +48,14 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   npx react-native run-ios --simulator="iPhone 15"
   ```
 
+- **Installer les dépendances iOS et exécuter l'application sur un device**
+
+  ```shell
+  cd ios/
+  pod install --repo-update
+  cd ..
+  npx react-native run-ios --device="iphone11"
+  
 - **Reset bundle**
 
   ```shell
