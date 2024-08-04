@@ -1,7 +1,7 @@
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
 import React, {useState, useEffect, useRef} from 'react';
-import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, TextInput, TouchableOpacity, StyleSheet, Platform} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {
@@ -84,6 +84,8 @@ const SignUp: React.FC = () => {
             createdAt: firestore.FieldValue.serverTimestamp(),
             updatedAt: firestore.FieldValue.serverTimestamp(),
             isPremium: false,
+            service: 'email',
+            platform: Platform.OS === 'ios' ? 'ios' : 'android',
             // Ajoutez d'autres champs nécessaires ici
           });
 
@@ -169,6 +171,7 @@ const SignUp: React.FC = () => {
             createdAt: firestore.FieldValue.serverTimestamp(),
             updatedAt: firestore.FieldValue.serverTimestamp(),
             service: 'google',
+            platform: Platform.OS === 'ios' ? 'ios' : 'android',
             // Ajoutez d'autres champs nécessaires ici
           });
         } else {
@@ -181,6 +184,7 @@ const SignUp: React.FC = () => {
             createdAt: firestore.FieldValue.serverTimestamp(),
             updatedAt: firestore.FieldValue.serverTimestamp(),
             service: 'google',
+            platform: Platform.OS === 'ios' ? 'ios' : 'android',
             // Ajoutez d'autres champs nécessaires ici
           });
           alert.userSuccessCreated();
@@ -236,6 +240,7 @@ const SignUp: React.FC = () => {
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'apple',
+          platform: Platform.OS === 'ios' ? 'ios' : 'android',
           // Ajoutez d'autres champs nécessaires ici
         };
 

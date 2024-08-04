@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import React, {useEffect, useRef, useState} from 'react';
 import {View, TouchableOpacity, TextInput} from 'react-native';
@@ -91,6 +91,8 @@ const SignIn: React.FC = () => {
               displayName: user.displayName || '',
               photoURL: user.photoURL || '',
               updatedAt: firestore.FieldValue.serverTimestamp(),
+              service: 'email',
+              platform: Platform.OS === 'ios' ? 'ios' : 'android',
             },
             {merge: true},
           ); // Utiliser merge: true pour mettre à jour sans écraser les champs existants
@@ -165,6 +167,7 @@ const SignIn: React.FC = () => {
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'google',
+          platform: Platform.OS === 'ios' ? 'ios' : 'android',
           // Ajoutez d'autres champs nécessaires ici
         };
 
@@ -223,6 +226,7 @@ const SignIn: React.FC = () => {
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'apple',
+          platform: Platform.OS === 'ios' ? 'ios' : 'android',
           // Ajoutez d'autres champs nécessaires ici
         };
 
