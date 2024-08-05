@@ -1,6 +1,8 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services' // <- Add this line
+
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -74,9 +76,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.plantmedapp"
+    namespace "com.jsprod.android.plantmed"
     defaultConfig {
-        applicationId "com.plantmedapp"
+        applicationId "com.jsprod.android.plantmed"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

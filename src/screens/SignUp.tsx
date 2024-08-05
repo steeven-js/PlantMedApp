@@ -1,7 +1,13 @@
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
 import React, {useState, useEffect, useRef} from 'react';
-import {View, TextInput, TouchableOpacity, StyleSheet, Platform} from 'react-native';
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Platform,
+} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {
@@ -361,15 +367,17 @@ const SignUp: React.FC = () => {
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
 
-          <AppleButton
-            buttonStyle={AppleButton.Style.WHITE}
-            buttonType={AppleButton.Type.SIGN_IN}
-            style={{
-              width: 160,
-              height: 45,
-            }}
-            onPress={handleAppleSignIn}
-          />
+          {Platform.OS === 'ios' && (
+            <AppleButton
+              buttonStyle={AppleButton.Style.WHITE}
+              buttonType={AppleButton.Type.SIGN_IN}
+              style={{
+                width: 160,
+                height: 45,
+              }}
+              onPress={handleAppleSignIn}
+            />
+          )}
         </View>
       </>
     );
@@ -379,11 +387,11 @@ const SignUp: React.FC = () => {
   const renderIfYouHaveAccount = (): JSX.Element => {
     return (
       <View style={{flexDirection: 'row', alignItems: 'center', padding: 20}}>
-        <text.T18 numberOfLines={1}>Vous avez déjà un compte? </text.T18>
+        <text.T14 numberOfLines={1}>Vous avez déjà un compte? </text.T14>
         <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-          <text.T18 style={{color: theme.colors.mainColor}} numberOfLines={1}>
+          <text.T14 style={{color: theme.colors.mainColor}} numberOfLines={1}>
             Connectez-vous.
-          </text.T18>
+          </text.T14>
         </TouchableOpacity>
       </View>
     );
@@ -457,7 +465,7 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-between',
+    justifyContent: Platform.OS === 'ios' ? 'space-between' : 'center',
     marginTop: 20,
   },
   linkButton: {

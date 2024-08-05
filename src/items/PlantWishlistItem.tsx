@@ -49,7 +49,7 @@ const PlantWishlistItem: React.FC<Props> = ({
         }}
         resizeMode='contain'
       >
-        {item.is_prenium ? (
+        {/* {item.is_prenium ? (
           <plantmed.PlantPrenium
             item={item}
             containerStyle={{
@@ -59,7 +59,7 @@ const PlantWishlistItem: React.FC<Props> = ({
               left: -10,
             }}
           />
-        ) : null}
+        ) : null} */}
       </custom.ImageBackground>
       {/* BLOCK INFO */}
       <View

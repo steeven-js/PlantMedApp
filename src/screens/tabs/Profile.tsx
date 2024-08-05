@@ -17,15 +17,15 @@ const Profile: React.FC = () => {
 
   const {user} = useAuth();
 
-  const {checkSubscriptionStatus} = useSubscription();
+  // const {checkSubscriptionStatus} = useSubscription();
 
-  const isPremium = useSelector(
-    (state: RootState) => state.premiumSlice.prenium,
-  );
+  // const isPremium = useSelector(
+  //   (state: RootState) => state.premiumSlice.prenium,
+  // );
 
-  useEffect(() => {
-    checkSubscriptionStatus();
-  }, [user]);
+  // useEffect(() => {
+  //   checkSubscriptionStatus();
+  // }, [user]);
 
   const renderUserInfo = (): JSX.Element => {
     return (
@@ -71,7 +71,7 @@ const Profile: React.FC = () => {
         }}
       >
         <View>
-          <items.ProfileItem
+          {/* <items.ProfileItem
             title={isPremium ? 'Compte premium' : 'Compte gratuit'}
             onPress={() => {
               navigation.navigate('MemberAccount');
@@ -79,7 +79,7 @@ const Profile: React.FC = () => {
             icon={<svg.UserSvg />}
             goNavigation={true}
             containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-          />
+          /> */}
           <items.ProfileItem
             title={'Informations personnelles'}
             onPress={() => {

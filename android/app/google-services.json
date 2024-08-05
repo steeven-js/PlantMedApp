@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "453782988338",
+    "project_id": "plantmed-app-2493c",
+    "storage_bucket": "plantmed-app-2493c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453782988338:android:12ffe9a13b1b7596c43e2b",
+        "android_client_info": {
+          "package_name": "com.jsprod.android.plantmed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453782988338-if7nadfjgrlbm5f3obo0f7n2asquq0hu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jsprod.android.plantmed",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "453782988338-bjrced2v0tqohg68j6dljju0qp1tqrgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhbrckdBupdahGMtODR7DUnzLr-MA_SJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453782988338-bjrced2v0tqohg68j6dljju0qp1tqrgm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "453782988338-p1fn125tgm3ilpvibk846mjgise2qt36.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jsprod.plantmed"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

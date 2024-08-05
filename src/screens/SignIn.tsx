@@ -380,15 +380,17 @@ const SignIn: React.FC = () => {
             <text.T12 style={styles.linkText}>Google</text.T12>
           </TouchableOpacity>
 
-          <AppleButton
-            buttonStyle={AppleButton.Style.WHITE}
-            buttonType={AppleButton.Type.SIGN_IN}
-            style={{
-              width: 160,
-              height: 45,
-            }}
-            onPress={handleAppleSignIn}
-          />
+          {Platform.OS === 'ios' && (
+            <AppleButton
+              buttonStyle={AppleButton.Style.WHITE}
+              buttonType={AppleButton.Type.SIGN_IN}
+              style={{
+                width: 160,
+                height: 45,
+              }}
+              onPress={handleAppleSignIn}
+            />
+          )}
         </View>
       </>
     );
@@ -484,7 +486,7 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-between',
+    justifyContent: Platform.OS === 'ios' ? 'space-between' : 'center',
     marginTop: 20,
   },
   linkButton: {

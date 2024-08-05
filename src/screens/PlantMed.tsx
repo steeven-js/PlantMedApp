@@ -198,7 +198,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
             onPress={() => setTab(index)}
           >
             {item.svg}
-            {item.isPremium && (
+            {/* {item.isPremium && (
               <View
                 style={{
                   position: 'absolute',
@@ -208,7 +208,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
               >
                 <svg.TabPreniumSvg />
               </View>
-            )}
+            )} */}
           </TouchableOpacity>
         ))}
       </View>

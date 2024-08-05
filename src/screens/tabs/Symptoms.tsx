@@ -131,7 +131,7 @@ const Symptoms: React.FC = () => {
                   }}
                   resizeMode='cover'
                 >
-                  {item.is_prenium ? (
+                  {/* {item.is_prenium ? (
                     <plantmed.PlantPrenium
                       item={item as PlantMedType}
                       containerStyle={{
@@ -141,7 +141,7 @@ const Symptoms: React.FC = () => {
                         left: -10,
                       }}
                     />
-                  ) : null}
+                  ) : null} */}
 
                   <Text
                     numberOfLines={2}
