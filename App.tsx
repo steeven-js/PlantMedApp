@@ -20,14 +20,15 @@ const App = () => {
 
   }, []);
 
-  const {user} = useAuth();
+  // const {user} = useAuth();
 
   return (
     <SafeAreaProvider>
       <Provider store={store}>
         <PersistGate loading={<components.Loader />} persistor={persistor}>
           <NavigationContainer>
-            {user ? <AuthStackNavigator /> : <StackNavigator />}
+            {/* {user ? <AuthStackNavigator /> : <StackNavigator />} */}
+            <AuthStackNavigator /> 
           </NavigationContainer>
         </PersistGate>
         <components.AppState />

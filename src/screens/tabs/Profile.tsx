@@ -80,7 +80,7 @@ const Profile: React.FC = () => {
             goNavigation={true}
             containerStyle={{marginBottom: utils.responsiveHeight(10)}}
           /> */}
-          <items.ProfileItem
+          {/* <items.ProfileItem
             title={'Informations personnelles'}
             onPress={() => {
               navigation.navigate('EditProfile');
@@ -88,7 +88,7 @@ const Profile: React.FC = () => {
             icon={<svg.UserSvg />}
             goNavigation={true}
             containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-          />
+          /> */}
           <items.ProfileItem
             title="Conditions d'utilisation"
             onPress={() => {
@@ -107,24 +107,24 @@ const Profile: React.FC = () => {
             goNavigation={true}
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
-          <items.ProfileItem
+          {/* <items.ProfileItem
             title= {Platform.OS === 'ios' ? 'Conditions d\'utilisation Apple' : 'Conditions d\'utilisation Google'}
             onPress={Platform.OS === 'ios' ? openAppleEULA : () => {}}
             icon={<svg.FileTextSvg />}
             goNavigation={true}
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
-          />
-          <items.ProfileItem
+          /> */}
+          {/* <items.ProfileItem
             title='Déconnexion'
             onPress={() => {
               navigation.navigate('LogOut');
             }}
             icon={<svg.SignOutSvg />}
             containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-          />
+          /> */}
         </View>
 
-        <View
+        {/* <View
           style={{
             marginTop: utils.responsiveHeight(20) * 2,
           }}
@@ -136,7 +136,7 @@ const Profile: React.FC = () => {
             }}
             icon={<svg.DeleteSvg />}
           />
-        </View>
+        </View> */}
       </ScrollView>
     );
   };
@@ -156,7 +156,7 @@ const Profile: React.FC = () => {
           }}
           showsVerticalScrollIndicator={false}
         >
-          {renderUserInfo()}
+          {/* {renderUserInfo()} */}
           {renderMenu()}
         </ScrollView>
       </custom.ImageBackground>

@@ -153,74 +153,7 @@ const Header: React.FC<HeaderType> = ({
               }}>
               <svg.CloseSvg />
             </TouchableOpacity>
-            <ScrollView
-              contentContainerStyle={{
-                flexGrow: 1,
-                paddingTop: utils.responsiveHeight(40),
-                paddingBottom: utils.responsiveHeight(20),
-              }}
-              showsVerticalScrollIndicator={false}>
-              {/* USER INFO */}
-              {/* <UserData /> */}
-
-              <TouchableOpacity
-                style={{
-                  paddingHorizontal: 20,
-                  borderBottomWidth: 1,
-                  borderBottomColor: theme.colors.antiFlashWhite,
-                  paddingBottom: utils.responsiveHeight(32),
-                  marginBottom: utils.responsiveHeight(20),
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
-                onPress={() => {
-                  setShowModal(false);
-                  navigation.navigate('EditProfile');
-                }}>
-                {/* <Gravatar email={user?.email || ''} size={40 * 2} /> */}
-                <View>
-                  <Text
-                    style={{
-                      color: theme.colors.mainColor,
-                      ...theme.fonts.Inter_600SemiBold,
-                      fontSize: Platform.OS === 'ios' ? 18 : 16,
-                      textTransform: 'capitalize',
-                      marginBottom: 4,
-                    }}
-                    numberOfLines={1}>
-                    {user?.displayName || ''}
-                  </Text>
-                  <Text
-                    style={{
-                      ...theme.fonts.DM_Sans_400Regular,
-                      color: theme.colors.textColor,
-                      fontSize: Platform.OS === 'ios' ? 18 : 16,
-                      marginBottom: 4,
-                    }}
-                    numberOfLines={1}>
-                    {user?.email || ''}
-                  </Text>
-                  <Text
-                    style={{
-                      color: theme.colors.mainColor,
-                      ...theme.fonts.Inter_600SemiBold,
-                      fontSize: Platform.OS === 'ios' ? 14 : 12,
-                      textTransform: 'capitalize',
-                      marginBottom: 4,
-                    }}
-                    numberOfLines={1}>
-                    {/* {isPremium ? 'Membre Premium' : 'Membre Standard'} */}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              {/* MENU */}
-              {/* <items.BurgerMenuItem
-                title={'>  Plantmed Premium'}
-                onPress={() => {
-                  setShowModal(false);
-                  navigation.navigate('Premium');
-                }}
-              /> */}
+            <ScrollView>
               <items.BurgerMenuItem
                 title=">  Usages thérapeutiques"
                 onPress={() => {
@@ -381,45 +314,45 @@ const Header: React.FC<HeaderType> = ({
     return null;
   };
 
-  const renderBasket = (): JSX.Element | null => {
-    if (basketIcon) {
-      return (
-        <TouchableOpacity
-          onPress={handleOnPress}
-          style={{
-            right: 0,
-            position: 'absolute',
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: 20,
-          }}>
-          <View
-            style={{
-              height: 22,
-              borderRadius: 11,
-              paddingHorizontal: 7,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: theme.colors.mainColor,
-            }}>
-            <Text
-              style={{
-                color: theme.colors.white,
-                ...theme.fonts.DM_Sans_700Bold,
-                fontSize: Platform.OS === 'ios' ? 10 : 8,
-              }}
-              numberOfLines={1}>
-              {cart.length > 0 ? `$${subtotal.toFixed(2)}` : '$0'}
-            </Text>
-          </View>
-          <svg.BasketSvg />
-        </TouchableOpacity>
-      );
-    }
+  // const renderBasket = (): JSX.Element | null => {
+  //   if (basketIcon) {
+  //     return (
+  //       <TouchableOpacity
+  //         onPress={handleOnPress}
+  //         style={{
+  //           right: 0,
+  //           position: 'absolute',
+  //           flexDirection: 'row',
+  //           alignItems: 'center',
+  //           paddingHorizontal: 20,
+  //         }}>
+  //         <View
+  //           style={{
+  //             height: 22,
+  //             borderRadius: 11,
+  //             paddingHorizontal: 7,
+  //             flexDirection: 'row',
+  //             alignItems: 'center',
+  //             justifyContent: 'center',
+  //             backgroundColor: theme.colors.mainColor,
+  //           }}>
+  //           <Text
+  //             style={{
+  //               color: theme.colors.white,
+  //               ...theme.fonts.DM_Sans_700Bold,
+  //               fontSize: Platform.OS === 'ios' ? 10 : 8,
+  //             }}
+  //             numberOfLines={1}>
+  //             {cart.length > 0 ? `$${subtotal.toFixed(2)}` : '$0'}
+  //           </Text>
+  //         </View>
+  //         <svg.BasketSvg />
+  //       </TouchableOpacity>
+  //     );
+  //   }
 
-    return null;
-  };
+  //   return null;
+  // };
 
   const renderContent = (): JSX.Element => {
     const containerStyle: ViewStyle = {
