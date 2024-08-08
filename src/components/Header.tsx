@@ -12,12 +12,14 @@ import {
 
 import Loader from './Loader';
 import {utils} from '../utils';
+import {text} from '../text';
 import {items} from '../items';
 import {hooks} from '../hooks';
 import {custom} from '../custom';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {HeaderType} from '../types';
+import {components} from '../components';
 import {useAuth} from '../hooks/useAuth';
 import packageJson from '../../package.json';
 import {queryHooks} from '../store/slices/apiSlice';
@@ -118,7 +120,6 @@ const Header: React.FC<HeaderType> = ({
             width: utils.responsiveWidth(270, true),
             backgroundColor: theme.colors.white,
             paddingTop: utils.statusBarHeight(),
-            paddingBottom: utils.homeIndicatorHeight(),
           }}
         >
           <custom.ImageBackground
@@ -139,71 +140,75 @@ const Header: React.FC<HeaderType> = ({
             >
               <svg.CloseSvg />
             </TouchableOpacity>
+
             <ScrollView
               contentContainerStyle={{
                 flexGrow: 1,
-                paddingTop: utils.responsiveHeight(40),
-                paddingBottom: utils.responsiveHeight(20),
               }}
               showsVerticalScrollIndicator={false}
             >
               {/* USER INFO */}
-              {/* <UserData /> */}
+              {user && (
+                <TouchableOpacity
+                  style={{
+                    paddingHorizontal: 20,
+                    borderBottomWidth: 6,
+                    borderBottomColor: theme.colors.antiFlashWhite,
+                    flexDirection: 'column',
+                  }}
+                  onPress={() => {
+                    setShowModal(false);
+                    navigation.navigate('EditProfile');
+                  }}
+                >
+                  <components.Avatar
+                    size={60}
+                    uri={user?.photoURL}
+                    name={user?.displayName}
+                  />
+                  <View>
+                    <Text
+                      style={{
+                        color: theme.colors.mainColor,
+                        ...theme.fonts.Inter_600SemiBold,
+                        fontSize: Platform.OS === 'ios' ? 18 : 16,
+                        textTransform: 'capitalize',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}
+                      numberOfLines={1}
+                    >
+                      {user?.displayName || ''}
+                    </Text>
+                    <Text
+                      style={{
+                        ...theme.fonts.DM_Sans_400Regular,
+                        color: theme.colors.textColor,
+                        fontSize: Platform.OS === 'ios' ? 18 : 16,
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}
+                      numberOfLines={1}
+                    >
+                      {user?.email || ''}
+                    </Text>
+                    <Text
+                      style={{
+                        color: theme.colors.mainColor,
+                        ...theme.fonts.Inter_600SemiBold,
+                        fontSize: Platform.OS === 'ios' ? 14 : 12,
+                        textTransform: 'capitalize',
+                        marginTop: 5,
+                        marginBottom: 5,
+                      }}
+                      numberOfLines={1}
+                    >
+                      {isPremium ? 'Membre Premium' : 'Membre Standard'}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
 
-              <TouchableOpacity
-                style={{
-                  paddingHorizontal: 20,
-                  borderBottomWidth: 1,
-                  borderBottomColor: theme.colors.antiFlashWhite,
-                  paddingBottom: utils.responsiveHeight(32),
-                  marginBottom: utils.responsiveHeight(20),
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
-                onPress={() => {
-                  setShowModal(false);
-                  navigation.navigate('EditProfile');
-                }}
-              >
-                {/* <Gravatar email={user?.email || ''} size={40 * 2} /> */}
-                <View>
-                  <Text
-                    style={{
-                      color: theme.colors.mainColor,
-                      ...theme.fonts.Inter_600SemiBold,
-                      fontSize: Platform.OS === 'ios' ? 18 : 16,
-                      textTransform: 'capitalize',
-                      marginBottom: 4,
-                    }}
-                    numberOfLines={1}
-                  >
-                    {user?.displayName || ''}
-                  </Text>
-                  <Text
-                    style={{
-                      ...theme.fonts.DM_Sans_400Regular,
-                      color: theme.colors.textColor,
-                      fontSize: Platform.OS === 'ios' ? 18 : 16,
-                      marginBottom: 4,
-                    }}
-                    numberOfLines={1}
-                  >
-                    {user?.email || ''}
-                  </Text>
-                  <Text
-                    style={{
-                      color: theme.colors.mainColor,
-                      ...theme.fonts.Inter_600SemiBold,
-                      fontSize: Platform.OS === 'ios' ? 14 : 12,
-                      textTransform: 'capitalize',
-                      marginBottom: 4,
-                    }}
-                    numberOfLines={1}
-                  >
-                    {isPremium ? 'Membre Premium' : 'Membre Standard'}
-                  </Text>
-                </View>
-              </TouchableOpacity>
               {/* MENU */}
               <items.BurgerMenuItem
                 title={'>  Plantmed Premium'}
