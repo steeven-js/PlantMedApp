@@ -1,7 +1,13 @@
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
 import React, {useState, useEffect, useRef} from 'react';
-import {View, TextInput, TouchableOpacity, StyleSheet, Platform} from 'react-native';
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Platform,
+} from 'react-native';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {
@@ -12,14 +18,14 @@ import firestore from '@react-native-firebase/firestore';
 
 import {text} from '../text';
 import {alert} from '../alert';
-import {hooks} from '../hooks';
 import {utils} from '../utils';
 import {custom} from '../custom';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {components} from '../components';
 import {validation} from '../validation';
-import {ENDPOINTS, CONFIG} from '../config';
+import {actions} from '../store/actions';
+import {hooks, useAppDispatch} from '../hooks';
 import {validateName} from '../validation/validateName';
 import {validateEmail} from '../validation/validateEmail';
 import {handleTextChange} from '../utils/handleTextChange';
@@ -45,6 +51,8 @@ const SignUp: React.FC = () => {
   const emailInputRef = useRef<TextInput>(null);
   const passwordInputRef = useRef<TextInput>(null);
   const confirmPasswordInputRef = useRef<TextInput>(null);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (loading) {
@@ -95,6 +103,12 @@ const SignUp: React.FC = () => {
         });
 
         alert.userSuccessCreated();
+
+        dispatch(actions.setScreen('Home'));
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'TabNavigator'}],
+        });
 
         console.log('UserProfile created successfully');
 
@@ -190,6 +204,12 @@ const SignUp: React.FC = () => {
           alert.userSuccessCreated();
         }
 
+        dispatch(actions.setScreen('Home'));
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'TabNavigator'}],
+        });
+
         console.log('UserProfile created successfully');
       }
 
@@ -236,7 +256,9 @@ const SignUp: React.FC = () => {
         const userProfileData = {
           uid: authenticatedUser.uid,
           email: authenticatedUser.email || 'identifiant apple',
-          displayName: authenticatedUser.displayName || 'Utilisateur Apple',
+          displayName:
+            authenticatedUser.displayName ||
+            `Utilisateur - ${generateRandomString()}`,
           photoURL: authenticatedUser.photoURL || '',
           updatedAt: firestore.FieldValue.serverTimestamp(),
           service: 'apple',
@@ -246,9 +268,13 @@ const SignUp: React.FC = () => {
 
         await userProfileRef.set(userProfileData, {merge: true});
 
+        dispatch(actions.setScreen('Home'));
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'TabNavigator'}],
+        });
+
         console.log('UserProfile created/updated successfully');
-      } else {
-        alert.userSuccessCreated();
       }
 
       return userCredential;
@@ -392,6 +418,11 @@ const SignUp: React.FC = () => {
   // Fonction pour afficher la hauteur
   const renderHeight = (): JSX.Element => {
     return <View style={{height: utils.responsiveHeight(70, true)}} />;
+  };
+
+  // Générer une chaine de caractères aléatoire de 7 caractères
+  const generateRandomString = () => {
+    return Math.random().toString(36).substring(2, 9);
   };
 
   // Fonction pour afficher le contenu

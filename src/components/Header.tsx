@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Modal from 'react-native-modal';
-import {useRoute} from '@react-navigation/native';
 import {
   View,
   Text,
@@ -20,31 +19,30 @@ import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {HeaderType} from '../types';
 import {useAuth} from '../hooks/useAuth';
-import {actions} from '../store/actions';
 import packageJson from '../../package.json';
 import {queryHooks} from '../store/slices/apiSlice';
-import {useAppSelector, useAppDispatch} from '../store';
+import {useAppSelector} from '../store';
 
 const Header: React.FC<HeaderType> = ({
   title,
   style,
   search,
   onGoBack,
-  basketIcon,
   burgerIcon,
   goBackIcon,
   bottomLine,
 }) => {
-  const dispatch = useAppDispatch();
   const navigation = hooks.useAppNavigation();
+
+  const [showModal, setShowModal] = useState(false);
 
   const {user} = useAuth();
 
   const isPremium = useAppSelector(state => state.premiumSlice.premium);
-  const cart = useAppSelector(state => state.cartSlice.list);
-  const subtotal = useAppSelector(state => state.cartSlice.subtotal);
 
-  const [showModal, setShowModal] = useState(false);
+  const wishlist = hooks.useAppSelector(
+    state => state.plantmedWishlistSlice.list,
+  );
 
   const {
     data: plantsData,
@@ -58,26 +56,9 @@ const Header: React.FC<HeaderType> = ({
   const bestQuantity = plantsData?.plantmed.filter(
     item => item.is_best_seller,
   ).length;
-
-  const route = useRoute();
+  const wishlistQty = wishlist.length;
 
   const isLoading = plantsLoading;
-
-  const handleOnPress = () => {
-    if (cart.length > 0) {
-      dispatch(actions.setScreen('Order'));
-      route.name === 'Shop' && navigation.navigate('TabNavigator');
-      route.name === 'Product' && navigation.navigate('TabNavigator');
-    }
-    if (cart.length === 0) {
-      Alert.alert('Your cart is empty', 'Please add some items to your cart', [
-        {
-          text: 'OK',
-          onPress: () => console.log('OK Pressed'),
-        },
-      ]);
-    }
-  };
 
   const renderGoBack = (): JSX.Element | null => {
     if (goBackIcon && navigation.canGoBack()) {
@@ -232,6 +213,7 @@ const Header: React.FC<HeaderType> = ({
                 }}
               />
               <items.BurgerMenuItem
+                qty={`${wishlistQty}`}
                 title='>  Mes Favoris'
                 onPress={() => {
                   setShowModal(false);
@@ -395,49 +377,6 @@ const Header: React.FC<HeaderType> = ({
     return null;
   };
 
-  const renderBasket = (): JSX.Element | null => {
-    if (basketIcon) {
-      return (
-        <TouchableOpacity
-          onPress={handleOnPress}
-          style={{
-            right: 0,
-            position: 'absolute',
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: 20,
-          }}
-        >
-          <View
-            style={{
-              height: 22,
-              borderRadius: 11,
-              paddingHorizontal: 7,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: theme.colors.mainColor,
-            }}
-          >
-            <Text
-              style={{
-                color: theme.colors.white,
-                ...theme.fonts.DM_Sans_700Bold,
-                fontSize: Platform.OS === 'ios' ? 10 : 8,
-              }}
-              numberOfLines={1}
-            >
-              {cart.length > 0 ? `$${subtotal.toFixed(2)}` : '$0'}
-            </Text>
-          </View>
-          <svg.BasketSvg />
-        </TouchableOpacity>
-      );
-    }
-
-    return null;
-  };
-
   const renderContent = (): JSX.Element => {
     const containerStyle: ViewStyle = {
       flexDirection: 'row',
@@ -463,7 +402,6 @@ const Header: React.FC<HeaderType> = ({
           {renderBurgerIcon()}
           {renderTitle()}
           {renderSearch()}
-          {/* {renderBasket()} */}
           {renderBurgerMenu()}
         </View>
       </custom.ImageBackground>

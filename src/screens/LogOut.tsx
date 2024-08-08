@@ -58,6 +58,10 @@ const renderButtons = (): JSX.Element => {
             await firebase.auth().signOut();
             // dispatch currentTabScreen to 'Home'
             dispatch(actions.setScreen('Home'));
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'TabNavigator' }],
+            });
             console.log('User signed out!');
           } catch (error) {
             console.error('Error signing out: ', error);

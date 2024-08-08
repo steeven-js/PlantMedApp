@@ -15,11 +15,14 @@ import {utils} from '../utils';
 import {custom} from '../custom';
 import {theme} from '../constants';
 import {components} from '../components';
-import { useAppSelector } from '../store';
+import {useAppSelector} from '../store';
+import {useAuth} from '../hooks/useAuth';
 import {useSubscription} from '../hooks/revenueCat';
 
 const Premium: React.FC = () => {
   const navigation = hooks.useAppNavigation();
+
+  const {user} = useAuth();
 
   const {offerings, purchaseSubscription, fetchOfferings, loading, error} =
     useSubscription();
@@ -65,14 +68,14 @@ const Premium: React.FC = () => {
     );
   };
   const renderHeader = (): JSX.Element => {
-    return <components.Header goBackIcon={true} title="Premium" />;
+    return <components.Header goBackIcon={true} title='Premium' />;
   };
 
   const renderContent = (): JSX.Element => {
     if (loading) {
       return (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color={theme.colors.steelTeal} />
+          <ActivityIndicator size='large' color={theme.colors.steelTeal} />
         </View>
       );
     }
@@ -106,16 +109,27 @@ const Premium: React.FC = () => {
           résilier à tout moment depuis votre compte.
         </text.T16>
 
-        <TouchableOpacity
-          style={styles.subscribeButton}
-          onPress={isPremium ? alreadyPremium : handleSubscribe}
-        >
-          <text.T18 style={styles.buttonText}>
-            {isPremium
-              ? 'Vous êtes déjà Premium'
-              : 'Devenir Premium - 1,99 €/mois'}
-          </text.T18>
-        </TouchableOpacity>
+        {user ? (
+          <TouchableOpacity
+            style={styles.subscribeButton}
+            onPress={isPremium ? alreadyPremium : handleSubscribe}
+          >
+            <text.T18 style={styles.buttonText}>
+              {isPremium
+                ? 'Vous êtes déjà Premium'
+                : 'Devenir Premium - 1,99 €/mois'}
+            </text.T18>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            style={styles.subscribeButton}
+            onPress={() => navigation.navigate('SignIn')}
+          >
+            <text.T18 style={styles.buttonText}>
+              Se connecter pour devenir Premium
+            </text.T18>
+          </TouchableOpacity>
+        )}
 
         <text.T14 style={styles.termsText}>
           En activant le compte Premium, vous acceptez nos Conditions
@@ -125,7 +139,8 @@ const Premium: React.FC = () => {
         <View style={styles.linksContainer}>
           <TouchableOpacity
             style={styles.linkButton}
-            onPress={openPrivacyPolicy}>
+            onPress={openPrivacyPolicy}
+          >
             <text.T12 style={styles.linkText}>Confidentialité</text.T12>
           </TouchableOpacity>
           <TouchableOpacity style={styles.linkButton} onPress={openTermsOfUse}>
@@ -142,11 +157,13 @@ const Premium: React.FC = () => {
   return (
     <custom.ImageBackground
       style={styles.background}
-      resizeMode="stretch"
-      source={require('../assets/bg/02.png')}>
+      resizeMode='stretch'
+      source={require('../assets/bg/02.png')}
+    >
       <custom.SafeAreaView
         insets={['top', 'bottom']}
-        containerStyle={styles.safeArea}>
+        containerStyle={styles.safeArea}
+      >
         {renderHeader()}
         {renderContent()}
       </custom.SafeAreaView>

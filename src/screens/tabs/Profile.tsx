@@ -71,24 +71,28 @@ const Profile: React.FC = () => {
         }}
       >
         <View>
-          <items.ProfileItem
-            title={isPremium ? 'Compte premium' : 'Compte gratuit'}
-            onPress={() => {
-              navigation.navigate('MemberAccount');
-            }}
-            icon={<svg.UserSvg />}
-            goNavigation={true}
-            containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-          />
-          <items.ProfileItem
-            title={'Informations personnelles'}
-            onPress={() => {
-              navigation.navigate('EditProfile');
-            }}
-            icon={<svg.UserSvg />}
-            goNavigation={true}
-            containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-          />
+          {user && (
+            <items.ProfileItem
+              title={isPremium ? 'Compte premium' : 'Compte gratuit'}
+              onPress={() => {
+                navigation.navigate('MemberAccount');
+              }}
+              icon={<svg.UserSvg />}
+              goNavigation={true}
+              containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+            />
+          )}
+          {user && (
+            <items.ProfileItem
+              title={'Informations personnelles'}
+              onPress={() => {
+                navigation.navigate('EditProfile');
+              }}
+              icon={<svg.UserSvg />}
+              goNavigation={true}
+              containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+            />
+          )}
           <items.ProfileItem
             title="Conditions d'utilisation"
             onPress={() => {
@@ -108,35 +112,52 @@ const Profile: React.FC = () => {
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
           <items.ProfileItem
-            title= {Platform.OS === 'ios' ? 'Conditions d\'utilisation Apple' : 'Conditions d\'utilisation Google'}
+            title={
+              Platform.OS === 'ios'
+                ? "Conditions d'utilisation Apple"
+                : "Conditions d'utilisation Google"
+            }
             onPress={Platform.OS === 'ios' ? openAppleEULA : () => {}}
             icon={<svg.FileTextSvg />}
             goNavigation={true}
             containerStyle={{marginBottom: utils.responsiveHeight(6)}}
           />
-          <items.ProfileItem
-            title='Déconnexion'
-            onPress={() => {
-              navigation.navigate('LogOut');
-            }}
-            icon={<svg.SignOutSvg />}
-            containerStyle={{marginBottom: utils.responsiveHeight(10)}}
-          />
+          {user ? (
+            <items.ProfileItem
+              title='Déconnexion'
+              onPress={() => {
+                navigation.navigate('LogOut');
+              }}
+              icon={<svg.SignOutSvg />}
+              containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+            />
+          ) : (
+            <items.ProfileItem
+              title='Connexion/Inscription'
+              onPress={() => {
+                navigation.navigate('SignIn');
+              }}
+              icon={<svg.UserSvg />}
+              containerStyle={{marginBottom: utils.responsiveHeight(10)}}
+            />
+          )}
         </View>
 
-        <View
-          style={{
-            marginTop: utils.responsiveHeight(20) * 2,
-          }}
-        >
-          <items.ProfileItem
-            title='Supprimer le compte'
-            onPress={() => {
-              navigation.navigate('DeleteAccount');
+        {user && (
+          <View
+            style={{
+              marginTop: utils.responsiveHeight(20) * 2,
             }}
-            icon={<svg.DeleteSvg />}
-          />
-        </View>
+          >
+            <items.ProfileItem
+              title='Supprimer le compte'
+              onPress={() => {
+                navigation.navigate('DeleteAccount');
+              }}
+              icon={<svg.DeleteSvg />}
+            />
+          </View>
+        )}
       </ScrollView>
     );
   };
@@ -156,7 +177,7 @@ const Profile: React.FC = () => {
           }}
           showsVerticalScrollIndicator={false}
         >
-          {renderUserInfo()}
+          {user && renderUserInfo()}
           {renderMenu()}
         </ScrollView>
       </custom.ImageBackground>

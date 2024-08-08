@@ -21,8 +21,7 @@ import {theme} from '../constants';
 import {components} from '../components';
 import {actions} from '../store/actions';
 import {validation} from '../validation';
-import {ENDPOINTS, CONFIG} from '../config';
-import {useAppSelector, useAppDispatch} from '../store';
+import {useAppDispatch} from '../store';
 import {validateEmail} from '../validation/validateEmail';
 import {handleTextChange} from '../utils/handleTextChange';
 
@@ -56,11 +55,6 @@ const SignIn: React.FC = () => {
         '453782988338-bjrced2v0tqohg68j6dljju0qp1tqrgm.apps.googleusercontent.com',
     });
   }, [loading]);
-
-  // Générer une chaine de caractères aléatoire de 7 caractères
-  const generateRandomString = () => {
-    return Math.random().toString(36).substring(2, 9);
-  };
 
   // Fonction pour gérer la connexion de l'utilisateur
   const handleSignIn = async () => {
@@ -96,6 +90,12 @@ const SignIn: React.FC = () => {
             },
             {merge: true},
           ); // Utiliser merge: true pour mettre à jour sans écraser les champs existants
+
+        dispatch(actions.setScreen('Home'));
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'TabNavigator'}],
+        });
 
         console.log('UserProfile login successfully');
       }
@@ -174,6 +174,13 @@ const SignIn: React.FC = () => {
         // Utilisation de set avec merge: true pour créer ou mettre à jour le document
         await userProfileRef.set(userProfileData, {merge: true});
 
+        dispatch(actions.setScreen('Home'));
+
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'TabNavigator'}],
+        });
+
         console.log('UserProfile created/updated successfully');
       }
 
@@ -231,6 +238,12 @@ const SignIn: React.FC = () => {
         };
 
         await userProfileRef.set(userProfileData, {merge: true});
+
+        dispatch(actions.setScreen('Home'));
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'TabNavigator'}],
+        });
 
         console.log('UserProfile created/updated successfully');
       }
@@ -417,6 +430,11 @@ const SignIn: React.FC = () => {
         }}
       />
     );
+  };
+
+  // Générer une chaine de caractères aléatoire de 7 caractères
+  const generateRandomString = () => {
+    return Math.random().toString(36).substring(2, 9);
   };
 
   // Fonction pour afficher le contenu
