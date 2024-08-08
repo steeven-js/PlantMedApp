@@ -33,8 +33,6 @@ const Plants: React.FC = () => {
   const [refreshing, setRefreshing] = useState(false);
   const plants = plantsData?.plantmed ?? [];
 
-  console.log('plants', plants);
-
   const isError = !!plantsError;
   const isLoading = plantsLoading;
 
@@ -60,7 +58,6 @@ const Plants: React.FC = () => {
           }}
         >
           {plants.map((item, index) => {
-
             return (
               <TouchableOpacity
                 key={index}
@@ -71,22 +68,12 @@ const Plants: React.FC = () => {
                   justifyContent: 'space-around',
                 }}
                 onPress={() => {
-                  if (qty > 0) {
-                    if (isPremium) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
-                    } else if (!isPremium && item.is_prenium === false) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
-                    } else {
-                      navigation.navigate('Premium');
-                    }
+                  if (isPremium) {
+                    navigation.navigate('PlantMed', {item});
+                  } else if (!isPremium && item.is_prenium == false) {
+                    navigation.navigate('PlantMed', {item});
                   } else {
-                    Alert.alert('No data', 'No data available for this category');
+                    navigation.navigate('Premium');
                   }
                 }}
               >
