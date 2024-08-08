@@ -2223,8 +2223,6 @@ PODS:
   - RNGoogleSignin (12.2.1):
     - GoogleSignIn (~> 7.1)
     - React-Core
-  - RNIap (12.15.1):
-    - React-Core
   - RNPurchases (7.28.1):
     - PurchasesHybridCommon (= 11.1.1)
     - React-Core
@@ -2307,7 +2305,6 @@ DEPENDENCIES:
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
   - "RNGoogleSignin (from `../node_modules/@react-native-google-signin/google-signin`)"
-  - RNIap (from `../node_modules/react-native-iap`)
   - RNPurchases (from `../node_modules/react-native-purchases`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -2466,8 +2463,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/firestore"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-google-signin/google-signin"
-  RNIap:
-    :path: "../node_modules/react-native-iap"
   RNPurchases:
     :path: "../node_modules/react-native-purchases"
   RNScreens:
@@ -2564,7 +2559,6 @@ SPEC CHECKSUMS:
   RNFBAuth: e923d3f87088009ac8505140599ec1e784d77bd0
   RNFBFirestore: 9b5e7d645787f02d5d16c4e060e778e9da762e02
   RNGoogleSignin: 08dc4ba7eac2096c7fecfe109f0950fa4683c803
-  RNIap: 17583f958d35788a87948e94072ff6edd3580497
   RNPurchases: 4305de02b902d3c1e56a50295dc0a6e758b73095
   RNScreens: 75d52aeeb16586a66e64f088ff2a637a0e952d94
   RNSVG: 963a95f1f5d512a13d11ffd50d351c87fb5c6890

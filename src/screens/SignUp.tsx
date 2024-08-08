@@ -83,7 +83,7 @@ const SignUp: React.FC = () => {
             photoURL: user.photoURL || '',
             createdAt: firestore.FieldValue.serverTimestamp(),
             updatedAt: firestore.FieldValue.serverTimestamp(),
-            isPremium: false,
+            premium: false,
             service: 'email',
             platform: Platform.OS === 'ios' ? 'ios' : 'android',
             // Ajoutez d'autres champs nécessaires ici
