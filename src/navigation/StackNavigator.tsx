@@ -101,8 +101,8 @@ const StackNavigator: React.FC = () => {
         options={{headerShown: false}}
       />
       <RootStack.Screen
-        name="IsPreniumContent"
-        component={screens.IsPreniumContent}
+        name="Favorites"
+        component={screens.PlantWishlist}
         options={{headerShown: false}}
       />
       {/* VERIFICATION */}

@@ -1,16 +1,15 @@
 import React, {useEffect} from 'react';
 import {ScrollView} from 'react-native';
 
-import {text} from '../../text';
-import {items} from '../../items';
-import {hooks} from '../../hooks';
-import {utils} from '../../utils';
-import {custom} from '../../custom';
-import {components} from '../../components';
-import {queryHooks} from '../../store/slices/apiSlice';
+import {text} from '../text';
+import {items} from '../items';
+import {hooks} from '../hooks';
+import {utils} from '../utils';
+import {custom} from '../custom';
+import {components} from '../components';
+import {queryHooks} from '../store/slices/apiSlice';
 
 const PlantWishlist: React.FC = () => {
-
   const wishlist = hooks.useAppSelector(
     state => state.plantmedWishlistSlice.list,
   );
@@ -22,13 +21,22 @@ const PlantWishlist: React.FC = () => {
     isLoading: plantsLoading,
   } = queryHooks.useGetPlantmedQuery();
 
+  const renderHeader = (): JSX.Element => {
+    return (
+      <components.Header
+        title="Mes favoris"
+        goBackIcon={true}
+      />
+    );
+  };
+
   const renderProducts = (): JSX.Element | null => {
     if (wishlist.length > 0) {
       return (
         <custom.ImageBackground
           style={{flex: 1}}
           resizeMode='stretch'
-          source={require('../../assets/bg/02.png')}
+          source={require('../assets/bg/02.png')}
         >
           <ScrollView
             showsVerticalScrollIndicator={false}
@@ -63,7 +71,7 @@ const PlantWishlist: React.FC = () => {
           }}
         >
           <custom.Image
-            source={require('../../assets/icons/03.png')}
+            source={require('../assets/icons/03.png')}
             style={{
               height: utils.responsiveHeight(120),
               aspectRatio: 123.39 / 120,
@@ -92,10 +100,11 @@ const PlantWishlist: React.FC = () => {
     }
 
     return (
-      <React.Fragment>
+      <custom.SafeAreaView insets={['top', 'bottom']}>
+        {renderHeader()}
         {renderProducts()}
         {renderEmpty()}
-      </React.Fragment>
+      </custom.SafeAreaView>
     );
   };
 

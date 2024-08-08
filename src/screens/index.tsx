@@ -17,7 +17,7 @@ import PlantMedList from './PlantMedList';
 import PrivacyPolicy from './PrivacyPolicy';
 import DeleteAccount from './DeleteAccount';
 import MemberAccount from './MemberAccount';
-import IsPreniumContent from './IsPreniumContent';
+import PlantWishlist from './PlantWishlist';
 import PremiumActivated from './PremiumActivated';
 import VerifyEmail from './verification/VerifyEmail';
 import VerifyPhone from './verification/VerifyPhone';
@@ -52,12 +52,12 @@ export const screens = {
   TabNavigator,
   SendEmailOtp,
   SendPhoneOtp,
+  PlantWishlist,
   PhoneVerified,
   EmailVerified,
   DeleteAccount,
   PrivacyPolicy,
   MemberAccount,
-  IsPreniumContent,
   PremiumActivated,
   VerifyEmailForgot,
   SendEmailOtpForgot,

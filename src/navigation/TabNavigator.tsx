@@ -5,7 +5,6 @@ import Home from '../screens/tabs/Home';
 import Plants from '../screens/tabs/Plants';
 import Profile from '../screens/tabs/Profile';
 import Symptoms from '../screens/tabs/Symptoms';
-import PlantWishlist from '../screens/tabs/PlantWishlist';
 
 import {hooks} from '../hooks';
 import {custom} from '../custom';
@@ -27,10 +26,6 @@ const TabNavigator: React.FC = () => {
   const getTitle = (): string | null => {
     if (currentTabScreen === 'Profile') {
       return 'Mon profil';
-    }
-
-    if (currentTabScreen === 'Wishlist') {
-      return 'Mes favoris';
     }
 
     return null;
@@ -63,8 +58,7 @@ const TabNavigator: React.FC = () => {
         {currentTabScreen === tabs[0].name && <Home />}
         {currentTabScreen === tabs[1].name && <Plants />}
         {currentTabScreen === tabs[2].name && <Symptoms />}
-        {currentTabScreen === tabs[3].name && <PlantWishlist />}
-        {currentTabScreen === tabs[4].name && <Profile />}
+        {currentTabScreen === tabs[3].name && <Profile />}
       </View>
     );
   };

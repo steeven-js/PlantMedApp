@@ -52,7 +52,7 @@ export type RootStackParamList = {
   PremiumActivated: undefined;
   MemberAccount: undefined;
   ManageSubscription: undefined;
-  IsPreniumContent: undefined;
+  Favorites: undefined;
 
   /* VERIFICATION */
   SignUpAccountCreated: {email?: string; password?: string};
