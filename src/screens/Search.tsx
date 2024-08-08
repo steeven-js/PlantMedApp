@@ -28,7 +28,7 @@ const Search: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const {loading} = useAuth();
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const {
     data: plantsData,

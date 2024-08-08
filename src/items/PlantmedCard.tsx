@@ -19,7 +19,7 @@ const PlantmedCard: React.FC<Props> = ({
 }): JSX.Element | null => {
   const navigation = hooks.useAppNavigation();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const onPress = () => {
     if (isPremium) {

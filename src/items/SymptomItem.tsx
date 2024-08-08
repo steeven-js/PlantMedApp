@@ -19,7 +19,7 @@ type Props = {
 
 const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
   const navigation = hooks.useAppNavigation();
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const onPress = () => {
     if (qty > 0) {

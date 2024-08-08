@@ -24,7 +24,7 @@ const Premium: React.FC = () => {
   const {offerings, purchaseSubscription, fetchOfferings, loading, error} =
     useSubscription();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const handleSubscribe = async () => {
     if (isPremium) {

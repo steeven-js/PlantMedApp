@@ -40,7 +40,7 @@ const Header: React.FC<HeaderType> = ({
 
   const {user} = useAuth();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
   const cart = useAppSelector(state => state.cartSlice.list);
   const subtotal = useAppSelector(state => state.cartSlice.subtotal);
 

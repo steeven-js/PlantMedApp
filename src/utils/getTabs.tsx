@@ -118,21 +118,31 @@ const getTabs = () => {
     {
       id: 1,
       name: 'Home',
+      label: 'Accueil',
       icon: HomeTabSvg,
     },
     {
       id: 2,
-      name: 'Category',
+      name: 'Plants',
+      label: 'Plantes',
       icon: CategoryTabSvg,
     },
     {
       id: 3,
-      name: 'Wishlist',
-      icon: WishlistTabSvg,
+      name: 'Symptoms',
+      label: 'Symptomes',
+      icon: CategoryTabSvg,
     },
     {
       id: 4,
+      name: 'Wishlist',
+      label: 'Favoris',
+      icon: WishlistTabSvg,
+    },
+    {
+      id: 5,
       name: 'Profile',
+      label: 'Profile',
       icon: ProfileTabSvg,
     },
   ];

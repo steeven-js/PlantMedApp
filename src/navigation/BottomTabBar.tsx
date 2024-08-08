@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux';
 import {View, TouchableOpacity} from 'react-native';
 
 import {utils} from '../utils';
+import {text} from '../text';
 import {theme} from '../constants';
 import getTabs from '../utils/getTabs';
 import {useDispatch} from 'react-redux';
@@ -31,7 +32,9 @@ const BottomTabBar: React.FC = () => {
         paddingBottom: utils.homeIndicatorSettings(),
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
-      }}>
+        width: '100%',
+      }}
+    >
       {tabs.map((item, index) => {
         const iconColor =
           item.name === currentTabScreen
@@ -43,13 +46,31 @@ const BottomTabBar: React.FC = () => {
         return (
           <TouchableOpacity
             key={index}
-            style={{alignItems: 'center'}}
-            onPress={() => dispatch(setScreen(item.name))}>
-            <View style={{marginBottom: 6}}>
+            style={{
+              alignItems: 'center'
+            }}
+            onPress={() => dispatch(setScreen(item.name))}
+          >
+            <View style={{
+              marginBottom: 6}}>
               <item.icon
                 iconColor={iconColor}
                 backgroundColor={backgroundColor}
               />
+            </View>
+            <View style={{
+              marginBottom: 6,
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+              }}>
+              <text.T12
+              style={
+                item.name === currentTabScreen
+                  ? {color: '#CFF5CE'}
+                  : {color: theme.colors.white}
+              }
+              >{item.label}</text.T12>
             </View>
           </TouchableOpacity>
         );

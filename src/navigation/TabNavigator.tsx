@@ -2,6 +2,7 @@ import {View} from 'react-native';
 import React, {useEffect} from 'react';
 
 import Home from '../screens/tabs/Home';
+import Plants from '../screens/tabs/Plants';
 import Profile from '../screens/tabs/Profile';
 import Symptoms from '../screens/tabs/Symptoms';
 import PlantWishlist from '../screens/tabs/PlantWishlist';
@@ -36,7 +37,7 @@ const TabNavigator: React.FC = () => {
   };
 
   const getSearch = (): boolean => {
-    if (currentTabScreen === 'Category') {
+    if (currentTabScreen === 'Symptoms' || currentTabScreen === 'Plants') {
       return true;
     }
 
@@ -60,9 +61,10 @@ const TabNavigator: React.FC = () => {
     return (
       <View style={{flex: 1}}>
         {currentTabScreen === tabs[0].name && <Home />}
-        {currentTabScreen === tabs[1].name && <Symptoms />}
-        {currentTabScreen === tabs[2].name && <PlantWishlist />}
-        {currentTabScreen === tabs[3].name && <Profile />}
+        {currentTabScreen === tabs[1].name && <Plants />}
+        {currentTabScreen === tabs[2].name && <Symptoms />}
+        {currentTabScreen === tabs[3].name && <PlantWishlist />}
+        {currentTabScreen === tabs[4].name && <Profile />}
       </View>
     );
   };

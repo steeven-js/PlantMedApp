@@ -27,7 +27,7 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
   const navigation = hooks.useAppNavigation();
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const viewabilityConfig = useRef({
     viewAreaCoveragePercentThreshold: 50,

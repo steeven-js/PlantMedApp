@@ -19,7 +19,7 @@ const PlantWishlistItem: React.FC<Props> = ({
 }): JSX.Element => {
   const navigation = hooks.useAppNavigation();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   return (
     <TouchableOpacity

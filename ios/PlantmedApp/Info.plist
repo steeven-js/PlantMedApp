@@ -30,6 +30,12 @@
 				<string>com.googleusercontent.apps.453782988338-p1fn125tgm3ilpvibk846mjgise2qt36</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>plantmedapp</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>

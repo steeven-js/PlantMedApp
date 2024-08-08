@@ -16,7 +16,7 @@ const MemberAccount: React.FC = () => {
 
   const {formattedPremiumDate} = useSubscription();
 
-  const isPremium = useAppSelector(state => state.premiumSlice.prenium);
+  const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const renderHeader = (): JSX.Element => {
     return (

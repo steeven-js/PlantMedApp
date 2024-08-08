@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-  prenium: false,
+  premium: false,
 };
 
 export const premiumSlice = createSlice({
@@ -9,7 +9,7 @@ export const premiumSlice = createSlice({
   initialState,
   reducers: {
     setPremium: (state, action) => {
-      state.prenium = action.payload;
+      state.premium = action.payload;
     },
   },
 });

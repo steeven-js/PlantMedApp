@@ -6,7 +6,6 @@ import Source from './Source';
 import Filter from './Filter';
 import Sources from './Sources';
 import Premium from './Premium';
-import Product from './Product';
 import PlantMed from './PlantMed';
 import InfoSaved from './InfoSaved';
 import TermsOfUse from './TermsOfUse';
@@ -39,7 +38,6 @@ export const screens = {
   Search,
   Filter,
   Sources,
-  Product,
   Premium,
   PlantMed,
   InfoSaved,

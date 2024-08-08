@@ -3,6 +3,7 @@ export const colors = {
   textColor: '#4A6973',
   steelTeal: '#50858B',
   mainColor: '#23374A',
+  // mainColor: '#70A284', // Un vert plus doux et apaisant pour le thème principal
   pastelMint: '#CFF5CE',
   antiFlashWhite: '#E7EBEB',
   imageBackground: '#FAFAFA',

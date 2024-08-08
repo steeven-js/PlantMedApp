@@ -14,14 +14,13 @@ import {hooks} from '../../hooks';
 import {custom} from '../../custom';
 import {theme} from '../../constants';
 import {plantmed} from '../../plantmed';
-import { PlantMedType } from '../../types';
+import {PlantMedType} from '../../types';
 import {components} from '../../components';
-import { useAppSelector } from '../../store';
+import {useAppSelector} from '../../store';
 import {queryHooks} from '../../store/slices/apiSlice';
 
-const Symptoms: React.FC = () => {
+const Plants: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-
   const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const {
@@ -31,35 +30,26 @@ const Symptoms: React.FC = () => {
     refetch: refetchPlants,
   } = queryHooks.useGetPlantmedQuery();
 
-  const {
-    data: categoriesData,
-    error: categoriesError,
-    isLoading: categoriesLoading,
-    refetch: refetchCategories,
-  } = queryHooks.useGetSymptomsQuery();
-
   const [refreshing, setRefreshing] = useState(false);
+  const plants = plantsData?.plantmed ?? [];
 
-  let categories = categoriesData?.symptoms ?? [];
-  let plants = plantsData?.plantmed ?? [];
+  console.log('plants', plants);
 
-  const isError = categoriesError || plantsError;
-  const isLoading = categoriesLoading || plantsLoading;
-  const isData = categories.length === 0 && plants.length === 0;
+  const isError = !!plantsError;
+  const isLoading = plantsLoading;
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    Promise.all([refetchPlants(), refetchCategories()])
+    refetchPlants()
       .then(() => setRefreshing(false))
       .catch(error => {
         console.error(error);
         setRefreshing(false);
       });
-  }, []);
+  }, [refetchPlants]);
 
   const renderCategories = (): JSX.Element | null => {
-    const normalize = (str: string) => str.toLowerCase().trim();
-    if (categories?.length) {
+    if (plants?.length) {
       return (
         <View
           style={{
@@ -69,16 +59,8 @@ const Symptoms: React.FC = () => {
             marginBottom: utils.responsiveHeight(40 - 14),
           }}
         >
-          {categories.map((item, index) => {
-            const dataFilter = plantsData?.plantmed.filter(e => {
-              if (Array.isArray(e.symptoms)) {
-                return e.symptoms.some(
-                  symptom => normalize(symptom) === normalize(item.name),
-                );
-              }
-              return false;
-            });
-            const qty = dataFilter?.length ?? 0;
+          {plants.map((item, index) => {
+
             return (
               <TouchableOpacity
                 key={index}
@@ -95,7 +77,7 @@ const Symptoms: React.FC = () => {
                         title: item.name,
                         products: dataFilter ?? [],
                       });
-                    } else if (!isPremium && item.is_prenium == false) {
+                    } else if (!isPremium && item.is_prenium === false) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
                         products: dataFilter ?? [],
@@ -103,12 +85,8 @@ const Symptoms: React.FC = () => {
                     } else {
                       navigation.navigate('Premium');
                     }
-                  }
-                  if (qty === 0) {
-                    Alert.alert(
-                      'No data',
-                      'No data available for this category',
-                    );
+                  } else {
+                    Alert.alert('No data', 'No data available for this category');
                   }
                 }}
               >
@@ -170,7 +148,7 @@ const Symptoms: React.FC = () => {
   const renderContent = (): JSX.Element => {
     if (isLoading) return <components.Loader />;
     if (isError) return <components.Error />;
-    if (isData) return <components.NoData />;
+    if (!plants.length) return <components.NoData />;
 
     return (
       <custom.ImageBackground
@@ -198,4 +176,4 @@ const Symptoms: React.FC = () => {
   return renderContent();
 };
 
-export default Symptoms;
+export default Plants;

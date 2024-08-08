@@ -20,7 +20,7 @@ const Profile: React.FC = () => {
   const {checkSubscriptionStatus} = useSubscription();
 
   const isPremium = useSelector(
-    (state: RootState) => state.premiumSlice.prenium,
+    (state: RootState) => state.premiumSlice.premium,
   );
 
   useEffect(() => {

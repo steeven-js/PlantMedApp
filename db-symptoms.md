@@ -1,0 +1,93 @@
+Liste des symptomes :
+
+- Acné
+- Allergie
+- Anémie
+- Anorexie
+- Anti-inflammatoire
+- Antiseptique
+- Anxiété
+- Aphrodisiaque
+- Arthrite
+- Asthme
+- Boulimie
+- Bronchite
+- Brûlures d'estomac
+- Brûlures
+- Calculs biliaires
+- Cellulite
+- Cheveux
+- Engelures
+- Cholestérol
+- Circulation sanguine
+- Colite
+- Côlon irritable
+- Constipation
+- Cystite (infection urinaire)
+- Démangeaisons
+- Dépression
+- Dermatite
+- Diabète
+- Diarrhée
+- Douleur menstruelle
+- Elimination des toxines
+- Fatigue
+- Fertilité
+- Fièvre
+- Flatulence
+- Foie gras
+- Foie propre
+- Froid
+- Glaucome
+- Goutte
+- Grippe
+- Guérison
+- Hémorroïdes
+- Hyperhidrose
+- Hypertension
+- Hypotension
+- Indigestion
+- Infection de la gorge
+- Insomnie
+- Irritabilité
+- Jambes fatiguées
+- Mal de dents
+- Maladies cardiovasculaires
+- Maladie du foie
+- Maladie rhumatismale
+- Manque d'appétit
+- Mauvaise haleine
+- Maux d'estomac
+- Maux de tête
+- Ménopause
+- Migraine
+- Nausées
+- Nerfs
+- Névralgie
+- Pancréatite
+- Parasites intestinaux
+- Peau sèche
+- Perdre du poids
+- Pharyngite
+- Plaies dans la bouche
+- Amnésie
+- Problèmes digestifs
+- Prostate
+- Psoriasis
+- Purifier les reins
+- Rétention d'eau
+- Salpingite
+- Sinusite
+- Spasmes intestinaux
+- Piqûres d'insectes
+- Stress
+- Tache de peau
+- Tachycardie
+- Tendinite
+- Toux
+- Ulcère de l'estomac
+- Urétrite
+- Varices
+- Vertiges
+- Vieillissement
+- Vomissements
