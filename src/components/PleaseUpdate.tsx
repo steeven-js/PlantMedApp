@@ -1,23 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Alert, Linking, Text, View} from 'react-native';
 
 import {theme} from '../constants';
-import { useFocusEffect } from '@react-navigation/native';
 
 const PleaseUpdate: React.FC = () => {
-  useFocusEffect(
-    React.useCallback(() => {
-      Alert.alert('Info', "Veuillez mettre à jour l'application", [
+  useEffect(() => {
+    Alert.alert(
+      'Mise à jour requise',
+      "Veuillez mettre à jour l'application pour continuer à l'utiliser.",
+      [
         {
-          text: 'OK',
+          text: 'Mettre à jour',
           onPress: () =>
             Linking.openURL(
-              'https://apps.apple.com/fr/app/plantmed/id6503098172',
+              'https://play.google.com/store/apps/details?id=com.gh',
             ),
         },
-      ]);
-    }, [])
-  );
+      ],
+    );
+  }, []);
 
   return (
     <View

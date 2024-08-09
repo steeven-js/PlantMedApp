@@ -19,14 +19,14 @@ const App = () => {
     Orientation.lockToPortrait();
   }, []);
 
-  const {localVersion, firebaseVersion} = useAppVersion();
+  const {isUpdateRequired} = useAppVersion();
 
   return (
     <SafeAreaProvider>
       <Provider store={store}>
         <PersistGate loading={<components.Loader />} persistor={persistor}>
           <NavigationContainer>
-            {localVersion !== firebaseVersion ? <PleaseUpdateStack /> : <StackNavigator />}
+            {!isUpdateRequired ? <StackNavigator /> : <PleaseUpdateStack />}
           </NavigationContainer>
         </PersistGate>
         <components.AppState />
