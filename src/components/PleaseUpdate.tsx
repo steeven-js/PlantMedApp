@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
-import {Alert, Linking, Text, View} from 'react-native';
+import {Alert, Linking, StyleSheet, Text, View} from 'react-native';
 
 import {theme} from '../constants';
+import {custom} from '../custom';
 
 const PleaseUpdate: React.FC = () => {
   useEffect(() => {
@@ -21,24 +22,21 @@ const PleaseUpdate: React.FC = () => {
   }, []);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingHorizontal: 20,
-      }}
-    >
-      <Text
-        style={{
-          color: theme.colors.mainColor,
-          textAlign: 'center',
-        }}
-      >
-        Veuillez mettre à jour l'application
-      </Text>
-    </View>
+    <custom.ImageBackground
+      style={styles.background}
+      resizeMode='stretch'
+      source={require('../assets/images/plantmed-launcher.png')}
+    ></custom.ImageBackground>
   );
 };
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
+  safeArea: {
+    backgroundColor: theme.colors.transparent,
+  },
+});
 
 export default PleaseUpdate;
