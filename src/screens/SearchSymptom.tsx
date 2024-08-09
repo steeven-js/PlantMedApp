@@ -14,11 +14,11 @@ import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {SymptomType} from '../types';
 import {components} from '../components';
-import { useAppSelector } from '../store';
-import { useAuth } from '../hooks/useAuth';
+import {useAppSelector} from '../store';
+import {useAuth} from '../hooks/useAuth';
+import PreniumSvg from '../assets/svg/PreniumSvg';
 import {queryHooks} from '../store/slices/apiSlice';
 import {handleTextChange} from '../utils/handleTextChange';
-import PreniumSvg from '../assets/svg/PreniumSvg';
 
 const SearchSymptom: React.FC = () => {
   const navigation = hooks.useAppNavigation();

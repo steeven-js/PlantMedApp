@@ -60,6 +60,12 @@ const Premium: React.FC = () => {
     ]);
   };
 
+  const pleaseLogin = () => {
+    Alert.alert('Premium', 'Veuillez vous connecter pour devenir Premium', [
+      {text: 'OK', onPress: () => navigation.navigate('SignIn')},
+    ]);
+  }
+
   const openPrivacyPolicy = () => navigation.navigate('PrivacyPolicy');
   const openTermsOfUse = () => navigation.navigate('TermsOfUse');
   const openAppleEULA = () => {
@@ -123,7 +129,7 @@ const Premium: React.FC = () => {
         ) : (
           <TouchableOpacity
             style={styles.subscribeButton}
-            onPress={() => navigation.navigate('SignIn')}
+            onPress={pleaseLogin}
           >
             <text.T18 style={styles.buttonText}>
               Se connecter pour devenir Premium

@@ -17,7 +17,7 @@ import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
 import {components} from '../components';
-import { useAppSelector } from '../store';
+import {useAppSelector} from '../store';
 import {PlantMedScreenProps} from '../types/ScreenProps';
 import {PlantMedType, ViewableItemsChanged} from '../types';
 
@@ -172,33 +172,31 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
     return (
       <View
         style={{
-          ...theme.flex.rowCenterSpaceBetween,
-          marginHorizontal: 20,
+          ...theme.flex.rowCenterSpaceEvenly,
           marginBottom: utils.responsiveHeight(20),
         }}
       >
-        {tabs.map((item, index) => (
+        {tabs.map((tabItem, index) => (
           <TouchableOpacity
             key={index}
             style={{
               paddingHorizontal: 10,
               borderWidth: 1,
-              paddingVertical: 20,
+              paddingVertical: 10,
               borderRadius: 10,
+              ...theme.flex.colCenter,
               borderColor:
                 tab === index
                   ? theme.colors.steelTeal
                   : theme.colors.transparent,
               backgroundColor:
-                tab === index
-                  ? `${theme.colors.white}50`
-                  : theme.colors.transparent,
+                tab === index ? theme.colors.white : theme.colors.transparent,
               position: 'relative',
             }}
             onPress={() => setTab(index)}
           >
-            {item.svg}
-            {item.isPremium && (
+            {tabItem.svg}
+            {tabItem.isPremium && (
               <View
                 style={{
                   position: 'absolute',
@@ -209,6 +207,15 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
                 <svg.TabPreniumSvg />
               </View>
             )}
+            <text.T14
+              style={{
+                color: theme.colors.textColor,
+                textTransform: 'capitalize',
+                textAlign: 'center',
+              }}
+            >
+              {tabItem.name}
+            </text.T14>
           </TouchableOpacity>
         ))}
       </View>
@@ -220,8 +227,6 @@ const PlantMed: React.FC<PlantMedScreenProps> = ({route}) => {
       <ScrollView
         contentContainerStyle={{
           flexGrow: 1,
-          paddingTop: utils.responsiveHeight(40),
-          paddingHorizontal: 20,
         }}
         showsVerticalScrollIndicator={false}
       >

@@ -81,10 +81,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
     return (
       <View
         style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginHorizontal: 20,
+          ...theme.flex.rowCenterSpaceEvenly,
           marginBottom: utils.responsiveHeight(20),
         }}
       >
@@ -94,15 +91,16 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
             style={{
               paddingHorizontal: 10,
               borderWidth: 1,
-              paddingVertical: 20,
+              paddingVertical: 10,
               borderRadius: 10,
+              ...theme.flex.colCenter,
               borderColor:
                 tab === index
                   ? theme.colors.steelTeal
                   : theme.colors.transparent,
               backgroundColor:
                 tab === index
-                  ? `${theme.colors.white}50`
+                  ? theme.colors.white
                   : theme.colors.transparent,
               position: 'relative',
             }}
@@ -120,6 +118,15 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
                 <svg.TabPreniumSvg />
               </View>
             )}
+            <text.T18
+              style={{
+                color: theme.colors.textColor,
+                textTransform: 'capitalize',
+                textAlign: 'center',
+              }}
+            >
+              {tabItem.name}
+            </text.T18>
           </TouchableOpacity>
         ))}
       </View>
