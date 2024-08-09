@@ -40,7 +40,7 @@ const SignUp: React.FC = () => {
       const userCredential = await auth().signInWithCredential(googleCredential);
       
       // L'utilisateur est maintenant connecté
-      console.log('Utilisateur connecté :', userCredential.user.displayName);
+      // console.log('Utilisateur connecté :', userCredential.user.displayName);
       
       // Naviguez vers l'écran suivant ou effectuez d'autres actions nécessaires
       // navigation.replace('Home');
@@ -132,7 +132,7 @@ const SignUp: React.FC = () => {
     <custom.ImageBackground
       style={{flex: 1}}
       resizeMode='stretch'
-      source={require('../assets/bg/01.png')}
+      source={require('../assets/bg/02.png')}
     >
       <custom.SafeAreaView
         insets={['top', 'bottom']}

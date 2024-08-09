@@ -97,7 +97,7 @@ const SignIn: React.FC = () => {
           routes: [{name: 'TabNavigator'}],
         });
 
-        console.log('UserProfile login successfully');
+        // console.log('UserProfile login successfully');
       }
     } catch (error: any) {
       console.error('Error:', error);
@@ -181,7 +181,7 @@ const SignIn: React.FC = () => {
           routes: [{name: 'TabNavigator'}],
         });
 
-        console.log('UserProfile created/updated successfully');
+        // console.log('UserProfile created/updated successfully');
       }
 
       return userCredential;
@@ -245,7 +245,7 @@ const SignIn: React.FC = () => {
           routes: [{name: 'TabNavigator'}],
         });
 
-        console.log('UserProfile created/updated successfully');
+        // console.log('UserProfile created/updated successfully');
       }
 
       return userCredential;
@@ -464,7 +464,7 @@ const SignIn: React.FC = () => {
     <custom.ImageBackground
       style={{flex: 1}}
       resizeMode='stretch'
-      source={require('../assets/bg/01.png')}
+      source={require('../assets/bg/02.png')}
     >
       <custom.SafeAreaView
         insets={['top', 'bottom']}

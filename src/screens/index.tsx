@@ -14,6 +14,7 @@ import EditProfile from './EditProfile';
 import Description from './Description';
 import SearchPlant from './SearchPlant';
 import NewPassword from './NewPassword';
+import PlantMedList from './PlantMedList';
 import SearchSymptom from './SearchSymptom';
 import PrivacyPolicy from './PrivacyPolicy';
 import DeleteAccount from './DeleteAccount';
@@ -51,6 +52,7 @@ export const screens = {
   Description,
   NewPassword,
   VerifyEmail,
+  PlantMedList,
   PleaseUpdate,
   TabNavigator,
   SendEmailOtp,

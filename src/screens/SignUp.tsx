@@ -110,7 +110,7 @@ const SignUp: React.FC = () => {
           routes: [{name: 'TabNavigator'}],
         });
 
-        console.log('UserProfile created successfully');
+        // console.log('UserProfile created successfully');
 
         // Optionnel : Recharger l'utilisateur pour s'assurer que les changements sont reflétés
         await user.reload();
@@ -210,7 +210,7 @@ const SignUp: React.FC = () => {
           routes: [{name: 'TabNavigator'}],
         });
 
-        console.log('UserProfile created successfully');
+        // console.log('UserProfile created successfully');
       }
 
       return userCredential;
@@ -274,7 +274,7 @@ const SignUp: React.FC = () => {
           routes: [{name: 'TabNavigator'}],
         });
 
-        console.log('UserProfile created/updated successfully');
+        // console.log('UserProfile created/updated successfully');
       }
 
       return userCredential;
@@ -450,7 +450,7 @@ const SignUp: React.FC = () => {
     <custom.ImageBackground
       style={{flex: 1}}
       resizeMode='stretch'
-      source={require('../assets/bg/01.png')}
+      source={require('../assets/bg/02.png')}
     >
       <custom.SafeAreaView
         insets={['top', 'bottom']}

@@ -125,7 +125,7 @@ const Header: React.FC<HeaderType> = ({
           <custom.ImageBackground
             style={{flex: 1}}
             resizeMode='stretch'
-            source={require('../assets/bg/01.png')}
+            source={require('../assets/bg/02.png')}
           >
             {/* CLOSE BUTTON */}
             <TouchableOpacity
@@ -405,7 +405,7 @@ const Header: React.FC<HeaderType> = ({
     return (
       <custom.ImageBackground
         resizeMode='stretch'
-        source={require('../assets/bg/01.png')}
+        source={require('../assets/bg/02.png')}
       >
         <View style={{...containerStyle}}>
           {renderGoBack()}

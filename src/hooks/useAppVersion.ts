@@ -20,19 +20,19 @@ export const useAppVersion = () => {
                 const version = appVersionData?.version;
 
                 if (version) {
-                    console.log(`App Version (${platformDocId}):`, version);
-                    console.log('Local Version:', localVersion);
+                    // console.log(`App Version (${platformDocId}):`, version);
+                    // console.log('Local Version:', localVersion);
 
                     const updateRequired = compareVersions(version, localVersion) > 0;
                     setIsUpdateRequired(updateRequired);
-                    console.log(updateRequired ? 'Update required' : 'No update required');
+                    // console.log(updateRequired ? 'Update required' : 'No update required');
 
                     setFirebaseVersion(version);
                 } else {
-                    console.log(`Version not found in ${platformDocId} document.`);
+                    // console.log(`Version not found in ${platformDocId} document.`);
                 }
             } else {
-                console.log(`No app-version data found for ${platformDocId}`);
+                // console.log(`No app-version data found for ${platformDocId}`);
             }
         } catch (error) {
             console.error('Error fetching app-version:', error);

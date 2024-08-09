@@ -164,7 +164,7 @@ const Premium: React.FC = () => {
     <custom.ImageBackground
       style={styles.background}
       resizeMode='stretch'
-      source={require('../assets/bg/01.png')}
+      source={require('../assets/bg/02.png')}
     >
       <custom.SafeAreaView
         insets={['top', 'bottom']}

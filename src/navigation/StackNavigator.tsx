@@ -65,6 +65,11 @@ const StackNavigator: React.FC = () => {
         options={{headerShown: false}}
       />
       <RootStack.Screen
+        name="PlantMedList"
+        component={screens.PlantMedList}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
         name="Filter"
         component={screens.Filter}
         options={{headerShown: false}}
