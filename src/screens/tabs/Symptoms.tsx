@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -91,15 +91,9 @@ const Symptoms: React.FC = () => {
                 onPress={() => {
                   if (qty > 0) {
                     if (isPremium) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
+                      navigation.navigate('Symptom', {item});
                     } else if (!isPremium && item.is_premium == false) {
-                      navigation.navigate('PlantMedList', {
-                        title: item.name,
-                        products: dataFilter ?? [],
-                      });
+                      navigation.navigate('Symptom', {item});
                     } else {
                       navigation.navigate('Premium');
                     }
