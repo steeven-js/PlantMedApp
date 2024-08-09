@@ -110,51 +110,6 @@ const Home: React.FC = () => {
       return plant.promotion === item.promotion;
     });
 
-    // Si item.promotion == 'Prenium' et qu'il n'y a pas de produits rediriger vers la page 'Premium'
-    // if (item.promotion === 'Prenium') {
-    //   return (
-    //     <TouchableOpacity
-    //       activeOpacity={0.5}
-    //       onPress={() => {
-    //         navigation.navigate('Premium');
-    //       }}
-    //     >
-    //       <custom.ImageBackground
-    //         source={{uri: item.image}}
-    //         style={{
-    //           width: theme.sizes.deviceWidth,
-    //           // aspectRatio: 375 / 500,
-    //           aspectRatio: 375 / 450,
-    //           paddingHorizontal: 20,
-    //           paddingTop: 40,
-    //           paddingBottom: 20,
-    //           justifyContent: 'space-between',
-    //         }}
-    //         imageStyle={{backgroundColor: theme.colors.imageBackground}}
-    //       >
-    //         <View>
-    //           <text.H2
-    //             style={{
-    //               backgroundColor: theme.colors.whiteTransparent,
-    //               padding: 10,
-    //             }}
-    //           >
-    //             {item.title_line_1}
-    //           </text.H2>
-    //           <text.H3
-    //             style={{
-    //               backgroundColor: theme.colors.whiteTransparent,
-    //               padding: 10,
-    //             }}
-    //           >
-    //             {item.title_line_2}
-    //           </text.H3>
-    //         </View>
-    //       </custom.ImageBackground>
-    //     </TouchableOpacity>
-    //   );
-    // }
-
     return (
       <TouchableOpacity
         activeOpacity={0.5}

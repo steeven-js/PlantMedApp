@@ -1,14 +1,7 @@
 ## Change.logn
 
-- **Version 1.5.7**
-  - Amélioration des performances de l'application
-  - Correction de divers bugs et optimisations
-
-- **Version 1.5.6**
-  - Amélioration des performances de l'application
-  - Correction de divers bugs et optimisations
-
 - **Version 1.5.5**
+  - Amélioration de l'interface et de l'ergonomie 
   - Amélioration des performances de l'application
   - Correction de divers bugs et optimisations
 
@@ -26,9 +19,9 @@
   - Correction de divers bugs et optimisations
 
 - **Version 1.5.1**
-  - Ajout du contenu Prenium
   - Amélioration des performances de l'application
   - Correction de divers bugs et optimisations
+  
 - **Version 1.5**
   - Refonte complète de l'interface utilisateur
   - Amélioration des performances de l'application

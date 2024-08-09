@@ -22,6 +22,7 @@ import PlantWishlist from './PlantWishlist';
 import PremiumActivated from './PremiumActivated';
 import VerifyEmail from './verification/VerifyEmail';
 import VerifyPhone from './verification/VerifyPhone';
+import PleaseUpdate from '../components/PleaseUpdate';
 import TabNavigator from '../navigation/TabNavigator';
 import SendEmailOtp from './verification/SendEmailOtp';
 import SendPhoneOtp from './verification/SendPhoneOtp';
@@ -50,6 +51,7 @@ export const screens = {
   Description,
   NewPassword,
   VerifyEmail,
+  PleaseUpdate,
   TabNavigator,
   SendEmailOtp,
   SendPhoneOtp,

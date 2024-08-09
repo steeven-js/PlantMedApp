@@ -54,6 +54,7 @@ export type RootStackParamList = {
   MemberAccount: undefined;
   ManageSubscription: undefined;
   Favorites: undefined;
+  PleaseUpdate: undefined;
 
   /* VERIFICATION */
   SignUpAccountCreated: {email?: string; password?: string};

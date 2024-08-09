@@ -8,6 +8,7 @@ import UserData from './UserData';
 import AppState from './AppState';
 import Container from './Container';
 import RatingStars from './RatingStars';
+import PleaseUpdate from './PleaseUpdate';
 import FlashMessage from './FlashMessage';
 import BlockHeading from './BlockHeading';
 import BottomTabBar from '../navigation/BottomTabBar';
@@ -24,6 +25,7 @@ export const components = {
   UserData,
   Container,
   RatingStars,
+  PleaseUpdate,
   BottomTabBar,
   FlashMessage,
   BlockHeading,

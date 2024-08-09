@@ -1,41 +1,40 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Alert, Platform } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import packageJson from '../../package.json';
 
 export const useAppVersion = () => {
-    useEffect(() => {
-        checkAppVersion();
-    }, []);
+    const [firebaseVersion, setFirebaseVersion] = useState<string | null>(null);
+    const [localVersion, setLocalVersion] = useState<string>(packageJson.version);
 
-    const checkAppVersion = async () => {
+    const fetchAppVersion = async () => {
         try {
-            // Récupérer la version actuelle de l'application depuis package.json
-            const currentVersion = packageJson.version;
+            const platformDocId = Platform.OS === 'ios' ? 'ios' : 'android';
+            const appVersionDoc = await firestore().collection('app-version').doc(platformDocId).get();
 
-            // Récupérer la version de l'application depuis Firebase
-            const doc = await firestore()
-                .collection('app-version')
-                .doc(Platform.OS) // 'ios' ou 'android'
-                .get();
+            if (appVersionDoc.exists) {
+                const appVersionData = appVersionDoc.data();
+                const version = appVersionData?.version;
 
-                console.log('doc', doc);
-
-            if (doc.exists) {
-                const remoteVersion = doc.data()?.version;
-
-                // Comparer les versions
-                if (remoteVersion && remoteVersion !== currentVersion) {
-                    Alert.alert(
-                        'Mise à jour disponible',
-                        'Une nouvelle version de l\'application est disponible. Veuillez mettre à jour l\'application pour continuer.'
-                    );
+                if (version) {
+                    console.log(`App Version (${platformDocId}):`, version);
+                    console.log('localVersion', localVersion);
+                    setFirebaseVersion(version);
+                } else {
+                    console.log(`Version not found in ${platformDocId} document.`);
                 }
             } else {
-                console.log('Document non trouvé');
+                console.log(`No app-version data found for ${platformDocId}`);
             }
         } catch (error) {
-            console.error('Erreur lors de la vérification de la version de l\'application :', error);
+            console.error('Error fetching app-version:', error);
+            Alert.alert('Erreur', 'Une erreur est survenue lors de la récupération des informations de version.');
         }
     };
+
+    useEffect(() => {
+        fetchAppVersion();
+    }, []);
+
+    return { localVersion, firebaseVersion };
 };

@@ -15,11 +15,11 @@ import {custom} from '../custom';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
 import {plantmed} from '../plantmed';
+import {PlantMedType} from '../types';
 import {components} from '../components';
 import {useAppSelector} from '../store';
 import {queryHooks} from '../store/slices/apiSlice';
 import {SymptomScreenProps} from '../types/ScreenProps';
-import {PlantMedType} from '../types';
 
 const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
   const {item} = route.params;
