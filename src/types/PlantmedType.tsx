@@ -32,5 +32,5 @@ export type PlantMedType = {
   plantTypes: string[];
   isNew: boolean;
   isTop: boolean;
-  is_prenium: boolean;
+  is_premium: boolean;
 };

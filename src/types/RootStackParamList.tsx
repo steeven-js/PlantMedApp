@@ -1,4 +1,4 @@
-import {PlantMedType, ProductType} from '../types';
+import {PlantMedType, ProductType, SymptomType} from '../types';
 import {UserType} from './UserType';
 import {ReviewType} from './ReviewType';
 
@@ -7,7 +7,8 @@ export type RootStackParamList = {
   Filter: undefined;
   SignIn: undefined;
   SignUp: undefined;
-  Search: undefined;
+  SearchPlant: undefined;
+  SearchSymptom: undefined;
   LogOut: undefined;
   MyProfile: undefined;
   Gravatar: undefined;
@@ -69,4 +70,5 @@ export type RootStackParamList = {
   SendEmailOtpForgot: undefined;
   Product: {item: ProductType};
   PlantMed: {item: PlantMedType};
+  Symptom: {item: SymptomType};
 };

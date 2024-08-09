@@ -12,17 +12,15 @@ import {hooks} from '../hooks';
 import {custom} from '../custom';
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
-import {plantmed} from '../plantmed';
-import {PlantMedType} from '../types';
+import {SymptomType} from '../types';
 import {components} from '../components';
+import { useAppSelector } from '../store';
+import { useAuth } from '../hooks/useAuth';
 import {queryHooks} from '../store/slices/apiSlice';
 import {handleTextChange} from '../utils/handleTextChange';
 import PreniumSvg from '../assets/svg/PreniumSvg';
-import { useSubscription } from '../hooks/revenueCat';
-import { useAuth } from '../hooks/useAuth';
-import { useAppSelector } from '../store';
 
-const Search: React.FC = () => {
+const SearchSymptom: React.FC = () => {
   const navigation = hooks.useAppNavigation();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,10 +29,10 @@ const Search: React.FC = () => {
   const isPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const {
-    data: plantsData,
-    error: plantsError,
-    isLoading: plantsLoading,
-  } = queryHooks.useGetPlantmedQuery();
+    data: symptomsData,
+    error: symptomsError,
+    isLoading: symptomsLoading,
+  } = queryHooks.useGetSymptomsQuery();
 
   const ref = useRef<TextInput>(null);
 
@@ -42,7 +40,7 @@ const Search: React.FC = () => {
     ref.current?.focus();
   }, []);
 
-  const isLoading = loading || plantsLoading;
+  const isLoading = loading || symptomsLoading;
 
   const handleSearch = handleTextChange(setSearchQuery);
 
@@ -62,7 +60,7 @@ const Search: React.FC = () => {
         <View style={{flex: 1, height: 40, marginRight: 20}}>
           <TextInput
             ref={ref}
-            placeholder='Rechercher une plante'
+            placeholder='Rechercher un symptome'
             clearButtonMode='always'
             placeholderTextColor={`${theme.colors.textColor}80`}
             autoCapitalize='none'
@@ -103,7 +101,7 @@ const Search: React.FC = () => {
     );
   };
 
-  const renderItem = ({item, index}: {item: PlantMedType; index: number}) => {
+  const renderItem = ({item, index}: {item: SymptomType; index: number}) => {
     return (
       <TouchableOpacity
         style={{
@@ -117,9 +115,9 @@ const Search: React.FC = () => {
         }}
         onPress={() => {
           if (isPremium) {
-            navigation.navigate('PlantMed', {item});
-          } else if (!isPremium && item.is_prenium == false) {
-            navigation.navigate('PlantMed', {item});
+            navigation.navigate('Symptom', {item});
+          } else if (!isPremium && item.is_premium == false) {
+            navigation.navigate('Symptom', {item});
           } else {
             navigation.navigate('Premium');
           }
@@ -182,7 +180,7 @@ const Search: React.FC = () => {
               alignItems: 'center',
             }}
           >
-            {item.is_prenium ? (
+            {item.is_premium ? (
               <PreniumSvg
                 width='40px'
                 height='40px'
@@ -220,14 +218,14 @@ const Search: React.FC = () => {
   };
 
   const renderSearchResults = () => {
-    const filteredProducts = plantsData?.plantmed.filter(item => {
+    const filteredSymproms = symptomsData?.symptoms.filter(item => {
       return item.name.toLowerCase().includes(searchQuery.toLowerCase());
     });
 
     return (
       <FlatList
-        data={filteredProducts}
-        keyExtractor={(item: PlantMedType) => item.id.toString()}
+        data={filteredSymproms}
+        keyExtractor={(item: SymptomType) => item.id.toString()}
         contentContainerStyle={{flexGrow: 1}}
         keyboardShouldPersistTaps='handled' // when user taps on the screen, the keyboard will be hidden
         keyboardDismissMode='on-drag' // when user drags the screen, the keyboard will be hidden
@@ -266,4 +264,4 @@ const Search: React.FC = () => {
   );
 };
 
-export default Search;
+export default SearchSymptom;

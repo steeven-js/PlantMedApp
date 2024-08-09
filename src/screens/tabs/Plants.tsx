@@ -70,7 +70,7 @@ const Plants: React.FC = () => {
                 onPress={() => {
                   if (isPremium) {
                     navigation.navigate('PlantMed', {item});
-                  } else if (!isPremium && item.is_prenium == false) {
+                  } else if (!isPremium && item.is_premium == false) {
                     navigation.navigate('PlantMed', {item});
                   } else {
                     navigation.navigate('Premium');
@@ -92,7 +92,7 @@ const Plants: React.FC = () => {
                   }}
                   resizeMode='cover'
                 >
-                  {item.is_prenium ? (
+                  {item.is_premium ? (
                     <plantmed.PlantPrenium
                       item={item as PlantMedType}
                       containerStyle={{

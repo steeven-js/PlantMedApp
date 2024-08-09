@@ -36,8 +36,13 @@ const StackNavigator: React.FC = () => {
         options={{headerShown: false}}
       />
       <RootStack.Screen
-        name="Search"
-        component={screens.Search}
+        name="SearchPlant"
+        component={screens.SearchPlant}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
+        name="SearchSymptom"
+        component={screens.SearchSymptom}
         options={{headerShown: false}}
       />
       <RootStack.Screen
@@ -58,6 +63,11 @@ const StackNavigator: React.FC = () => {
       <RootStack.Screen
         name="PlantMed"
         component={screens.PlantMed}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
+        name="Symptom"
+        component={screens.Symptom}
         options={{headerShown: false}}
       />
       <RootStack.Screen

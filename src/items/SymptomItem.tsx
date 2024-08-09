@@ -28,7 +28,7 @@ const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
           title: item.name,
           products: dataFilter ?? [],
         });
-      } else if (!isPremium && item.is_prenium == false) {
+      } else if (!isPremium && item.is_premium == false) {
         navigation.navigate('PlantMedList', {
           title: item.name,
           products: dataFilter ?? [],
@@ -112,12 +112,12 @@ const SymptomItem: React.FC<Props> = ({item, isLast, qty, dataFilter}) => {
               width='20px'
               height='20px'
               fillColor={
-                item.is_prenium
+                item.is_premium
                   ? theme.colors.yellowStar
                   : theme.colors.steelTeal
               }
               strokeColor={
-                item.is_prenium
+                item.is_premium
                   ? theme.colors.yellowStar
                   : theme.colors.steelTeal
               }

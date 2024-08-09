@@ -14,9 +14,9 @@ import {hooks} from '../../hooks';
 import {custom} from '../../custom';
 import {theme} from '../../constants';
 import {plantmed} from '../../plantmed';
-import { PlantMedType } from '../../types';
+import {PlantMedType} from '../../types';
 import {components} from '../../components';
-import { useAppSelector } from '../../store';
+import {useAppSelector} from '../../store';
 import {queryHooks} from '../../store/slices/apiSlice';
 
 const Symptoms: React.FC = () => {
@@ -95,7 +95,7 @@ const Symptoms: React.FC = () => {
                         title: item.name,
                         products: dataFilter ?? [],
                       });
-                    } else if (!isPremium && item.is_prenium == false) {
+                    } else if (!isPremium && item.is_premium == false) {
                       navigation.navigate('PlantMedList', {
                         title: item.name,
                         products: dataFilter ?? [],
@@ -127,7 +127,7 @@ const Symptoms: React.FC = () => {
                   }}
                   resizeMode='cover'
                 >
-                  {item.is_prenium ? (
+                  {item.is_premium ? (
                     <plantmed.PlantPrenium
                       item={item as PlantMedType}
                       containerStyle={{

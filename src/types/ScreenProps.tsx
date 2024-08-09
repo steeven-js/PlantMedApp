@@ -56,6 +56,11 @@ export type PlantMedScreenProps = NativeStackScreenProps<
   'PlantMed'
 >;
 
+export type SymptomScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Symptom'
+>;
+
 export type LeaveAReviewScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'LeaveAReview'

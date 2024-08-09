@@ -24,7 +24,7 @@ const PlantmedCard: React.FC<Props> = ({
   const onPress = () => {
     if (isPremium) {
       navigation.navigate('PlantMed', {item});
-    } else if (!isPremium && item.is_prenium == false) {
+    } else if (!isPremium && item.is_premium == false) {
       navigation.navigate('PlantMed', {item});
     } else {
       navigation.navigate('Premium');
@@ -55,7 +55,7 @@ const PlantmedCard: React.FC<Props> = ({
             backgroundColor: theme.colors.imageBackground,
           }}
           resizeMode="cover">
-          {item.is_prenium ? (
+          {item.is_premium ? (
             <plantmed.PlantPrenium
               item={item}
               containerStyle={{
@@ -105,7 +105,7 @@ const PlantmedCard: React.FC<Props> = ({
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
           }}>
-          {item.is_prenium ? (
+          {item.is_premium ? (
             <plantmed.PlantPrenium
               item={item}
               containerStyle={{
@@ -152,7 +152,7 @@ const PlantmedCard: React.FC<Props> = ({
             borderRadius: 10,
             backgroundColor: theme.colors.imageBackground,
           }}>
-          {item.is_prenium ? (
+          {item.is_premium ? (
             <plantmed.PlantPrenium
               item={item}
               containerStyle={{

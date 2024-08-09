@@ -1,9 +1,9 @@
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import LogOut from './LogOut';
-import Search from './Search';
 import Source from './Source';
 import Filter from './Filter';
+import Symptom from './Symptom';
 import Sources from './Sources';
 import Premium from './Premium';
 import PlantMed from './PlantMed';
@@ -12,8 +12,10 @@ import TermsOfUse from './TermsOfUse';
 import Onboarding from './Onboarding';
 import EditProfile from './EditProfile';
 import Description from './Description';
+import SearchPlant from './SearchPlant';
 import NewPassword from './NewPassword';
 import PlantMedList from './PlantMedList';
+import SearchSymptom from './SearchSymptom';
 import PrivacyPolicy from './PrivacyPolicy';
 import DeleteAccount from './DeleteAccount';
 import MemberAccount from './MemberAccount';
@@ -35,14 +37,15 @@ export const screens = {
   SignUp,
   Source,
   LogOut,
-  Search,
   Filter,
   Sources,
   Premium,
+  Symptom,
   PlantMed,
   InfoSaved,
   TermsOfUse,
   Onboarding,
+  SearchPlant,
   EditProfile,
   VerifyPhone,
   Description,
@@ -52,6 +55,7 @@ export const screens = {
   TabNavigator,
   SendEmailOtp,
   SendPhoneOtp,
+  SearchSymptom,
   PlantWishlist,
   PhoneVerified,
   EmailVerified,

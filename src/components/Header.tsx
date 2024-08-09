@@ -330,6 +330,8 @@ const Header: React.FC<HeaderType> = ({
     return null;
   };
 
+  const currentTabScreen = hooks.useAppSelector(state => state.tabSlice.screen);
+
   const renderSearch = (): JSX.Element | null => {
     if (search) {
       return (
@@ -340,8 +342,11 @@ const Header: React.FC<HeaderType> = ({
             width: theme.sizes.deviceWidth - 210,
             marginRight: 60,
           }}
-          onPress={() => navigation.navigate('Search')}
-        >
+          onPress={() => 
+            currentTabScreen === 'Plants' 
+              ? navigation.navigate('SearchPlant') 
+              : navigation.navigate('SearchSymptom')
+          }>
           <View style={{marginRight: 7}}>
             <svg.SearchSvg />
           </View>
