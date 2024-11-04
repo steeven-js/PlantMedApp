@@ -9,6 +9,7 @@ import { hooks } from '@src/hooks';
 import { svg } from '@src/assets/svg';
 import { theme } from '@src/constants';
 import { HeaderType } from '@src/types';
+import { useAppSelector } from '@src/store';
 
 const Header: React.FC<HeaderType> = ({
   title,
@@ -22,6 +23,7 @@ const Header: React.FC<HeaderType> = ({
 }: HeaderType) => {
   const navigation = hooks.useAppNavigation();
   const [showModal, setShowModal] = useState<boolean>(false);
+  const currentTabScreen = useAppSelector(state => state.tabSlice.screen);
 
   const handleGoBack = () => {
     if (exception) {
@@ -61,8 +63,11 @@ const Header: React.FC<HeaderType> = ({
         {search && (
           <TouchableOpacity
             style={styles.searchButton}
-            onPress={() => navigation.navigate('SearchPlant')}
-          >
+            onPress={() =>
+              currentTabScreen === 'Plants'
+                ? navigation.navigate('SearchPlant')
+                : navigation.navigate('SearchSymptom')
+            }          >
             <svg.SearchSvg />
             <Text style={styles.searchText}>Recherche</Text>
           </TouchableOpacity>
