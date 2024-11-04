@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>453782988338-p1fn125tgm3ilpvibk846mjgise2qt36.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.453782988338-p1fn125tgm3ilpvibk846mjgise2qt36</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>453782988338-1ibcpc3mdev39ri72h6kbpotpra166eq.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDvxnObgIl3zondRJRl2Nemu5SdYMMBF_0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>453782988338</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jsprod.plantmed</string>
+	<key>PROJECT_ID</key>
+	<string>plantmed-app-2493c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>plantmed-app-2493c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:453782988338:ios:7516dbac45288693c43e2b</string>
+	<key>DATABASE_URL</key>
+	<string>https://plantmed-app-2493c-default-rtdb.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-6048143702887535~6953163109</string>
+</dict>
+</plist>

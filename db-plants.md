@@ -1,0 +1,153 @@
+Liste des plantes :
+
+- Absinthe
+- Achillée
+- Actée à grappe
+- Agave
+- Agripaume
+- Aigremoine
+- Ail
+- Aloe vera
+- Amandier
+- Amarante
+- Aneth
+- Angélique
+- Arbre à thé
+- Argousier
+- Armoise commune
+- Arnica
+- Artichaut
+- Ashwagandha
+- Aubépine monogyne
+- Açaï
+- Badiane de Chine
+- Bardane
+- Basilic
+- Bistorte
+- Bleuet
+- Boldo
+- Bougainvillea
+- Bouleau
+- Bourrache
+- Brocoli
+- Buchu
+- Cacao
+- Callune
+- Camomille
+- Cannabis
+- Cannelier
+- Cardamome
+- Caroubier
+- Centaurée rude
+- Centella asiatica
+- Chardon Marie
+- Chicorée
+- Chélidoine
+- Citronnelle
+- Citronnier
+- Coffea
+- Consoude
+- Coquelicot
+- Coriandre
+- Cresson
+- Cumin
+- Cumin des prés
+- Curcuma
+- Céleri
+- Damiana
+- Droséra
+- Estragon
+- Eucalyptus
+- Fenouil
+- Fleur d'oranger
+- Fumeterre
+- Gattilier
+- Gentiana
+- Gingembre
+- Ginkgo
+- Ginseng
+- Giroflier
+- Grand Plantain
+- Grande Aunée
+- Groseillier à maquereau
+- Guimauve
+- Hamamélis
+- Helichrysum
+- Hibiscus
+- Houblon
+- Ibéris amer
+- Jasmin
+- Laurier
+- Lavande
+- Lichen d'Islande
+- Lin
+- Luzerne
+- Malva
+- Manioc
+- Marcela
+- Marjolaine
+- Marronnier
+- Marrube blanc
+- Maté
+- Menthe
+- Menthe poivrée
+- Millepertuis perforé
+- Molène thapsus
+- Moringa
+- Myrtille
+- Mélisse
+- Noyer
+- Olivier
+- Onagre
+- Origan
+- Orthosiphon
+- Ortie
+- Oseille
+- Passiflora
+- Pensée
+- Persil
+- Pin
+- Pissenlit
+- Poivron
+- Pourpier
+- Prunellier
+- Prêle des champs
+- Pâquerette
+- Pérille
+- Romarin
+- Rooibos
+- Rosier des chiens
+- Rosier rouillé
+- Ruda
+- Réglisse
+- Safran
+- Salsepareille
+- Sarriette vivace
+- Sauge
+- Saule blanc
+- Serpolet
+- Shatavari
+- Soies de maïs
+- Souci
+- Stevia
+- Sureau
+- Séné
+- Thym
+- Thé
+- Tilia
+- Trèfle des prés
+- Tussilage
+- Ulmarie
+- Valérianne
+- Vanilla
+- Verge d'or
+- Verveine
+- Verveine citronnée
+- Vigne
+- Échinacée
+- Épazote
+- Épine-vinette
+- Fenugrec
+- Framboisier
+- Gingembre
+- Moringa
