@@ -130,12 +130,12 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
       {
         name: 'Propriétés',
         svg: <svg.ClipboardListSvg />,
-        isPremium: Platform.OS === 'ios' ? true : false,
+        isPremium: item.is_premium,
       },
       {
         name: 'Usages',
         svg: <svg.handHeartSvg />,
-        isPremium: Platform.OS === 'ios' ? true : false,
+        isPremium: item.is_premium,
       },
       { name: 'Précautions', svg: <svg.DangerTriangleSvg />, isPremium: false },
     ];
