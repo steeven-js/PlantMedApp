@@ -1731,5 +1731,406 @@ export const plants: PlantType[] = [
         "sources": [],
         "is_active": true,
         "is_premium": false
-    }
+    },
+    {
+        "id": "p-056",
+        "name": "Centella asiatica",
+        "scientificName": "Centella asiatica",
+        "famille": "Apiaceae",
+        "genre": "Centella",
+        "description": "Il s'agit d'une petite plante vivace et herbacée d'environ 20 cm de hauteur. Ses tiges sont prostrées, ce qui lui permet de grimper. Ses feuilles ont une couleur rougeâtre, bien que chez certaines variétés elles puissent être blanches.",
+        "image": "Centella_asiatica.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire des régions tropicales de l'océan Indien telles que la Chine, les Indes, l'Indonésie, l'Australie ou l'Afrique. Certaines variétés ne poussent qu'en Amérique. Son habitat est humide et ombragé, comme les marais ou les berges des lagons.",
+        "propriete": [
+            "Soulignez ses propriétés qui aident à protéger, réparer et réaffirmer de nombreuses affections de la peau.",
+            "Aide à lutter contre la fatigue. Il fournit de l'énergie au corps et augmente la puissance sexuelle.",
+            "Régule le système nerveux, il est donc recommandé en cas de stress et d'anxiété.",
+            "Agit comme un tonique veineux, aide à prévenir l'apparition de varices et d'hémorroïdes.",
+            "Prévient le vieillissement, améliore le fonctionnement du cerveau et problèmes de mémoire.",
+            "Aide à éliminer les excès de liquides et de toxines du corps.",
+            "C'est un remède naturel pour lutter contre les problèmes d'insomnie.",
+            "Favorise la guérison naturelle.",
+            "Améliore circulation sanguine."
+        ],
+        "usageInterne": "En interne, il peut être préparé en salade, prendre l'extrait dilué dans de l'eau ou opter pour la méthode la plus douce possible, infusé.",
+        "usageExterne": "Il aide à éliminer les amas graisseux, les vergetures, les dermatites, les morsures, les rougeurs, les ulcères buccaux, la conjonctivite, les inflammations oculaires... Il est principalement utilisé dans les crèmes et les huiles de la zone à traiter.",
+        "precaution": [
+            "Il n'est pas recommandé pendant la grossesse ni chez les personnes souffrant de problèmes gastriques.",
+            "À éviter aussi chez les enfants de moins de 6 ans."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-057",
+        "name": "Chardon-Marie",
+        "scientificName": "Silybum marianum",
+        "famille": "Asteraceae",
+        "genre": "Silybum",
+        "description": "Il s'agit d'une plante herbacée qui vit environ 2 ans et mesure environ 2 mètres de haut et peut atteindre plus de 3 ans. Dans le centre, elle porte une rosette de grandes feuilles pourpres et brillantes. Les fruits ils contiennent les graines et sont utilisés à des fins médicinales.",
+        "image": "Chardon_Marie.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire des bassins de la Méditerranée et de l'Asie mineure. Il pousse principalement à l'air libre et en bordure de routes et de voies ferrées.",
+        "propriete": [
+            "Augmente la fonction hépatique, aide à la détoxification du corps et a une fonction réparatrice sur les cellules du foie.",
+            "C'est un excellent remède naturel pour traiter les maladies du foie, des reins ou de la vésicule biliaire.",
+            "Il est réputé pour être une aide précieuse en complément des traitements de la cirrhose.",
+            "Il est riche en antioxydants, contribue à la régénération des cellules du foie.",
+            "Est cardioprotecteur et aide à lutter contre l'hypotension.",
+            "Aide en cas de problèmes digestifs tels qu'une indigestion.",
+            "Améliore le taux de cholestérol.",
+            "Il est indiqué pour le diabète."
+        ],
+        "usageInterne": "Il est préférable de prendre des capsules ou des extraits car les composants du chardon-Marie sont peu solubles dans l'eau. En infusion, utilisez une cuillère à soupe de graines broyées par tasse.",
+        "usageExterne": "En externe, l'huile essentielle est utilisée pour le soin de la peau et pour lutter contre de nombreuses affections externes telles que l'acné, la douleur, les spasmes musculaires, les hémorroïdes, les infections du cuir chevelu...",
+        "precaution": [
+            "Ne pas utiliser pendant la grossesse, l'allaitement ou l'hypertension artérielle.",
+            "Évitez les personnes sensibles ou allergiques à la plante."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-058",
+        "name": "Chicorée",
+        "scientificName": "Cichorium intybus",
+        "famille": "Asteraceae",
+        "genre": "Cichorium",
+        "description": "Il s'agit d'une plante herbacée robuste et vivante, à tiges droites et comportant de nombreuses branches. Il possède de belles fleurs de miel bleu vif et peut atteindre jusqu'à 1 mètre de haut.",
+        "image": "Chicoree.png",
+        "symptomIds": [],
+        "habitat": "Il habite l'Europe au bord des routes et des cultures, notamment en Allemagne, en Belgique, en France et en Espagne. Il pousse dans des sols drainés, pas nécessairement fertiles et dans des environnements ensoleillés. Il résiste à la sécheresse.",
+        "propriete": [
+            "Sa consommation garantit un état optimal de l'intestin évitant ainsi les problèmes de constipation et d'amélioration de la flore intestinale.",
+            "Aide à reminéraliser et à vitaminer l'organisme en éliminant les excès de liquide et les déchets de l'organisme.",
+            "Revitalise le système immunitaire grâce à ses effets antioxydants, antibactériens et phytochimiques.",
+            "Il possède des propriétés sédatives, il est donc utile dans les états de nervosité et d'anxiété.", 
+            "Prévient les problèmes digestifs et favorise la digestion.",
+            "Contribue à réduire les maladies cardiovasculaires et à réduire le cholestérol.",
+            "Il est utilisé comme substitut du café.",
+            "Améliore la santé des reins.",
+            "Augmente l'appétit."
+        ],
+        "usageInterne": "Pour préparer une infusion, utiliser environ 50 grammes de feuilles de chicorée et ses racines dans un litre d'eau et laisser reposer environ 8 minutes. Il est ensuite tendu et pris quand il est chaud. Nous recommandons 3 tasses un jour.",
+        "usageExterne": "Utilisé en externe est très utile pour lutter contre les affections cutanées, les abcès ou les ulcères.",
+        "precaution": [
+            "Attention particulière aux personnes souffrant de problèmes rénaux ou d'hypertension. Consultez un contre-spécialiste avant de les consommer.",
+            "La fleur ne doit pas être ingérée si vous êtes allergique à la plante.", 
+            "Évitez l'utilisation de chicorée en cas de grossesse."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-059",
+        "name": "Chélidoine",
+        "scientificName": "Chelidonium majus",
+        "famille": "Papaveraceae",
+        "genre": "Chelidonium",
+        "description": "Il s'agit d'une plante herbacée aux tiges très ramifiées pouvant atteindre 80 cm de haut. Les fleurs ont quatre pétales d'un jaune intense d'environ 1 cm.",
+        "image": "Chelidoine.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire d'Europe et du bassin méditerranéen, mais il est également répandu dans certaines régions d'Amérique du Nord. Il pousse dans des endroits ombragés et frais tels que de vieux murs, des bâtiments et des débris.",
+        "propriete": [
+            "C'est l'une des meilleures plantes médicinales contre les verrues cutanées. Il est également indiqué pour les cors, l'herpès ou les yeux.", 
+            "Il est bénéfique de traiter les maux de dents, les maux de gorge et les douleurs causées par calculs biliaires.",
+            "Il est recommandé pour le traitement d'affections respiratoires telles que l'asthme, la bronchite, la toux irritative...",
+            "Soulage les douleurs causées par l'arthrite, la réunion, la colique rénale...",
+            "Contient des propriétés analgésiques, antispasmodiques, sédatives et digestives.",
+            "Aide à purifier le sang et le foie."
+        ],
+        "usageInterne": "Nous pouvons obtenir ses propriétés par infusions, teintures, gélules ou vin sédatif.",
+        "usageExterne": "Le jus est utilisé en externe, ainsi que dans les crèmes et les compresses appliquées sur la zone à traiter.",
+        "precaution": [
+            "Ne prenez pas pendant de longues périodes. L'irritation interne peut causer une irritation et des nausées et des vomissements externes.",
+            "Elle ne devrait être administrée en interne que sous la supervision d'un médecin.",
+            "Ne pas utiliser en interne s'il y a des problèmes de foie, de goutte ou d'obésité.", 
+            "La consommation doit être évitée pendant la grossesse ou l'allaitement et chez les enfants."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-060",
+        "name": "Citronnelle",
+        "scientificName": "Cymbopogon citratus",
+        "famille": "Poaceae",
+        "genre": "Cymbopogon",
+        "description": "C'est une plante herbacée vivace à fleurs épineuses qui forment des grappes de 30 à 60 cm de haut, ses feuilles sont longues et denses. Cette plante dégage un arôme et une saveur très aromatiques.",
+        "image": "Citronnelle.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire de Ceylan, de l'Inde, du Pérou, du Venezuela et de la Malaisie. Actuellement, il se développe et se cultive partout dans le monde principalement dans les zones à climat tropical et subtropical.",
+        "propriete": [
+            "Contient d'excellentes propriétés purifiantes qui contribuent à l'élimination des toxines et des microbes de l'organisme bénéfiques pour combattre les troubles tels que brûlures d'estomac, ballonnements, constipation, nausées ou vomissements.",
+            "Aide à contrôler l'acide urique du corps ainsi que la réduction du cholestérol.",
+            "Il est bénéfique pour le système cardiovasculaire et peut être efficace dans le traitement des états nerveux ou de l'anxiété.",
+            "Contient des propriétés analgésiques et anti-inflammatoires qui peuvent aider à soulager les maux de tête, les migraines et l'arthrite.",
+            "C'est un excellent allié pour les diabétiques car il peut aider à abaisser la glycémie.",
+            "Grâce à ses propriétés antipyrétiques, il pourrait aider à réguler la température corporelle et à réduire la fièvre.",
+            "Contient des propriétés antioxydantes qui peuvent aider à inhiber la croissance des cellules cancéreuses.",
+            "Grâce à ses propriétés relaxantes qui aident à favoriser le sommeil, il peut être d'une grande aide pour lutter contre l'insomnie."
+        ],
+        "usageInterne": "Le moyen le plus recommandé pour obtenir ses propriétés consiste à infuser en utilisant ses feuilles externes. La tige ou le noyau interne blanc est également largement utilisé en cuisine, en particulier dans les pays de l'Est pour préparer toutes sortes de plats en raison de son arôme et sa saveur incomparables.",
+        "usageExterne": "Extérieurement, l'huile essentielle est utilisée par voie topique pour soulager la douleur et l'inconfort, aidant à calmer et à rafraîchir la zone à traiter. Elle est également utilisée pour les soins de la peau et des cheveux et comme insectifuge.",
+        "precaution": [
+            "En cas de grossesse, d'allaitement ou si vous avez des doutes quant à son utilisation pour votre cas particulier, consultez votre médecin avant de l'utiliser.",
+            "Il peut provoquer une gêne ou une allergie aux personnes intolérantes aux odeurs d'agrumes."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-061",
+        "name": "Citronnier",
+        "scientificName": "Citrus × limon",
+        "famille": "Rutaceae",
+        "genre": "Citrus",
+        "description": "C'est un arbre pérenne généralement épineux qui peut atteindre 4 mètres de hauteur. On lui attribue le nom de \"Médecine alimentaire\" en raison de la multitude de propriétés et d'utilisations médicinales à sa disposition.",
+        "image": "Citronnier.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire d'Asie du Sud-Est et est actuellement cultivé dans toutes les régions tropicales et tempérées du monde. Les principaux pays producteurs sont le Mexique et l'Inde.",
+        "propriete": [
+            "Contient d'excellentes propriétés diurétiques pour éliminer les fluides et les toxines du corps, est indiqué en cas d'arthrite, de goutte, d'obésité, de rhumatisme...",
+            "Contribue à la prévention de l'anémie et aide à équilibrer la PH corporel. Il s'agit d'un puissant antioxydant qui fournit au corps une grande quantité de vitamine C.",
+            "Réduit les taux élevés de sucre dans le sang et soulage les symptômes d'allergie.",
+            "It Bénéfique pour réduire la tension, prévient les hémorroïdes, les varices...",
+            "Aide à prévenir les maladies de l'estomac telles que les ulcères et la gastrite.",
+            "Il est très riche en propriétés amincissantes, aide à perdre du poids.",
+            "Il est indiqué pour améliorer l'appétit et la digestion.",
+            "Préserve la santé des os et de la vue."  
+        ],
+        "usageInterne": "Le meilleur moyen d'obtenir ses propriétés est de consommer le fruit frais. Nous pouvons également obtenir ses propriétés par son jus ou en faire une infusion avec la peau du citron. Se gargariser pour améliorer les conditions de la bouche.",
+        "usageExterne": "C'est une aide précieuse pour désinfecter et soigner toutes sortes de problèmes externes de la peau et des muqueuses. Il est utilisé pour le traitement du muguet, de l'angine de poitrine, de la conjonctivite, des otites, des plaies et des peaux sèches, acné, psoriasis...", 
+        "precaution": [
+            "En raison de sa teneur en acide, il peut augmenter l'acidité et causer des irritations et des dommages à la plaque dentaire.",
+            "Évitez les personnes souffrant de plaies d'estomac, de gastrite et de brûlures d'estomac."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-062",
+        "name": "Coffea",
+        "scientificName": "Coffea",
+        "famille": "Rubiaceae",
+        "genre": "Coffea",
+        "description": "Il s'agit d'un petit arbre pouvant atteindre 10 mètres de haut. Ses graines, ses grains de café, sont l'un des produits végétaux les plus importants sur le marché mondial.",
+        "image": "Coffea.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire d'Éthiopie et d'Afrique. Il est actuellement produit dans de nombreux pays. Le Brésil est le plus gros producteur avec près du tiers de la production mondiale. Le climat optimal pour la culture du café arabe est de 19 et 21.5 ºC.",
+        "propriete": [
+            "C'est un stimulant du système nerveux, il aide à réguler les états de stress et de dépression et augmente les performances physiques et mentales.",
+            "Prévient les maladies dégénératives telles que la maladie d'Alzheimer ou de Parkinson et améliore la mémoire à court terme.",
+            "Soulage les maux de tête, le cou et les épaules et combat les inflammations et les surcharges musculaires.",
+            "Réduit les niveaux d'acide urique naturellement et réduit le risque de goutte.",
+            "Contient des propriétés ayant des effets diurétiques, il peut donc être utile de perdre du poids.",
+            "Dilata les bronches, peut être utile pour les personnes asthmatiques.",
+            "Il est riche en antioxydants. Il aide à combattre vieillissement.",
+            "Favorise la digestion des aliments."
+        ],
+        "usageInterne": "Le moyen le plus utilisé pour obtenir ses propriétés consiste à faire infuser du café moulu.",
+        "usageExterne": "En externe, il est généralement utilisé dans le beurre, les huiles ou les feuilles tendres de la plante sont utilisés pour traiter une multitude de maladies externes telles que douleurs musculaires, brûlures, plaies, hémorroïdes, peau sèche...",
+        "precaution": [
+            "Plus de 3 mg de caféine par kg de poids chez l'enfant peuvent causer des troubles nerveux tels que anxiété, insomnie ou nervosité.",
+            "Évitez les excès de consommation. Ne dépassez pas la dose de 250 - 300 mg par jour quelle que soit l'origine du café.",
+            "Il est déconseillé de consommer beaucoup de café pendant la grossesse car il est associé à un faible poids à la naissance.",
+            "Une tolérance à la caféine peut se développer."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-063",
+        "name": "Consoude",
+        "scientificName": "Symphytum officinale",
+        "famille": "Boraginaceae",
+        "genre": "Symphytum",
+        "description": "Il s'agit d'une plante herbacée de près d'un mètre de haut. Ses grandes feuilles et ses fleurs roses sont l'une des plantes médicinales les plus utilisées par les civilisations anciennes. En raison de son expansion, elle est parfois considérée comme une espèce invasive ou \"Mauvaise herbe\".",
+        "image": "Consoude.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire d'Europe bien qu'il soit actuellement étendu à d'autres régions telles que l'Amérique du Nord et l'Asie occidentale. Il pousse principalement dans les zones humides, les prairies, les routes, les prairies...",
+        "propriete": [
+            "Il est particulièrement indiqué pour traiter les maladies rhumatismales, la goutte et une multitude d'affections de la peau.",
+            "Il est considéré comme l'une des plantes médicinales ayant les meilleurs effets cicatrisants.",
+            "Inhibe la croissance bactérienne et Il est bénéfique pour les inflammations des voies respiratoires telles que la bronchite, la sinusite, l'angine de poitrine.",
+            "Il est très utile pour la récupération des fractures osseuses, il est excellent pour soulager les douleurs au dos et au bas du dos.",
+            "Il a une action purifiante car l'organisme est bénéfique pour soulager la diarrhée.", 
+            "Améliore la circulation sanguine."
+        ],
+        "usageInterne": "Ne doit pas être utilisé pour un usage interne.",
+        "usageExterne": "Il est particulièrement utilisé en appliquant de l'herbe broyée sous forme de cataplasmes, pour traiter une multitude d'affections cutanées telles que brûlures, plaies, inflammations, acné, boutons, verrues...",
+        "precaution": [
+            "Il n'est pas recommandé pour un usage interne, la racine de la plante et dans une moindre mesure, les feuilles contiennent des alcaloïdes toxiques pour le foie.",
+            "Évitez de l'utiliser avec des personnes présentant une hypersensibilité.",
+            "Ne pas consommer pendant la grossesse ou l'allaitement."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-064",
+        "name": "Coquelicot",
+        "scientificName": "Papaver rhoeas",
+        "famille": "Papaveraceae",
+        "genre": "Papaver",
+        "description": "C'est une plante herbacée annuelle à tiges peu ramifiées et aux feuilles inégales, elle peut atteindre plus de 50 cm de hauteur. Il met en valeur ses fleurs, ses pétales ouverts et ridés ont des couleurs intenses qui varient entre les couleurs écarlates, l'orange et le blanc.",
+        "image": "Coquelicot.png",
+        "symptomIds": [],
+        "habitat": "Elle pousse principalement en Afrique du Nord, en Europe et en Asie, et plus particulièrement dans les champs de céréales. Les climats sont chauds et tempérés, bien qu'ils puissent pousser dans la grande majorité des climats. Ils fleurissent à la fin du printemps et au début de l'été.",
+        "propriete": [
+            "Il se distingue par son utilisation dans les maladies respiratoires telles que le rhume, la toux spasmodique diminue considérablement, les douleurs à la poitrine en cas de bronchite...",
+            "Il peut être d'une grande aide en cas de mal de tête ou de migraine causée par des problèmes émotionnels.",
+            "Ses propriétés peuvent soulager la douleur, les picotements et l'inconfort produits dans la gorge.",
+            "Ses propriétés sédatives sont indiquées dans les cas de nervosité ou d'anxiété.",
+            "Est indiqué pour les cas d'insomnie ou de problèmes d'endormissement.",
+            "Il est très utile chez les personnes asthmatiques."
+        ],
+        "usageInterne": "En infusion, environ 2 grammes de pétales séchées sont utilisés dans environ 250 ml d'eau bouillie. Il est recommandé de boire jusqu'à 3 fois par jour. Faire des gargarismes avec cette infusion soulagera la gorge. Il est également possible d'obtenir ses avantages au travers de sirops, d'extraits, de poudres...",
+        "usageExterne": "Il est particulièrement indiqué contre l'inflammation des paupières et la conjonctivite. Il est très utile pour le traitement des rides.",
+        "precaution": [
+            "Les enfants et les femmes enceintes ou qui allaitent doivent être évités, sauf sous surveillance médicale.",
+            "Toutes les parties de cette plante sont considérées comme toxiques pour les chiens et les chats."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-065",
+        "name": "Coriandre",
+        "scientificName": "Coriandrum sativum",
+        "famille": "Apiaceae",
+        "genre": "Coriandrum",
+        "description": "Il s'agit d'une plante annuelle atteignant 40 - 60 cm de hauteur. Ses fleurs sont petites, blanches ou légèrement roses. C'est une plante facile à cultiver dans laquelle les feuilles et les graines sont normalement utilisées toutes les parties de la plante sont comestibles.",
+        "image": "Coriandre.png",
+        "symptomIds": [],
+        "habitat": "Originaire des pays de la Méditerranée orientale, est actuellement répandue et cultivée partout en Europe et en Amérique. Il pousse dans des sols meubles et perméables, dans les climats tempérés et montagneux des zones tropicales. C'est une plante tolérante à froid mais pas sur des terres inondées.",
+        "propriete": [
+            "Renforce le système immunitaire et soulage la congestion et les symptômes tels que la sinusite et le rhume.",
+            "Désinfecte le corps des substances toxiques et prévient le vieillissement prématuré.", 
+            "Aide à augmenter bon cholestérol et baisse du taux de sucre dans le sang.",
+            "Soulage l'inflammation de l'estomac, contrôle la douleur et la sensation de lourdeur.",
+            "Réduit le risque de maladies neurodégénératives et de troubles cérébraux.",
+            "Contient des propriétés digestives, est efficace pour soulager les gaz de l'estomac.",
+            "Contient des propriétés anti-inflammatoires qui aident à réduire l'arthrite.", 
+            "Aide à réduire les nausées et constitue un excellent allié pour lutter contre l'anémie.",
+            "Il est très utile pour lutter contre les champignons et l'eczéma."
+        ],
+        "usageInterne": "Pour obtenir ses propriétés, nous pouvons opter pour la consommation de feuille fraîche ou pour préparer une infusion de coriandre. Utilisez 10 feuilles sèches dans un demi-litre d'eau.",
+        "usageExterne": "Extérieurement, il est bénéfique pour la peau et est principalement utilisé dans les pommades et les huiles pour combattre l'acné, les boutons, les kystes...",
+        "precaution": [
+            "Il n'est pas recommandé en cas de grossesse ou d'allaitement, consultez d'abord votre médecin.",
+            "À éviter en cas d'allergie ou de sensibilité."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-066",
+        "name": "Cresson",
+        "scientificName": "Nasturtium officinale",
+        "famille": "Brassicacées",
+        "genre": "Nasturtium",
+        "description": "C'est une plante vivace aquatique qui mesure entre 10 et 50 cm de haut. C'est l'un des plus anciens légumes consommés par l'homme. Il est utilisé pour ses propriétés médicinales et pour son usage culinaire, largement utilisé dans salades pour son goût frais et légèrement sucré.",
+        "image": "Cresson.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire d'Europe et d'Asie centrale. Pour sa croissance optimale, il a besoin de zones d'eau et d'humidité telles que ruisseaux et marécages.",
+        "propriete": [
+            "Il est bénéfique pour la santé cardiaque et les vaisseaux sanguins, peut aider à réguler la pression artérielle et le cholestérol.",
+            "Il facilite l'élimination des résidus acides du métabolisme et augmente la production de globules rouges, soulage les problèmes de santé tels que l'arthrite, la goutte, l'anémie, l'eczéma et les éruptions cutanées.",
+            "Contient des antioxydants qui aident à protéger contre les dommages cellulaires causés par les effets des radicaux libres.",
+            "Sa teneur en calcium le rend excellent pour la protection la santé des os en exerçant un effet protecteur contre des maladies telles que l'ostéoporose.",
+            "Contient des niveaux élevés de vitamine C qui sont bénéfiques pour la santé du système immunitaire, ce qui aide à combattre les infections et les maladies.",
+            "Contient des antioxydants du caroténoïde famille qui aide à protéger la santé des yeux.",
+            "Il peut aider à améliorer les performances sportives et avoir des avantages pour le contrôle du poids grâce à sa faible teneur en calories.",
+            "C'est un diurétique, favorise également l'élimination du mucus, donc peut être utile ul en cas de rhume et de grippe.",
+            "C'est l'un des légumes les plus riches en calcium et en iode."
+        ],
+        "usageInterne": "La meilleure façon d'obtenir ses propriétés est de consommer le légume cru en salade, cuit dans des repas comme des omelettes ou des soupes et grâce à sa légère saveur de moutarde comme condiment. Il peut être infusé avec les dessus et des feuilles séchées pour soulager les affections respiratoires, la faiblesse et la fatigue.",
+        "usageExterne": "Le cresson frais peut être utilisé en externe comme remède naturel pour certaines affections et inflammations telles que l'acné, la dermatite séborrhéique, les ulcères variqueux et les inflammations buccales telles que la gingivite, l'inflammation de la pulpe dentaire (tissu mou de la dent) ou la glossite (inflammation de la langue).",
+        "precaution": [
+            "Il peut irriter la muqueuse digestive, son utilisation est déconseillée en cas d'ulcère gastrique, de gastrite, de brûlures d'estomac, de maladie du foie et d'hyperthyroïdie.",
+            "En grande quantité, il peut irriter les voies urinaires, n'oubliez pas de à consommer toujours avec modération.",
+            "Les personnes allergiques aux crucifères comme la moutarde, le chou ou le brocoli doivent éviter sa consommation.",
+            "En cas de grossesse ou d'allaitement ou en cas de doute sur son utilisation, renseignez-vous auprès de un spécialiste de la santé avant de l'utiliser."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-067",
+        "name": "Cumin",
+        "scientificName": "Cuminum cyminum",
+        "famille": "Apiaceae",
+        "genre": "Cuminum",
+        "description": "Il s'agit d'une plante herbacée qui peut atteindre une hauteur de 60 à 90 cm. Ses feuilles sont longues et fines et ses fleurs sont de petite taille, blanc rosé. Il est largement utilisé dans la cuisine indienne.",
+        "image": "Cumin.png",
+        "symptomIds": [],
+        "habitat": "Originaire d'Asie occidentale, elle est répandue dans tout le bassin méditerranéen. Elle est également répandue en Amérique, en Inde, en Iran, en Indonésie et en Chine. Il pousse dans des climats chauds et tempérés tels que le climat méditerranéen, avec une grande exposition au soleil.",
+        "propriete": [
+            "Contient des propriétés digestives, stimule les sécrétions intestinales. Aide à lutter contre la bactérie Helicobacter pylori qui provoque des ulcères d'estomac et une gastrite.",
+            "Il est apaisant et antispasmique, soulage les douleurs abdominales et les crampes causées par les nerfs.",
+            "C'est un excellent remède carminatif, il aide à éliminer les gaz intestinaux, les ballonnements et les crampes.",
+            "Il est indiqué pour l'anémie. Il aide à prévenir la carence en fer.",
+            "Il est expectorant, améliore les affections telles que la toux, le rhume, le rhume...",
+            "Il possède des propriétés pour traiter le diabète.", 
+            "Aide à réduire la pression artérielle.",
+            "Augmente l'appétit."
+        ],
+        "usageInterne": "On peut le trouver en poudre, teinture, huile ou infusion. En infusion, prenez une petite cuillerée par tasse d'eau.",
+        "usageExterne": "Il est utilisé dans les pommades, les cataplasmes ou les huiles pour traiter les affections de la peau et soulager certains malaises musculaires.",
+        "precaution": [
+            "Évitez les huiles essentielles pendant la grossesse ou l'allaitement et chez les enfants de moins de 6 ans.",
+            "Ne prenez pas de soleil ni de rayons ultraviolets intenses pendant le traitement.",
+            "Évitez l'utilisation intensif sur les peaux sensibles ou les personnes allergiques.",
+            "La glycémie doit être mieux contrôlée si vous êtes diabétique.",
+            "Ne pas utiliser pendant les cycles menstruels intenses."
+        ], 
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
+    {
+        "id": "p-068",
+        "name": "Cumin des prés",
+        "scientificName": "Carum carvi",
+        "famille": "Apiaceae",
+        "genre": "Carum",
+        "description": "Il s'agit d'une plante herbacée annuelle qui a des feuilles vert clair, des fleurs blanches en grappes et de petites graines. Elles atteignent une hauteur de 15 à 40 cm. La racine a une saveur aromatique semblable à celle de la carotte.",
+        "image": "Cumin_des_pres.png",
+        "symptomIds": [],
+        "habitat": "Il est originaire d'Europe centrale, des Pays-Bas, d'Asie occidentale et d'Afrique du Nord. Son habitat naturel est constitué de zones montagneuses avec des forêts et des prairies humides.",
+        "propriete": [
+            "Combat les troubles digestifs et digestifs, est utilisé pour traiter les ulcères d'estomac.",
+            "Aide à soulager les douleurs musculaires. Il est recommandé d'atténuer les douleurs menstruelles.",
+            "Stimule le fonctionnement de système respiratoire, améliorant ainsi les affections respiratoires telles que la toux.", 
+            "Améliore l'élimination des gaz intestinaux et la sensation de gonflement.",
+            "Il est utilisé pour lutter contre de nombreux problèmes digestifs. Il est indiqué pour la gastrite.",
+            "Élimine et soulage les maux de tête et les maux de tête.",
+            "Soulage les brûlures d'estomac, les nausées et les vomissements.",
+            "Aide à combattre les maux de dents.",
+            "Élimine les parasites intestinaux."
+        ],
+        "usageInterne": "Prenez une perfusion pour soulager les symptômes de gaz, de digestion lourde ou de douleurs menstruelles.",
+        "usageExterne": "Pour les douleurs rhumatismales, appliquez ou massez l'huile sur la zone touchée. Il est également utilisé comme tonique à perfusion pour les problèmes de peau tels que l'acné, la dermatite, l'eczéma...",
+        "precaution": [
+            "Une consommation excessive peut causer des brûlures d'estomac et des éructations. Elle peut également faire baisser le taux de sucre dans le sang. Ainsi, si le diabétique est diabétique, il doit surveiller son taux de sucre dans le sang plus souvent.",
+            "Lorsqu'il est consommé à des doses normales, ne pas dépasser une période de 8 semaines.", 
+            "Évitez de l'utiliser si vous souffrez d'hémochromatose (excès de fer dans le corps)."
+        ],
+        "sources": [],
+        "is_active": true,
+        "is_premium": false
+    },
 ];
