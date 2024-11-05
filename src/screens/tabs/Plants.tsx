@@ -1,57 +1,79 @@
 import React from 'react';
 
-import { Text, View, Platform, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  Text,
+  View,
+  Platform,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 
-import { usePlantPress } from '@src/hooks/useCommonNav';
+import {usePlantPress} from '@src/hooks/useCommonNav';
 
-import { utils } from '@src/utils';
-import { custom } from '@src/custom';
-import { theme } from '@src/constants';
-import { PlantType } from '@src/types';
-import { components } from '@src/components';
-import { usePlantData } from '@src/hooks/useData';
+import {utils} from '@src/utils';
+import {custom} from '@src/custom';
+import {theme} from '@src/constants';
+import {PlantType} from '@src/types';
+import {components} from '@src/components';
+import {usePlantData} from '@src/hooks/useData';
+import {getPlantImage, PlantImageName} from '@src/data/plantImages';
 
 const Plants: React.FC = () => {
   const handlePlantPress = usePlantPress();
   const {plants, hasData} = usePlantData();
 
-  const renderCategories = (): JSX.Element | null => {
-    if (!plants?.length) {
-      return null;
-    }
+    // Fonction de sécurité pour gérer les images manquantes
+    const getImage = (imageName: string) => {
+      try {
+        // Récupérer l'image avec getPlantImage
+        const image = getPlantImage(imageName as PlantImageName);
+        // Retourner l'image dans le bon format pour FastImage
+        return typeof image === 'number' 
+          ? image  // Si c'est déjà un require()
+          : { uri: image };  // Si c'est une URL
+      } catch (error) {
+        console.warn(`Image not found for: ${imageName}`);
+        return require('@src/assets/images/plants/default.png');
+      }
+    };
 
-    return (
-      <View style={styles.categoriesContainer}>
-        {plants.map((item: PlantType, index: number) => (
-          <TouchableOpacity
-            key={item.id || index}
-            style={styles.plantCard}
-            onPress={() => handlePlantPress(item)}
-          >
-            <custom.ImageBackground
-              imageStyle={styles.plantImage}
-              resizeMode="cover"
-              source={item.image}
-              style={styles.plantImageBackground}
-            >
-              {item.is_premium && Platform.OS === 'ios' && (
-                <custom.PlantPrenium
-                  item={item}
-                  containerStyle={styles.premiumBadge}
-                />
-              )}
-              <Text
-                numberOfLines={2}
-                style={styles.plantName}
-              >
-                {item.name}
-              </Text>
-            </custom.ImageBackground>
-          </TouchableOpacity>
-        ))}
-      </View>
-    );
-  };
+    const renderCategories = (): JSX.Element | null => {
+      if (plants?.length) {
+        return (
+          <View style={styles.categoriesContainer}>
+            {plants.map((item, index) => {
+              // On s'assure que item.image est une chaîne
+              const imageSource = getImage(item.image?.toString() || '');
+              
+              return (
+                <TouchableOpacity
+                  key={index}
+                  style={styles.plantCard}
+                  onPress={() => handlePlantPress(item)}>
+                  <custom.ImageBackground
+                    source={imageSource}
+                    style={styles.plantImageBackground}
+                    imageStyle={styles.plantImage}
+                    resizeMode="cover">
+                    {item.is_premium && Platform.OS === 'ios' ? (
+                      <custom.PlantPrenium
+                        item={item as PlantType}
+                        containerStyle={styles.premiumBadge}
+                      />
+                    ) : null}
+                    <Text numberOfLines={2} style={styles.plantName}>
+                      {item.name}
+                    </Text>
+                  </custom.ImageBackground>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        );
+      }
+      return null;
+    };
 
   if (!hasData) {
     return <components.NoData />;
@@ -61,12 +83,10 @@ const Plants: React.FC = () => {
     <custom.ImageBackground
       resizeMode="stretch"
       source={require('@src/assets/bg/02.png')}
-      style={styles.container}
-    >
+      style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
-      >
+        showsVerticalScrollIndicator={false}>
         {renderCategories()}
       </ScrollView>
     </custom.ImageBackground>

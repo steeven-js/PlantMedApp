@@ -1,7 +1,5 @@
 import { PlantType } from '@src/types';
 
-const PLANTS_IMG_PATH = '@src/assets/images/plants';
-
 export const plants: PlantType[] = [
     /**Absinthe */
     {
@@ -11,7 +9,7 @@ export const plants: PlantType[] = [
         famille: 'Asteraceae',
         scientificName: 'Artemisia absinthium',
         description: "C'est une plante herbacée vivace qui pousse généralement jusqu'à 80 - 120 cm. Elle est appelée la «Mère de toutes les herbes», et est principalement cultivée et utilisée pour ses propriétés digestives et appétissantes.",
-        image: `${PLANTS_IMG_PATH}/Absinthe.png`,
+        image: 'Absinthe.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire de régions à climat tempéré en Europe, en Asie et en Afrique du Nord, il se trouve actuellement dans presque toute l'Europe et est naturalisé dans une grande partie des États-Unis. Il pousse sans difficulté dans les régions pauvres sols ainsi que dans des endroits secs et avec exposition solaire.",
         propriete: [
@@ -42,7 +40,7 @@ export const plants: PlantType[] = [
         famille: 'Asteraceae',
         scientificName: 'Achillea millefolium',
         description: "C'est une plante herbacée de 30 à 90 cm de hauteur connue sous le nom d'Achillea par les Grecs en l'honneur d'Achille. Elle contient d'abondantes propriétés médicinales et la partie la plus utilisée est des fleurs. Cette plante dégage une forte odeur.",
-        image: `${PLANTS_IMG_PATH}/Achilee.png`,
+        image: 'Achillee.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Elle est d'origine eurasienne bien qu'en raison de son expansion facile, elle se trouve actuellement distribuée sur tous les continents. C'est une plante résistante au froid, nécessitant des climats tempérés-froids avec une exposition continue au soleil. Il s'adapte à tous les types de sols et pousse généralement en milieu montagneux, bord de route, fourrés...",
         propriete: [
@@ -72,7 +70,7 @@ export const plants: PlantType[] = [
         famille: 'Ranunculaceae',
         scientificName: 'Actaea racemosa',
         description: "Il s'agit d'une plante herbacée vivace à la tige haute qui mesure entre 1 et 2,5 m, produit de grandes feuilles avec des grappes de fleurs blanches. Les fleurs sont produites à la fin du printemps et au début de l'été. une odeur désagréable.",
-        image: `${PLANTS_IMG_PATH}/Actee_a_grappe.png`,
+        image: 'Actee_a_grappe.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire de l'est de l'Amérique du Nord. Il pousse dans des sols humides et dans une grande variété d'habitats forestiers, comme dans les petites ouvertures forestières.",
         propriete: [
@@ -105,7 +103,7 @@ export const plants: PlantType[] = [
         famille: 'Asparagaceae',
         scientificName: 'Agavaceae',
         description: "Cette plante forme un grand nombre de feuilles épaisses et charnues qui tournent sur une tige courte (généralement pas plus de 30 cm de hauteur), donnant ainsi l'impression qu'elle pousse à partir du même sol. Il semble les dix années de la vie et après la floraison et la maturation des fruits meurt.",
-        image: `${PLANTS_IMG_PATH}/Agave.png`,
+        image: 'Agave.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il a été introduit d'Amérique en Europe, ses cultures s'étendent du sud des États-Unis au nord de l'Argentine. La plus forte concentration d'espèces indigènes se trouve au Mexique. Il faut des climats semi-secs, avec des sols argileux, perméables, riches en fer et en dérivés de la roche volcanique.",
         propriete: [
@@ -138,7 +136,7 @@ export const plants: PlantType[] = [
         famille: 'Lamiaceae',
         scientificName: 'Leonurus cardiaca',
         description: "Il s'agit d'une plante mesurant environ 60 cm et un mètre. Ses fleurs sont de couleur pourpre rosâtre, cette plante dégage une odeur désagréable. Elle fleurit de juin à septembre.",
-        image: `${PLANTS_IMG_PATH}/Agripaume.png`,
+        image: 'Agripaume.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire d'Asie et d'Amérique du Nord, mais on peut également le trouver en Europe, en Espagne dans les Pyrénées. Il est situé en bordure de route, dans des buissons et dans des gravats.",
         propriete: [
@@ -166,7 +164,7 @@ export const plants: PlantType[] = [
         famille: 'Rosaceae',
         scientificName: 'Agrimonia eupatoria',
         description: "Il s'agit d'une plante herbacée vivace mesurant entre 40 et 150 cm. Elle a une tige dressée, des feuilles coupées en segments déchiquetés et des fleurs jaunes. Elle peut atteindre environ un mètre de haut et dégage une odeur agréable.",
-        image: `${PLANTS_IMG_PATH}/Aigremoine.png`,
+        image: 'Aigremoine.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "On le trouve surtout dans les zones tempérées de forêts et de prairies d'Europe et d'Amérique du Sud. Il pousse sur des terrains argileux et ensoleillés à proximité de cultures, de haies et de lisières de forêts à proximité d'arbres tels que des chênes.",
         propriete: [
@@ -199,7 +197,7 @@ export const plants: PlantType[] = [
         famille: 'Amaryllidaceae',
         scientificName: 'Allium sativum',
         description: "Il s'agit d'une plante vivace à feuilles minces et plates atteignant 30 cm de long et des racines de plus de 50 cm. Le bulbe forme une tête qui contient généralement entre 6 et 12 dents et dégage une forte odeur de être coupé.",
-        image: `${PLANTS_IMG_PATH}/Ail.png`,
+        image: 'Ail.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire d'Asie du Sud bien qu'il soit arrivé au Moyen-Orient il y a environ quatre mille ans. Aujourd'hui, il est cultivé dans de nombreux pays du monde sous des climats chauds ou tempérés.",
         propriete: [
@@ -232,7 +230,7 @@ export const plants: PlantType[] = [
         famille: 'Asphodelaceae',
         scientificName: 'Aloe vera',
         description: "Il s'agit d'une plante vivace qui compte plus de 250 variétés et des feuilles épaisses d'environ 50 cm. Il s'agit de feuilles étroites et dentelées d'environ 2 mm qui sont regroupées dans une rosace d'environ 20 feuilles. Elle est cultivée depuis des temps immémoriaux ancien pour ses propriétés médicinales.",
-        image: `${PLANTS_IMG_PATH}/Aloe_Vera.png`,
+        image: 'Aloe_Vera.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il provient de sites chauds et désertiques, il est originaire d'Afrique, plus précisément de la péninsule arabique. Pour son développement optimal, il a besoin de beaucoup de lumière, il ne supporte pas très bien les températures inférieures à zéro.",
         propriete: [
@@ -264,7 +262,7 @@ export const plants: PlantType[] = [
         famille: 'Rosaceae',
         scientificName: 'Prunus dulcis',
         description: "C'est un arbre à la tige lisse et aux feuilles caduques atteignant généralement 3 à 5 mètres de haut. Le fruit est de l'amande et la grande majorité des variétés cultivées aujourd'hui sont autofertiles.",
-        image: `${PLANTS_IMG_PATH}/Amandier.png`,
+        image: 'Amandier.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire d'Asie centrale, l'Espagne étant le deuxième producteur mondial. La culture est originaire des régions chaudes et presque désertes de l'Asie centrale.",
         propriete: [
@@ -295,7 +293,7 @@ export const plants: PlantType[] = [
         famille: 'Amaranthaceae',
         scientificName: 'Amaranthus',
         description: "C'est une plante herbacée pleinement utilisée. En raison de ses propriétés, il y a ceux qui l'ont considérée comme une plante sacrée.",
-        image: `${PLANTS_IMG_PATH}/Amarante.png`,
+        image: 'Amarante.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Originaire d'Amérique du Nord et consommée depuis l'ère maya il y a plus de 7000 ans. Aujourd'hui, elle est distribuée dans la vaste majorité des régions aux climats chauds et tempérés.",
         propriete: [
@@ -324,7 +322,7 @@ export const plants: PlantType[] = [
         famille: 'Apiaceae',
         scientificName: 'Anethum graveolens',
         description: "Il s'agit d'une plante herbacée annuelle, aromatique, mesurant environ 30 à 45 cm et pouvant atteindre plus d'un mètre. Les feuilles sont très minces et ont une saveur semblable à celle du persil et leurs graines ont un goût un peu amer. Il est largement utilisé dans les pays nordiques.",
-        image: `${PLANTS_IMG_PATH}/Aneth.png`,
+        image: 'Aneth.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire d'Asie mineure et de la bande méditerranéenne. Il pousse de manière optimale dans les climats chauds ou tempérés. Il ne tolère pas très bien les climats froids, secs ou pluvieux.",
         propriete: [
@@ -355,7 +353,7 @@ export const plants: PlantType[] = [
         famille: 'Apiaceae',
         scientificName: 'Angelica archangelica',
         description: "Il s'agit d'une plante à grandes feuilles dont l'achèvement de son cycle biologique prend 24 mois. Vous pouvez atteindre jusqu'à 2 mètres de hauteur et ses fleurs sont blanches avec de nombreuses branches.",
-        image: `${PLANTS_IMG_PATH}/Angelique.png`,
+        image: 'Angelique.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Elle pousse à l'état sauvage dans des pays du nord tels que la Norvège, la Suède ou la Finlande. Cette plante est surtout cultivée à Niort (France). Elle fleurit en avril et fin août. Les fruits sont Ramassez-les une fois qu'ils sont très mûrs.",
         propriete: [
@@ -387,7 +385,7 @@ export const plants: PlantType[] = [
         famille: 'Myrtaceae',
         scientificName: 'Melaleuca alternifolia',
         description: "Ce petit arbre ou arbuste peut atteindre 5 mètres de haut. Ses feuilles sont étroites et ses fleurs sont blanches, environ 5 cm et pointillées. Il est populaire grâce à l'huile essentielle qui est distillée à partir de ses feuilles aboie.",
-        image: `${PLANTS_IMG_PATH}/Arbre_a_the.png`,
+        image: 'Arbre_a_the.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Originaire d'Australie, il pousse sur les terrains humides et marécageux de la côte nord de la Nouvelle-Galles du Sud.",
         propriete: [
@@ -419,7 +417,7 @@ export const plants: PlantType[] = [
         famille: 'Elaeagnaceae',
         scientificName: 'Hippophae',
         description: "Il s'agit d'un arbuste épineux mesurant entre 3 et 6 mètres de hauteur. Les fruits sont ovoïdes, charnus et de couleur jaune orangée. Ils sont utilisés depuis plus de 1000 ans.",
-        image: `${PLANTS_IMG_PATH}/Argousier.png`,
+        image: 'Argousier.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire d'Europe et d'Asie. On le trouve dans les régions froides et arides et dans les zones sablonneuses telles que les dunes et les rives de la mer.",
         propriete: [
@@ -447,7 +445,7 @@ export const plants: PlantType[] = [
         famille: 'Asteraceae',
         scientificName: 'Artemisia vulgaris',
         description: "Il s'agit d'une plante herbacée d'une hauteur approximative de 1,5 mètre. Elle a une tige rouge violacé et des feuilles vert très foncé avec quelques poils blancs sur le dessous.",
-        image: `${PLANTS_IMG_PATH}/Armoise_commune.png`,
+        image: 'Armoise_commune.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Originaire du Moyen-Orient, il s'est répandu dans le sud-est de l'Europe et en Asie mineure. Aujourd'hui, il est présent en Australie et en Amérique du Nord. Il pousse dans l'argile azotée, avec des herbes et bon drainage et exposition au soleil.",
         propriete: [
@@ -479,7 +477,7 @@ export const plants: PlantType[] = [
         famille: 'Asteraceae',
         scientificName: 'Arnica montana',
         description: "Il s'agit d'une plante d'environ 20 - 60 cm de hauteur, avec quelques branches et des fleurs jaunes, cette plante dégage une légère odeur aromatique.",
-        image: `${PLANTS_IMG_PATH}/Arnica.png`,
+        image: 'Arnica.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Originaire d'Europe, il est également diffusé par l'Amérique du Nord et l'Asie. Il pousse dans les régions tempérées et dans les prés et les pâturages d'altitude.",
         propriete: [
@@ -508,7 +506,7 @@ export const plants: PlantType[] = [
         famille: 'Asteraceae',
         scientificName: 'Cynara scolymus',
         description: "Il s'agit d'une plante herbacée vivace atteignant une hauteur de 1,4 à 2 mètres. Les feuilles de la rosette mesurent plus de 60 cm et, selon le type, sont vertes ou violettes et sont collectées printemps.",
-        image: `${PLANTS_IMG_PATH}/Artichaut.png`,
+        image: 'Artichaut.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Originaire d'Afrique de l'Est, il s'étend dans toute la Méditerranée orientale et en Europe sous des climats tempérés. La Californie est le plus important fournisseur des États-Unis. Aujourd'hui, elle est cultivée dans tous les pays méditerranéens tout le monde.",
         propriete: [
@@ -539,7 +537,7 @@ export const plants: PlantType[] = [
         famille: 'Rosaceae',
         scientificName: 'Crataegus monogyna',
         description: "C'est un arbre à écorce dure et à feuilles persistantes, dont les fleurs blanches mesurent de 4 à 6 mètres de haut. Il est utilisé depuis plusieurs siècles pour ses propriétés pour de nombreuses utilisations.",
-        image: `${PLANTS_IMG_PATH}/Aubepine_monogyne.png`,
+        image: 'Aubepine_monogyne.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il pousse spontanément dans de nombreuses forêts et haies, principalement dans les régions au climat frais d'Europe, d'Asie et d'Amérique du Nord.",
         propriete: [
@@ -570,7 +568,7 @@ export const plants: PlantType[] = [
         famille: 'Arecaceae',
         scientificName: 'Euterpe oleracea',
         description: "C'est un palmier qui atteint généralement jusqu'à 20 mètres de hauteur. Ses fruits sont connus dans le monde entier à la fois pour son utilisation dans le régime amazonien et pour ses excellentes propriétés médicinales. Il a une saveur exotique agréable et douce.",
-        image: `${PLANTS_IMG_PATH}/Acai.png`,
+        image: 'Acai.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire du nord de l'Amérique du Sud où il remonte à l'époque précolombienne. Il pousse principalement dans des pays tels que le Brésil, le Suriname, la Guyane, la Bolivie, le Pérou, la Colombie, le Venezuela et la Trinité-et-Tobago. Il s'adapte très bien aux climats tropicaux pluvieux typiques de la forêt amazonienne et dans les sols très humides.",
         propriete: [
@@ -602,7 +600,7 @@ export const plants: PlantType[] = [
         famille: 'Illiciaceae',
         scientificName: 'Illicium verum',
         description: "Il s'agit d'un arbre vivace de la région sud-ouest de la Chine qui n'a rien à voir avec l'anis commun, bien qu'il partage le même principe actif, l'anéthole, qui fournit cette saveur et ce parfum particuliers.",
-        image: `${PLANTS_IMG_PATH}/Badianier_de_Chine.png`,
+        image: 'Badianier_de_Chine.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il n'est produit que dans quatre provinces de Chine et dans les régions chaudes et humides d'Amérique. Il est récolté entre les mois de mars et mai.",
         propriete: [
@@ -621,6 +619,278 @@ export const plants: PlantType[] = [
         precaution: [
             "Ne pas mélanger avec des boissons alcoolisées car cela pourrait provoquer une intoxication.",
             "Il ne devrait pas être administré pendant la grossesse ou l'allaitement."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-021',
+        name: 'Bardane',
+        genre: 'Arctium',
+        famille: 'Asteraceae',
+        scientificName: 'Arctium lappa',
+        description: "Il s'agit d'une plante herbacée bisannuelle de plus d'un mètre de hauteur, à grandes feuilles allongées et à fleurs violettes très caractéristiques.",
+        image: 'Bardane.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est originaire d'Europe et d'Asie et a été étendu par les États-Unis. On le trouve dans les friches, au bord des routes et près des zones habitées.",
+        propriete: [
+            "Contient des propriétés diurétiques. Il contribue à améliorer la digestion et à éliminer les toxines du corps.",
+            "Il est bénéfique pour soulager les douleurs rhumatismales, les douleurs causées par les calculs biliaires, les hémorroïdes...",
+            "Favorise récupération des rhumes et des rhumes et soulage les maux de gorge.",
+            "Contient des avantages importants pour la santé des cheveux comme les démangeaisons, les pellicules...",
+            "Prévient la rétention de liquide et le gonflement abdominal.",
+            "Contribue à réduire les niveaux de cholestérol et d'insuline dans le sang.",
+            "Stimule le foie, la sécrétion biliaire et l'appétit.",
+            "Soulage les douleurs causées par l'arthrite ou l'arthrose.",
+            "Il aide à combattre les infections et les bactéries."
+        ],
+        usageInterne: "Pour obtenir ses propriétés, on peut choisir de préparer une infusion en utilisant une cuillerée de feuilles par tasse.",
+        usageExterne: "Il est utilisé dans les colorants ou les compresses pour traiter une multitude d'affections cutanées telles que l'acné, les plaies, les kystes, les brûlures... L'huile est utilisée pour la croissance et le soin des cheveux.",
+        precaution: [
+            "À consommer avec modération. En cas de doute, consultez d'abord votre médecin.",
+            "Il n'est pas recommandé de l'utiliser pendant la grossesse ou l'allaitement.",
+            "Évitez les personnes allergiques à la plante."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-022',
+        name: 'Basilic',
+        genre: 'Ocimum',
+        famille: 'Lamiaceae',
+        scientificName: 'Ocimum basilicum',
+        description: "Il s'agit d'une plante aromatique annuelle aux feuilles vertes lustrées, ovales et dentelées d'une hauteur comprise entre 30 et 130 cm. Elle est appréciée pour sa facilité de culture en pots et en pots, elle est très sensible au gel.",
+        image: 'Basilic.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Originaire de régions tropicales d'Asie telles que l'Iran, l'Inde ou le Pakistan, il est aujourd'hui cultivé dans le monde entier. Il faut des climats ensoleillés et se développe de manière optimale dans des sols humides et fertiles, avec un peu d'ombre.",
+        propriete: [
+            "Il est antispasmodique, diurétique, carminatif et digestif, réduit les maux d'estomac, il est donc un bon remède contre les gaz.",
+            "Il est recommandé en cas de manque d'appétit, de parasites intestinaux et de dyspepsie nerveuse.",
+            "Il possède des propriétés analgésiques, antiseptiques et cicatrisantes. Il est excellent pour les irritations de la peau.",
+            "Active le système immunitaire et améliore les symptômes des affections des voies respiratoires.",
+            "Recommandé pour les cas des inflammations ostéoarticulaires.",
+            "Contribue à atténuer les maux de tête et à réduire la fièvre.",
+            "Calme les nerfs et aide en cas d'hypertension.",
+            "Aide à lutter contre l'épuisement physique et mental.",
+            "Il est bénéfique en cas d'insomnie."
+        ],
+        usageInterne: "La perfusion est particulièrement indiquée pour les maux de tête. Utilisez une cuillerée de feuilles séchées pour 200 ml d'eau. Faites des gargarismes pour soulager les problèmes de gorge. Pour les problèmes d'acné, appliquez la zone touchée.",
+        usageExterne: "Les cataplasmes sont utilisés en s'appliquant sur la zone touchée, particulièrement recommandés en cas de plaies ou de muguet.",
+        precaution: [
+            "L'utilisation de basilic pendant l'allaitement n'est pas connue avec certitude. Utilisation avec le consentement d'un spécialiste.",
+            "Son utilisation est totalement contre-indiquée en cas de grossesse."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-023',
+        name: 'Bistorte',
+        genre: 'Polygonum',
+        famille: 'Polygonacées',
+        scientificName: 'Polygonum bistorta',
+        description: "C'est une plante vivace qui mesure entre 20 et 80 cm de haut, les feuilles et le rhizome sont utilisés à des fins médicinales. Son nom est dû à la forme unique de son rhizome avec une double torsion rappelant la lettre \"S\".",
+        image: 'Bistorte.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est originaire des régions tempérées d'Amérique du Nord, d'Europe et d'Asie. Pousse dans les zones humides telles que les prairies de montagne et les prairies. Il fleurit entre mai et juillet.",
+        propriete: [
+            "Il possède d'excellentes propriétés astringentes ainsi que des propriétés anti-hémorragiques, anti-inflammatoires, reminéralisantes et cicatrisantes, particulièrement utilisé pour traiter la diarrhée.",
+            "Grâce à sa teneur élevée en fer, il peut être utile pour traiter la faiblesse, anémie et menstruations débilitantes.",
+            "Le rhizome est riche en tanins, vitamine C et glucides, il est également utilisé comme tonique général et réparateur."
+        ],
+        usageInterne: "On peut obtenir ses propriétés par des décoctions en préparant environ 30 grammes de rhizome haché et séché ou 1 cuillère à soupe de feuilles séchées dans de l'eau bouillante et en le laissant reposer pendant environ 5 minutes. Prendre environ 3 tasses par jour. Le gargarisme et le rinçage peuvent soulager des conditions telles que la gingivite, l'inflammation du pharynx ou le saignement des gencives.",
+        usageExterne: "En externe, il est utilisé dans des compresses et des lotions pour traiter des conditions telles que les ulcères, les plaies superficielles, les inflammations oculaires, les brûlures, les varices et les hémorroïdes.",
+        precaution: [
+            "Les personnes souffrant de gastrite ou d'ulcère gastroduodénal ainsi que les femmes enceintes ou qui allaitent doivent éviter son utilisation."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-024',
+        name: 'Bleuet',
+        genre: 'Centaurée',
+        famille: 'Asteraceae',
+        scientificName: 'Centaurea cyanus',
+        description: "C'est une plante herbacée annuelle qui peut mesurer jusqu'à un mètre de hauteur. Ses fleurs sont utilisées à des fins médicinales, elles ont une forme très belle et unique avec des variétés de couleurs intenses de bleu, blanc, violet et rose.",
+        image: 'Bleuet.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est originaire d'Europe et d'Asie, actuellement il est propagé et naturalisé dans la plupart des continents (sauf l'Afrique). Il pousse à l'état sauvage dans les champs, les prairies, les forêts et les bords de routes et autoroutes. C'est un résistant et plante facile à cultiver, elle préfère les climats chauds et fleurit au printemps et en été.",
+        propriete: [
+            "Ses propriétés anti-inflammatoires, antibiotiques et antipyreptiques se démarquent, il est particulièrement indiqué pour traiter les affections liées à la santé oculaire.",
+            "Il contient des propriétés diurétiques, il aide à expulser les excès de liquide du corps.",
+            "Diminue les symptômes associés à la grippe et au rhume et aide à réduire la fièvre.",
+            "Il peut être utile dans le traitement de l'arthrite et des rhumatismes.",
+            "Contient des propriétés astringentes qui peuvent aider à apaiser la peau et combattre l'acné.",
+            "Il a des propriétés antibactériennes."
+        ],
+        usageInterne: "On peut obtenir ses propriétés grâce à une infusion en ajoutant une petite cuillerée de ses fleurs par tasse et en la laissant reposer environ 5 minutes, en prendre trois par jour.",
+        usageExterne: "Grâce à son effet anti-inflammatoire, en usage externe l'eau de bleuet (obtenue à partir de la décoction de ses fleurs) est utilisée dans les lavages oculaires pour soulager des conditions telles que la fatigue oculaire, les démangeaisons, l'irritation, la conjonctivite, la blépharite et la congestion oculaire comme ainsi que pour renforcer, rafraîchir et clarifier la vue.",
+        precaution: [
+            "En cas de doute sur son utilisation pour votre cas particulier ou en cas de grossesse ou d'allaitement, il est recommandé de consulter un spécialiste de la santé avant."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-025',
+        name: 'Boldo',
+        genre: 'Peumus',
+        famille: 'Monimiaceae',
+        scientificName: 'Peumus boldus',
+        description: "C'est une plante typique de l'Amérique du Sud, monotypique et le seul représentant du genre Peumus qui peut atteindre jusqu'à 30 mètres de hauteur. Elle dégage un arôme caractéristique similaire au citron et à la coriandre.",
+        image: 'Boldo.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Utilisé au cours de l'histoire de l'Amérique du Sud par des natifs du Chili, il se trouve généralement comme arbuste et petit arbre principalement au Chili, en Argentine et dans le sud du Pérou. Il pousse dans des sols humides, contrôle légèrement les températures froides et a besoin d'une exposition solaire constante pour son développement.",
+        propriete: [
+            "C'est l'une des plantes médicinales les plus utilisées pour traiter les problèmes de foie et de vésicule biliaire.",
+            "Aide à soulager le système digestif en contribuant à l'élimination des gaz et de la digestion intense et en réduisant les douleurs et l'inconfort gastriques.",
+            "Contient des propriétés diurétiques qui peuvent être utiles pour perdre du poids dans une alimentation saine et équilibrée.",
+            "Aide à réduire le taux de cholestérol et à éliminer la graisse corporelle.",
+            "Aide à calmer le système nerveux, en particulier dans les situations de stress, d'anxiété, de nervosité et d'insomnie.",
+            "Contient des propriétés sédatives, expectorantes, anti-inflammatoires, carminatives, antiseptiques et analgésiques.",
+            "L'huile essentielle est très utilisée pour traiter les affections respiratoires telles que le rhume, la toux ou congestion thoracique.",
+            "Il a un grand pouvoir antioxydant pour le corps."
+        ],
+        usageInterne: "Le moyen le plus courant pour obtenir ses propriétés est par infusions de ses feuilles. Il est préparé comme la grande majorité des infusions en ajoutant environ 3 grammes de feuilles sèches par tasse, prenez 2 ou 3 par jour. Vous pouvez également trouver en comprimés, gélules, comprimés et huiles. Le fruit a également été consommé cru et cuit tout au long de l'histoire américaine.",
+        usageExterne: "En externe, il est utilisé pour traiter les douleurs rhumatismales et névralgiques, procurant un effet sédatif, analgésique et apaisant sur la peau.",
+        precaution: [
+            "Il est contre-indiqué chez les personnes présentant une obstruction des voies biliaires ou de graves maladies du foie.",
+            "En cas de maladie rénale, il peut irriter les reins.",
+            "Il peut provoquer un léger effet laxatif en raison de ses propriétés cholérétiques.",
+            "Il ne doit pas être pris pendant plus de 4 semaines.",
+            "Pour une utilisation correcte et en cas de doute, consultez votre médecin avant de l'utiliser."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-026',
+        name: 'Bougainvillea',
+        genre: 'Bougainvillier',
+        famille: 'Nyctaginacées',
+        scientificName: 'Bougainvillea spectabilis',
+        description: "C'est une plante grimpante qui peut atteindre jusqu'à 12 mètres de hauteur, elle est largement utilisée pour ses propriétés médicinales pour lutter principalement contre les affections respiratoires, notamment pendant les périodes froides. Est également utilisée comme plante ornementale dans jardins et balcons par la beauté et la vitalité que procurent ses couleurs fuchsia, lilas ou violet.",
+        image: 'Bougainvillea.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est originaire d'Amérique du Sud, des forêts tropicales de la région amazonienne, principalement de pays comme le Brésil, l'Argentine, le Pérou et le Mexique. C'est une plante très appropriée pour pousser dans les climats tropicaux et subtropicaux, il a besoin de beaucoup de lumière directe du soleil pour sa croissance, peut garder le froid mais est sensible au gel.",
+        propriete: [
+            "Ses excellentes propriétés se distinguent pour traiter les affections respiratoires telles que le rhume, la grippe, la toux, l'asthme et la bronchite.",
+            "Il contient des propriétés anti-inflammatoires, antitussives, expectorantes et antipyrétiques, aide à favoriser l'expulsion des sécrétions accumulées dans les bronches et aide à réduire la fièvre.",
+            "Il peut aider à calmer les troubles digestifs tels que le reflux acide, l'indigestion et la diarrhée.",
+            "Il est antiseptique, aide à combattre l'acné, la desquamation des la peau et contribue également à la désinfection et au nettoyage des plaies.",
+            "Il exerce un léger effet purgatif, aide à éliminer les déchets et les substances toxiques de l'organisme.",
+            "Il est riche en antioxydants, il a des propriétés antibiotiques qui aident à combattre l'inflammation, les allergies et renforcent le système immunitaire.",
+            "Cela peut aider à réduire les douleurs menstruelles et l'enflure.",
+            "Cela peut être utile pour les personnes atteintes de diabète."
+        ],
+        usageInterne: "La manière la plus courante et la plus simple d'obtenir ses propriétés est d'infuser ses fleurs et ses bractées (feuilles les plus proches des fleurs), qui doivent être soigneusement lavées. Ajouter environ 20 fleurs par litre d'eau quand elle bout et laisser encore 1 minute à feu doux, prendre maximum 2 ou 3 fois par jour.",
+        usageExterne: "En usage externe, il est principalement utilisé pour ses propriétés antiseptiques en appliquant des pansements et des compresses pour traiter de nombreuses affections cutanées telles que les plaies, les cicatrices, l'acné et les brûlures entre autres.",
+        precaution: [
+            "Une consommation excessive peut provoquer des effets secondaires indésirables tels que des allergies, des vomissements ou des diarrhées, alors n'oubliez pas de l'utiliser de manière responsable.",
+            "Sa consommation n'est pas recommandée aux femmes enceintes ou allaitantes, sauf recommandation explicite d'un médecin spécialiste.",
+            "Les personnes souffrant d'une maladie rénale, d'ostéoporose ou d'une maladie du foie doivent également éviter sa consommation."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-027',
+        name: 'Bouleau',
+        genre: 'Betula',
+        famille: 'Betulaceae',
+        scientificName: 'Betula',
+        description: "Cet arbre a un tronc mince et haut, environ 30 mètres, et est caractéristique pour avoir l'écorce blanc argenté une fois adulte. Il fleurit en avril et en mai et ses fruits mûrissent en été.",
+        image: 'Bouleau.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est distribué principalement dans l'hémisphère nord, en Europe, dans une partie de l'Asie, en Amérique du Nord et en Afrique du Nord. Le besoin de zones ensoleillées avec des sols acides et de la silice avec une humidité suffisante, il est très adaptable et supporte très bien la gelée.",
+        propriete: [
+            "Grâce à son effet antiseptique, cicatrisant et anti-inflammatoire, il est utile pour soulager de nombreux types de maux pour la peau ainsi que pour les maux musculaires, articulaires ou de la tête.",
+            "Contient des propriétés astringentes et cholérétiques. Ce qui est recommandé pour le traitement des infections du système digestif.",
+            "Prévient et traite une multitude de maladies des reins et des voies urinaires.",
+            "Il se distingue par sa capacité à éliminer les excès de liquide dans le organisme.",
+            "Améliore les symptômes des maladies du système respiratoire.",
+            "Empêche la chute et améliore la santé du cuir chevelu.",
+            "Nettoie le corps des impuretés et est antimicrobien.",
+            "C'est une aide naturelle pour perdre du poids."
+        ],
+        usageInterne: "Préparer une infusion avec une cuillerée de feuilles de bouleau séchées vous permettra de perdre du poids naturellement.",
+        usageExterne: "Il est utilisé dans les huiles, les toniques et les crèmes. Il met en valeur sa propriété de lutter contre la cellulite.",
+        precaution: [
+            "L'huile essentielle ne doit pas être prise ou utilisée sans supervision professionnelle.",
+            "Elle n'est pas compatible avec les médicaments à effet anticoagulant.",
+            "Elle n'est pas recommandée pendant la grossesse ou l'allaitement."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-028',
+        name: 'Bourrache',
+        genre: 'Borago',
+        famille: 'Boraginaceae',
+        scientificName: 'Borago officinalis',
+        description: "Cette plante mesure entre 60 cm et 1 mètre de haut et présente principalement des fleurs bleues, bien qu'elles soient également roses et blanches.",
+        image: 'Bourrache.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est originaire de Syrie, du Liban et d'Egypte. On le trouve actuellement dans la région méditerranéenne, en Asie Mineure et dans les régions chaudes d'Europe, d'Afrique et d'Amérique du Sud. Il pousse à l'état sauvage dans de nombreux endroits fertile et humide.",
+        propriete: [
+            "Il convient au traitement des irritations du système digestif telles que la gastrite, les douleurs à l'estomac, l'indigestion...",
+            "Il est bénéfique pour soulager la toux et de nombreux symptômes d'infections respiratoires telles que le rhume ou le rhume.",
+            "Il est indiqué en cas d'insuffisance cardiaque, d'arthrite, de goutte, de maladies rhumatismales...",
+            "Contient des propriétés digestives qui aident à expulser les gaz intestinaux.",
+            "Aide à éliminer les excès de liquide et de toxines de l'organisme.",
+            "Il est idéal pour les régimes amaigrissants ou les personnes obèses.",
+            "Aide à réduire le cholestérol sanguin.",
+            "Soulage les symptômes de la ménopause.",
+            "C'est un puissant antioxydant."
+        ],
+        usageInterne: "Pour obtenir ses propriétés, nous pouvons choisir de préparer une infusion en utilisant une cuillère à soupe de feuilles par tasse, notamment pour améliorer les symptômes des affections respiratoires.",
+        usageExterne: "Il est utilisé dans les compresses ou les cataplasmes pour traiter une multitude d'affections externes telles que l'arthrite, les bosses, les traumatismes, les plaies, les irritations... Le gargarisme peut être effectué pour améliorer la santé des gencives ou les maux de gorge tels que laryngite, angine. L'huile de ses graines est bénéfique pour les femmes car elle soulage les symptômes de la menstruation et de la ménopause.",
+        precaution: [
+            "Il est contre-indiqué pendant la grossesse et l'allaitement.",
+            "Évitez de consommer des enfants lors d'une utilisation prolongée."
+        ],
+        sources: ['Pharmacopée européenne'],
+        is_active: true,
+        is_premium: false,
+    },
+    {
+        id: 'p-029',
+        name: 'Brocoli',
+        genre: 'Brassica',
+        famille: 'Brassicaceae',
+        scientificName: 'Brassica oleracea',
+        description: "Cette plante contient un grand nombre de têtes de fleurs vertes et charnues, en forme d'arbre. Elle est très similaire à d'autres variétés de son espèce telles que le chou-fleur, le chou-fleur ou le chou de Bruxelles.",
+        image: 'Brocoli.png',
+        symptomIds: ['s-001', 's-005'],
+        habitat: "Il est originaire des côtes de la Méditerranée orientale. Au Proche-Orient, en Asie Mineure, au Liban et en Syrie, il a poussé ses premiers spécimens. Il croît de manière optimale avec des températures modérément froides, sa saison de croissance s'étend jusqu'à la fin de l'année.",
+        propriete: [
+            "C'est un des aliments considérés comme plus complet et bénéfique pour la santé, il est indiqué pour soulager les problèmes digestifs, améliorer la digestion et aider à l'élimination des gaz intestinaux.",
+            "Il est rassasiant, aide à purifier l'organisme de substances toxiques et pour lutter contre la constipation.",
+            "Il aide à prendre soin du cœur, il est indiqué pour la prévention des arythmies, de l'athérosclérose.",
+            "Il est très utile pour les personnes souffrant d'hypertension et un excellent allié dans les régimes anti-cancer.",
+            "Fournit une sensation de bien-être et prévient les cas de nervosité, de stress et d'anxiété.",
+            "Aide à réguler l'excès de liquide dans le corps.",
+            "Protège les os et les soins de la peau.",
+            "C'est un aliment idéal pendant la grossesse.",
+            "Il aide à prévenir et à combattre l'anémie."
+        ],
+        usageInterne: "Pour mieux obtenir toutes ses propriétés, le meilleur moyen de le consommer est de le cuire à la vapeur.",
+        usageExterne: "Il est utilisé pour soulager une multitude d'affections cutanées telles que plaies infectées, eczéma, acné, varices...",
+        precaution: [
+            "Il n'est pas recommandé pour la consommation chez les personnes présentant une insuffisance rénale ou des problèmes digestifs.",
+            "Ne consommez pas cru en cas de problèmes rénaux. En cas de doute, consultez un spécialiste auparavant.",
+            "Évitez son utilisation si des médicaments sont utilisés pour réguler la coagulation du sang."
         ],
         sources: ['Pharmacopée européenne'],
         is_active: true,

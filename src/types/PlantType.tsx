@@ -1,3 +1,4 @@
+import { ImageRequireSource } from 'react-native';
 
 export interface PlantType {
   id: string;
@@ -6,7 +7,7 @@ export interface PlantType {
   genre: string;
   famille: string;
   description: string;
-  image: string;
+  image: ImageRequireSource | string; // Modifié pour accepter les deux types
   symptomIds: string[];
   habitat: string;
   propriete: string[];
