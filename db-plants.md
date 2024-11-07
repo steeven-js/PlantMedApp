@@ -59,11 +59,12 @@ Liste des plantes :
 - Estragon
 - Eucalyptus
 - Fenouil
+- Fenugrec
 - Fleur d'oranger
+- Framboisier
 - Fumeterre
 - Gattilier
 - Gentiana
-- Gingembre
 - Ginkgo
 - Ginseng
 - Giroflier
@@ -147,7 +148,4 @@ Liste des plantes :
 - Échinacée
 - Épazote
 - Épine-vinette
-- Fenugrec
-- Framboisier
-- Gingembre
 - Moringa
