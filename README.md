@@ -22,6 +22,19 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   emulator -avd Pixel_8_PRO_API -dns-server 8.8.8.8,8.8.4.4
   ```
 
+- **Grand nettoyage**
+
+  ```shell
+  cd ios
+  pod deintegrate
+  pod cache clean --all
+  rm -rf Pods
+  rm -rf build
+  rm -rf Podfile.lock
+  pod install
+  cd ..
+  ```
+
 - **Exécuter l'application sur Android**
 
   ```shell
@@ -34,7 +47,7 @@ Dans le répertoire du projet, vous pouvez exécuter les commandes suivantes :
   cd ios/
   pod install --repo-update
   cd ..
-  npx react-native run-ios --simulator="iPhone 16"
+  npx react-native run-ios --simulator="iPhone 16 Pro (18.1)"
   ```
 
 - **Installer les dépendances iOS et exécuter l'application sur un device**

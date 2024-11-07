@@ -30,7 +30,7 @@ export const plants: PlantType[] = [
         ],
         sources: ['Pharmacopée française', 'OMS monographies'],
         is_active: true,
-        is_premium: false,
+        is_premium: true,
     },
     /**Absinthe */
     {
@@ -1212,7 +1212,7 @@ export const plants: PlantType[] = [
         famille: 'Asteraceae',
         scientificName: 'Silybum marianum',
         description: "Il s'agit d'une plante herbacée qui vit environ 2 ans et mesure environ 2 mètres de haut et peut atteindre plus de 3 ans. Dans le centre, elle porte une rosette de grandes feuilles pourpres et brillantes. Les fruits ils contiennent les graines et sont utilisés à des fins médicinales.",
-        image: 'Chardon_Marie.png',
+        image: 'Chardon-Marie.png',
         symptomIds: ['s-001', 's-005'],
         habitat: "Il est originaire des bassins de la Méditerranée et de l'Asie mineure. Il pousse principalement à l'air libre et en bordure de routes et de voies ferrées.",
         propriete: [
@@ -1770,7 +1770,7 @@ export const plants: PlantType[] = [
         "famille": "Asteraceae",
         "genre": "Silybum",
         "description": "Il s'agit d'une plante herbacée qui vit environ 2 ans et mesure environ 2 mètres de haut et peut atteindre plus de 3 ans. Dans le centre, elle porte une rosette de grandes feuilles pourpres et brillantes. Les fruits ils contiennent les graines et sont utilisés à des fins médicinales.",
-        "image": "Chardon_Marie.png",
+        "image": "Chardon-Marie.png",
         "symptomIds": [],
         "habitat": "Il est originaire des bassins de la Méditerranée et de l'Asie mineure. Il pousse principalement à l'air libre et en bordure de routes et de voies ferrées.",
         "propriete": [
