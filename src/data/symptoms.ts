@@ -6,7 +6,7 @@ export const symptoms: SymptomType[] = [
         name: 'Acné',
         description: 'Affection cutanée inflammatoire des follicules pilo-sébacés.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-001', 'plant-002'],
+        plantIds: ['p-001', 'p-002'],
         sources: ['Manuel de phytothérapie'],
 
 
@@ -16,7 +16,7 @@ export const symptoms: SymptomType[] = [
         name: 'Allergie',
         description: 'Réaction excessive du système immunitaire à une substance habituellement inoffensive.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-003', 'plant-004'],
+        plantIds: ['p-003', 'p-004'],
         sources: ['Guide des allergies et phytothérapie'],
 
 
@@ -26,7 +26,7 @@ export const symptoms: SymptomType[] = [
         name: 'Anémie',
         description: 'Diminution du taux d\'hémoglobine dans le sang affectant le transport d\'oxygène.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-005', 'plant-006'],
+        plantIds: ['p-005', 'p-006'],
         sources: ['Traité de nutrition naturelle'],
 
 
@@ -36,7 +36,7 @@ export const symptoms: SymptomType[] = [
         name: 'Anorexie',
         description: 'Trouble du comportement alimentaire caractérisé par une perte d\'appétit.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-007', 'plant-008'],
+        plantIds: ['p-007', 'p-008'],
         sources: ['Psychologie et médecine naturelle'],
 
 
@@ -46,7 +46,7 @@ export const symptoms: SymptomType[] = [
         name: 'Anti-inflammatoire',
         description: 'Propriété réduisant l\'inflammation dans l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-009', 'plant-010'],
+        plantIds: ['p-009', 'p-010'],
         sources: ['Études cliniques en phytothérapie'],
 
 
@@ -56,7 +56,7 @@ export const symptoms: SymptomType[] = [
         name: 'Antiseptique',
         description: 'Propriété permettant de lutter contre les micro-organismes pathogènes.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-011', 'plant-012'],
+        plantIds: ['p-011', 'p-012'],
         sources: ['Guide des propriétés médicinales'],
 
 
@@ -66,7 +66,7 @@ export const symptoms: SymptomType[] = [
         name: 'Anxiété',
         description: 'État de trouble psychologique caractérisé par un sentiment d\'inquiétude et de tension.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-013', 'plant-014'],
+        plantIds: ['p-013', 'p-014'],
         sources: ['Psychiatrie naturelle'],
 
 
@@ -76,7 +76,7 @@ export const symptoms: SymptomType[] = [
         name: 'Aphrodisiaque',
         description: 'Substance stimulant le désir et les fonctions sexuelles.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-015', 'plant-016'],
+        plantIds: ['p-015', 'p-016'],
         sources: ['Médecine traditionnelle'],
 
 
@@ -86,7 +86,7 @@ export const symptoms: SymptomType[] = [
         name: 'Arthrite',
         description: 'Inflammation des articulations causant douleur et raideur.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-017', 'plant-018'],
+        plantIds: ['p-017', 'p-018'],
         sources: ['Rhumatologie naturelle'],
 
 
@@ -96,7 +96,7 @@ export const symptoms: SymptomType[] = [
         name: 'Asthme',
         description: 'Maladie inflammatoire chronique des voies respiratoires.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-019', 'plant-020'],
+        plantIds: ['p-019', 'p-020'],
         sources: ['Pneumologie et plantes médicinales'],
 
 
@@ -106,7 +106,7 @@ export const symptoms: SymptomType[] = [
         name: 'Boulimie',
         description: 'Trouble du comportement alimentaire caractérisé par des accès de suralimentation.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-021', 'plant-022'],
+        plantIds: ['p-021', 'p-022'],
         sources: ['Psychologie nutritionnelle'],
 
 
@@ -116,7 +116,7 @@ export const symptoms: SymptomType[] = [
         name: 'Bronchite',
         description: 'Inflammation des bronches causant toux et mucus.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-023', 'plant-024'],
+        plantIds: ['p-023', 'p-024'],
         sources: ['Traité des maladies respiratoires'],
 
 
@@ -126,7 +126,7 @@ export const symptoms: SymptomType[] = [
         name: 'Brûlures d\'estomac',
         description: 'Sensation de brûlure remontant de l\'estomac vers l\'œsophage.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-025', 'plant-026'],
+        plantIds: ['p-025', 'p-026'],
         sources: ['Gastroentérologie naturelle'],
 
 
@@ -136,7 +136,7 @@ export const symptoms: SymptomType[] = [
         name: 'Brûlures',
         description: 'Lésion de la peau causée par la chaleur ou des substances irritantes.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-027', 'plant-028'],
+        plantIds: ['p-027', 'p-028'],
         sources: ['Dermatologie pratique'],
 
 
@@ -146,7 +146,7 @@ export const symptoms: SymptomType[] = [
         name: 'Calculs biliaires',
         description: 'Formation de cristaux dans la vésicule biliaire ou les voies biliaires.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-029', 'plant-030'],
+        plantIds: ['p-029', 'p-030'],
         sources: ['Hépatologie naturelle'],
 
 
@@ -156,7 +156,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cellulite',
         description: 'Modification de l\'aspect de la peau donnant un effet peau d\'orange.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-031', 'plant-032'],
+        plantIds: ['p-031', 'p-032'],
         sources: ['Esthétique naturelle'],
 
 
@@ -166,7 +166,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cheveux',
         description: 'Problèmes capillaires incluant la chute, la fragilité ou la sécheresse.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-033', 'plant-034'],
+        plantIds: ['p-033', 'p-034'],
         sources: ['Trichologie naturelle'],
 
 
@@ -176,7 +176,7 @@ export const symptoms: SymptomType[] = [
         name: 'Engelures',
         description: 'Lésions cutanées dues à l\'exposition au froid.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-035', 'plant-036'],
+        plantIds: ['p-035', 'p-036'],
         sources: ['Dermatologie du froid'],
 
 
@@ -186,7 +186,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cholestérol',
         description: 'Taux élevé de lipides dans le sang nécessitant une régulation.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-037', 'plant-038'],
+        plantIds: ['p-037', 'p-038'],
         sources: ['Cardiologie préventive'],
 
 
@@ -196,7 +196,7 @@ export const symptoms: SymptomType[] = [
         name: 'Circulation sanguine',
         description: 'Troubles de la circulation du sang dans l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-039', 'plant-040'],
+        plantIds: ['p-039', 'p-040'],
         sources: ['Angiologie naturelle'],
 
 
@@ -206,7 +206,7 @@ export const symptoms: SymptomType[] = [
         name: 'Colite',
         description: 'Inflammation du côlon causant des douleurs abdominales.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-041', 'plant-042'],
+        plantIds: ['p-041', 'p-042'],
         sources: ['Gastroentérologie pratique'],
 
 
@@ -216,7 +216,7 @@ export const symptoms: SymptomType[] = [
         name: 'Côlon irritable',
         description: 'Trouble fonctionnel intestinal chronique.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-043', 'plant-044'],
+        plantIds: ['p-043', 'p-044'],
         sources: ['Syndrome du côlon irritable'],
 
 
@@ -226,7 +226,7 @@ export const symptoms: SymptomType[] = [
         name: 'Constipation',
         description: 'Difficulté à évacuer les selles de façon régulière.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-045', 'plant-046'],
+        plantIds: ['p-045', 'p-046'],
         sources: ['Transit intestinal'],
 
 
@@ -236,7 +236,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cystite',
         description: 'Infection urinaire touchant la vessie.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-047', 'plant-048'],
+        plantIds: ['p-047', 'p-048'],
         sources: ['Urologie naturelle'],
 
 
@@ -246,7 +246,7 @@ export const symptoms: SymptomType[] = [
         name: 'Démangeaisons',
         description: 'Sensation cutanée désagréable provoquant le besoin de se gratter.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-049', 'plant-050'],
+        plantIds: ['p-049', 'p-050'],
         sources: ['Dermatologie pratique'],
 
 
@@ -256,7 +256,7 @@ export const symptoms: SymptomType[] = [
         name: 'Dépression',
         description: 'Trouble de l\'humeur caractérisé par une tristesse persistante et une perte d\'intérêt.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-051', 'plant-052'],
+        plantIds: ['p-051', 'p-052'],
         sources: ['Psychiatrie naturelle'],
 
 
@@ -266,7 +266,7 @@ export const symptoms: SymptomType[] = [
         name: 'Dermatite',
         description: 'Inflammation de la peau pouvant causer rougeurs, démangeaisons et irritation.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-053', 'plant-054'],
+        plantIds: ['p-053', 'p-054'],
         sources: ['Dermatologie clinique'],
 
 
@@ -276,7 +276,7 @@ export const symptoms: SymptomType[] = [
         name: 'Diabète',
         description: 'Trouble métabolique affectant la régulation du taux de sucre dans le sang.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-055', 'plant-056'],
+        plantIds: ['p-055', 'p-056'],
         sources: ['Endocrinologie naturelle'],
 
 
@@ -286,7 +286,7 @@ export const symptoms: SymptomType[] = [
         name: 'Diarrhée',
         description: 'Trouble digestif caractérisé par des selles liquides fréquentes.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-057', 'plant-058'],
+        plantIds: ['p-057', 'p-058'],
         sources: ['Gastroentérologie d\'urgence'],
 
 
@@ -296,7 +296,7 @@ export const symptoms: SymptomType[] = [
         name: 'Douleur menstruelle',
         description: 'Crampes et inconfort associés au cycle menstruel.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-059', 'plant-060'],
+        plantIds: ['p-059', 'p-060'],
         sources: ['Gynécologie naturelle'],
 
 
@@ -306,7 +306,7 @@ export const symptoms: SymptomType[] = [
         name: 'Elimination des toxines',
         description: 'Processus de détoxification naturelle de l\'organisme pour éliminer les substances nocives.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-061', 'plant-062'],
+        plantIds: ['p-061', 'p-062'],
         sources: ['Médecine détox'],
 
 
@@ -316,7 +316,7 @@ export const symptoms: SymptomType[] = [
         name: 'Fatigue',
         description: 'État d\'épuisement physique ou mental affectant les capacités normales.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-063', 'plant-064'],
+        plantIds: ['p-063', 'p-064'],
         sources: ['Manuel de médecine générale'],
 
 
@@ -326,7 +326,7 @@ export const symptoms: SymptomType[] = [
         name: 'Fertilité',
         description: 'Capacité de reproduction et équilibre hormonal lié à la procréation.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-065', 'plant-066'],
+        plantIds: ['p-065', 'p-066'],
         sources: ['Traité de fertilité naturelle'],
 
 
@@ -336,7 +336,7 @@ export const symptoms: SymptomType[] = [
         name: 'Fièvre',
         description: 'Élévation de la température corporelle au-dessus de la normale.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-067', 'plant-068'],
+        plantIds: ['p-067', 'p-068'],
         sources: ['Guide des symptômes fébriles'],
 
 
@@ -346,7 +346,7 @@ export const symptoms: SymptomType[] = [
         name: 'Flatulence',
         description: 'Accumulation excessive de gaz dans le système digestif.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-069', 'plant-070'],
+        plantIds: ['p-069', 'p-070'],
         sources: ['Gastroentérologie pratique'],
 
 
@@ -356,7 +356,7 @@ export const symptoms: SymptomType[] = [
         name: 'Foie gras',
         description: 'Accumulation excessive de graisse dans le foie pouvant altérer son fonctionnement.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-071', 'plant-072'],
+        plantIds: ['p-071', 'p-072'],
         sources: ['Hépatologie clinique'],
 
 
@@ -366,7 +366,7 @@ export const symptoms: SymptomType[] = [
         name: 'Foie propre',
         description: 'Soutien à la fonction hépatique et à la détoxification naturelle du foie.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-073', 'plant-074'],
+        plantIds: ['p-073', 'p-074'],
         sources: ['Guide de santé hépatique'],
 
 
@@ -376,7 +376,7 @@ export const symptoms: SymptomType[] = [
         name: 'Froid',
         description: 'Sensibilité excessive aux basses températures et leurs effets sur l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-075', 'plant-076'],
+        plantIds: ['p-075', 'p-076'],
         sources: ['Médecine climatique'],
 
 
@@ -386,7 +386,7 @@ export const symptoms: SymptomType[] = [
         name: 'Glaucome',
         description: 'Maladie oculaire affectant le nerf optique, souvent liée à une pression intraoculaire élevée.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-077', 'plant-078'],
+        plantIds: ['p-077', 'p-078'],
         sources: ['Ophtalmologie naturelle'],
 
 
@@ -396,7 +396,7 @@ export const symptoms: SymptomType[] = [
         name: 'Goutte',
         description: 'Forme d\'arthrite causée par l\'accumulation d\'acide urique dans les articulations.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-079', 'plant-080'],
+        plantIds: ['p-079', 'p-080'],
         sources: ['Rhumatologie clinique'],
 
 
@@ -406,7 +406,7 @@ export const symptoms: SymptomType[] = [
         name: 'Grippe',
         description: 'Infection virale respiratoire causant fièvre, courbatures et fatigue intense.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-081', 'plant-082'],
+        plantIds: ['p-081', 'p-082'],
         sources: ['Infectiologie pratique'],
 
 
@@ -416,7 +416,7 @@ export const symptoms: SymptomType[] = [
         name: 'Guérison',
         description: 'Soutien au processus naturel de récupération et de rétablissement de l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-083', 'plant-084'],
+        plantIds: ['p-083', 'p-084'],
         sources: ['Médecine holistique'],
 
 
@@ -426,7 +426,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hémorroïdes',
         description: 'Dilatation des veines de la région anale causant inconfort et saignements.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-085', 'plant-086'],
+        plantIds: ['p-085', 'p-086'],
         sources: ['Proctologie naturelle'],
 
 
@@ -436,7 +436,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hyperhidrose',
         description: 'Transpiration excessive et anormale affectant la qualité de vie.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-087', 'plant-088'],
+        plantIds: ['p-087', 'p-088'],
         sources: ['Dermatologie fonctionnelle'],
 
 
@@ -446,7 +446,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hypertension',
         description: 'Élévation chronique de la pression artérielle au-dessus des valeurs normales.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-089', 'plant-090'],
+        plantIds: ['p-089', 'p-090'],
         sources: ['Cardiologie préventive'],
 
 
@@ -456,7 +456,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hypotension',
         description: 'Baisse anormale de la pression artérielle pouvant causer vertiges et fatigue.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-091', 'plant-092'],
+        plantIds: ['p-091', 'p-092'],
         sources: ['Cardiologie préventive'],
 
 
@@ -466,7 +466,7 @@ export const symptoms: SymptomType[] = [
         name: 'Indigestion',
         description: 'Trouble digestif causant inconfort, ballonnements et difficultés à digérer.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-093', 'plant-094'],
+        plantIds: ['p-093', 'p-094'],
         sources: ['Gastroentérologie pratique'],
 
 
@@ -476,7 +476,7 @@ export const symptoms: SymptomType[] = [
         name: 'Infection de la gorge',
         description: 'Inflammation des voies respiratoires supérieures causant mal de gorge et difficulté à avaler.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-095', 'plant-096'],
+        plantIds: ['p-095', 'p-096'],
         sources: ['ORL naturelle'],
 
 
@@ -486,7 +486,7 @@ export const symptoms: SymptomType[] = [
         name: 'Insomnie',
         description: 'Trouble du sommeil caractérisé par des difficultés d\'endormissement ou de maintien du sommeil.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-097', 'plant-098'],
+        plantIds: ['p-097', 'p-098'],
         sources: ['Médecine du sommeil'],
 
 
@@ -496,7 +496,7 @@ export const symptoms: SymptomType[] = [
         name: 'Irritabilité',
         description: 'État de tension nerveuse se manifestant par une sensibilité accrue aux stimulations.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-099', 'plant-100'],
+        plantIds: ['p-099', 'p-100'],
         sources: ['Psychologie naturelle'],
 
 
@@ -506,7 +506,7 @@ export const symptoms: SymptomType[] = [
         name: 'Jambes fatiguées',
         description: 'Sensation de lourdeur et d\'inconfort dans les jambes, souvent liée à une mauvaise circulation.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-101', 'plant-102'],
+        plantIds: ['p-101', 'p-102'],
         sources: ['Phlébologie pratique'],
 
 
@@ -516,7 +516,7 @@ export const symptoms: SymptomType[] = [
         name: 'Mal de dents',
         description: 'Douleur dentaire pouvant être causée par une carie, une infection ou une sensibilité.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-103', 'plant-104'],
+        plantIds: ['p-103', 'p-104'],
         sources: ['Dentisterie naturelle'],
 
 
@@ -526,7 +526,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maladies cardiovasculaires',
         description: 'Ensemble des affections touchant le cœur et les vaisseaux sanguins.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-105', 'plant-106'],
+        plantIds: ['p-105', 'p-106'],
         sources: ['Cardiologie clinique'],
 
 
@@ -536,7 +536,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maladie du foie',
         description: 'Affections hépatiques diverses altérant les fonctions du foie.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-107', 'plant-108'],
+        plantIds: ['p-107', 'p-108'],
         sources: ['Hépatologie avancée'],
 
 
@@ -546,7 +546,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maladie rhumatismale',
         description: 'Affections inflammatoires chroniques touchant les articulations et les tissus conjonctifs.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-109', 'plant-110'],
+        plantIds: ['p-109', 'p-110'],
         sources: ['Rhumatologie clinique'],
 
 
@@ -556,7 +556,7 @@ export const symptoms: SymptomType[] = [
         name: 'Manque d\'appétit',
         description: 'Diminution ou perte du désir de s\'alimenter pouvant avoir diverses causes physiologiques ou psychologiques.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-111', 'plant-112'],
+        plantIds: ['p-111', 'p-112'],
         sources: ['Nutrition clinique'],
 
 
@@ -566,7 +566,7 @@ export const symptoms: SymptomType[] = [
         name: 'Mauvaise haleine',
         description: 'Halitose ou odeur désagréable de la bouche liée à des causes bucco-dentaires ou digestives.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-113', 'plant-114'],
+        plantIds: ['p-113', 'p-114'],
         sources: ['Stomatologie pratique'],
 
 
@@ -576,7 +576,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maux d\'estomac',
         description: 'Douleurs ou inconfort dans la région gastrique pouvant inclure brûlures et crampes.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-115', 'plant-116'],
+        plantIds: ['p-115', 'p-116'],
         sources: ['Gastroentérologie naturelle'],
 
 
@@ -586,7 +586,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maux de tête',
         description: 'Céphalées de différentes intensités et origines affectant la qualité de vie.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-117', 'plant-118'],
+        plantIds: ['p-117', 'p-118'],
         sources: ['Neurologie pratique'],
 
 
@@ -596,7 +596,7 @@ export const symptoms: SymptomType[] = [
         name: 'Ménopause',
         description: 'Période de transition hormonale marquant la fin des cycles menstruels avec divers symptômes associés.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-119', 'plant-120'],
+        plantIds: ['p-119', 'p-120'],
         sources: ['Gynécologie naturelle'],
 
 
@@ -606,7 +606,7 @@ export const symptoms: SymptomType[] = [
         name: 'Migraine',
         description: 'Céphalée intense et récurrente, souvent accompagnée de nausées et d\'hypersensibilité sensorielle.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-121', 'plant-122'],
+        plantIds: ['p-121', 'p-122'],
         sources: ['Neurologie clinique'],
 
 
@@ -616,7 +616,7 @@ export const symptoms: SymptomType[] = [
         name: 'Nausées',
         description: 'Sensation désagréable de malaise gastrique avec envie de vomir.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-123', 'plant-124'],
+        plantIds: ['p-123', 'p-124'],
         sources: ['Gastroentérologie générale'],
 
 
@@ -626,7 +626,7 @@ export const symptoms: SymptomType[] = [
         name: 'Nerfs',
         description: 'État de tension nerveuse et d\'anxiété affectant le bien-être émotionnel.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-125', 'plant-126'],
+        plantIds: ['p-125', 'p-126'],
         sources: ['Psychiatrie naturelle'],
 
 
@@ -636,7 +636,7 @@ export const symptoms: SymptomType[] = [
         name: 'Névralgie',
         description: 'Douleur vive sur le trajet d\'un nerf, souvent de caractère lancinant.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-127', 'plant-128'],
+        plantIds: ['p-127', 'p-128'],
         sources: ['Neurologie pratique'],
 
 
@@ -646,7 +646,7 @@ export const symptoms: SymptomType[] = [
         name: 'Pancréatite',
         description: 'Inflammation du pancréas pouvant être aiguë ou chronique, causant des douleurs abdominales intenses.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-129', 'plant-130'],
+        plantIds: ['p-129', 'p-130'],
         sources: ['Gastroentérologie spécialisée'],
 
 
@@ -656,7 +656,7 @@ export const symptoms: SymptomType[] = [
         name: 'Parasites intestinaux',
         description: 'Présence d\'organismes parasitaires dans le système digestif causant divers troubles intestinaux.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-131', 'plant-132'],
+        plantIds: ['p-131', 'p-132'],
         sources: ['Parasitologie clinique'],
 
 
@@ -666,7 +666,7 @@ export const symptoms: SymptomType[] = [
         name: 'Peau sèche',
         description: 'État cutané caractérisé par un manque d\'hydratation causant inconfort et démangeaisons.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-133', 'plant-134'],
+        plantIds: ['p-133', 'p-134'],
         sources: ['Dermatologie pratique'],
 
 
@@ -676,7 +676,7 @@ export const symptoms: SymptomType[] = [
         name: 'Perdre du poids',
         description: 'Objectif de réduction pondérale dans le cadre d\'une démarche de santé encadrée.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-135', 'plant-136'],
+        plantIds: ['p-135', 'p-136'],
         sources: ['Nutrition et diététique'],
 
 
@@ -686,7 +686,7 @@ export const symptoms: SymptomType[] = [
         name: 'Pharyngite',
         description: 'Inflammation du pharynx causant mal de gorge et difficulté à avaler.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-137', 'plant-138'],
+        plantIds: ['p-137', 'p-138'],
         sources: ['ORL générale'],
 
 
@@ -696,7 +696,7 @@ export const symptoms: SymptomType[] = [
         name: 'Plaies dans la bouche',
         description: 'Lésions de la muqueuse buccale pouvant inclure aphtes et ulcérations.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-139', 'plant-140'],
+        plantIds: ['p-139', 'p-140'],
         sources: ['Stomatologie naturelle'],
 
 
@@ -706,7 +706,7 @@ export const symptoms: SymptomType[] = [
         name: 'Amnésie',
         description: 'Perte partielle ou totale de la mémoire, pouvant être temporaire ou permanente.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-141', 'plant-142'],
+        plantIds: ['p-141', 'p-142'],
         sources: ['Neurologie clinique'],
 
 
@@ -716,7 +716,7 @@ export const symptoms: SymptomType[] = [
         name: 'Problèmes digestifs',
         description: 'Ensemble de troubles affectant le système digestif, comme les ballonnements ou la digestion difficile.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-143', 'plant-144'],
+        plantIds: ['p-143', 'p-144'],
         sources: ['Gastroentérologie naturelle'],
 
 
@@ -726,7 +726,7 @@ export const symptoms: SymptomType[] = [
         name: 'Prostate',
         description: 'Troubles liés à la prostate, incluant l\'hypertrophie et les problèmes urinaires associés.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-145', 'plant-146'],
+        plantIds: ['p-145', 'p-146'],
         sources: ['Urologie clinique'],
 
 
@@ -736,7 +736,7 @@ export const symptoms: SymptomType[] = [
         name: 'Psoriasis',
         description: 'Maladie chronique de la peau caractérisée par des plaques rouges et des squames.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-147', 'plant-148'],
+        plantIds: ['p-147', 'p-148'],
         sources: ['Dermatologie spécialisée'],
 
 
@@ -746,7 +746,7 @@ export const symptoms: SymptomType[] = [
         name: 'Purifier les reins',
         description: 'Soutien à la fonction rénale et à l\'élimination naturelle des toxines.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-149', 'plant-150'],
+        plantIds: ['p-149', 'p-150'],
         sources: ['Néphrologie naturelle'],
 
 
@@ -756,7 +756,7 @@ export const symptoms: SymptomType[] = [
         name: 'Rétention d\'eau',
         description: 'Accumulation excessive de liquides dans les tissus causant gonflements et sensation de lourdeur.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-151', 'plant-152'],
+        plantIds: ['p-151', 'p-152'],
         sources: ['Médecine vasculaire'],
 
 
@@ -766,7 +766,7 @@ export const symptoms: SymptomType[] = [
         name: 'Salpingite',
         description: 'Infection des trompes de Fallope pouvant affecter la fertilité et causer des douleurs pelviennes.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-153', 'plant-154'],
+        plantIds: ['p-153', 'p-154'],
         sources: ['Gynécologie clinique'],
 
 
@@ -776,7 +776,7 @@ export const symptoms: SymptomType[] = [
         name: 'Sinusite',
         description: 'Inflammation des sinus paranasaux causant congestion, douleurs faciales et maux de tête.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-155', 'plant-156'],
+        plantIds: ['p-155', 'p-156'],
         sources: ['ORL pratique'],
 
 
@@ -786,7 +786,7 @@ export const symptoms: SymptomType[] = [
         name: 'Spasmes intestinaux',
         description: 'Contractions douloureuses et involontaires des muscles intestinaux.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-157', 'plant-158'],
+        plantIds: ['p-157', 'p-158'],
         sources: ['Gastroentérologie fonctionnelle'],
 
 
@@ -796,7 +796,7 @@ export const symptoms: SymptomType[] = [
         name: 'Piqûres d\'insectes',
         description: 'Réactions cutanées suite à des piqûres d\'insectes causant démangeaisons et inflammation.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-159', 'plant-160'],
+        plantIds: ['p-159', 'p-160'],
         sources: ['Dermatologie d\'urgence'],
 
 
@@ -806,7 +806,7 @@ export const symptoms: SymptomType[] = [
         name: 'Stress',
         description: 'État de tension physique et émotionnelle affectant le bien-être et la santé générale.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-161', 'plant-162'],
+        plantIds: ['p-161', 'p-162'],
         sources: ['Psychologie clinique'],
 
 
@@ -816,7 +816,7 @@ export const symptoms: SymptomType[] = [
         name: 'Tache de peau',
         description: 'Altération de la pigmentation cutanée créant des zones de coloration irrégulière.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-163', 'plant-164'],
+        plantIds: ['p-163', 'p-164'],
         sources: ['Dermatologie esthétique'],
 
 
@@ -826,7 +826,7 @@ export const symptoms: SymptomType[] = [
         name: 'Tachycardie',
         description: 'Accélération anormale du rythme cardiaque au repos ou à l\'effort.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-165', 'plant-166'],
+        plantIds: ['p-165', 'p-166'],
         sources: ['Cardiologie clinique'],
 
 
@@ -836,7 +836,7 @@ export const symptoms: SymptomType[] = [
         name: 'Tendinite',
         description: 'Inflammation d\'un tendon causant douleur et limitation des mouvements.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-167', 'plant-168'],
+        plantIds: ['p-167', 'p-168'],
         sources: ['Rhumatologie pratique'],
 
 
@@ -846,7 +846,7 @@ export const symptoms: SymptomType[] = [
         name: 'Toux',
         description: 'Réflexe respiratoire destiné à dégager les voies aériennes, pouvant être aiguë ou chronique.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-169', 'plant-170'],
+        plantIds: ['p-169', 'p-170'],
         sources: ['Pneumologie générale'],
 
 
@@ -856,7 +856,7 @@ export const symptoms: SymptomType[] = [
         name: 'Ulcère de l\'estomac',
         description: 'Lésion de la muqueuse gastrique causant des douleurs et risques de complications digestives.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-171', 'plant-172'],
+        plantIds: ['p-171', 'p-172'],
         sources: ['Gastroentérologie clinique'],
 
 
@@ -866,7 +866,7 @@ export const symptoms: SymptomType[] = [
         name: 'Urétrite',
         description: 'Inflammation de l\'urètre causant des troubles urinaires et des sensations de brûlure.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-173', 'plant-174'],
+        plantIds: ['p-173', 'p-174'],
         sources: ['Urologie pratique'],
 
 
@@ -876,7 +876,7 @@ export const symptoms: SymptomType[] = [
         name: 'Varices',
         description: 'Dilatation anormale des veines, principalement dans les jambes, causant inconfort et complications.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-175', 'plant-176'],
+        plantIds: ['p-175', 'p-176'],
         sources: ['Phlébologie clinique'],
 
 
@@ -886,7 +886,7 @@ export const symptoms: SymptomType[] = [
         name: 'Vertiges',
         description: 'Sensation de perte d\'équilibre ou d\'environnement tournant pouvant avoir diverses causes.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-177', 'plant-178'],
+        plantIds: ['p-177', 'p-178'],
         sources: ['Neurologie vestibulaire'],
 
 
@@ -896,7 +896,7 @@ export const symptoms: SymptomType[] = [
         name: 'Vieillissement',
         description: 'Processus naturel de changements physiologiques liés à l\'âge nécessitant des soins adaptés.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-179', 'plant-180'],
+        plantIds: ['p-179', 'p-180'],
         sources: ['Gériatrie naturelle'],
 
 
@@ -906,7 +906,7 @@ export const symptoms: SymptomType[] = [
         name: 'Vomissements',
         description: 'Rejet actif du contenu gastrique pouvant être lié à diverses causes digestives ou générales.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['plant-181', 'plant-182'],
+        plantIds: ['p-181', 'p-182'],
         sources: ['Gastroentérologie d\'urgence'],
 
 

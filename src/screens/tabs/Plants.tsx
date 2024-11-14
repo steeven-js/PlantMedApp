@@ -46,7 +46,7 @@ const Plants: React.FC = () => {
           <View style={styles.categoriesContainer}>
             {plants.map((item, index) => {
               const imageSource = getImage(item.image?.toString() || '');
-              const isPremium = premiumPlants.includes(item.id); // Vérifiez si la plante est premium
+              const isPremium = premiumPlants.includes(item.id);
               
               return (
                 <TouchableOpacity

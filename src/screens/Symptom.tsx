@@ -13,12 +13,30 @@ import { SymptomScreenProps } from '@src/types/ScreenProps';
 import { theme } from '@src/constants';
 import { PlantType } from '@src/types';
 import { useRelatedPlants } from '@src/hooks/useData';
+import { getPlantImage, PlantImageName } from '@src/data/plantImages';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
   const {item} = route.params;
   const {plants: relatedPlants} = useRelatedPlants(item.id);
   const [tab, setTab] = useState(0);
   const handlePlantPress = usePlantPress();
+  const premiumPlants = getPremiumPlants(); 
+
+  // Fonction de sécurité pour gérer les images manquantes
+  const getImage = (imageName: string) => {
+    try {
+      // Récupérer l'image avec getPlantImage
+      const image = getPlantImage(imageName as PlantImageName);
+      // Retourner l'image dans le bon format pour FastImage
+      return typeof image === 'number' 
+        ? image  // Si c'est déjà un require()
+        : { uri: image };  // Si c'est une URL
+    } catch (error) {
+      console.warn(`Image not found for: ${imageName}`);
+      return require('@src/assets/images/plants/default.png');
+    }
+  };
 
   const renderHeader = (): JSX.Element => {
     return (
@@ -149,7 +167,6 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
   };
 
   const renderPlants = (): JSX.Element => {
-
     if (relatedPlants.length === 0) {
       return (
         <View
@@ -171,7 +188,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
         </View>
       );
     }
-
+  
     return (
       <View
         style={{
@@ -182,62 +199,67 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
           paddingHorizontal: 20,
         }}
       >
-        {relatedPlants.map((plant, index) => (
-          <TouchableOpacity
-            key={plant.id || index}
-            style={{
-              width: utils.responsiveWidth(150, true),
-              height: utils.responsiveWidth(150, true),
-              marginBottom: 40,
-              justifyContent: 'space-around',
-            }}
-            onPress={() => handlePlantPress(plant as PlantType)}
-          >
-            <custom.ImageBackground
-              source={plant.image}
+        {relatedPlants.map((plant, index) => {
+          const imageSource = getImage(plant.image?.toString() || '');
+          const isPremium = premiumPlants.includes(plant.id);
+  
+          return (
+            <TouchableOpacity
+              key={plant.id || index}
               style={{
-                flex: 1,
-                width: '100%',
-                height: '100%',
-                paddingTop: 14,
-                paddingBottom: 12,
+                width: utils.responsiveWidth(150, true),
+                height: utils.responsiveWidth(150, true),
+                marginBottom: 40,
+                justifyContent: 'space-around',
               }}
-              imageStyle={{
-                borderRadius: 10,
-                backgroundColor: theme.colors.imageBackground,
-              }}
-              resizeMode="cover"
+              onPress={() => handlePlantPress(plant as PlantType)}
             >
-              {plant.is_premium && Platform.OS === 'ios' && (
-                <custom.ItemPrenium
-                  item={plant}
-                  containerStyle={{
-                    position: 'absolute',
-                    padding: 14,
-                    top: -10,
-                    left: -10,
-                  }}
-                />
-              )}
-
-              <text.T18
-                numberOfLines={2}
+              <custom.ImageBackground
+                source={imageSource}
                 style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  textAlign: 'center',
-                  backgroundColor: 'rgba(255, 255, 255, 1)',
-                  color: theme.colors.mainColor,
-                  padding: 5,
+                  flex: 1,
+                  width: '100%',
+                  height: '100%',
+                  paddingTop: 14,
+                  paddingBottom: 12,
                 }}
+                imageStyle={{
+                  borderRadius: 10,
+                  backgroundColor: theme.colors.imageBackground,
+                }}
+                resizeMode="cover"
               >
-                {plant.name}
-              </text.T18>
-            </custom.ImageBackground>
-          </TouchableOpacity>
-        ))}
+                {isPremium && Platform.OS === 'ios' && (
+                  <custom.ItemPrenium
+                    item={plant}
+                    containerStyle={{
+                      position: 'absolute',
+                      padding: 14,
+                      top: -10,
+                      left: -10,
+                    }}
+                  />
+                )}
+  
+                <text.T18
+                  numberOfLines={2}
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    textAlign: 'center',
+                    backgroundColor: 'rgba(255, 255, 255, 1)',
+                    color: theme.colors.mainColor,
+                    padding: 5,
+                  }}
+                >
+                  {plant.name}
+                </text.T18>
+              </custom.ImageBackground>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     );
   };
