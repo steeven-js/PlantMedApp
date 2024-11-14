@@ -57,6 +57,11 @@ const StackNavigator: React.FC = () => (
         component={screens.Source}
         options={{headerShown: false}}
       />
+      <RootStack.Screen
+        name="PleaseUpdate"
+        component={screens.PleaseUpdate}
+        options={{headerShown: false}}
+      />
     </RootStack.Navigator>
   );
 

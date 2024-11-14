@@ -7,6 +7,7 @@ import SearchPlant from './SearchPlant';
 import PrivacyPolicy from './PrivacyPolicy';
 import SearchSymptom from './SearchSymptom';
 import TabNavigator from '../navigation/TabNavigator';
+import PleaseUpdate from './PleaseUpdate';
 
 export const screens = {
   Plant,
@@ -15,6 +16,7 @@ export const screens = {
   Premium,
   TermsOfUse,
   SearchPlant,
+  PleaseUpdate,
   TabNavigator,
   PrivacyPolicy,
   SearchSymptom,

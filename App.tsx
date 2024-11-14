@@ -8,8 +8,10 @@ import {PersistGate} from 'redux-persist/integration/react';
 
 import StackNavigator from '@src/navigation/StackNavigator';
 import {persistor, store} from '@src/store';
-import {components} from '@src/components';
-import {Text, View} from 'react-native';
+import AppState from '@src/components/AppState';
+import FlashMessage from '@src/components/FlashMessage';
+import { useAppVersion } from '@src/hooks/useAppVersion';
+import PleaseUpdateStack from '@src/navigation/PleaseUpdateStack';
 
 enableScreens();
 
@@ -18,13 +20,17 @@ const App = () => {
     Orientation.lockToPortrait();
   }, []);
 
+  const {isUpdateRequired} = useAppVersion();
+
   return (
     <SafeAreaProvider>
       <Provider store={store}>
         <NavigationContainer>
-          <StackNavigator />
+        {!isUpdateRequired ? <StackNavigator /> : <PleaseUpdateStack />}
         </NavigationContainer>
+        <AppState />
       </Provider>
+      <FlashMessage />
     </SafeAreaProvider>
   );
 };

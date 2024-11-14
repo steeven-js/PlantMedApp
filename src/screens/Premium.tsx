@@ -21,7 +21,7 @@ const Premium: React.FC = () => {
   const {offerings, purchaseSubscription, fetchOfferings, loading, error} =
     useSubscription();
 
-    console.log('offerings', offerings);
+    // console.log('offerings', offerings);
 
   const handleSubscribe = async () => {
     if (!offerings || offerings.length === 0) {

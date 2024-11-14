@@ -12,4 +12,5 @@ export type RootStackParamList = {
   SearchPlant: any;
   SearchSymptom: any;
   Test: any;
+  PleaseUpdate: any;
 };
