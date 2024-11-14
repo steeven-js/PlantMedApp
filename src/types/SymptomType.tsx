@@ -6,6 +6,6 @@ export interface SymptomType {
   image: number; // Pour supporter require('../path/to/image')
   plantIds: string[]; // IDs des plantes
   sources: string[];
-  is_active: boolean;
-  is_premium: boolean;
+  // is_active: boolean;
+  // is_premium: boolean;
 }

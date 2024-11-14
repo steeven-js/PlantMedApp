@@ -21,6 +21,7 @@ import { components } from '@src/components';
 import { ViewableItemsChanged } from '@src/types';
 import { PlantScreenProps } from '@src/types/ScreenProps';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 interface TabItem {
   name: string;
@@ -32,6 +33,8 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
   const { item } = route.params;
   const [tab, setTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const premiumPlants = getPremiumPlants();
+  const isPremium = premiumPlants.includes(item.id);
 
   const viewabilityConfig = useRef({
     viewAreaCoveragePercentThreshold: 50,
@@ -145,7 +148,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
       onPress={() => setTab(index)}
     >
       {tabItem.svg}
-      {tabItem.isPremium && (
+      {tabItem.isPremium && isPremium && (
         <View style={styles.premiumBadge}>
           <svg.TabPremiumSvg />
         </View>
@@ -159,8 +162,8 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
   const renderTabs = (): JSX.Element => {
     const tabs: TabItem[] = [
       { name: 'Description', svg: <svg.InfoSquareSvg />, isPremium: false },
-      { name: 'Propriétés', svg: <svg.ClipboardListSvg />, isPremium: item.is_premium },
-      { name: 'Usages', svg: <svg.handHeartSvg />, isPremium: item.is_premium },
+      { name: 'Propriétés', svg: <svg.ClipboardListSvg />, isPremium: isPremium },
+      { name: 'Usages', svg: <svg.handHeartSvg />, isPremium: isPremium },
       { name: 'Précautions', svg: <svg.DangerTriangleSvg />, isPremium: false },
     ];
 

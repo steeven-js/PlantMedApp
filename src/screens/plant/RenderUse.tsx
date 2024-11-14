@@ -8,8 +8,12 @@ import {theme} from '../../constants';
 import RenderPremiumOnly from './RenderPremiumOnly';
 
 import {PlantType} from '@src/types';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const RenderUse = ({item}: {item: PlantType}): JSX.Element => {
+  const premiumPlants = getPremiumPlants();
+  const isPremium = premiumPlants.includes(item.id);
+
   const UsageSection = ({title, content}: {title: string; content: string}) => (
     <>
       <text.H2
@@ -50,7 +54,7 @@ const RenderUse = ({item}: {item: PlantType}): JSX.Element => {
         paddingHorizontal: 20,
         marginBottom: utils.responsiveHeight(24),
       }}>
-      {item.is_premium ? <RenderPremiumOnly /> : <UsageContent />}
+      {isPremium ? <RenderPremiumOnly /> : <UsageContent />}
     </View>
   );
 };

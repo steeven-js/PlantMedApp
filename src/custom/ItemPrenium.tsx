@@ -4,15 +4,15 @@ import {View} from 'react-native';
 
 import {svg} from '../assets/svg';
 import {theme} from '../constants';
-import {PlantMedType, SymptomType} from '../types';
+import {PlantType, SymptomType} from '../types';
 
 type Props = {
   version?: number;
-  item: PlantMedType | SymptomType;
+  item: PlantType | SymptomType;
   containerStyle?: object;
 };
 
-const PlantPrenium: React.FC<Props> = ({containerStyle, item}) => {
+const ItemPrenium: React.FC<Props> = ({containerStyle, item}) => {
   return (
     <View style={containerStyle}>
       <View
@@ -36,4 +36,4 @@ const PlantPrenium: React.FC<Props> = ({containerStyle, item}) => {
   );
 };
 
-export default PlantPrenium;
+export default ItemPrenium;

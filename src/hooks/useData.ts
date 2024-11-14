@@ -2,12 +2,21 @@ import { useState, useEffect } from 'react';
 import { plants } from '@src/data/plants';
 import { symptoms } from '@src/data/symptoms';
 import { PlantType, SymptomType } from '@src/types';
+import { getActiveSymptoms } from './symptomStatus';
+import { getActivePlants } from './plantStatus';
 
 export const usePlantData = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const activePlants = plants.filter(plant => plant.is_active);
+    // Utiliser getActivePlants pour obtenir les IDs des plantes actives
+    const activePlantIds = getActivePlants();
+    
+    // Filtrer les plantes en fonction des IDs actifs
+    const activePlants = plants.filter(plant => 
+        activePlantIds.includes(plant.id)
+    );
+    
     const hasData = activePlants.length > 0;
 
     useEffect(() => {
@@ -31,7 +40,14 @@ export const useSymptomData = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const activeSymptoms = symptoms.filter(symptom => symptom.is_active);
+    // Utiliser getActiveSymptoms pour obtenir les IDs des symptômes actifs
+    const activeSymptomIds = getActiveSymptoms();
+    
+    // Filtrer les symptômes en fonction des IDs actifs
+    const activeSymptoms = symptoms.filter(symptom => 
+        activeSymptomIds.includes(symptom.id)
+    );
+    
     const hasData = activeSymptoms.length > 0;
 
     useEffect(() => {

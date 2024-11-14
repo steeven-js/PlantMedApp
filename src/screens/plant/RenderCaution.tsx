@@ -4,7 +4,6 @@ import {text} from '../../text';
 import {utils} from '../../utils';
 import {theme} from '../../constants';
 import {PlantType} from '@src/types';
-import RenderPremiumOnly from './RenderPremiumOnly';
 
 const CautionBullet = () => <View style={styles.bullet} />;
 
@@ -27,11 +26,7 @@ const CautionContent = ({precautions}: {precautions: string[]}) => (
 const RenderCaution = ({item}: {item: PlantType}): JSX.Element => {
   return (
     <View style={styles.container}>
-      {item.is_premium ? (
-        <RenderPremiumOnly />
-      ) : (
-        <CautionContent precautions={item.precaution} />
-      )}
+      <CautionContent precautions={item.precaution} />
     </View>
   );
 };

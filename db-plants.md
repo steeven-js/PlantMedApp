@@ -1,151 +1,151 @@
 Liste des plantes :
 
-- Absinthe
-- Achillée
-- Actée à grappe
-- Agave
-- Agripaume
-- Aigremoine
-- Ail
-- Aloe vera
-- Amandier
-- Amarante
-- Aneth
-- Angélique
-- Arbre à thé
-- Argousier
-- Armoise commune
-- Arnica
-- Artichaut
-- Ashwagandha
-- Aubépine monogyne
-- Açaï
-- Badiane de Chine
-- Bardane
-- Basilic
-- Bistorte
-- Bleuet
-- Boldo
-- Bougainvillea
-- Bouleau
-- Bourrache
-- Brocoli
-- Buchu
-- Cacao
-- Callune
-- Camomille
-- Cannabis
-- Cannelier
-- Cardamome
-- Caroubier
-- Centaurée rude
-- Centella asiatica
-- Chardon Marie
-- Chicorée
-- Chélidoine
-- Citronnelle
-- Citronnier
-- Coffea
-- Consoude
-- Coquelicot
-- Coriandre
-- Cresson
-- Cumin
-- Cumin des prés
-- Curcuma
-- Céleri
-- Damiana
-- Droséra
-- Estragon
-- Eucalyptus
-- Fenouil
-- Fenugrec
-- Fleur d'oranger
-- Framboisier
-- Fumeterre
-- Gattilier
-- Gentiana
-- Ginkgo
-- Ginseng
-- Giroflier
-- Grand Plantain
-- Grande Aunée
-- Groseillier à maquereau
-- Guimauve
-- Hamamélis
-- Helichrysum
-- Hibiscus
-- Houblon
-- Ibéris amer
-- Jasmin
-- Laurier
-- Lavande
-- Lichen d'Islande
-- Lin
-- Luzerne
-- Malva
-- Manioc
-- Marcela
-- Marjolaine
-- Marronnier
-- Marrube blanc
-- Maté
-- Menthe
-- Menthe poivrée
-- Millepertuis perforé
-- Molène thapsus
-- Moringa
-- Myrtille
-- Mélisse
-- Noyer
-- Olivier
-- Onagre
-- Origan
-- Orthosiphon
-- Ortie
-- Oseille
-- Passiflora
-- Pensée
-- Persil
-- Pin
-- Pissenlit
-- Poivron
-- Pourpier
-- Prunellier
-- Prêle des champs
-- Pâquerette
-- Pérille
-- Romarin
-- Rooibos
-- Rosier des chiens
-- Rosier rouillé
-- Ruda
-- Réglisse
-- Safran
-- Salsepareille
-- Sarriette vivace
-- Sauge
-- Saule blanc
-- Serpolet
-- Shatavari
-- Soies de maïs
-- Souci
-- Stevia
-- Sureau
-- Séné
-- Thym
-- Thé
-- Tilia
-- Trèfle des prés
-- Tussilage
-- Ulmarie
-- Valérianne
-- Vanilla
-- Verge d'or
-- Verveine
-- Verveine citronnée
-- Vigne
-- Échinacée
-- Épazote
-- Épine-vinette
-- Moringa
+- p-001 : Absinthe
+- p-002 : Achillée
+- p-003 : Actée à grappe
+- p-004 : Agave
+- p-005 : Agripaume
+- p-006 : Aigremoine
+- p-007 : Ail
+- p-008 : Aloe vera
+- p-009 : Amandier
+- p-010 : Amarante
+- p-011 : Aneth
+- p-012 : Angélique
+- p-013 : Arbre à thé
+- p-014 : Argousier
+- p-015 : Armoise commune
+- p-016 : Arnica
+- p-017 : Artichaut
+- p-018 : Ashwagandha
+- p-019 : Aubépine monogyne
+- p-020 : Açaï
+- p-021 : Badiane de Chine
+- p-022 : Bardane
+- p-023 : Basilic
+- p-024 : Bistorte
+- p-025 : Bleuet
+- p-026 : Boldo
+- p-027 : Bougainvillea
+- p-028 : Bouleau
+- p-029 : Bourrache
+- p-030 : Brocoli
+- p-031 : Buchu
+- p-032 : Cacao
+- p-033 : Callune
+- p-034 : Camomille
+- p-035 : Cannabis
+- p-036 : Cannelier
+- p-037 : Cardamome
+- p-038 : Caroubier
+- p-039 : Centaurée rude
+- p-040 : Centella asiatica
+- p-041 : Chardon Marie
+- p-042 : Chicorée
+- p-043 : Chélidoine
+- p-044 : Citronnelle
+- p-045 : Citronnier
+- p-046 : Coffea
+- p-047 : Consoude
+- p-048 : Coquelicot
+- p-049 : Coriandre
+- p-050 : Cresson
+- p-051 : Cumin
+- p-052 : Cumin des prés
+- p-053 : Curcuma
+- p-054 : Céleri
+- p-055 : Damiana
+- p-056 : Droséra
+- p-057 : Estragon
+- p-058 : Eucalyptus
+- p-059 : Fenouil
+- p-060 : Fenugrec
+- p-061 : Fleur d'oranger
+- p-062 : Framboisier
+- p-063 : Fumeterre
+- p-064 : Gattilier
+- p-065 : Gentiana
+- p-066 : Gingembre
+- p-067 : Ginkgo
+- p-068 : Ginseng
+- p-069 : Giroflier
+- p-070 : Grand Plantain
+- p-071 : Grande Aunée
+- p-072 : Groseillier à maquereau
+- p-073 : Guimauve
+- p-074 : Hamamélis
+- p-075 : Helichrysum
+- p-076 : Hibiscus
+- p-077 : Houblon
+- p-078 : Ibéris amer
+- p-079 : Jasmin
+- p-080 : Laurier
+- p-081 : Lavande
+- p-082 : Lichen d'Islande
+- p-083 : Lin
+- p-084 : Luzerne
+- p-085 : Malva
+- p-086 : Manioc
+- p-087 : Marcela
+- p-088 : Marjolaine
+- p-089 : Marronnier
+- p-090 : Marrube blanc
+- p-091 : Maté
+- p-092 : Menthe
+- p-093 : Menthe poivrée
+- p-094 : Millepertuis perforé
+- p-095 : Molène thapsus
+- p-096 : Moringa
+- p-097 : Myrtille
+- p-098 : Mélisse
+- p-099 : Noyer
+- p-100 : Olivier
+- p-101 : Onagre
+- p-102 : Origan
+- p-103 : Orthosiphon
+- p-104 : Ortie
+- p-105 : Oseille
+- p-106 : Passiflora
+- p-107 : Pensée
+- p-108 : Persil
+- p-109 : Pin
+- p-110 : Pissenlit
+- p-111 : Poivron
+- p-112 : Pourpier
+- p-113 : Prunellier
+- p-114 : Prêle des champs
+- p-115 : Pâquerette
+- p-116 : Pérille
+- p-117 : Romarin
+- p-118 : Rooibos
+- p-119 : Rosier des chiens
+- p-120 : Rosier rouillé
+- p-121 : Ruda
+- p-122 : Réglisse
+- p-123 : Safran
+- p-124 : Salsepareille
+- p-125 : Sarriette vivace
+- p-126 : Sauge
+- p-127 : Saule blanc
+- p-128 : Serpolet
+- p-129 : Shatavari
+- p-130 : Soies de maïs
+- p-131 : Souci
+- p-132 : Stevia
+- p-133 : Sureau
+- p-134 : Séné
+- p-135 : Thym
+- p-136 : Thé
+- p-137 : Tilia
+- p-138 : Trèfle des prés
+- p-139 : Tussilage
+- p-140 : Ulmarie
+- p-141 : Valérianne
+- p-142 : Vanilla
+- p-143 : Verge d'or
+- p-144 : Verveine
+- p-145 : Verveine citronnée
+- p-146 : Vigne
+- p-147 : Échinacée
+- p-148 : Épazote
+- p-149 : Épine-vinette

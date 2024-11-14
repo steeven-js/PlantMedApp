@@ -5,6 +5,7 @@ import {text} from '@src/text';
 import {utils} from '@src/utils';
 import {theme} from '@src/constants';
 import {PlantType} from '@src/types';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const PropertyBullet = () => <View style={styles.bullet} />;
 
@@ -25,9 +26,12 @@ const PropertyContent = ({properties}: {properties: string[]}) => (
 );
 
 const RenderProperty = ({item}: {item: PlantType}): JSX.Element => {
+  const premiumPlants = getPremiumPlants();
+  const isPremium = premiumPlants.includes(item.id);
+
   return (
     <View style={styles.container}>
-      {item.is_premium ? (
+      {isPremium ? (
         <RenderPremiumOnly />
       ) : (
         <PropertyContent properties={item.propriete} />

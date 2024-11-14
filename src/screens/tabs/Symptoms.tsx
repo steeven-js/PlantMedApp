@@ -1,19 +1,18 @@
 import React from 'react';
-
 import { Text, View, Platform, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
-
 import { useSymptomPress } from '@src/hooks/useCommonNav';
-
 import { utils } from '@src/utils';
 import { custom } from '@src/custom';
 import { theme } from '@src/constants';
 import { SymptomType } from '@src/types';
 import { components } from '@src/components';
 import { useSymptomData } from '@src/hooks/useData';
+import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
 
 const Symptoms: React.FC = () => {
   const handleSymptomPress = useSymptomPress();
-  const {symptoms, hasData} = useSymptomData();
+  const { symptoms, hasData } = useSymptomData();
+  const premiumSymptoms = getPremiumSymptoms();
 
   const renderCategories = (): JSX.Element | null => {
     if (!symptoms?.length) {
@@ -22,33 +21,37 @@ const Symptoms: React.FC = () => {
 
     return (
       <View style={styles.categoriesContainer}>
-        {symptoms.map((item: SymptomType, index: number) => (
-          <TouchableOpacity
-            key={item.id || index}
-            style={styles.symptomCard}
-            onPress={() => handleSymptomPress(item)}
-          >
-            <custom.ImageBackground
-              imageStyle={styles.symptomImage}
-              resizeMode="cover"
-              source={item.image}
-              style={styles.symptomImageBackground}
+        {symptoms.map((item: SymptomType, index: number) => {
+          const isPremium = premiumSymptoms.includes(item.id);  
+
+          return (
+            <TouchableOpacity
+              key={item.id || index}
+              style={styles.symptomCard}
+              onPress={() => handleSymptomPress(item)}
             >
-              {item.is_premium && Platform.OS === 'ios' && (
-                <custom.PlantPrenium
-                  item={item}
-                  containerStyle={styles.premiumBadge}
-                />
-              )}
-              <Text
-                numberOfLines={2}
-                style={styles.symptomName}
+              <custom.ImageBackground
+                imageStyle={styles.symptomImage}
+                resizeMode="cover"
+                source={item.image}
+                style={styles.symptomImageBackground}
               >
-                {item.name}
-              </Text>
-            </custom.ImageBackground>
-          </TouchableOpacity>
-        ))}
+                {isPremium && Platform.OS === 'ios' && (  
+                  <custom.ItemPrenium  
+                    item={item}
+                    containerStyle={styles.premiumBadge}
+                  />
+                )}
+                <Text
+                  numberOfLines={2}
+                  style={styles.symptomName}
+                >
+                  {item.name}
+                </Text>
+              </custom.ImageBackground>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     );
   };

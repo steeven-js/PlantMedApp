@@ -1,4 +1,4 @@
-import PlantPrenium from './PlantPrenium';
+import ItemPrenium from './ItemPrenium';
 import SymptomPrenium from './SymptomPrenium';
 
 import Image from '@src/custom/Image';
@@ -8,7 +8,7 @@ import ImageBackground from '@src/custom/ImageBackground';
 export const custom = {
   Image,
   SafeAreaView,
-  PlantPrenium,
+  ItemPrenium,
   SymptomPrenium,
   ImageBackground,
 };

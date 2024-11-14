@@ -18,10 +18,12 @@ import {PlantType} from '@src/types';
 import {components} from '@src/components';
 import {usePlantData} from '@src/hooks/useData';
 import {getPlantImage, PlantImageName} from '@src/data/plantImages';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const Plants: React.FC = () => {
   const handlePlantPress = usePlantPress();
   const {plants, hasData} = usePlantData();
+  const premiumPlants = getPremiumPlants(); 
 
     // Fonction de sécurité pour gérer les images manquantes
     const getImage = (imageName: string) => {
@@ -43,8 +45,8 @@ const Plants: React.FC = () => {
         return (
           <View style={styles.categoriesContainer}>
             {plants.map((item, index) => {
-              // On s'assure que item.image est une chaîne
               const imageSource = getImage(item.image?.toString() || '');
+              const isPremium = premiumPlants.includes(item.id); // Vérifiez si la plante est premium
               
               return (
                 <TouchableOpacity
@@ -56,8 +58,8 @@ const Plants: React.FC = () => {
                     style={styles.plantImageBackground}
                     imageStyle={styles.plantImage}
                     resizeMode="cover">
-                    {item.is_premium && Platform.OS === 'ios' ? (
-                      <custom.PlantPrenium
+                    {isPremium ? (
+                      <custom.ItemPrenium
                         item={item as PlantType}
                         containerStyle={styles.premiumBadge}
                       />

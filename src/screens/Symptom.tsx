@@ -209,7 +209,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
               resizeMode="cover"
             >
               {plant.is_premium && Platform.OS === 'ios' && (
-                <custom.PlantPrenium
+                <custom.ItemPrenium
                   item={plant}
                   containerStyle={{
                     position: 'absolute',
