@@ -5,6 +5,7 @@ import { checkSymptomStatus } from './symptomStatus';
 
 import { hooks } from '@src/hooks';
 import { PlantType, SymptomType } from '@src/types';
+import { incrementPlantClicks, incrementSymptomClicks } from './useRanking';
 
 
 export const usePlantPress = () => {
@@ -14,6 +15,8 @@ export const usePlantPress = () => {
         try {
             // Vérifier le statut premium de la plante
             const plantStatus = checkPlantStatus(item.id);
+
+            incrementPlantClicks(item.id.toString(), item.name);
 
             if (Platform.OS === 'ios' && plantStatus.is_premium) {
                 navigation.navigate('Premium');
@@ -38,6 +41,8 @@ export const useSymptomPress = () => {
         try {
             // Vérifier le statut premium de la plante
             const symptomStatus = checkSymptomStatus(item.id);
+
+            incrementSymptomClicks(item.id.toString(), item.name);
 
             if (Platform.OS === 'ios' && symptomStatus.is_premium) {
                 navigation.navigate('Premium');

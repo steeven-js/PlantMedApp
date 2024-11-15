@@ -15,6 +15,4 @@ export interface PlantType {
   usageExterne: string;
   precaution: string[];
   sources: string[];
-  is_active	: boolean;
-  is_premium: boolean;
 }

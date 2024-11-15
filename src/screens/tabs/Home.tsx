@@ -1,52 +1,16 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
 import { ScrollView, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
-
 import { utils } from '@src/utils';
 import { hooks } from '@src/hooks';
 import { custom } from '@src/custom';
-
-// Types
-interface PlantCard {
-  id: string;
-  name: string;
-  scientificName: string;
-  benefits: string[];
-  category: string;
-  image: string;
-}
-
-interface CategoryCard {
-  id: string;
-  name: string;
-  count: number;
-  icon: string;
-}
+import { getTopFivePlants, usePlantRanking } from '@src/hooks/useRanking';
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
+  const plantRanking = usePlantRanking();
+  const featuredPlants = getTopFivePlants(plantRanking);
 
-  // Mock data
-  const featuredPlants: PlantCard[] = [
-    {
-      id: '1',
-      name: 'Lavande',
-      scientificName: 'Lavandula',
-      benefits: ['Relaxant', 'Anti-stress', 'Sommeil'],
-      category: 'Aromathérapie',
-      image: '@src/assets/images/plants/Lavande.png',
-    },
-    {
-      id: '2',
-      name: 'Thym',
-      scientificName: 'Thymus vulgaris',
-      benefits: ['Antibactérien', 'Système immunitaire'],
-      category: 'Plantes digestives',
-      image: '@src/assets/images/plants/Thym.png',
-    },
-  ];
-
-  const categories: CategoryCard[] = [
+  const categories = [
     { id: '1', name: 'Aromathérapie', count: 25, icon: '🌸' },
     { id: '2', name: 'Plantes digestives', count: 18, icon: '🌿' },
     { id: '3', name: 'Sommeil & Détente', count: 12, icon: '😴' },
@@ -93,14 +57,19 @@ const Home: React.FC = () => {
     <View style={styles.featuredSection}>
       <Text style={styles.sectionTitle}>Plantes populaires</Text>
       {featuredPlants.map(plant => (
-        <TouchableOpacity key={plant.id} style={styles.plantCard}>
+        <TouchableOpacity 
+          key={plant.id} 
+          style={styles.plantCard}
+          onPress={() => navigation.navigate('Plant', { item: plant, id: plant.id })}
+        >
           <View style={styles.plantInfo}>
             <Text style={styles.plantName}>{plant.name}</Text>
             <Text style={styles.plantScientific}>{plant.scientificName}</Text>
             <View style={styles.benefitsContainer}>
-              {plant.benefits.map((benefit, index) => (
+              <Text style={styles.benefitText}>{plant.famille}</Text>
+              {plant.symptomIds.slice(0, 3).map((symptomId, index) => (
                 <View key={index} style={styles.benefitTag}>
-                  <Text style={styles.benefitText}>{benefit}</Text>
+                  <Text style={styles.benefitText}>{symptomId}</Text>
                 </View>
               ))}
             </View>
@@ -110,8 +79,12 @@ const Home: React.FC = () => {
     </View>
   );
 
-  const renderContent = () => {
-    return (
+  return (
+    <custom.ImageBackground
+      style={{ flex: 1 }}
+      resizeMode="stretch"
+      source={require('@src/assets/bg/02.png')}
+    >
       <ScrollView
         contentContainerStyle={{
           flexGrow: 1,
@@ -124,16 +97,6 @@ const Home: React.FC = () => {
         {renderCategories()}
         {renderFeaturedPlants()}
       </ScrollView>
-    );
-  };
-
-  return (
-    <custom.ImageBackground
-      style={{ flex: 1 }}
-      resizeMode="stretch"
-      source={require('@src/assets/bg/02.png')}
-    >
-      {renderContent()}
     </custom.ImageBackground>
   );
 };

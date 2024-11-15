@@ -29,8 +29,6 @@ export const plants: PlantType[] = [
             "Si vous prenez des médicaments pour des problèmes cardiaques ou si vous avez des questions sur son utilisation, consultez votre médecin avant de l'utiliser.",
         ],
         sources: ['Pharmacopée française', 'OMS monographies'],
-        is_active: true,
-        is_premium: true,
     },
     /**Absinthe */
     {
@@ -60,8 +58,6 @@ export const plants: PlantType[] = [
             "Si vous prenez un médicament anticoagulant ou sédatif, consultez toujours votre médecin avant de l'utiliser.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-003',
@@ -93,8 +89,6 @@ export const plants: PlantType[] = [
             'Évitez de consommer des enfants.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-004',
@@ -126,8 +120,6 @@ export const plants: PlantType[] = [
             'Pour les diabétiques, leur consommation doit être considérée comme du sucre.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-005',
@@ -154,8 +146,6 @@ export const plants: PlantType[] = [
             'Une utilisation excessive peut provoquer une irritation des muqueuses génitales et intestinales provoquant des diarrhées et des saignements gastro-intestinaux ou utérins.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-006',
@@ -187,8 +177,6 @@ export const plants: PlantType[] = [
             "Ne doit pas être utilisé pendant la grossesse ou l'allaitement.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-007',
@@ -220,8 +208,6 @@ export const plants: PlantType[] = [
             "À éviter en cas d'hyperthyroïdie.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-008',
@@ -252,8 +238,6 @@ export const plants: PlantType[] = [
             'Des doses orales élevées peuvent être dangereuses pour le corps.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-009',
@@ -283,8 +267,6 @@ export const plants: PlantType[] = [
             "Utilisation non recommandée pendant la grossesse ou l'allaitement.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-010',
@@ -312,8 +294,6 @@ export const plants: PlantType[] = [
             'En excès, il peut perturber le fonctionnement du foie et des reins.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-011',
@@ -343,8 +323,6 @@ export const plants: PlantType[] = [
             "Ne pas utiliser chez l'enfant.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-012',
@@ -375,8 +353,6 @@ export const plants: PlantType[] = [
             'Elle est contre-indiquée chez les personnes atteintes de diabète.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-013',
@@ -407,8 +383,6 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé de maintenir une utilisation prolongée.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-014',
@@ -435,8 +409,6 @@ export const plants: PlantType[] = [
             'Il ne doit pas être administré aux enfants.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-015',
@@ -467,8 +439,6 @@ export const plants: PlantType[] = [
             'Évitez les personnes allergiques ou intolérantes à cette plante.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-016',
@@ -496,8 +466,6 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé de l'utiliser pendant la grossesse ou l'allaitement.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-017',
@@ -527,8 +495,6 @@ export const plants: PlantType[] = [
             'Déconseillé aux personnes souffrant de calculs de la vésicule biliaire.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-018',
@@ -556,8 +522,6 @@ export const plants: PlantType[] = [
             'En cas de doute, consultez votre médecin avant utilisation.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-019',
@@ -587,8 +551,6 @@ export const plants: PlantType[] = [
             "Évitez l'utilisation chez les enfants.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-020',
@@ -619,8 +581,6 @@ export const plants: PlantType[] = [
             'Consommer avec modération, une consommation excessive peut nuire à la santé.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-021',
@@ -650,8 +610,6 @@ export const plants: PlantType[] = [
             "Il ne devrait pas être administré pendant la grossesse ou l'allaitement.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-022',
@@ -682,8 +640,6 @@ export const plants: PlantType[] = [
             'Évitez les personnes allergiques à la plante.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-023',
@@ -713,8 +669,6 @@ export const plants: PlantType[] = [
             'Son utilisation est totalement contre-indiquée en cas de grossesse.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-024',
@@ -737,8 +691,6 @@ export const plants: PlantType[] = [
             "Les personnes souffrant de gastrite ou d'ulcère gastroduodénal ainsi que les femmes enceintes ou qui allaitent doivent éviter son utilisation.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-025',
@@ -764,8 +716,6 @@ export const plants: PlantType[] = [
             "En cas de doute sur son utilisation pour votre cas particulier ou en cas de grossesse ou d'allaitement, il est recommandé de consulter un spécialiste de la santé avant.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-026',
@@ -797,8 +747,6 @@ export const plants: PlantType[] = [
             "Pour une utilisation correcte et en cas de doute, consultez votre médecin avant de l'utiliser.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-027',
@@ -828,8 +776,6 @@ export const plants: PlantType[] = [
             "Les personnes souffrant d'une maladie rénale, d'ostéoporose ou d'une maladie du foie doivent également éviter sa consommation.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-028',
@@ -859,8 +805,6 @@ export const plants: PlantType[] = [
             "Elle n'est pas recommandée pendant la grossesse ou l'allaitement.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-029',
@@ -890,8 +834,6 @@ export const plants: PlantType[] = [
             "Évitez de consommer des enfants lors d'une utilisation prolongée.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-030',
@@ -922,8 +864,6 @@ export const plants: PlantType[] = [
             'Évitez son utilisation si des médicaments sont utilisés pour réguler la coagulation du sang.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-031',
@@ -951,8 +891,6 @@ export const plants: PlantType[] = [
             "En cas de grossesse ou d'allaitement, consultez d'abord un spécialiste.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-032',
@@ -982,8 +920,6 @@ export const plants: PlantType[] = [
             'Évitez une consommation excessive. Ne convient pas aux diabétiques.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-033',
@@ -1012,8 +948,6 @@ export const plants: PlantType[] = [
             'Ne doit pas être utilisé en cas de problèmes cardiaques.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-034',
@@ -1044,8 +978,6 @@ export const plants: PlantType[] = [
             "Il n'est pas toxique, mais dans les décharges la dose peut provoquer des vomissements.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-035',
@@ -1077,8 +1009,6 @@ export const plants: PlantType[] = [
             'Non recommandé chez les personnes présentant une insuffisance respiratoire.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-036',
@@ -1110,8 +1040,6 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-037',
@@ -1140,8 +1068,6 @@ export const plants: PlantType[] = [
             'Les personnes souffrant de calculs biliaires ou de problèmes de vésicule biliaire doivent faire preuve de prudence.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-038',
@@ -1173,8 +1099,6 @@ export const plants: PlantType[] = [
             "Évitez de consommer en cas d'allergie aux noix.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-039',
@@ -1200,8 +1124,6 @@ export const plants: PlantType[] = [
             "Son utilisation n'est pas recommandée chez les femmes enceintes, allaitantes ou enfants.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-040',
@@ -1231,8 +1153,6 @@ export const plants: PlantType[] = [
             'À éviter aussi chez les enfants de moins de 6 ans.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-041',
@@ -1261,8 +1181,6 @@ export const plants: PlantType[] = [
             'Évitez les personnes sensibles ou allergiques à la plante.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-042',
@@ -1293,8 +1211,6 @@ export const plants: PlantType[] = [
             "Évitez l'utilisation de chicorée en cas de grossesse.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-043',
@@ -1323,8 +1239,6 @@ export const plants: PlantType[] = [
             "La consommation doit être évitée pendant la grossesse ou l'allaitement et chez les enfants.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-044',
@@ -1353,8 +1267,6 @@ export const plants: PlantType[] = [
             "Il peut provoquer une gêne ou une allergie aux personnes intolérantes aux odeurs d'agrumes.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-045',
@@ -1383,8 +1295,6 @@ export const plants: PlantType[] = [
             "Évitez les personnes souffrant de plaies d'estomac, de gastrite et de brûlures d'estomac.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-046',
@@ -1415,8 +1325,6 @@ export const plants: PlantType[] = [
             'Une tolérance à la caféine peut se développer.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-047',
@@ -1444,8 +1352,6 @@ export const plants: PlantType[] = [
             "Ne pas consommer pendant la grossesse ou l'allaitement.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-048',
@@ -1472,8 +1378,6 @@ export const plants: PlantType[] = [
             'Toutes les parties de cette plante sont considérées comme toxiques pour les chiens et les chats.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-049',
@@ -1503,8 +1407,6 @@ export const plants: PlantType[] = [
             "À éviter en cas d'allergie ou de sensibilité.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-050',
@@ -1536,8 +1438,6 @@ export const plants: PlantType[] = [
             "En cas de grossesse ou d'allaitement ou en cas de doute sur son utilisation, renseignez-vous auprès de un spécialiste de la santé avant de l'utiliser.",
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-051',
@@ -1569,8 +1469,6 @@ export const plants: PlantType[] = [
             'Ne pas utiliser pendant les cycles menstruels intenses.',
         ],
         sources: ['Pharmacopée européenne'],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-052',
@@ -1601,8 +1499,6 @@ export const plants: PlantType[] = [
             "Évitez de l'utiliser si vous souffrez d'hémochromatose (excès de fer dans le corps).",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-053',
@@ -1633,8 +1529,6 @@ export const plants: PlantType[] = [
             "Évitez de les utiliser en cas de grossesse ou d'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-054',
@@ -1665,8 +1559,6 @@ export const plants: PlantType[] = [
             'Il est déconseillé de le consommer pendant la grossesse.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-055',
@@ -1699,8 +1591,6 @@ export const plants: PlantType[] = [
             "Si vous avez pour toute utilisation, consultez votre spécialiste avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-056',
@@ -1727,8 +1617,6 @@ export const plants: PlantType[] = [
             'Ne mâchez pas la plante fraîche.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-057',
@@ -1758,8 +1646,6 @@ export const plants: PlantType[] = [
             "Ne pas utiliser en perfusion ou comme huile essentielle pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-058',
@@ -1788,8 +1674,6 @@ export const plants: PlantType[] = [
             'Il peut provoquer des diarrhées, des vomissements ou des nausées chez certaines personnes.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-059',
@@ -1819,8 +1703,6 @@ export const plants: PlantType[] = [
             'Évitez une consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-060',
@@ -1853,8 +1735,6 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-061',
@@ -1885,8 +1765,6 @@ export const plants: PlantType[] = [
             "Évitez l'utilisation en cas d'allergie ou d'intolérance à la plante.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-062',
@@ -1918,8 +1796,6 @@ export const plants: PlantType[] = [
             "N'oubliez pas de l'utiliser de manière responsable et de le consommer avec modération.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-063',
@@ -1946,8 +1822,6 @@ export const plants: PlantType[] = [
             'À consommer avec modération.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-064',
@@ -1972,8 +1846,6 @@ export const plants: PlantType[] = [
             'Si vous avez des questions concernant son utilisation, consultez votre spécialiste de la santé avant utilisation.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-065',
@@ -2006,8 +1878,6 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-066',
@@ -2039,8 +1909,6 @@ export const plants: PlantType[] = [
             "Ne pas ingérer l'huile essentielle.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-067',
@@ -2071,8 +1939,6 @@ export const plants: PlantType[] = [
             'Évitez une consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-068',
@@ -2105,8 +1971,6 @@ export const plants: PlantType[] = [
             'Évitez les utilisations excessives et prolongées.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-069',
@@ -2138,8 +2002,6 @@ export const plants: PlantType[] = [
             'Ne fumez pas la plante.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-070',
@@ -2169,8 +2031,6 @@ export const plants: PlantType[] = [
             "Avant aucun doute sur son utilisation, consultez votre médecin avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-071',
@@ -2198,8 +2058,6 @@ export const plants: PlantType[] = [
             "Évitez de l'utiliser pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-072',
@@ -2230,8 +2088,6 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-073',
@@ -2261,8 +2117,6 @@ export const plants: PlantType[] = [
             "Peut interférer avec d'autres médicaments.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-074',
@@ -2290,8 +2144,6 @@ export const plants: PlantType[] = [
             'Ne pas utiliser pendant une longue période.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-075',
@@ -2320,8 +2172,6 @@ export const plants: PlantType[] = [
             "En cas de doute sur votre cas particulier, consultez toujours votre spécialiste de la santé avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-076',
@@ -2352,8 +2202,6 @@ export const plants: PlantType[] = [
             'Évitez une consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-077',
@@ -2383,8 +2231,6 @@ export const plants: PlantType[] = [
             'Il est toxique pour les animaux.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-078',
@@ -2408,8 +2254,6 @@ export const plants: PlantType[] = [
             'Une consommation excessive peut provoquer des nausées, des vomissements et de la diarrhée.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-079',
@@ -2440,8 +2284,6 @@ export const plants: PlantType[] = [
             'Ne pas utiliser chez les enfants de moins de 2 ans.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-080',
@@ -2472,8 +2314,6 @@ export const plants: PlantType[] = [
             "Non recommandé pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-081',
@@ -2503,8 +2343,6 @@ export const plants: PlantType[] = [
             "Évitez l'utilisation pendant la grossesse ou l'allaitement, et chez les enfants.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-082',
@@ -2529,8 +2367,6 @@ export const plants: PlantType[] = [
             'Non recommandé pour les femmes enceintes ou allaitantes sauf avis médical.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-083',
@@ -2559,8 +2395,6 @@ export const plants: PlantType[] = [
             "Prendre avec prudence pendant la grossesse ou l'allaitement, consulter un spécialiste en cas de doute.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-084',
@@ -2590,8 +2424,6 @@ export const plants: PlantType[] = [
             'Ne pas consommer plus de 2 semaines consécutives.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-085',
@@ -2619,8 +2451,6 @@ export const plants: PlantType[] = [
             "Peut interférer avec l'action d'autres médicaments.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-086',
@@ -2647,8 +2477,6 @@ export const plants: PlantType[] = [
             "Consommer dans modération, c'est un aliment riche en calories.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-087',
@@ -2674,8 +2502,6 @@ export const plants: PlantType[] = [
             "Son utilisation est déconseillée en cas de grossesse ou d'allaitement, en cas de doute sur son utilisation, veuillez consulter un spécialiste de la santé au préalable.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-088',
@@ -2706,8 +2532,6 @@ export const plants: PlantType[] = [
             'À éviter chez les enfants de moins de 12 ans.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-089',
@@ -2739,8 +2563,6 @@ export const plants: PlantType[] = [
             "Ce n'est pas comestible.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-090',
@@ -2767,8 +2589,6 @@ export const plants: PlantType[] = [
             'En raison de son effet hypotenseur, il est contre-indiqué chez les personnes ayant une pression artérielle basse (hypotension).',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-091',
@@ -2797,8 +2617,6 @@ export const plants: PlantType[] = [
             "En cas de doute, consultez d'abord votre médecin.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-092',
@@ -2829,8 +2647,6 @@ export const plants: PlantType[] = [
             'À éviter chez les enfants de moins de 6 ans.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-093',
@@ -2860,8 +2676,6 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé d'utiliser l'huile pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-094',
@@ -2891,8 +2705,6 @@ export const plants: PlantType[] = [
             'Non recommandé pendant grossesse ou allaitement.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-095',
@@ -2919,8 +2731,6 @@ export const plants: PlantType[] = [
             "À éviter en cas d'allergie.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-096',
@@ -2955,8 +2765,6 @@ export const plants: PlantType[] = [
             "Dans certains pays d'Amérique latine, l'utilisation de cette plante est interdite.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-097',
@@ -2987,8 +2795,6 @@ export const plants: PlantType[] = [
             "Réduisez votre consommation pendant la grossesse et l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3020,8 +2826,6 @@ export const plants: PlantType[] = [
             'À prendre avec prudence, car cela provoque de la somnolence.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3051,8 +2855,6 @@ export const plants: PlantType[] = [
             'Peut irriter la muqueuse gastrique.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3084,8 +2886,6 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-101',
@@ -3116,8 +2916,6 @@ export const plants: PlantType[] = [
             'Non recommandé pendant la grossesse ou allaitement.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3148,8 +2946,6 @@ export const plants: PlantType[] = [
             'Ne convient pas aux anémiques.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3181,8 +2977,6 @@ export const plants: PlantType[] = [
             'Évitez les utilisations excessives.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3212,8 +3006,6 @@ export const plants: PlantType[] = [
             "Consultez votre médecin avant de consommer en cas de diabète, d'insuffisance rénale ou d'hypertension.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-105',
@@ -3243,8 +3035,6 @@ export const plants: PlantType[] = [
             'En raison de ses propriétés reminéralisantes, il peut aggraver ces symptômes.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3276,8 +3066,6 @@ export const plants: PlantType[] = [
             "Éviter de conduire avant d'utiliser des machines peut provoquer de la somnolence.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3307,8 +3095,6 @@ export const plants: PlantType[] = [
             'Peut provoquer des réactions allergiques.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3339,8 +3125,6 @@ export const plants: PlantType[] = [
             'Déconseillé pendant la grossesse.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-109',
@@ -3369,8 +3153,6 @@ export const plants: PlantType[] = [
             'Peut aggraver la constipation.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3404,8 +3186,6 @@ export const plants: PlantType[] = [
             'Il ne doit pas être administré aux enfants.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3434,8 +3214,6 @@ export const plants: PlantType[] = [
             'Une consommation excessive peut provoquer une indigestion.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3465,8 +3243,6 @@ export const plants: PlantType[] = [
             "N'oubliez pas de l'utiliser de manière responsable et de toujours consommer avec modération. En cas de doute, consultez votre spécialiste de la santé avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3500,8 +3276,6 @@ export const plants: PlantType[] = [
             "L'écorce peut être toxique.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3534,8 +3308,6 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3565,8 +3337,6 @@ export const plants: PlantType[] = [
             "En cas de doute, n'hésitez pas à consulter votre médecin avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3598,8 +3368,6 @@ export const plants: PlantType[] = [
             'Peut avoir un léger effet sédatif.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-117',
@@ -3629,8 +3397,6 @@ export const plants: PlantType[] = [
             'À éviter pendant la grossesse et en cas de gastro-entérite.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
 
@@ -3662,8 +3428,6 @@ export const plants: PlantType[] = [
             "Cela peut stimuler la production de l'hormone sexuelle.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-119',
@@ -3694,8 +3458,6 @@ export const plants: PlantType[] = [
             'Les graines sont toxiques.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3723,8 +3485,6 @@ export const plants: PlantType[] = [
             'Ne pas appliquer sur des plaies ouvertes.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
 
@@ -3758,8 +3518,6 @@ export const plants: PlantType[] = [
             "C'est l'une des plantes abortives les plus connues.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3791,8 +3549,6 @@ export const plants: PlantType[] = [
             "Non recommandé pendant l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3824,8 +3580,6 @@ export const plants: PlantType[] = [
             'Ne dépassez pas la dose quotidienne de 1,5 grammes.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 
     {
@@ -3859,8 +3613,6 @@ export const plants: PlantType[] = [
             'Évitez les doses élevées et les traitements prolongés.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-125',
@@ -3891,8 +3643,6 @@ export const plants: PlantType[] = [
             "Ne doit pas être utilisé pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-126',
@@ -3924,8 +3674,6 @@ export const plants: PlantType[] = [
             "L'huile essentielle ne doit pas être ingérée, elle est toxique.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-127',
@@ -3956,8 +3704,6 @@ export const plants: PlantType[] = [
             "Toute association avec d'autres anticoagulants ou anti-inflammatoires doit être évitée.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-128',
@@ -3988,8 +3734,6 @@ export const plants: PlantType[] = [
             "Évitez les personnes souffrant d'allergies respiratoires ou sensibles aux plantes.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-129',
@@ -4015,8 +3759,6 @@ export const plants: PlantType[] = [
             "Il peut être exempt d'effets secondaires bien qu'en cas de doute, n'hésitez pas à consulter votre spécialiste ou votre médecin avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-130',
@@ -4046,8 +3788,6 @@ export const plants: PlantType[] = [
             "Son utilisation n'est pas recommandée pendant des périodes prolongées.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-131',
@@ -4078,8 +3818,6 @@ export const plants: PlantType[] = [
             'Ne consommez pas pendant longtemps.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-132',
@@ -4109,8 +3847,6 @@ export const plants: PlantType[] = [
             'Ne dépassez pas la dose quotidienne de 4 mg/kg de poids.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-133',
@@ -4139,8 +3875,6 @@ export const plants: PlantType[] = [
             'Une consommation excessive de fruits peut causer une indigestion.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-134',
@@ -4171,8 +3905,6 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-135',
@@ -4203,8 +3935,6 @@ export const plants: PlantType[] = [
             'Il peut aggraver les symptômes de la constipation.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-136',
@@ -4232,8 +3962,6 @@ export const plants: PlantType[] = [
             "Peut être contre-indiqué chez certaines personnes souffrant d'hypertension ou de sensibilité au thé.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-137',
@@ -4263,8 +3991,6 @@ export const plants: PlantType[] = [
             'Il ne doit pas être utilisé avec des médicaments anticoagulants.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-138',
@@ -4294,8 +4020,6 @@ export const plants: PlantType[] = [
             'Non son utilisation est recommandée chez la femme enceinte.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-139',
@@ -4322,8 +4046,6 @@ export const plants: PlantType[] = [
             "Avant Si vous avez des questions, consultez votre médecin avant de l'utiliser.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-140',
@@ -4354,8 +4076,6 @@ export const plants: PlantType[] = [
             'À éviter chez les enfants de moins de 12 ans.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-141',
@@ -4385,8 +4105,6 @@ export const plants: PlantType[] = [
             'Il ne doit pas être utilisé avec des tranquillisants ou des sédatifs.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-142',
@@ -4417,8 +4135,6 @@ export const plants: PlantType[] = [
             'Éviter une consommation excessive peut causer des maux de tête et des problèmes de peau.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-143',
@@ -4448,8 +4164,6 @@ export const plants: PlantType[] = [
             'Évitez de faire venir des personnes allergiques à la plante.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-144',
@@ -4480,8 +4194,6 @@ export const plants: PlantType[] = [
             'Possède une action antithyroïdienne.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-145',
@@ -4508,8 +4220,6 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé de l'utiliser pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-146',
@@ -4539,8 +4249,6 @@ export const plants: PlantType[] = [
             'Évitez les personnes sensibles aux plantes.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-147',
@@ -4570,8 +4278,6 @@ export const plants: PlantType[] = [
             "Non recommandé pendant la grossesse ou l'allaitement.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-148',
@@ -4600,8 +4306,6 @@ export const plants: PlantType[] = [
             "N'ingérez pas l'huile essentielle sous aucun circonstances.",
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
     {
         id: 'p-149',
@@ -4632,7 +4336,5 @@ export const plants: PlantType[] = [
             'Utilisation sur ordonnance médicale.',
         ],
         sources: [],
-        is_active: true,
-        is_premium: false,
     },
 ];
