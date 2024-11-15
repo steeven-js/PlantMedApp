@@ -22,12 +22,14 @@ import {usePlantPress} from '../hooks/useCommonNav';
 import {PlantType} from '@src/types';
 import {usePlantData} from '@src/hooks/useData';
 import {getPlantImage, PlantImageName} from '@src/data/plantImages';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const SearchPlant: React.FC = () => {
   const handlePlantPress = usePlantPress();
   const navigation = hooks.useAppNavigation();
   const [searchQuery, setSearchQuery] = useState('');
   const {plants, hasData} = usePlantData();
+  const premiumPlants = getPremiumPlants(); 
 
   const ref = useRef<TextInput>(null);
 
@@ -108,6 +110,7 @@ const SearchPlant: React.FC = () => {
 
   const renderItem = ({item, index}: {item: PlantType; index: number}) => {
     const imageSource = getImage(item.image?.toString() || '');
+    const isPremium = premiumPlants.includes(item.id);
 
     return (
       <TouchableOpacity
@@ -173,7 +176,7 @@ const SearchPlant: React.FC = () => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            {item.is_premium && Platform.OS === 'ios' ? (
+            {isPremium ? (
               <PremiumSvg
                 width="40px"
                 height="40px"

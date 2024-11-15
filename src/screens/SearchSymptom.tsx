@@ -12,13 +12,14 @@ import PremiumSvg from '../assets/svg/PremiumSvg';
 import { useSymptomPress } from '../hooks/useCommonNav';
 import { useTextChangeHandler } from '../utils/handleTextChange';
 import { useSymptomData } from '@src/hooks/useData';
+import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
 
 const SearchSymptom: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const [searchQuery, setSearchQuery] = useState('');
-  const handleSymptomPress = useSymptomPress();
-
   const { symptoms, hasData } = useSymptomData();
+  const handleSymptomPress = useSymptomPress();
+  const premiumSymptoms = getPremiumSymptoms(); 
 
   const ref = useRef<TextInput>(null);
 
@@ -86,6 +87,8 @@ const SearchSymptom: React.FC = () => {
   };
 
   const renderItem = ({ item, index }: { item: SymptomType; index: number }) => {
+    const isPremium = premiumSymptoms.includes(item.id);
+
     return (
       <TouchableOpacity
         style={{
@@ -156,7 +159,7 @@ const SearchSymptom: React.FC = () => {
               alignItems: 'center',
             }}
           >
-            {item.is_premium && Platform.OS === 'ios' ? (
+            {isPremium ? (
               <PremiumSvg
                 width="40px"
                 height="40px"
