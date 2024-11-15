@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   userInfo: {
-    marginTop: 5,
+    marginHorizontal: 10,
   },
   userName: {
     color: theme.colors.mainColor,

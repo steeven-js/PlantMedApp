@@ -1,11 +1,11 @@
-import {Provider} from 'react-redux';
-import React, {useEffect} from 'react';
+import { Provider } from 'react-redux';
+import React, { useEffect } from 'react';
 
-import {enableScreens} from 'react-native-screens';
+import { enableScreens } from 'react-native-screens';
 import Orientation from 'react-native-orientation-locker';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import { useAppVersion } from '@src/hooks/useAppVersion';
 
@@ -15,7 +15,7 @@ import FlashMessage from '@src/components/FlashMessage';
 import StackNavigator from '@src/navigation/StackNavigator';
 import PleaseUpdateStack from '@src/navigation/PleaseUpdateStack';
 
-import { store} from '@src/store';
+import { store } from '@src/store';
 
 enableScreens();
 
@@ -24,13 +24,13 @@ const App = () => {
     Orientation.lockToPortrait();
   }, []);
 
-  const {isUpdateRequired} = useAppVersion();
+  const { isUpdateRequired } = useAppVersion();
 
   return (
     <SafeAreaProvider>
       <Provider store={store}>
         <NavigationContainer>
-        {!isUpdateRequired ? <StackNavigator /> : <PleaseUpdateStack />}
+        { !isUpdateRequired ? <StackNavigator /> : <PleaseUpdateStack /> }
         </NavigationContainer>
         <AppState />
       </Provider>
