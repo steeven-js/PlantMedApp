@@ -1,6 +1,8 @@
 import React from 'react';
 
-import {View, Platform} from 'react-native';
+import {View} from 'react-native';
+
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 import {text} from '../../text';
 import {utils} from '../../utils';
@@ -8,7 +10,6 @@ import {theme} from '../../constants';
 import RenderPremiumOnly from './RenderPremiumOnly';
 
 import {PlantType} from '@src/types';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const RenderUse = ({item}: {item: PlantType}): JSX.Element => {
   const premiumPlants = getPremiumPlants();

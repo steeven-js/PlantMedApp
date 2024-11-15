@@ -1,3 +1,4 @@
+import {setPremium} from '../slices/preniumSlice';
 import {
   resetFilters,
   setSelectedColors,
@@ -6,7 +7,6 @@ import {
   setSelectedPlantTypes,
   setSelectedCategories,
 } from '../slices/filterSlice';
-import {setPremium} from '../slices/preniumSlice';
 
 export const actions = {
   setPremium,

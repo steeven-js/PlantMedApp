@@ -1,9 +1,11 @@
-import { Alert, Platform } from 'react-native';
 import { useEffect, useState, useCallback } from 'react';
-import firestore from '@react-native-firebase/firestore';
+
+import { Alert, Platform } from 'react-native';
 
 import packageJson from '../../package.json';
+
 import { compareVersions } from 'compare-versions';
+import firestore from '@react-native-firebase/firestore';
 
 export const useAppVersion = () => {
     const [firebaseVersion, setFirebaseVersion] = useState<string | null>(null);

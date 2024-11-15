@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 
 import { Platform, ScrollView, TouchableOpacity, View } from 'react-native';
 
+import { useRelatedPlants } from '@src/hooks/useData';
 import { usePlantPress } from '@src/hooks/useCommonNav';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 import { text } from '@src/text';
 import { utils } from '@src/utils';
 import { custom } from '@src/custom';
 import { svg } from '@src/assets/svg';
-import { components } from '@src/components';
-import { SymptomScreenProps } from '@src/types/ScreenProps';
 import { theme } from '@src/constants';
 import { PlantType } from '@src/types';
-import { useRelatedPlants } from '@src/hooks/useData';
+import { components } from '@src/components';
+import { SymptomScreenProps } from '@src/types/ScreenProps';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
   const {item} = route.params;
   const {plants: relatedPlants} = useRelatedPlants(item.id);
   const [tab, setTab] = useState(0);
   const handlePlantPress = usePlantPress();
-  const premiumPlants = getPremiumPlants(); 
+  const premiumPlants = getPremiumPlants();
 
   // Fonction de sécurité pour gérer les images manquantes
   const getImage = (imageName: string) => {
@@ -29,7 +29,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
       // Récupérer l'image avec getPlantImage
       const image = getPlantImage(imageName as PlantImageName);
       // Retourner l'image dans le bon format pour FastImage
-      return typeof image === 'number' 
+      return typeof image === 'number'
         ? image  // Si c'est déjà un require()
         : { uri: image };  // Si c'est une URL
     } catch (error) {
@@ -188,7 +188,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
         </View>
       );
     }
-  
+
     return (
       <View
         style={{
@@ -202,7 +202,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
         {relatedPlants.map((plant, index) => {
           const imageSource = getImage(plant.image?.toString() || '');
           const isPremium = premiumPlants.includes(plant.id);
-  
+
           return (
             <TouchableOpacity
               key={plant.id || index}
@@ -240,7 +240,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
                     }}
                   />
                 )}
-  
+
                 <text.T18
                   numberOfLines={2}
                   style={{

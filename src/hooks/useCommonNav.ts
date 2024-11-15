@@ -1,9 +1,10 @@
 import { Platform } from 'react-native';
 
-import { hooks } from '@src/hooks';
-import { PlantType, SymptomType } from '@src/types';
 import { checkPlantStatus } from './plantStatus';
 import { checkSymptomStatus } from './symptomStatus';
+
+import { hooks } from '@src/hooks';
+import { PlantType, SymptomType } from '@src/types';
 
 
 export const usePlantPress = () => {
@@ -13,7 +14,7 @@ export const usePlantPress = () => {
         try {
             // Vérifier le statut premium de la plante
             const plantStatus = checkPlantStatus(item.id);
-            
+
             if (Platform.OS === 'ios' && plantStatus.is_premium) {
                 navigation.navigate('Premium');
                 return;
@@ -37,7 +38,7 @@ export const useSymptomPress = () => {
         try {
             // Vérifier le statut premium de la plante
             const symptomStatus = checkSymptomStatus(item.id);
-            
+
             if (Platform.OS === 'ios' && symptomStatus.is_premium) {
                 navigation.navigate('Premium');
                 return;

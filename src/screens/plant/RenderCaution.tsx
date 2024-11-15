@@ -1,8 +1,11 @@
 import React from 'react';
+
 import {View, StyleSheet} from 'react-native';
+
 import {text} from '../../text';
 import {utils} from '../../utils';
 import {theme} from '../../constants';
+
 import {PlantType} from '@src/types';
 
 const CautionBullet = () => <View style={styles.bullet} />;

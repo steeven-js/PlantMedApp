@@ -3,8 +3,8 @@ import { Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { responsiveWidth as rw , responsiveHeight as rh } from 'react-native-responsive-dimensions';
 
-import { deviceWidth, deviceHeight } from '../constants/sizes';
 import { useTextChangeHandler } from './handleTextChange';
+import { deviceWidth, deviceHeight } from '../constants/sizes';
 
 const responsiveWidth = (number: number, full = false) => {
   // IF FULL IS TRUE THEN USE RESPONSIVE WIDTH //

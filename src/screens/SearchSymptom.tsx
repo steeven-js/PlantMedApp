@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import { View, Text, FlatList, Platform, TextInput, TouchableOpacity } from 'react-native';
 
+import { useSymptomData } from '@src/hooks/useData';
+import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
+
 import { hooks } from '../hooks';
 import { custom } from '../custom';
 import { svg } from '../assets/svg';
@@ -11,15 +14,13 @@ import { components } from '../components';
 import PremiumSvg from '../assets/svg/PremiumSvg';
 import { useSymptomPress } from '../hooks/useCommonNav';
 import { useTextChangeHandler } from '../utils/handleTextChange';
-import { useSymptomData } from '@src/hooks/useData';
-import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
 
 const SearchSymptom: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const [searchQuery, setSearchQuery] = useState('');
   const { symptoms, hasData } = useSymptomData();
   const handleSymptomPress = useSymptomPress();
-  const premiumSymptoms = getPremiumSymptoms(); 
+  const premiumSymptoms = getPremiumSymptoms();
 
   const ref = useRef<TextInput>(null);
 
@@ -86,7 +87,7 @@ const SearchSymptom: React.FC = () => {
     );
   };
 
-  const renderItem = ({ item, index }: { item: SymptomType; index: number }) => {
+  const renderItem = ({ item }: { item: SymptomType; index: number }) => {
     const isPremium = premiumSymptoms.includes(item.id);
 
     return (

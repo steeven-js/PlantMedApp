@@ -12,7 +12,7 @@ type Props = {
   containerStyle?: object;
 };
 
-const SymptomPrenium: React.FC<Props> = ({containerStyle, item}) => {
+const SymptomPrenium: React.FC<Props> = ({containerStyle}) => {
   return (
     <View style={containerStyle}>
       <View

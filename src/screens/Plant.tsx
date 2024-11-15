@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+
 import {
   FlatList,
   ScrollView,
@@ -6,6 +7,8 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
+
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 import RenderUse from './plant/RenderUse';
 import RenderCaution from './plant/RenderCaution';
@@ -21,7 +24,6 @@ import { components } from '@src/components';
 import { ViewableItemsChanged } from '@src/types';
 import { PlantScreenProps } from '@src/types/ScreenProps';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 interface TabItem {
   name: string;
@@ -79,7 +81,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
 
   const renderImages = (): JSX.Element => {
     const images = Array.isArray(item.image) ? item.image.filter((img): img is string => typeof img === 'string') : [item.image].filter((img): img is string => typeof img === 'string');
-    
+
     return (
       <FlatList
         bounces={false}
@@ -97,7 +99,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
   };
 
   const renderIndicator = (imagesCount: number): JSX.Element | null => {
-    if (imagesCount <= 1) return null;
+    if (imagesCount <= 1) {return null;}
 
     return (
       <View style={styles.indicatorContainer}>
@@ -114,7 +116,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
                   ? theme.colors.mainColor
                   : theme.colors.antiFlashWhite,
                 marginRight: index === imagesCount - 1 ? 0 : 10,
-              }
+              },
             ]}
           />
         ))}
@@ -123,7 +125,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
   };
 
   const renderCarousel = (): JSX.Element | null => {
-    if (!item?.image) return null;
+    if (!item?.image) {return null;}
 
     const images = Array.isArray(item.image) ? item.image : [item.image];
 
@@ -143,7 +145,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
         {
           borderColor: tab === index ? theme.colors.steelTeal : theme.colors.transparent,
           backgroundColor: tab === index ? theme.colors.white : theme.colors.transparent,
-        }
+        },
       ]}
       onPress={() => setTab(index)}
     >

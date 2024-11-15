@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
-import {Alert, Linking, Platform, StyleSheet, Text, View} from 'react-native';
 
-import {theme} from '../constants';
+import {Alert, Linking, Platform, StyleSheet} from 'react-native';
+
 import {custom} from '../custom';
+import {theme} from '../constants';
 
 const PleaseUpdate: React.FC = () => {
   useEffect(() => {
@@ -26,9 +27,9 @@ const PleaseUpdate: React.FC = () => {
   return (
     <custom.ImageBackground
       style={styles.background}
-      resizeMode='stretch'
+      resizeMode="stretch"
       source={require('@src/assets/images/plantmed-launcher.png')}
-    ></custom.ImageBackground>
+     />
   );
 };
 

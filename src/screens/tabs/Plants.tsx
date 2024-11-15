@@ -9,21 +9,21 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import {usePlantData} from '@src/hooks/useData';
 import {usePlantPress} from '@src/hooks/useCommonNav';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 import {utils} from '@src/utils';
 import {custom} from '@src/custom';
 import {theme} from '@src/constants';
 import {PlantType} from '@src/types';
 import {components} from '@src/components';
-import {usePlantData} from '@src/hooks/useData';
 import {getPlantImage, PlantImageName} from '@src/data/plantImages';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const Plants: React.FC = () => {
   const handlePlantPress = usePlantPress();
   const {plants, hasData} = usePlantData();
-  const premiumPlants = getPremiumPlants(); 
+  const premiumPlants = getPremiumPlants();
 
     // Fonction de sécurité pour gérer les images manquantes
     const getImage = (imageName: string) => {
@@ -31,7 +31,7 @@ const Plants: React.FC = () => {
         // Récupérer l'image avec getPlantImage
         const image = getPlantImage(imageName as PlantImageName);
         // Retourner l'image dans le bon format pour FastImage
-        return typeof image === 'number' 
+        return typeof image === 'number'
           ? image  // Si c'est déjà un require()
           : { uri: image };  // Si c'est une URL
       } catch (error) {
@@ -47,7 +47,7 @@ const Plants: React.FC = () => {
             {plants.map((item, index) => {
               const imageSource = getImage(item.image?.toString() || '');
               const isPremium = premiumPlants.includes(item.id);
-              
+
               return (
                 <TouchableOpacity
                   key={index}

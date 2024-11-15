@@ -1,13 +1,16 @@
 import React from 'react';
+
 import { Text, View, Platform, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+
+import { useSymptomData } from '@src/hooks/useData';
 import { useSymptomPress } from '@src/hooks/useCommonNav';
+import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
+
 import { utils } from '@src/utils';
 import { custom } from '@src/custom';
 import { theme } from '@src/constants';
 import { SymptomType } from '@src/types';
 import { components } from '@src/components';
-import { useSymptomData } from '@src/hooks/useData';
-import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
 
 const Symptoms: React.FC = () => {
   const handleSymptomPress = useSymptomPress();
@@ -22,7 +25,7 @@ const Symptoms: React.FC = () => {
     return (
       <View style={styles.categoriesContainer}>
         {symptoms.map((item: SymptomType, index: number) => {
-          const isPremium = premiumSymptoms.includes(item.id);  
+          const isPremium = premiumSymptoms.includes(item.id);
 
           return (
             <TouchableOpacity
@@ -36,8 +39,8 @@ const Symptoms: React.FC = () => {
                 source={item.image}
                 style={styles.symptomImageBackground}
               >
-                {isPremium && Platform.OS === 'ios' && (  
-                  <custom.ItemPrenium  
+                {isPremium && Platform.OS === 'ios' && (
+                  <custom.ItemPrenium
                     item={item}
                     containerStyle={styles.premiumBadge}
                   />

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   View,
   ScrollView,
@@ -8,13 +9,14 @@ import {
   Alert,
 } from 'react-native';
 
+import { useSubscription } from '@src/hooks/revenueCat';
+
 import {text} from '@src/text';
 import {hooks} from '@src/hooks';
 import {utils} from '@src/utils';
 import {custom} from '@src/custom';
 import {theme} from '@src/constants';
 import {components} from '@src/components';
-import { useSubscription } from '@src/hooks/revenueCat';
 
 const Premium: React.FC = () => {
   const navigation = hooks.useAppNavigation();

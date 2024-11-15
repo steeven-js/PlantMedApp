@@ -15,7 +15,7 @@ const PleaseUpdateStack: React.FC = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Screen
-        name='PleaseUpdate'
+        name="PleaseUpdate"
         component={screens.PleaseUpdate}
         options={{headerShown: false}}
       />

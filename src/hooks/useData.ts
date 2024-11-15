@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+
+import { getActivePlants } from './plantStatus';
+import { getActiveSymptoms } from './symptomStatus';
+
 import { plants } from '@src/data/plants';
 import { symptoms } from '@src/data/symptoms';
-import { PlantType, SymptomType } from '@src/types';
-import { getActiveSymptoms } from './symptomStatus';
-import { getActivePlants } from './plantStatus';
 
 export const usePlantData = () => {
     const [loading, setLoading] = useState(true);
@@ -11,12 +12,12 @@ export const usePlantData = () => {
 
     // Utiliser getActivePlants pour obtenir les IDs des plantes actives
     const activePlantIds = getActivePlants();
-    
+
     // Filtrer les plantes en fonction des IDs actifs
-    const activePlants = plants.filter(plant => 
+    const activePlants = plants.filter(plant =>
         activePlantIds.includes(plant.id)
     );
-    
+
     const hasData = activePlants.length > 0;
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export const usePlantData = () => {
         plants: activePlants,
         loading,
         error,
-        hasData
+        hasData,
     };
 };
 
@@ -42,12 +43,12 @@ export const useSymptomData = () => {
 
     // Utiliser getActiveSymptoms pour obtenir les IDs des symptômes actifs
     const activeSymptomIds = getActiveSymptoms();
-    
+
     // Filtrer les symptômes en fonction des IDs actifs
-    const activeSymptoms = symptoms.filter(symptom => 
+    const activeSymptoms = symptoms.filter(symptom =>
         activeSymptomIds.includes(symptom.id)
     );
-    
+
     const hasData = activeSymptoms.length > 0;
 
     useEffect(() => {
@@ -63,7 +64,7 @@ export const useSymptomData = () => {
         symptoms: activeSymptoms,
         loading,
         error,
-        hasData
+        hasData,
     };
 };
 
@@ -89,7 +90,7 @@ export const useRelatedPlants = (symptomId: string) => {
         plants: relatedPlants,
         loading,
         error,
-        hasData: relatedPlants.length > 0
+        hasData: relatedPlants.length > 0,
     };
 };
 
@@ -115,6 +116,6 @@ export const useRelatedSymptoms = (plantId: string) => {
         symptoms: relatedSymptoms,
         loading,
         error,
-        hasData: relatedSymptoms.length > 0
+        hasData: relatedSymptoms.length > 0,
     };
 };

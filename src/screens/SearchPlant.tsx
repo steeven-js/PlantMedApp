@@ -9,6 +9,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import {usePlantData} from '@src/hooks/useData';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
+
 import {useTextChangeHandler} from '@src/utils/handleTextChange';
 
 import {hooks} from '../hooks';
@@ -20,16 +23,14 @@ import PremiumSvg from '../assets/svg/PremiumSvg';
 import {usePlantPress} from '../hooks/useCommonNav';
 
 import {PlantType} from '@src/types';
-import {usePlantData} from '@src/hooks/useData';
 import {getPlantImage, PlantImageName} from '@src/data/plantImages';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const SearchPlant: React.FC = () => {
   const handlePlantPress = usePlantPress();
   const navigation = hooks.useAppNavigation();
   const [searchQuery, setSearchQuery] = useState('');
   const {plants, hasData} = usePlantData();
-  const premiumPlants = getPremiumPlants(); 
+  const premiumPlants = getPremiumPlants();
 
   const ref = useRef<TextInput>(null);
 
@@ -108,7 +109,7 @@ const SearchPlant: React.FC = () => {
     );
   };
 
-  const renderItem = ({item, index}: {item: PlantType; index: number}) => {
+  const renderItem = ({item}: {item: PlantType; index: number}) => {
     const imageSource = getImage(item.image?.toString() || '');
     const isPremium = premiumPlants.includes(item.id);
 

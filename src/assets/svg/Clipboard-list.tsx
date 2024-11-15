@@ -10,7 +10,6 @@ type Props = {
 };
 
 const ClipboardListSvg: React.FC<Props> = ({
-  fillColor = '#1C274C',
   strokeColor = '#1C274C',
   width = '50px',
   height = '50px',

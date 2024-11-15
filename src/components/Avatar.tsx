@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { View, Text, Image, StyleSheet, ImageSourcePropType } from 'react-native';
 
 interface AvatarProps {
@@ -8,9 +9,9 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = ({ size, uri, name }) => {
-  const getInitial = (name?: string) => {
-    if (!name) return '';
-    return name.charAt(0).toUpperCase();
+  const getInitial = (userName?: string) => {
+    if (!userName) {return '';}
+    return userName.charAt(0).toUpperCase();
   };
 
   return (

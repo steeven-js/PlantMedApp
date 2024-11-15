@@ -10,7 +10,7 @@ import {components} from '@src/components';
 import {SourceScreenProps} from '@src/types/ScreenProps';
 
 const Source: React.FC<SourceScreenProps> = ({route}) => {
-  const {source, title} = route.params as { source: any; title: string };
+  const {source, title} = route.params as unknown as { source: any; title: string };
 
   const renderHeader = (): JSX.Element => {
     return <components.Header title="Sources" goBackIcon={true} />;

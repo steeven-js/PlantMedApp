@@ -1,11 +1,15 @@
 import React from 'react';
+
 import {View, StyleSheet} from 'react-native';
+
+import { getPremiumPlants } from '@src/hooks/plantStatus';
+
 import RenderPremiumOnly from './RenderPremiumOnly';
+
 import {text} from '@src/text';
 import {utils} from '@src/utils';
 import {theme} from '@src/constants';
 import {PlantType} from '@src/types';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 const PropertyBullet = () => <View style={styles.bullet} />;
 

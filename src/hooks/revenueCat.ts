@@ -1,13 +1,15 @@
-import { hooks } from '../hooks';
+import { useCallback, useEffect, useState } from 'react';
+
 import { Platform } from 'react-native';
-import { actions } from '../store/actions';
-import { useEffect, useState } from 'react';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
+
+import { hooks } from '../hooks';
+import { actions } from '../store/actions';
 
 // Configuration des clés API RevenueCat
 const API_KEYS = {
     apple: 'appl_AWOSjMlZGtVNqcEplEenAiuKKDJ',
-    google: 'votre_cle_api_google'
+    google: 'votre_cle_api_google',
 };
 
 // Initialisation de RevenueCat
@@ -21,41 +23,39 @@ export function useSubscription() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [expirationDate, setExpirationDate] = useState<string | null>(null);
-    
-    const navigation = hooks.useAppNavigation();
+
+    const checkSubscriptionStatus = useCallback(async () => {
+        try {
+            const customerInfo = await Purchases.getCustomerInfo();
+            const isPro = customerInfo.entitlements.active.pro !== undefined;
+            setIsSubscribed(isPro);
+
+            if (isPro && customerInfo.entitlements.active.pro?.expirationDate) {
+                setExpirationDate(formatDate(customerInfo.entitlements.active.pro.expirationDate));
+            } else {
+                setExpirationDate(null);
+            }
+
+            dispatch(actions.setPremium(isPro));
+        } catch (err) {
+            console.error("Erreur lors de la vérification du statut d'abonnement:", err);
+            setError("Impossible de vérifier le statut de l'abonnement");
+        }
+    }, [dispatch]);
 
     useEffect(() => {
         checkSubscriptionStatus();
         fetchOfferings();
-    }, []);
-
-    const checkSubscriptionStatus = async () => {
-        try {
-            const customerInfo = await Purchases.getCustomerInfo();
-            const isPro = customerInfo.entitlements.active['pro'] !== undefined;
-            setIsSubscribed(isPro);
-            
-            if (isPro && customerInfo.entitlements.active['pro']?.expirationDate) {
-                setExpirationDate(formatDate(customerInfo.entitlements.active['pro'].expirationDate));
-            } else {
-                setExpirationDate(null);
-            }
-            
-            dispatch(actions.setPremium(isPro));
-        } catch (error) {
-            console.error("Erreur lors de la vérification du statut d'abonnement:", error);
-            setError("Impossible de vérifier le statut de l'abonnement");
-        }
-    };
+    }, [checkSubscriptionStatus]);
 
     const fetchOfferings = async () => {
         try {
-            const offerings = await Purchases.getOfferings();
-            if (offerings.current !== null) {
-                setOfferings(offerings.current.availablePackages);
+            const response = await Purchases.getOfferings();
+            if (response.current !== null) {
+                setOfferings(response.current.availablePackages);
             }
-        } catch (error) {
-            console.error('Erreur lors de la récupération des offres:', error);
+        } catch (err) {
+            console.error('Erreur lors de la récupération des offres:', err);
             setError('Impossible de récupérer les offres');
         }
     };
@@ -65,13 +65,13 @@ export function useSubscription() {
         setError(null);
         try {
             const { customerInfo } = await Purchases.purchasePackage(packageToPurchase);
-            const newSubscriptionStatus = customerInfo.entitlements.active['pro'] !== undefined;
-            
+            const newSubscriptionStatus = customerInfo.entitlements.active.pro !== undefined;
+
             setIsSubscribed(newSubscriptionStatus);
             dispatch(actions.setPremium(newSubscriptionStatus));
 
-            if (newSubscriptionStatus && customerInfo.entitlements.active['pro']?.expirationDate) {
-                setExpirationDate(formatDate(customerInfo.entitlements.active['pro'].expirationDate));
+            if (newSubscriptionStatus && customerInfo.entitlements.active.pro?.expirationDate) {
+                setExpirationDate(formatDate(customerInfo.entitlements.active.pro.expirationDate));
                 // navigation.navigate('PremiumActivated');
             } else {
                 setExpirationDate(null);
