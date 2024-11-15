@@ -5,12 +5,28 @@ import { custom } from '@src/custom';
 import { getTopFivePlants, usePlantRanking } from '@src/hooks/useRanking';
 import { useSymptomData } from '@src/hooks/useData';
 import { theme } from '@src/constants';
+import { getPlantImage, PlantImageName } from '@src/data/plantImages';
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-  const plantRanking = usePlantRanking();
-  const featuredPlants = getTopFivePlants(plantRanking);
+  const { ranking } = usePlantRanking();  
+  const featuredPlants = getTopFivePlants(ranking);  
   const { symptoms } = useSymptomData();
+
+  // Fonction de sécurité pour gérer les images manquantes
+  const getImage = (imageName: string) => {
+    try {
+      // Récupérer l'image avec getPlantImage
+      const image = getPlantImage(imageName as PlantImageName);
+      // Retourner l'image dans le bon format pour FastImage
+      return typeof image === 'number'
+        ? image  // Si c'est déjà un require()
+        : { uri: image };  // Si c'est une URL
+    } catch (error) {
+      console.warn(`Image not found for: ${imageName}`);
+      return require('@src/assets/images/plants/default.png');
+    }
+  };
 
   const renderHeader = () => (
     <View style={styles.header}>
@@ -85,32 +101,42 @@ const Home: React.FC = () => {
     return (
       <View style={styles.featuredSection}>
         <Text style={styles.sectionTitle}>Plantes populaires</Text>
-        {featuredPlants.map(plant => (
-          <TouchableOpacity 
-            key={plant.id} 
-            style={styles.plantCard}
-            onPress={() => navigation.navigate('Plant', { item: plant, id: plant.id })}
-            activeOpacity={0.8}
-          >
-            <View style={styles.plantInfo}>
-              <View style={styles.plantHeader}>
-                <Text style={styles.plantName}>{plant.name}</Text>
-                <Text style={styles.plantScientific}>{plant.scientificName}</Text>
-              </View>
-              <View style={styles.divider} />
-              <View style={styles.benefitsContainer}>
-                <View style={[styles.benefitTag, styles.familyTag]}>
-                  <Text style={styles.familyText}>{plant.famille}</Text>
+        {featuredPlants.map(plant => {
+          const imageSource = getImage(plant.image?.toString() || '');
+          
+          return (
+            <TouchableOpacity 
+              key={plant.id} 
+              style={styles.plantCard}
+              onPress={() => navigation.navigate('Plant', { item: plant, id: plant.id })}
+              activeOpacity={0.8}
+            >
+              <custom.ImageBackground
+                source={imageSource}
+                style={styles.plantImage}
+                imageStyle={styles.plantImageStyle}
+                resizeMode="cover"
+              />
+              <View style={styles.plantInfo}>
+                <View style={styles.plantHeader}>
+                  <Text style={styles.plantName}>{plant.name}</Text>
+                  {/* <Text style={styles.plantScientific}>{plant.scientificName}</Text> */}
                 </View>
-                {plant.symptomIds.slice(0, 3).map((symptomId, index) => (
-                  <View key={index} style={styles.benefitTag}>
-                    <Text style={styles.benefitText}>{symptomId}</Text>
+                {/* <View style={styles.divider} />
+                <View style={styles.benefitsContainer}>
+                  <View style={[styles.benefitTag, styles.familyTag]}>
+                    <Text style={styles.familyText}>{plant.famille}</Text>
                   </View>
-                ))}
+                  {plant.symptomIds.slice(0, 3).map((symptomId, index) => (
+                    <View key={index} style={styles.benefitTag}>
+                      <Text style={styles.benefitText}>{symptomId}</Text>
+                    </View>
+                  ))}
+                </View> */}
               </View>
-            </View>
-          </TouchableOpacity>
-        ))}
+            </TouchableOpacity>
+          );
+        })}
       </View>
     );
   };
@@ -340,6 +366,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     letterSpacing: 0.3,
+  },
+  loadingContainer: {
+    padding: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  plantImage: {
+    width: '100%',
+    height: utils.responsiveHeight(200),
+  },
+  plantImageStyle: {
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
   },
 });
 

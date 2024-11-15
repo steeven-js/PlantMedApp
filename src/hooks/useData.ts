@@ -1,27 +1,18 @@
-import { useState, useEffect } from 'react';
-
-import { getActivePlants } from './plantStatus';
-import { getActiveSymptoms } from './symptomStatus';
-
+import { useState, useEffect, useMemo } from 'react';
 import { plants } from '@src/data/plants';
 import { symptoms } from '@src/data/symptoms';
+import { getActivePlants } from './plantStatus';
+import { getActiveSymptoms } from './symptomStatus';
 
 export const usePlantData = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-
-    // Utiliser getActivePlants pour obtenir les IDs des plantes actives
-    const activePlantIds = getActivePlants();
-
-    // Filtrer les plantes en fonction des IDs actifs
-    const activePlants = plants.filter(plant =>
-        activePlantIds.includes(plant.id)
-    );
-
-    const hasData = activePlants.length > 0;
+    const [activePlantIds, setActivePlantIds] = useState<string[]>([]);
 
     useEffect(() => {
         try {
+            const ids = getActivePlants();
+            setActivePlantIds(ids);
             setLoading(false);
         } catch (err) {
             setError('Erreur lors du chargement des plantes');
@@ -29,30 +20,28 @@ export const usePlantData = () => {
         }
     }, []);
 
+    const activePlants = useMemo(() => 
+        plants.filter(plant => activePlantIds.includes(plant.id)),
+        [activePlantIds]
+    );
+
     return {
         plants: activePlants,
         loading,
         error,
-        hasData,
+        hasData: activePlants.length > 0,
     };
 };
 
 export const useSymptomData = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-
-    // Utiliser getActiveSymptoms pour obtenir les IDs des symptômes actifs
-    const activeSymptomIds = getActiveSymptoms();
-
-    // Filtrer les symptômes en fonction des IDs actifs
-    const activeSymptoms = symptoms.filter(symptom =>
-        activeSymptomIds.includes(symptom.id)
-    );
-
-    const hasData = activeSymptoms.length > 0;
+    const [activeSymptomIds, setActiveSymptomIds] = useState<string[]>([]);
 
     useEffect(() => {
         try {
+            const ids = getActiveSymptoms();
+            setActiveSymptomIds(ids);
             setLoading(false);
         } catch (err) {
             setError('Erreur lors du chargement des symptômes');
@@ -60,11 +49,16 @@ export const useSymptomData = () => {
         }
     }, []);
 
+    const activeSymptoms = useMemo(() => 
+        symptoms.filter(symptom => activeSymptomIds.includes(symptom.id)),
+        [activeSymptomIds]
+    );
+
     return {
         symptoms: activeSymptoms,
         loading,
         error,
-        hasData,
+        hasData: activeSymptoms.length > 0,
     };
 };
 
@@ -72,10 +66,12 @@ export const useRelatedPlants = (symptomId: string) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const symptom = symptoms.find(s => s.id === symptomId);
-    const relatedPlants = symptom
-        ? plants.filter(plant => symptom.plantIds.includes(plant.id))
-        : [];
+    const relatedPlants = useMemo(() => {
+        const symptom = symptoms.find(s => s.id === symptomId);
+        return symptom
+            ? plants.filter(plant => symptom.plantIds.includes(plant.id))
+            : [];
+    }, [symptomId]);
 
     useEffect(() => {
         try {
@@ -98,10 +94,12 @@ export const useRelatedSymptoms = (plantId: string) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const plant = plants.find(p => p.id === plantId);
-    const relatedSymptoms = plant
-        ? symptoms.filter(symptom => plant.symptomIds.includes(symptom.id))
-        : [];
+    const relatedSymptoms = useMemo(() => {
+        const plant = plants.find(p => p.id === plantId);
+        return plant
+            ? symptoms.filter(symptom => plant.symptomIds.includes(symptom.id))
+            : [];
+    }, [plantId]);
 
     useEffect(() => {
         try {

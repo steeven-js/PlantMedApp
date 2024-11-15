@@ -73,22 +73,23 @@ export const incrementSymptomClicks = async (symptomId: string, symptomName: str
 };
 
 // Hook pour récupérer le classement des plantes
-export const usePlantRanking = (): PlantRankingEntry[] => {
+export const usePlantRanking = () => {
+    const [loading, setLoading] = useState(false);
     const [ranking, setRanking] = useState<PlantRankingEntry[]>([]);
     const { plants, hasData: hasPlantsData } = usePlantData();
 
     useEffect(() => {
-        const fetchRanking = async () => {
-            const currentDate = new Date();
-            const documentName = `${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`;
-    
-            try {
-                const doc = await firebase.firestore()
-                    .collection('plants-ranking')
-                    .doc(documentName)
-                    .get();
-    
-                if (doc.exists && hasPlantsData) {
+        if (!hasPlantsData) return;
+        
+        const currentDate = new Date();
+        const documentName = `${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`;
+        
+        const unsubscribe = firebase.firestore()
+            .collection('plants-ranking')
+            .doc(documentName)
+            .onSnapshot((doc) => {
+                setLoading(true);
+                if (doc.exists) {
                     const data = doc.data() as Record<string, { clicks: number; name: string }>;
                     const rankingEntries: PlantRankingEntry[] = Object.entries(data)
                         .map(([id, { clicks }]) => {
@@ -97,20 +98,22 @@ export const usePlantRanking = (): PlantRankingEntry[] => {
                         })
                         .filter((entry): entry is PlantRankingEntry => entry !== null)
                         .sort((a, b) => b.clicks - a.clicks);
-    
+
                     setRanking(rankingEntries);
                 }
-            } catch (error) {
+                setLoading(false);
+            }, (error) => {
                 console.error("Error fetching plant ranking:", error);
-            }
-        };
-    
-        if (hasPlantsData) {
-            fetchRanking();
-        }
+                setLoading(false);
+            });
+
+        return () => unsubscribe();
     }, [plants, hasPlantsData]);
 
-    return ranking;
+    return {
+        ranking,
+        loading
+    };
 };
 
 // Hook pour récupérer le classement des symptômes
@@ -122,13 +125,13 @@ export const useSymptomRanking = (): SymptomRankingEntry[] => {
         const fetchRanking = async () => {
             const currentDate = new Date();
             const documentName = `${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`;
-    
+
             try {
                 const doc = await firebase.firestore()
                     .collection('symptoms-ranking')
                     .doc(documentName)
                     .get();
-    
+
                 if (doc.exists && hasSymptomData) {
                     const data = doc.data() as Record<string, { clicks: number; name: string }>;
                     const rankingEntries: SymptomRankingEntry[] = Object.entries(data)
@@ -138,14 +141,14 @@ export const useSymptomRanking = (): SymptomRankingEntry[] => {
                         })
                         .filter((entry): entry is SymptomRankingEntry => entry !== null)
                         .sort((a, b) => b.clicks - a.clicks);
-    
+
                     setRanking(rankingEntries);
                 }
             } catch (error) {
                 console.error("Error fetching symptom ranking:", error);
             }
         };
-    
+
         if (hasSymptomData) {
             fetchRanking();
         }

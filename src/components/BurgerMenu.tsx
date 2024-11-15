@@ -12,6 +12,7 @@ import { custom } from '@src/custom';
 import { svg } from '@src/assets/svg';
 import { theme } from '@src/constants';
 import { components } from '@src/components';
+import { useSubscription } from '@src/hooks/revenueCat';
 
 interface BurgerMenuProps {
   setShowModal: (show: boolean) => void;
@@ -19,6 +20,9 @@ interface BurgerMenuProps {
 }
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ setShowModal, navigation }) => {
+
+  const { isSubscribed } = useSubscription();
+
   const renderUserSection = () => (
     <TouchableOpacity style={styles.userSection}>
       <components.Avatar
@@ -27,14 +31,8 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ setShowModal, navigation }) => 
         name={'user Test'}
       />
       <View style={styles.userInfo}>
-        <Text style={styles.userName} numberOfLines={1}>
-          user Test
-        </Text>
-        <Text style={styles.userEmail} numberOfLines={1}>
-          user Test
-        </Text>
         <Text style={styles.memberStatus} numberOfLines={1}>
-          Membre Standard
+          {isSubscribed ? 'Membre Premium' : 'Membre gratuit'}
         </Text>
       </View>
     </TouchableOpacity>

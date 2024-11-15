@@ -1,20 +1,33 @@
 import { useCallback, useEffect, useState } from 'react';
-
 import { Platform } from 'react-native';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
-
 import { hooks } from '../hooks';
 import { actions } from '../store/actions';
 
-// Configuration des clés API RevenueCat
-const API_KEYS = {
-    apple: 'appl_AWOSjMlZGtVNqcEplEenAiuKKDJ',
-    google: 'votre_cle_api_google',
+// Configuration de RevenueCat à l'extérieur du hook
+const setupRevenueCat = () => {
+    const API_KEYS = {
+        apple: 'appl_AWOSjMlZGtVNqcEplEenAiuKKDJ',
+        google: 'votre_cle_api_google',
+    };
+
+    Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
+    Purchases.configure({
+        apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google
+    });
 };
 
-// Initialisation de RevenueCat
-Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
-Purchases.configure({ apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google });
+// Appel de la configuration au démarrage de l'application
+setupRevenueCat();
+
+// Fonction utilitaire pour le formatage des dates
+const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = new Intl.DateTimeFormat('fr-FR', { month: 'long' }).format(date);
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+};
 
 export function useSubscription() {
     const dispatch = hooks.useAppDispatch();
@@ -43,12 +56,7 @@ export function useSubscription() {
         }
     }, [dispatch]);
 
-    useEffect(() => {
-        checkSubscriptionStatus();
-        fetchOfferings();
-    }, [checkSubscriptionStatus]);
-
-    const fetchOfferings = async () => {
+    const fetchOfferings = useCallback(async () => {
         try {
             const response = await Purchases.getOfferings();
             if (response.current !== null) {
@@ -58,7 +66,12 @@ export function useSubscription() {
             console.error('Erreur lors de la récupération des offres:', err);
             setError('Impossible de récupérer les offres');
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        checkSubscriptionStatus();
+        fetchOfferings();
+    }, [checkSubscriptionStatus, fetchOfferings]);
 
     const purchaseSubscription = async (packageToPurchase: PurchasesPackage) => {
         setLoading(true);
@@ -72,25 +85,15 @@ export function useSubscription() {
 
             if (newSubscriptionStatus && customerInfo.entitlements.active.pro?.expirationDate) {
                 setExpirationDate(formatDate(customerInfo.entitlements.active.pro.expirationDate));
-                // navigation.navigate('PremiumActivated');
             } else {
                 setExpirationDate(null);
             }
-        } catch (error) {
-            console.error("Erreur lors de l'achat de l'abonnement:", error);
+        } catch (err) {
+            console.error("Erreur lors de l'achat de l'abonnement:", err);
             setError("Échec de l'achat de l'abonnement");
         } finally {
             setLoading(false);
         }
-    };
-
-    const formatDate = (dateString: string): string => {
-        const date = new Date(dateString);
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = new Intl.DateTimeFormat('fr-FR', { month: 'long' }).format(date);
-        const year = date.getFullYear();
-
-        return `${day} ${month} ${year}`;
     };
 
     return {
