@@ -1,19 +1,9 @@
-import {setPremium} from '../slices/preniumSlice';
-import {
-  resetFilters,
-  setSelectedColors,
-  setSelectedRatings,
-  setSelectedPotTypes,
-  setSelectedPlantTypes,
-  setSelectedCategories,
-} from '../slices/filterSlice';
+import { setPremium } from '../slices/premiumSlice';
+import { resetFilters } from '../slices/filterSlice';
+import { setFeaturedPlants } from '../slices/featuredPlantSlice';
 
 export const actions = {
   setPremium,
   resetFilters,
-  setSelectedColors,
-  setSelectedRatings,
-  setSelectedPotTypes,
-  setSelectedCategories,
-  setSelectedPlantTypes,
+  setFeaturedPlants,
 };

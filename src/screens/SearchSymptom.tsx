@@ -138,7 +138,7 @@ const SearchSymptom: React.FC = () => {
                   backgroundColor: theme.colors.imageBackground,
                 }}
                 resizeMode="contain"
-               />
+              />
 
               <Text
                 style={{
