@@ -6,7 +6,6 @@ import { getTopFivePlants, usePlantRanking } from '@src/hooks/useRanking';
 import { useSymptomData } from '@src/hooks/useData';
 import { theme } from '@src/constants';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
-import { useAppSelector } from '@src/store';
 import { useSubscription } from '@src/hooks/revenueCat';
 import { useEffect } from 'react';
 
@@ -17,30 +16,26 @@ const Home: React.FC = () => {
   const { symptoms } = useSymptomData();
 
   const { 
-    subscriptionDetails,
+    subscriptionDetails, 
+    loading, 
+    error, 
+    checkSubscriptionStatus,
     isPremium,
-    isTrial,
     isExpired,
-    loading 
+    isTrial 
   } = useSubscription();
-
-    // Log du statut d'abonnement
-    useEffect(() => {
-      if (!loading && subscriptionDetails) {
-        console.log('Subscription Status:', {
-          currentStatus: subscriptionDetails.status,
-          expirationDate: subscriptionDetails.expirationDate,
-          startDate: subscriptionDetails.startDate,
-          productId: subscriptionDetails.productId,
-          isActive: subscriptionDetails.isActive,
-          details: {
-            isPremium,
-            isTrial,
-            isExpired
-          }
-        });
-      }
-    }, [loading, subscriptionDetails, isPremium, isTrial, isExpired]);
+  
+  useEffect(() => {
+    if (subscriptionDetails) {
+      console.log('Subscription Status:', {
+        details: subscriptionDetails,
+        isPremium,
+        isExpired,
+        isTrial,
+        timestamp: new Date().toISOString()
+      });
+    }
+  }, [subscriptionDetails, isPremium, isExpired, isTrial]);
 
   // Fonction de sécurité pour gérer les images manquantes
   const getImage = (imageName: string) => {
