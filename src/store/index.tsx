@@ -14,10 +14,12 @@ import {
   persistStore,
   persistReducer,
 } from 'redux-persist';
+import { premiumSlice } from './slices/premiumSlice';
 
 // Combine all the slices into a root reducer
 const rootReducer = combineReducers({
   tabSlice: tabSlice.reducer,
+  premiumSlice: premiumSlice.reducer,
 });
 
 // Configure persistence with AsyncStorage
