@@ -1,5 +1,5 @@
 const symptomImages = {
-    'Acné': require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+    'Acné': require('@src/assets/images/symptoms/01HPVFZBRCA6ETERQDFRZBF5P1.webp'),
     'Allergie': require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR1.webp'),
     'Anémie': require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR2.webp'),
     'Anorexie': require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR3.webp'),

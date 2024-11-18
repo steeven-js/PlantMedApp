@@ -5,11 +5,9 @@ export const symptoms: SymptomType[] = [
         id: 's-001',
         name: 'Acné',
         description: 'Affection cutanée inflammatoire des follicules pilo-sébacés.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFZBRCA6ETERQDFRZBF5P1.webp'),
         plantIds: ['p-001', 'p-002'],
         sources: ['Manuel de phytothérapie'],
-
-
     },
     {
         id: 's-002',
@@ -18,258 +16,206 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-003', 'p-004'],
         sources: ['Guide des allergies et phytothérapie'],
-
-
     },
     {
         id: 's-003',
         name: 'Anémie',
         description: 'Diminution du taux d\'hémoglobine dans le sang affectant le transport d\'oxygène.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8NS1TTJCQ9D1NWZ2SZE5Y.webp'),
         plantIds: ['p-005', 'p-006'],
         sources: ['Traité de nutrition naturelle'],
-
-
     },
     {
         id: 's-004',
         name: 'Anorexie',
         description: 'Trouble du comportement alimentaire caractérisé par une perte d\'appétit.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8P38PF1MP801653RAV8V8.webp'),
         plantIds: ['p-007', 'p-008'],
         sources: ['Psychologie et médecine naturelle'],
-
-
     },
     {
         id: 's-005',
         name: 'Anti-inflammatoire',
         description: 'Propriété réduisant l\'inflammation dans l\'organisme.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS9249GX3B0XY4BBHSZ3YDJ.webp'),
         plantIds: ['p-009', 'p-010'],
         sources: ['Études cliniques en phytothérapie'],
-
-
     },
     {
         id: 's-006',
         name: 'Antiseptique',
         description: 'Propriété permettant de lutter contre les micro-organismes pathogènes.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8R69S7DW16S4K4ED4JZV1.webp'),
         plantIds: ['p-011', 'p-012'],
         sources: ['Guide des propriétés médicinales'],
-
-
     },
     {
         id: 's-007',
         name: 'Anxiété',
         description: 'État de trouble psychologique caractérisé par un sentiment d\'inquiétude et de tension.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
         plantIds: ['p-013', 'p-014'],
         sources: ['Psychiatrie naturelle'],
-
-
     },
     {
         id: 's-008',
         name: 'Aphrodisiaque',
         description: 'Substance stimulant le désir et les fonctions sexuelles.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8VRRK3PJXSVHJN941BHJS.webp'),
         plantIds: ['p-015', 'p-016'],
         sources: ['Médecine traditionnelle'],
-
-
     },
     {
         id: 's-009',
         name: 'Arthrite',
         description: 'Inflammation des articulations causant douleur et raideur.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8X5FS3KPZEVMKGMKQED5P.webp'),
         plantIds: ['p-017', 'p-018'],
         sources: ['Rhumatologie naturelle'],
-
-
     },
     {
         id: 's-010',
         name: 'Asthme',
         description: 'Maladie inflammatoire chronique des voies respiratoires.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8YA810WXYR0D75D1A3DV4.webp'),
         plantIds: ['p-019', 'p-020'],
         sources: ['Pneumologie et plantes médicinales'],
-
-
     },
     {
         id: 's-011',
         name: 'Boulimie',
         description: 'Trouble du comportement alimentaire caractérisé par des accès de suralimentation.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS906SBDCE3XQJP9CQ13JT0.webp'),
         plantIds: ['p-021', 'p-022'],
         sources: ['Psychologie nutritionnelle'],
-
-
     },
     {
         id: 's-012',
         name: 'Bronchite',
         description: 'Inflammation des bronches causant toux et mucus.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS91P8SXY7F3CBQB6EQ3JQQ.webp'),
         plantIds: ['p-023', 'p-024'],
         sources: ['Traité des maladies respiratoires'],
-
-
     },
     {
         id: 's-013',
         name: 'Brûlures d\'estomac',
         description: 'Sensation de brûlure remontant de l\'estomac vers l\'œsophage.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS8NDG1W5VBYNGEHFYC3KX0.webp'),
         plantIds: ['p-025', 'p-026'],
         sources: ['Gastroentérologie naturelle'],
-
-
     },
     {
         id: 's-014',
         name: 'Brûlures',
         description: 'Lésion de la peau causée par la chaleur ou des substances irritantes.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-027', 'p-028'],
         sources: ['Dermatologie pratique'],
-
-
     },
     {
         id: 's-015',
         name: 'Calculs biliaires',
         description: 'Formation de cristaux dans la vésicule biliaire ou les voies biliaires.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS93MWWA355NAQQK60B1QCQ.webp'),
         plantIds: ['p-029', 'p-030'],
         sources: ['Hépatologie naturelle'],
-
-
     },
     {
         id: 's-016',
         name: 'Cellulite',
         description: 'Modification de l\'aspect de la peau donnant un effet peau d\'orange.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS94ZYVJVN0NR15NGJ2KH56.webp'),
         plantIds: ['p-031', 'p-032'],
         sources: ['Esthétique naturelle'],
-
-
     },
     {
         id: 's-017',
         name: 'Cheveux',
         description: 'Problèmes capillaires incluant la chute, la fragilité ou la sécheresse.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS96VGBK80ZZSZWJ0DSTXZY.webp'),
         plantIds: ['p-033', 'p-034'],
         sources: ['Trichologie naturelle'],
-
-
     },
     {
         id: 's-018',
         name: 'Engelures',
         description: 'Lésions cutanées dues à l\'exposition au froid.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
         plantIds: ['p-035', 'p-036'],
         sources: ['Dermatologie du froid'],
-
-
     },
     {
         id: 's-019',
         name: 'Cholestérol',
         description: 'Taux élevé de lipides dans le sang nécessitant une régulation.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS9A9QGV35CCKX1SVFXH7SG.webp'),
         plantIds: ['p-037', 'p-038'],
         sources: ['Cardiologie préventive'],
-
-
     },
     {
         id: 's-020',
         name: 'Circulation sanguine',
         description: 'Troubles de la circulation du sang dans l\'organisme.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HJS99NDY41F14C8GGPQ8B8P7.webp'),
         plantIds: ['p-039', 'p-040'],
         sources: ['Angiologie naturelle'],
-
-
     },
     {
         id: 's-021',
         name: 'Colite',
         description: 'Inflammation du côlon causant des douleurs abdominales.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-041', 'p-042'],
         sources: ['Gastroentérologie pratique'],
-
-
     },
     {
         id: 's-022',
         name: 'Côlon irritable',
         description: 'Trouble fonctionnel intestinal chronique.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-043', 'p-044'],
         sources: ['Syndrome du côlon irritable'],
-
-
     },
     {
         id: 's-023',
         name: 'Constipation',
         description: 'Difficulté à évacuer les selles de façon régulière.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFTMH00EY0KN44A09ZN69B.webp'),
         plantIds: ['p-045', 'p-046'],
         sources: ['Transit intestinal'],
-
-
     },
     {
         id: 's-024',
         name: 'Cystite',
         description: 'Infection urinaire touchant la vessie.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-047', 'p-048'],
         sources: ['Urologie naturelle'],
-
-
     },
     {
         id: 's-025',
         name: 'Démangeaisons',
         description: 'Sensation cutanée désagréable provoquant le besoin de se gratter.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
         plantIds: ['p-049', 'p-050'],
         sources: ['Dermatologie pratique'],
-
-
     },
     {
         id: 's-026',
         name: 'Dépression',
         description: 'Trouble de l\'humeur caractérisé par une tristesse persistante et une perte d\'intérêt.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFYBJQKS6NXPGZNM8VVTX5.webp'),
         plantIds: ['p-051', 'p-052'],
         sources: ['Psychiatrie naturelle'],
-
-
     },
     {
         id: 's-027',
         name: 'Dermatite',
         description: 'Inflammation de la peau pouvant causer rougeurs, démangeaisons et irritation.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-053', 'p-054'],
         sources: ['Dermatologie clinique'],
-
-
     },
     {
         id: 's-028',
@@ -278,108 +224,86 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-055', 'p-056'],
         sources: ['Endocrinologie naturelle'],
-
-
     },
     {
         id: 's-029',
         name: 'Diarrhée',
         description: 'Trouble digestif caractérisé par des selles liquides fréquentes.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG1RQS9999WZ2B8SEAY09Z.webp'),
         plantIds: ['p-057', 'p-058'],
         sources: ['Gastroentérologie d\'urgence'],
-
-
     },
     {
         id: 's-030',
         name: 'Douleur menstruelle',
         description: 'Crampes et inconfort associés au cycle menstruel.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG32HTVGX4R3BZMMGAVHFR.webp'),
         plantIds: ['p-059', 'p-060'],
         sources: ['Gynécologie naturelle'],
-
-
     },
     {
         id: 's-031',
         name: 'Elimination des toxines',
         description: 'Processus de détoxification naturelle de l\'organisme pour éliminer les substances nocives.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG4V93FZ9X1RYEKMNXZ8M8.webp'),
         plantIds: ['p-061', 'p-062'],
         sources: ['Médecine détox'],
-
-
     },
     {
         id: 's-032',
         name: 'Fatigue',
         description: 'État d\'épuisement physique ou mental affectant les capacités normales.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG5YS3DNFA0PDRXZ499X7F.webp'),
         plantIds: ['p-063', 'p-064'],
         sources: ['Manuel de médecine générale'],
-
-
     },
     {
         id: 's-033',
         name: 'Fertilité',
         description: 'Capacité de reproduction et équilibre hormonal lié à la procréation.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG7Q8AJCHG6D7JCT564EHA.webp'),
         plantIds: ['p-065', 'p-066'],
         sources: ['Traité de fertilité naturelle'],
-
-
     },
     {
         id: 's-034',
         name: 'Fièvre',
         description: 'Élévation de la température corporelle au-dessus de la normale.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG92J4RQQVWD12010E713C.webp'),
         plantIds: ['p-067', 'p-068'],
         sources: ['Guide des symptômes fébriles'],
-
-
     },
     {
         id: 's-035',
         name: 'Flatulence',
         description: 'Accumulation excessive de gaz dans le système digestif.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVG9WWHTDJV5HR36EB1MEM2.webp'),
         plantIds: ['p-069', 'p-070'],
         sources: ['Gastroentérologie pratique'],
-
-
     },
     {
         id: 's-036',
         name: 'Foie gras',
         description: 'Accumulation excessive de graisse dans le foie pouvant altérer son fonctionnement.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVGB1E29AY7T19S8E55G708.webp'),
         plantIds: ['p-071', 'p-072'],
         sources: ['Hépatologie clinique'],
-
-
     },
     {
         id: 's-037',
         name: 'Foie propre',
         description: 'Soutien à la fonction hépatique et à la détoxification naturelle du foie.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVGD8STXKFH2N097JBW5GEY.webp'),
         plantIds: ['p-073', 'p-074'],
         sources: ['Guide de santé hépatique'],
-
-
     },
     {
         id: 's-038',
         name: 'Froid',
         description: 'Sensibilité excessive aux basses températures et leurs effets sur l\'organisme.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
         plantIds: ['p-075', 'p-076'],
         sources: ['Médecine climatique'],
-
-
     },
     {
         id: 's-039',
@@ -388,28 +312,22 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-077', 'p-078'],
         sources: ['Ophtalmologie naturelle'],
-
-
     },
     {
         id: 's-040',
         name: 'Goutte',
         description: 'Forme d\'arthrite causée par l\'accumulation d\'acide urique dans les articulations.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVGJ31419G53NBME359XZX0.webp'),
         plantIds: ['p-079', 'p-080'],
         sources: ['Rhumatologie clinique'],
-
-
     },
     {
         id: 's-041',
         name: 'Grippe',
         description: 'Infection virale respiratoire causant fièvre, courbatures et fatigue intense.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVY0TZN6XMC0V7NN9415A2D.webp'),
         plantIds: ['p-081', 'p-082'],
         sources: ['Infectiologie pratique'],
-
-
     },
     {
         id: 's-042',
@@ -418,398 +336,318 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-083', 'p-084'],
         sources: ['Médecine holistique'],
-
-
     },
     {
         id: 's-043',
         name: 'Hémorroïdes',
         description: 'Dilatation des veines de la région anale causant inconfort et saignements.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVY3BZCKCPW7N7G8WDH9FYV.webp'),
         plantIds: ['p-085', 'p-086'],
         sources: ['Proctologie naturelle'],
-
-
     },
     {
         id: 's-044',
         name: 'Hyperhidrose',
         description: 'Transpiration excessive et anormale affectant la qualité de vie.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVY5315F3AY4CVSQ8XJSMH5.webp'),
         plantIds: ['p-087', 'p-088'],
         sources: ['Dermatologie fonctionnelle'],
-
-
     },
     {
         id: 's-045',
         name: 'Hypertension',
         description: 'Élévation chronique de la pression artérielle au-dessus des valeurs normales.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-089', 'p-090'],
         sources: ['Cardiologie préventive'],
-
-
     },
     {
         id: 's-046',
         name: 'Hypotension',
         description: 'Baisse anormale de la pression artérielle pouvant causer vertiges et fatigue.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-091', 'p-092'],
         sources: ['Cardiologie préventive'],
-
-
     },
     {
         id: 's-047',
         name: 'Indigestion',
         description: 'Trouble digestif causant inconfort, ballonnements et difficultés à digérer.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-093', 'p-094'],
         sources: ['Gastroentérologie pratique'],
-
-
     },
     {
         id: 's-048',
         name: 'Infection de la gorge',
         description: 'Inflammation des voies respiratoires supérieures causant mal de gorge et difficulté à avaler.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0MBQW09FN4QT9DEJ963BE.webp'),
         plantIds: ['p-095', 'p-096'],
         sources: ['ORL naturelle'],
-
-
     },
     {
         id: 's-049',
         name: 'Insomnie',
         description: 'Trouble du sommeil caractérisé par des difficultés d\'endormissement ou de maintien du sommeil.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0Q01VCWBV9QHC6VDQVN0Z.webp'),
         plantIds: ['p-097', 'p-098'],
         sources: ['Médecine du sommeil'],
-
-
     },
     {
         id: 's-050',
         name: 'Irritabilité',
         description: 'État de tension nerveuse se manifestant par une sensibilité accrue aux stimulations.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0S27AE46GT11VFQ6NPZQT.webp'),
         plantIds: ['p-099', 'p-100'],
         sources: ['Psychologie naturelle'],
-
-
     },
     {
         id: 's-051',
         name: 'Jambes fatiguées',
         description: 'Sensation de lourdeur et d\'inconfort dans les jambes, souvent liée à une mauvaise circulation.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0THNSJP5EZGW87EACX3S3.webp'),
         plantIds: ['p-101', 'p-102'],
         sources: ['Phlébologie pratique'],
-
-
     },
     {
         id: 's-052',
         name: 'Mal de dents',
         description: 'Douleur dentaire pouvant être causée par une carie, une infection ou une sensibilité.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0WDSMJQGEVN21CVE63VF8.webp'),
         plantIds: ['p-103', 'p-104'],
         sources: ['Dentisterie naturelle'],
-
-
     },
     {
         id: 's-053',
         name: 'Maladies cardiovasculaires',
         description: 'Ensemble des affections touchant le cœur et les vaisseaux sanguins.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0ZHYZN2ZHBAX91KTRE4QT.webp'),
         plantIds: ['p-105', 'p-106'],
         sources: ['Cardiologie clinique'],
-
-
     },
     {
         id: 's-054',
         name: 'Maladie du foie',
         description: 'Affections hépatiques diverses altérant les fonctions du foie.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW114YVN4JZ4QPNBAE6PM53.webp'),
         plantIds: ['p-107', 'p-108'],
         sources: ['Hépatologie avancée'],
-
-
     },
     {
         id: 's-055',
         name: 'Maladie rhumatismale',
         description: 'Affections inflammatoires chroniques touchant les articulations et les tissus conjonctifs.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW12CJ16RM37NBPWTWYRY4P.webp'),
         plantIds: ['p-109', 'p-110'],
         sources: ['Rhumatologie clinique'],
-
-
     },
     {
         id: 's-056',
         name: 'Manque d\'appétit',
         description: 'Diminution ou perte du désir de s\'alimenter pouvant avoir diverses causes physiologiques ou psychologiques.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW13V2VKA4J7NS17FD3KXBG.webp'),
         plantIds: ['p-111', 'p-112'],
         sources: ['Nutrition clinique'],
-
-
     },
     {
         id: 's-057',
         name: 'Mauvaise haleine',
         description: 'Halitose ou odeur désagréable de la bouche liée à des causes bucco-dentaires ou digestives.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW159ZZ7WBJ249YNRN4W3MF.webp'),
         plantIds: ['p-113', 'p-114'],
         sources: ['Stomatologie pratique'],
-
-
     },
     {
         id: 's-058',
         name: 'Maux d\'estomac',
         description: 'Douleurs ou inconfort dans la région gastrique pouvant inclure brûlures et crampes.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-115', 'p-116'],
         sources: ['Gastroentérologie naturelle'],
-
-
     },
     {
         id: 's-059',
         name: 'Maux de tête',
         description: 'Céphalées de différentes intensités et origines affectant la qualité de vie.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1QK0KKCWF78EPQDJ015Z7.webp'),
         plantIds: ['p-117', 'p-118'],
         sources: ['Neurologie pratique'],
-
-
     },
     {
         id: 's-060',
         name: 'Ménopause',
         description: 'Période de transition hormonale marquant la fin des cycles menstruels avec divers symptômes associés.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1PXC9CV7DDK123DAGYB06.webp'),
         plantIds: ['p-119', 'p-120'],
         sources: ['Gynécologie naturelle'],
-
-
     },
     {
         id: 's-061',
         name: 'Migraine',
         description: 'Céphalée intense et récurrente, souvent accompagnée de nausées et d\'hypersensibilité sensorielle.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1QK0KKCWF78EPQDJ015Z7.webp'),
         plantIds: ['p-121', 'p-122'],
         sources: ['Neurologie clinique'],
-
-
     },
     {
         id: 's-062',
         name: 'Nausées',
         description: 'Sensation désagréable de malaise gastrique avec envie de vomir.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1RSS8Z730Z8FQC72N3FJS.webp'),
         plantIds: ['p-123', 'p-124'],
         sources: ['Gastroentérologie générale'],
-
-
     },
     {
         id: 's-063',
         name: 'Nerfs',
         description: 'État de tension nerveuse et d\'anxiété affectant le bien-être émotionnel.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1TXDRF8WYJDS6PXPVEYR7.webp'),
         plantIds: ['p-125', 'p-126'],
         sources: ['Psychiatrie naturelle'],
-
-
     },
     {
         id: 's-064',
         name: 'Névralgie',
         description: 'Douleur vive sur le trajet d\'un nerf, souvent de caractère lancinant.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1W52G3XDBQ20ZD050JBYS.webp'),
         plantIds: ['p-127', 'p-128'],
         sources: ['Neurologie pratique'],
-
-
     },
     {
         id: 's-065',
         name: 'Pancréatite',
         description: 'Inflammation du pancréas pouvant être aiguë ou chronique, causant des douleurs abdominales intenses.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1XP4QN1Y3PM7DZ7VVQMD1.webp'),
         plantIds: ['p-129', 'p-130'],
         sources: ['Gastroentérologie spécialisée'],
-
-
     },
     {
         id: 's-066',
         name: 'Parasites intestinaux',
         description: 'Présence d\'organismes parasitaires dans le système digestif causant divers troubles intestinaux.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1YSYX4A9CXWWG6Q2B5WTT.webp'),
         plantIds: ['p-131', 'p-132'],
         sources: ['Parasitologie clinique'],
-
-
     },
     {
         id: 's-067',
         name: 'Peau sèche',
         description: 'État cutané caractérisé par un manque d\'hydratation causant inconfort et démangeaisons.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW20294WGPPP4KWX6PPN6FH.webp'),
         plantIds: ['p-133', 'p-134'],
         sources: ['Dermatologie pratique'],
-
-
     },
     {
         id: 's-068',
         name: 'Perdre du poids',
         description: 'Objectif de réduction pondérale dans le cadre d\'une démarche de santé encadrée.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW2319RRFR82XD68CZ9MWMS.webp'),
         plantIds: ['p-135', 'p-136'],
         sources: ['Nutrition et diététique'],
-
-
     },
     {
         id: 's-069',
         name: 'Pharyngite',
         description: 'Inflammation du pharynx causant mal de gorge et difficulté à avaler.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF7A6FE8NZ4A8XE8N2BY2Z.webp'),
         plantIds: ['p-137', 'p-138'],
         sources: ['ORL générale'],
-
-
     },
     {
         id: 's-070',
         name: 'Plaies dans la bouche',
         description: 'Lésions de la muqueuse buccale pouvant inclure aphtes et ulcérations.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWERFKNYET08AV5Q1M0XNXN.webp'),
         plantIds: ['p-139', 'p-140'],
         sources: ['Stomatologie naturelle'],
-
-
     },
     {
         id: 's-071',
         name: 'Amnésie',
         description: 'Perte partielle ou totale de la mémoire, pouvant être temporaire ou permanente.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWEXAY8PTBETYYETPF38FXX.webp'),
         plantIds: ['p-141', 'p-142'],
         sources: ['Neurologie clinique'],
-
-
     },
     {
         id: 's-072',
         name: 'Problèmes digestifs',
         description: 'Ensemble de troubles affectant le système digestif, comme les ballonnements ou la digestion difficile.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-143', 'p-144'],
         sources: ['Gastroentérologie naturelle'],
-
-
     },
     {
         id: 's-073',
         name: 'Prostate',
         description: 'Troubles liés à la prostate, incluant l\'hypertrophie et les problèmes urinaires associés.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF0CC0K5N6S2CNGA374859.webp'),
         plantIds: ['p-145', 'p-146'],
         sources: ['Urologie clinique'],
-
-
     },
     {
         id: 's-074',
         name: 'Psoriasis',
         description: 'Maladie chronique de la peau caractérisée par des plaques rouges et des squames.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-147', 'p-148'],
         sources: ['Dermatologie spécialisée'],
-
-
     },
     {
         id: 's-075',
         name: 'Purifier les reins',
         description: 'Soutien à la fonction rénale et à l\'élimination naturelle des toxines.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF47P314V1EQHEE72MFEJN.webp'),
         plantIds: ['p-149', 'p-150'],
         sources: ['Néphrologie naturelle'],
-
-
     },
     {
         id: 's-076',
         name: 'Rétention d\'eau',
         description: 'Accumulation excessive de liquides dans les tissus causant gonflements et sensation de lourdeur.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF5E77XF4VWZVW0HGCNGNF.webp'),
         plantIds: ['p-151', 'p-152'],
         sources: ['Médecine vasculaire'],
-
-
     },
     {
         id: 's-077',
         name: 'Salpingite',
         description: 'Infection des trompes de Fallope pouvant affecter la fertilité et causer des douleurs pelviennes.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW1PXC9CV7DDK123DAGYB06.webp'),
         plantIds: ['p-153', 'p-154'],
         sources: ['Gynécologie clinique'],
-
-
     },
     {
         id: 's-078',
         name: 'Sinusite',
         description: 'Inflammation des sinus paranasaux causant congestion, douleurs faciales et maux de tête.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWF7A6FE8NZ4A8XE8N2BY2Z.webp'),
         plantIds: ['p-155', 'p-156'],
         sources: ['ORL pratique'],
-
-
     },
     {
         id: 's-079',
         name: 'Spasmes intestinaux',
         description: 'Contractions douloureuses et involontaires des muscles intestinaux.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-157', 'p-158'],
         sources: ['Gastroentérologie fonctionnelle'],
-
-
     },
     {
         id: 's-080',
         name: 'Piqûres d\'insectes',
         description: 'Réactions cutanées suite à des piqûres d\'insectes causant démangeaisons et inflammation.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
         plantIds: ['p-159', 'p-160'],
         sources: ['Dermatologie d\'urgence'],
-
-
     },
     {
         id: 's-081',
         name: 'Stress',
         description: 'État de tension physique et émotionnelle affectant le bien-être et la santé générale.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
         plantIds: ['p-161', 'p-162'],
         sources: ['Psychologie clinique'],
-
-
     },
     {
         id: 's-082',
@@ -818,97 +656,77 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-163', 'p-164'],
         sources: ['Dermatologie esthétique'],
-
-
     },
     {
         id: 's-083',
         name: 'Tachycardie',
         description: 'Accélération anormale du rythme cardiaque au repos ou à l\'effort.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-165', 'p-166'],
         sources: ['Cardiologie clinique'],
-
-
     },
     {
         id: 's-084',
         name: 'Tendinite',
         description: 'Inflammation d\'un tendon causant douleur et limitation des mouvements.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWFW2C3EJB5TQCTAARJ4GV9.webp'),
         plantIds: ['p-167', 'p-168'],
         sources: ['Rhumatologie pratique'],
-
-
     },
     {
         id: 's-085',
         name: 'Toux',
         description: 'Réflexe respiratoire destiné à dégager les voies aériennes, pouvant être aiguë ou chronique.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWFX6TNM9131YKDJEMHV93R.webp'),
         plantIds: ['p-169', 'p-170'],
         sources: ['Pneumologie générale'],
-
-
     },
     {
         id: 's-086',
         name: 'Ulcère de l\'estomac',
         description: 'Lésion de la muqueuse gastrique causant des douleurs et risques de complications digestives.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-171', 'p-172'],
         sources: ['Gastroentérologie clinique'],
-
-
     },
     {
         id: 's-087',
         name: 'Urétrite',
         description: 'Inflammation de l\'urètre causant des troubles urinaires et des sensations de brûlure.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPW0NQWVD691YH2KXN0PXGRZ.webp'),
         plantIds: ['p-173', 'p-174'],
         sources: ['Urologie pratique'],
-
-
     },
     {
         id: 's-088',
         name: 'Varices',
         description: 'Dilatation anormale des veines, principalement dans les jambes, causant inconfort et complications.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWFZZWSW4R8PA0YY4DMS4XE.webp'),
         plantIds: ['p-175', 'p-176'],
         sources: ['Phlébologie clinique'],
-
-
     },
     {
         id: 's-089',
         name: 'Vertiges',
         description: 'Sensation de perte d\'équilibre ou d\'environnement tournant pouvant avoir diverses causes.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWG133TZVMWVESVBDBR8D3T.webp'),
         plantIds: ['p-177', 'p-178'],
         sources: ['Neurologie vestibulaire'],
-
-
     },
     {
         id: 's-090',
         name: 'Vieillissement',
         description: 'Processus naturel de changements physiologiques liés à l\'âge nécessitant des soins adaptés.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWG2JZSMDJ579WHSS4QS18Y.webp'),
         plantIds: ['p-179', 'p-180'],
         sources: ['Gériatrie naturelle'],
-
-
     },
     {
         id: 's-091',
         name: 'Vomissements',
         description: 'Rejet actif du contenu gastrique pouvant être lié à diverses causes digestives ou générales.',
-        image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
+        image: require('@src/assets/images/symptoms/01HPWG3NWP3F5H0C4943BMPMPZ.webp'),
         plantIds: ['p-181', 'p-182'],
         sources: ['Gastroentérologie d\'urgence'],
-
-
     },
 ];

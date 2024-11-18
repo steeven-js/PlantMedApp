@@ -60,9 +60,6 @@ const AppContent = () => {
     loading, 
     error, 
     checkSubscriptionStatus,
-    isPremium,
-    isExpired,
-    isTrial 
   } = useSubscription();
 
   useEffect(() => {
