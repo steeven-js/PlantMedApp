@@ -4,7 +4,6 @@ import { Platform, ScrollView, TouchableOpacity, View } from 'react-native';
 
 import { useRelatedPlants } from '@src/hooks/useData';
 import { usePlantPress } from '@src/hooks/useCommonNav';
-import { getPremiumPlants } from '@src/hooks/plantStatus';
 
 import { text } from '@src/text';
 import { utils } from '@src/utils';
@@ -15,28 +14,13 @@ import { PlantType } from '@src/types';
 import { components } from '@src/components';
 import { SymptomScreenProps } from '@src/types/ScreenProps';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
+import { isActiveAndPremium } from '@src/hooks/plantStatus';
 
 const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
   const {item} = route.params;
   const {plants: relatedPlants} = useRelatedPlants(item.id);
   const [tab, setTab] = useState(0);
   const handlePlantPress = usePlantPress();
-  const premiumPlants = getPremiumPlants();
-
-  // Fonction de sécurité pour gérer les images manquantes
-  const getImage = (imageName: string) => {
-    try {
-      // Récupérer l'image avec getPlantImage
-      const image = getPlantImage(imageName as PlantImageName);
-      // Retourner l'image dans le bon format pour FastImage
-      return typeof image === 'number'
-        ? image  // Si c'est déjà un require()
-        : { uri: image };  // Si c'est une URL
-    } catch (error) {
-      console.warn(`Image not found for: ${imageName}`);
-      return require('@src/assets/images/plants/default.png');
-    }
-  };
 
   const renderHeader = (): JSX.Element => {
     return (
@@ -200,9 +184,13 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
         }}
       >
         {relatedPlants.map((plant, index) => {
-          const imageSource = getImage(plant.image?.toString() || '');
-          const isPremium = premiumPlants.includes(plant.id);
+          // Get plant name from the image path
+          const plantName = plant.image?.toString().split('/').pop()?.split('.')[0];
+          // Use the plant name to get the correct image from plantImages
+          const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
 
+          const isPlantPremium = isActiveAndPremium(plant.id);
+              
           return (
             <TouchableOpacity
               key={plant.id || index}
@@ -229,7 +217,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
                 }}
                 resizeMode="cover"
               >
-                {isPremium && Platform.OS === 'ios' && (
+                {isPlantPremium && Platform.OS === 'ios' && (
                   <custom.ItemPrenium
                     item={plant}
                     containerStyle={{

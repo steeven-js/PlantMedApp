@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-import { checkPlantStatus } from './plantStatus';
+import { isActiveAndPremium } from './plantStatus';
 import { checkSymptomStatus } from './symptomStatus';
 
 import { hooks } from '@src/hooks';
@@ -14,11 +14,11 @@ export const usePlantPress = () => {
     const handlePlantPress = async (item: PlantType) => {
         try {
             // Vérifier le statut premium de la plante
-            const plantStatus = checkPlantStatus(item.id);
+            const plantStatus = isActiveAndPremium(item.id);
 
             incrementPlantClicks(item.id.toString(), item.name);
 
-            if (Platform.OS === 'ios' && plantStatus.is_premium) {
+            if (Platform.OS === 'ios' && plantStatus) {
                 navigation.navigate('Premium');
                 return;
             } else {

@@ -37,21 +37,6 @@ const Home: React.FC = () => {
     }
   }, [subscriptionDetails, isPremium, isExpired, isTrial]);
 
-  // Fonction de sécurité pour gérer les images manquantes
-  const getImage = (imageName: string) => {
-    try {
-      // Récupérer l'image avec getPlantImage
-      const image = getPlantImage(imageName as PlantImageName);
-      // Retourner l'image dans le bon format pour FastImage
-      return typeof image === 'number'
-        ? image  // Si c'est déjà un require()
-        : { uri: image };  // Si c'est une URL
-    } catch (error) {
-      console.warn(`Image not found for: ${imageName}`);
-      return require('@src/assets/images/plants/default.png');
-    }
-  };
-
   const renderHeader = () => (
     <View style={styles.header}>
       <Text style={styles.headerTitle}>Plantes Médicinales</Text>
@@ -82,6 +67,7 @@ const Home: React.FC = () => {
             key={category.id} 
             style={styles.categoryCard} 
             activeOpacity={0.7}
+            onPress={() => navigation.navigate('Symptom', { item: category, id: category.id })}
           >
             <View style={styles.categoryContent}>
               <custom.ImageBackground
@@ -126,8 +112,11 @@ const Home: React.FC = () => {
       <View style={styles.featuredSection}>
         <Text style={styles.sectionTitle}>Plantes populaires</Text>
         {featuredPlants.map(plant => {
-          const imageSource = getImage(plant.image?.toString() || '');
-          
+          // Get plant name from the image path
+          const plantName = plant.image?.toString().split('/').pop()?.split('.')[0];
+          // Use the plant name to get the correct image from plantImages
+          const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
+              
           return (
             <TouchableOpacity 
               key={plant.id} 
