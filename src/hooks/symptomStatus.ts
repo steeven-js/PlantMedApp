@@ -27,7 +27,7 @@ export const symptomStatus: SymptomStatusConfig = {
     's-015': { is_active: true, is_premium: true },     
     's-016': { is_active: true, is_premium: true },
     's-017': { is_active: true, is_premium: true },     
-    's-018': { is_active: true, is_premium: false },
+    's-018': { is_active: false, is_premium: false },
     's-019': { is_active: true, is_premium: true },
     's-020': { is_active: true, is_premium: false },
     's-021': { is_active: false, is_premium: true },

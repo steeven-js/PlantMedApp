@@ -25,28 +25,17 @@ const Plants: React.FC = () => {
   const {plants, hasData} = usePlantData();
   const premiumPlants = getPremiumPlants();
 
-    // Fonction de sécurité pour gérer les images manquantes
-    const getImage = (imageName: string) => {
-      try {
-        // Récupérer l'image avec getPlantImage
-        const image = getPlantImage(imageName as PlantImageName);
-        // Retourner l'image dans le bon format pour FastImage
-        return typeof image === 'number'
-          ? image  // Si c'est déjà un require()
-          : { uri: image };  // Si c'est une URL
-      } catch (error) {
-        console.warn(`Image not found for: ${imageName}`);
-        return require('@src/assets/images/plants/default.png');
-      }
-    };
-
     const renderCategories = (): JSX.Element | null => {
       if (plants?.length) {
         return (
           <View style={styles.categoriesContainer}>
             {plants.map((item, index) => {
-              const imageSource = getImage(item.image?.toString() || '');
               const isPremium = premiumPlants.includes(item.id);
+
+              // Get plant name from the image path
+              const plantName = item.image?.toString().split('/').pop()?.split('.')[0];
+              // Use the plant name to get the correct image from plantImages
+              const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
 
               return (
                 <TouchableOpacity

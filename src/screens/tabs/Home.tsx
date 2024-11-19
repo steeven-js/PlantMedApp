@@ -8,6 +8,7 @@ import { theme } from '@src/constants';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
 import { useSubscription } from '@src/hooks/revenueCat';
 import { useEffect } from 'react';
+import LoadingScreen from '@src/components/LoadingScreen';
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -53,6 +54,10 @@ const Home: React.FC = () => {
       <Text style={styles.searchText}>🔍 Rechercher une plante...</Text>
     </TouchableOpacity>
   );
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   const renderCategories = () => (
     <View style={styles.categoriesSection}>
