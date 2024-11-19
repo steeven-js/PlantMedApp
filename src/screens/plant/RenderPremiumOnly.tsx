@@ -3,11 +3,11 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 
 import { text } from '@src/text';
-// import { hooks } from '@src/hooks';
+import { hooks } from '@src/hooks';
 import { components } from '@src/components';
 
 const RenderPremiumOnly = (): JSX.Element => {
-  // const navigation = hooks.useAppNavigation();
+  const navigation = hooks.useAppNavigation();
   return (
     <ScrollView
       contentContainerStyle={{
@@ -16,6 +16,13 @@ const RenderPremiumOnly = (): JSX.Element => {
       showsVerticalScrollIndicator={false}
     >
       <View style={{ marginBottom: 20 }}>
+        <components.Button
+          title="Activer le compte Premium"
+          onPress={() => {
+            navigation.navigate('Premium');
+          }}
+          containerStyle={{ marginBottom: 20 }}
+        />
         <text.H3 style={{ marginBottom: 10 }}>Votre compte est actuellement gratuit</text.H3>
         <text.T16 style={{ marginBottom: 20 }}>
           Pour accéder à plus de fonctionnalités, passez à un compte Premium
@@ -33,13 +40,6 @@ const RenderPremiumOnly = (): JSX.Element => {
         L'abonnement se renouvelle automatiquement chaque mois. Vous pouvez le résilier à tout
         moment depuis votre compte.
       </text.T16>
-      <components.Button
-        title="Activer le compte Premium"
-        // onPress={() => {
-        //   navigation.navigate('Premium');
-        // }}
-        containerStyle={{ marginBottom: 20 }}
-      />
       <text.T14 style={{ color: 'gray' }}>
         En activant le compte Premium, vous acceptez nos Conditions d'utilisation et notre Politique
         de confidentialité.

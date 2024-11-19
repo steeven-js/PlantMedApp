@@ -52,8 +52,18 @@ const RenderUse = ({item}: {item: PlantType}): JSX.Element => {
   return (
     <View
       style={{
-        paddingHorizontal: 20,
+        paddingHorizontal: utils.responsiveWidth(20),
         marginBottom: utils.responsiveHeight(24),
+        borderRadius: 12,
+        elevation: 2,
+        shadowColor: theme.colors.transparent,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        padding: utils.responsiveWidth(16),
       }}>
       {isPremium ? <RenderPremiumOnly /> : <UsageContent />}
     </View>

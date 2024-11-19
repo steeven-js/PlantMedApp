@@ -8,7 +8,7 @@ export type RootStackParamList = {
   Premium: undefined;
   TermsOfUse: undefined;
   PrivacyPolicy: undefined;
-  Source: undefined;
+  Source: { source: string[]; title: string };
   SearchPlant: undefined;
   SearchSymptom: undefined;
   Test: undefined;

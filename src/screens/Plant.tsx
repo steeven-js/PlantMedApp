@@ -47,33 +47,21 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
     setActiveIndex(index);
   }).current;
 
-  const getImage = (imageName: string) => {
-    try {
-      const image = getPlantImage(imageName as PlantImageName);
-      return typeof image === 'number' ? image : { uri: image };
-    } catch (error) {
-      console.warn(`Image not found for: ${imageName}`);
-      return require('@src/assets/images/plants/default.png');
-    }
+  const renderHeader = (): JSX.Element => {
+    return <components.Header goBackIcon={true} title={item?.name}
+    />;
   };
 
-  const renderHeader = (): JSX.Element => (
-    <components.Header
-      title={item?.name}
-      logoIcon={true}
-      goBackIcon={true}
-      basketIcon={true}
-      bottomLine={true}
-      exception={true}
-    />
-  );
-
-  const renderSingleImage = ({ item: imageUrl }: { item: string }): JSX.Element => {
-    const source = getImage(imageUrl?.toString() || '');
+  const renderSingleImage = (): JSX.Element => {
+    // Get plant name from the image path
+    const plantName = item.image?.toString().split('/').pop()?.split('.')[0];
+    // Use the plant name to get the correct image from plantImages
+    const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
+                  
     return (
       <custom.Image
         resizeMode="contain"
-        source={source}
+        source={imageSource}
         style={styles.carouselImage}
       />
     );
