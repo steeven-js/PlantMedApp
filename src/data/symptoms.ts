@@ -117,7 +117,7 @@ export const symptoms: SymptomType[] = [
         name: 'Calculs biliaires',
         description: 'Formation de cristaux dans la vésicule biliaire ou les voies biliaires.',
         image: require('@src/assets/images/symptoms/01HJS93MWWA355NAQQK60B1QCQ.webp'),
-        plantIds: ["p-029", "p-030", "p-047", "p-087", "p-104", "p-107", "p-109", "p-110", "p-122", "p-126", "p-135", "p-148"],
+        plantIds: ['p-002', 'p-026', 'p-059', 'p-065', 'p-092', 'p-093', 'p-100', 'p-104', 'p-108', 'p-110', 'p-114', 'p-149'],
         sources: ['Hépatologie naturelle'],
     },
     {
@@ -125,7 +125,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cellulite',
         description: 'Modification de l\'aspect de la peau donnant un effet peau d\'orange.',
         image: require('@src/assets/images/symptoms/01HJS94ZYVJVN0NR15NGJ2KH56.webp'),
-        plantIds: ['p-031', 'p-032'],
+        plantIds: ['p-028', 'p-040', 'p-047', 'p-067', 'p-075', 'p-089', 'p-104', 'p-110', 'p-114', 'p-136', 'p-140'],
         sources: ['Esthétique naturelle'],
     },
     {
@@ -133,7 +133,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cheveux',
         description: 'Problèmes capillaires incluant la chute, la fragilité ou la sécheresse.',
         image: require('@src/assets/images/symptoms/01HJS96VGBK80ZZSZWJ0DSTXZY.webp'),
-        plantIds: ["p-031", "p-032", "p-033", "p-034", "p-066", "p-075", "p-087", "p-109", "p-110", "p-135", "p-148"],
+        plantIds: ['p-041', 'p-042'],
         sources: ['Trichologie naturelle'],
     },
     {
@@ -149,7 +149,7 @@ export const symptoms: SymptomType[] = [
         name: 'Cholestérol',
         description: 'Taux élevé de lipides dans le sang nécessitant une régulation.',
         image: require('@src/assets/images/symptoms/01HJS9A9QGV35CCKX1SVFXH7SG.webp'),
-        plantIds: ['p-037', 'p-038'],
+        plantIds: ['p-007', 'p-009', 'p-017', 'p-020', 'p-026', 'p-041', 'p-042', 'p-044', 'p-049', 'p-050', 'p-053', 'p-068', 'p-070', 'p-076', 'p-083', 'p-087', 'p-091', 'p-096', 'p-103', 'p-110', 'p-111', 'p-112', 'p-136'],
         sources: ['Cardiologie préventive'],
     },
     {
@@ -157,7 +157,7 @@ export const symptoms: SymptomType[] = [
         name: 'Circulation sanguine',
         description: 'Troubles de la circulation du sang dans l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJS99NDY41F14C8GGPQ8B8P7.webp'),
-        plantIds: ["p-037", "p-038", "p-055", "p-056", "p-066", "p-087", "p-109", "p-110", "p-122", "p-135", "p-148"],
+        plantIds: ['p-001', 'p-002', 'p-021', 'p-034', 'p-059', 'p-066', 'p-070', 'p-073', 'p-083', 'p-092', 'p-093', 'p-098', 'p-126', 'p-135', 'p-141'],
         sources: ['Angiologie naturelle'],
     },
     {
@@ -173,7 +173,7 @@ export const symptoms: SymptomType[] = [
         name: 'Côlon irritable',
         description: 'Trouble fonctionnel intestinal chronique.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
-        plantIds: ["p-043", "p-044", "p-055", "p-066", "p-087", "p-095", "p-109", "p-110", "p-122", "p-126", "p-135", "p-144", "p-145"],
+        plantIds: ['p-001', 'p-002', 'p-021', 'p-034', 'p-059', 'p-066', 'p-070', 'p-073', 'p-083', 'p-092', 'p-093', 'p-098', 'p-126', 'p-135', 'p-141'],
         sources: ['Syndrome du côlon irritable'],
     },
     {
@@ -181,7 +181,7 @@ export const symptoms: SymptomType[] = [
         name: 'Constipation',
         description: 'Difficulté à évacuer les selles de façon régulière.',
         image: require('@src/assets/images/symptoms/01HPVFTMH00EY0KN44A09ZN69B.webp'),
-        plantIds: ["p-045", "p-046", "p-066", "p-075", "p-087", "p-095", "p-109", "p-110", "p-122", "p-126", "p-135", "p-143", "p-144", "p-148"],
+        plantIds: ['p-008', 'p-009', 'p-014', 'p-020', 'p-034', 'p-035', 'p-038', 'p-042', 'p-044', 'p-054', 'p-055', 'p-062', 'p-064', 'p-070', 'p-073', 'p-082', 'p-083', 'p-085', 'p-087', 'p-090', 'p-091', 'p-092', 'p-093', 'p-100', 'p-102', 'p-104', 'p-110', 'p-111', 'p-112', 'p-119', 'p-122', 'p-134', 'p-144', 'p-148'],
         sources: ['Transit intestinal'],
     },
     {
@@ -197,7 +197,7 @@ export const symptoms: SymptomType[] = [
         name: 'Démangeaisons',
         description: 'Sensation cutanée désagréable provoquant le besoin de se gratter.',
         image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
-        plantIds: ["p-049", "p-050", "p-066", "p-075", "p-094", "p-109", "p-110", "p-133", "p-134"],
+        plantIds: ['p-008', 'p-023', 'p-025', 'p-027', 'p-034', 'p-045', 'p-069', 'p-073', 'p-074', 'p-075', 'p-081', 'p-083', 'p-084', 'p-085', 'p-092', 'p-094', 'p-096', 'p-117', 'p-120', 'p-135', 'p-137'],
         sources: ['Dermatologie pratique'],
     },
     {
@@ -205,7 +205,7 @@ export const symptoms: SymptomType[] = [
         name: 'Dépression',
         description: 'Trouble de l\'humeur caractérisé par une tristesse persistante et une perte d\'intérêt.',
         image: require('@src/assets/images/symptoms/01HPVFYBJQKS6NXPGZNM8VVTX5.webp'),
-        plantIds: ['p-051', 'p-052'],
+        plantIds: ['p-012', 'p-018', 'p-023', 'p-035', 'p-048', 'p-055', 'p-064', 'p-066', 'p-067', 'p-068', 'p-091', 'p-094', 'p-098', 'p-106', 'p-122', 'p-123', 'p-135', 'p-141'],
         sources: ['Psychiatrie naturelle'],
     },
     {
@@ -213,7 +213,7 @@ export const symptoms: SymptomType[] = [
         name: 'Dermatite',
         description: 'Inflammation de la peau pouvant causer rougeurs, démangeaisons et irritation.',
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
-        plantIds: ['p-053', 'p-054'],
+        plantIds: ['p-008', 'p-009', 'p-022', 'p-025', 'p-027', 'p-033', 'p-034', 'p-047', 'p-050', 'p-053', 'p-062', 'p-074', 'p-075', 'p-080', 'p-081', 'p-085', 'p-094', 'p-101', 'p-104', 'p-107', 'p-110', 'p-111', 'p-112', 'p-114', 'p-115', 'p-117', 'p-120', 'p-122', 'p-124', 'p-131', 'p-135', 'p-138', 'p-139', 'p-140', 'p-148'],
         sources: ['Dermatologie clinique'],
     },
     {
@@ -221,7 +221,7 @@ export const symptoms: SymptomType[] = [
         name: 'Diabète',
         description: 'Trouble métabolique affectant la régulation du taux de sucre dans le sang.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['p-055', 'p-056'],
+        plantIds: ['p-020', 'p-022', 'p-027', 'p-036', 'p-039', 'p-058', 'p-062', 'p-068', 'p-091', 'p-096', 'p-097', 'p-100', 'p-112', 'p-132', 'p-136'],
         sources: ['Endocrinologie naturelle'],
     },
     {
@@ -229,7 +229,7 @@ export const symptoms: SymptomType[] = [
         name: 'Diarrhée',
         description: 'Trouble digestif caractérisé par des selles liquides fréquentes.',
         image: require('@src/assets/images/symptoms/01HPVG1RQS9999WZ2B8SEAY09Z.webp'),
-        plantIds: ['p-057', 'p-058'],
+        plantIds: ['p-002', 'p-008', 'p-020', 'p-021', 'p-024', 'p-034', 'p-044', 'p-047', 'p-049', 'p-066', 'p-070', 'p-082', 'p-087', 'p-090', 'p-092', 'p-093', 'p-094', 'p-097', 'p-112', 'p-114', 'p-115', 'p-119', 'p-121', 'p-135', 'p-136', 'p-138', 'p-139', 'p-145', 'p-148'],
         sources: ['Gastroentérologie d\'urgence'],
     },
     {
@@ -237,7 +237,7 @@ export const symptoms: SymptomType[] = [
         name: 'Douleur menstruelle',
         description: 'Crampes et inconfort associés au cycle menstruel.',
         image: require('@src/assets/images/symptoms/01HPVG32HTVGX4R3BZMMGAVHFR.webp'),
-        plantIds: ['p-059', 'p-060'],
+        plantIds: ['p-002', 'p-011', 'p-015', 'p-018', 'p-020', 'p-023', 'p-027', 'p-034', 'p-035', 'p-036', 'p-049', 'p-051', 'p-064', 'p-066', 'p-089', 'p-093', 'p-098', 'p-108', 'p-121', 'p-126', 'p-127', 'p-129', 'p-148'],
         sources: ['Gynécologie naturelle'],
     },
     {
