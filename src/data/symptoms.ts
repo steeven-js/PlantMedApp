@@ -245,7 +245,7 @@ export const symptoms: SymptomType[] = [
         name: 'Elimination des toxines',
         description: 'Processus de détoxification naturelle de l\'organisme pour éliminer les substances nocives.',
         image: require('@src/assets/images/symptoms/01HPVG4V93FZ9X1RYEKMNXZ8M8.webp'),
-        plantIds: ['p-061', 'p-062'],
+        plantIds: ['p-015', 'p-017', 'p-022', 'p-026', 'p-027', 'p-041', 'p-042', 'p-044', 'p-054', 'p-059', 'p-082', 'p-090', 'p-096', 'p-097', 'p-103', 'p-108', 'p-110', 'p-112', 'p-135', 'p-143'],
         sources: ['Médecine détox'],
     },
     {
@@ -253,7 +253,7 @@ export const symptoms: SymptomType[] = [
         name: 'Fatigue',
         description: 'État d\'épuisement physique ou mental affectant les capacités normales.',
         image: require('@src/assets/images/symptoms/01HPVG5YS3DNFA0PDRXZ499X7F.webp'),
-        plantIds: ['p-063', 'p-064'],
+        plantIds: ['p-015', 'p-018', 'p-020', 'p-024', 'p-032', 'p-050', 'p-055', 'p-061', 'p-068', 'p-082', 'p-086', 'p-091', 'p-094', 'p-096', 'p-114', 'p-117', 'p-147'],
         sources: ['Manuel de médecine générale'],
     },
     {
@@ -261,7 +261,7 @@ export const symptoms: SymptomType[] = [
         name: 'Fertilité',
         description: 'Capacité de reproduction et équilibre hormonal lié à la procréation.',
         image: require('@src/assets/images/symptoms/01HPVG7Q8AJCHG6D7JCT564EHA.webp'),
-        plantIds: ['p-065', 'p-066'],
+        plantIds: ['p-001', 'p-002', 'p-020', 'p-023', 'p-025', 'p-027', 'p-034', 'p-044', 'p-060', 'p-066', 'p-070', 'p-076', 'p-092', 'p-093', 'p-102', 'p-107', 'p-115', 'p-126', 'p-127', 'p-131', 'p-133', 'p-135', 'p-137', 'p-139', 'p-148'],
         sources: ['Traité de fertilité naturelle'],
     },
     {
@@ -269,7 +269,7 @@ export const symptoms: SymptomType[] = [
         name: 'Fièvre',
         description: 'Élévation de la température corporelle au-dessus de la normale.',
         image: require('@src/assets/images/symptoms/01HPVG92J4RQQVWD12010E713C.webp'),
-        plantIds: ['p-067', 'p-068'],
+        plantIds: ['p-001', 'p-002', 'p-020', 'p-023', 'p-025', 'p-027', 'p-034', 'p-044', 'p-060', 'p-066', 'p-070', 'p-076', 'p-092', 'p-093', 'p-102', 'p-107', 'p-115', 'p-126', 'p-127', 'p-131', 'p-133', 'p-135', 'p-137', 'p-139', 'p-148'],
         sources: ['Guide des symptômes fébriles'],
     },
     {
@@ -277,7 +277,7 @@ export const symptoms: SymptomType[] = [
         name: 'Flatulence',
         description: 'Accumulation excessive de gaz dans le système digestif.',
         image: require('@src/assets/images/symptoms/01HPVG9WWHTDJV5HR36EB1MEM2.webp'),
-        plantIds: ['p-069', 'p-070'],
+        plantIds: ['p-001', 'p-002', 'p-011', 'p-021', 'p-023', 'p-026', 'p-034', 'p-036', 'p-049', 'p-051', 'p-052', 'p-059', 'p-069', 'p-070', 'p-078', 'p-081', 'p-087', 'p-090', 'p-092', 'p-093', 'p-102', 'p-110', 'p-115', 'p-117', 'p-126', 'p-145', 'p-148'],
         sources: ['Gastroentérologie pratique'],
     },
     {
@@ -285,7 +285,7 @@ export const symptoms: SymptomType[] = [
         name: 'Foie gras',
         description: 'Accumulation excessive de graisse dans le foie pouvant altérer son fonctionnement.',
         image: require('@src/assets/images/symptoms/01HPVGB1E29AY7T19S8E55G708.webp'),
-        plantIds: ['p-071', 'p-072'],
+        plantIds: ['p-006', 'p-017', 'p-041', 'p-059', 'p-063', 'p-096', 'p-098', 'p-110'],
         sources: ['Hépatologie clinique'],
     },
     {
@@ -293,7 +293,7 @@ export const symptoms: SymptomType[] = [
         name: 'Foie propre',
         description: 'Soutien à la fonction hépatique et à la détoxification naturelle du foie.',
         image: require('@src/assets/images/symptoms/01HPVGD8STXKFH2N097JBW5GEY.webp'),
-        plantIds: ['p-073', 'p-074'],
+        plantIds: ['p-001', 'p-007', 'p-022', 'p-023', 'p-026', 'p-041', 'p-042', 'p-053', 'p-070', 'p-090', 'p-092', 'p-096', 'p-105', 'p-108', 'p-110', 'p-115', 'p-136'],
         sources: ['Guide de santé hépatique'],
     },
     {
@@ -301,7 +301,7 @@ export const symptoms: SymptomType[] = [
         name: 'Froid',
         description: 'Sensibilité excessive aux basses températures et leurs effets sur l\'organisme.',
         image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
-        plantIds: ['p-075', 'p-076'],
+        plantIds: ['p-001', 'p-002', 'p-007', 'p-025', 'p-026', 'p-027', 'p-044', 'p-047', 'p-056', 'p-058', 'p-066', 'p-070', 'p-071', 'p-075', 'p-079', 'p-082', 'p-090', 'p-092', 'p-095', 'p-115', 'p-119', 'p-126', 'p-133', 'p-135', 'p-139', 'p-145', 'p-147', 'p-148'],
         sources: ['Médecine climatique'],
     },
     {
@@ -309,7 +309,7 @@ export const symptoms: SymptomType[] = [
         name: 'Glaucome',
         description: 'Maladie oculaire affectant le nerf optique, souvent liée à une pression intraoculaire élevée.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['p-077', 'p-078'],
+        plantIds: ['p-008', 'p-034', 'p-035', 'p-059', 'p-062', 'p-067', 'p-097'],
         sources: ['Ophtalmologie naturelle'],
     },
     {
@@ -317,7 +317,7 @@ export const symptoms: SymptomType[] = [
         name: 'Goutte',
         description: 'Forme d\'arthrite causée par l\'accumulation d\'acide urique dans les articulations.',
         image: require('@src/assets/images/symptoms/01HPVGJ31419G53NBME359XZX0.webp'),
-        plantIds: ['p-079', 'p-080'],
+        plantIds: ['p-007', 'p-017', 'p-019', 'p-031', 'p-033', 'p-036', 'p-041', 'p-042', 'p-044', 'p-047', 'p-050', 'p-054', 'p-062', 'p-066', 'p-084', 'p-095', 'p-096', 'p-100', 'p-104', 'p-108', 'p-110', 'p-114', 'p-115', 'p-117', 'p-120', 'p-122', 'p-137', 'p-138'],
         sources: ['Rhumatologie clinique'],
     },
     {
