@@ -325,7 +325,7 @@ export const symptoms: SymptomType[] = [
         name: 'Grippe',
         description: 'Infection virale respiratoire causant fièvre, courbatures et fatigue intense.',
         image: require('@src/assets/images/symptoms/01HPVY0TZN6XMC0V7NN9415A2D.webp'),
-        plantIds: ['p-081', 'p-082'],
+        plantIds: ['p-001', 'p-002', 'p-026', 'p-027', 'p-033', 'p-058', 'p-060', 'p-066', 'p-070', 'p-075', 'p-082', 'p-085', 'p-087', 'p-090', 'p-092', 'p-093', 'p-095', 'p-100', 'p-115', 'p-119', 'p-122', 'p-133', 'p-135', 'p-137', 'p-139', 'p-145', 'p-147', 'p-148'],
         sources: ['Infectiologie pratique'],
     },
     {
@@ -333,7 +333,7 @@ export const symptoms: SymptomType[] = [
         name: 'Guérison',
         description: 'Soutien au processus naturel de récupération et de rétablissement de l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['p-083', 'p-084'],
+        plantIds: ['p-002', 'p-008', 'p-018', 'p-023', 'p-024', 'p-027', 'p-033', 'p-034', 'p-040', 'p-047', 'p-070', 'p-074', 'p-075', 'p-081', 'p-082', 'p-086', 'p-088', 'p-090', 'p-093', 'p-115', 'p-117', 'p-120', 'p-126', 'p-131', 'p-139', 'p-147', 'p-148'],
         sources: ['Médecine holistique'],
     },
     {
@@ -341,7 +341,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hémorroïdes',
         description: 'Dilatation des veines de la région anale causant inconfort et saignements.',
         image: require('@src/assets/images/symptoms/01HPVY3BZCKCPW7N7G8WDH9FYV.webp'),
-        plantIds: ['p-085', 'p-086'],
+        plantIds: ['p-002', 'p-008', 'p-011', 'p-020', 'p-024', 'p-040', 'p-041', 'p-070', 'p-074', 'p-089', 'p-095', 'p-097', 'p-104', 'p-119', 'p-126', 'p-148'],
         sources: ['Proctologie naturelle'],
     },
     {
@@ -349,7 +349,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hyperhidrose',
         description: 'Transpiration excessive et anormale affectant la qualité de vie.',
         image: require('@src/assets/images/symptoms/01HPVY5315F3AY4CVSQ8XJSMH5.webp'),
-        plantIds: ['p-087', 'p-088'],
+        plantIds: ['p-034', 'p-045', 'p-099', 'p-114', 'p-126', 'p-130', 'p-136'],
         sources: ['Dermatologie fonctionnelle'],
     },
     {
@@ -357,7 +357,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hypertension',
         description: 'Élévation chronique de la pression artérielle au-dessus des valeurs normales.',
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
-        plantIds: ['p-089', 'p-090'],
+        plantIds: ['p-002', 'p-007', 'p-019', 'p-020', 'p-023', 'p-036', 'p-042', 'p-050', 'p-062', 'p-070', 'p-076', 'p-081', 'p-086', 'p-087', 'p-090', 'p-096', 'p-100', 'p-101', 'p-102', 'p-106', 'p-110', 'p-111', 'p-112', 'p-114', 'p-115', 'p-136', 'p-137', 'p-141'],
         sources: ['Cardiologie préventive'],
     },
     {
@@ -365,7 +365,7 @@ export const symptoms: SymptomType[] = [
         name: 'Hypotension',
         description: 'Baisse anormale de la pression artérielle pouvant causer vertiges et fatigue.',
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
-        plantIds: ['p-091', 'p-092'],
+        plantIds: ['p-005', 'p-007', 'p-019', 'p-065', 'p-066', 'p-068', 'p-091', 'p-092', 'p-093', 'p-117', 'p-122', 'p-137'],
         sources: ['Cardiologie préventive'],
     },
     {
@@ -373,7 +373,7 @@ export const symptoms: SymptomType[] = [
         name: 'Indigestion',
         description: 'Trouble digestif causant inconfort, ballonnements et difficultés à digérer.',
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
-        plantIds: ['p-093', 'p-094'],
+        plantIds: ['p-001', 'p-002', 'p-021', 'p-026', 'p-027', 'p-034', 'p-036', 'p-041', 'p-044', 'p-049', 'p-051', 'p-059', 'p-066', 'p-069', 'p-070', 'p-077', 'p-078', 'p-081', 'p-090', 'p-092', 'p-093', 'p-098', 'p-112', 'p-115', 'p-140', 'p-144', 'p-145', 'p-148'],
         sources: ['Gastroentérologie pratique'],
     },
     {
@@ -381,7 +381,7 @@ export const symptoms: SymptomType[] = [
         name: 'Infection de la gorge',
         description: 'Inflammation des voies respiratoires supérieures causant mal de gorge et difficulté à avaler.',
         image: require('@src/assets/images/symptoms/01HPW0MBQW09FN4QT9DEJ963BE.webp'),
-        plantIds: ['p-095', 'p-096'],
+        plantIds: ['p-023', 'p-024', 'p-034', 'p-045', 'p-053', 'p-058', 'p-062', 'p-066', 'p-070', 'p-075', 'p-082', 'p-092', 'p-122', 'p-126', 'p-133', 'p-135', 'p-136', 'p-139', 'p-148'],
         sources: ['ORL naturelle'],
     },
     {
@@ -389,7 +389,7 @@ export const symptoms: SymptomType[] = [
         name: 'Insomnie',
         description: 'Trouble du sommeil caractérisé par des difficultés d\'endormissement ou de maintien du sommeil.',
         image: require('@src/assets/images/symptoms/01HPW0Q01VCWBV9QHC6VDQVN0Z.webp'),
-        plantIds: ['p-097', 'p-098'],
+        plantIds: ['p-018', 'p-026', 'p-034', 'p-044', 'p-048', 'p-057', 'p-077', 'p-081', 'p-087', 'p-088', 'p-092', 'p-098', 'p-106', 'p-123', 'p-135', 'p-137', 'p-141', 'p-144', 'p-145'],
         sources: ['Médecine du sommeil'],
     },
     {
@@ -397,7 +397,7 @@ export const symptoms: SymptomType[] = [
         name: 'Irritabilité',
         description: 'État de tension nerveuse se manifestant par une sensibilité accrue aux stimulations.',
         image: require('@src/assets/images/symptoms/01HPW0S27AE46GT11VFQ6NPZQT.webp'),
-        plantIds: ['p-099', 'p-100'],
+        plantIds: ['p-034', 'p-048', 'p-064', 'p-081', 'p-085', 'p-092', 'p-106', 'p-137', 'p-141'],
         sources: ['Psychologie naturelle'],
     },
     {
