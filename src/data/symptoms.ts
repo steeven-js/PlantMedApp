@@ -485,7 +485,7 @@ export const symptoms: SymptomType[] = [
         name: 'Migraine',
         description: 'Céphalée intense et récurrente, souvent accompagnée de nausées et d\'hypersensibilité sensorielle.',
         image: require('@src/assets/images/symptoms/01HPW1QK0KKCWF78EPQDJ015Z7.webp'),
-        plantIds: ['p-121', 'p-122'],
+        plantIds: ['p-019', 'p-026', 'p-034', 'p-044', 'p-055', 'p-066', 'p-067', 'p-081', 'p-092', 'p-096', 'p-098', 'p-101', 'p-106', 'p-117', 'p-141'],
         sources: ['Neurologie clinique'],
     },
     {
@@ -493,7 +493,7 @@ export const symptoms: SymptomType[] = [
         name: 'Nausées',
         description: 'Sensation désagréable de malaise gastrique avec envie de vomir.',
         image: require('@src/assets/images/symptoms/01HPW1RSS8Z730Z8FQC72N3FJS.webp'),
-        plantIds: ['p-123', 'p-124'],
+        plantIds: ['p-002', 'p-017', 'p-021', 'p-023', 'p-026', 'p-034', 'p-035', 'p-044', 'p-045', 'p-051', 'p-052', 'p-059', 'p-061', 'p-066', 'p-078', 'p-081', 'p-082', 'p-087', 'p-092', 'p-098', 'p-144', 'p-145'],
         sources: ['Gastroentérologie générale'],
     },
     {
@@ -501,7 +501,7 @@ export const symptoms: SymptomType[] = [
         name: 'Nerfs',
         description: 'État de tension nerveuse et d\'anxiété affectant le bien-être émotionnel.',
         image: require('@src/assets/images/symptoms/01HPW1TXDRF8WYJDS6PXPVEYR7.webp'),
-        plantIds: ['p-125', 'p-126'],
+        plantIds:  ['p-001', 'p-002', 'p-018', 'p-019', 'p-020', 'p-023', 'p-026', 'p-034', 'p-044', 'p-068', 'p-081', 'p-087', 'p-093', 'p-094', 'p-096', 'p-098', 'p-106', 'p-119', 'p-137', 'p-141', 'p-145'],
         sources: ['Psychiatrie naturelle'],
     },
     {
@@ -509,7 +509,7 @@ export const symptoms: SymptomType[] = [
         name: 'Névralgie',
         description: 'Douleur vive sur le trajet d\'un nerf, souvent de caractère lancinant.',
         image: require('@src/assets/images/symptoms/01HPW1W52G3XDBQ20ZD050JBYS.webp'),
-        plantIds: ['p-127', 'p-128'],
+        plantIds: ['p-023', 'p-034', 'p-041', 'p-061', 'p-077', 'p-092', 'p-094', 'p-110', 'p-114', 'p-117', 'p-126', 'p-137', 'p-138', 'p-140', 'p-141', 'p-144'],
         sources: ['Neurologie pratique'],
     },
     {
@@ -517,7 +517,7 @@ export const symptoms: SymptomType[] = [
         name: 'Pancréatite',
         description: 'Inflammation du pancréas pouvant être aiguë ou chronique, causant des douleurs abdominales intenses.',
         image: require('@src/assets/images/symptoms/01HPW1XP4QN1Y3PM7DZ7VVQMD1.webp'),
-        plantIds: ['p-129', 'p-130'],
+        plantIds: ['p-034', 'p-041', 'p-053', 'p-060', 'p-065', 'p-110', 'p-117', 'p-122', 'p-126', 'p-136', 'p-144'],
         sources: ['Gastroentérologie spécialisée'],
     },
     {
@@ -525,7 +525,7 @@ export const symptoms: SymptomType[] = [
         name: 'Parasites intestinaux',
         description: 'Présence d\'organismes parasitaires dans le système digestif causant divers troubles intestinaux.',
         image: require('@src/assets/images/symptoms/01HPW1YSYX4A9CXWWG6Q2B5WTT.webp'),
-        plantIds: ['p-131', 'p-132'],
+        plantIds: ['p-001', 'p-002', 'p-007', 'p-015', 'p-017', 'p-021', 'p-045', 'p-051', 'p-058', 'p-065', 'p-082', 'p-096', 'p-117', 'p-128', 'p-135', 'p-144', 'p-148'],
         sources: ['Parasitologie clinique'],
     },
     {
@@ -533,7 +533,7 @@ export const symptoms: SymptomType[] = [
         name: 'Peau sèche',
         description: 'État cutané caractérisé par un manque d\'hydratation causant inconfort et démangeaisons.',
         image: require('@src/assets/images/symptoms/01HPW20294WGPPP4KWX6PPN6FH.webp'),
-        plantIds: ['p-133', 'p-134'],
+        plantIds: ['p-008', 'p-009', 'p-025', 'p-027', 'p-034', 'p-035', 'p-047', 'p-073', 'p-074', 'p-075', 'p-100', 'p-101', 'p-112', 'p-114', 'p-137'],
         sources: ['Dermatologie pratique'],
     },
     {
@@ -541,7 +541,7 @@ export const symptoms: SymptomType[] = [
         name: 'Perdre du poids',
         description: 'Objectif de réduction pondérale dans le cadre d\'une démarche de santé encadrée.',
         image: require('@src/assets/images/symptoms/01HPW2319RRFR82XD68CZ9MWMS.webp'),
-        plantIds: ['p-135', 'p-136'],
+        plantIds: ['p-017', 'p-020', 'p-026', 'p-028', 'p-054', 'p-059', 'p-062', 'p-066', 'p-076', 'p-091', 'p-103', 'p-110', 'p-114', 'p-136'],
         sources: ['Nutrition et diététique'],
     },
     {
@@ -549,7 +549,7 @@ export const symptoms: SymptomType[] = [
         name: 'Pharyngite',
         description: 'Inflammation du pharynx causant mal de gorge et difficulté à avaler.',
         image: require('@src/assets/images/symptoms/01HPWF7A6FE8NZ4A8XE8N2BY2Z.webp'),
-        plantIds: ['p-137', 'p-138'],
+        plantIds: ['p-007', 'p-013', 'p-024', 'p-034', 'p-047', 'p-056', 'p-058', 'p-059', 'p-062', 'p-066', 'p-070', 'p-082', 'p-085', 'p-102', 'p-109', 'p-114', 'p-122', 'p-125', 'p-126', 'p-135', 'p-147'],
         sources: ['ORL générale'],
     },
     {
@@ -557,7 +557,7 @@ export const symptoms: SymptomType[] = [
         name: 'Plaies dans la bouche',
         description: 'Lésions de la muqueuse buccale pouvant inclure aphtes et ulcérations.',
         image: require('@src/assets/images/symptoms/01HPWERFKNYET08AV5Q1M0XNXN.webp'),
-        plantIds: ['p-139', 'p-140'],
+        plantIds: ['p-008', 'p-023', 'p-024', 'p-034', 'p-069', 'p-070', 'p-074', 'p-075', 'p-080', 'p-082', 'p-085', 'p-092', 'p-105', 'p-122', 'p-126', 'p-131', 'p-138', 'p-147'],
         sources: ['Stomatologie naturelle'],
     },
     {
