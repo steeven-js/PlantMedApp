@@ -405,7 +405,7 @@ export const symptoms: SymptomType[] = [
         name: 'Jambes fatiguées',
         description: 'Sensation de lourdeur et d\'inconfort dans les jambes, souvent liée à une mauvaise circulation.',
         image: require('@src/assets/images/symptoms/01HPW0THNSJP5EZGW87EACX3S3.webp'),
-        plantIds: ['p-101', 'p-102'],
+        plantIds: ['p-019', 'p-025', 'p-040', 'p-067', 'p-070', 'p-074', 'p-075', 'p-089', 'p-091', 'p-096', 'p-108', 'p-110', 'p-114', 'p-117', 'p-146'],
         sources: ['Phlébologie pratique'],
     },
     {
@@ -413,7 +413,7 @@ export const symptoms: SymptomType[] = [
         name: 'Mal de dents',
         description: 'Douleur dentaire pouvant être causée par une carie, une infection ou une sensibilité.',
         image: require('@src/assets/images/symptoms/01HPW0WDSMJQGEVN21CVE63VF8.webp'),
-        plantIds: ['p-103', 'p-104'],
+        plantIds: ['p-007', 'p-034', 'p-053', 'p-066', 'p-069', 'p-081', 'p-085', 'p-098', 'p-108', 'p-112', 'p-123', 'p-127', 'p-136'],
         sources: ['Dentisterie naturelle'],
     },
     {
@@ -421,7 +421,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maladies cardiovasculaires',
         description: 'Ensemble des affections touchant le cœur et les vaisseaux sanguins.',
         image: require('@src/assets/images/symptoms/01HPW0ZHYZN2ZHBAX91KTRE4QT.webp'),
-        plantIds: ['p-105', 'p-106'],
+        plantIds: ['p-005', 'p-007', 'p-017', 'p-019', 'p-020', 'p-034', 'p-036', 'p-044', 'p-050', 'p-062', 'p-066', 'p-067', 'p-074', 'p-084', 'p-086', 'p-087', 'p-091', 'p-096', 'p-111', 'p-112', 'p-114', 'p-117', 'p-121', 'p-136', 'p-141'],
         sources: ['Cardiologie clinique'],
     },
     {
@@ -429,7 +429,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maladie du foie',
         description: 'Affections hépatiques diverses altérant les fonctions du foie.',
         image: require('@src/assets/images/symptoms/01HPW114YVN4JZ4QPNBAE6PM53.webp'),
-        plantIds: ['p-107', 'p-108'],
+        plantIds: ['p-001', 'p-017', 'p-026', 'p-034', 'p-041', 'p-042', 'p-053', 'p-057', 'p-076', 'p-088', 'p-096', 'p-104', 'p-108', 'p-110', 'p-117', 'p-136', 'p-137'],
         sources: ['Hépatologie avancée'],
     },
     {
@@ -437,7 +437,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maladie rhumatismale',
         description: 'Affections inflammatoires chroniques touchant les articulations et les tissus conjonctifs.',
         image: require('@src/assets/images/symptoms/01HPW12CJ16RM37NBPWTWYRY4P.webp'),
-        plantIds: ['p-109', 'p-110'],
+        plantIds: ['p-007', 'p-015', 'p-018', 'p-035', 'p-047', 'p-050', 'p-053', 'p-054', 'p-075', 'p-080', 'p-081', 'p-096', 'p-114', 'p-115', 'p-117', 'p-148'],
         sources: ['Rhumatologie clinique'],
     },
     {
@@ -445,7 +445,7 @@ export const symptoms: SymptomType[] = [
         name: 'Manque d\'appétit',
         description: 'Diminution ou perte du désir de s\'alimenter pouvant avoir diverses causes physiologiques ou psychologiques.',
         image: require('@src/assets/images/symptoms/01HPW13V2VKA4J7NS17FD3KXBG.webp'),
-        plantIds: ['p-111', 'p-112'],
+        plantIds: ['p-001', 'p-002', 'p-015', 'p-020', 'p-021', 'p-035', 'p-036', 'p-037', 'p-039', 'p-042', 'p-049', 'p-051', 'p-053', 'p-059', 'p-086', 'p-090', 'p-092', 'p-093', 'p-105', 'p-115', 'p-123'],
         sources: ['Nutrition clinique'],
     },
     {
@@ -453,7 +453,7 @@ export const symptoms: SymptomType[] = [
         name: 'Mauvaise haleine',
         description: 'Halitose ou odeur désagréable de la bouche liée à des causes bucco-dentaires ou digestives.',
         image: require('@src/assets/images/symptoms/01HPW159ZZ7WBJ249YNRN4W3MF.webp'),
-        plantIds: ['p-113', 'p-114'],
+        plantIds: ['p-011', 'p-013', 'p-037', 'p-049', 'p-057', 'p-058', 'p-066', 'p-069', 'p-092', 'p-093', 'p-108', 'p-117', 'p-126', 'p-136', 'p-145'],
         sources: ['Stomatologie pratique'],
     },
     {
@@ -461,7 +461,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maux d\'estomac',
         description: 'Douleurs ou inconfort dans la région gastrique pouvant inclure brûlures et crampes.',
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
-        plantIds: ['p-115', 'p-116'],
+        plantIds: ['p-002', 'p-012', 'p-023', 'p-026', 'p-034', 'p-044', 'p-059', 'p-066', 'p-070', 'p-073', 'p-087', 'p-088', 'p-092', 'p-093', 'p-098', 'p-102', 'p-110', 'p-112', 'p-115', 'p-122', 'p-126', 'p-128', 'p-135', 'p-140', 'p-145', 'p-148'],
         sources: ['Gastroentérologie naturelle'],
     },
     {
@@ -469,7 +469,7 @@ export const symptoms: SymptomType[] = [
         name: 'Maux de tête',
         description: 'Céphalées de différentes intensités et origines affectant la qualité de vie.',
         image: require('@src/assets/images/symptoms/01HPW1QK0KKCWF78EPQDJ015Z7.webp'),
-        plantIds: ['p-117', 'p-118'],
+        plantIds: ['p-034', 'p-044', 'p-058', 'p-064', 'p-066', 'p-067', 'p-069', 'p-079', 'p-080', 'p-081', 'p-091', 'p-092', 'p-093', 'p-096', 'p-098', 'p-101', 'p-112', 'p-115', 'p-117', 'p-121', 'p-126', 'p-127', 'p-135', 'p-141'],
         sources: ['Neurologie pratique'],
     },
     {
@@ -477,7 +477,7 @@ export const symptoms: SymptomType[] = [
         name: 'Ménopause',
         description: 'Période de transition hormonale marquant la fin des cycles menstruels avec divers symptômes associés.',
         image: require('@src/assets/images/symptoms/01HPW1PXC9CV7DDK123DAGYB06.webp'),
-        plantIds: ['p-119', 'p-120'],
+        plantIds: ['p-001', 'p-002', 'p-003', 'p-027', 'p-034', 'p-037', 'p-055', 'p-062', 'p-064', 'p-068', 'p-074', 'p-077', 'p-084', 'p-098', 'p-101', 'p-104', 'p-106', 'p-108', 'p-111', 'p-117', 'p-122', 'p-126', 'p-129', 'p-136', 'p-138', 'p-141', 'p-146'],
         sources: ['Gynécologie naturelle'],
     },
     {
