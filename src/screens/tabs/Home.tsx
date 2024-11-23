@@ -9,6 +9,7 @@ import { getPlantImage, PlantImageName } from '@src/data/plantImages';
 import { useSubscription } from '@src/hooks/revenueCat';
 import { useEffect } from 'react';
 import LoadingScreen from '@src/components/LoadingScreen';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
@@ -37,6 +38,8 @@ const Home: React.FC = () => {
       });
     }
   }, [subscriptionDetails, isPremium, isExpired, isTrial]);
+
+  const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY';
 
   const renderHeader = () => (
     <View style={styles.header}>
@@ -173,10 +176,17 @@ const Home: React.FC = () => {
         {renderSearchBar()}
         {renderCategories()}
         {renderFeaturedPlants()}
-      </ScrollView>
-    </custom.ImageBackground>
-  );
-};
+        <BannerAd
+          unitId={adUnitId}
+          size={BannerAdSize.BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />      
+        </ScrollView>
+        </custom.ImageBackground>
+      );
+    };
 
 const styles = StyleSheet.create({
   container: {

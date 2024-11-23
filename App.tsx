@@ -13,6 +13,7 @@ import StackNavigator from '@src/navigation/StackNavigator';
 import PleaseUpdateStack from '@src/navigation/PleaseUpdateStack';
 import { store } from '@src/store';
 import { useSubscription } from '@src/hooks/revenueCat';
+import MobileAds from 'react-native-google-mobile-ads';
 
 enableScreens();
 
@@ -67,6 +68,7 @@ const AppContent = () => {
       try {
         Orientation.lockToPortrait();
         await checkSubscriptionStatus();
+        await MobileAds().initialize();
       } catch (err) {
         console.error('Erreur lors de l\'initialisation:', err);
       }
