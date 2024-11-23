@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
+
 import { Platform } from 'react-native';
 import { InterstitialAd, AdEventType } from 'react-native-google-mobile-ads';
 

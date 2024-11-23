@@ -1,39 +1,41 @@
+import { useEffect } from 'react';
+
 import { ScrollView, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+
+import { useSymptomData } from '@src/hooks/useData';
+import { useSubscription } from '@src/hooks/revenueCat';
+import { getPremiumPlants } from '@src/hooks/plantStatus';
+import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
+import { usePlantPress, useSymptomPress } from '@src/hooks/useCommonNav';
+import { getTopFivePlants, usePlantRanking } from '@src/hooks/useRanking';
+
+import LoadingScreen from '@src/components/LoadingScreen';
+
 import { utils } from '@src/utils';
 import { hooks } from '@src/hooks';
 import { custom } from '@src/custom';
-import { getTopFivePlants, usePlantRanking } from '@src/hooks/useRanking';
-import { useSymptomData } from '@src/hooks/useData';
 import { theme } from '@src/constants';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
-import { useSubscription } from '@src/hooks/revenueCat';
-import { useEffect } from 'react';
-import LoadingScreen from '@src/components/LoadingScreen';
-import { usePlantPress, useSymptomPress } from '@src/hooks/useCommonNav';
-import {svg} from '@src/assets/svg';
-import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
 
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-  const { ranking } = usePlantRanking();  
-  const featuredPlants = getTopFivePlants(ranking);  
+  const { ranking } = usePlantRanking();
+  const featuredPlants = getTopFivePlants(ranking);
   const { symptoms } = useSymptomData();
   const premiumSymptoms = getPremiumSymptoms();
+  const premiumPlants = getPremiumPlants();
   const handlePlantPress = usePlantPress();
   const handleSymptomPress =  useSymptomPress();
 
-
-  const { 
-    subscriptionDetails, 
-    loading, 
-    error, 
-    checkSubscriptionStatus,
+  const {
+    subscriptionDetails,
+    loading,
     isPremium,
     isExpired,
-    isTrial 
+    isTrial,
   } = useSubscription();
-  
+
   useEffect(() => {
     if (subscriptionDetails) {
       console.log('Subscription Status:', {
@@ -41,7 +43,7 @@ const Home: React.FC = () => {
         isPremium,
         isExpired,
         isTrial,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
     }
   }, [subscriptionDetails, isPremium, isExpired, isTrial]);
@@ -54,8 +56,8 @@ const Home: React.FC = () => {
   );
 
   const renderSearchBar = () => (
-    <TouchableOpacity 
-      style={styles.searchBar} 
+    <TouchableOpacity
+      style={styles.searchBar}
       onPress={() => navigation.navigate('SearchPlant')}
       activeOpacity={0.8}
     >
@@ -78,11 +80,11 @@ const Home: React.FC = () => {
         >
           {symptoms.map(category => {
             const isSymptomPremium = premiumSymptoms.includes(category.id);
-  
+
             return (
-              <TouchableOpacity 
-                key={category.id} 
-                style={styles.categoryCard} 
+              <TouchableOpacity
+                key={category.id}
+                style={styles.categoryCard}
                 activeOpacity={0.7}
                 onPress={() => handleSymptomPress(category)}
               >
@@ -90,7 +92,7 @@ const Home: React.FC = () => {
                   <custom.ItemPrenium
                   item={category}
                   containerStyle={styles.premiumBadge}
-                />
+                  />
                 )}
                 <View style={styles.categoryContent}>
                   <custom.ImageBackground
@@ -134,7 +136,7 @@ const Home: React.FC = () => {
         </View>
       );
     }
-  
+
     return (
       <View style={styles.featuredSection}>
         <Text style={styles.sectionTitle}>Plantes populaires</Text>
@@ -143,10 +145,13 @@ const Home: React.FC = () => {
           const plantName = plant.image?.toString().split('/').pop()?.split('.')[0];
           // Use the plant name to get the correct image from plantImages
           const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
-              
+
+          const isPlantPremium = premiumPlants.includes(plant.id);
+
+
           return (
-            <TouchableOpacity 
-              key={plant.id} 
+            <TouchableOpacity
+              key={plant.id}
               style={styles.plantCard}
               onPress={() => handlePlantPress(plant)}
               activeOpacity={0.8}
@@ -157,6 +162,12 @@ const Home: React.FC = () => {
                 imageStyle={styles.plantImageStyle}
                 resizeMode="cover"
               />
+                {isPlantPremium && (
+                  <custom.ItemPrenium
+                  item={plant}
+                  containerStyle={styles.premiumBadge}
+                  />
+                )}
               <View style={styles.plantInfo}>
                 <View style={styles.plantHeader}>
                   <Text style={styles.plantName}>{plant.name}</Text>
@@ -180,7 +191,7 @@ const Home: React.FC = () => {
       </View>
     );
   };
-  
+
   return (
     <custom.ImageBackground
       style={styles.container}
@@ -194,7 +205,7 @@ const Home: React.FC = () => {
         {renderHeader()}
         {renderSearchBar()}
         {renderCategories()}
-        {renderFeaturedPlants()}    
+        {renderFeaturedPlants()}
         </ScrollView>
         </custom.ImageBackground>
       );
@@ -416,7 +427,7 @@ const styles = StyleSheet.create({
   loadingContainer: {
     padding: 50,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   plantImage: {
     width: '100%',

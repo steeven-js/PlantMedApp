@@ -2,7 +2,9 @@ import React from 'react';
 
 import { View, Text, Alert, Platform, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
+
+import { useSubscription } from '@src/hooks/revenueCat';
 
 import packageJson from '../../package.json';
 import BurgerMenuItem from './BurgerMenuItem';
@@ -12,11 +14,10 @@ import { custom } from '@src/custom';
 import { svg } from '@src/assets/svg';
 import { theme } from '@src/constants';
 import { components } from '@src/components';
-import { useSubscription } from '@src/hooks/revenueCat';
 
 interface BurgerMenuProps {
   setShowModal: (show: boolean) => void;
-  navigation: NavigationProp<any>;
+  navigation: NavigationProp<ParamListBase>;
 }
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ setShowModal, navigation }) => {

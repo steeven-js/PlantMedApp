@@ -1,19 +1,24 @@
 import { Provider } from 'react-redux';
 import React, { useEffect } from 'react';
-import { View, ActivityIndicator, Text, StyleSheet, TouchableOpacity } from 'react-native';
+
 import { enableScreens } from 'react-native-screens';
+import MobileAds from 'react-native-google-mobile-ads';
 import Orientation from 'react-native-orientation-locker';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { View, ActivityIndicator, Text, StyleSheet, TouchableOpacity } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 
+import { useSubscription } from '@src/hooks/revenueCat';
 import { useAppVersion } from '@src/hooks/useAppVersion';
+
 import AppState from '@src/components/AppState';
 import FlashMessage from '@src/components/FlashMessage';
+
 import StackNavigator from '@src/navigation/StackNavigator';
 import PleaseUpdateStack from '@src/navigation/PleaseUpdateStack';
+
 import { store } from '@src/store';
-import { useSubscription } from '@src/hooks/revenueCat';
-import MobileAds from 'react-native-google-mobile-ads';
 
 enableScreens();
 
@@ -44,25 +49,25 @@ const MainContent = ({ isUpdateRequired }: { isUpdateRequired: boolean }) => (
 );
 
 // Composant pour l'abonnement expiré
-const ExpiredSubscriptionScreen = () => (
-  <View style={styles.centerContainer}>
-    <Text style={styles.errorTitle}>Votre abonnement a expiré</Text>
-    <Text style={styles.errorMessage}>
-      Veuillez renouveler votre abonnement pour continuer à utiliser l'application
-    </Text>
-  </View>
-);
+// const ExpiredSubscriptionScreen = () => (
+//   <View style={styles.centerContainer}>
+//     <Text style={styles.errorTitle}>Votre abonnement a expiré</Text>
+//     <Text style={styles.errorMessage}>
+//       Veuillez renouveler votre abonnement pour continuer à utiliser l'application
+//     </Text>
+//   </View>
+// );
 
 // Composant séparé pour la logique qui nécessite le Provider Redux
 const AppContent = () => {
   const { isUpdateRequired } = useAppVersion();
-  const { 
-    subscriptionDetails, 
+  const {
+    subscriptionDetails,
     isPremium,
     isExpired,
     isTrial,
-    loading, 
-    error, 
+    loading,
+    error,
     checkSubscriptionStatus,
   } = useSubscription();
 
@@ -78,7 +83,7 @@ const AppContent = () => {
     };
 
     initialize();
-  }, []);
+  }, [checkSubscriptionStatus]);
 
   // Logging des changements d'état de l'abonnement
   useEffect(() => {
@@ -88,7 +93,7 @@ const AppContent = () => {
         isPremium,
         isExpired,
         isTrial,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
     }
   }, [subscriptionDetails, isPremium, isExpired, isTrial]);
@@ -103,9 +108,9 @@ const AppContent = () => {
 
   if (!subscriptionDetails) {
     return (
-      <ErrorScreen 
-        error="Impossible de récupérer les informations d'abonnement" 
-        retry={checkSubscriptionStatus} 
+      <ErrorScreen
+        error="Impossible de récupérer les informations d'abonnement"
+        retry={checkSubscriptionStatus}
       />
     );
   }

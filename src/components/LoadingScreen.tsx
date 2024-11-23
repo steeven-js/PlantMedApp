@@ -1,5 +1,6 @@
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
-import React from 'react'
+import React from 'react';
+
+import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 
 // Composant de chargement
 const LoadingScreen = () => (
@@ -47,4 +48,4 @@ const LoadingScreen = () => (
     },
   });
 
-export default LoadingScreen
+export default LoadingScreen;

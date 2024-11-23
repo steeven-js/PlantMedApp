@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import { Platform } from 'react-native';
 import Purchases, { PurchasesPackage, CustomerInfo } from 'react-native-purchases';
+
 import { hooks } from '../hooks';
 import { actions } from '../store/actions';
 
@@ -29,7 +31,7 @@ const setupRevenueCat = () => {
 
     Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG);
     Purchases.configure({
-        apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google
+        apiKey: Platform.OS === 'ios' ? API_KEYS.apple : API_KEYS.google,
     });
 };
 
@@ -54,7 +56,7 @@ const getSubscriptionStatus = (customerInfo: CustomerInfo): SubscriptionDetails 
             expirationDate: null,
             startDate: null,
             productId: null,
-            isActive: false
+            isActive: false,
         };
     }
 
@@ -64,7 +66,7 @@ const getSubscriptionStatus = (customerInfo: CustomerInfo): SubscriptionDetails 
 
     // Déterminer si c'est une période d'essai
     const isTrial = proEntitlement.productIdentifier.includes('trial');
-    
+
     // Vérifier si l'abonnement est expiré
     const isExpired = expirationTime < now;
 
@@ -82,7 +84,7 @@ const getSubscriptionStatus = (customerInfo: CustomerInfo): SubscriptionDetails 
         expirationDate: expirationDate ? formatDate(expirationDate) : null,
         startDate: purchaseDate ? formatDate(purchaseDate) : null,
         productId: proEntitlement.productIdentifier,
-        isActive: !isExpired
+        isActive: !isExpired,
     };
 };
 
@@ -94,7 +96,7 @@ export function useSubscription() {
         expirationDate: null,
         startDate: null,
         productId: null,
-        isActive: false
+        isActive: false,
     });
     const [offerings, setOfferings] = useState<PurchasesPackage[]>([]);
     const [loading, setLoading] = useState(true);
@@ -104,14 +106,14 @@ export function useSubscription() {
         if (!isInitialized) {
             setLoading(true);
         }
-        
+
         try {
             const customerInfo = await Purchases.getCustomerInfo();
             const details = getSubscriptionStatus(customerInfo);
-            
+
             setSubscriptionDetails(details);
             dispatch(actions.setPremium(details.isActive));
-            
+
         } catch (err) {
             console.error("Erreur lors de la vérification du statut d'abonnement:", err);
             setError("Impossible de vérifier le statut de l'abonnement");
@@ -138,7 +140,7 @@ export function useSubscription() {
             await checkSubscriptionStatus();
             await fetchOfferings();
         };
-        
+
         initialize();
     }, [checkSubscriptionStatus, fetchOfferings]);
 
@@ -155,7 +157,7 @@ export function useSubscription() {
             offerings: [],
             fetchOfferings,
             purchaseSubscription: async () => {},
-            checkSubscriptionStatus
+            checkSubscriptionStatus,
         };
     }
 
@@ -175,7 +177,7 @@ export function useSubscription() {
             try {
                 const { customerInfo } = await Purchases.purchasePackage(packageToPurchase);
                 const details = getSubscriptionStatus(customerInfo);
-                
+
                 setSubscriptionDetails(details);
                 dispatch(actions.setPremium(details.isActive));
 

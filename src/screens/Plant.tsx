@@ -57,7 +57,7 @@ const Plant: React.FC<PlantScreenProps> = ({ route }) => {
     const plantName = item.image?.toString().split('/').pop()?.split('.')[0];
     // Use the plant name to get the correct image from plantImages
     const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
-                  
+
     return (
       <custom.Image
         resizeMode="contain"

@@ -4,6 +4,7 @@ import { Platform, ScrollView, TouchableOpacity, View } from 'react-native';
 
 import { useRelatedPlants } from '@src/hooks/useData';
 import { usePlantPress } from '@src/hooks/useCommonNav';
+import { isActiveAndPremium } from '@src/hooks/plantStatus';
 
 import { text } from '@src/text';
 import { utils } from '@src/utils';
@@ -14,7 +15,6 @@ import { PlantType } from '@src/types';
 import { components } from '@src/components';
 import { SymptomScreenProps } from '@src/types/ScreenProps';
 import { getPlantImage, PlantImageName } from '@src/data/plantImages';
-import { isActiveAndPremium } from '@src/hooks/plantStatus';
 
 const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
   const {item} = route.params;
@@ -190,7 +190,7 @@ const Symptom: React.FC<SymptomScreenProps> = ({route}) => {
           const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
 
           const isPlantPremium = isActiveAndPremium(plant.id);
-              
+
           return (
             <TouchableOpacity
               key={plant.id || index}

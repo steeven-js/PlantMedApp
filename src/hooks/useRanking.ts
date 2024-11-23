@@ -1,7 +1,9 @@
-import { firebase } from '@react-native-firebase/firestore';
 import { useState, useEffect } from 'react';
-import { PlantType, SymptomType } from '@src/types';
+
 import { usePlantData, useSymptomData } from './useData';
+
+import { PlantType, SymptomType } from '@src/types';
+import { firebase } from '@react-native-firebase/firestore';
 
 // Interfaces pour les entrées de classement
 interface PlantRankingEntry {
@@ -28,19 +30,19 @@ export const incrementPlantClicks = async (plantId: string, plantName: string): 
             const doc = await transaction.get(plantRef);
             if (!doc.exists) {
                 transaction.set(plantRef, {
-                    [plantId]: { name: plantName, clicks: 1 }
+                    [plantId]: { name: plantName, clicks: 1 },
                 });
             } else {
                 const currentData = doc.data()?.[plantId];
                 const currentClicks = currentData?.clicks || 0;
 
                 transaction.update(plantRef, {
-                    [plantId]: { name: plantName, clicks: currentClicks + 1 }
+                    [plantId]: { name: plantName, clicks: currentClicks + 1 },
                 });
             }
         });
     } catch (error) {
-        console.error("Error updating plant ranking:", error);
+        console.error('Error updating plant ranking:', error);
     }
 };
 
@@ -56,19 +58,19 @@ export const incrementSymptomClicks = async (symptomId: string, symptomName: str
             const doc = await transaction.get(symptomRef);
             if (!doc.exists) {
                 transaction.set(symptomRef, {
-                    [symptomId]: { name: symptomName, clicks: 1 }
+                    [symptomId]: { name: symptomName, clicks: 1 },
                 });
             } else {
                 const currentData = doc.data()?.[symptomId];
                 const currentClicks = currentData?.clicks || 0;
 
                 transaction.update(symptomRef, {
-                    [symptomId]: { name: symptomName, clicks: currentClicks + 1 }
+                    [symptomId]: { name: symptomName, clicks: currentClicks + 1 },
                 });
             }
         });
     } catch (error) {
-        console.error("Error updating symptom ranking:", error);
+        console.error('Error updating symptom ranking:', error);
     }
 };
 
@@ -79,11 +81,11 @@ export const usePlantRanking = () => {
     const { plants, hasData: hasPlantsData } = usePlantData();
 
     useEffect(() => {
-        if (!hasPlantsData) return;
-        
+        if (!hasPlantsData) {return;}
+
         const currentDate = new Date();
         const documentName = `${currentDate.getMonth() + 1}-${currentDate.getFullYear()}`;
-        
+
         const unsubscribe = firebase.firestore()
             .collection('plants-ranking')
             .doc(documentName)
@@ -103,7 +105,7 @@ export const usePlantRanking = () => {
                 }
                 setLoading(false);
             }, (error) => {
-                console.error("Error fetching plant ranking:", error);
+                console.error('Error fetching plant ranking:', error);
                 setLoading(false);
             });
 
@@ -112,7 +114,7 @@ export const usePlantRanking = () => {
 
     return {
         ranking,
-        loading
+        loading,
     };
 };
 
@@ -145,7 +147,7 @@ export const useSymptomRanking = (): SymptomRankingEntry[] => {
                     setRanking(rankingEntries);
                 }
             } catch (error) {
-                console.error("Error fetching symptom ranking:", error);
+                console.error('Error fetching symptom ranking:', error);
             }
         };
 

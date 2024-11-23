@@ -10,7 +10,7 @@ const featuredPlantSlice = createSlice({
     reducers: {
         setFeaturedPlants: (state, action) => {
             state.featuredPlants = action.payload;
-        }
+        },
     },
   });
 

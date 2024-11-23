@@ -1,8 +1,10 @@
 import { useState, useEffect, useMemo } from 'react';
-import { plants } from '@src/data/plants';
-import { symptoms } from '@src/data/symptoms';
+
 import { getActivePlants } from './plantStatus';
 import { getActiveSymptoms } from './symptomStatus';
+
+import { plants } from '@src/data/plants';
+import { symptoms } from '@src/data/symptoms';
 
 export const usePlantData = () => {
     const [loading, setLoading] = useState(true);
@@ -20,7 +22,7 @@ export const usePlantData = () => {
         }
     }, []);
 
-    const activePlants = useMemo(() => 
+    const activePlants = useMemo(() =>
         plants.filter(plant => activePlantIds.includes(plant.id)),
         [activePlantIds]
     );
@@ -49,7 +51,7 @@ export const useSymptomData = () => {
         }
     }, []);
 
-    const activeSymptoms = useMemo(() => 
+    const activeSymptoms = useMemo(() =>
         symptoms.filter(symptom => activeSymptomIds.includes(symptom.id)),
         [activeSymptomIds]
     );

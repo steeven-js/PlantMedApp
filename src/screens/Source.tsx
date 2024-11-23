@@ -7,10 +7,22 @@ import {utils} from '@src/utils';
 import {custom} from '@src/custom';
 import {theme} from '@src/constants';
 import {components} from '@src/components';
-import {SourceScreenProps} from '@src/types/ScreenProps';
 
-const Source: React.FC<SourceScreenProps> = ({route}) => {
-  const {source, title} = route.params as unknown as { source: any; title: string };
+interface SourceItem {
+  url: string;
+  // Ajoutez d'autres propriétés si nécessaire
+}
+  interface SourceScreenProps {
+    route: {
+      params: {
+        source: Array<string | SourceItem>;
+        title: string;
+      };
+    };
+  }
+
+  const Source: React.FC<SourceScreenProps> = ({ route }) => {
+    const { source, title } = route.params;
 
   const renderHeader = (): JSX.Element => {
     return <components.Header title="Sources" goBackIcon={true} />;
@@ -35,7 +47,7 @@ const Source: React.FC<SourceScreenProps> = ({route}) => {
 
     return (
       <View>
-        {(source as any[]).map((item, index) => {
+        {(source).map((item, index) => {
           const url = typeof item === 'string' ? item : item.url;
           return (
             <TouchableOpacity

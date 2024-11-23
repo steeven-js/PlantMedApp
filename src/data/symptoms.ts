@@ -6,7 +6,7 @@ export const symptoms: SymptomType[] = [
         name: 'Acné',
         description: 'Affection cutanée inflammatoire des follicules pilo-sébacés.',
         image: require('@src/assets/images/symptoms/01HPVFZBRCA6ETERQDFRZBF5P1.webp'),
-        plantIds: ["p-002", "p-008", "p-009", "p-010", "p-013", "p-022", "p-024", "p-025", "p-027", "p-047", "p-070", "p-075", "p-087", "p-107", "p-133"],
+        plantIds: ['p-002', 'p-008', 'p-009', 'p-010', 'p-013', 'p-022', 'p-024', 'p-025', 'p-027', 'p-047', 'p-070', 'p-075', 'p-087', 'p-107', 'p-133'],
         sources: ['Manuel de phytothérapie'],
     },
     {
@@ -45,7 +45,7 @@ export const symptoms: SymptomType[] = [
         name: 'Antiseptique',
         description: 'Propriété permettant de lutter contre les micro-organismes pathogènes.',
         image: require('@src/assets/images/symptoms/01HJS8R69S7DW16S4K4ED4JZV1.webp'),
-        plantIds: ["p-026", "p-027", "p-033", "p-039", "p-040", "p-047", "p-058", "p-069", "p-070", "p-075", "p-076", "p-081", "p-082", "p-090", "p-092", "p-093", "p-094", "p-113", "p-117", "p-126", "p-128", "p-135", "p-148"],
+        plantIds: ['p-026', 'p-027', 'p-033', 'p-039', 'p-040', 'p-047', 'p-058', 'p-069', 'p-070', 'p-075', 'p-076', 'p-081', 'p-082', 'p-090', 'p-092', 'p-093', 'p-094', 'p-113', 'p-117', 'p-126', 'p-128', 'p-135', 'p-148'],
         sources: ['Guide des propriétés médicinales'],
     },
     {
@@ -53,7 +53,7 @@ export const symptoms: SymptomType[] = [
         name: 'Anxiété',
         description: 'État de trouble psychologique caractérisé par un sentiment d\'inquiétude et de tension.',
         image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
-        plantIds: ["p-018", "p-019", "p-020", "p-034", "p-035", "p-044", "p-061", "p-064", "p-067", "p-094", "p-098", "p-106", "p-137", "p-141", "p-144", "p-145"],
+        plantIds: ['p-018', 'p-019', 'p-020', 'p-034', 'p-035', 'p-044', 'p-061', 'p-064', 'p-067', 'p-094', 'p-098', 'p-106', 'p-137', 'p-141', 'p-144', 'p-145'],
         sources: ['Psychiatrie naturelle'],
     },
     {
@@ -61,7 +61,7 @@ export const symptoms: SymptomType[] = [
         name: 'Aphrodisiaque',
         description: 'Substance stimulant le désir et les fonctions sexuelles.',
         image: require('@src/assets/images/symptoms/01HJS8VRRK3PJXSVHJN941BHJS.webp'),
-        plantIds: ["p-012", "p-018", "p-020", "p-023", "p-036", "p-051", "p-055", "p-068", "p-117", "p-129", "p-142"],
+        plantIds: ['p-012', 'p-018', 'p-020', 'p-023', 'p-036', 'p-051', 'p-055', 'p-068', 'p-117', 'p-129', 'p-142'],
         sources: ['Médecine traditionnelle'],
     },
     {
@@ -69,7 +69,7 @@ export const symptoms: SymptomType[] = [
         name: 'Arthrite',
         description: 'Inflammation des articulations causant douleur et raideur.',
         image: require('@src/assets/images/symptoms/01HJS8X5FS3KPZEVMKGMKQED5P.webp'),
-        plantIds: ["p-008", "p-018", "p-025", "p-033", "p-034", "p-035", "p-036", "p-044", "p-047", "p-049", "p-050", "p-053", "p-054", "p-058", "p-062", "p-066", "p-075", "p-086", "p-091", "p-096", "p-100", "p-111", "p-112", "p-113", "p-127", "p-136", "p-148"],
+        plantIds: ['p-008', 'p-018', 'p-025', 'p-033', 'p-034', 'p-035', 'p-036', 'p-044', 'p-047', 'p-049', 'p-050', 'p-053', 'p-054', 'p-058', 'p-062', 'p-066', 'p-075', 'p-086', 'p-091', 'p-096', 'p-100', 'p-111', 'p-112', 'p-113', 'p-127', 'p-136', 'p-148'],
         sources: ['Rhumatologie naturelle'],
     },
     {
@@ -77,7 +77,7 @@ export const symptoms: SymptomType[] = [
         name: 'Asthme',
         description: 'Maladie inflammatoire chronique des voies respiratoires.',
         image: require('@src/assets/images/symptoms/01HJS8YA810WXYR0D75D1A3DV4.webp'),
-        plantIds: ["p-007", "p-027", "p-034", "p-035", "p-044", "p-047", "p-048", "p-053", "p-055", "p-056", "p-058", "p-066", "p-070", "p-072", "p-075", "p-080", "p-082", "p-090", "p-092", "p-094", "p-095", "p-102", "p-106", "p-113", "p-122", "p-139", "p-144", "p-145"],
+        plantIds: ['p-007', 'p-027', 'p-034', 'p-035', 'p-044', 'p-047', 'p-048', 'p-053', 'p-055', 'p-056', 'p-058', 'p-066', 'p-070', 'p-072', 'p-075', 'p-080', 'p-082', 'p-090', 'p-092', 'p-094', 'p-095', 'p-102', 'p-106', 'p-113', 'p-122', 'p-139', 'p-144', 'p-145'],
         sources: ['Pneumologie et plantes médicinales'],
     },
     {
@@ -85,7 +85,7 @@ export const symptoms: SymptomType[] = [
         name: 'Boulimie',
         description: 'Trouble du comportement alimentaire caractérisé par des accès de suralimentation.',
         image: require('@src/assets/images/symptoms/01HJS906SBDCE3XQJP9CQ13JT0.webp'),
-        plantIds: ["p-008", "p-019", "p-068", "p-069", "p-088", "p-098", "p-137", "p-141"],
+        plantIds: ['p-008', 'p-019', 'p-068', 'p-069', 'p-088', 'p-098', 'p-137', 'p-141'],
         sources: ['Psychologie nutritionnelle'],
     },
     {
@@ -93,7 +93,7 @@ export const symptoms: SymptomType[] = [
         name: 'Bronchite',
         description: 'Inflammation des bronches causant toux et mucus.',
         image: require('@src/assets/images/symptoms/01HJS91P8SXY7F3CBQB6EQ3JQQ.webp'),
-        plantIds: ["p-002", "p-015", "p-026", "p-027", "p-036", "p-047", "p-055", "p-058", "p-059", "p-061", "p-066", "p-069", "p-070", "p-075", "p-082", "p-085", "p-090", "p-095", "p-102", "p-104", "p-109", "p-113", "p-122", "p-135", "p-139", "p-144", "p-145", "p-148"],
+        plantIds: ['p-002', 'p-015', 'p-026', 'p-027', 'p-036', 'p-047', 'p-055', 'p-058', 'p-059', 'p-061', 'p-066', 'p-069', 'p-070', 'p-075', 'p-082', 'p-085', 'p-090', 'p-095', 'p-102', 'p-104', 'p-109', 'p-113', 'p-122', 'p-135', 'p-139', 'p-144', 'p-145', 'p-148'],
         sources: ['Traité des maladies respiratoires'],
     },
     {
@@ -101,7 +101,7 @@ export const symptoms: SymptomType[] = [
         name: 'Brûlures d\'estomac',
         description: 'Sensation de brûlure remontant de l\'estomac vers l\'œsophage.',
         image: require('@src/assets/images/symptoms/01HJS8NDG1W5VBYNGEHFYC3KX0.webp'),
-        plantIds: ["p-001", "p-008", "p-021", "p-026", "p-034", "p-036", "p-044", "p-059", "p-066", "p-070", "p-086", "p-087", "p-096", "p-100", "p-117", "p-122", "p-126", "p-137", "p-144", "p-145", "p-148"],
+        plantIds: ['p-001', 'p-008', 'p-021', 'p-026', 'p-034', 'p-036', 'p-044', 'p-059', 'p-066', 'p-070', 'p-086', 'p-087', 'p-096', 'p-100', 'p-117', 'p-122', 'p-126', 'p-137', 'p-144', 'p-145', 'p-148'],
         sources: ['Gastroentérologie naturelle'],
     },
     {
@@ -109,7 +109,7 @@ export const symptoms: SymptomType[] = [
         name: 'Brûlures',
         description: 'Lésion de la peau causée par la chaleur ou des substances irritantes.',
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
-        plantIds: ["p-002", "p-008", "p-024", "p-027", "p-034", "p-040", "p-047", "p-073", "p-074", "p-075", "p-081", "p-082", "p-090", "p-092", "p-094", "p-095", "p-112", "p-117", "p-121", "p-135", "p-147"],
+        plantIds: ['p-002', 'p-008', 'p-024', 'p-027', 'p-034', 'p-040', 'p-047', 'p-073', 'p-074', 'p-075', 'p-081', 'p-082', 'p-090', 'p-092', 'p-094', 'p-095', 'p-112', 'p-117', 'p-121', 'p-135', 'p-147'],
         sources: ['Dermatologie pratique'],
     },
     {

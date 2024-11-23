@@ -1,6 +1,7 @@
 import {useDispatch, useSelector, TypedUseSelectorHook} from 'react-redux';
 
 import { tabSlice } from './slices/tabSlice';
+import { premiumSlice } from './slices/premiumSlice';
 
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -14,7 +15,6 @@ import {
   persistStore,
   persistReducer,
 } from 'redux-persist';
-import { premiumSlice } from './slices/premiumSlice';
 
 // Combine all the slices into a root reducer
 const rootReducer = combineReducers({

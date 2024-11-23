@@ -1,5 +1,6 @@
 import type {PlantType} from './PlantType';
 import type {HeaderType} from './HeaderType';
+import type {SourceType} from './SourceType';
 import type {SymptomType} from './SymptomType';
 
 import {ViewToken} from 'react-native/types';
@@ -20,4 +21,5 @@ export type {
   PlantType,
   HeaderType,
   SymptomType,
+  SourceType,
 };

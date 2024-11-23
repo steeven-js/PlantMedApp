@@ -1,16 +1,13 @@
 import React, { useState} from 'react';
 
-import {
-  View,
-} from 'react-native';
+import { View } from 'react-native';
 
-import {utils} from '@src/utils';
-import {theme} from '@src/constants';
+import { utils } from '@src/utils';
+import { theme } from '@src/constants';
 import { PlantType } from '@src/types';
 
-
 const RenderCarousel = ({item}: {item: PlantType}): JSX.Element => {
-    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [activeIndex] = useState<number>(0);
 
     const renderIndicator = (): JSX.Element | null => {
       if (Array.isArray(item?.image) && item.image.length > 1) {
@@ -26,9 +23,9 @@ const RenderCarousel = ({item}: {item: PlantType}): JSX.Element => {
           >
             {item.image.map(
               (
-                _: any,
-                current: React.Key | null | undefined,
-                array: string | any[],
+                _: string,
+                current: number,
+                array: string[],
               ) => {
                 const last = current === array.length - 1;
                 return (
@@ -60,27 +57,9 @@ const RenderCarousel = ({item}: {item: PlantType}): JSX.Element => {
       return null;
     };
 
-    // const renderInWishlist = (): JSX.Element => {
-    //   return (
-    //     <custom.PlantInWishlist
-    //       item={item}
-    //       containerStyle={{
-    //         position: 'absolute',
-    //         right: 0,
-    //         bottom: 0,
-    //         paddingHorizontal: 20,
-    //         paddingVertical: 24,
-    //       }}
-    //       version={2}
-    //     />
-    //   );
-    // };
-
     return (
       <View style={{marginBottom: utils.rsHeight(30)}}>
-        {/* {renderImages()} */}
         {renderIndicator()}
-        {/* {renderInWishlist()} */}
       </View>
     );
   };

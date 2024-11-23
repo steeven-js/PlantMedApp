@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 
 import {View, TouchableOpacity, Platform} from 'react-native';
+import { BannerAd, BannerAdSize, TestIds, useForeground } from 'react-native-google-mobile-ads';
+
+import { useSubscription } from '@src/hooks/revenueCat';
 
 import getTabs from '@src/utils/getTabs';
 
@@ -11,16 +14,14 @@ import { text } from '@src/text';
 import { utils } from '@src/utils';
 import { theme } from '@src/constants';
 import { AppDispatch, RootState } from '@src/store';
-import { useSubscription } from '@src/hooks/revenueCat';
-import { BannerAd, BannerAdSize, TestIds, useForeground } from 'react-native-google-mobile-ads';
 
 const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-6048143702887535/7510067811';
 
 const BottomTabBar: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const tabs = getTabs();
-  
-  const { 
+
+  const {
     isPremium,
   } = useSubscription();
 
@@ -34,7 +35,7 @@ const BottomTabBar: React.FC = () => {
   // Therefore it's advised to "manually" request a new ad when the app is foregrounded (https://groups.google.com/g/google-admob-ads-sdk/c/rwBpqOUr8m8).
   useForeground(() => {
     Platform.OS === 'ios' && bannerRef.current?.load();
-  })
+  });
 
   const renderAd = () => {
     if (!isPremium) {
