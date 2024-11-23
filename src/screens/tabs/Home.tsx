@@ -10,14 +10,19 @@ import { useSubscription } from '@src/hooks/revenueCat';
 import { useEffect } from 'react';
 import LoadingScreen from '@src/components/LoadingScreen';
 import { usePlantPress, useSymptomPress } from '@src/hooks/useCommonNav';
+import {svg} from '@src/assets/svg';
+import { getPremiumSymptoms } from '@src/hooks/symptomStatus';
+
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const { ranking } = usePlantRanking();  
   const featuredPlants = getTopFivePlants(ranking);  
   const { symptoms } = useSymptomData();
+  const premiumSymptoms = getPremiumSymptoms();
   const handlePlantPress = usePlantPress();
   const handleSymptomPress =  useSymptomPress();
+
 
   const { 
     subscriptionDetails, 
@@ -62,40 +67,54 @@ const Home: React.FC = () => {
     return <LoadingScreen />;
   }
 
-  const renderCategories = () => (
-    <View style={styles.categoriesSection}>
-      <Text style={styles.sectionTitle}>Catégories</Text>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.categoriesContainer}
-      >
-        {symptoms.map(category => (
-          <TouchableOpacity 
-            key={category.id} 
-            style={styles.categoryCard} 
-            activeOpacity={0.7}
-            onPress={() => handleSymptomPress(category)}
-            >
-            <View style={styles.categoryContent}>
-              <custom.ImageBackground
-                source={category.image}
-                style={styles.categoryImage}
-                imageStyle={styles.categoryImageStyle}
-                resizeMode="contain"
-              />
-              <Text style={styles.categoryName} numberOfLines={2}>
-                {category.name}
-              </Text>
-              <View style={styles.categoryCountContainer}>
-                <Text style={styles.categoryCount}>{category.plantIds.length} plantes</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
-  );
+  const renderCategories = (): JSX.Element | null => {
+    return (
+      <View style={styles.categoriesSection}>
+        <Text style={styles.sectionTitle}>Catégories</Text>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.categoriesContainer}
+        >
+          {symptoms.map(category => {
+            const isSymptomPremium = premiumSymptoms.includes(category.id);
+  
+            return (
+              <TouchableOpacity 
+                key={category.id} 
+                style={styles.categoryCard} 
+                activeOpacity={0.7}
+                onPress={() => handleSymptomPress(category)}
+              >
+                {isSymptomPremium && (
+                  <custom.ItemPrenium
+                  item={category}
+                  containerStyle={styles.premiumBadge}
+                />
+                )}
+                <View style={styles.categoryContent}>
+                  <custom.ImageBackground
+                    source={category.image}
+                    style={styles.categoryImage}
+                    imageStyle={styles.categoryImageStyle}
+                    resizeMode="contain"
+                  />
+                  <Text style={styles.categoryName} numberOfLines={2}>
+                    {category.name}
+                  </Text>
+                  <View style={styles.categoryCountContainer}>
+                    <Text style={styles.categoryCount}>
+                      {category.plantIds.length} plantes
+                    </Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </View>
+    );
+  };
 
   const renderFeaturedPlants = () => {
     if (!featuredPlants) {
@@ -246,6 +265,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 4,
+  },
+  premiumBadge: {
+    position: 'absolute',
+    padding: 14,
+    top: -10,
+    left: -10,
   },
   categoryContent: {
     flex: 1,
