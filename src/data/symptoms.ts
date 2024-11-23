@@ -645,7 +645,7 @@ export const symptoms: SymptomType[] = [
         name: 'Stress',
         description: 'État de tension physique et émotionnelle affectant le bien-être et la santé générale.',
         image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
-        plantIds: ['p-161', 'p-162'],
+        plantIds: ['p-007', 'p-022', 'p-023', 'p-034', 'p-047', 'p-053', 'p-058', 'p-065', 'p-066', 'p-085', 'p-092', 'p-104', 'p-128', 'p-135', 'p-144', 'p-147', 'p-148'],
         sources: ['Psychologie clinique'],
     },
     {
@@ -653,7 +653,7 @@ export const symptoms: SymptomType[] = [
         name: 'Tache de peau',
         description: 'Altération de la pigmentation cutanée créant des zones de coloration irrégulière.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
-        plantIds: ['p-163', 'p-164'],
+        plantIds: ['p-008', 'p-028', 'p-045', 'p-047', 'p-075', 'p-091', 'p-108', 'p-120', 'p-131', 'p-133'],
         sources: ['Dermatologie esthétique'],
     },
     {
@@ -661,7 +661,7 @@ export const symptoms: SymptomType[] = [
         name: 'Tachycardie',
         description: 'Accélération anormale du rythme cardiaque au repos ou à l\'effort.',
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
-        plantIds: ['p-165', 'p-166'],
+        plantIds: ['p-019', 'p-042', 'p-081', 'p-090', 'p-094', 'p-098', 'p-136', 'p-137', 'p-141'],
         sources: ['Cardiologie clinique'],
     },
     {
@@ -669,7 +669,7 @@ export const symptoms: SymptomType[] = [
         name: 'Tendinite',
         description: 'Inflammation d\'un tendon causant douleur et limitation des mouvements.',
         image: require('@src/assets/images/symptoms/01HPWFW2C3EJB5TQCTAARJ4GV9.webp'),
-        plantIds: ['p-167', 'p-168'],
+        plantIds: ['p-006', 'p-008', 'p-016', 'p-034', 'p-047', 'p-053', 'p-066', 'p-114', 'p-127', 'p-147'],
         sources: ['Rhumatologie pratique'],
     },
     {
@@ -677,7 +677,7 @@ export const symptoms: SymptomType[] = [
         name: 'Toux',
         description: 'Réflexe respiratoire destiné à dégager les voies aériennes, pouvant être aiguë ou chronique.',
         image: require('@src/assets/images/symptoms/01HPWFX6TNM9131YKDJEMHV93R.webp'),
-        plantIds: ['p-169', 'p-170'],
+        plantIds: ['p-002', 'p-007', 'p-009', 'p-021', 'p-026', 'p-027', 'p-037', 'p-044', 'p-045', 'p-051', 'p-056', 'p-058', 'p-059', 'p-066', 'p-069', 'p-070', 'p-071', 'p-073', 'p-075', 'p-082', 'p-087', 'p-090', 'p-092', 'p-095', 'p-102', 'p-111', 'p-112', 'p-115', 'p-122', 'p-126', 'p-128', 'p-133', 'p-135', 'p-137', 'p-139', 'p-145', 'p-147', 'p-148'],
         sources: ['Pneumologie générale'],
     },
     {
@@ -685,7 +685,7 @@ export const symptoms: SymptomType[] = [
         name: 'Ulcère de l\'estomac',
         description: 'Lésion de la muqueuse gastrique causant des douleurs et risques de complications digestives.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
-        plantIds: ['p-171', 'p-172'],
+        plantIds: ['p-008', 'p-047', 'p-068', 'p-070', 'p-083', 'p-094', 'p-122', 'p-131', 'p-136', 'p-147'],
         sources: ['Gastroentérologie clinique'],
     },
     {
@@ -693,7 +693,7 @@ export const symptoms: SymptomType[] = [
         name: 'Urétrite',
         description: 'Inflammation de l\'urètre causant des troubles urinaires et des sensations de brûlure.',
         image: require('@src/assets/images/symptoms/01HPW0NQWVD691YH2KXN0PXGRZ.webp'),
-        plantIds: ['p-173', 'p-174'],
+        plantIds: ['p-002', 'p-007', 'p-031', 'p-034', 'p-055', 'p-070', 'p-082', 'p-085', 'p-090', 'p-097', 'p-108', 'p-112', 'p-135'],
         sources: ['Urologie pratique'],
     },
     {
@@ -701,7 +701,7 @@ export const symptoms: SymptomType[] = [
         name: 'Varices',
         description: 'Dilatation anormale des veines, principalement dans les jambes, causant inconfort et complications.',
         image: require('@src/assets/images/symptoms/01HPWFZZWSW4R8PA0YY4DMS4XE.webp'),
-        plantIds: ['p-175', 'p-176'],
+        plantIds: ['p-002', 'p-007', 'p-008', 'p-024', 'p-025', 'p-047', 'p-067', 'p-070', 'p-074', 'p-075', 'p-089', 'p-097', 'p-108', 'p-114', 'p-115', 'p-119', 'p-121', 'p-146'],
         sources: ['Phlébologie clinique'],
     },
     {
@@ -709,7 +709,7 @@ export const symptoms: SymptomType[] = [
         name: 'Vertiges',
         description: 'Sensation de perte d\'équilibre ou d\'environnement tournant pouvant avoir diverses causes.',
         image: require('@src/assets/images/symptoms/01HPWG133TZVMWVESVBDBR8D3T.webp'),
-        plantIds: ['p-177', 'p-178'],
+        plantIds: ['p-002', 'p-007', 'p-015', 'p-020', 'p-021', 'p-023', 'p-034', 'p-066', 'p-067', 'p-081', 'p-082', 'p-092', 'p-106', 'p-137', 'p-141', 'p-146'],
         sources: ['Neurologie vestibulaire'],
     },
     {
@@ -717,7 +717,7 @@ export const symptoms: SymptomType[] = [
         name: 'Vieillissement',
         description: 'Processus naturel de changements physiologiques liés à l\'âge nécessitant des soins adaptés.',
         image: require('@src/assets/images/symptoms/01HPWG2JZSMDJ579WHSS4QS18Y.webp'),
-        plantIds: ['p-179', 'p-180'],
+        plantIds: ['p-007', 'p-018', 'p-019', 'p-020', 'p-026', 'p-040', 'p-044', 'p-047', 'p-062', 'p-067', 'p-068', 'p-075', 'p-091', 'p-094', 'p-096', 'p-097', 'p-101', 'p-112', 'p-117', 'p-123', 'p-129', 'p-136', 'p-138', 'p-144', 'p-147'],
         sources: ['Gériatrie naturelle'],
     },
     {
@@ -725,7 +725,7 @@ export const symptoms: SymptomType[] = [
         name: 'Vomissements',
         description: 'Rejet actif du contenu gastrique pouvant être lié à diverses causes digestives ou générales.',
         image: require('@src/assets/images/symptoms/01HPWG3NWP3F5H0C4943BMPMPZ.webp'),
-        plantIds: ['p-181', 'p-182'],
+        plantIds: ['p-001', 'p-002', 'p-011', 'p-021', 'p-034', 'p-035', 'p-044', 'p-045', 'p-059', 'p-066', 'p-087', 'p-092', 'p-098', 'p-112', 'p-126', 'p-145'],
         sources: ['Gastroentérologie d\'urgence'],
     },
 ];
