@@ -62,6 +62,11 @@ const StackNavigator: React.FC = () => (
         component={screens.PleaseUpdate}
         options={{headerShown: false}}
       />
+      <RootStack.Screen
+        name="MemberAccount"
+        component={screens.MemberAccount}
+        options={{headerShown: false}}
+      />
     </RootStack.Navigator>
   );
 

@@ -114,7 +114,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ setShowModal, navigation }) => 
 
         <View style={styles.versionContainer}>
           <Text style={styles.versionText}>
-            Version : {packageJson.version} - Août 2024
+            Version : {packageJson.version} - Novembre 2024
           </Text>
         </View>
       </custom.ImageBackground>

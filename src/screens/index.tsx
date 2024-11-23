@@ -8,6 +8,7 @@ import PleaseUpdate from './PleaseUpdate';
 import PrivacyPolicy from './PrivacyPolicy';
 import SearchSymptom from './SearchSymptom';
 import TabNavigator from '../navigation/TabNavigator';
+import MemberAccount from './MemberAccount';
 
 export const screens = {
   Plant,
@@ -20,4 +21,5 @@ export const screens = {
   TabNavigator,
   PrivacyPolicy,
   SearchSymptom,
+  MemberAccount,
 };

@@ -13,4 +13,5 @@ export type RootStackParamList = {
   SearchSymptom: undefined;
   Test: undefined;
   PleaseUpdate: undefined;
+  MemberAccount: undefined;
 };

@@ -6,9 +6,12 @@ import { utils } from '@src/utils';
 import { custom } from '@src/custom';
 import { svg } from '@src/assets/svg';
 import { components } from '@src/components';
+import { useSubscription } from '@src/hooks/revenueCat';
 
 const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
+
+  const { isSubscribed } = useSubscription();
 
   const openAppleEULA = () => {
     Linking.openURL('https://www.apple.com/legal/internet-services/itunes/chfr/terms.html');
@@ -25,10 +28,10 @@ const Profile: React.FC = () => {
       >
         <View>
           <components.ProfileItem
-            title={'Compte gratuit'}
-            // onPress={() => {
-            //   navigation.navigate('MemberAccount');
-            // }}
+            title={isSubscribed ? 'Membre Premium' : 'Membre gratuit'}
+            onPress={() => {
+              navigation.navigate('MemberAccount');
+            }}
             icon={<svg.UserSvg />}
             goNavigation={true}
             containerStyle={{ marginBottom: utils.responsiveHeight(10) }}
