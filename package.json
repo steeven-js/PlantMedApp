@@ -26,6 +26,7 @@
     "react-native-fast-image": "^8.6.3",
     "react-native-flash-message": "^0.4.2",
     "react-native-gesture-handler": "^2.20.2",
+    "react-native-google-mobile-ads": "^14.4.0",
     "react-native-image-progress": "^1.2.0",
     "react-native-modal": "^13.0.1",
     "react-native-orientation-locker": "^1.7.0",
