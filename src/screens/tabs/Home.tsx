@@ -9,13 +9,15 @@ import { getPlantImage, PlantImageName } from '@src/data/plantImages';
 import { useSubscription } from '@src/hooks/revenueCat';
 import { useEffect } from 'react';
 import LoadingScreen from '@src/components/LoadingScreen';
-import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import { usePlantPress, useSymptomPress } from '@src/hooks/useCommonNav';
 
 const Home: React.FC = () => {
   const navigation = hooks.useAppNavigation();
   const { ranking } = usePlantRanking();  
   const featuredPlants = getTopFivePlants(ranking);  
   const { symptoms } = useSymptomData();
+  const handlePlantPress = usePlantPress();
+  const handleSymptomPress =  useSymptomPress();
 
   const { 
     subscriptionDetails, 
@@ -38,8 +40,6 @@ const Home: React.FC = () => {
       });
     }
   }, [subscriptionDetails, isPremium, isExpired, isTrial]);
-
-  const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY';
 
   const renderHeader = () => (
     <View style={styles.header}>
@@ -75,8 +75,8 @@ const Home: React.FC = () => {
             key={category.id} 
             style={styles.categoryCard} 
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('Symptom', { item: category, id: category.id })}
-          >
+            onPress={() => handleSymptomPress(category)}
+            >
             <View style={styles.categoryContent}>
               <custom.ImageBackground
                 source={category.image}
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
             <TouchableOpacity 
               key={plant.id} 
               style={styles.plantCard}
-              onPress={() => navigation.navigate('Plant', { item: plant, id: plant.id })}
+              onPress={() => handlePlantPress(plant)}
               activeOpacity={0.8}
             >
               <custom.ImageBackground
@@ -175,14 +175,7 @@ const Home: React.FC = () => {
         {renderHeader()}
         {renderSearchBar()}
         {renderCategories()}
-        {renderFeaturedPlants()}
-        <BannerAd
-          unitId={adUnitId}
-          size={BannerAdSize.BANNER}
-          requestOptions={{
-            requestNonPersonalizedAdsOnly: true,
-          }}
-        />      
+        {renderFeaturedPlants()}    
         </ScrollView>
         </custom.ImageBackground>
       );

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 
-import {View, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity, Platform} from 'react-native';
 
 import getTabs from '@src/utils/getTabs';
 
@@ -11,18 +11,46 @@ import { text } from '@src/text';
 import { utils } from '@src/utils';
 import { theme } from '@src/constants';
 import { AppDispatch, RootState } from '@src/store';
+import { useSubscription } from '@src/hooks/revenueCat';
+import { BannerAd, BannerAdSize, TestIds, useForeground } from 'react-native-google-mobile-ads';
+
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-6048143702887535/7510067811';
 
 const BottomTabBar: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-
   const tabs = getTabs();
+  
+  const { 
+    isPremium,
+  } = useSubscription();
 
   const currentTabScreen = useSelector(
     (state: RootState) => state.tabSlice.screen,
   );
 
+  const bannerRef = useRef<BannerAd>(null);
+
+  // (iOS) WKWebView can terminate if app is in a "suspended state", resulting in an empty banner when app returns to foreground.
+  // Therefore it's advised to "manually" request a new ad when the app is foregrounded (https://groups.google.com/g/google-admob-ads-sdk/c/rwBpqOUr8m8).
+  useForeground(() => {
+    Platform.OS === 'ios' && bannerRef.current?.load();
+  })
+
+  const renderAd = () => {
+    if (!isPremium) {
+      return (
+        <View style={{ width: '100%', alignItems: 'center' }}>
+        <BannerAd ref={bannerRef} unitId={adUnitId} size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER} />
+        </View>
+      );
+    }
+    return null;
+  };
+
   return (
-    <View
+    <>
+      {renderAd()}
+      <View
         style={{
           paddingTop: 8,
           flexDirection: 'row',
@@ -36,7 +64,7 @@ const BottomTabBar: React.FC = () => {
           borderTopRightRadius: 15,
           width: '100%',
         }}
-    >
+      >
         {tabs.map((item, index) => {
           const iconColor =
             item.name === currentTabScreen
@@ -53,11 +81,7 @@ const BottomTabBar: React.FC = () => {
               }}
               onPress={() => dispatch(setScreen(item.name))}
             >
-              <View
-                style={{
-                  marginBottom: 6,
-                }}
-              >
+              <View style={{ marginBottom: 6 }}>
                 <item.icon
                   backgroundColor={backgroundColor}
                   iconColor={iconColor}
@@ -85,6 +109,7 @@ const BottomTabBar: React.FC = () => {
           );
         })}
       </View>
+    </>
   );
 };
 

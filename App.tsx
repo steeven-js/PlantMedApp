@@ -58,6 +58,9 @@ const AppContent = () => {
   const { isUpdateRequired } = useAppVersion();
   const { 
     subscriptionDetails, 
+    isPremium,
+    isExpired,
+    isTrial,
     loading, 
     error, 
     checkSubscriptionStatus,
@@ -78,17 +81,17 @@ const AppContent = () => {
   }, []);
 
   // Logging des changements d'état de l'abonnement
-  // useEffect(() => {
-  //   if (subscriptionDetails) {
-  //     console.log('Subscription Status:', {
-  //       details: subscriptionDetails,
-  //       isPremium,
-  //       isExpired,
-  //       isTrial,
-  //       timestamp: new Date().toISOString()
-  //     });
-  //   }
-  // }, [subscriptionDetails, isPremium, isExpired, isTrial]);
+  useEffect(() => {
+    if (subscriptionDetails) {
+      console.log('Subscription Status:', {
+        details: subscriptionDetails,
+        isPremium,
+        isExpired,
+        isTrial,
+        timestamp: new Date().toISOString()
+      });
+    }
+  }, [subscriptionDetails, isPremium, isExpired, isTrial]);
 
   if (loading) {
     return <LoadingScreen />;

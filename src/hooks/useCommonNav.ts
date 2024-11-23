@@ -6,10 +6,17 @@ import { checkSymptomStatus } from './symptomStatus';
 import { hooks } from '@src/hooks';
 import { PlantType, SymptomType } from '@src/types';
 import { incrementPlantClicks, incrementSymptomClicks } from './useRanking';
+import { useSubscription } from './revenueCat';
+import { useInterstitialAd } from './useAds';
 
 
 export const usePlantPress = () => {
     const navigation = hooks.useAppNavigation();
+    const { showAd, adLoaded } = useInterstitialAd();
+
+    const { 
+        isPremium,
+      } = useSubscription();
 
     const handlePlantPress = async (item: PlantType) => {
         try {
@@ -17,6 +24,10 @@ export const usePlantPress = () => {
             const plantStatus = isActiveAndPremium(item.id);
 
             incrementPlantClicks(item.id.toString(), item.name);
+
+            if (!isPremium && adLoaded) {
+                await showAd();
+            }
 
             if (Platform.OS === 'ios' && plantStatus) {
                 navigation.navigate('Premium');
@@ -36,6 +47,11 @@ export const usePlantPress = () => {
 
 export const useSymptomPress = () => {
     const navigation = hooks.useAppNavigation();
+    const { showAd, adLoaded } = useInterstitialAd();
+
+    const { 
+        isPremium,
+      } = useSubscription();
 
     const handleSymptomPress = async (item: SymptomType) => {
         try {
@@ -43,6 +59,10 @@ export const useSymptomPress = () => {
             const symptomStatus = checkSymptomStatus(item.id);
 
             incrementSymptomClicks(item.id.toString(), item.name);
+
+            if (!isPremium && adLoaded) {
+                await showAd();
+            }
 
             if (Platform.OS === 'ios' && symptomStatus.is_premium) {
                 navigation.navigate('Premium');
