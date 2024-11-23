@@ -1,5 +1,6 @@
 import Plant from './Plant';
 import Source from './Source';
+import Sources from './Sources';
 import Symptom from './Symptom';
 import Premium from './Premium';
 import TermsOfUse from './TermsOfUse';
@@ -15,6 +16,7 @@ export const screens = {
   Symptom,
   Source,
   Premium,
+  Sources,
   TermsOfUse,
   SearchPlant,
   PleaseUpdate,

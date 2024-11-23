@@ -7,7 +7,10 @@ export const symptoms: SymptomType[] = [
         description: 'Affection cutanée inflammatoire des follicules pilo-sébacés.',
         image: require('@src/assets/images/symptoms/01HPVFZBRCA6ETERQDFRZBF5P1.webp'),
         plantIds: ['p-002', 'p-008', 'p-009', 'p-010', 'p-013', 'p-022', 'p-024', 'p-025', 'p-027', 'p-047', 'p-070', 'p-075', 'p-087', 'p-107', 'p-133'],
-        sources: ['Manuel de phytothérapie'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-002',
@@ -15,14 +18,21 @@ export const symptoms: SymptomType[] = [
         description: 'Réaction excessive du système immunitaire à une substance habituellement inoffensive.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-034', 'p-067', 'p-075', 'p-085', 'p-104', 'p-116', 'p-136'],
-        sources: ['Guide des allergies et phytothérapie'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-003',
         name: 'Anémie',
         description: 'Diminution du taux d\'hémoglobine dans le sang affectant le transport d\'oxygène.',
         image: require('@src/assets/images/symptoms/01HJS8NS1TTJCQ9D1NWZ2SZE5Y.webp'),
-        plantIds: ['p-003', 'p-018', 'p-020', 'p-024', 'p-049', 'p-050', 'p-082', 'p-084', 'p-096', 'p-104', 'p-110', 'p-114', 'p-126'], sources: ['Traité de nutrition naturelle'],
+        plantIds: ['p-003', 'p-018', 'p-020', 'p-024', 'p-049', 'p-050', 'p-082', 'p-084', 'p-096', 'p-104', 'p-110', 'p-114', 'p-126'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-004',
@@ -30,7 +40,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble du comportement alimentaire caractérisé par une perte d\'appétit.',
         image: require('@src/assets/images/symptoms/01HJS8P38PF1MP801653RAV8V8.webp'),
         plantIds: ['p-001', 'p-002', 'p-006', 'p-012', 'p-015', 'p-021', 'p-023', 'p-026', 'p-034', 'p-035', 'p-036', 'p-037', 'p-039', 'p-041', 'p-042', 'p-049', 'p-059', 'p-060', 'p-065', 'p-066', 'p-069', 'p-076', 'p-080', 'p-091', 'p-098', 'p-110', 'p-111', 'p-125', 'p-128', 'p-135', 'p-136', 'p-137', 'p-141'],
-        sources: ['Psychologie et médecine naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-005',
@@ -38,7 +51,10 @@ export const symptoms: SymptomType[] = [
         description: 'Propriété réduisant l\'inflammation dans l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJS9249GX3B0XY4BBHSZ3YDJ.webp'),
         plantIds: ['p-001', 'p-002', 'p-007', 'p-016', 'p-023', 'p-026', 'p-027', 'p-035', 'p-036', 'p-037', 'p-039', 'p-041', 'p-047', 'p-053', 'p-062', 'p-066', 'p-070', 'p-075', 'p-077', 'p-080', 'p-081', 'p-086', 'p-087', 'p-090', 'p-092', 'p-093', 'p-096', 'p-111', 'p-112', 'p-117', 'p-125', 'p-126', 'p-128', 'p-135', 'p-139', 'p-141', 'p-144', 'p-145', 'p-148'],
-        sources: ['Études cliniques en phytothérapie'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-006',
@@ -46,7 +62,10 @@ export const symptoms: SymptomType[] = [
         description: 'Propriété permettant de lutter contre les micro-organismes pathogènes.',
         image: require('@src/assets/images/symptoms/01HJS8R69S7DW16S4K4ED4JZV1.webp'),
         plantIds: ['p-026', 'p-027', 'p-033', 'p-039', 'p-040', 'p-047', 'p-058', 'p-069', 'p-070', 'p-075', 'p-076', 'p-081', 'p-082', 'p-090', 'p-092', 'p-093', 'p-094', 'p-113', 'p-117', 'p-126', 'p-128', 'p-135', 'p-148'],
-        sources: ['Guide des propriétés médicinales'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-007',
@@ -54,7 +73,10 @@ export const symptoms: SymptomType[] = [
         description: 'État de trouble psychologique caractérisé par un sentiment d\'inquiétude et de tension.',
         image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
         plantIds: ['p-018', 'p-019', 'p-020', 'p-034', 'p-035', 'p-044', 'p-061', 'p-064', 'p-067', 'p-094', 'p-098', 'p-106', 'p-137', 'p-141', 'p-144', 'p-145'],
-        sources: ['Psychiatrie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-008',
@@ -62,7 +84,10 @@ export const symptoms: SymptomType[] = [
         description: 'Substance stimulant le désir et les fonctions sexuelles.',
         image: require('@src/assets/images/symptoms/01HJS8VRRK3PJXSVHJN941BHJS.webp'),
         plantIds: ['p-012', 'p-018', 'p-020', 'p-023', 'p-036', 'p-051', 'p-055', 'p-068', 'p-117', 'p-129', 'p-142'],
-        sources: ['Médecine traditionnelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-009',
@@ -70,7 +95,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation des articulations causant douleur et raideur.',
         image: require('@src/assets/images/symptoms/01HJS8X5FS3KPZEVMKGMKQED5P.webp'),
         plantIds: ['p-008', 'p-018', 'p-025', 'p-033', 'p-034', 'p-035', 'p-036', 'p-044', 'p-047', 'p-049', 'p-050', 'p-053', 'p-054', 'p-058', 'p-062', 'p-066', 'p-075', 'p-086', 'p-091', 'p-096', 'p-100', 'p-111', 'p-112', 'p-113', 'p-127', 'p-136', 'p-148'],
-        sources: ['Rhumatologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-010',
@@ -78,7 +106,10 @@ export const symptoms: SymptomType[] = [
         description: 'Maladie inflammatoire chronique des voies respiratoires.',
         image: require('@src/assets/images/symptoms/01HJS8YA810WXYR0D75D1A3DV4.webp'),
         plantIds: ['p-007', 'p-027', 'p-034', 'p-035', 'p-044', 'p-047', 'p-048', 'p-053', 'p-055', 'p-056', 'p-058', 'p-066', 'p-070', 'p-072', 'p-075', 'p-080', 'p-082', 'p-090', 'p-092', 'p-094', 'p-095', 'p-102', 'p-106', 'p-113', 'p-122', 'p-139', 'p-144', 'p-145'],
-        sources: ['Pneumologie et plantes médicinales'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-011',
@@ -86,7 +117,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble du comportement alimentaire caractérisé par des accès de suralimentation.',
         image: require('@src/assets/images/symptoms/01HJS906SBDCE3XQJP9CQ13JT0.webp'),
         plantIds: ['p-008', 'p-019', 'p-068', 'p-069', 'p-088', 'p-098', 'p-137', 'p-141'],
-        sources: ['Psychologie nutritionnelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-012',
@@ -94,7 +128,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation des bronches causant toux et mucus.',
         image: require('@src/assets/images/symptoms/01HJS91P8SXY7F3CBQB6EQ3JQQ.webp'),
         plantIds: ['p-002', 'p-015', 'p-026', 'p-027', 'p-036', 'p-047', 'p-055', 'p-058', 'p-059', 'p-061', 'p-066', 'p-069', 'p-070', 'p-075', 'p-082', 'p-085', 'p-090', 'p-095', 'p-102', 'p-104', 'p-109', 'p-113', 'p-122', 'p-135', 'p-139', 'p-144', 'p-145', 'p-148'],
-        sources: ['Traité des maladies respiratoires'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-013',
@@ -102,7 +139,10 @@ export const symptoms: SymptomType[] = [
         description: 'Sensation de brûlure remontant de l\'estomac vers l\'œsophage.',
         image: require('@src/assets/images/symptoms/01HJS8NDG1W5VBYNGEHFYC3KX0.webp'),
         plantIds: ['p-001', 'p-008', 'p-021', 'p-026', 'p-034', 'p-036', 'p-044', 'p-059', 'p-066', 'p-070', 'p-086', 'p-087', 'p-096', 'p-100', 'p-117', 'p-122', 'p-126', 'p-137', 'p-144', 'p-145', 'p-148'],
-        sources: ['Gastroentérologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-014',
@@ -110,7 +150,10 @@ export const symptoms: SymptomType[] = [
         description: 'Lésion de la peau causée par la chaleur ou des substances irritantes.',
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-002', 'p-008', 'p-024', 'p-027', 'p-034', 'p-040', 'p-047', 'p-073', 'p-074', 'p-075', 'p-081', 'p-082', 'p-090', 'p-092', 'p-094', 'p-095', 'p-112', 'p-117', 'p-121', 'p-135', 'p-147'],
-        sources: ['Dermatologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-015',
@@ -118,7 +161,10 @@ export const symptoms: SymptomType[] = [
         description: 'Formation de cristaux dans la vésicule biliaire ou les voies biliaires.',
         image: require('@src/assets/images/symptoms/01HJS93MWWA355NAQQK60B1QCQ.webp'),
         plantIds: ['p-002', 'p-026', 'p-059', 'p-065', 'p-092', 'p-093', 'p-100', 'p-104', 'p-108', 'p-110', 'p-114', 'p-149'],
-        sources: ['Hépatologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-016',
@@ -126,7 +172,10 @@ export const symptoms: SymptomType[] = [
         description: 'Modification de l\'aspect de la peau donnant un effet peau d\'orange.',
         image: require('@src/assets/images/symptoms/01HJS94ZYVJVN0NR15NGJ2KH56.webp'),
         plantIds: ['p-028', 'p-040', 'p-047', 'p-067', 'p-075', 'p-089', 'p-104', 'p-110', 'p-114', 'p-136', 'p-140'],
-        sources: ['Esthétique naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-017',
@@ -134,7 +183,10 @@ export const symptoms: SymptomType[] = [
         description: 'Problèmes capillaires incluant la chute, la fragilité ou la sécheresse.',
         image: require('@src/assets/images/symptoms/01HJS96VGBK80ZZSZWJ0DSTXZY.webp'),
         plantIds: ['p-041', 'p-042'],
-        sources: ['Trichologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-018',
@@ -142,7 +194,10 @@ export const symptoms: SymptomType[] = [
         description: 'Lésions cutanées dues à l\'exposition au froid.',
         image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
         plantIds: ['p-035', 'p-036'],
-        sources: ['Dermatologie du froid'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-019',
@@ -150,7 +205,10 @@ export const symptoms: SymptomType[] = [
         description: 'Taux élevé de lipides dans le sang nécessitant une régulation.',
         image: require('@src/assets/images/symptoms/01HJS9A9QGV35CCKX1SVFXH7SG.webp'),
         plantIds: ['p-007', 'p-009', 'p-017', 'p-020', 'p-026', 'p-041', 'p-042', 'p-044', 'p-049', 'p-050', 'p-053', 'p-068', 'p-070', 'p-076', 'p-083', 'p-087', 'p-091', 'p-096', 'p-103', 'p-110', 'p-111', 'p-112', 'p-136'],
-        sources: ['Cardiologie préventive'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-020',
@@ -158,7 +216,10 @@ export const symptoms: SymptomType[] = [
         description: 'Troubles de la circulation du sang dans l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJS99NDY41F14C8GGPQ8B8P7.webp'),
         plantIds: ['p-001', 'p-002', 'p-021', 'p-034', 'p-059', 'p-066', 'p-070', 'p-073', 'p-083', 'p-092', 'p-093', 'p-098', 'p-126', 'p-135', 'p-141'],
-        sources: ['Angiologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-021',
@@ -166,7 +227,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation du côlon causant des douleurs abdominales.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-041', 'p-042'],
-        sources: ['Gastroentérologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-022',
@@ -174,7 +238,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble fonctionnel intestinal chronique.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-001', 'p-002', 'p-021', 'p-034', 'p-059', 'p-066', 'p-070', 'p-073', 'p-083', 'p-092', 'p-093', 'p-098', 'p-126', 'p-135', 'p-141'],
-        sources: ['Syndrome du côlon irritable'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-023',
@@ -182,7 +249,10 @@ export const symptoms: SymptomType[] = [
         description: 'Difficulté à évacuer les selles de façon régulière.',
         image: require('@src/assets/images/symptoms/01HPVFTMH00EY0KN44A09ZN69B.webp'),
         plantIds: ['p-008', 'p-009', 'p-014', 'p-020', 'p-034', 'p-035', 'p-038', 'p-042', 'p-044', 'p-054', 'p-055', 'p-062', 'p-064', 'p-070', 'p-073', 'p-082', 'p-083', 'p-085', 'p-087', 'p-090', 'p-091', 'p-092', 'p-093', 'p-100', 'p-102', 'p-104', 'p-110', 'p-111', 'p-112', 'p-119', 'p-122', 'p-134', 'p-144', 'p-148'],
-        sources: ['Transit intestinal'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-024',
@@ -190,7 +260,10 @@ export const symptoms: SymptomType[] = [
         description: 'Infection urinaire touchant la vessie.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-047', 'p-048'],
-        sources: ['Urologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-025',
@@ -198,7 +271,10 @@ export const symptoms: SymptomType[] = [
         description: 'Sensation cutanée désagréable provoquant le besoin de se gratter.',
         image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
         plantIds: ['p-008', 'p-023', 'p-025', 'p-027', 'p-034', 'p-045', 'p-069', 'p-073', 'p-074', 'p-075', 'p-081', 'p-083', 'p-084', 'p-085', 'p-092', 'p-094', 'p-096', 'p-117', 'p-120', 'p-135', 'p-137'],
-        sources: ['Dermatologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-026',
@@ -206,7 +282,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble de l\'humeur caractérisé par une tristesse persistante et une perte d\'intérêt.',
         image: require('@src/assets/images/symptoms/01HPVFYBJQKS6NXPGZNM8VVTX5.webp'),
         plantIds: ['p-012', 'p-018', 'p-023', 'p-035', 'p-048', 'p-055', 'p-064', 'p-066', 'p-067', 'p-068', 'p-091', 'p-094', 'p-098', 'p-106', 'p-122', 'p-123', 'p-135', 'p-141'],
-        sources: ['Psychiatrie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-027',
@@ -214,7 +293,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation de la peau pouvant causer rougeurs, démangeaisons et irritation.',
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-008', 'p-009', 'p-022', 'p-025', 'p-027', 'p-033', 'p-034', 'p-047', 'p-050', 'p-053', 'p-062', 'p-074', 'p-075', 'p-080', 'p-081', 'p-085', 'p-094', 'p-101', 'p-104', 'p-107', 'p-110', 'p-111', 'p-112', 'p-114', 'p-115', 'p-117', 'p-120', 'p-122', 'p-124', 'p-131', 'p-135', 'p-138', 'p-139', 'p-140', 'p-148'],
-        sources: ['Dermatologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-028',
@@ -222,7 +304,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble métabolique affectant la régulation du taux de sucre dans le sang.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-020', 'p-022', 'p-027', 'p-036', 'p-039', 'p-058', 'p-062', 'p-068', 'p-091', 'p-096', 'p-097', 'p-100', 'p-112', 'p-132', 'p-136'],
-        sources: ['Endocrinologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-029',
@@ -230,7 +315,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble digestif caractérisé par des selles liquides fréquentes.',
         image: require('@src/assets/images/symptoms/01HPVG1RQS9999WZ2B8SEAY09Z.webp'),
         plantIds: ['p-002', 'p-008', 'p-020', 'p-021', 'p-024', 'p-034', 'p-044', 'p-047', 'p-049', 'p-066', 'p-070', 'p-082', 'p-087', 'p-090', 'p-092', 'p-093', 'p-094', 'p-097', 'p-112', 'p-114', 'p-115', 'p-119', 'p-121', 'p-135', 'p-136', 'p-138', 'p-139', 'p-145', 'p-148'],
-        sources: ['Gastroentérologie d\'urgence'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-030',
@@ -238,7 +326,10 @@ export const symptoms: SymptomType[] = [
         description: 'Crampes et inconfort associés au cycle menstruel.',
         image: require('@src/assets/images/symptoms/01HPVG32HTVGX4R3BZMMGAVHFR.webp'),
         plantIds: ['p-002', 'p-011', 'p-015', 'p-018', 'p-020', 'p-023', 'p-027', 'p-034', 'p-035', 'p-036', 'p-049', 'p-051', 'p-064', 'p-066', 'p-089', 'p-093', 'p-098', 'p-108', 'p-121', 'p-126', 'p-127', 'p-129', 'p-148'],
-        sources: ['Gynécologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-031',
@@ -246,7 +337,10 @@ export const symptoms: SymptomType[] = [
         description: 'Processus de détoxification naturelle de l\'organisme pour éliminer les substances nocives.',
         image: require('@src/assets/images/symptoms/01HPVG4V93FZ9X1RYEKMNXZ8M8.webp'),
         plantIds: ['p-015', 'p-017', 'p-022', 'p-026', 'p-027', 'p-041', 'p-042', 'p-044', 'p-054', 'p-059', 'p-082', 'p-090', 'p-096', 'p-097', 'p-103', 'p-108', 'p-110', 'p-112', 'p-135', 'p-143'],
-        sources: ['Médecine détox'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-032',
@@ -254,7 +348,10 @@ export const symptoms: SymptomType[] = [
         description: 'État d\'épuisement physique ou mental affectant les capacités normales.',
         image: require('@src/assets/images/symptoms/01HPVG5YS3DNFA0PDRXZ499X7F.webp'),
         plantIds: ['p-015', 'p-018', 'p-020', 'p-024', 'p-032', 'p-050', 'p-055', 'p-061', 'p-068', 'p-082', 'p-086', 'p-091', 'p-094', 'p-096', 'p-114', 'p-117', 'p-147'],
-        sources: ['Manuel de médecine générale'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-033',
@@ -262,7 +359,10 @@ export const symptoms: SymptomType[] = [
         description: 'Capacité de reproduction et équilibre hormonal lié à la procréation.',
         image: require('@src/assets/images/symptoms/01HPVG7Q8AJCHG6D7JCT564EHA.webp'),
         plantIds: ['p-001', 'p-002', 'p-020', 'p-023', 'p-025', 'p-027', 'p-034', 'p-044', 'p-060', 'p-066', 'p-070', 'p-076', 'p-092', 'p-093', 'p-102', 'p-107', 'p-115', 'p-126', 'p-127', 'p-131', 'p-133', 'p-135', 'p-137', 'p-139', 'p-148'],
-        sources: ['Traité de fertilité naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-034',
@@ -270,7 +370,10 @@ export const symptoms: SymptomType[] = [
         description: 'Élévation de la température corporelle au-dessus de la normale.',
         image: require('@src/assets/images/symptoms/01HPVG92J4RQQVWD12010E713C.webp'),
         plantIds: ['p-001', 'p-002', 'p-020', 'p-023', 'p-025', 'p-027', 'p-034', 'p-044', 'p-060', 'p-066', 'p-070', 'p-076', 'p-092', 'p-093', 'p-102', 'p-107', 'p-115', 'p-126', 'p-127', 'p-131', 'p-133', 'p-135', 'p-137', 'p-139', 'p-148'],
-        sources: ['Guide des symptômes fébriles'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-035',
@@ -278,7 +381,10 @@ export const symptoms: SymptomType[] = [
         description: 'Accumulation excessive de gaz dans le système digestif.',
         image: require('@src/assets/images/symptoms/01HPVG9WWHTDJV5HR36EB1MEM2.webp'),
         plantIds: ['p-001', 'p-002', 'p-011', 'p-021', 'p-023', 'p-026', 'p-034', 'p-036', 'p-049', 'p-051', 'p-052', 'p-059', 'p-069', 'p-070', 'p-078', 'p-081', 'p-087', 'p-090', 'p-092', 'p-093', 'p-102', 'p-110', 'p-115', 'p-117', 'p-126', 'p-145', 'p-148'],
-        sources: ['Gastroentérologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-036',
@@ -286,7 +392,10 @@ export const symptoms: SymptomType[] = [
         description: 'Accumulation excessive de graisse dans le foie pouvant altérer son fonctionnement.',
         image: require('@src/assets/images/symptoms/01HPVGB1E29AY7T19S8E55G708.webp'),
         plantIds: ['p-006', 'p-017', 'p-041', 'p-059', 'p-063', 'p-096', 'p-098', 'p-110'],
-        sources: ['Hépatologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-037',
@@ -294,7 +403,10 @@ export const symptoms: SymptomType[] = [
         description: 'Soutien à la fonction hépatique et à la détoxification naturelle du foie.',
         image: require('@src/assets/images/symptoms/01HPVGD8STXKFH2N097JBW5GEY.webp'),
         plantIds: ['p-001', 'p-007', 'p-022', 'p-023', 'p-026', 'p-041', 'p-042', 'p-053', 'p-070', 'p-090', 'p-092', 'p-096', 'p-105', 'p-108', 'p-110', 'p-115', 'p-136'],
-        sources: ['Guide de santé hépatique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-038',
@@ -302,7 +414,10 @@ export const symptoms: SymptomType[] = [
         description: 'Sensibilité excessive aux basses températures et leurs effets sur l\'organisme.',
         image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
         plantIds: ['p-001', 'p-002', 'p-007', 'p-025', 'p-026', 'p-027', 'p-044', 'p-047', 'p-056', 'p-058', 'p-066', 'p-070', 'p-071', 'p-075', 'p-079', 'p-082', 'p-090', 'p-092', 'p-095', 'p-115', 'p-119', 'p-126', 'p-133', 'p-135', 'p-139', 'p-145', 'p-147', 'p-148'],
-        sources: ['Médecine climatique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-039',
@@ -310,7 +425,10 @@ export const symptoms: SymptomType[] = [
         description: 'Maladie oculaire affectant le nerf optique, souvent liée à une pression intraoculaire élevée.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-008', 'p-034', 'p-035', 'p-059', 'p-062', 'p-067', 'p-097'],
-        sources: ['Ophtalmologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-040',
@@ -318,7 +436,10 @@ export const symptoms: SymptomType[] = [
         description: 'Forme d\'arthrite causée par l\'accumulation d\'acide urique dans les articulations.',
         image: require('@src/assets/images/symptoms/01HPVGJ31419G53NBME359XZX0.webp'),
         plantIds: ['p-007', 'p-017', 'p-019', 'p-031', 'p-033', 'p-036', 'p-041', 'p-042', 'p-044', 'p-047', 'p-050', 'p-054', 'p-062', 'p-066', 'p-084', 'p-095', 'p-096', 'p-100', 'p-104', 'p-108', 'p-110', 'p-114', 'p-115', 'p-117', 'p-120', 'p-122', 'p-137', 'p-138'],
-        sources: ['Rhumatologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-041',
@@ -326,7 +447,10 @@ export const symptoms: SymptomType[] = [
         description: 'Infection virale respiratoire causant fièvre, courbatures et fatigue intense.',
         image: require('@src/assets/images/symptoms/01HPVY0TZN6XMC0V7NN9415A2D.webp'),
         plantIds: ['p-001', 'p-002', 'p-026', 'p-027', 'p-033', 'p-058', 'p-060', 'p-066', 'p-070', 'p-075', 'p-082', 'p-085', 'p-087', 'p-090', 'p-092', 'p-093', 'p-095', 'p-100', 'p-115', 'p-119', 'p-122', 'p-133', 'p-135', 'p-137', 'p-139', 'p-145', 'p-147', 'p-148'],
-        sources: ['Infectiologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-042',
@@ -334,7 +458,10 @@ export const symptoms: SymptomType[] = [
         description: 'Soutien au processus naturel de récupération et de rétablissement de l\'organisme.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-002', 'p-008', 'p-018', 'p-023', 'p-024', 'p-027', 'p-033', 'p-034', 'p-040', 'p-047', 'p-070', 'p-074', 'p-075', 'p-081', 'p-082', 'p-086', 'p-088', 'p-090', 'p-093', 'p-115', 'p-117', 'p-120', 'p-126', 'p-131', 'p-139', 'p-147', 'p-148'],
-        sources: ['Médecine holistique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-043',
@@ -342,7 +469,10 @@ export const symptoms: SymptomType[] = [
         description: 'Dilatation des veines de la région anale causant inconfort et saignements.',
         image: require('@src/assets/images/symptoms/01HPVY3BZCKCPW7N7G8WDH9FYV.webp'),
         plantIds: ['p-002', 'p-008', 'p-011', 'p-020', 'p-024', 'p-040', 'p-041', 'p-070', 'p-074', 'p-089', 'p-095', 'p-097', 'p-104', 'p-119', 'p-126', 'p-148'],
-        sources: ['Proctologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-044',
@@ -350,7 +480,10 @@ export const symptoms: SymptomType[] = [
         description: 'Transpiration excessive et anormale affectant la qualité de vie.',
         image: require('@src/assets/images/symptoms/01HPVY5315F3AY4CVSQ8XJSMH5.webp'),
         plantIds: ['p-034', 'p-045', 'p-099', 'p-114', 'p-126', 'p-130', 'p-136'],
-        sources: ['Dermatologie fonctionnelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-045',
@@ -358,7 +491,10 @@ export const symptoms: SymptomType[] = [
         description: 'Élévation chronique de la pression artérielle au-dessus des valeurs normales.',
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-002', 'p-007', 'p-019', 'p-020', 'p-023', 'p-036', 'p-042', 'p-050', 'p-062', 'p-070', 'p-076', 'p-081', 'p-086', 'p-087', 'p-090', 'p-096', 'p-100', 'p-101', 'p-102', 'p-106', 'p-110', 'p-111', 'p-112', 'p-114', 'p-115', 'p-136', 'p-137', 'p-141'],
-        sources: ['Cardiologie préventive'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-046',
@@ -366,7 +502,10 @@ export const symptoms: SymptomType[] = [
         description: 'Baisse anormale de la pression artérielle pouvant causer vertiges et fatigue.',
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-005', 'p-007', 'p-019', 'p-065', 'p-066', 'p-068', 'p-091', 'p-092', 'p-093', 'p-117', 'p-122', 'p-137'],
-        sources: ['Cardiologie préventive'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-047',
@@ -374,7 +513,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble digestif causant inconfort, ballonnements et difficultés à digérer.',
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-001', 'p-002', 'p-021', 'p-026', 'p-027', 'p-034', 'p-036', 'p-041', 'p-044', 'p-049', 'p-051', 'p-059', 'p-066', 'p-069', 'p-070', 'p-077', 'p-078', 'p-081', 'p-090', 'p-092', 'p-093', 'p-098', 'p-112', 'p-115', 'p-140', 'p-144', 'p-145', 'p-148'],
-        sources: ['Gastroentérologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-048',
@@ -382,7 +524,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation des voies respiratoires supérieures causant mal de gorge et difficulté à avaler.',
         image: require('@src/assets/images/symptoms/01HPW0MBQW09FN4QT9DEJ963BE.webp'),
         plantIds: ['p-023', 'p-024', 'p-034', 'p-045', 'p-053', 'p-058', 'p-062', 'p-066', 'p-070', 'p-075', 'p-082', 'p-092', 'p-122', 'p-126', 'p-133', 'p-135', 'p-136', 'p-139', 'p-148'],
-        sources: ['ORL naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-049',
@@ -390,7 +535,10 @@ export const symptoms: SymptomType[] = [
         description: 'Trouble du sommeil caractérisé par des difficultés d\'endormissement ou de maintien du sommeil.',
         image: require('@src/assets/images/symptoms/01HPW0Q01VCWBV9QHC6VDQVN0Z.webp'),
         plantIds: ['p-018', 'p-026', 'p-034', 'p-044', 'p-048', 'p-057', 'p-077', 'p-081', 'p-087', 'p-088', 'p-092', 'p-098', 'p-106', 'p-123', 'p-135', 'p-137', 'p-141', 'p-144', 'p-145'],
-        sources: ['Médecine du sommeil'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-050',
@@ -398,7 +546,10 @@ export const symptoms: SymptomType[] = [
         description: 'État de tension nerveuse se manifestant par une sensibilité accrue aux stimulations.',
         image: require('@src/assets/images/symptoms/01HPW0S27AE46GT11VFQ6NPZQT.webp'),
         plantIds: ['p-034', 'p-048', 'p-064', 'p-081', 'p-085', 'p-092', 'p-106', 'p-137', 'p-141'],
-        sources: ['Psychologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-051',
@@ -406,7 +557,10 @@ export const symptoms: SymptomType[] = [
         description: 'Sensation de lourdeur et d\'inconfort dans les jambes, souvent liée à une mauvaise circulation.',
         image: require('@src/assets/images/symptoms/01HPW0THNSJP5EZGW87EACX3S3.webp'),
         plantIds: ['p-019', 'p-025', 'p-040', 'p-067', 'p-070', 'p-074', 'p-075', 'p-089', 'p-091', 'p-096', 'p-108', 'p-110', 'p-114', 'p-117', 'p-146'],
-        sources: ['Phlébologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-052',
@@ -414,7 +568,10 @@ export const symptoms: SymptomType[] = [
         description: 'Douleur dentaire pouvant être causée par une carie, une infection ou une sensibilité.',
         image: require('@src/assets/images/symptoms/01HPW0WDSMJQGEVN21CVE63VF8.webp'),
         plantIds: ['p-007', 'p-034', 'p-053', 'p-066', 'p-069', 'p-081', 'p-085', 'p-098', 'p-108', 'p-112', 'p-123', 'p-127', 'p-136'],
-        sources: ['Dentisterie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-053',
@@ -422,7 +579,10 @@ export const symptoms: SymptomType[] = [
         description: 'Ensemble des affections touchant le cœur et les vaisseaux sanguins.',
         image: require('@src/assets/images/symptoms/01HPW0ZHYZN2ZHBAX91KTRE4QT.webp'),
         plantIds: ['p-005', 'p-007', 'p-017', 'p-019', 'p-020', 'p-034', 'p-036', 'p-044', 'p-050', 'p-062', 'p-066', 'p-067', 'p-074', 'p-084', 'p-086', 'p-087', 'p-091', 'p-096', 'p-111', 'p-112', 'p-114', 'p-117', 'p-121', 'p-136', 'p-141'],
-        sources: ['Cardiologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-054',
@@ -430,7 +590,10 @@ export const symptoms: SymptomType[] = [
         description: 'Affections hépatiques diverses altérant les fonctions du foie.',
         image: require('@src/assets/images/symptoms/01HPW114YVN4JZ4QPNBAE6PM53.webp'),
         plantIds: ['p-001', 'p-017', 'p-026', 'p-034', 'p-041', 'p-042', 'p-053', 'p-057', 'p-076', 'p-088', 'p-096', 'p-104', 'p-108', 'p-110', 'p-117', 'p-136', 'p-137'],
-        sources: ['Hépatologie avancée'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-055',
@@ -438,7 +601,10 @@ export const symptoms: SymptomType[] = [
         description: 'Affections inflammatoires chroniques touchant les articulations et les tissus conjonctifs.',
         image: require('@src/assets/images/symptoms/01HPW12CJ16RM37NBPWTWYRY4P.webp'),
         plantIds: ['p-007', 'p-015', 'p-018', 'p-035', 'p-047', 'p-050', 'p-053', 'p-054', 'p-075', 'p-080', 'p-081', 'p-096', 'p-114', 'p-115', 'p-117', 'p-148'],
-        sources: ['Rhumatologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-056',
@@ -446,7 +612,10 @@ export const symptoms: SymptomType[] = [
         description: 'Diminution ou perte du désir de s\'alimenter pouvant avoir diverses causes physiologiques ou psychologiques.',
         image: require('@src/assets/images/symptoms/01HPW13V2VKA4J7NS17FD3KXBG.webp'),
         plantIds: ['p-001', 'p-002', 'p-015', 'p-020', 'p-021', 'p-035', 'p-036', 'p-037', 'p-039', 'p-042', 'p-049', 'p-051', 'p-053', 'p-059', 'p-086', 'p-090', 'p-092', 'p-093', 'p-105', 'p-115', 'p-123'],
-        sources: ['Nutrition clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-057',
@@ -454,7 +623,10 @@ export const symptoms: SymptomType[] = [
         description: 'Halitose ou odeur désagréable de la bouche liée à des causes bucco-dentaires ou digestives.',
         image: require('@src/assets/images/symptoms/01HPW159ZZ7WBJ249YNRN4W3MF.webp'),
         plantIds: ['p-011', 'p-013', 'p-037', 'p-049', 'p-057', 'p-058', 'p-066', 'p-069', 'p-092', 'p-093', 'p-108', 'p-117', 'p-126', 'p-136', 'p-145'],
-        sources: ['Stomatologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-058',
@@ -462,7 +634,10 @@ export const symptoms: SymptomType[] = [
         description: 'Douleurs ou inconfort dans la région gastrique pouvant inclure brûlures et crampes.',
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-002', 'p-012', 'p-023', 'p-026', 'p-034', 'p-044', 'p-059', 'p-066', 'p-070', 'p-073', 'p-087', 'p-088', 'p-092', 'p-093', 'p-098', 'p-102', 'p-110', 'p-112', 'p-115', 'p-122', 'p-126', 'p-128', 'p-135', 'p-140', 'p-145', 'p-148'],
-        sources: ['Gastroentérologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-059',
@@ -470,7 +645,10 @@ export const symptoms: SymptomType[] = [
         description: 'Céphalées de différentes intensités et origines affectant la qualité de vie.',
         image: require('@src/assets/images/symptoms/01HPW1QK0KKCWF78EPQDJ015Z7.webp'),
         plantIds: ['p-034', 'p-044', 'p-058', 'p-064', 'p-066', 'p-067', 'p-069', 'p-079', 'p-080', 'p-081', 'p-091', 'p-092', 'p-093', 'p-096', 'p-098', 'p-101', 'p-112', 'p-115', 'p-117', 'p-121', 'p-126', 'p-127', 'p-135', 'p-141'],
-        sources: ['Neurologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-060',
@@ -478,7 +656,10 @@ export const symptoms: SymptomType[] = [
         description: 'Période de transition hormonale marquant la fin des cycles menstruels avec divers symptômes associés.',
         image: require('@src/assets/images/symptoms/01HPW1PXC9CV7DDK123DAGYB06.webp'),
         plantIds: ['p-001', 'p-002', 'p-003', 'p-027', 'p-034', 'p-037', 'p-055', 'p-062', 'p-064', 'p-068', 'p-074', 'p-077', 'p-084', 'p-098', 'p-101', 'p-104', 'p-106', 'p-108', 'p-111', 'p-117', 'p-122', 'p-126', 'p-129', 'p-136', 'p-138', 'p-141', 'p-146'],
-        sources: ['Gynécologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-061',
@@ -486,7 +667,10 @@ export const symptoms: SymptomType[] = [
         description: 'Céphalée intense et récurrente, souvent accompagnée de nausées et d\'hypersensibilité sensorielle.',
         image: require('@src/assets/images/symptoms/01HPW1QK0KKCWF78EPQDJ015Z7.webp'),
         plantIds: ['p-019', 'p-026', 'p-034', 'p-044', 'p-055', 'p-066', 'p-067', 'p-081', 'p-092', 'p-096', 'p-098', 'p-101', 'p-106', 'p-117', 'p-141'],
-        sources: ['Neurologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-062',
@@ -494,15 +678,21 @@ export const symptoms: SymptomType[] = [
         description: 'Sensation désagréable de malaise gastrique avec envie de vomir.',
         image: require('@src/assets/images/symptoms/01HPW1RSS8Z730Z8FQC72N3FJS.webp'),
         plantIds: ['p-002', 'p-017', 'p-021', 'p-023', 'p-026', 'p-034', 'p-035', 'p-044', 'p-045', 'p-051', 'p-052', 'p-059', 'p-061', 'p-066', 'p-078', 'p-081', 'p-082', 'p-087', 'p-092', 'p-098', 'p-144', 'p-145'],
-        sources: ['Gastroentérologie générale'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-063',
         name: 'Nerfs',
         description: 'État de tension nerveuse et d\'anxiété affectant le bien-être émotionnel.',
         image: require('@src/assets/images/symptoms/01HPW1TXDRF8WYJDS6PXPVEYR7.webp'),
-        plantIds:  ['p-001', 'p-002', 'p-018', 'p-019', 'p-020', 'p-023', 'p-026', 'p-034', 'p-044', 'p-068', 'p-081', 'p-087', 'p-093', 'p-094', 'p-096', 'p-098', 'p-106', 'p-119', 'p-137', 'p-141', 'p-145'],
-        sources: ['Psychiatrie naturelle'],
+        plantIds: ['p-001', 'p-002', 'p-018', 'p-019', 'p-020', 'p-023', 'p-026', 'p-034', 'p-044', 'p-068', 'p-081', 'p-087', 'p-093', 'p-094', 'p-096', 'p-098', 'p-106', 'p-119', 'p-137', 'p-141', 'p-145'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-064',
@@ -510,7 +700,10 @@ export const symptoms: SymptomType[] = [
         description: 'Douleur vive sur le trajet d\'un nerf, souvent de caractère lancinant.',
         image: require('@src/assets/images/symptoms/01HPW1W52G3XDBQ20ZD050JBYS.webp'),
         plantIds: ['p-023', 'p-034', 'p-041', 'p-061', 'p-077', 'p-092', 'p-094', 'p-110', 'p-114', 'p-117', 'p-126', 'p-137', 'p-138', 'p-140', 'p-141', 'p-144'],
-        sources: ['Neurologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-065',
@@ -518,7 +711,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation du pancréas pouvant être aiguë ou chronique, causant des douleurs abdominales intenses.',
         image: require('@src/assets/images/symptoms/01HPW1XP4QN1Y3PM7DZ7VVQMD1.webp'),
         plantIds: ['p-034', 'p-041', 'p-053', 'p-060', 'p-065', 'p-110', 'p-117', 'p-122', 'p-126', 'p-136', 'p-144'],
-        sources: ['Gastroentérologie spécialisée'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-066',
@@ -526,7 +722,10 @@ export const symptoms: SymptomType[] = [
         description: 'Présence d\'organismes parasitaires dans le système digestif causant divers troubles intestinaux.',
         image: require('@src/assets/images/symptoms/01HPW1YSYX4A9CXWWG6Q2B5WTT.webp'),
         plantIds: ['p-001', 'p-002', 'p-007', 'p-015', 'p-017', 'p-021', 'p-045', 'p-051', 'p-058', 'p-065', 'p-082', 'p-096', 'p-117', 'p-128', 'p-135', 'p-144', 'p-148'],
-        sources: ['Parasitologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-067',
@@ -534,7 +733,10 @@ export const symptoms: SymptomType[] = [
         description: 'État cutané caractérisé par un manque d\'hydratation causant inconfort et démangeaisons.',
         image: require('@src/assets/images/symptoms/01HPW20294WGPPP4KWX6PPN6FH.webp'),
         plantIds: ['p-008', 'p-009', 'p-025', 'p-027', 'p-034', 'p-035', 'p-047', 'p-073', 'p-074', 'p-075', 'p-100', 'p-101', 'p-112', 'p-114', 'p-137'],
-        sources: ['Dermatologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-068',
@@ -542,7 +744,10 @@ export const symptoms: SymptomType[] = [
         description: 'Objectif de réduction pondérale dans le cadre d\'une démarche de santé encadrée.',
         image: require('@src/assets/images/symptoms/01HPW2319RRFR82XD68CZ9MWMS.webp'),
         plantIds: ['p-017', 'p-020', 'p-026', 'p-028', 'p-054', 'p-059', 'p-062', 'p-066', 'p-076', 'p-091', 'p-103', 'p-110', 'p-114', 'p-136'],
-        sources: ['Nutrition et diététique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-069',
@@ -550,7 +755,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation du pharynx causant mal de gorge et difficulté à avaler.',
         image: require('@src/assets/images/symptoms/01HPWF7A6FE8NZ4A8XE8N2BY2Z.webp'),
         plantIds: ['p-007', 'p-013', 'p-024', 'p-034', 'p-047', 'p-056', 'p-058', 'p-059', 'p-062', 'p-066', 'p-070', 'p-082', 'p-085', 'p-102', 'p-109', 'p-114', 'p-122', 'p-125', 'p-126', 'p-135', 'p-147'],
-        sources: ['ORL générale'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-070',
@@ -558,7 +766,10 @@ export const symptoms: SymptomType[] = [
         description: 'Lésions de la muqueuse buccale pouvant inclure aphtes et ulcérations.',
         image: require('@src/assets/images/symptoms/01HPWERFKNYET08AV5Q1M0XNXN.webp'),
         plantIds: ['p-008', 'p-023', 'p-024', 'p-034', 'p-069', 'p-070', 'p-074', 'p-075', 'p-080', 'p-082', 'p-085', 'p-092', 'p-105', 'p-122', 'p-126', 'p-131', 'p-138', 'p-147'],
-        sources: ['Stomatologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-071',
@@ -566,7 +777,10 @@ export const symptoms: SymptomType[] = [
         description: 'Perte partielle ou totale de la mémoire, pouvant être temporaire ou permanente.',
         image: require('@src/assets/images/symptoms/01HPWEXAY8PTBETYYETPF38FXX.webp'),
         plantIds: ['p-002', 'p-023', 'p-060', 'p-062', 'p-067', 'p-068', 'p-073', 'p-096', 'p-097', 'p-102', 'p-104', 'p-117', 'p-126', 'p-135', 'p-136'],
-        sources: ['Neurologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-072',
@@ -574,7 +788,10 @@ export const symptoms: SymptomType[] = [
         description: 'Ensemble de troubles affectant le système digestif, comme les ballonnements ou la digestion difficile.',
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-002', 'p-008', 'p-011', 'p-012', 'p-015', 'p-020', 'p-021', 'p-023', 'p-026', 'p-034', 'p-039', 'p-041', 'p-044', 'p-049', 'p-051', 'p-053', 'p-059', 'p-066', 'p-073', 'p-078', 'p-082', 'p-087', 'p-088', 'p-090', 'p-092', 'p-098', 'p-110', 'p-112', 'p-115', 'p-117', 'p-121', 'p-122', 'p-126', 'p-128', 'p-135', 'p-137', 'p-140', 'p-148'],
-        sources: ['Gastroentérologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-073',
@@ -582,7 +799,10 @@ export const symptoms: SymptomType[] = [
         description: 'Troubles liés à la prostate, incluant l\'hypertrophie et les problèmes urinaires associés.',
         image: require('@src/assets/images/symptoms/01HPWF0CC0K5N6S2CNGA374859.webp'),
         plantIds: ['p-004', 'p-029', 'p-030', 'p-066', 'p-084', 'p-089', 'p-099', 'p-103', 'p-104', 'p-110', 'p-114', 'p-138'],
-        sources: ['Urologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-074',
@@ -590,7 +810,10 @@ export const symptoms: SymptomType[] = [
         description: 'Maladie chronique de la peau caractérisée par des plaques rouges et des squames.',
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-008', 'p-013', 'p-017', 'p-022', 'p-034', 'p-047', 'p-054', 'p-094', 'p-101', 'p-108', 'p-110', 'p-114', 'p-122', 'p-124', 'p-131', 'p-136'],
-        sources: ['Dermatologie spécialisée'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-075',
@@ -598,7 +821,10 @@ export const symptoms: SymptomType[] = [
         description: 'Soutien à la fonction rénale et à l\'élimination naturelle des toxines.',
         image: require('@src/assets/images/symptoms/01HPWF47P314V1EQHEE72MFEJN.webp'),
         plantIds: ['p-054', 'p-073', 'p-096', 'p-104', 'p-108', 'p-110', 'p-112', 'p-114', 'p-120', 'p-143'],
-        sources: ['Néphrologie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-076',
@@ -606,7 +832,10 @@ export const symptoms: SymptomType[] = [
         description: 'Accumulation excessive de liquides dans les tissus causant gonflements et sensation de lourdeur.',
         image: require('@src/assets/images/symptoms/01HPWF5E77XF4VWZVW0HGCNGNF.webp'),
         plantIds: ['p-004', 'p-011', 'p-017', 'p-020', 'p-025', 'p-026', 'p-033', 'p-063', 'p-066', 'p-070', 'p-075', 'p-089', 'p-090', 'p-091', 'p-096', 'p-103', 'p-110', 'p-112', 'p-114', 'p-115', 'p-119', 'p-130', 'p-133', 'p-136', 'p-140'],
-        sources: ['Médecine vasculaire'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-077',
@@ -614,7 +843,10 @@ export const symptoms: SymptomType[] = [
         description: 'Infection des trompes de Fallope pouvant affecter la fertilité et causer des douleurs pelviennes.',
         image: require('@src/assets/images/symptoms/01HPW1PXC9CV7DDK123DAGYB06.webp'),
         plantIds: ['p-002', 'p-064', 'p-114', 'p-131'],
-        sources: ['Gynécologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-078',
@@ -622,7 +854,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation des sinus paranasaux causant congestion, douleurs faciales et maux de tête.',
         image: require('@src/assets/images/symptoms/01HPWF7A6FE8NZ4A8XE8N2BY2Z.webp'),
         plantIds: ['p-007', 'p-021', 'p-023', 'p-034', 'p-047', 'p-053', 'p-058', 'p-065', 'p-066', 'p-085', 'p-092', 'p-104', 'p-128', 'p-135', 'p-144', 'p-147', 'p-148'],
-        sources: ['ORL pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-079',
@@ -630,7 +865,10 @@ export const symptoms: SymptomType[] = [
         description: 'Contractions douloureuses et involontaires des muscles intestinaux.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-001', 'p-021', 'p-034', 'p-044', 'p-058', 'p-083', 'p-087', 'p-092', 'p-093', 'p-094', 'p-098', 'p-113', 'p-117', 'p-121', 'p-126', 'p-135', 'p-136', 'p-138', 'p-141', 'p-148'],
-        sources: ['Gastroentérologie fonctionnelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-080',
@@ -638,7 +876,10 @@ export const symptoms: SymptomType[] = [
         description: 'Réactions cutanées suite à des piqûres d\'insectes causant démangeaisons et inflammation.',
         image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
         plantIds: ['p-001', 'p-008', 'p-013', 'p-023', 'p-069', 'p-074', 'p-075', 'p-081', 'p-085', 'p-090', 'p-092', 'p-096', 'p-098', 'p-108', 'p-112'],
-        sources: ['Dermatologie d\'urgence'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-081',
@@ -646,7 +887,10 @@ export const symptoms: SymptomType[] = [
         description: 'État de tension physique et émotionnelle affectant le bien-être et la santé générale.',
         image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
         plantIds: ['p-007', 'p-022', 'p-023', 'p-034', 'p-047', 'p-053', 'p-058', 'p-065', 'p-066', 'p-085', 'p-092', 'p-104', 'p-128', 'p-135', 'p-144', 'p-147', 'p-148'],
-        sources: ['Psychologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-082',
@@ -654,7 +898,10 @@ export const symptoms: SymptomType[] = [
         description: 'Altération de la pigmentation cutanée créant des zones de coloration irrégulière.',
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-008', 'p-028', 'p-045', 'p-047', 'p-075', 'p-091', 'p-108', 'p-120', 'p-131', 'p-133'],
-        sources: ['Dermatologie esthétique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-083',
@@ -662,7 +909,10 @@ export const symptoms: SymptomType[] = [
         description: 'Accélération anormale du rythme cardiaque au repos ou à l\'effort.',
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-019', 'p-042', 'p-081', 'p-090', 'p-094', 'p-098', 'p-136', 'p-137', 'p-141'],
-        sources: ['Cardiologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-084',
@@ -670,7 +920,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation d\'un tendon causant douleur et limitation des mouvements.',
         image: require('@src/assets/images/symptoms/01HPWFW2C3EJB5TQCTAARJ4GV9.webp'),
         plantIds: ['p-006', 'p-008', 'p-016', 'p-034', 'p-047', 'p-053', 'p-066', 'p-114', 'p-127', 'p-147'],
-        sources: ['Rhumatologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-085',
@@ -678,7 +931,10 @@ export const symptoms: SymptomType[] = [
         description: 'Réflexe respiratoire destiné à dégager les voies aériennes, pouvant être aiguë ou chronique.',
         image: require('@src/assets/images/symptoms/01HPWFX6TNM9131YKDJEMHV93R.webp'),
         plantIds: ['p-002', 'p-007', 'p-009', 'p-021', 'p-026', 'p-027', 'p-037', 'p-044', 'p-045', 'p-051', 'p-056', 'p-058', 'p-059', 'p-066', 'p-069', 'p-070', 'p-071', 'p-073', 'p-075', 'p-082', 'p-087', 'p-090', 'p-092', 'p-095', 'p-102', 'p-111', 'p-112', 'p-115', 'p-122', 'p-126', 'p-128', 'p-133', 'p-135', 'p-137', 'p-139', 'p-145', 'p-147', 'p-148'],
-        sources: ['Pneumologie générale'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-086',
@@ -686,7 +942,10 @@ export const symptoms: SymptomType[] = [
         description: 'Lésion de la muqueuse gastrique causant des douleurs et risques de complications digestives.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-008', 'p-047', 'p-068', 'p-070', 'p-083', 'p-094', 'p-122', 'p-131', 'p-136', 'p-147'],
-        sources: ['Gastroentérologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-087',
@@ -694,7 +953,10 @@ export const symptoms: SymptomType[] = [
         description: 'Inflammation de l\'urètre causant des troubles urinaires et des sensations de brûlure.',
         image: require('@src/assets/images/symptoms/01HPW0NQWVD691YH2KXN0PXGRZ.webp'),
         plantIds: ['p-002', 'p-007', 'p-031', 'p-034', 'p-055', 'p-070', 'p-082', 'p-085', 'p-090', 'p-097', 'p-108', 'p-112', 'p-135'],
-        sources: ['Urologie pratique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-088',
@@ -702,7 +964,10 @@ export const symptoms: SymptomType[] = [
         description: 'Dilatation anormale des veines, principalement dans les jambes, causant inconfort et complications.',
         image: require('@src/assets/images/symptoms/01HPWFZZWSW4R8PA0YY4DMS4XE.webp'),
         plantIds: ['p-002', 'p-007', 'p-008', 'p-024', 'p-025', 'p-047', 'p-067', 'p-070', 'p-074', 'p-075', 'p-089', 'p-097', 'p-108', 'p-114', 'p-115', 'p-119', 'p-121', 'p-146'],
-        sources: ['Phlébologie clinique'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-089',
@@ -710,7 +975,10 @@ export const symptoms: SymptomType[] = [
         description: 'Sensation de perte d\'équilibre ou d\'environnement tournant pouvant avoir diverses causes.',
         image: require('@src/assets/images/symptoms/01HPWG133TZVMWVESVBDBR8D3T.webp'),
         plantIds: ['p-002', 'p-007', 'p-015', 'p-020', 'p-021', 'p-023', 'p-034', 'p-066', 'p-067', 'p-081', 'p-082', 'p-092', 'p-106', 'p-137', 'p-141', 'p-146'],
-        sources: ['Neurologie vestibulaire'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-090',
@@ -718,7 +986,10 @@ export const symptoms: SymptomType[] = [
         description: 'Processus naturel de changements physiologiques liés à l\'âge nécessitant des soins adaptés.',
         image: require('@src/assets/images/symptoms/01HPWG2JZSMDJ579WHSS4QS18Y.webp'),
         plantIds: ['p-007', 'p-018', 'p-019', 'p-020', 'p-026', 'p-040', 'p-044', 'p-047', 'p-062', 'p-067', 'p-068', 'p-075', 'p-091', 'p-094', 'p-096', 'p-097', 'p-101', 'p-112', 'p-117', 'p-123', 'p-129', 'p-136', 'p-138', 'p-144', 'p-147'],
-        sources: ['Gériatrie naturelle'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     {
         id: 's-091',
@@ -726,6 +997,9 @@ export const symptoms: SymptomType[] = [
         description: 'Rejet actif du contenu gastrique pouvant être lié à diverses causes digestives ou générales.',
         image: require('@src/assets/images/symptoms/01HPWG3NWP3F5H0C4943BMPMPZ.webp'),
         plantIds: ['p-001', 'p-002', 'p-011', 'p-021', 'p-034', 'p-035', 'p-044', 'p-045', 'p-059', 'p-066', 'p-087', 'p-092', 'p-098', 'p-112', 'p-126', 'p-145'],
-        sources: ['Gastroentérologie d\'urgence'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
 ];

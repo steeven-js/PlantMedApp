@@ -9,6 +9,7 @@ export type RootStackParamList = {
   TermsOfUse: undefined;
   PrivacyPolicy: undefined;
   Source: { source: string[]; title: string };
+  Sources: undefined;
   SearchPlant: undefined;
   SearchSymptom: undefined;
   Test: undefined;
