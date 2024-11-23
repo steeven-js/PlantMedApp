@@ -4,19 +4,15 @@ import { utils } from '@src/utils';
 import { custom } from '@src/custom';
 import { svg } from '@src/assets/svg';
 import { components } from '@src/components';
-import { SubscriptionStatus, useSubscription } from '@src/hooks/revenueCat';
-import LoadingScreen from '@src/components/LoadingScreen';
+import { useAppSelector } from '@src/store';
 
 const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
-  const { subscriptionDetails, loading } = useSubscription();
-
-  // Correction de la logique : true si c'est premium
-  const isAccountPremium = subscriptionDetails?.status === SubscriptionStatus.PREMIUM;
+  const userPremium = useAppSelector(state => state.premiumSlice.premium);
 
   const menuItems = [
     {
-      title: isAccountPremium ? 'Membre Premium' : 'Membre gratuit',
+      title: userPremium ? 'Membre Premium' : 'Membre gratuit',
       icon: <svg.UserSvg />,
       onPress: () => navigation.navigate('MemberAccount'),
       marginBottom: utils.responsiveHeight(10),
@@ -44,10 +40,6 @@ const Profile: React.FC = () => {
       marginBottom: utils.responsiveHeight(6),
     },
   ];
-
-  if (loading) {
-    return <LoadingScreen />;
-  }
 
   const renderMenu = (): JSX.Element => (
     <ScrollView

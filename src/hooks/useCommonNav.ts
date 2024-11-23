@@ -8,12 +8,14 @@ import { incrementPlantClicks, incrementSymptomClicks } from './useRanking';
 
 import { hooks } from '@src/hooks';
 import { PlantType, SymptomType } from '@src/types';
+import { useAppSelector } from '@src/store';
 
 
 export const usePlantPress = () => {
     const navigation = hooks.useAppNavigation();
     const { showAd, adLoaded } = useInterstitialAd();
-    const { subscriptionDetails } = useSubscription();
+    const userPremium = useAppSelector(state => state.premiumSlice.premium);
+
 
     const handlePlantPress = async (item: PlantType) => {
         try {
@@ -21,14 +23,14 @@ export const usePlantPress = () => {
             incrementPlantClicks(item.id.toString(), item.name);
 
             // Afficher une pub si l'utilisateur n'est pas premium et qu'une pub est disponible
-            if (subscriptionDetails?.status !== SubscriptionStatus.PREMIUM && adLoaded) {
+            if (!userPremium && adLoaded) {
                 await showAd();
             }
 
             // Naviguer vers Premium seulement si ce n'est pas un utilisateur premium et que l'item est premium
             if (Platform.OS === 'ios' &&
                 plantStatus &&
-                subscriptionDetails?.status !== SubscriptionStatus.PREMIUM) {
+                !userPremium) {
                 navigation.navigate('Premium');
                 return;
             }
@@ -48,7 +50,7 @@ export const usePlantPress = () => {
 export const useSymptomPress = () => {
     const navigation = hooks.useAppNavigation();
     const { showAd, adLoaded } = useInterstitialAd();
-    const { subscriptionDetails } = useSubscription();
+    const userPremium = useAppSelector(state => state.premiumSlice.premium);
 
     const handleSymptomPress = async (item: SymptomType) => {
         try {
@@ -56,14 +58,14 @@ export const useSymptomPress = () => {
             incrementSymptomClicks(item.id.toString(), item.name);
 
             // Afficher une pub si l'utilisateur n'est pas premium et qu'une pub est disponible
-            if (subscriptionDetails?.status !== SubscriptionStatus.PREMIUM && adLoaded) {
+            if (!userPremium && adLoaded) {
                 await showAd();
             }
 
             // Naviguer vers Premium seulement si ce n'est pas un utilisateur premium et que l'item est premium
             if (Platform.OS === 'ios' &&
                 symptomStatus.is_premium &&
-                subscriptionDetails?.status !== SubscriptionStatus.PREMIUM) {
+                !userPremium) {
                 navigation.navigate('Premium');
                 return;
             }

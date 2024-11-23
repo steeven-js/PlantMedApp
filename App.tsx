@@ -18,7 +18,7 @@ import FlashMessage from '@src/components/FlashMessage';
 import StackNavigator from '@src/navigation/StackNavigator';
 import PleaseUpdateStack from '@src/navigation/PleaseUpdateStack';
 
-import { store } from '@src/store';
+import { store, useAppSelector } from '@src/store';
 
 enableScreens();
 
@@ -63,9 +63,9 @@ const AppContent = () => {
   const { isUpdateRequired } = useAppVersion();
   const {
     subscriptionDetails,
-    isPremium,
-    isExpired,
-    isTrial,
+    // isPremium,
+    // isExpired,
+    // isTrial,
     loading,
     error,
     checkSubscriptionStatus,
@@ -86,17 +86,21 @@ const AppContent = () => {
   }, [checkSubscriptionStatus]);
 
   // Logging des changements d'état de l'abonnement
-  useEffect(() => {
-    if (subscriptionDetails) {
-      console.log('Subscription Status:', {
-        details: subscriptionDetails,
-        isPremium,
-        isExpired,
-        isTrial,
-        timestamp: new Date().toISOString(),
-      });
-    }
-  }, [subscriptionDetails, isPremium, isExpired, isTrial]);
+  // useEffect(() => {
+  //   if (subscriptionDetails) {
+  //     console.log('Subscription Status:', {
+  //       details: subscriptionDetails,
+  //       isPremium,
+  //       isExpired,
+  //       isTrial,
+  //       timestamp: new Date().toISOString(),
+  //     });
+  //   }
+  // }, [subscriptionDetails, isPremium, isExpired, isTrial]);
+
+  const testReduxPremium = useAppSelector(state => state.premiumSlice.premium);
+
+  console.log('Redux Premium:', testReduxPremium);
 
   if (loading) {
     return <LoadingScreen />;

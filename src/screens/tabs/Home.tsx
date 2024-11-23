@@ -148,7 +148,6 @@ const Home: React.FC = () => {
 
           const isPlantPremium = premiumPlants.includes(plant.id);
 
-
           return (
             <TouchableOpacity
               key={plant.id}

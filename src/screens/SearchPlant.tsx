@@ -110,7 +110,11 @@ const SearchPlant: React.FC = () => {
   };
 
   const renderItem = ({item}: {item: PlantType; index: number}) => {
-    const imageSource = getImage(item.image?.toString() || '');
+    // Get plant name from the image path
+    const plantName = item.image?.toString().split('/').pop()?.split('.')[0];
+    // Use the plant name to get the correct image from plantImages
+    const imageSource = plantName ? getPlantImage(plantName as PlantImageName) : require('@src/assets/images/plants/default.png');
+
     const isPremium = premiumPlants.includes(item.id);
 
     return (
