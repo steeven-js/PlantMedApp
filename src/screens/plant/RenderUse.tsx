@@ -10,6 +10,7 @@ import { theme } from '../../constants';
 import RenderPremiumOnly from './RenderPremiumOnly';
 
 import { PlantType } from '@src/types';
+import { SubscriptionStatus, useSubscription } from '@src/hooks/revenueCat';
 
 // Extraction du composant UsageSection
 interface UsageSectionProps {
@@ -61,6 +62,11 @@ const RenderUse = ({ item }: { item: PlantType }): JSX.Element => {
   const premiumPlants = getPremiumPlants();
   const isPremium = premiumPlants.includes(item.id);
 
+  const { subscriptionDetails } = useSubscription();
+
+  // Correction de la logique : true si c'est premium
+  const isAccountPremium = subscriptionDetails?.status === SubscriptionStatus.PREMIUM;
+
   return (
     <View
       style={{
@@ -77,7 +83,7 @@ const RenderUse = ({ item }: { item: PlantType }): JSX.Element => {
         shadowRadius: 3.84,
         padding: utils.responsiveWidth(16),
       }}>
-      {isPremium ? <RenderPremiumOnly /> : <UsageContent item={item} />}
+      {isPremium && !isAccountPremium ? <RenderPremiumOnly /> : <UsageContent item={item} />}
     </View>
   );
 };

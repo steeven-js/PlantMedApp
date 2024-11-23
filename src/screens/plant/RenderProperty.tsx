@@ -10,6 +10,7 @@ import {text} from '@src/text';
 import {utils} from '@src/utils';
 import {theme} from '@src/constants';
 import {PlantType} from '@src/types';
+import { SubscriptionStatus, useSubscription } from '@src/hooks/revenueCat';
 
 const PropertyBullet = () => <View style={styles.bullet} />;
 
@@ -33,9 +34,14 @@ const RenderProperty = ({item}: {item: PlantType}): JSX.Element => {
   const premiumPlants = getPremiumPlants();
   const isPremium = premiumPlants.includes(item.id);
 
+  const { subscriptionDetails } = useSubscription();
+
+  // Correction de la logique : true si c'est premium
+  const isAccountPremium = subscriptionDetails?.status === SubscriptionStatus.PREMIUM;
+
   return (
     <View style={styles.container}>
-      {isPremium ? (
+      {isPremium && !isAccountPremium ? (
         <RenderPremiumOnly />
       ) : (
         <PropertyContent properties={item.propriete} />

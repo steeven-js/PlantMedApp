@@ -1,97 +1,95 @@
-
 import { View, ScrollView, Linking, Platform } from 'react-native';
-
 import { hooks } from '@src/hooks';
 import { utils } from '@src/utils';
 import { custom } from '@src/custom';
 import { svg } from '@src/assets/svg';
 import { components } from '@src/components';
-import { useSubscription } from '@src/hooks/revenueCat';
+import { SubscriptionStatus, useSubscription } from '@src/hooks/revenueCat';
+import LoadingScreen from '@src/components/LoadingScreen';
 
 const Profile: React.FC = () => {
   const navigation = hooks.useAppNavigation();
+  const { subscriptionDetails, loading } = useSubscription();
 
-  const { isSubscribed } = useSubscription();
+  // Correction de la logique : true si c'est premium
+  const isAccountPremium = subscriptionDetails?.status === SubscriptionStatus.PREMIUM;
 
-  const openAppleEULA = () => {
-    Linking.openURL('https://www.apple.com/legal/internet-services/itunes/chfr/terms.html');
-  };
+  const menuItems = [
+    {
+      title: isAccountPremium ? 'Membre Premium' : 'Membre gratuit',
+      icon: <svg.UserSvg />,
+      onPress: () => navigation.navigate('MemberAccount'),
+      marginBottom: utils.responsiveHeight(10),
+    },
+    {
+      title: "Conditions d'utilisation",
+      icon: <svg.FileTextSvg />,
+      onPress: () => navigation.navigate('TermsOfUse'),
+      marginBottom: utils.responsiveHeight(6),
+    },
+    {
+      title: 'Politique de confidentialité',
+      icon: <svg.FileTextSvg />,
+      onPress: () => navigation.navigate('PrivacyPolicy'),
+      marginBottom: utils.responsiveHeight(6),
+    },
+    {
+      title: Platform.OS === 'ios' 
+        ? "Conditions d'utilisation Apple" 
+        : "Conditions d'utilisation Google",
+      icon: <svg.FileTextSvg />,
+      onPress: Platform.OS === 'ios' 
+        ? () => Linking.openURL('https://www.apple.com/legal/internet-services/itunes/chfr/terms.html')
+        : () => Linking.openURL('https://play.google.com/about/play-terms/'),
+      marginBottom: utils.responsiveHeight(6),
+    },
+  ];
 
-  const renderMenu = (): JSX.Element => {
-    return (
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
+  const renderMenu = (): JSX.Element => (
+    <ScrollView
+      style={{
+        flex: 1,
+        paddingHorizontal: utils.responsiveWidth(20),
+      }}
+      showsVerticalScrollIndicator={false}
+    >
+      <View>
+        {menuItems.map((item, index) => (
+          <components.ProfileItem
+            key={index}
+            title={item.title}
+            onPress={item.onPress}
+            icon={item.icon}
+            goNavigation={true}
+            containerStyle={{ marginBottom: item.marginBottom }}
+          />
+        ))}
+      </View>
+    </ScrollView>
+  );
+
+  return (
+    <custom.ImageBackground
+      style={{ flex: 1 }}
+      resizeMode="stretch"
+      source={require('../../assets/bg/02.png')}
+    >
       <ScrollView
-        style={{
-          flex: 1,
-          // justifyContent: 'space-between',
-          paddingLeft: 20,
+        contentContainerStyle={{
+          flexGrow: 1,
+          paddingTop: utils.responsiveHeight(50),
+          paddingBottom: utils.responsiveHeight(20),
         }}
+        showsVerticalScrollIndicator={false}
       >
-        <View>
-          <components.ProfileItem
-            title={isSubscribed ? 'Membre Premium' : 'Membre gratuit'}
-            onPress={() => {
-              navigation.navigate('MemberAccount');
-            }}
-            icon={<svg.UserSvg />}
-            goNavigation={true}
-            containerStyle={{ marginBottom: utils.responsiveHeight(10) }}
-          />
-          <components.ProfileItem
-            title="Conditions d'utilisation"
-            onPress={() => {
-              navigation.navigate('TermsOfUse');
-            }}
-            icon={<svg.FileTextSvg />}
-            goNavigation={true}
-            containerStyle={{ marginBottom: utils.responsiveHeight(6) }}
-          />
-          <components.ProfileItem
-            title="Politique de confidentialité"
-            onPress={() => {
-              navigation.navigate('PrivacyPolicy');
-            }}
-            icon={<svg.FileTextSvg />}
-            goNavigation={true}
-            containerStyle={{ marginBottom: utils.responsiveHeight(6) }}
-          />
-          <components.ProfileItem
-            title={
-              Platform.OS === 'ios'
-                ? "Conditions d'utilisation Apple"
-                : "Conditions d'utilisation Google"
-            }
-            onPress={Platform.OS === 'ios' ? openAppleEULA : () => {}}
-            icon={<svg.FileTextSvg />}
-            goNavigation={true}
-            containerStyle={{ marginBottom: utils.responsiveHeight(6) }}
-          />
-        </View>
+        {renderMenu()}
       </ScrollView>
-    );
-  };
-
-  const renderContent = (): JSX.Element => {
-    return (
-      <custom.ImageBackground
-        style={{ flex: 1 }}
-        resizeMode="stretch"
-        source={require('../../assets/bg/02.png')}
-      >
-        <ScrollView
-          contentContainerStyle={{
-            flexGrow: 1,
-            paddingTop: utils.responsiveHeight(50),
-            paddingBottom: utils.responsiveHeight(20),
-          }}
-          showsVerticalScrollIndicator={false}
-        >
-          {renderMenu()}
-        </ScrollView>
-      </custom.ImageBackground>
-    );
-  };
-
-  return renderContent();
+    </custom.ImageBackground>
+  );
 };
 
 export default Profile;

@@ -4,7 +4,7 @@ import { View, Text, Alert, Platform, ScrollView, TouchableOpacity, StyleSheet }
 
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
-import { useSubscription } from '@src/hooks/revenueCat';
+import { SubscriptionStatus, useSubscription } from '@src/hooks/revenueCat';
 
 import packageJson from '../../package.json';
 import BurgerMenuItem from './BurgerMenuItem';
@@ -22,7 +22,10 @@ interface BurgerMenuProps {
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ setShowModal, navigation }) => {
 
-  const { isSubscribed } = useSubscription();
+  const { subscriptionDetails } = useSubscription();
+
+  // Correction de la logique : true si c'est premium
+  const isAccountPremium = subscriptionDetails?.status === SubscriptionStatus.PREMIUM;
 
   const renderUserSection = () => (
     <TouchableOpacity style={styles.userSection}>
@@ -33,7 +36,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ setShowModal, navigation }) => 
       />
       <View style={styles.userInfo}>
         <Text style={styles.memberStatus} numberOfLines={1}>
-          {isSubscribed ? 'Membre Premium' : 'Membre gratuit'}
+          {isAccountPremium ? 'Membre Premium' : 'Membre gratuit'}
         </Text>
       </View>
     </TouchableOpacity>
