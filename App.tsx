@@ -98,9 +98,9 @@ const AppContent = () => {
   //   }
   // }, [subscriptionDetails, isPremium, isExpired, isTrial]);
 
-  const testReduxPremium = useAppSelector(state => state.premiumSlice.premium);
+  // const testReduxPremium = useAppSelector(state => state.premiumSlice.premium);
 
-  console.log('Redux Premium:', testReduxPremium);
+  // console.log('Redux Premium:', testReduxPremium);
 
   if (loading) {
     return <LoadingScreen />;
