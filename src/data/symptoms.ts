@@ -562,10 +562,10 @@ export const symptoms: SymptomType[] = [
     },
     {
         id: 's-071',
-        name: 'Amnésie',
+        name: 'Problèmes de mémoire',
         description: 'Perte partielle ou totale de la mémoire, pouvant être temporaire ou permanente.',
         image: require('@src/assets/images/symptoms/01HPWEXAY8PTBETYYETPF38FXX.webp'),
-        plantIds: ['p-141', 'p-142'],
+        plantIds: ['p-002', 'p-023', 'p-060', 'p-062', 'p-067', 'p-068', 'p-073', 'p-096', 'p-097', 'p-102', 'p-104', 'p-117', 'p-126', 'p-135', 'p-136'],
         sources: ['Neurologie clinique'],
     },
     {
@@ -573,7 +573,7 @@ export const symptoms: SymptomType[] = [
         name: 'Problèmes digestifs',
         description: 'Ensemble de troubles affectant le système digestif, comme les ballonnements ou la digestion difficile.',
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
-        plantIds: ['p-143', 'p-144'],
+        plantIds: ['p-002', 'p-008', 'p-011', 'p-012', 'p-015', 'p-020', 'p-021', 'p-023', 'p-026', 'p-034', 'p-039', 'p-041', 'p-044', 'p-049', 'p-051', 'p-053', 'p-059', 'p-066', 'p-073', 'p-078', 'p-082', 'p-087', 'p-088', 'p-090', 'p-092', 'p-098', 'p-110', 'p-112', 'p-115', 'p-117', 'p-121', 'p-122', 'p-126', 'p-128', 'p-135', 'p-137', 'p-140', 'p-148'],
         sources: ['Gastroentérologie naturelle'],
     },
     {
@@ -581,7 +581,7 @@ export const symptoms: SymptomType[] = [
         name: 'Prostate',
         description: 'Troubles liés à la prostate, incluant l\'hypertrophie et les problèmes urinaires associés.',
         image: require('@src/assets/images/symptoms/01HPWF0CC0K5N6S2CNGA374859.webp'),
-        plantIds: ['p-145', 'p-146'],
+        plantIds: ['p-004', 'p-029', 'p-030', 'p-066', 'p-084', 'p-089', 'p-099', 'p-103', 'p-104', 'p-110', 'p-114', 'p-138'],
         sources: ['Urologie clinique'],
     },
     {
@@ -589,7 +589,7 @@ export const symptoms: SymptomType[] = [
         name: 'Psoriasis',
         description: 'Maladie chronique de la peau caractérisée par des plaques rouges et des squames.',
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
-        plantIds: ['p-147', 'p-148'],
+        plantIds: ['p-008', 'p-013', 'p-017', 'p-022', 'p-034', 'p-047', 'p-054', 'p-094', 'p-101', 'p-108', 'p-110', 'p-114', 'p-122', 'p-124', 'p-131', 'p-136'],
         sources: ['Dermatologie spécialisée'],
     },
     {
@@ -597,7 +597,7 @@ export const symptoms: SymptomType[] = [
         name: 'Purifier les reins',
         description: 'Soutien à la fonction rénale et à l\'élimination naturelle des toxines.',
         image: require('@src/assets/images/symptoms/01HPWF47P314V1EQHEE72MFEJN.webp'),
-        plantIds: ['p-149', 'p-150'],
+        plantIds: ['p-054', 'p-073', 'p-096', 'p-104', 'p-108', 'p-110', 'p-112', 'p-114', 'p-120', 'p-143'],
         sources: ['Néphrologie naturelle'],
     },
     {
@@ -605,7 +605,7 @@ export const symptoms: SymptomType[] = [
         name: 'Rétention d\'eau',
         description: 'Accumulation excessive de liquides dans les tissus causant gonflements et sensation de lourdeur.',
         image: require('@src/assets/images/symptoms/01HPWF5E77XF4VWZVW0HGCNGNF.webp'),
-        plantIds: ['p-151', 'p-152'],
+        plantIds: ['p-004', 'p-011', 'p-017', 'p-020', 'p-025', 'p-026', 'p-033', 'p-063', 'p-066', 'p-070', 'p-075', 'p-089', 'p-090', 'p-091', 'p-096', 'p-103', 'p-110', 'p-112', 'p-114', 'p-115', 'p-119', 'p-130', 'p-133', 'p-136', 'p-140'],
         sources: ['Médecine vasculaire'],
     },
     {
@@ -613,7 +613,7 @@ export const symptoms: SymptomType[] = [
         name: 'Salpingite',
         description: 'Infection des trompes de Fallope pouvant affecter la fertilité et causer des douleurs pelviennes.',
         image: require('@src/assets/images/symptoms/01HPW1PXC9CV7DDK123DAGYB06.webp'),
-        plantIds: ['p-153', 'p-154'],
+        plantIds: ['p-002', 'p-064', 'p-114', 'p-131'],
         sources: ['Gynécologie clinique'],
     },
     {
@@ -621,7 +621,7 @@ export const symptoms: SymptomType[] = [
         name: 'Sinusite',
         description: 'Inflammation des sinus paranasaux causant congestion, douleurs faciales et maux de tête.',
         image: require('@src/assets/images/symptoms/01HPWF7A6FE8NZ4A8XE8N2BY2Z.webp'),
-        plantIds: ['p-155', 'p-156'],
+        plantIds: ['p-007', 'p-021', 'p-023', 'p-034', 'p-047', 'p-053', 'p-058', 'p-065', 'p-066', 'p-085', 'p-092', 'p-104', 'p-128', 'p-135', 'p-144', 'p-147', 'p-148'],
         sources: ['ORL pratique'],
     },
     {
@@ -629,7 +629,7 @@ export const symptoms: SymptomType[] = [
         name: 'Spasmes intestinaux',
         description: 'Contractions douloureuses et involontaires des muscles intestinaux.',
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
-        plantIds: ['p-157', 'p-158'],
+        plantIds: ['p-001', 'p-021', 'p-034', 'p-044', 'p-058', 'p-083', 'p-087', 'p-092', 'p-093', 'p-094', 'p-098', 'p-113', 'p-117', 'p-121', 'p-126', 'p-135', 'p-136', 'p-138', 'p-141', 'p-148'],
         sources: ['Gastroentérologie fonctionnelle'],
     },
     {
@@ -637,7 +637,7 @@ export const symptoms: SymptomType[] = [
         name: 'Piqûres d\'insectes',
         description: 'Réactions cutanées suite à des piqûres d\'insectes causant démangeaisons et inflammation.',
         image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
-        plantIds: ['p-159', 'p-160'],
+        plantIds: ['p-001', 'p-008', 'p-013', 'p-023', 'p-069', 'p-074', 'p-075', 'p-081', 'p-085', 'p-090', 'p-092', 'p-096', 'p-098', 'p-108', 'p-112'],
         sources: ['Dermatologie d\'urgence'],
     },
     {
