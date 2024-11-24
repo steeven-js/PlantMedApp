@@ -18,7 +18,7 @@ import FlashMessage from '@src/components/FlashMessage';
 import StackNavigator from '@src/navigation/StackNavigator';
 import PleaseUpdateStack from '@src/navigation/PleaseUpdateStack';
 
-import { store, useAppSelector } from '@src/store';
+import { store } from '@src/store';
 
 enableScreens();
 
