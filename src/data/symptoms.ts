@@ -8,8 +8,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFZBRCA6ETERQDFRZBF5P1.webp'),
         plantIds: ['p-002', 'p-008', 'p-009', 'p-010', 'p-013', 'p-022', 'p-024', 'p-025', 'p-027', 'p-047', 'p-070', 'p-075', 'p-087', 'p-107', 'p-133'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/acne/definition-symptomes-evolution', title: 'Définition, symptômes et évolution de l’acné' },
         ],
     },
     {
@@ -19,8 +18,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-034', 'p-067', 'p-075', 'p-085', 'p-104', 'p-116', 'p-136'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/allergie/comprendre-allergies', title: 'Reconnaître une allergie' },
         ],
     },
     {
@@ -30,8 +28,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8NS1TTJCQ9D1NWZ2SZE5Y.webp'),
         plantIds: ['p-003', 'p-018', 'p-020', 'p-024', 'p-049', 'p-050', 'p-082', 'p-084', 'p-096', 'p-104', 'p-110', 'p-114', 'p-126'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/anemie/comprendre-anemie', title: 'Comprendre l’anémie' },
         ],
     },
     {
@@ -41,8 +38,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8P38PF1MP801653RAV8V8.webp'),
         plantIds: ['p-001', 'p-002', 'p-006', 'p-012', 'p-015', 'p-021', 'p-023', 'p-026', 'p-034', 'p-035', 'p-036', 'p-037', 'p-039', 'p-041', 'p-042', 'p-049', 'p-059', 'p-060', 'p-065', 'p-066', 'p-069', 'p-076', 'p-080', 'p-091', 'p-098', 'p-110', 'p-111', 'p-125', 'p-128', 'p-135', 'p-136', 'p-137', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/anorexie-mentale/definition-frequence-causes', title: 'Anorexie mentale : définition et causes' },
         ],
     },
     {
@@ -52,8 +48,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS9249GX3B0XY4BBHSZ3YDJ.webp'),
         plantIds: ['p-001', 'p-002', 'p-007', 'p-016', 'p-023', 'p-026', 'p-027', 'p-035', 'p-036', 'p-037', 'p-039', 'p-041', 'p-047', 'p-053', 'p-062', 'p-066', 'p-070', 'p-075', 'p-077', 'p-080', 'p-081', 'p-086', 'p-087', 'p-090', 'p-092', 'p-093', 'p-096', 'p-111', 'p-112', 'p-117', 'p-125', 'p-126', 'p-128', 'p-135', 'p-139', 'p-141', 'p-144', 'p-145', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/medicaments/utiliser-recycler-medicaments/utiliser-anti-inflammatoires', title: 'Bien utiliser les anti-inflammatoires non stéroïdiens (AINS)' },
+            { url: 'https://www.ameli.fr/assure/sante/medicaments/comprendre-les-differents-medicaments/ains-antalgiques', title: 'Anti-inflammatoires non stéroïdiens (AINS) et antalgiques : comprendre la différence' },
         ],
     },
     {
@@ -63,8 +59,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8R69S7DW16S4K4ED4JZV1.webp'),
         plantIds: ['p-026', 'p-027', 'p-033', 'p-039', 'p-040', 'p-047', 'p-058', 'p-069', 'p-070', 'p-075', 'p-076', 'p-081', 'p-082', 'p-090', 'p-092', 'p-093', 'p-094', 'p-113', 'p-117', 'p-126', 'p-128', 'p-135', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.urps-infirmiere-paca.fr/les-antiseptiques-et-les-desinfectants/', title: 'Les antiseptiques et les désinfectants' },
         ],
     },
     {
@@ -74,8 +69,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPWFRHKNQDKJKEE5Q0XR9SYH.webp'),
         plantIds: ['p-018', 'p-019', 'p-020', 'p-034', 'p-035', 'p-044', 'p-061', 'p-064', 'p-067', 'p-094', 'p-098', 'p-106', 'p-137', 'p-141', 'p-144', 'p-145'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/troubles-anxieux-anxiete/symptomes-diagnostic', title: 'Symptômes et diagnostic des troubles anxieux (anxiété grave)' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/troubles-anxieux-anxiete/comprendre-troubles-anxieux-anxiete', title: 'Comprendre les troubles anxieux de l’adulte (anxiété grave)' },
         ],
     },
     {
@@ -85,8 +80,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8VRRK3PJXSVHJN941BHJS.webp'),
         plantIds: ['p-012', 'p-018', 'p-020', 'p-023', 'p-036', 'p-051', 'p-055', 'p-068', 'p-117', 'p-129', 'p-142'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.futura-sciences.com/sante/definitions/medecine-aphrodisiaque-13425/', title: "Aphrodisiaque : qu'est-ce que c'est ?" },
         ],
     },
     {
@@ -96,8 +90,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8X5FS3KPZEVMKGMKQED5P.webp'),
         plantIds: ['p-008', 'p-018', 'p-025', 'p-033', 'p-034', 'p-035', 'p-036', 'p-044', 'p-047', 'p-049', 'p-050', 'p-053', 'p-054', 'p-058', 'p-062', 'p-066', 'p-075', 'p-086', 'p-091', 'p-096', 'p-100', 'p-111', 'p-112', 'p-113', 'p-127', 'p-136', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.elsan.care/fr/pathologie-et-traitement/maladies-des-os/arthrite-definition-cause-traitement', title: 'Arthrite definition cause traitement' },
         ],
     },
     {
@@ -107,8 +100,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8YA810WXYR0D75D1A3DV4.webp'),
         plantIds: ['p-007', 'p-027', 'p-034', 'p-035', 'p-044', 'p-047', 'p-048', 'p-053', 'p-055', 'p-056', 'p-058', 'p-066', 'p-070', 'p-072', 'p-075', 'p-080', 'p-082', 'p-090', 'p-092', 'p-094', 'p-095', 'p-102', 'p-106', 'p-113', 'p-122', 'p-139', 'p-144', 'p-145'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.vidal.fr/maladies/voies-respiratoires/asthme.html', title: 'Asthme - symptômes, causes, traitements et prévention' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/asthme-adulte/asthme-symptomes-diagnostic/crises-asthme-exacerbation-asthme-aigu-grave', title: 'Crise d’asthme, exacerbation, asthme aigu grave' },
         ],
     },
     {
@@ -118,8 +111,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS906SBDCE3XQJP9CQ13JT0.webp'),
         plantIds: ['p-008', 'p-019', 'p-068', 'p-069', 'p-088', 'p-098', 'p-137', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/boulimie-et-hyperphagie-boulimique/boulimie-hyperphagie-boulimique-definition-causes', title: 'Boulimie et hyperphagie boulimique : définition et causes' },
         ],
     },
     {
@@ -129,8 +121,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS91P8SXY7F3CBQB6EQ3JQQ.webp'),
         plantIds: ['p-002', 'p-015', 'p-026', 'p-027', 'p-036', 'p-047', 'p-055', 'p-058', 'p-059', 'p-061', 'p-066', 'p-069', 'p-070', 'p-075', 'p-082', 'p-085', 'p-090', 'p-095', 'p-102', 'p-104', 'p-109', 'p-113', 'p-122', 'p-135', 'p-139', 'p-144', 'p-145', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/bronchite/definition-symptomes-evolution', title: 'Définition, symptômes et évolution de la bronchite aiguë' },
         ],
     },
     {
@@ -140,8 +131,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS8NDG1W5VBYNGEHFYC3KX0.webp'),
         plantIds: ['p-001', 'p-008', 'p-021', 'p-026', 'p-034', 'p-036', 'p-044', 'p-059', 'p-066', 'p-070', 'p-086', 'p-087', 'p-096', 'p-100', 'p-117', 'p-122', 'p-126', 'p-137', 'p-144', 'p-145', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/douleurs-estomac-gastrite/mal-l-estomac-et-brulures-d-estomac-que-faire', title: 'Mal à l’estomac et brûlures d’estomac : que faire ?' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/dyspepsie-mauvaise-digestion/definition-causes-symptomes-dyspepsie', title: 'Qu’est-ce que la dyspepsie ?' },
         ],
     },
     {
@@ -151,8 +142,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-002', 'p-008', 'p-024', 'p-027', 'p-034', 'p-040', 'p-047', 'p-073', 'p-074', 'p-075', 'p-081', 'p-082', 'p-090', 'p-092', 'p-094', 'p-095', 'p-112', 'p-117', 'p-121', 'p-135', 'p-147'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/urgence/accidents-domestiques/brulures-peau', title: 'Brûlures de la peaué' },
         ],
     },
     {
@@ -162,8 +152,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS93MWWA355NAQQK60B1QCQ.webp'),
         plantIds: ['p-002', 'p-026', 'p-059', 'p-065', 'p-092', 'p-093', 'p-100', 'p-104', 'p-108', 'p-110', 'p-114', 'p-149'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/lithiase-vesiculaire/definition-facteurs-favorisants', title: 'Lithiase vésiculaire : définition et facteurs favorisants' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/lithiase-vesiculaire/traitement-colique-hepatique-calcul-vesicule', title: 'Le traitement de la colique hépatique et de la lithiase vésiculaire' },
         ],
     },
     {
@@ -173,8 +163,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS94ZYVJVN0NR15NGJ2KH56.webp'),
         plantIds: ['p-028', 'p-040', 'p-047', 'p-067', 'p-075', 'p-089', 'p-104', 'p-110', 'p-114', 'p-136', 'p-140'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://mon-chirurgien-esthetique.paris/actualites/quoi-est-due-la-cellulite/', title: 'À quoi est due la cellulite ?' },
+            { url: 'https://nhco-nutrition.com/journal/quel-type-de-cellulite-fibreuse-adipeuse-legere-incrustee/', title: 'Cellulite : légère ou incrustée, comment les différencier ?' },
         ],
     },
     {
@@ -184,8 +174,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS96VGBK80ZZSZWJ0DSTXZY.webp'),
         plantIds: ['p-041', 'p-042'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.topsante.com/beaute-soins/cheveux/problemes-de-cheveux', title: 'Problèmes de cheveux' },
+            { url: 'https://www.lecheveu.be/problemes-capillaires/', title: 'Problèmes capillaires les plus fréquents' },
         ],
     },
     {
@@ -195,8 +185,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
         plantIds: ['p-035', 'p-036'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/froid-pathologies-sante/gelures', title: 'Les gelures, des lésions à traiter rapidement' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/froid-pathologies-sante/savoir-proteger-froid', title: 'Bien se protéger du froid' },
         ],
     },
     {
@@ -206,8 +196,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS9A9QGV35CCKX1SVFXH7SG.webp'),
         plantIds: ['p-007', 'p-009', 'p-017', 'p-020', 'p-026', 'p-041', 'p-042', 'p-044', 'p-049', 'p-050', 'p-053', 'p-068', 'p-070', 'p-076', 'p-083', 'p-087', 'p-091', 'p-096', 'p-103', 'p-110', 'p-111', 'p-112', 'p-136'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/trop-cholesterol-triglycerides-dans-sang-dyslipidemie/definition-causes-consequences', title: 'Anomalies du cholestérol et des triglycérides : causes et conséquences' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/trop-cholesterol-triglycerides-dans-sang-dyslipidemie/diagnostic-surveillance', title: 'Cholestérol et/ou triglycérides élevés : diagnostic et surveillance' },
         ],
     },
     {
@@ -217,8 +207,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJS99NDY41F14C8GGPQ8B8P7.webp'),
         plantIds: ['p-001', 'p-002', 'p-021', 'p-034', 'p-059', 'p-066', 'p-070', 'p-073', 'p-083', 'p-092', 'p-093', 'p-098', 'p-126', 'p-135', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.doctissimo.fr/sante/maladies/maladies-et-troubles-de-lappareil-circulatoire/mauvaise-circulation-sanguine-symptomes-causes-que-faire/54e0fa_ar.html', title: 'Mauvaise circulation sanguine : symptômes, causes, que faire ?' },
         ],
     },
     {
@@ -228,8 +217,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-041', 'p-042'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.elsan.care/fr/pathologie-et-traitement/maladie-digestive/colite-definition-symptomes-traitements', title: ' Colite definition symptomes traitements' },
         ],
     },
     {
@@ -239,8 +227,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-001', 'p-002', 'p-021', 'p-034', 'p-059', 'p-066', 'p-070', 'p-073', 'p-083', 'p-092', 'p-093', 'p-098', 'p-126', 'p-135', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/syndrome-intestin-irritable/reconnaitre-syndrome-intestin-irritable', title: "Reconnaître le syndrome de l'intestin irritable (ou colopathie fonctionnelle)" },
         ],
     },
     {
@@ -250,8 +237,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFTMH00EY0KN44A09ZN69B.webp'),
         plantIds: ['p-008', 'p-009', 'p-014', 'p-020', 'p-034', 'p-035', 'p-038', 'p-042', 'p-044', 'p-054', 'p-055', 'p-062', 'p-064', 'p-070', 'p-073', 'p-082', 'p-083', 'p-085', 'p-087', 'p-090', 'p-091', 'p-092', 'p-093', 'p-100', 'p-102', 'p-104', 'p-110', 'p-111', 'p-112', 'p-119', 'p-122', 'p-134', 'p-144', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/constipation-adulte/definition-symptomes-facteurs-favorisants', title: "Constipation de l'adulte : définition, symptômes, facteurs favorisants" },
         ],
     },
     {
@@ -261,8 +247,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFRHBM1H460F58JMG70KCJ.webp'),
         plantIds: ['p-047', 'p-048'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/cystite/reconnaitre-cystite', title: 'Cystite (infection urinaire) : symptômes et causes' },
         ],
     },
     {
@@ -272,8 +257,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFX2PXRMXYVCXNXPT7T4Q9.webp'),
         plantIds: ['p-008', 'p-023', 'p-025', 'p-027', 'p-034', 'p-045', 'p-069', 'p-073', 'p-074', 'p-075', 'p-081', 'p-083', 'p-084', 'p-085', 'p-092', 'p-094', 'p-096', 'p-117', 'p-120', 'p-135', 'p-137'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/demangeaisons-peau/definition-causes', title: 'Démangeaisons de la peau ou prurit cutané : définition et causes' },
         ],
     },
     {
@@ -283,8 +267,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVFYBJQKS6NXPGZNM8VVTX5.webp'),
         plantIds: ['p-012', 'p-018', 'p-023', 'p-035', 'p-048', 'p-055', 'p-064', 'p-066', 'p-067', 'p-068', 'p-091', 'p-094', 'p-098', 'p-106', 'p-122', 'p-123', 'p-135', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/depression-troubles-depressifs/comprendre-depression', title: 'Comprendre la dépression' },
         ],
     },
     {
@@ -294,8 +277,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPWF25NM4FVF872RPX11V169.webp'),
         plantIds: ['p-008', 'p-009', 'p-022', 'p-025', 'p-027', 'p-033', 'p-034', 'p-047', 'p-050', 'p-053', 'p-062', 'p-074', 'p-075', 'p-080', 'p-081', 'p-085', 'p-094', 'p-101', 'p-104', 'p-107', 'p-110', 'p-111', 'p-112', 'p-114', 'p-115', 'p-117', 'p-120', 'p-122', 'p-124', 'p-131', 'p-135', 'p-138', 'p-139', 'p-140', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/eczema-atopique/reconnaitre-eczema-atopique', title: 'Eczéma ou dermatite atopique : causes, symptômes et évolution' },
         ],
     },
     {
@@ -305,8 +287,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-020', 'p-022', 'p-027', 'p-036', 'p-039', 'p-058', 'p-062', 'p-068', 'p-091', 'p-096', 'p-097', 'p-100', 'p-112', 'p-132', 'p-136'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/diabete-adulte/diabete-comprendre/definition', title: "Qu'est-ce que le diabète ?" },
         ],
     },
     {
@@ -316,8 +297,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG1RQS9999WZ2B8SEAY09Z.webp'),
         plantIds: ['p-002', 'p-008', 'p-020', 'p-021', 'p-024', 'p-034', 'p-044', 'p-047', 'p-049', 'p-066', 'p-070', 'p-082', 'p-087', 'p-090', 'p-092', 'p-093', 'p-094', 'p-097', 'p-112', 'p-114', 'p-115', 'p-119', 'p-121', 'p-135', 'p-136', 'p-138', 'p-139', 'p-145', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.elsan.care/fr/pathologie-et-traitement/maladie-digestive/diarrhee-definition-symptomes-traitements', title: 'Diarrhee definition symptomes traitements' },
         ],
     },
     {
@@ -327,8 +307,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG32HTVGX4R3BZMMGAVHFR.webp'),
         plantIds: ['p-002', 'p-011', 'p-015', 'p-018', 'p-020', 'p-023', 'p-027', 'p-034', 'p-035', 'p-036', 'p-049', 'p-051', 'p-064', 'p-066', 'p-089', 'p-093', 'p-098', 'p-108', 'p-121', 'p-126', 'p-127', 'p-129', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/regles-douloureuses/douleurs-regles', title: 'La survenue de douleurs pendant les règles' },
         ],
     },
     {
@@ -338,8 +317,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG4V93FZ9X1RYEKMNXZ8M8.webp'),
         plantIds: ['p-015', 'p-017', 'p-022', 'p-026', 'p-027', 'p-041', 'p-042', 'p-044', 'p-054', 'p-059', 'p-082', 'p-090', 'p-096', 'p-097', 'p-103', 'p-108', 'p-110', 'p-112', 'p-135', 'p-143'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.aroma-zone.com/page/comment-eliminer-les-toxines-naturellement', title: 'Comment éliminer les toxines naturellement ?' },
         ],
     },
     {
@@ -349,8 +327,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG5YS3DNFA0PDRXZ499X7F.webp'),
         plantIds: ['p-015', 'p-018', 'p-020', 'p-024', 'p-032', 'p-050', 'p-055', 'p-061', 'p-068', 'p-082', 'p-086', 'p-091', 'p-094', 'p-096', 'p-114', 'p-117', 'p-147'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/asthenie-fatigue/definition-symptomes-causes', title: 'Asthénie (fatigue) : définition, symptômes et causes' },
         ],
     },
     {
@@ -360,8 +337,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG7Q8AJCHG6D7JCT564EHA.webp'),
         plantIds: ['p-001', 'p-002', 'p-020', 'p-023', 'p-025', 'p-027', 'p-034', 'p-044', 'p-060', 'p-066', 'p-070', 'p-076', 'p-092', 'p-093', 'p-102', 'p-107', 'p-115', 'p-126', 'p-127', 'p-131', 'p-133', 'p-135', 'p-137', 'p-139', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/devenir-parent/concevoir-un-enfant/sterilite-pma-infertilite/comprendre-sterilite', title: "Comprendre l'infertilité" },
         ],
     },
     {
@@ -371,8 +347,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG92J4RQQVWD12010E713C.webp'),
         plantIds: ['p-001', 'p-002', 'p-020', 'p-023', 'p-025', 'p-027', 'p-034', 'p-044', 'p-060', 'p-066', 'p-070', 'p-076', 'p-092', 'p-093', 'p-102', 'p-107', 'p-115', 'p-126', 'p-127', 'p-131', 'p-133', 'p-135', 'p-137', 'p-139', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.medecindirect.fr/symptomes/fievre', title: 'Fièvre : Causes, symptomes, traitement' },
+            { url: 'https://www.vidal.fr/maladies/douleurs-fievres/fievre-adulte.html', title: "Fièvre de l’adulte" },
         ],
     },
     {
@@ -382,8 +358,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVG9WWHTDJV5HR36EB1MEM2.webp'),
         plantIds: ['p-001', 'p-002', 'p-011', 'p-021', 'p-023', 'p-026', 'p-034', 'p-036', 'p-049', 'p-051', 'p-052', 'p-059', 'p-069', 'p-070', 'p-078', 'p-081', 'p-087', 'p-090', 'p-092', 'p-093', 'p-102', 'p-110', 'p-115', 'p-117', 'p-126', 'p-145', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.vidal.fr/maladies/estomac-intestins/ballonnement-flatulence-aerophagie.html', title: 'Ballonnement, flatulence et aérophagie' },
         ],
     },
     {
@@ -393,8 +368,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVGB1E29AY7T19S8E55G708.webp'),
         plantIds: ['p-006', 'p-017', 'p-041', 'p-059', 'p-063', 'p-096', 'p-098', 'p-110'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/steatose-hepatique/definition-facteurs-risque', title: 'Définition et causes de la stéatose hépatique métabolique (foie gras non alcoolique)' },
         ],
     },
     {
@@ -404,8 +378,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVGD8STXKFH2N097JBW5GEY.webp'),
         plantIds: ['p-001', 'p-007', 'p-022', 'p-023', 'p-026', 'p-041', 'p-042', 'p-053', 'p-070', 'p-090', 'p-092', 'p-096', 'p-105', 'p-108', 'p-110', 'p-115', 'p-136'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.doctissimo.fr/html/dossiers/hepatites/sa_5059_foie_organe_multifonctions.htm', title: 'Le foie : anatomie et rôle de cet organe multifonctions' },
         ],
     },
     {
@@ -415,8 +388,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVGE65W9T6XS5BAHVCXYR6J.webp'),
         plantIds: ['p-001', 'p-002', 'p-007', 'p-025', 'p-026', 'p-027', 'p-044', 'p-047', 'p-056', 'p-058', 'p-066', 'p-070', 'p-071', 'p-075', 'p-079', 'p-082', 'p-090', 'p-092', 'p-095', 'p-115', 'p-119', 'p-126', 'p-133', 'p-135', 'p-139', 'p-145', 'p-147', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/froid-pathologies-sante/savoir-proteger-froid', title: 'Bien se protéger du froid' },
         ],
     },
     {
@@ -426,8 +398,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-008', 'p-034', 'p-035', 'p-059', 'p-062', 'p-067', 'p-097'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/glaucome/comprendre-glaucome', title: 'omprendre le glaucome' },
         ],
     },
     {
@@ -437,8 +408,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVGJ31419G53NBME359XZX0.webp'),
         plantIds: ['p-007', 'p-017', 'p-019', 'p-031', 'p-033', 'p-036', 'p-041', 'p-042', 'p-044', 'p-047', 'p-050', 'p-054', 'p-062', 'p-066', 'p-084', 'p-095', 'p-096', 'p-100', 'p-104', 'p-108', 'p-110', 'p-114', 'p-115', 'p-117', 'p-120', 'p-122', 'p-137', 'p-138'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/goutte/definition-facteurs-favorisants', title: 'Définition et facteurs favorisants de la goutte' },
         ],
     },
     {
@@ -448,8 +418,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVY0TZN6XMC0V7NN9415A2D.webp'),
         plantIds: ['p-001', 'p-002', 'p-026', 'p-027', 'p-033', 'p-058', 'p-060', 'p-066', 'p-070', 'p-075', 'p-082', 'p-085', 'p-087', 'p-090', 'p-092', 'p-093', 'p-095', 'p-100', 'p-115', 'p-119', 'p-122', 'p-133', 'p-135', 'p-137', 'p-139', 'p-145', 'p-147', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/grippe/comprendre-grippe', title: 'Comprendre la grippe' },
         ],
     },
     {
@@ -459,8 +428,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HJQCZEF441R5KDBERM43MDR0.webp'),
         plantIds: ['p-002', 'p-008', 'p-018', 'p-023', 'p-024', 'p-027', 'p-033', 'p-034', 'p-040', 'p-047', 'p-070', 'p-074', 'p-075', 'p-081', 'p-082', 'p-086', 'p-088', 'p-090', 'p-093', 'p-115', 'p-117', 'p-120', 'p-126', 'p-131', 'p-139', 'p-147', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.chudequebec.ca/a-propos-de-nous/publications/revues-en-ligne/spiritualite-sante/dossiers/dossier-les-voies-de-guerison/la-guerison-plus-qu%E2%80%99un-acte-medical.aspx', title: 'La guérison | plus qu’un acte médical' },
         ],
     },
     {
@@ -470,8 +438,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVY3BZCKCPW7N7G8WDH9FYV.webp'),
         plantIds: ['p-002', 'p-008', 'p-011', 'p-020', 'p-024', 'p-040', 'p-041', 'p-070', 'p-074', 'p-089', 'p-095', 'p-097', 'p-104', 'p-119', 'p-126', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/hemorroides/definition-facteurs-favorisants-symptomes', title: 'Hémorroïdes : définition, facteurs favorisants et symptômes' },
         ],
     },
     {
@@ -481,8 +448,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVY5315F3AY4CVSQ8XJSMH5.webp'),
         plantIds: ['p-034', 'p-045', 'p-099', 'p-114', 'p-126', 'p-130', 'p-136'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/hypersudation/definition-symptomes-causes-evolution', title: 'Hypersudation : symptômes, conséquences et causes' },
         ],
     },
     {
@@ -492,8 +458,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-002', 'p-007', 'p-019', 'p-020', 'p-023', 'p-036', 'p-042', 'p-050', 'p-062', 'p-070', 'p-076', 'p-081', 'p-086', 'p-087', 'p-090', 'p-096', 'p-100', 'p-101', 'p-102', 'p-106', 'p-110', 'p-111', 'p-112', 'p-114', 'p-115', 'p-136', 'p-137', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/hypertension-arterielle-hta/definition-facteurs-favorisants', title: 'Définition et causes de l’hypertension artérielle (HTA)' },
         ],
     },
     {
@@ -503,8 +468,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPVY6YA9AJ8GTW2B8RETQE1E.webp'),
         plantIds: ['p-005', 'p-007', 'p-019', 'p-065', 'p-066', 'p-068', 'p-091', 'p-092', 'p-093', 'p-117', 'p-122', 'p-137'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.elsan.care/fr/pathologie-et-traitement/maladies-generale/hypotension-causes-traitements', title: 'Hypotension causes traitements' },
         ],
     },
     {
@@ -514,8 +478,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPW0JDVQ1TH4QBGBH09H2S5D.webp'),
         plantIds: ['p-001', 'p-002', 'p-021', 'p-026', 'p-027', 'p-034', 'p-036', 'p-041', 'p-044', 'p-049', 'p-051', 'p-059', 'p-066', 'p-069', 'p-070', 'p-077', 'p-078', 'p-081', 'p-090', 'p-092', 'p-093', 'p-098', 'p-112', 'p-115', 'p-140', 'p-144', 'p-145', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.mpedia.fr/art-indigestion/', title: 'L’indigestion : fiche technique' },
         ],
     },
     {
@@ -525,8 +488,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPW0MBQW09FN4QT9DEJ963BE.webp'),
         plantIds: ['p-023', 'p-024', 'p-034', 'p-045', 'p-053', 'p-058', 'p-062', 'p-066', 'p-070', 'p-075', 'p-082', 'p-092', 'p-122', 'p-126', 'p-133', 'p-135', 'p-136', 'p-139', 'p-148'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/mal-gorge/definition-causes', title: 'Le mal de gorge et ses causes' },
         ],
     },
     {
@@ -536,8 +498,8 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPW0Q01VCWBV9QHC6VDQVN0Z.webp'),
         plantIds: ['p-018', 'p-026', 'p-034', 'p-044', 'p-048', 'p-057', 'p-077', 'p-081', 'p-087', 'p-088', 'p-092', 'p-098', 'p-106', 'p-123', 'p-135', 'p-137', 'p-141', 'p-144', 'p-145'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ameli.fr/assure/sante/themes/insomnie-adulte/traitement-medical', title: "Le traitement de l'insomnie" },
+            { url: 'https://www.ameli.fr/assure/sante/themes/insomnie-adulte/definition-facteurs-favorisants', title: "L'insomnie de l'adulte : définition et facteurs favorisants" },
         ],
     },
     {
@@ -547,8 +509,7 @@ export const symptoms: SymptomType[] = [
         image: require('@src/assets/images/symptoms/01HPW0S27AE46GT11VFQ6NPZQT.webp'),
         plantIds: ['p-034', 'p-048', 'p-064', 'p-081', 'p-085', 'p-092', 'p-106', 'p-137', 'p-141'],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.santemagazine.fr/psycho-sexo/psycho/5-astuces-pour-etre-moins-irrite-334834', title: "Quelles sont les astuces contre l'irritabilité ?" },
         ],
     },
     {
