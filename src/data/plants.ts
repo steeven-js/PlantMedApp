@@ -28,7 +28,10 @@ export const plants: PlantType[] = [
             "Évitez d'utiliser des personnes qui ont des réactions allergiques à la plante ou à l'un de ses composants.",
             "Si vous prenez des médicaments pour des problèmes cardiaques ou si vous avez des questions sur son utilisation, consultez votre médecin avant de l'utiliser.",
         ],
-        sources: ['Pharmacopée française', 'OMS monographies'],
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],
     },
     /**Absinthe */
     {
@@ -57,8 +60,10 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé chez les femmes enceintes ou allaitantes ou les enfants de moins de 6 ans.",
             "Si vous prenez un médicament anticoagulant ou sédatif, consultez toujours votre médecin avant de l'utiliser.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-003',
         name: 'Actée à grappe',
@@ -88,8 +93,10 @@ export const plants: PlantType[] = [
             "Ne pas consommer pendant la grossesse ou l'allaitement sauf sous la surveillance d'un professionnel.",
             'Évitez de consommer des enfants.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-004',
         name: 'Agave',
@@ -119,8 +126,10 @@ export const plants: PlantType[] = [
             "Il doit être évité pendant la grossesse et l'allaitement, sauf indication contraire.",
             'Pour les diabétiques, leur consommation doit être considérée comme du sucre.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-005',
         name: 'Agripaume',
@@ -145,8 +154,10 @@ export const plants: PlantType[] = [
             "Évitez de prendre des anticoagulants ou des sédatifs pour contrôler les nerfs et l'anxiété. Avant de les utiliser, consultez un spécialiste.",
             'Une utilisation excessive peut provoquer une irritation des muqueuses génitales et intestinales provoquant des diarrhées et des saignements gastro-intestinaux ou utérins.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-006',
         name: 'Aigremoine',
@@ -176,8 +187,10 @@ export const plants: PlantType[] = [
             'En grande quantité, il peut aggraver les cas de constipation.',
             "Ne doit pas être utilisé pendant la grossesse ou l'allaitement.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-007',
         name: 'Ail',
@@ -207,8 +220,10 @@ export const plants: PlantType[] = [
             "Évitez les personnes souffrant d'ulcères d'estomac, de gastrite et d'acidose gastrique.",
             "À éviter en cas d'hyperthyroïdie.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-008',
         name: 'Aloe Vera',
@@ -237,8 +252,10 @@ export const plants: PlantType[] = [
             'Les personnes diabétiques doivent faire attention si elles sont consommées par voie orale.',
             'Des doses orales élevées peuvent être dangereuses pour le corps.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-009',
         name: 'Amandier',
@@ -266,8 +283,10 @@ export const plants: PlantType[] = [
             "Si vous souffrez de diabète, il est déconseillé de consommer du lait d'amande douce en raison de sa teneur élevée en saccharose.",
             "Utilisation non recommandée pendant la grossesse ou l'allaitement.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-010',
         name: 'Amarante',
@@ -293,8 +312,10 @@ export const plants: PlantType[] = [
             'Non recommandé chez les personnes diabétiques en raison de son indice glycémique élevé.',
             'En excès, il peut perturber le fonctionnement du foie et des reins.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-011',
         name: 'Aneth',
@@ -322,8 +343,10 @@ export const plants: PlantType[] = [
             'Évitez les personnes souffrant de gastrite.',
             "Ne pas utiliser chez l'enfant.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-012',
         name: 'Angélique',
@@ -352,8 +375,10 @@ export const plants: PlantType[] = [
             'Évitez les personnes allergiques aux plantes ombellifères.',
             'Elle est contre-indiquée chez les personnes atteintes de diabète.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-013',
         name: 'Arbre à thé',
@@ -382,8 +407,10 @@ export const plants: PlantType[] = [
             "L'huile ne doit pas être consommée de la manière qu'elle est toxique pour la consommation.",
             "Il n'est pas recommandé de maintenir une utilisation prolongée.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-014',
         name: 'Argousier',
@@ -408,8 +435,10 @@ export const plants: PlantType[] = [
             "Évitez les utilisations en cas de grossesse ou d'allaitement.",
             'Il ne doit pas être administré aux enfants.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-015',
         name: 'Armoise commune',
@@ -438,8 +467,10 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé pendant la grossesse ou l'allaitement.",
             'Évitez les personnes allergiques ou intolérantes à cette plante.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-016',
         name: 'Arnica',
@@ -465,8 +496,10 @@ export const plants: PlantType[] = [
             "Arrêtez l'utilisation en cas d'irritation ou de l'eczéma sur la peau dans la région où le traitement a été appliqué.",
             "Il n'est pas recommandé de l'utiliser pendant la grossesse ou l'allaitement.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-017',
         name: 'Artichaut',
@@ -494,8 +527,10 @@ export const plants: PlantType[] = [
             "Son utilisation est contre-indiquée pendant l'allaitement ou la grossesse.",
             'Déconseillé aux personnes souffrant de calculs de la vésicule biliaire.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-018',
         name: 'Ashwagandha',
@@ -521,8 +556,10 @@ export const plants: PlantType[] = [
             "Son utilisation doit être évitée en cas de grossesse ou d'allaitement ou sous les effets de sédatifs.",
             'En cas de doute, consultez votre médecin avant utilisation.',
         ],
-        sources: [],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-019',
         name: 'Aubépine monogyne',
@@ -550,8 +587,10 @@ export const plants: PlantType[] = [
             "Il est contre-indiqué pendant la grossesse ou l'allaitement.",
             "Évitez l'utilisation chez les enfants.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-020',
         name: 'Açaï',
@@ -580,8 +619,10 @@ export const plants: PlantType[] = [
             "Habituellement, cela ne produit pas d'effets secondaires, mais les enfants de moins de 12 ans et les femmes enceintes ou allaitantes doivent consulter leur médecin avant utilisation pour exclure une éventuelle interférence avec les médicaments ou les allergies.",
             'Consommer avec modération, une consommation excessive peut nuire à la santé.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-021',
         name: 'Badianier de Chine',
@@ -609,8 +650,10 @@ export const plants: PlantType[] = [
             'Ne pas mélanger avec des boissons alcoolisées car cela pourrait provoquer une intoxication.',
             "Il ne devrait pas être administré pendant la grossesse ou l'allaitement.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-022',
         name: 'Bardane',
@@ -639,8 +682,10 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé de l'utiliser pendant la grossesse ou l'allaitement.",
             'Évitez les personnes allergiques à la plante.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-023',
         name: 'Basilic',
@@ -668,8 +713,10 @@ export const plants: PlantType[] = [
             "L'utilisation de basilic pendant l'allaitement n'est pas connue avec certitude. Utilisation avec le consentement d'un spécialiste.",
             'Son utilisation est totalement contre-indiquée en cas de grossesse.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-024',
         name: 'Bistorte',
@@ -690,8 +737,10 @@ export const plants: PlantType[] = [
         precaution: [
             "Les personnes souffrant de gastrite ou d'ulcère gastroduodénal ainsi que les femmes enceintes ou qui allaitent doivent éviter son utilisation.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-025',
         name: 'Bleuet',
@@ -715,8 +764,10 @@ export const plants: PlantType[] = [
         precaution: [
             "En cas de doute sur son utilisation pour votre cas particulier ou en cas de grossesse ou d'allaitement, il est recommandé de consulter un spécialiste de la santé avant.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-026',
         name: 'Boldo',
@@ -746,8 +797,10 @@ export const plants: PlantType[] = [
             'Il ne doit pas être pris pendant plus de 4 semaines.',
             "Pour une utilisation correcte et en cas de doute, consultez votre médecin avant de l'utiliser.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-027',
         name: 'Bougainvillea',
@@ -775,8 +828,10 @@ export const plants: PlantType[] = [
             "Sa consommation n'est pas recommandée aux femmes enceintes ou allaitantes, sauf recommandation explicite d'un médecin spécialiste.",
             "Les personnes souffrant d'une maladie rénale, d'ostéoporose ou d'une maladie du foie doivent également éviter sa consommation.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-028',
         name: 'Bouleau',
@@ -804,8 +859,10 @@ export const plants: PlantType[] = [
             "Elle n'est pas compatible avec les médicaments à effet anticoagulant.",
             "Elle n'est pas recommandée pendant la grossesse ou l'allaitement.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-029',
         name: 'Bourrache',
@@ -833,8 +890,10 @@ export const plants: PlantType[] = [
             "Il est contre-indiqué pendant la grossesse et l'allaitement.",
             "Évitez de consommer des enfants lors d'une utilisation prolongée.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-030',
         name: 'Brocoli',
@@ -863,8 +922,10 @@ export const plants: PlantType[] = [
             'Ne consommez pas cru en cas de problèmes rénaux. En cas de doute, consultez un spécialiste auparavant.',
             'Évitez son utilisation si des médicaments sont utilisés pour réguler la coagulation du sang.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-031',
         name: 'Buchu',
@@ -890,8 +951,10 @@ export const plants: PlantType[] = [
             'Il peut réduire le taux de potassium dans le corps en raison de son effet diurétique.',
             "En cas de grossesse ou d'allaitement, consultez d'abord un spécialiste.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-032',
         name: 'Cacao',
@@ -919,8 +982,10 @@ export const plants: PlantType[] = [
             "Peut provoquer des migraines, des maux de tête ou de l'eczéma. En cas de doute, consultez d'abord votre spécialiste.",
             'Évitez une consommation excessive. Ne convient pas aux diabétiques.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-033',
         name: 'Callune',
@@ -947,8 +1012,10 @@ export const plants: PlantType[] = [
             "Il est contre-indiqué pendant la grossesse ou l'allaitement sauf indication médicale.",
             'Ne doit pas être utilisé en cas de problèmes cardiaques.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-034',
         name: 'Camomille',
@@ -977,8 +1044,10 @@ export const plants: PlantType[] = [
             'Peut interagir avec certains types de médicaments sédatifs et anticoagulants.',
             "Il n'est pas toxique, mais dans les décharges la dose peut provoquer des vomissements.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-035',
         name: 'Cannabis',
@@ -1008,8 +1077,10 @@ export const plants: PlantType[] = [
             "Il doit être utilisé avec prudence chez les personnes déjà traitées par des hypnotiques sédatifs ou par d'autres drogues psychoactives.",
             'Non recommandé chez les personnes présentant une insuffisance respiratoire.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-036',
         name: 'Cannelier',
@@ -1039,8 +1110,10 @@ export const plants: PlantType[] = [
             "L'huile essentielle ne doit pas être utilisée pour un usage interne.",
             'Évitez la consommation excessive.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-037',
         name: 'Cardamome',
@@ -1067,8 +1140,10 @@ export const plants: PlantType[] = [
             'Évitez de faire appel à des personnes sensibles à la cardamome. Vous pourriez présenter des réactions allergiques.',
             'Les personnes souffrant de calculs biliaires ou de problèmes de vésicule biliaire doivent faire preuve de prudence.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-038',
         name: 'Caroubier',
@@ -1098,8 +1173,10 @@ export const plants: PlantType[] = [
             'La flatulence peut être le principal problème de caroube.',
             "Évitez de consommer en cas d'allergie aux noix.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-039',
         name: 'Centaurée rude',
@@ -1123,8 +1200,10 @@ export const plants: PlantType[] = [
             "N'oubliez pas de l'utiliser de manière responsable, en cas de diabète, son utilisation doit être supervisée par un spécialiste de la santé.",
             "Son utilisation n'est pas recommandée chez les femmes enceintes, allaitantes ou enfants.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-040',
         name: 'Centella asiatica',
@@ -1152,8 +1231,10 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé pendant la grossesse ni chez les personnes souffrant de problèmes gastriques.",
             'À éviter aussi chez les enfants de moins de 6 ans.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-041',
         name: 'Chardon-Marie',
@@ -1180,8 +1261,10 @@ export const plants: PlantType[] = [
             "Ne pas utiliser pendant la grossesse, l'allaitement ou l'hypertension artérielle.",
             'Évitez les personnes sensibles ou allergiques à la plante.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-042',
         name: 'Chicorée',
@@ -1210,8 +1293,10 @@ export const plants: PlantType[] = [
             'La fleur ne doit pas être ingérée si vous êtes allergique à la plante.',
             "Évitez l'utilisation de chicorée en cas de grossesse.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-043',
         name: 'Chélidoine',
@@ -1238,8 +1323,10 @@ export const plants: PlantType[] = [
             "Ne pas utiliser en interne s'il y a des problèmes de foie, de goutte ou d'obésité.",
             "La consommation doit être évitée pendant la grossesse ou l'allaitement et chez les enfants.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-044',
         name: 'Citronnelle',
@@ -1266,8 +1353,10 @@ export const plants: PlantType[] = [
             "En cas de grossesse, d'allaitement ou si vous avez des doutes quant à son utilisation pour votre cas particulier, consultez votre médecin avant de l'utiliser.",
             "Il peut provoquer une gêne ou une allergie aux personnes intolérantes aux odeurs d'agrumes.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-045',
         name: 'Citronnier',
@@ -1294,8 +1383,10 @@ export const plants: PlantType[] = [
             "En raison de sa teneur en acide, il peut augmenter l'acidité et causer des irritations et des dommages à la plaque dentaire.",
             "Évitez les personnes souffrant de plaies d'estomac, de gastrite et de brûlures d'estomac.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-046',
         name: 'Coffea',
@@ -1324,8 +1415,10 @@ export const plants: PlantType[] = [
             'Il est déconseillé de consommer beaucoup de café pendant la grossesse car il est associé à un faible poids à la naissance.',
             'Une tolérance à la caféine peut se développer.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-047',
         name: 'Consoude',
@@ -1351,8 +1444,10 @@ export const plants: PlantType[] = [
             "Évitez de l'utiliser avec des personnes présentant une hypersensibilité.",
             "Ne pas consommer pendant la grossesse ou l'allaitement.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-048',
         name: 'Coquelicot',
@@ -1377,8 +1472,10 @@ export const plants: PlantType[] = [
             'Les enfants et les femmes enceintes ou qui allaitent doivent être évités, sauf sous surveillance médicale.',
             'Toutes les parties de cette plante sont considérées comme toxiques pour les chiens et les chats.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-049',
         name: 'Coriandre',
@@ -1406,8 +1503,10 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé en cas de grossesse ou d'allaitement, consultez d'abord votre médecin.",
             "À éviter en cas d'allergie ou de sensibilité.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-050',
         name: 'Cresson',
@@ -1437,8 +1536,10 @@ export const plants: PlantType[] = [
             'Les personnes allergiques aux crucifères comme la moutarde, le chou ou le brocoli doivent éviter sa consommation.',
             "En cas de grossesse ou d'allaitement ou en cas de doute sur son utilisation, renseignez-vous auprès de un spécialiste de la santé avant de l'utiliser.",
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-051',
         name: 'Cumin',
@@ -1468,8 +1569,10 @@ export const plants: PlantType[] = [
             'La glycémie doit être mieux contrôlée si vous êtes diabétique.',
             'Ne pas utiliser pendant les cycles menstruels intenses.',
         ],
-        sources: ['Pharmacopée européenne'],
-    },
+        sources: [
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+        ],    },
     {
         id: 'p-052',
         name: 'Cumin des prés',

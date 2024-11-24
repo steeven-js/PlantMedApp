@@ -42,6 +42,24 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
     return <Text>Error loading sources data.</Text>;
   }
 
+  // Filtrer les symptômes qui ont des sources
+  const symptomsWithSources = symptomsData?.filter(
+    symptom => symptom.sources && symptom.sources.length > 0
+  );
+
+  if (!symptomsWithSources || symptomsWithSources.length === 0) {
+    return (
+      <View style={{ 
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        paddingHorizontal: 20 
+      }}>
+        <text.H5>Aucune source disponible.</text.H5>
+      </View>
+    );
+  }
+
   return (
     <ScrollView
       contentContainerStyle={{
@@ -50,20 +68,26 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
         paddingTop: utils.responsiveHeight(40),
         paddingBottom: utils.responsiveHeight(20),
       }}
+      showsVerticalScrollIndicator={false}
     >
-      {symptomsData?.map((symptom) => (
+      {symptomsWithSources.map((symptom) => (
         <View
           key={symptom.id}
           style={{
             marginBottom: utils.responsiveHeight(20),
           }}
         >
-          <text.H5 style={{marginBottom: utils.responsiveHeight(10)}}>
+          <text.H5 
+            style={{
+              marginBottom: utils.responsiveHeight(10),
+              color: theme.colors.textColor,
+            }}
+          >
             {symptom.name}
           </text.H5>
           {symptom.sources?.map((source: Source, index: number) => (
             <TouchableOpacity
-              key={index}
+              key={`${symptom.id}-${index}`}
               onPress={() => handleSourcePress(source.url)}
               style={{
                 marginBottom: 8,

@@ -14,5 +14,7 @@ export interface PlantType {
   usageInterne: string;
   usageExterne: string;
   precaution: string[];
-  sources: string[];
-}
+  sources: Array<{
+    url: string;
+    title: string;
+  }>;}
