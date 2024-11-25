@@ -42,7 +42,6 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
     return <Text>Error loading sources data.</Text>;
   }
 
-  // Filtrer les symptômes qui ont des sources
   const symptomsWithSources = symptomsData?.filter(
     symptom => symptom.sources && symptom.sources.length > 0
   );
@@ -95,6 +94,16 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
                 alignItems: 'center',
               }}
             >
+              <View
+                style={{
+                  width: 4,
+                  height: 4,
+                  borderRadius: 2,
+                  backgroundColor: theme.colors.mainColor,
+                  marginRight: 8,
+                  marginTop: Platform.OS === 'ios' ? 1 : 0,
+                }}
+              />
               <Text
                 numberOfLines={1}
                 ellipsizeMode="tail"
@@ -103,7 +112,7 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
                   fontSize: Platform.OS === 'ios' ? 14 : 12,
                   color: theme.colors.mainColor,
                   textDecorationLine: 'underline',
-                  maxWidth: '90%',
+                  flex: 1,
                 }}
               >
                 {source.title}

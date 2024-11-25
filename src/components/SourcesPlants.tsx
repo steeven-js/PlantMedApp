@@ -46,7 +46,6 @@ const SourcesPlants: React.FC<SourcesPlantsProps> = ({
     );
   };
 
-  // Filtrer les plantes qui ont des sources
   const plantsWithSources = plantsData?.filter(
     plant => plant.sources && plant.sources.length > 0
   );
@@ -99,6 +98,16 @@ const SourcesPlants: React.FC<SourcesPlantsProps> = ({
                 alignItems: 'center',
               }}
             >
+              <View
+                style={{
+                  width: 4,
+                  height: 4,
+                  borderRadius: 2,
+                  backgroundColor: theme.colors.mainColor,
+                  marginRight: 8,
+                  marginTop: Platform.OS === 'ios' ? 1 : 0,
+                }}
+              />
               <Text
                 numberOfLines={1}
                 ellipsizeMode="tail"
@@ -107,7 +116,7 @@ const SourcesPlants: React.FC<SourcesPlantsProps> = ({
                   fontSize: Platform.OS === 'ios' ? 14 : 12,
                   color: theme.colors.mainColor,
                   textDecorationLine: 'underline',
-                  maxWidth: '90%',
+                  flex: 1,
                 }}
               >
                 {source.title}
