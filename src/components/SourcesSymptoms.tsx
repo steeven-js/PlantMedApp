@@ -42,23 +42,6 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
     return <Text>Error loading sources data.</Text>;
   }
 
-  const symptomsWithSources = symptomsData?.filter(
-    symptom => symptom.sources && symptom.sources.length > 0
-  );
-
-  if (!symptomsWithSources || symptomsWithSources.length === 0) {
-    return (
-      <View style={{ 
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        paddingHorizontal: 20 
-      }}>
-        <text.H5>Aucune source disponible.</text.H5>
-      </View>
-    );
-  }
-
   return (
     <ScrollView
       contentContainerStyle={{
@@ -69,57 +52,59 @@ const SourcesSymptoms: React.FC<SourcesSymptomsProps> = ({
       }}
       showsVerticalScrollIndicator={false}
     >
-      {symptomsWithSources.map((symptom) => (
-        <View
-          key={symptom.id}
-          style={{
-            marginBottom: utils.responsiveHeight(20),
-          }}
-        >
-          <text.H5 
+      {symptomsData?.map((symptom) => (
+        symptom.sources && symptom.sources.length > 0 ? (
+          <View
+            key={symptom.id}
             style={{
-              marginBottom: utils.responsiveHeight(10),
-              color: theme.colors.textColor,
+              marginBottom: utils.responsiveHeight(20),
             }}
           >
-            {symptom.name}
-          </text.H5>
-          {symptom.sources?.map((source: Source, index: number) => (
-            <TouchableOpacity
-              key={`${symptom.id}-${index}`}
-              onPress={() => handleSourcePress(source.url)}
+            <text.H5 
               style={{
-                marginBottom: 8,
-                flexDirection: 'row',
-                alignItems: 'center',
+                marginBottom: utils.responsiveHeight(10),
+                color: theme.colors.textColor,
               }}
             >
-              <View
+              {symptom.name}
+            </text.H5>
+            {symptom.sources.map((source: Source, index: number) => (
+              <TouchableOpacity
+                key={`${symptom.id}-${index}`}
+                onPress={() => handleSourcePress(source.url)}
                 style={{
-                  width: 4,
-                  height: 4,
-                  borderRadius: 2,
-                  backgroundColor: theme.colors.mainColor,
-                  marginRight: 8,
-                  marginTop: Platform.OS === 'ios' ? 1 : 0,
-                }}
-              />
-              <Text
-                numberOfLines={1}
-                ellipsizeMode="tail"
-                style={{
-                  ...theme.fonts.DM_Sans_400Regular,
-                  fontSize: Platform.OS === 'ios' ? 14 : 12,
-                  color: theme.colors.mainColor,
-                  textDecorationLine: 'underline',
-                  flex: 1,
+                  marginBottom: 8,
+                  flexDirection: 'row',
+                  alignItems: 'center',
                 }}
               >
-                {source.title}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+                <View
+                  style={{
+                    width: 4,
+                    height: 4,
+                    borderRadius: 2,
+                    backgroundColor: theme.colors.mainColor,
+                    marginRight: 8,
+                    marginTop: Platform.OS === 'ios' ? 1 : 0,
+                  }}
+                />
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={{
+                    ...theme.fonts.DM_Sans_400Regular,
+                    fontSize: Platform.OS === 'ios' ? 14 : 12,
+                    color: theme.colors.mainColor,
+                    textDecorationLine: 'underline',
+                    flex: 1,
+                  }}
+                >
+                  {source.title}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : null
       ))}
     </ScrollView>
   );

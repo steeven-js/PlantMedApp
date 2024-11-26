@@ -29,8 +29,7 @@ export const plants: PlantType[] = [
             "Si vous prenez des médicaments pour des problèmes cardiaques ou si vous avez des questions sur son utilisation, consultez votre médecin avant de l'utiliser.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
+            { url: 'https://www.vidal.fr/parapharmacie/phytotherapie-plantes/absinthe-artemisia-absinthium.html', title: 'Phytothérapie : Absinthe' },
         ],
     },
     /**Absinthe */
@@ -61,9 +60,9 @@ export const plants: PlantType[] = [
             "Si vous prenez un médicament anticoagulant ou sédatif, consultez toujours votre médecin avant de l'utiliser.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://villagemagazine.fr/achillee-millefeuille-la-plante-aux-mille-vertus', title: 'Achillée millefeuille : la plante aux mille vertus !' },
+        ],
+    },
     {
         id: 'p-003',
         name: 'Actée à grappe',
@@ -94,9 +93,9 @@ export const plants: PlantType[] = [
             'Évitez de consommer des enfants.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.vidal.fr/parapharmacie/phytotherapie-plantes/actee-grappes-noires-actea-racemosa.html', title: 'Phytothérapie : Actée à grappes noires' },
+        ],
+    },
     {
         id: 'p-004',
         name: 'Agave',
@@ -127,9 +126,9 @@ export const plants: PlantType[] = [
             'Pour les diabétiques, leur consommation doit être considérée comme du sucre.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.medisite.fr/dictionnaire-des-plantes-medicinales-agave.48657.8.html', title: 'Agave : propriétés, bienfaits, posologie' },
+        ],
+    },
     {
         id: 'p-005',
         name: 'Agripaume',
@@ -155,9 +154,9 @@ export const plants: PlantType[] = [
             'Une utilisation excessive peut provoquer une irritation des muqueuses génitales et intestinales provoquant des diarrhées et des saignements gastro-intestinaux ou utérins.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.jardinsdugue.eu/produit/leonurus-cardiaca-agripaume', title: 'Leonurus cardiaca – Agripaume' },
+        ],
+    },
     {
         id: 'p-006',
         name: 'Aigremoine',
@@ -188,9 +187,9 @@ export const plants: PlantType[] = [
             "Ne doit pas être utilisé pendant la grossesse ou l'allaitement.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.passeportsante.net/fr/Solutions/HerbierMedicinal/Plante.aspx?doc=aigremoine-tous-les-bienfaits-de-cette-plante-sur-la-sante', title: 'Aigremoine : tous les bienfaits de cette plante sur la santé' },
+        ],
+    },
     {
         id: 'p-007',
         name: 'Ail',
@@ -221,9 +220,9 @@ export const plants: PlantType[] = [
             "À éviter en cas d'hyperthyroïdie.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://ail-echalote-certifie.org/histoire-vertus-sante-ail', title: "L'histoire de l’ail" },
+        ],
+    },
     {
         id: 'p-008',
         name: 'Aloe Vera',
@@ -253,9 +252,9 @@ export const plants: PlantType[] = [
             'Des doses orales élevées peuvent être dangereuses pour le corps.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.etatpur.fr/blog/aloe-vera-quels-sont-ses-bienfaits', title: "Aloe vera : quels sont ses bienfaits ?" },
+        ],
+    },
     {
         id: 'p-009',
         name: 'Amandier',
@@ -284,9 +283,9 @@ export const plants: PlantType[] = [
             "Utilisation non recommandée pendant la grossesse ou l'allaitement.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.doctissimo.fr/html/sante/phytotherapie/plante-medicinale/amandier.htm', title: "Propriétés médicinales de l'amandier" },
+        ],
+    },
     {
         id: 'p-010',
         name: 'Amarante',
@@ -313,9 +312,9 @@ export const plants: PlantType[] = [
             'En excès, il peut perturber le fonctionnement du foie et des reins.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.magellan-bio.fr/informations-graines-semences-bio/358-quels-sont-les-bienfaits-de-l-amarante-', title: "Quels sont les bienfaits de l'amarante ?" },
+        ],
+    },
     {
         id: 'p-011',
         name: 'Aneth',
@@ -344,9 +343,9 @@ export const plants: PlantType[] = [
             "Ne pas utiliser chez l'enfant.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://essembio.com/produits/1526-semences-biologiques-semences-de-condimentaires-aneth-bio', title: "ANETH - BIO" },
+        ],
+    },
     {
         id: 'p-012',
         name: 'Angélique',
@@ -376,9 +375,9 @@ export const plants: PlantType[] = [
             'Elle est contre-indiquée chez les personnes atteintes de diabète.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.herboristerieduvalmont.com/mes-remedes-naturels/4754-angelique-bienfaits-utilisations-et-contre-indications', title: "Angélique : Bienfaits, utilisations et contre-indications" },
+        ],
+    },
     {
         id: 'p-013',
         name: 'Arbre à thé',
@@ -408,9 +407,9 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé de maintenir une utilisation prolongée.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.willemsefrance.fr/products/larbre-a-the', title: "L'arbre à thé - Melaleuca alternifolia - Willemse" },
+        ],
+    },
     {
         id: 'p-014',
         name: 'Argousier',
@@ -436,9 +435,9 @@ export const plants: PlantType[] = [
             'Il ne doit pas être administré aux enfants.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.doctissimo.fr/html/sante/phytotherapie/plante-medicinale/argousier.html', title: "Argousier (Hippophae rhamnoides) - Doctissimo" },
+        ],
+    },
     {
         id: 'p-015',
         name: 'Armoise commune',
@@ -468,9 +467,9 @@ export const plants: PlantType[] = [
             'Évitez les personnes allergiques ou intolérantes à cette plante.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.aromatiques.fr/les-armoises/761-armoise-commune.html', title: "Plant d'armoise commune panachée en pot et cultivé en France" },
+        ],
+    },
     {
         id: 'p-016',
         name: 'Arnica',
@@ -497,9 +496,9 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé de l'utiliser pendant la grossesse ou l'allaitement.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.vidal.fr/parapharmacie/phytotherapie-plantes/arnica-montagnes-montana.html', title: "Phytothérapie : Arnica" },
+        ],
+    },
     {
         id: 'p-017',
         name: 'Artichaut',
@@ -528,9 +527,9 @@ export const plants: PlantType[] = [
             'Déconseillé aux personnes souffrant de calculs de la vésicule biliaire.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.naturactive.fr/plantes-actifs/artichaut', title: "Artichaut bienfaits | Naturactive" },
+        ],
+    },
     {
         id: 'p-018',
         name: 'Ashwagandha',
@@ -557,9 +556,9 @@ export const plants: PlantType[] = [
             'En cas de doute, consultez votre médecin avant utilisation.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.laboratoire-lescuyer.com/nos-actifs/ashwagandha?srsltid=AfmBOoqkx6Wxbp5FNnAEsVGU3U_sWAH097cbtGYhiQxq878TjSUi0329', title: "Ashwagandha : Ses bienfaits et propriétés" },
+        ],
+    },
     {
         id: 'p-019',
         name: 'Aubépine monogyne',
@@ -588,9 +587,9 @@ export const plants: PlantType[] = [
             "Évitez l'utilisation chez les enfants.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.pharma-gdd.com/fr/les-bienfaits-de-l-aubepine', title: "Aubépine : bienfaits et utilisations - Stress et cœur" },
+        ],
+    },
     {
         id: 'p-020',
         name: 'Açaï',
@@ -620,9 +619,9 @@ export const plants: PlantType[] = [
             'Consommer avec modération, une consommation excessive peut nuire à la santé.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.dieti-natura.com/plantes-actifs/acai.html', title: "Qu'est-ce que l'Açai ? Origine, Bienfaits et Posologie" },
+        ],
+    },
     {
         id: 'p-021',
         name: 'Badianier de Chine',
@@ -651,9 +650,9 @@ export const plants: PlantType[] = [
             "Il ne devrait pas être administré pendant la grossesse ou l'allaitement.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.plantes-et-sante.fr/articles/aliments-sains/2115-la-badiane-de-chine-pour-la-sante-des-intestins', title: "La badiane de Chine contre les troubles digestifs" },
+        ],
+    },
     {
         id: 'p-022',
         name: 'Bardane',
@@ -683,9 +682,9 @@ export const plants: PlantType[] = [
             'Évitez les personnes allergiques à la plante.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://labote.com/blogs/blog/bardane', title: "Propriétés bardane : purifiante et anti-imperfections - Labote" },
+        ],
+    },
     {
         id: 'p-023',
         name: 'Basilic',
@@ -714,9 +713,9 @@ export const plants: PlantType[] = [
             'Son utilisation est totalement contre-indiquée en cas de grossesse.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.terrevivante.org/contenu/basilic-bienfaits-herbe-aromatique-medicinale', title: "Basilic : bienfaits d'une herbe aromatique et médicinale" },
+        ],
+    },
     {
         id: 'p-024',
         name: 'Bistorte',
@@ -738,9 +737,9 @@ export const plants: PlantType[] = [
             "Les personnes souffrant de gastrite ou d'ulcère gastroduodénal ainsi que les femmes enceintes ou qui allaitent doivent éviter son utilisation.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.natureisfuture.fr/fr/content/36-la-bistorte', title: "La bistorte : Propriétés et bienfaits | Plantes médicinales" },
+        ],
+    },
     {
         id: 'p-025',
         name: 'Bleuet',
@@ -765,9 +764,9 @@ export const plants: PlantType[] = [
             "En cas de doute sur son utilisation pour votre cas particulier ou en cas de grossesse ou d'allaitement, il est recommandé de consulter un spécialiste de la santé avant.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.dieti-natura.com/plantes-actifs/bleuet.html', title: "Qu'est-ce que le Bleuet ? Origine, Bienfaits et Posologie" },
+        ],
+    },
     {
         id: 'p-026',
         name: 'Boldo',
@@ -798,9 +797,9 @@ export const plants: PlantType[] = [
             "Pour une utilisation correcte et en cas de doute, consultez votre médecin avant de l'utiliser.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.vidal.fr/parapharmacie/phytotherapie-plantes/boldo-peumus-boldus.html', title: "Phytothérapie : Boldo - VIDAL" },
+        ],
+    },
     {
         id: 'p-027',
         name: 'Bougainvillea',
@@ -829,9 +828,9 @@ export const plants: PlantType[] = [
             "Les personnes souffrant d'une maladie rénale, d'ostéoporose ou d'une maladie du foie doivent également éviter sa consommation.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://crudithe.fr/crudithe-recette/infusion-de-bougainvillier', title: "Infusion de bougainvillier - Crudithé" },
+        ],
+    },
     {
         id: 'p-028',
         name: 'Bouleau',
@@ -860,9 +859,9 @@ export const plants: PlantType[] = [
             "Elle n'est pas recommandée pendant la grossesse ou l'allaitement.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.vidal.fr/parapharmacie/phytotherapie-plantes/bouleau-betula-alba.html', title: "Phytothérapie : Bouleau - VIDAL" },
+        ],
+    },
     {
         id: 'p-029',
         name: 'Bourrache',
@@ -891,9 +890,9 @@ export const plants: PlantType[] = [
             "Évitez de consommer des enfants lors d'une utilisation prolongée.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.herboristerieduvalmont.com/blog/les-vertus-et-bienfaits-de-bourrache-borago-officinalis-n115', title: "Bourrache : Bienfaits, vertus, utilisations et contre-indications" },
+        ],
+    },
     {
         id: 'p-030',
         name: 'Brocoli',
@@ -923,9 +922,9 @@ export const plants: PlantType[] = [
             'Évitez son utilisation si des médicaments sont utilisés pour réguler la coagulation du sang.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.laboratoire-lescuyer.com/nos-actifs/brocoli', title: "Brocoli : Bienfaits et propriétés | Laboratoire Lescuyer" },
+        ],
+    },
     {
         id: 'p-031',
         name: 'Buchu',
@@ -952,9 +951,9 @@ export const plants: PlantType[] = [
             "En cas de grossesse ou d'allaitement, consultez d'abord un spécialiste.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.plantes-et-sante.fr/articles/phytotherapie/3052-le-buchu-arbuste-meconnu-du-systeme-urinaire', title: "Le buchu, arbuste méconnu du système urinaire" },
+        ],
+    },
     {
         id: 'p-032',
         name: 'Cacao',
@@ -983,9 +982,9 @@ export const plants: PlantType[] = [
             'Évitez une consommation excessive. Ne convient pas aux diabétiques.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.therascience.com/fr_fr/nos-actifs/plantes-et-champignons/cacao?srsltid=AfmBOorv6B4caQkSZicZbievTwB0xo8daJ8WLNPVFmSoWPRYnQfAMuAj', title: "Cacao : avantages, origines, propriétés et dosage" },
+        ],
+    },
     {
         id: 'p-033',
         name: 'Callune',
@@ -1013,9 +1012,9 @@ export const plants: PlantType[] = [
             'Ne doit pas être utilisé en cas de problèmes cardiaques.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.laboratoire-lescuyer.com/nos-actifs/bruyere?srsltid=AfmBOopsFka2TCRQV0WqUQD_UErX7xgxRhkM_vqORid79fhTTIFYc0ua', title: "Bruyère : Bienfaits et Propriétés" },
+        ],
+    },
     {
         id: 'p-034',
         name: 'Camomille',
@@ -1045,9 +1044,9 @@ export const plants: PlantType[] = [
             "Il n'est pas toxique, mais dans les décharges la dose peut provoquer des vomissements.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.aromatiques.fr/49-camomille?srsltid=AfmBOoq1tilR3E3AwVZU339s37TeWPrfEuaBCfeSCleJikLYuuCQCj9T', title: "La camomille, une plante médicinale à cultiver chez soi" },
+        ],
+    },
     {
         id: 'p-035',
         name: 'Cannabis',
@@ -1078,9 +1077,9 @@ export const plants: PlantType[] = [
             'Non recommandé chez les personnes présentant une insuffisance respiratoire.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.allodocteurs.fr/se-soigner-medicaments-cannabis-therapeutique-le-cannabis-therapeutique-herbe-medicinale-250.html', title: "Le cannabis thérapeutique : herbe médicinale" },
+        ],
+    },
     {
         id: 'p-036',
         name: 'Cannelier',
@@ -1111,9 +1110,9 @@ export const plants: PlantType[] = [
             'Évitez la consommation excessive.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.naturactive.fr/plantes-actifs/cannelier-de-chine', title: "Cannelier de Chine bienfaits - Naturactive" },
+        ],
+    },
     {
         id: 'p-037',
         name: 'Cardamome',
@@ -1141,9 +1140,9 @@ export const plants: PlantType[] = [
             'Les personnes souffrant de calculs biliaires ou de problèmes de vésicule biliaire doivent faire preuve de prudence.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://ladrome.bio/blogs/herbier-plantes-medicinales/cardamome', title: "La Cardamome : aromatique et digestive - Herbier de plantes" },
+        ],
+    },
     {
         id: 'p-038',
         name: 'Caroubier',
@@ -1174,9 +1173,9 @@ export const plants: PlantType[] = [
             "Évitez de consommer en cas d'allergie aux noix.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.doctissimo.fr/html/sante/phytotherapie/plante-medicinale/caroubier.htm', title: "Caroubier (Ceratonia siliqua) - La Phytothérapie" },
+        ],
+    },
     {
         id: 'p-039',
         name: 'Centaurée rude',
@@ -1201,9 +1200,9 @@ export const plants: PlantType[] = [
             "Son utilisation n'est pas recommandée chez les femmes enceintes, allaitantes ou enfants.",
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.nature-en-tete.fr/phytotherapie/centauree/ingredient-275', title: "Centaurée - ses bienfaits en Phytothérapie - Nature en tête" },
+        ],
+    },
     {
         id: 'p-040',
         name: 'Centella asiatica',
@@ -1232,9 +1231,9 @@ export const plants: PlantType[] = [
             'À éviter aussi chez les enfants de moins de 6 ans.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://labote.com/blogs/blog/centella-asiatica', title: "Propriétés Centella Asiatica : régénération de la peau - Labote" },
+        ],
+    },
     {
         id: 'p-041',
         name: 'Chardon-Marie',
@@ -1262,9 +1261,9 @@ export const plants: PlantType[] = [
             'Évitez les personnes sensibles ou allergiques à la plante.',
         ],
         sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+            { url: 'https://www.laboratoire-lescuyer.com/nos-actifs/chardon-marie', title: "Les bienfaits du chardon marie | Laboratoire Lescuyer" },
+        ],
+    },
     {
         id: 'p-042',
         name: 'Chicorée',
@@ -1293,10 +1292,8 @@ export const plants: PlantType[] = [
             'La fleur ne doit pas être ingérée si vous êtes allergique à la plante.',
             "Évitez l'utilisation de chicorée en cas de grossesse.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-043',
         name: 'Chélidoine',
@@ -1323,10 +1320,8 @@ export const plants: PlantType[] = [
             "Ne pas utiliser en interne s'il y a des problèmes de foie, de goutte ou d'obésité.",
             "La consommation doit être évitée pendant la grossesse ou l'allaitement et chez les enfants.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-044',
         name: 'Citronnelle',
@@ -1353,10 +1348,8 @@ export const plants: PlantType[] = [
             "En cas de grossesse, d'allaitement ou si vous avez des doutes quant à son utilisation pour votre cas particulier, consultez votre médecin avant de l'utiliser.",
             "Il peut provoquer une gêne ou une allergie aux personnes intolérantes aux odeurs d'agrumes.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-045',
         name: 'Citronnier',
@@ -1383,10 +1376,8 @@ export const plants: PlantType[] = [
             "En raison de sa teneur en acide, il peut augmenter l'acidité et causer des irritations et des dommages à la plaque dentaire.",
             "Évitez les personnes souffrant de plaies d'estomac, de gastrite et de brûlures d'estomac.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-046',
         name: 'Coffea',
@@ -1415,10 +1406,8 @@ export const plants: PlantType[] = [
             'Il est déconseillé de consommer beaucoup de café pendant la grossesse car il est associé à un faible poids à la naissance.',
             'Une tolérance à la caféine peut se développer.',
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-047',
         name: 'Consoude',
@@ -1444,10 +1433,8 @@ export const plants: PlantType[] = [
             "Évitez de l'utiliser avec des personnes présentant une hypersensibilité.",
             "Ne pas consommer pendant la grossesse ou l'allaitement.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-048',
         name: 'Coquelicot',
@@ -1472,10 +1459,8 @@ export const plants: PlantType[] = [
             'Les enfants et les femmes enceintes ou qui allaitent doivent être évités, sauf sous surveillance médicale.',
             'Toutes les parties de cette plante sont considérées comme toxiques pour les chiens et les chats.',
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-049',
         name: 'Coriandre',
@@ -1503,10 +1488,8 @@ export const plants: PlantType[] = [
             "Il n'est pas recommandé en cas de grossesse ou d'allaitement, consultez d'abord votre médecin.",
             "À éviter en cas d'allergie ou de sensibilité.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-050',
         name: 'Cresson',
@@ -1536,10 +1519,8 @@ export const plants: PlantType[] = [
             'Les personnes allergiques aux crucifères comme la moutarde, le chou ou le brocoli doivent éviter sa consommation.',
             "En cas de grossesse ou d'allaitement ou en cas de doute sur son utilisation, renseignez-vous auprès de un spécialiste de la santé avant de l'utiliser.",
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-051',
         name: 'Cumin',
@@ -1569,10 +1550,8 @@ export const plants: PlantType[] = [
             'La glycémie doit être mieux contrôlée si vous êtes diabétique.',
             'Ne pas utiliser pendant les cycles menstruels intenses.',
         ],
-        sources: [
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-            { url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6273829/', title: 'Étude clinique sur l\'acné' },
-        ],    },
+        sources: [],
+    },
     {
         id: 'p-052',
         name: 'Cumin des prés',
